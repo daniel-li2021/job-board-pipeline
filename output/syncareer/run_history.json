@@ -2,6 +2,1219 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-11-07T00:54:59.326491+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 55,
+      "cache_reused": 88,
+      "peer_reused": 4,
+      "same_content_reused": 3,
+      "non_material_change_reused": 0,
+      "new_or_changed": 58,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 51,
+        "prior_rule_result_now_eligible_for_llm": 7
+      },
+      "rescored_within_24h": 2,
+      "fallback_count": 0,
+      "rule_count": 5,
+      "requests": 7,
+      "input_tokens": 70678,
+      "cached_input_tokens": 8277,
+      "output_tokens": 15101,
+      "reasoning_tokens": 7911,
+      "estimated_usd": 0.013872,
+      "latency_seconds": 140.072,
+      "latency_measured": true,
+      "effective_rpm": 3.0,
+      "effective_tpm": 36743.53,
+      "json_reliability": 0.9636,
+      "json_reliability_measured": true,
+      "batches_total": 7,
+      "primary_batches_total": 7,
+      "batches_attempted": 7,
+      "batches_succeeded": 7,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 53,
+      "funnel": {
+        "scoring_candidates": 139
+      },
+      "output": {
+        "tier_a": 10,
+        "tier_b": 10,
+        "tier_c": 119,
+        "shown": 20,
+        "new_jobs": 92,
+        "new_jobs_added": 7
+      },
+      "enrichment": {
+        "needed": 18,
+        "detail_api_resolved": 213,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 18
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/twitch/jobs/8929545002",
+              "company": "Twitch",
+              "title": "Software Dev Engineer I - Security Platform"
+            },
+            {
+              "key": "url::https://ast-science.com/company/careers?gh_jid=4746198005",
+              "company": "AST SpaceMobile",
+              "title": "Assoc Electrical Software Test Engr Part Time"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/twitch/jobs/8931343002",
+              "company": "Twitch",
+              "title": "Software Dev Engineer I - Security Platform"
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "Functional Analyst / Full Stack Developer"
+            },
+            {
+              "key": "url::https://www.atlassian.com/company/careers/details/27443",
+              "company": "Atlassian",
+              "title": "Data Engineer"
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "Junior Full Stack Developer"
+            },
+            {
+              "key": "url::https://careers.zionsbank.com/jobs/software-engineer-qa-services-remote-29123",
+              "company": "Zions Bank",
+              "title": "Software Engineer - QA Services (Remote)"
+            },
+            {
+              "key": "url::https://www.qualtrics.com/careers/us/en/job/8325680?gh_jid=8325680",
+              "company": "Qualtrics",
+              "title": "Software Engineer II - XMD"
+            },
+            {
+              "key": "url::https://jobs.statefarm.com/main/jobs/46825?lang=en-us",
+              "company": "State Farm",
+              "title": "OpenText Exstream- Software Engineer (HYBRID)"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/tailscale/jobs/4733115005",
+              "company": "Tailscale",
+              "title": "Security Software Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 23.608,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 9,
+            "input_tokens": 10893,
+            "cached_input_tokens": 0,
+            "output_tokens": 2488,
+            "reasoning_tokens": 1578,
+            "estimated_usd": 0.002333
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/twitch/jobs/8929545002",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend services",
+                "AWS ECS and CI/CD"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://ast-science.com/company/careers?gh_jid=4746198005",
+              "match_score": 35.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Python scripting",
+                "Software testing"
+              ],
+              "main_gaps": [
+                "HIL/SIL laboratory testing",
+                "Electrical measurements"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/twitch/jobs/8931343002",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend services",
+                "AWS ECS and CI/CD"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React and TypeScript",
+                "FastAPI, AWS, CI/CD"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.atlassian.com/company/careers/details/27443",
+              "match_score": 65.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and Spark pipelines",
+                "SQL and Databricks"
+              ],
+              "main_gaps": [
+                "4+ years data engineering",
+                "Airflow or similar scheduling"
+              ]
+            },
+            {
+              "key": "url::https://careers.zionsbank.com/jobs/software-engineer-qa-services-remote-29123",
+              "match_score": 51.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Latency optimization",
+                "Distributed systems"
+              ],
+              "main_gaps": [
+                "JMeter or LoadRunner",
+                "4-5+ years performance engineering"
+              ]
+            },
+            {
+              "key": "url::https://www.qualtrics.com/careers/us/en/job/8325680?gh_jid=8325680",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Scalable backend services",
+                "Testing and deployment"
+              ],
+              "main_gaps": [
+                "2+ years software engineering"
+              ]
+            },
+            {
+              "key": "url::https://jobs.statefarm.com/main/jobs/46825?lang=en-us",
+              "match_score": 44.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python development",
+                "Version control and testing"
+              ],
+              "main_gaps": [
+                "OpenText Exstream",
+                "Customer communications composition"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/tailscale/jobs/4733115005",
+              "match_score": 49.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production software engineering",
+                "Backend development"
+              ],
+              "main_gaps": [
+                "Prior application security experience",
+                "OWASP and security analysis"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.beyondtrust.com/company/careers/8119260",
+              "company": "BeyondTrust",
+              "title": "Software Development Engineer"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/pathward/jobs/6189447004",
+              "company": "Pathward",
+              "title": "Software Engineer II (AWS Group)"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/lendingtree/jobs/8353498",
+              "company": "LendingTree",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://careers.newscorp.com/austin-tx/software-engineer-sre/7F331FBCCA6A4399A4CF8CC64D522FE0/job",
+              "company": "News Corp",
+              "title": "Software Engineer - SRE"
+            },
+            {
+              "key": "url::https://careers.garmin.com/jobs/20524?lang=en-us&previousLocale=en-US",
+              "company": "Garmin",
+              "title": "Software Engineer 2"
+            },
+            {
+              "key": "url::https://remitly.wd5.myworkdayjobs.com/en-US/Remitly_Careers/job/Seattle-Washington-United-States/Software-Development-Engineer_R_107161",
+              "company": "Remitly",
+              "title": "Software Development Engineer"
+            },
+            {
+              "key": "url::https://pnc.wd5.myworkdayjobs.com/en-US/External/job/PA---Pittsburgh-15219/Software-Engineer---ServiceNow-Platform-Engineer_R234008-1?jobFamily=212fee894bd90164b34581093c073f99&jobFamily=4b200b4f2af41001146bb3e8d4c90000&jobFamily=212fee894bd9013a942ea8093c07099a&jobFamily=212fee894bd901220876ba093c07839a&jobFamily=212fee894bd901031a15ad093c07299a&jobFamily=212fee894bd901df68ffb6093c076b9a&jobFamily=212fee894bd9019952ef9f093c07dd99&jobFamily=212fee894bd901177dbcaf093c073b9a&jobFamily=ecfe462481801001145e795c333f0000&jobFamily=c1ad2fda60ec017e325c6b951411f60b&jobFamily=ecfe462481801001145e262a26f10000&jobFamily=212fee894bd901c1ed9faa093c07179a&jobFamily=212fee894bd901ec16608f093c077d99&jobFamily=212fee894bd90158e33b83093c074f99&jobFamily=212fee894bd90124378797093c07af99&jobFamily=212fee894bd9011ea81c88093c077599&jobFamily=212fee894bd9015ada10ac093c07219a&jobFamily=212fee894bd901572c4e93093c079799&jobFamily=6013e82a6ec8100114307d1f6c060000&jobFamily=212fee894bd901beb30a9e093c07d399&jobFamily=212fee894bd90147011d99093c07b799&jobFamily=212fee894bd9015f553fc8093c07d99a&jobFamily=212fee894bd901aca8ebbd093c079b9a&jobFamily=212fee894bd901bd2e7282093c074999&jobFamily=212fee894bd901293e1abd093c07959a&jobFamily=212fee894bd901eb936db5093c07619a&jobFamily=212fee894bd901377e7c90093c078799&jobFamily=212fee894bd901c1c9a6bd093c07999a&jobFamily=212fee894bd901851d8ca6093c07019a&jobFamily=212fee894bd901eaee8c95093c07a399&jobFamily=212fee894bd901a4777487093c076f99&jobFamily=212fee894bd901eb94d883093c075399&jobFamily=212fee894bd90135784480093c073999&jobFamily=b7ea20f03d8410015904e98868ae0000&jobFamily=b9bf0bd0833410011454dbc93e6a0000&jobFamily=4b200b4f2af41001146b266a894c0000&jobFamily=212fee894bd901c432d47c093c071d99&jobFamily=212fee894bd901371b08c6093c07cd9a&jobFamily=212fee894bd901eae8a5b6093c07699a&jobFamily=212fee894bd901be7be8b4093c075d9a&jobFamily=212fee894bd9018ae196b2093c074d9a&jobFamily=212fee894bd9010ab503a7093c07039a&jobFamily=212fee894bd90187ef12c2093c07b79a&jobFamily=212fee894bd90100a997c0093c07ad9a&jobFamily=212fee894bd901379851c0093c07ab9a",
+              "company": "PNC Financial Services",
+              "title": "Software Engineer - ServiceNow Platform Engineer"
+            },
+            {
+              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26015449?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
+              "company": "American Express",
+              "title": "Software Engineer III"
+            },
+            {
+              "key": "url::https://www.tylertech.com/careers/job-listings/software-engineer-26-26159-01",
+              "company": "Tyler Technologies",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://careers.garmin.com/jobs/21288?lang=en-us&previousLocale=en-US",
+              "company": "Garmin",
+              "title": "Software Engineer 2 - C++ Maps Platform"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 27.27,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 12010,
+            "cached_input_tokens": 1851,
+            "output_tokens": 3118,
+            "reasoning_tokens": 1423,
+            "estimated_usd": 0.002593
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.beyondtrust.com/company/careers/8119260",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud microservices",
+                "AWS and Terraform"
+              ],
+              "main_gaps": [
+                "Platform technical leadership",
+                "Datadog or Prometheus"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/pathward/jobs/6189447004",
+              "match_score": 75.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS ECS services",
+                "Python and Terraform"
+              ],
+              "main_gaps": [
+                "Three years professional experience",
+                "NET application development"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/lendingtree/jobs/8353498",
+              "match_score": 83.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Node.js and React",
+                "Full-stack AWS applications"
+              ],
+              "main_gaps": [
+                "Two years full-stack experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.newscorp.com/austin-tx/software-engineer-sre/7F331FBCCA6A4399A4CF8CC64D522FE0/job",
+              "match_score": 75.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS and Kubernetes",
+                "Reliability and tracing"
+              ],
+              "main_gaps": [
+                "SLO and error-budget practice",
+                "Hands-on observability tooling"
+              ]
+            },
+            {
+              "key": "url::https://careers.garmin.com/jobs/20524?lang=en-us&previousLocale=en-US",
+              "match_score": 54.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ listed",
+                "Software engineering fundamentals"
+              ],
+              "main_gaps": [
+                "Demonstrated low-level C/C++ development",
+                "Embedded software tooling"
+              ]
+            },
+            {
+              "key": "url::https://remitly.wd5.myworkdayjobs.com/en-US/Remitly_Careers/job/Seattle-Washington-United-States/Software-Development-Engineer_R_107161",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React and TypeScript",
+                "Async REST services"
+              ],
+              "main_gaps": [
+                "Three years software experience",
+                "Apollo GraphQL and React Native"
+              ]
+            },
+            {
+              "key": "url::https://pnc.wd5.myworkdayjobs.com/en-US/External/job/PA---Pittsburgh-15219/Software-Engineer---ServiceNow-Platform-Engineer_R234008-1?jobFamily=212fee894bd90164b34581093c073f99&jobFamily=4b200b4f2af41001146bb3e8d4c90000&jobFamily=212fee894bd9013a942ea8093c07099a&jobFamily=212fee894bd901220876ba093c07839a&jobFamily=212fee894bd901031a15ad093c07299a&jobFamily=212fee894bd901df68ffb6093c076b9a&jobFamily=212fee894bd9019952ef9f093c07dd99&jobFamily=212fee894bd901177dbcaf093c073b9a&jobFamily=ecfe462481801001145e795c333f0000&jobFamily=c1ad2fda60ec017e325c6b951411f60b&jobFamily=ecfe462481801001145e262a26f10000&jobFamily=212fee894bd901c1ed9faa093c07179a&jobFamily=212fee894bd901ec16608f093c077d99&jobFamily=212fee894bd90158e33b83093c074f99&jobFamily=212fee894bd90124378797093c07af99&jobFamily=212fee894bd9011ea81c88093c077599&jobFamily=212fee894bd9015ada10ac093c07219a&jobFamily=212fee894bd901572c4e93093c079799&jobFamily=6013e82a6ec8100114307d1f6c060000&jobFamily=212fee894bd901beb30a9e093c07d399&jobFamily=212fee894bd90147011d99093c07b799&jobFamily=212fee894bd9015f553fc8093c07d99a&jobFamily=212fee894bd901aca8ebbd093c079b9a&jobFamily=212fee894bd901bd2e7282093c074999&jobFamily=212fee894bd901293e1abd093c07959a&jobFamily=212fee894bd901eb936db5093c07619a&jobFamily=212fee894bd901377e7c90093c078799&jobFamily=212fee894bd901c1c9a6bd093c07999a&jobFamily=212fee894bd901851d8ca6093c07019a&jobFamily=212fee894bd901eaee8c95093c07a399&jobFamily=212fee894bd901a4777487093c076f99&jobFamily=212fee894bd901eb94d883093c075399&jobFamily=212fee894bd90135784480093c073999&jobFamily=b7ea20f03d8410015904e98868ae0000&jobFamily=b9bf0bd0833410011454dbc93e6a0000&jobFamily=4b200b4f2af41001146b266a894c0000&jobFamily=212fee894bd901c432d47c093c071d99&jobFamily=212fee894bd901371b08c6093c07cd9a&jobFamily=212fee894bd901eae8a5b6093c07699a&jobFamily=212fee894bd901be7be8b4093c075d9a&jobFamily=212fee894bd9018ae196b2093c074d9a&jobFamily=212fee894bd9010ab503a7093c07039a&jobFamily=212fee894bd90187ef12c2093c07b79a&jobFamily=212fee894bd90100a997c0093c07ad9a&jobFamily=212fee894bd901379851c0093c07ab9a",
+              "match_score": 39.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "JavaScript and REST APIs",
+                "Platform operations experience"
+              ],
+              "main_gaps": [
+                "ServiceNow platform development",
+                "ITSM and CMDB experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26015449?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Distributed software systems",
+                "Automated testing and evaluation"
+              ],
+              "main_gaps": [
+                "AI-assisted development workflows"
+              ]
+            },
+            {
+              "key": "url::https://www.tylertech.com/careers/job-listings/software-engineer-26-26159-01",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "TypeScript and SQL",
+                "REST API development"
+              ],
+              "main_gaps": [
+                "NET and T-SQL experience",
+                "Angular and Elasticsearch"
+              ]
+            },
+            {
+              "key": "url::https://careers.garmin.com/jobs/21288?lang=en-us&previousLocale=en-US",
+              "match_score": 61.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ listed",
+                "Performance-focused backend work"
+              ],
+              "main_gaps": [
+                "Demonstrated C++ systems development"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.tylertech.com/careers/job-listings/software-engineer-26-o8oiafwy-01",
+              "company": "Tyler Technologies",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://medtronic.wd1.myworkdayjobs.com/en-US/MedtronicCareers/job/Mounds-View-Minnesota-United-States-of-America/Software-Engineer-II_R81133-1?locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+              "company": "Medtronic",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://jobs.bnsf.com/us/en/job/95930/Infrastructure-Software-Engineer-II-Remote-US",
+              "company": "BNSF Railway",
+              "title": "Full Stack Infrastructure Engineer"
+            },
+            {
+              "key": "url::https://westernalliancebank.wd5.myworkdayjobs.com/en-US/WAB/job/Columbus-OH/Summer-2027-Internship---Columbus--OH---Platform-Engineering_R14024",
+              "company": "Western Alliance Bank",
+              "title": "Summer 2027 Internship - Columbus, OH - Platform Engineering"
+            },
+            {
+              "key": "url::https://hntb.jobs/kissimmee-fl/new-grad-field-engineer-i-summer-2027/4516D568E1F44F4CAC2CDE390E2EAC76/job",
+              "company": "HNTB",
+              "title": "New Grad Field Engineer I - Summer 2027"
+            },
+            {
+              "key": "url::https://abbott.wd5.myworkdayjobs.com/en-US/abbottcareers/job/United-States---California---Pleasanton/Software-Test-Engineer_31165820-1?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=55273a1b49934d97ae15342ef51f6b95&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8&jobFamilyGroup=77166004ab82108dbc36d45444ea5319&jobFamilyGroup=77166004ab82108dbc369f0685c75300&jobFamilyGroup=77166004ab82108dbc36ddc1741b531d&jobFamilyGroup=77166004ab82108dbc36c1aa703d530e&jobFamilyGroup=77166004ab82108dbc368b52e1f452f7&jobFamilyGroup=77166004ab82108dbc36c663b1735313&jobFamilyGroup=77166004ab82108dbc36a3f4c1f35302&jobFamilyGroup=77166004ab82108dbc36d8a13149531b&jobFamilyGroup=77166004ab82108dbc36ae7004d75306&jobFamilyGroup=77166004ab82108dbc36b387bcb25308&jobFamilyGroup=77166004ab82108dbc36bd400e63530c&jobFamilyGroup=77166004ab82108dbc36b8277206530a&jobFamilyGroup=77166004ab82108dbc36cf373cfb5317&jobFamilyGroup=77166004ab82108dbc3691dba9f452f9&jobFamilyGroup=77166004ab82108dbc36a9373a205304&jobFamilyGroup=77166004ab82108dbc3697ef47b552fb",
+              "company": "Abbott",
+              "title": "Software Test Engineer"
+            },
+            {
+              "key": "url::https://careers.intuitive.com/en/jobs/744000159724349/JOB221156/software-engineer-emulation-and-automated-test",
+              "company": "Intuitive",
+              "title": "Software Engineer – Emulation and Automated Test"
+            },
+            {
+              "key": "url::https://careers.playstation.com/data-engineer-ii-jvm/job/6250753004",
+              "company": "PlayStation",
+              "title": "Data Engineer II, JVM"
+            },
+            {
+              "key": "url::https://careers.playstation.com/data-engineer-ii-jvm/job/6250762004",
+              "company": "PlayStation",
+              "title": "Data Engineer II, JVM"
+            },
+            {
+              "key": "url::https://careers.playstation.com/data-engineer-ii-jvm/job/6147069004",
+              "company": "PlayStation",
+              "title": "Data Engineer II, JVM"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 28.214,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 12493,
+            "cached_input_tokens": 1851,
+            "output_tokens": 3068,
+            "reasoning_tokens": 1301,
+            "estimated_usd": 0.002617
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.tylertech.com/careers/job-listings/software-engineer-26-o8oiafwy-01",
+              "match_score": 73.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack development",
+                "SQL and database work"
+              ],
+              "main_gaps": [
+                "Two years' development experience"
+              ]
+            },
+            {
+              "key": "url::https://medtronic.wd1.myworkdayjobs.com/en-US/MedtronicCareers/job/Mounds-View-Minnesota-United-States-of-America/Software-Engineer-II_R81133-1?locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea",
+              "match_score": 86.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production Python services",
+                "APIs, databases, and CI/CD"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://jobs.bnsf.com/us/en/job/95930/Infrastructure-Software-Engineer-II-Remote-US",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud deployment experience",
+                "Backend and platform services"
+              ],
+              "main_gaps": [
+                "Three years' infrastructure experience",
+                "Production Kubernetes and IaC"
+              ]
+            },
+            {
+              "key": "url::https://westernalliancebank.wd5.myworkdayjobs.com/en-US/WAB/job/Columbus-OH/Summer-2027-Internship---Columbus--OH---Platform-Engineering_R14024",
+              "match_score": 25.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Mentored internship environment"
+              ],
+              "main_gaps": [
+                "Current undergraduate enrollment",
+                "Commercial banking focus"
+              ]
+            },
+            {
+              "key": "url::https://hntb.jobs/kissimmee-fl/new-grad-field-engineer-i-summer-2027/4516D568E1F44F4CAC2CDE390E2EAC76/job",
+              "match_score": 8.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "New-graduate level"
+              ],
+              "main_gaps": [
+                "Construction engineering fieldwork",
+                "Engineering bachelor's degree"
+              ]
+            },
+            {
+              "key": "url::https://abbott.wd5.myworkdayjobs.com/en-US/abbottcareers/job/United-States---California---Pleasanton/Software-Test-Engineer_31165820-1?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=6cb77610a8a543aea2d6bc10457e35d4&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=55273a1b49934d97ae15342ef51f6b95&Location_Country=a4e08b475d6a4176853c9d1cb9854e02&Location_Country=d4afdeb461d446e4babd204bd102dba8&jobFamilyGroup=77166004ab82108dbc36d45444ea5319&jobFamilyGroup=77166004ab82108dbc369f0685c75300&jobFamilyGroup=77166004ab82108dbc36ddc1741b531d&jobFamilyGroup=77166004ab82108dbc36c1aa703d530e&jobFamilyGroup=77166004ab82108dbc368b52e1f452f7&jobFamilyGroup=77166004ab82108dbc36c663b1735313&jobFamilyGroup=77166004ab82108dbc36a3f4c1f35302&jobFamilyGroup=77166004ab82108dbc36d8a13149531b&jobFamilyGroup=77166004ab82108dbc36ae7004d75306&jobFamilyGroup=77166004ab82108dbc36b387bcb25308&jobFamilyGroup=77166004ab82108dbc36bd400e63530c&jobFamilyGroup=77166004ab82108dbc36b8277206530a&jobFamilyGroup=77166004ab82108dbc36cf373cfb5317&jobFamilyGroup=77166004ab82108dbc3691dba9f452f9&jobFamilyGroup=77166004ab82108dbc36a9373a205304&jobFamilyGroup=77166004ab82108dbc3697ef47b552fb",
+              "match_score": 89.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Automated testing and regression",
+                "Python, Git, and CI/CD"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://careers.intuitive.com/en/jobs/744000159724349/JOB221156/software-engineer-emulation-and-automated-test",
+              "match_score": 68.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and test automation",
+                "Complex software debugging"
+              ],
+              "main_gaps": [
+                "Embedded-system emulation",
+                "Demonstrated C++ experience"
+              ]
+            },
+            {
+              "key": "url::https://careers.playstation.com/data-engineer-ii-jvm/job/6250753004",
+              "match_score": 55.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark and data pipelines",
+                "Java backend experience"
+              ],
+              "main_gaps": [
+                "Kafka and Flink",
+                "Three years' high-throughput systems"
+              ]
+            },
+            {
+              "key": "url::https://careers.playstation.com/data-engineer-ii-jvm/job/6250762004",
+              "match_score": 55.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark and data pipelines",
+                "Java backend experience"
+              ],
+              "main_gaps": [
+                "Kafka and Flink",
+                "Three years' high-throughput systems"
+              ]
+            },
+            {
+              "key": "url::https://careers.playstation.com/data-engineer-ii-jvm/job/6147069004",
+              "match_score": 55.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark and data pipelines",
+                "Java backend experience"
+              ],
+              "main_gaps": [
+                "Kafka and Flink",
+                "Three years' high-throughput systems"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.tylertech.com/careers/job-listings/software-support-specialist-26-25537-01",
+              "company": "Tyler Technologies",
+              "title": "Software Support Specialist"
+            },
+            {
+              "key": "url::https://careers.jabil.com/jobs.html?jobitem=j2469656-il-united+states+of+america-test+infrastructure+technician+i+%28wed.-+sat.%2Fthurs.-sat.+6am-6pm%29",
+              "company": "Jabil",
+              "title": "Test Infrastructure Technician I (Wed.- Sat./Thurs.-Sat. 6am-6pm)"
+            },
+            {
+              "key": "url::https://www.ferrovial.com/en/job-offers/webber-road-maintenance-technician-infrastructure-management-5",
+              "company": "Ferrovial",
+              "title": "Webber- Road Maintenance Technician- Infrastructure Management"
+            },
+            {
+              "key": "url::https://careers.jabil.com/jobs.html?jobitem=j2469652-il-united+states+of+america-test+infrastructure+technician+i+%28sun.-tues.-sun.+-+wed.+6am-6pm%29",
+              "company": "Jabil",
+              "title": "Test Infrastructure Technician I (Sun.-Tues.-Sun. - Wed. 6am-6pm)"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 8.459,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 4662,
+            "cached_input_tokens": 1851,
+            "output_tokens": 767,
+            "reasoning_tokens": 417,
+            "estimated_usd": 0.000683
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.tylertech.com/careers/job-listings/software-support-specialist-26-25537-01",
+              "match_score": 64.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Technical troubleshooting",
+                "Software QA and documentation"
+              ],
+              "main_gaps": [
+                "Client-facing software support"
+              ]
+            },
+            {
+              "key": "url::https://careers.jabil.com/jobs.html?jobitem=j2469656-il-united+states+of+america-test+infrastructure+technician+i+%28wed.-+sat.%2Fthurs.-sat.+6am-6pm%29",
+              "match_score": 28.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Testing and quality assurance"
+              ],
+              "main_gaps": [
+                "Manufacturing test fixtures"
+              ]
+            },
+            {
+              "key": "url::https://www.ferrovial.com/en/job-offers/webber-road-maintenance-technician-infrastructure-management-5",
+              "match_score": 5.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "Road maintenance experience",
+                "Driver license and MOT certification"
+              ]
+            },
+            {
+              "key": "url::https://careers.jabil.com/jobs.html?jobitem=j2469652-il-united+states+of+america-test+infrastructure+technician+i+%28sun.-tues.-sun.+-+wed.+6am-6pm%29",
+              "match_score": 28.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Testing and quality assurance"
+              ],
+              "main_gaps": [
+                "Manufacturing test fixtures"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 5,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/evolutioniq/jobs/6242824004",
+              "company": "EvolutionIQ",
+              "title": "AI Engineer (CCC Auto / Agentic)"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.312,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3258,
+            "cached_input_tokens": 0,
+            "output_tokens": 393,
+            "reasoning_tokens": 297,
+            "estimated_usd": 0.000522
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/evolutioniq/jobs/6242824004",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM agents and RAG",
+                "Evals, guardrails, observability"
+              ],
+              "main_gaps": [
+                "3+ years professional engineering",
+                "Durable event-driven workflows"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 6,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://apply.workable.com/fluent/j/B600C3E384",
+              "company": "Fluent",
+              "title": "Software Engineer (AI Agents)"
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "Full Stack Engineer - Remote"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/baseten/64181d8a-960d-4aa4-8d98-3cb22b1e0616",
+              "company": "Baseten",
+              "title": "AI Engineer"
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155739BR",
+              "company": "Infosys",
+              "title": "Java Backend Developer"
+            },
+            {
+              "key": "url::https://theirc.wd1.myworkdayjobs.com/en-US/External_Careers/job/United-States-Remote/Digital-Workplace-Platform-Administrator_JR00005862?jobFamilyGroup=3514013df82f100159a2fa59e3c10000&jobFamilyGroup=3514013df82f100159a3204c21fb0000&jobFamilyGroup=3514013df82f100159a341728a500000&jobFamilyGroup=3514013df82f100159a349e24ab30000&jobFamilyGroup=3514013df82f100159a36e9abb790000&jobFamilyGroup=c19d636e9373109df85a5f10daf9ccb8&jobFamilyGroup=3514013df82f100159a38015ed950000&jobFamilyGroup=3514013df82f100159a3875cc8fa0000",
+              "company": "International Rescue Committee",
+              "title": "Digital Workplace Platform Administrator"
+            },
+            {
+              "key": "url::https://wellsky.wd1.myworkdayjobs.com/en-US/WellSkyCareers/job/Overland-Park-KS/Software-Engineer_JR5077",
+              "company": "WellSky",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://ats.rippling.com/cyngn/jobs/97edf572-a9ef-4ea6-a643-ee7b30226b6a",
+              "company": "Cyngn",
+              "title": "Software Engineer, Autonomy - Calibration, Mapping & Localization"
+            },
+            {
+              "key": "url::https://careers.frostbank.com/us/en/job/R262185/Software-Engineer-II-Argo-Applications",
+              "company": "Frost Bankers",
+              "title": "Software Engineer II - Argo Applications"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/capco/jobs/8353951",
+              "company": "Capco",
+              "title": "AI Product Engineer"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/capco/jobs/8355385",
+              "company": "Capco",
+              "title": "AI Product Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 23.275,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 14101,
+            "cached_input_tokens": 0,
+            "output_tokens": 2560,
+            "reasoning_tokens": 1592,
+            "estimated_usd": 0.00269
+          },
+          "decisions": [
+            {
+              "key": "url::https://apply.workable.com/fluent/j/B600C3E384",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM agents",
+                "Databricks and evaluation"
+              ],
+              "main_gaps": [
+                "3+ years professional experience"
+              ]
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "AWS APIs and deployments"
+              ],
+              "main_gaps": [
+                "Security vulnerability remediation",
+                "Legacy modernization"
+              ]
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/baseten/64181d8a-960d-4aa4-8d98-3cb22b1e0616",
+              "match_score": 63.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production AI workflows",
+                "API integrations and automation"
+              ],
+              "main_gaps": [
+                "Vercel production agent experience",
+                "CRM and automation platforms"
+              ]
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155739BR",
+              "match_score": 58.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Java and REST APIs",
+                "Backend software development"
+              ],
+              "main_gaps": [
+                "Spring Boot experience",
+                "Java security development"
+              ]
+            },
+            {
+              "key": "url::https://theirc.wd1.myworkdayjobs.com/en-US/External_Careers/job/United-States-Remote/Digital-Workplace-Platform-Administrator_JR00005862?jobFamilyGroup=3514013df82f100159a2fa59e3c10000&jobFamilyGroup=3514013df82f100159a3204c21fb0000&jobFamilyGroup=3514013df82f100159a341728a500000&jobFamilyGroup=3514013df82f100159a349e24ab30000&jobFamilyGroup=3514013df82f100159a36e9abb790000&jobFamilyGroup=c19d636e9373109df85a5f10daf9ccb8&jobFamilyGroup=3514013df82f100159a38015ed950000&jobFamilyGroup=3514013df82f100159a3875cc8fa0000",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI platform integrations",
+                "Production monitoring and retrieval"
+              ],
+              "main_gaps": [
+                "Enterprise AI platform administration",
+                "Access controls and security governance"
+              ]
+            },
+            {
+              "key": "url::https://wellsky.wd1.myworkdayjobs.com/en-US/WellSkyCareers/job/Overland-Park-KS/Software-Engineer_JR5077",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack software delivery",
+                "Testing and cloud deployment"
+              ],
+              "main_gaps": [
+                "2-4 years relevant experience"
+              ]
+            },
+            {
+              "key": "url::https://ats.rippling.com/cyngn/jobs/97edf572-a9ef-4ea6-a643-ee7b30226b6a",
+              "match_score": 44.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ and Python",
+                "Relevant math foundation"
+              ],
+              "main_gaps": [
+                "Robotics mapping and localization",
+                "State estimation and SLAM"
+              ]
+            },
+            {
+              "key": "url::https://careers.frostbank.com/us/en/job/R262185/Software-Engineer-II-Argo-Applications",
+              "match_score": 61.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "JavaScript application development",
+                "SQL and data workflows"
+              ],
+              "main_gaps": [
+                "SSIS and T-SQL",
+                "Argo banking platform"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/capco/jobs/8353951",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "RAG and AI agents",
+                "Python and SQL prototyping"
+              ],
+              "main_gaps": [
+                "2-3 years relevant experience"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/capco/jobs/8355385",
+              "match_score": 78.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "RAG and AI agents",
+                "Python and SQL prototyping"
+              ],
+              "main_gaps": [
+                "2-3 years relevant experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 7,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "Snowflake Platform Engineer"
+            },
+            {
+              "key": "url::https://ats.rippling.com/cyngn/jobs/ddbaf1c6-63c4-486b-8030-75fd3eb4b755",
+              "company": "Cyngn",
+              "title": "C++ Platform Integration Engineer"
+            },
+            {
+              "key": "url::https://www.harness.io/company/jobs/apply?gh_jid=5249738007&gh_jid=5249738007",
+              "company": "Harness",
+              "title": "Forward Deployed Engineer (Implementation Engineering)"
+            },
+            {
+              "key": "url::https://careers-americas.kia.com/kus/job/Irvine-Emerging-Field-Data-Engineer-Specialist-CA-92606/1383852100",
+              "company": "Kia_Motors",
+              "title": "Emerging Field Data Engineer / Specialist"
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "Data Engineer (Azure)"
+            },
+            {
+              "key": "url::https://bristolmyerssquibb.wd5.myworkdayjobs.com/en-US/BMS/job/Princeton---NJ---US/Data-Engineer--Clinical-Operations_R1608237-1?locationHierarchy2=ffa8c2081af30164724e86a90924d982&locationHierarchy2=c251ba463070100141966eb4f9ef0000&locationHierarchy2=ffa8c2081af3014bbc1caea909249c83&locationHierarchy2=ffa8c2081af30158f001a0a909248d83&locationHierarchy2=ffa8c2081af301d3d5569fa909248883&locationHierarchy2=ffa8c2081af3015570d098a909245b83&locationHierarchy2=36a5da557afd1001d7b9018e3b4d0000&locationHierarchy2=682031bc229e10010d2097821a500000&locationHierarchy2=682031bc229e10010d06e8c468540000&locationHierarchy2=bb816e268a0301bece1791d9be16cdf9&locationHierarchy2=ffa8c2081af30110667491a909242983&locationHierarchy2=ffa8c2081af301eb90628ca909240683&locationHierarchy2=7b0045a3289810548a4113a9c0db9053&locationHierarchy2=7b0045a3289810548a4111f045539051&locationHierarchy2=7b0045a3289810548a411ffa3c039061&locationHierarchy2=7b0045a3289810548a412a8719e3906d&locationHierarchy2=7b0045a3289810548a411ea3e74b905f",
+              "company": "Bristol-Myers Squibb",
+              "title": "Data Engineer, Clinical Operations"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/Crusoe/91475b33-9f0e-4594-a425-cde5c5335cde",
+              "company": "Crusoe",
+              "title": "Associate Construction Engineer - Power Infrastructure"
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155724BR",
+              "company": "Infosys",
+              "title": "AWS DevOps Engineer"
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/etched/15fa07f2-b1e9-43dd-8e9f-47854633c626",
+              "company": "Etched",
+              "title": "Site Reliability Engineer - Fleet Command & Control"
+            },
+            {
+              "key": "url::https://careers.gallo.com/job/Modesto-Associate-Platform-Developer-CA-95354/1448367600",
+              "company": "GALLO",
+              "title": "Associate Platform Developer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 24.934,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 9,
+            "input_tokens": 13261,
+            "cached_input_tokens": 2724,
+            "output_tokens": 2707,
+            "reasoning_tokens": 1303,
+            "estimated_usd": 0.002434
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "match_score": 69.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and Spark pipelines",
+                "Distributed data workflows"
+              ],
+              "main_gaps": [
+                "Azure Data Lake",
+                "Streaming architectures"
+              ]
+            },
+            {
+              "key": "url::https://ats.rippling.com/cyngn/jobs/ddbaf1c6-63c4-486b-8030-75fd3eb4b755",
+              "match_score": 32.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming",
+                "Linux and debugging"
+              ],
+              "main_gaps": [
+                "Modern C++ and ROS 2",
+                "Hardware integration"
+              ]
+            },
+            {
+              "key": "url::https://www.harness.io/company/jobs/apply?gh_jid=5249738007&gh_jid=5249738007",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Agent and API integrations",
+                "Production software delivery"
+              ],
+              "main_gaps": [
+                "Forward-deployed customer experience",
+                "Infrastructure-as-code depth"
+              ]
+            },
+            {
+              "key": "url::https://careers-americas.kia.com/kus/job/Irvine-Emerging-Field-Data-Engineer-Specialist-CA-92606/1383852100",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SQL and data analysis",
+                "Machine-learning evaluation"
+              ],
+              "main_gaps": [
+                "Automotive safety analysis",
+                "3–7 years experience"
+              ]
+            },
+            {
+              "key": "url::https://bristolmyerssquibb.wd5.myworkdayjobs.com/en-US/BMS/job/Princeton---NJ---US/Data-Engineer--Clinical-Operations_R1608237-1?locationHierarchy2=ffa8c2081af30164724e86a90924d982&locationHierarchy2=c251ba463070100141966eb4f9ef0000&locationHierarchy2=ffa8c2081af3014bbc1caea909249c83&locationHierarchy2=ffa8c2081af30158f001a0a909248d83&locationHierarchy2=ffa8c2081af301d3d5569fa909248883&locationHierarchy2=ffa8c2081af3015570d098a909245b83&locationHierarchy2=36a5da557afd1001d7b9018e3b4d0000&locationHierarchy2=682031bc229e10010d2097821a500000&locationHierarchy2=682031bc229e10010d06e8c468540000&locationHierarchy2=bb816e268a0301bece1791d9be16cdf9&locationHierarchy2=ffa8c2081af30110667491a909242983&locationHierarchy2=ffa8c2081af301eb90628ca909240683&locationHierarchy2=7b0045a3289810548a4113a9c0db9053&locationHierarchy2=7b0045a3289810548a4111f045539051&locationHierarchy2=7b0045a3289810548a411ffa3c039061&locationHierarchy2=7b0045a3289810548a412a8719e3906d&locationHierarchy2=7b0045a3289810548a411ea3e74b905f",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Databricks and data pipelines",
+                "Production RAG and LLM systems"
+              ],
+              "main_gaps": [
+                "Delta Lake and Unity Catalog"
+              ]
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/Crusoe/91475b33-9f0e-4594-a425-cde5c5335cde",
+              "match_score": 10.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "None evident"
+              ],
+              "main_gaps": [
+                "Construction engineering",
+                "Power systems field experience"
+              ]
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155724BR",
+              "match_score": 70.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS ECS and CI/CD",
+                "Dockerized production services"
+              ],
+              "main_gaps": [
+                "Broad AWS services expertise",
+                "Production incident RCA"
+              ]
+            },
+            {
+              "key": "url::https://jobs.ashbyhq.com/etched/15fa07f2-b1e9-43dd-8e9f-47854633c626",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production observability",
+                "Python and infrastructure"
+              ],
+              "main_gaps": [
+                "SLO and on-call ownership",
+                "Hardware fleet debugging"
+              ]
+            },
+            {
+              "key": "url::https://careers.gallo.com/job/Modesto-Associate-Platform-Developer-CA-95354/1448367600",
+              "match_score": 85.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI-enabled workflow development",
+                "API and platform integrations"
+              ],
+              "main_gaps": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-11-06T15:54:23.908714+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -13909,443 +15122,6 @@
               "main_gaps": [
                 "dbt or similar transformation framework",
                 "Data orchestration experience"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "syncareer",
-      "run_at": "2026-10-27T23:52:49.012105+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 16,
-      "cache_reused": 29,
-      "peer_reused": 5,
-      "same_content_reused": 0,
-      "non_material_change_reused": 0,
-      "new_or_changed": 16,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 16
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 2,
-      "requests": 3,
-      "input_tokens": 24542,
-      "cached_input_tokens": 6563,
-      "output_tokens": 5870,
-      "reasoning_tokens": 2594,
-      "estimated_usd": 0.004798,
-      "latency_seconds": 51.646,
-      "latency_measured": true,
-      "effective_rpm": 3.49,
-      "effective_tpm": 35331.29,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 3,
-      "primary_batches_total": 3,
-      "batches_attempted": 3,
-      "batches_succeeded": 3,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 16,
-      "funnel": {
-        "scoring_candidates": 40
-      },
-      "output": {
-        "tier_a": 1,
-        "tier_b": 5,
-        "tier_c": 34,
-        "shown": 6,
-        "new_jobs": 35,
-        "new_jobs_added": 1
-      },
-      "enrichment": {
-        "needed": 5,
-        "detail_api_resolved": 72,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 5
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://edel.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/24770?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000361862%253B300000000361286",
-              "company": "Fortinet",
-              "title": "Early Careers: Software Development Engineer"
-            },
-            {
-              "key": "url::https://nationwide.wd1.myworkdayjobs.com/en-US/Nationwide_Career/job/Ohio---Columbus-Three-Nationwide-Plaza/Specialist--Software-Engineer---IBM-ACE---ETL_100874?jobFamilyGroup=3eb794f2234901a1ead22609558af817&jobFamilyGroup=3eb794f22349010b4ad8f008558aec17&jobFamilyGroup=3eb794f223490110b63e3b09558a0018&jobFamilyGroup=010fc97c79ef01958999113ce9018de3&jobFamilyGroup=010fc97c79ef0177fae34ddee801c8e2&jobFamilyGroup=5a4038b043df01a5b35178dbc700fb73",
-              "company": "Nationwide",
-              "title": "Specialist, Software Engineer – IBM ACE & ETL"
-            },
-            {
-              "key": "url::https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/72872?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000425727%253B300000000425151%253B300000000425265%253B300000000425079",
-              "company": "Ford Motor Company",
-              "title": "Embedded Software Engineer-Audio"
-            },
-            {
-              "key": "url::https://search-careers.gm.com/en/jobs/jr-202623140/software-engineer-external-compute-application-software",
-              "company": "General Motors",
-              "title": "Software Engineer – External Compute & Application Software"
-            },
-            {
-              "key": "url::https://pnc.wd5.myworkdayjobs.com/en-US/External/job/Strongsville-Technology-Center-OH537/Software-Engineer_R239085-1?jobFamily=212fee894bd90164b34581093c073f99&jobFamily=4b200b4f2af41001146bb3e8d4c90000&jobFamily=212fee894bd9013a942ea8093c07099a&jobFamily=212fee894bd901220876ba093c07839a&jobFamily=212fee894bd901031a15ad093c07299a&jobFamily=212fee894bd901df68ffb6093c076b9a&jobFamily=212fee894bd9019952ef9f093c07dd99&jobFamily=212fee894bd901177dbcaf093c073b9a&jobFamily=ecfe462481801001145e795c333f0000&jobFamily=c1ad2fda60ec017e325c6b951411f60b&jobFamily=ecfe462481801001145e262a26f10000&jobFamily=212fee894bd901c1ed9faa093c07179a&jobFamily=212fee894bd901ec16608f093c077d99&jobFamily=212fee894bd90158e33b83093c074f99&jobFamily=212fee894bd90124378797093c07af99&jobFamily=212fee894bd9011ea81c88093c077599&jobFamily=212fee894bd9015ada10ac093c07219a&jobFamily=212fee894bd901572c4e93093c079799&jobFamily=6013e82a6ec8100114307d1f6c060000&jobFamily=212fee894bd901beb30a9e093c07d399&jobFamily=212fee894bd90147011d99093c07b799&jobFamily=212fee894bd9015f553fc8093c07d99a&jobFamily=212fee894bd901aca8ebbd093c079b9a&jobFamily=212fee894bd901bd2e7282093c074999&jobFamily=212fee894bd901293e1abd093c07959a&jobFamily=212fee894bd901eb936db5093c07619a&jobFamily=212fee894bd901377e7c90093c078799&jobFamily=212fee894bd901c1c9a6bd093c07999a&jobFamily=212fee894bd901851d8ca6093c07019a&jobFamily=212fee894bd901eaee8c95093c07a399&jobFamily=212fee894bd901a4777487093c076f99&jobFamily=212fee894bd901eb94d883093c075399&jobFamily=212fee894bd90135784480093c073999&jobFamily=b7ea20f03d8410015904e98868ae0000&jobFamily=b9bf0bd0833410011454dbc93e6a0000&jobFamily=4b200b4f2af41001146b266a894c0000&jobFamily=212fee894bd901c432d47c093c071d99&jobFamily=212fee894bd901371b08c6093c07cd9a&jobFamily=212fee894bd901eae8a5b6093c07699a&jobFamily=212fee894bd901be7be8b4093c075d9a&jobFamily=212fee894bd9018ae196b2093c074d9a&jobFamily=212fee894bd9010ab503a7093c07039a&jobFamily=212fee894bd90187ef12c2093c07b79a&jobFamily=212fee894bd90100a997c0093c07ad9a&jobFamily=212fee894bd901379851c0093c07ab9a",
-              "company": "PNC Financial Services",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "url::https://jobs.dayforcehcm.com/en-US/ibgllc/CANDIDATEPORTAL/jobs/2722",
-              "company": "Interactive Brokers",
-              "title": "Software Engineer III"
-            },
-            {
-              "key": "url::https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/USA---Redmond-WA/Software-Engineer-III---Release--STaRQ--Hybrid-_R30474?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
-              "company": "CrowdStrike",
-              "title": "Software Engineer III - Release, STaRQ (Hybrid)"
-            },
-            {
-              "key": "url::https://talentmanagementsolution.wd3.myworkdayjobs.com/en-US/perseus-careers/job/Remote---USA/Cloud-Infrastructure-Engineer_R55056",
-              "company": "Perseus Group",
-              "title": "Cloud Infrastructure Engineer"
-            },
-            {
-              "key": "url::https://geico.wd1.myworkdayjobs.com/en-US/External/job/Remote-United-States/Business-Intelligence-Analyst---Data-Engineer_R0066500?jobFamilyGroup=da128ce5a1dc103e7c09aaa3fe312266&jobFamilyGroup=da128ce5a1dc103e7c09883b6a69225e&jobFamilyGroup=da128ce5a1dc103e7c09d5b25f9b2270&jobFamilyGroup=a35ed0a458b310010910c29142fd0000&jobFamilyGroup=da128ce5a1dc103e7c0a4c431ef0228c&jobFamilyGroup=da128ce5a1dc103e7c09681bd6362254&jobFamilyGroup=da128ce5a1dc103e7c095dff8c072252&jobFamilyGroup=ae79925ebd2b0102286d7567eb01d3a6&jobFamilyGroup=0364bd6484100136135f34e6dc236dc6&jobFamilyGroup=da128ce5a1dc103e7c0a19e2d9b42280&jobFamilyGroup=ef62153ec48201538d885fb59b013d62&jobFamilyGroup=27e713fec23c0105408911130e0135ee&jobFamilyGroup=da128ce5a1dc103e7c0a12caa2d7227e&jobFamilyGroup=da128ce5a1dc103e7c0a64d74f712290&jobFamilyGroup=da128ce5a1dc103e7c0a3ed6ad582288&jobFamilyGroup=da128ce5a1dc103e7c0a0a42b49d227c&jobFamilyGroup=da128ce5a1dc103e7c09360126b82250&jobFamilyGroup=da128ce5a1dc103e7c092f21218e224e&jobFamilyGroup=da128ce5a1dc103e7c09250222d4224c&jobFamilyGroup=da128ce5a1dc103e7c091e289d24224a",
-              "company": "GEICO",
-              "title": "Business Intelligence Analyst / Data Engineer"
-            },
-            {
-              "key": "url::https://www.asml.com/en/careers/find-your-job/facilities-infrastructure-project-leader-j00355713",
-              "company": "ASML",
-              "title": "Facilities Infrastructure Project Leader"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 29.709,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 10,
-            "input_tokens": 14304,
-            "cached_input_tokens": 1851,
-            "output_tokens": 4009,
-            "reasoning_tokens": 1466,
-            "estimated_usd": 0.003268
-          },
-          "decisions": [
-            {
-              "key": "url::https://edel.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/24770?lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000361862%253B300000000361286",
-              "match_score": 78.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Early-career software development",
-                "REST APIs and JSON"
-              ],
-              "main_gaps": [
-                "POSIX threading",
-                "Networking fundamentals"
-              ]
-            },
-            {
-              "key": "url::https://nationwide.wd1.myworkdayjobs.com/en-US/Nationwide_Career/job/Ohio---Columbus-Three-Nationwide-Plaza/Specialist--Software-Engineer---IBM-ACE---ETL_100874?jobFamilyGroup=3eb794f2234901a1ead22609558af817&jobFamilyGroup=3eb794f22349010b4ad8f008558aec17&jobFamilyGroup=3eb794f223490110b63e3b09558a0018&jobFamilyGroup=010fc97c79ef01958999113ce9018de3&jobFamilyGroup=010fc97c79ef0177fae34ddee801c8e2&jobFamilyGroup=5a4038b043df01a5b35178dbc700fb73",
-              "match_score": 53.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "REST API integration",
-                "Data pipeline experience"
-              ],
-              "main_gaps": [
-                "IBM ACE and MQ",
-                "Informatica ETL"
-              ]
-            },
-            {
-              "key": "url::https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/72872?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000425727%253B300000000425151%253B300000000425265%253B300000000425079",
-              "match_score": 32.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Software integration",
-                "Root-cause debugging"
-              ],
-              "main_gaps": [
-                "Android audio framework",
-                "Automotive embedded experience"
-              ]
-            },
-            {
-              "key": "url::https://search-careers.gm.com/en/jobs/jr-202623140/software-engineer-external-compute-application-software",
-              "match_score": 64.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python and automated testing",
-                "CI/CD and integration"
-              ],
-              "main_gaps": [
-                "Vehicle network protocols",
-                "Two years test automation"
-              ]
-            },
-            {
-              "key": "url::https://pnc.wd5.myworkdayjobs.com/en-US/External/job/Strongsville-Technology-Center-OH537/Software-Engineer_R239085-1?jobFamily=212fee894bd90164b34581093c073f99&jobFamily=4b200b4f2af41001146bb3e8d4c90000&jobFamily=212fee894bd9013a942ea8093c07099a&jobFamily=212fee894bd901220876ba093c07839a&jobFamily=212fee894bd901031a15ad093c07299a&jobFamily=212fee894bd901df68ffb6093c076b9a&jobFamily=212fee894bd9019952ef9f093c07dd99&jobFamily=212fee894bd901177dbcaf093c073b9a&jobFamily=ecfe462481801001145e795c333f0000&jobFamily=c1ad2fda60ec017e325c6b951411f60b&jobFamily=ecfe462481801001145e262a26f10000&jobFamily=212fee894bd901c1ed9faa093c07179a&jobFamily=212fee894bd901ec16608f093c077d99&jobFamily=212fee894bd90158e33b83093c074f99&jobFamily=212fee894bd90124378797093c07af99&jobFamily=212fee894bd9011ea81c88093c077599&jobFamily=212fee894bd9015ada10ac093c07219a&jobFamily=212fee894bd901572c4e93093c079799&jobFamily=6013e82a6ec8100114307d1f6c060000&jobFamily=212fee894bd901beb30a9e093c07d399&jobFamily=212fee894bd90147011d99093c07b799&jobFamily=212fee894bd9015f553fc8093c07d99a&jobFamily=212fee894bd901aca8ebbd093c079b9a&jobFamily=212fee894bd901bd2e7282093c074999&jobFamily=212fee894bd901293e1abd093c07959a&jobFamily=212fee894bd901eb936db5093c07619a&jobFamily=212fee894bd901377e7c90093c078799&jobFamily=212fee894bd901c1c9a6bd093c07999a&jobFamily=212fee894bd901851d8ca6093c07019a&jobFamily=212fee894bd901eaee8c95093c07a399&jobFamily=212fee894bd901a4777487093c076f99&jobFamily=212fee894bd901eb94d883093c075399&jobFamily=212fee894bd90135784480093c073999&jobFamily=b7ea20f03d8410015904e98868ae0000&jobFamily=b9bf0bd0833410011454dbc93e6a0000&jobFamily=4b200b4f2af41001146b266a894c0000&jobFamily=212fee894bd901c432d47c093c071d99&jobFamily=212fee894bd901371b08c6093c07cd9a&jobFamily=212fee894bd901eae8a5b6093c07699a&jobFamily=212fee894bd901be7be8b4093c075d9a&jobFamily=212fee894bd9018ae196b2093c074d9a&jobFamily=212fee894bd9010ab503a7093c07039a&jobFamily=212fee894bd90187ef12c2093c07b79a&jobFamily=212fee894bd90100a997c0093c07ad9a&jobFamily=212fee894bd901379851c0093c07ab9a",
-              "match_score": 75.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack software delivery",
-                "Testing and debugging"
-              ],
-              "main_gaps": [
-                "Two years relevant experience"
-              ]
-            },
-            {
-              "key": "url::https://jobs.dayforcehcm.com/en-US/ibgllc/CANDIDATEPORTAL/jobs/2722",
-              "match_score": 43.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Backend service experience",
-                "Java listed in skills"
-              ],
-              "main_gaps": [
-                "3–7 years Java",
-                "Server-side Java expertise"
-              ]
-            },
-            {
-              "key": "url::https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/USA---Redmond-WA/Software-Engineer-III---Release--STaRQ--Hybrid-_R30474?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09",
-              "match_score": 54.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "CI/CD deployment experience",
-                "Automation and scripting"
-              ],
-              "main_gaps": [
-                "Release management experience",
-                "Multi-platform release ownership"
-              ]
-            },
-            {
-              "key": "url::https://talentmanagementsolution.wd3.myworkdayjobs.com/en-US/perseus-careers/job/Remote---USA/Cloud-Infrastructure-Engineer_R55056",
-              "match_score": 43.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "AWS deployment experience",
-                "Terraform and CI/CD"
-              ],
-              "main_gaps": [
-                "4+ years cloud infrastructure",
-                "Azure and security operations"
-              ]
-            },
-            {
-              "key": "url::https://geico.wd1.myworkdayjobs.com/en-US/External/job/Remote-United-States/Business-Intelligence-Analyst---Data-Engineer_R0066500?jobFamilyGroup=da128ce5a1dc103e7c09aaa3fe312266&jobFamilyGroup=da128ce5a1dc103e7c09883b6a69225e&jobFamilyGroup=da128ce5a1dc103e7c09d5b25f9b2270&jobFamilyGroup=a35ed0a458b310010910c29142fd0000&jobFamilyGroup=da128ce5a1dc103e7c0a4c431ef0228c&jobFamilyGroup=da128ce5a1dc103e7c09681bd6362254&jobFamilyGroup=da128ce5a1dc103e7c095dff8c072252&jobFamilyGroup=ae79925ebd2b0102286d7567eb01d3a6&jobFamilyGroup=0364bd6484100136135f34e6dc236dc6&jobFamilyGroup=da128ce5a1dc103e7c0a19e2d9b42280&jobFamilyGroup=ef62153ec48201538d885fb59b013d62&jobFamilyGroup=27e713fec23c0105408911130e0135ee&jobFamilyGroup=da128ce5a1dc103e7c0a12caa2d7227e&jobFamilyGroup=da128ce5a1dc103e7c0a64d74f712290&jobFamilyGroup=da128ce5a1dc103e7c0a3ed6ad582288&jobFamilyGroup=da128ce5a1dc103e7c0a0a42b49d227c&jobFamilyGroup=da128ce5a1dc103e7c09360126b82250&jobFamilyGroup=da128ce5a1dc103e7c092f21218e224e&jobFamilyGroup=da128ce5a1dc103e7c09250222d4224c&jobFamilyGroup=da128ce5a1dc103e7c091e289d24224a",
-              "match_score": 29.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Data workflow experience",
-                "Analytical evaluation work"
-              ],
-              "main_gaps": [
-                "Power BI semantic modeling",
-                "DAX and Power Query"
-              ]
-            },
-            {
-              "key": "url::https://www.asml.com/en/careers/find-your-job/facilities-infrastructure-project-leader-j00355713",
-              "match_score": 8.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Cross-functional collaboration"
-              ],
-              "main_gaps": [
-                "Facilities project planning",
-                "Plant layout and CAD"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26014912?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
-              "company": "American Express",
-              "title": "AI Engineer III"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 3.905,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3081,
-            "cached_input_tokens": 1988,
-            "output_tokens": 348,
-            "reasoning_tokens": 220,
-            "estimated_usd": 0.000303
-          },
-          "decisions": [
-            {
-              "key": "url::https://careers.americanexpress.com/en/sites/CX_1/job/26014912?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164",
-              "match_score": 77.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production agentic AI and RAG",
-                "LLM evaluation and deployment"
-              ],
-              "main_gaps": [
-                "3–5+ years’ experience",
-                "Kafka/event-driven architecture"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 3,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://vanguard.wd5.myworkdayjobs.com/en-US/vanguard_external/job/Malvern-PA/Full-Stack-Engineer---AI-Automation---Cloud-Engineering_183380-1",
-              "company": "Vanguard",
-              "title": "Full Stack Engineer – AI Automation & Cloud Engineering"
-            },
-            {
-              "key": "url::https://careers.moodys.com/en/job/golden/machine-learning-engineer/49841/99815867328",
-              "company": "Moody's",
-              "title": "Machine Learning Engineer"
-            },
-            {
-              "key": "url::https://intapp.wd1.myworkdayjobs.com/en-US/Intapp/job/US-NY-New-York/Cloud-Platform-Engineer_R2025433-1",
-              "company": "Intapp",
-              "title": "Cloud Platform Engineer"
-            },
-            {
-              "key": "url::https://careers.appliedmaterials.com/careers/job/790319018573?domain=appliedmaterials.com&hl=en&triggerGoButton=true",
-              "company": "Applied Materials",
-              "title": "Global Software Support Engineer I"
-            },
-            {
-              "key": "url::https://broadcom.wd1.myworkdayjobs.com/en-US/External_Career/job/USA-NY-Melville/Client-Services-Consultant---MSD-Software-Compliance_R027465",
-              "company": "Broadcom",
-              "title": "Client Services Consultant – MSD Software Compliance"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 18.032,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 5,
-            "input_tokens": 7157,
-            "cached_input_tokens": 2724,
-            "output_tokens": 1513,
-            "reasoning_tokens": 908,
-            "estimated_usd": 0.001227
-          },
-          "decisions": [
-            {
-              "key": "url::https://vanguard.wd5.myworkdayjobs.com/en-US/vanguard_external/job/Malvern-PA/Full-Stack-Engineer---AI-Automation---Cloud-Engineering_183380-1",
-              "match_score": 76.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "AWS and CI/CD",
-                "APIs and microservices"
-              ],
-              "main_gaps": [
-                "Three years related experience"
-              ]
-            },
-            {
-              "key": "url::https://careers.moodys.com/en/job/golden/machine-learning-engineer/49841/99815867328",
-              "match_score": 65.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "ML evaluation pipelines",
-                "Production AI systems"
-              ],
-              "main_gaps": [
-                "Computer vision deployment",
-                "Two years ML experience"
-              ]
-            },
-            {
-              "key": "url::https://intapp.wd1.myworkdayjobs.com/en-US/Intapp/job/US-NY-New-York/Cloud-Platform-Engineer_R2025433-1",
-              "match_score": 65.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "LLM infrastructure",
-                "AWS and CI/CD"
-              ],
-              "main_gaps": [
-                "Kubernetes operations",
-                "Terraform and GitOps"
-              ]
-            },
-            {
-              "key": "url::https://careers.appliedmaterials.com/careers/job/790319018573?domain=appliedmaterials.com&hl=en&triggerGoButton=true",
-              "match_score": 55.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Software troubleshooting",
-                "Root-cause analysis"
-              ],
-              "main_gaps": [
-                "Customer equipment software support"
-              ]
-            },
-            {
-              "key": "url::https://broadcom.wd1.myworkdayjobs.com/en-US/External_Career/job/USA-NY-Melville/Client-Services-Consultant---MSD-Software-Compliance_R027465",
-              "match_score": 30.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Analytical problem-solving"
-              ],
-              "main_gaps": [
-                "Software licensing compliance",
-                "Contract audit experience"
               ]
             }
           ]
