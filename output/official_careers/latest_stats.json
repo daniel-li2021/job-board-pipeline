@@ -1,17 +1,17 @@
 {
-  "run_at": "2026-11-08T00:46:17.325756+00:00",
-  "elapsed_seconds": 156.561,
-  "scrape_elapsed_seconds": 899.51,
+  "run_at": "2026-11-08T15:46:05.633773+00:00",
+  "elapsed_seconds": 152.925,
+  "scrape_elapsed_seconds": 888.385,
   "source_raw": {
     "Google": 255,
-    "Amazon": 740,
+    "Amazon": 738,
     "Apple": 296,
     "Microsoft": 197,
     "NVIDIA": 590,
     "Salesforce": 286,
     "Adobe": 123,
-    "Meta": 856,
-    "TikTok": 711,
+    "Meta": 855,
+    "TikTok": 710,
     "Uber": 214,
     "DoorDash": 438,
     "Snap": 99,
@@ -21,8 +21,8 @@
     "Bloomberg": 59,
     "JPMorgan Chase": 608,
     "Capital One": 251,
-    "Oracle": 520,
-    "Walmart Global Tech": 363,
+    "Oracle": 516,
+    "Walmart Global Tech": 365,
     "Cloudflare": 461,
     "Stripe": 421,
     "Coinbase": 207,
@@ -32,8 +32,8 @@
     "Discord": 27,
     "Asana": 74,
     "Brex": 255,
-    "Samsara": 277,
-    "Lyft": 93,
+    "Samsara": 276,
+    "Lyft": 92,
     "Spotify": 61,
     "Ramp": 154,
     "Notion": 78,
@@ -44,7 +44,7 @@
     "HPE": 376,
     "Disney": 97,
     "eBay": 42,
-    "Qualcomm": 126,
+    "Qualcomm": 125,
     "AMD": 563,
     "Zoom": 27,
     "Pure Storage": 221,
@@ -53,20 +53,20 @@
     "Airbnb": 111,
     "Anthropic": 544,
     "AppLovin": 32,
-    "ByteDance": 461,
+    "ByteDance": 458,
     "Chime": 72,
     "Dell": 112,
     "Dropbox": 22,
-    "Expedia Group": 49,
+    "Expedia Group": 48,
     "HubSpot": 13,
     "Instacart": 82,
-    "Intel": 190,
+    "Intel": 189,
     "MathWorks": 37,
     "MongoDB": 237,
     "Morgan Stanley": 102,
     "NetApp": 90,
     "Netflix": 57,
-    "OpenAI": 660,
+    "OpenAI": 657,
     "Palantir": 239,
     "PayPal": 60,
     "Reddit": 143,
@@ -75,9 +75,9 @@
     "Block / Square": 182,
     "Two Sigma": 42,
     "Verkada": 275,
-    "Visa": 122,
+    "Visa": 121,
     "WeRide": 9,
-    "Workday": 137,
+    "Workday": 136,
     "Zillow": 51,
     "Zscaler": 227,
     "Chewy": 3,
@@ -86,18 +86,18 @@
     "Equinix": 72,
     "F5": 1,
     "IXL Learning": 101,
-    "Wells Fargo": 66,
+    "Wells Fargo": 59,
     "Yahoo": 49,
     "Ansys": 20,
     "Flex": 105,
     "IQVIA": 13,
-    "Johnson & Johnson": 189,
+    "Johnson & Johnson": 187,
     "Nasdaq": 13,
     "PointClickCare": 74,
     "Stryker": 140,
     "TransUnion": 27,
-    "Travelers": 84,
-    "Verizon": 21,
+    "Travelers": 82,
+    "Verizon": 18,
     "Yext": 17
   },
   "query_diagnostics": {
@@ -114,7 +114,7 @@
         "first_pass_survivors": 120,
         "original_postings_resolved": 120,
         "jds_resolved": 120,
-        "elapsed_seconds": 4.039
+        "elapsed_seconds": 4.2
       },
       {
         "query": "\"Machine Learning Engineer\"",
@@ -128,7 +128,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.011
+        "elapsed_seconds": 2.019
       },
       {
         "query": "\"Data Scientist\"",
@@ -142,7 +142,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 2.058
+        "elapsed_seconds": 2.025
       },
       {
         "query": "\"Solutions Architect\"",
@@ -156,7 +156,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 0.197
+        "elapsed_seconds": 0.212
       },
       {
         "query": "\"Data Engineer\"",
@@ -170,7 +170,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 0.206
+        "elapsed_seconds": 0.211
       },
       {
         "query": "\"Platform Engineer\"",
@@ -184,7 +184,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 5,
-        "elapsed_seconds": 1.984
+        "elapsed_seconds": 2.11
       },
       {
         "query": "\"Full Stack Engineer\"",
@@ -198,7 +198,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.99
+        "elapsed_seconds": 2.185
       },
       {
         "query": "\"Forward Deployed Engineer\"",
@@ -212,7 +212,7 @@
         "first_pass_survivors": 26,
         "original_postings_resolved": 26,
         "jds_resolved": 26,
-        "elapsed_seconds": 2.203
+        "elapsed_seconds": 2.049
       },
       {
         "query": "\"Software Engineer\"",
@@ -226,7 +226,7 @@
         "first_pass_survivors": 67,
         "original_postings_resolved": 67,
         "jds_resolved": 67,
-        "elapsed_seconds": 4.816
+        "elapsed_seconds": 5.025
       },
       {
         "query": "\"Infrastructure Engineer\"",
@@ -240,7 +240,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 2.029
+        "elapsed_seconds": 2.045
       },
       {
         "query": "\"Software Engineer III\"",
@@ -254,7 +254,7 @@
         "first_pass_survivors": 17,
         "original_postings_resolved": 17,
         "jds_resolved": 17,
-        "elapsed_seconds": 2.174
+        "elapsed_seconds": 2.25
       },
       {
         "query": "\"Web Solutions Engineer\"",
@@ -268,7 +268,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.302
+        "elapsed_seconds": 1.445
       },
       {
         "query": "\"DeepMind\"",
@@ -282,7 +282,7 @@
         "first_pass_survivors": 15,
         "original_postings_resolved": 15,
         "jds_resolved": 15,
-        "elapsed_seconds": 1.336
+        "elapsed_seconds": 1.395
       }
     ],
     "amazon": [
@@ -298,7 +298,7 @@
         "first_pass_survivors": 120,
         "original_postings_resolved": 120,
         "jds_resolved": 120,
-        "elapsed_seconds": 4.469
+        "elapsed_seconds": 4.852
       },
       {
         "query": "machine learning engineer",
@@ -306,13 +306,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 56,
-        "unique_jobs": 56,
-        "unique_contribution": 53,
-        "first_pass_survivors": 53,
-        "original_postings_resolved": 53,
-        "jds_resolved": 53,
-        "elapsed_seconds": 1.697
+        "raw_jobs": 55,
+        "unique_jobs": 55,
+        "unique_contribution": 52,
+        "first_pass_survivors": 52,
+        "original_postings_resolved": 52,
+        "jds_resolved": 52,
+        "elapsed_seconds": 1.747
       },
       {
         "query": "data scientist",
@@ -320,13 +320,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 56,
-        "unique_jobs": 56,
-        "unique_contribution": 56,
-        "first_pass_survivors": 56,
-        "original_postings_resolved": 56,
-        "jds_resolved": 56,
-        "elapsed_seconds": 1.849
+        "raw_jobs": 55,
+        "unique_jobs": 55,
+        "unique_contribution": 55,
+        "first_pass_survivors": 55,
+        "original_postings_resolved": 55,
+        "jds_resolved": 55,
+        "elapsed_seconds": 1.74
       },
       {
         "query": "solutions architect",
@@ -340,7 +340,7 @@
         "first_pass_survivors": 58,
         "original_postings_resolved": 58,
         "jds_resolved": 58,
-        "elapsed_seconds": 1.986
+        "elapsed_seconds": 2.106
       },
       {
         "query": "data engineer",
@@ -354,7 +354,7 @@
         "first_pass_survivors": 56,
         "original_postings_resolved": 56,
         "jds_resolved": 56,
-        "elapsed_seconds": 2.262
+        "elapsed_seconds": 2.04
       },
       {
         "query": "platform engineer",
@@ -368,7 +368,7 @@
         "first_pass_survivors": 47,
         "original_postings_resolved": 47,
         "jds_resolved": 47,
-        "elapsed_seconds": 1.543
+        "elapsed_seconds": 1.947
       },
       {
         "query": "full stack engineer",
@@ -382,7 +382,7 @@
         "first_pass_survivors": 15,
         "original_postings_resolved": 15,
         "jds_resolved": 15,
-        "elapsed_seconds": 0.454
+        "elapsed_seconds": 0.379
       },
       {
         "query": "forward deployed engineer",
@@ -396,7 +396,7 @@
         "first_pass_survivors": 39,
         "original_postings_resolved": 39,
         "jds_resolved": 39,
-        "elapsed_seconds": 0.965
+        "elapsed_seconds": 1.025
       },
       {
         "query": "software engineer",
@@ -410,7 +410,7 @@
         "first_pass_survivors": 207,
         "original_postings_resolved": 207,
         "jds_resolved": 207,
-        "elapsed_seconds": 7.942
+        "elapsed_seconds": 7.956
       },
       {
         "query": "software development engineer",
@@ -424,7 +424,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.631
+        "elapsed_seconds": 1.885
       },
       {
         "query": "systems development engineer",
@@ -438,7 +438,7 @@
         "first_pass_survivors": 52,
         "original_postings_resolved": 52,
         "jds_resolved": 52,
-        "elapsed_seconds": 2.531
+        "elapsed_seconds": 2.023
       },
       {
         "query": "site reliability engineer",
@@ -452,7 +452,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 0.218
+        "elapsed_seconds": 0.225
       },
       {
         "query": "applied scientist",
@@ -466,7 +466,7 @@
         "first_pass_survivors": 36,
         "original_postings_resolved": 36,
         "jds_resolved": 36,
-        "elapsed_seconds": 1.289
+        "elapsed_seconds": 1.287
       }
     ],
     "apple": [
@@ -482,7 +482,7 @@
         "first_pass_survivors": 120,
         "original_postings_resolved": 120,
         "jds_resolved": 120,
-        "elapsed_seconds": 4.752
+        "elapsed_seconds": 4.716
       },
       {
         "query": "machine learning engineer",
@@ -496,7 +496,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 5,
-        "elapsed_seconds": 2.198
+        "elapsed_seconds": 2.368
       },
       {
         "query": "data scientist",
@@ -510,7 +510,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 2.257
+        "elapsed_seconds": 2.453
       },
       {
         "query": "solutions architect",
@@ -524,7 +524,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 2.365
+        "elapsed_seconds": 4.414
       },
       {
         "query": "data engineer",
@@ -538,7 +538,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.307
+        "elapsed_seconds": 3.776
       },
       {
         "query": "platform engineer",
@@ -552,7 +552,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.259
+        "elapsed_seconds": 2.412
       },
       {
         "query": "full stack engineer",
@@ -566,7 +566,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.254
+        "elapsed_seconds": 2.322
       },
       {
         "query": "forward deployed engineer",
@@ -580,7 +580,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.223
+        "elapsed_seconds": 2.332
       },
       {
         "query": "software engineer",
@@ -594,7 +594,7 @@
         "first_pass_survivors": 121,
         "original_postings_resolved": 121,
         "jds_resolved": 121,
-        "elapsed_seconds": 8.864
+        "elapsed_seconds": 9.125
       },
       {
         "query": "apps-and-frameworks-SFTWR-AF",
@@ -608,7 +608,7 @@
         "first_pass_survivors": 45,
         "original_postings_resolved": 45,
         "jds_resolved": 45,
-        "elapsed_seconds": 2.271
+        "elapsed_seconds": 2.338
       }
     ],
     "microsoft": [
@@ -624,7 +624,7 @@
         "first_pass_survivors": 60,
         "original_postings_resolved": 60,
         "jds_resolved": 60,
-        "elapsed_seconds": 26.071
+        "elapsed_seconds": 26.742
       },
       {
         "query": "machine learning engineer",
@@ -638,7 +638,7 @@
         "first_pass_survivors": 12,
         "original_postings_resolved": 12,
         "jds_resolved": 12,
-        "elapsed_seconds": 6.448
+        "elapsed_seconds": 6.477
       },
       {
         "query": "data scientist",
@@ -652,7 +652,7 @@
         "first_pass_survivors": 27,
         "original_postings_resolved": 27,
         "jds_resolved": 27,
-        "elapsed_seconds": 12.462
+        "elapsed_seconds": 11.991
       },
       {
         "query": "solutions architect",
@@ -666,7 +666,7 @@
         "first_pass_survivors": 16,
         "original_postings_resolved": 16,
         "jds_resolved": 16,
-        "elapsed_seconds": 7.593
+        "elapsed_seconds": 7.587
       },
       {
         "query": "data engineer",
@@ -680,7 +680,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.305
+        "elapsed_seconds": 1.314
       },
       {
         "query": "platform engineer",
@@ -694,7 +694,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.32
+        "elapsed_seconds": 1.393
       },
       {
         "query": "full stack engineer",
@@ -708,7 +708,7 @@
         "first_pass_survivors": 12,
         "original_postings_resolved": 12,
         "jds_resolved": 12,
-        "elapsed_seconds": 6.167
+        "elapsed_seconds": 5.934
       },
       {
         "query": "forward deployed engineer",
@@ -722,7 +722,7 @@
         "first_pass_survivors": 22,
         "original_postings_resolved": 22,
         "jds_resolved": 22,
-        "elapsed_seconds": 10.064
+        "elapsed_seconds": 10.737
       },
       {
         "query": "software engineer",
@@ -736,7 +736,7 @@
         "first_pass_survivors": 48,
         "original_postings_resolved": 48,
         "jds_resolved": 48,
-        "elapsed_seconds": 24.67
+        "elapsed_seconds": 24.374
       }
     ],
     "nvidia": [
@@ -752,7 +752,7 @@
         "first_pass_survivors": 120,
         "original_postings_resolved": 120,
         "jds_resolved": 120,
-        "elapsed_seconds": 76.976
+        "elapsed_seconds": 68.652
       },
       {
         "query": "machine learning engineer",
@@ -766,7 +766,7 @@
         "first_pass_survivors": 51,
         "original_postings_resolved": 51,
         "jds_resolved": 51,
-        "elapsed_seconds": 29.234
+        "elapsed_seconds": 26.807
       },
       {
         "query": "data scientist",
@@ -780,7 +780,7 @@
         "first_pass_survivors": 45,
         "original_postings_resolved": 45,
         "jds_resolved": 45,
-        "elapsed_seconds": 25.303
+        "elapsed_seconds": 29.621
       },
       {
         "query": "solutions architect",
@@ -794,7 +794,7 @@
         "first_pass_survivors": 42,
         "original_postings_resolved": 42,
         "jds_resolved": 42,
-        "elapsed_seconds": 22.535
+        "elapsed_seconds": 25.035
       },
       {
         "query": "data engineer",
@@ -808,7 +808,7 @@
         "first_pass_survivors": 38,
         "original_postings_resolved": 38,
         "jds_resolved": 38,
-        "elapsed_seconds": 30.847
+        "elapsed_seconds": 21.138
       },
       {
         "query": "platform engineer",
@@ -822,7 +822,7 @@
         "first_pass_survivors": 52,
         "original_postings_resolved": 52,
         "jds_resolved": 52,
-        "elapsed_seconds": 28.729
+        "elapsed_seconds": 28.311
       },
       {
         "query": "full stack engineer",
@@ -836,7 +836,7 @@
         "first_pass_survivors": 38,
         "original_postings_resolved": 38,
         "jds_resolved": 38,
-        "elapsed_seconds": 23.621
+        "elapsed_seconds": 20.055
       },
       {
         "query": "forward deployed engineer",
@@ -850,7 +850,7 @@
         "first_pass_survivors": 27,
         "original_postings_resolved": 27,
         "jds_resolved": 27,
-        "elapsed_seconds": 18.561
+        "elapsed_seconds": 14.264
       },
       {
         "query": "software engineer",
@@ -860,11 +860,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 240,
         "unique_jobs": 240,
-        "unique_contribution": 154,
-        "first_pass_survivors": 154,
-        "original_postings_resolved": 154,
-        "jds_resolved": 154,
-        "elapsed_seconds": 117.653
+        "unique_contribution": 153,
+        "first_pass_survivors": 153,
+        "original_postings_resolved": 153,
+        "jds_resolved": 153,
+        "elapsed_seconds": 97.973
       },
       {
         "query": "infrastructure engineer",
@@ -874,11 +874,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 23,
-        "first_pass_survivors": 23,
-        "original_postings_resolved": 23,
-        "jds_resolved": 23,
-        "elapsed_seconds": 15.5
+        "unique_contribution": 24,
+        "first_pass_survivors": 24,
+        "original_postings_resolved": 24,
+        "jds_resolved": 24,
+        "elapsed_seconds": 14.977
       }
     ],
     "salesforce": [
@@ -894,7 +894,7 @@
         "first_pass_survivors": 111,
         "original_postings_resolved": 111,
         "jds_resolved": 111,
-        "elapsed_seconds": 46.732
+        "elapsed_seconds": 45.288
       },
       {
         "query": "machine learning engineer",
@@ -908,7 +908,7 @@
         "first_pass_survivors": 17,
         "original_postings_resolved": 17,
         "jds_resolved": 17,
-        "elapsed_seconds": 8.75
+        "elapsed_seconds": 8.696
       },
       {
         "query": "data scientist",
@@ -922,7 +922,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 8,
-        "elapsed_seconds": 3.39
+        "elapsed_seconds": 3.701
       },
       {
         "query": "solutions architect",
@@ -936,7 +936,7 @@
         "first_pass_survivors": 18,
         "original_postings_resolved": 18,
         "jds_resolved": 18,
-        "elapsed_seconds": 9.358
+        "elapsed_seconds": 9.406
       },
       {
         "query": "data engineer",
@@ -950,7 +950,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.233
+        "elapsed_seconds": 2.295
       },
       {
         "query": "platform engineer",
@@ -964,7 +964,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.237
+        "elapsed_seconds": 2.285
       },
       {
         "query": "full stack engineer",
@@ -978,7 +978,7 @@
         "first_pass_survivors": 21,
         "original_postings_resolved": 21,
         "jds_resolved": 21,
-        "elapsed_seconds": 10.107
+        "elapsed_seconds": 11.067
       },
       {
         "query": "forward deployed engineer",
@@ -992,7 +992,7 @@
         "first_pass_survivors": 10,
         "original_postings_resolved": 10,
         "jds_resolved": 10,
-        "elapsed_seconds": 6.1
+        "elapsed_seconds": 7.023
       },
       {
         "query": "software engineer",
@@ -1006,7 +1006,7 @@
         "first_pass_survivors": 101,
         "original_postings_resolved": 101,
         "jds_resolved": 101,
-        "elapsed_seconds": 50.986
+        "elapsed_seconds": 53.233
       },
       {
         "query": "software engineering mts",
@@ -1020,7 +1020,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.471
+        "elapsed_seconds": 0.452
       }
     ],
     "adobe": [
@@ -1036,7 +1036,7 @@
         "first_pass_survivors": 119,
         "original_postings_resolved": 119,
         "jds_resolved": 119,
-        "elapsed_seconds": 53.922
+        "elapsed_seconds": 60.13
       },
       {
         "query": "machine learning engineer",
@@ -1050,7 +1050,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.596
+        "elapsed_seconds": 2.159
       },
       {
         "query": "data scientist",
@@ -1064,7 +1064,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.525
+        "elapsed_seconds": 0.516
       },
       {
         "query": "solutions architect",
@@ -1078,7 +1078,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 4.054
+        "elapsed_seconds": 5.113
       },
       {
         "query": "data engineer",
@@ -1092,7 +1092,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.258
+        "elapsed_seconds": 2.455
       },
       {
         "query": "platform engineer",
@@ -1106,7 +1106,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.295
+        "elapsed_seconds": 2.204
       },
       {
         "query": "full stack engineer",
@@ -1120,7 +1120,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.546
+        "elapsed_seconds": 0.693
       },
       {
         "query": "forward deployed engineer",
@@ -1134,7 +1134,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.649
+        "elapsed_seconds": 2.262
       },
       {
         "query": "software engineer",
@@ -1148,7 +1148,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 3.284
+        "elapsed_seconds": 3.611
       },
       {
         "query": "software development engineer",
@@ -1162,7 +1162,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.259
+        "elapsed_seconds": 2.281
       }
     ],
     "meta": [
@@ -1178,7 +1178,7 @@
         "first_pass_survivors": 544,
         "original_postings_resolved": 544,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.007
+        "elapsed_seconds": 0.733
       },
       {
         "query": "machine learning engineer",
@@ -1192,7 +1192,7 @@
         "first_pass_survivors": 29,
         "original_postings_resolved": 29,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.973
+        "elapsed_seconds": 0.847
       },
       {
         "query": "data scientist",
@@ -1206,7 +1206,7 @@
         "first_pass_survivors": 52,
         "original_postings_resolved": 52,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.864
+        "elapsed_seconds": 0.677
       },
       {
         "query": "solutions architect",
@@ -1220,7 +1220,7 @@
         "first_pass_survivors": 31,
         "original_postings_resolved": 31,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.902
+        "elapsed_seconds": 0.594
       },
       {
         "query": "data engineer",
@@ -1234,7 +1234,7 @@
         "first_pass_survivors": 156,
         "original_postings_resolved": 156,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.025
+        "elapsed_seconds": 1.002
       },
       {
         "query": "platform engineer",
@@ -1248,7 +1248,7 @@
         "first_pass_survivors": 29,
         "original_postings_resolved": 29,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.779
+        "elapsed_seconds": 0.929
       },
       {
         "query": "full stack engineer",
@@ -1256,13 +1256,13 @@
         "page_budget": 1,
         "pages_fetched": 1,
         "stop_reason": "page_budget",
-        "raw_jobs": 53,
-        "unique_jobs": 53,
-        "unique_contribution": 1,
-        "first_pass_survivors": 1,
-        "original_postings_resolved": 1,
+        "raw_jobs": 52,
+        "unique_jobs": 52,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.753
+        "elapsed_seconds": 0.81
       },
       {
         "query": "forward deployed engineer",
@@ -1276,7 +1276,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.826
+        "elapsed_seconds": 0.692
       },
       {
         "query": "software engineer",
@@ -1284,13 +1284,13 @@
         "page_budget": 1,
         "pages_fetched": 1,
         "stop_reason": "page_budget",
-        "raw_jobs": 439,
-        "unique_jobs": 439,
+        "raw_jobs": 438,
+        "unique_jobs": 438,
         "unique_contribution": 14,
         "first_pass_survivors": 14,
         "original_postings_resolved": 14,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.841
+        "elapsed_seconds": 0.554
       }
     ],
     "tiktok": [
@@ -1306,7 +1306,7 @@
         "first_pass_survivors": 199,
         "original_postings_resolved": 199,
         "jds_resolved": 199,
-        "elapsed_seconds": 5.023
+        "elapsed_seconds": 4.353
       },
       {
         "query": "machine learning engineer",
@@ -1316,11 +1316,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 150,
         "unique_jobs": 150,
-        "unique_contribution": 133,
-        "first_pass_survivors": 133,
-        "original_postings_resolved": 133,
-        "jds_resolved": 133,
-        "elapsed_seconds": 2.866
+        "unique_contribution": 131,
+        "first_pass_survivors": 131,
+        "original_postings_resolved": 131,
+        "jds_resolved": 131,
+        "elapsed_seconds": 2.924
       },
       {
         "query": "data scientist",
@@ -1330,11 +1330,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 150,
         "unique_jobs": 150,
-        "unique_contribution": 110,
-        "first_pass_survivors": 110,
-        "original_postings_resolved": 110,
-        "jds_resolved": 110,
-        "elapsed_seconds": 2.652
+        "unique_contribution": 111,
+        "first_pass_survivors": 111,
+        "original_postings_resolved": 111,
+        "jds_resolved": 111,
+        "elapsed_seconds": 2.987
       },
       {
         "query": "solutions architect",
@@ -1348,7 +1348,7 @@
         "first_pass_survivors": 76,
         "original_postings_resolved": 76,
         "jds_resolved": 76,
-        "elapsed_seconds": 3.553
+        "elapsed_seconds": 3.434
       },
       {
         "query": "data engineer",
@@ -1358,11 +1358,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 150,
         "unique_jobs": 150,
-        "unique_contribution": 61,
-        "first_pass_survivors": 61,
-        "original_postings_resolved": 61,
-        "jds_resolved": 61,
-        "elapsed_seconds": 3.052
+        "unique_contribution": 62,
+        "first_pass_survivors": 62,
+        "original_postings_resolved": 62,
+        "jds_resolved": 62,
+        "elapsed_seconds": 2.474
       },
       {
         "query": "platform engineer",
@@ -1372,11 +1372,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 150,
         "unique_jobs": 150,
-        "unique_contribution": 61,
-        "first_pass_survivors": 61,
-        "original_postings_resolved": 61,
-        "jds_resolved": 61,
-        "elapsed_seconds": 3.103
+        "unique_contribution": 60,
+        "first_pass_survivors": 60,
+        "original_postings_resolved": 60,
+        "jds_resolved": 60,
+        "elapsed_seconds": 2.503
       },
       {
         "query": "full stack engineer",
@@ -1390,7 +1390,7 @@
         "first_pass_survivors": 24,
         "original_postings_resolved": 24,
         "jds_resolved": 24,
-        "elapsed_seconds": 1.587
+        "elapsed_seconds": 1.828
       },
       {
         "query": "forward deployed engineer",
@@ -1404,7 +1404,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.563
+        "elapsed_seconds": 0.588
       },
       {
         "query": "software engineer",
@@ -1418,7 +1418,7 @@
         "first_pass_survivors": 47,
         "original_postings_resolved": 47,
         "jds_resolved": 47,
-        "elapsed_seconds": 3.596
+        "elapsed_seconds": 3.473
       }
     ],
     "uber": [
@@ -1434,7 +1434,7 @@
         "first_pass_survivors": 106,
         "original_postings_resolved": 106,
         "jds_resolved": 106,
-        "elapsed_seconds": 37.877
+        "elapsed_seconds": 40.05
       },
       {
         "query": "machine learning engineer",
@@ -1448,7 +1448,7 @@
         "first_pass_survivors": 19,
         "original_postings_resolved": 19,
         "jds_resolved": 19,
-        "elapsed_seconds": 8.359
+        "elapsed_seconds": 8.211
       },
       {
         "query": "data scientist",
@@ -1462,7 +1462,7 @@
         "first_pass_survivors": 14,
         "original_postings_resolved": 14,
         "jds_resolved": 14,
-        "elapsed_seconds": 5.373
+        "elapsed_seconds": 5.681
       },
       {
         "query": "solutions architect",
@@ -1476,7 +1476,7 @@
         "first_pass_survivors": 17,
         "original_postings_resolved": 17,
         "jds_resolved": 17,
-        "elapsed_seconds": 6.973
+        "elapsed_seconds": 7.556
       },
       {
         "query": "data engineer",
@@ -1490,7 +1490,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 8,
-        "elapsed_seconds": 4.794
+        "elapsed_seconds": 4.927
       },
       {
         "query": "platform engineer",
@@ -1504,7 +1504,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 3.533
+        "elapsed_seconds": 3.914
       },
       {
         "query": "full stack engineer",
@@ -1513,12 +1513,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 60,
-        "unique_jobs": 59,
+        "unique_jobs": 60,
         "unique_contribution": 11,
         "first_pass_survivors": 11,
         "original_postings_resolved": 11,
         "jds_resolved": 11,
-        "elapsed_seconds": 5.54
+        "elapsed_seconds": 6.196
       },
       {
         "query": "forward deployed engineer",
@@ -1532,7 +1532,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 4.161
+        "elapsed_seconds": 4.502
       },
       {
         "query": "software engineer",
@@ -1546,7 +1546,7 @@
         "first_pass_survivors": 29,
         "original_postings_resolved": 29,
         "jds_resolved": 29,
-        "elapsed_seconds": 14.953
+        "elapsed_seconds": 15.087
       }
     ],
     "snap": [
@@ -1562,7 +1562,7 @@
         "first_pass_survivors": 64,
         "original_postings_resolved": 64,
         "jds_resolved": 64,
-        "elapsed_seconds": 31.334
+        "elapsed_seconds": 32.275
       },
       {
         "query": "machine learning engineer",
@@ -1576,7 +1576,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 4.141
+        "elapsed_seconds": 3.915
       },
       {
         "query": "data scientist",
@@ -1590,7 +1590,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.765
+        "elapsed_seconds": 0.638
       },
       {
         "query": "solutions architect",
@@ -1604,7 +1604,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 8,
-        "elapsed_seconds": 5.729
+        "elapsed_seconds": 5.607
       },
       {
         "query": "data engineer",
@@ -1618,7 +1618,7 @@
         "first_pass_survivors": 10,
         "original_postings_resolved": 10,
         "jds_resolved": 10,
-        "elapsed_seconds": 6.964
+        "elapsed_seconds": 6.235
       },
       {
         "query": "platform engineer",
@@ -1632,7 +1632,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 4.093
+        "elapsed_seconds": 4.047
       },
       {
         "query": "full stack engineer",
@@ -1646,7 +1646,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 1.82
+        "elapsed_seconds": 1.975
       },
       {
         "query": "forward deployed engineer",
@@ -1660,7 +1660,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.599
+        "elapsed_seconds": 0.643
       },
       {
         "query": "software engineer",
@@ -1674,7 +1674,7 @@
         "first_pass_survivors": 7,
         "original_postings_resolved": 7,
         "jds_resolved": 7,
-        "elapsed_seconds": 7.849
+        "elapsed_seconds": 8.047
       }
     ],
     "servicenow": [
@@ -1690,7 +1690,7 @@
         "first_pass_survivors": 328,
         "original_postings_resolved": 328,
         "jds_resolved": 328,
-        "elapsed_seconds": 190.164
+        "elapsed_seconds": 196.336
       },
       {
         "query": "machine learning engineer",
@@ -1704,7 +1704,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.063
+        "elapsed_seconds": 1.092
       },
       {
         "query": "data scientist",
@@ -1718,7 +1718,7 @@
         "first_pass_survivors": 10,
         "original_postings_resolved": 10,
         "jds_resolved": 10,
-        "elapsed_seconds": 6.773
+        "elapsed_seconds": 7.114
       },
       {
         "query": "solutions architect",
@@ -1732,7 +1732,7 @@
         "first_pass_survivors": 72,
         "original_postings_resolved": 72,
         "jds_resolved": 72,
-        "elapsed_seconds": 43.272
+        "elapsed_seconds": 45.094
       },
       {
         "query": "data engineer",
@@ -1746,7 +1746,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.031
+        "elapsed_seconds": 2.0
       },
       {
         "query": "platform engineer",
@@ -1760,7 +1760,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 5.339
+        "elapsed_seconds": 5.592
       },
       {
         "query": "full stack engineer",
@@ -1774,7 +1774,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 0.997
+        "elapsed_seconds": 1.037
       },
       {
         "query": "forward deployed engineer",
@@ -1788,7 +1788,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.436
+        "elapsed_seconds": 0.459
       },
       {
         "query": "software engineer",
@@ -1802,7 +1802,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 3.434
+        "elapsed_seconds": 3.518
       }
     ],
     "bloomberg": [
@@ -1818,7 +1818,7 @@
         "first_pass_survivors": 29,
         "original_postings_resolved": 29,
         "jds_resolved": 29,
-        "elapsed_seconds": 41.679
+        "elapsed_seconds": 43.628
       },
       {
         "query": "machine learning engineer",
@@ -1832,7 +1832,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.504
+        "elapsed_seconds": 4.785
       },
       {
         "query": "data scientist",
@@ -1846,7 +1846,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.585
+        "elapsed_seconds": 5.022
       },
       {
         "query": "solutions architect",
@@ -1860,7 +1860,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.489
+        "elapsed_seconds": 4.842
       },
       {
         "query": "data engineer",
@@ -1874,7 +1874,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.481
+        "elapsed_seconds": 5.113
       },
       {
         "query": "platform engineer",
@@ -1888,7 +1888,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.408
+        "elapsed_seconds": 5.115
       },
       {
         "query": "full stack engineer",
@@ -1902,7 +1902,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.52
+        "elapsed_seconds": 4.937
       },
       {
         "query": "forward deployed engineer",
@@ -1916,7 +1916,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.777
+        "elapsed_seconds": 4.836
       },
       {
         "query": "software engineer",
@@ -1930,7 +1930,7 @@
         "first_pass_survivors": 30,
         "original_postings_resolved": 30,
         "jds_resolved": 30,
-        "elapsed_seconds": 52.483
+        "elapsed_seconds": 55.05
       }
     ],
     "jpmorgan": [
@@ -1946,7 +1946,7 @@
         "first_pass_survivors": 79,
         "original_postings_resolved": 79,
         "jds_resolved": 79,
-        "elapsed_seconds": 23.885
+        "elapsed_seconds": 24.223
       },
       {
         "query": "machine learning engineer",
@@ -1960,7 +1960,7 @@
         "first_pass_survivors": 41,
         "original_postings_resolved": 41,
         "jds_resolved": 41,
-        "elapsed_seconds": 12.167
+        "elapsed_seconds": 12.08
       },
       {
         "query": "data scientist",
@@ -1974,7 +1974,7 @@
         "first_pass_survivors": 35,
         "original_postings_resolved": 35,
         "jds_resolved": 35,
-        "elapsed_seconds": 10.416
+        "elapsed_seconds": 10.562
       },
       {
         "query": "solutions architect",
@@ -1988,7 +1988,7 @@
         "first_pass_survivors": 26,
         "original_postings_resolved": 26,
         "jds_resolved": 26,
-        "elapsed_seconds": 8.325
+        "elapsed_seconds": 8.425
       },
       {
         "query": "data engineer",
@@ -2002,7 +2002,7 @@
         "first_pass_survivors": 27,
         "original_postings_resolved": 27,
         "jds_resolved": 27,
-        "elapsed_seconds": 8.635
+        "elapsed_seconds": 9.056
       },
       {
         "query": "platform engineer",
@@ -2011,12 +2011,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 60,
-        "unique_jobs": 60,
-        "unique_contribution": 28,
-        "first_pass_survivors": 28,
-        "original_postings_resolved": 28,
-        "jds_resolved": 28,
-        "elapsed_seconds": 8.95
+        "unique_jobs": 59,
+        "unique_contribution": 27,
+        "first_pass_survivors": 27,
+        "original_postings_resolved": 27,
+        "jds_resolved": 27,
+        "elapsed_seconds": 8.936
       },
       {
         "query": "full stack engineer",
@@ -2030,7 +2030,7 @@
         "first_pass_survivors": 21,
         "original_postings_resolved": 21,
         "jds_resolved": 21,
-        "elapsed_seconds": 7.512
+        "elapsed_seconds": 7.651
       },
       {
         "query": "forward deployed engineer",
@@ -2040,11 +2040,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 17,
-        "first_pass_survivors": 17,
-        "original_postings_resolved": 17,
-        "jds_resolved": 17,
-        "elapsed_seconds": 6.282
+        "unique_contribution": 18,
+        "first_pass_survivors": 18,
+        "original_postings_resolved": 18,
+        "jds_resolved": 18,
+        "elapsed_seconds": 6.908
       },
       {
         "query": "software engineer",
@@ -2058,7 +2058,7 @@
         "first_pass_survivors": 82,
         "original_postings_resolved": 82,
         "jds_resolved": 82,
-        "elapsed_seconds": 29.527
+        "elapsed_seconds": 29.278
       },
       {
         "query": "full stack",
@@ -2072,7 +2072,7 @@
         "first_pass_survivors": 38,
         "original_postings_resolved": 38,
         "jds_resolved": 38,
-        "elapsed_seconds": 11.5
+        "elapsed_seconds": 11.191
       },
       {
         "query": "python react",
@@ -2086,7 +2086,7 @@
         "first_pass_survivors": 14,
         "original_postings_resolved": 14,
         "jds_resolved": 14,
-        "elapsed_seconds": 5.537
+        "elapsed_seconds": 6.154
       },
       {
         "query": "pyspark databricks",
@@ -2100,7 +2100,7 @@
         "first_pass_survivors": 17,
         "original_postings_resolved": 17,
         "jds_resolved": 17,
-        "elapsed_seconds": 5.722
+        "elapsed_seconds": 6.019
       },
       {
         "query": "experienced software engineer java python",
@@ -2114,7 +2114,7 @@
         "first_pass_survivors": 14,
         "original_postings_resolved": 14,
         "jds_resolved": 14,
-        "elapsed_seconds": 5.594
+        "elapsed_seconds": 5.929
       },
       {
         "query": "agentic ai",
@@ -2128,7 +2128,7 @@
         "first_pass_survivors": 19,
         "original_postings_resolved": 19,
         "jds_resolved": 19,
-        "elapsed_seconds": 6.786
+        "elapsed_seconds": 6.79
       },
       {
         "query": "site reliability engineer",
@@ -2142,7 +2142,7 @@
         "first_pass_survivors": 34,
         "original_postings_resolved": 34,
         "jds_resolved": 34,
-        "elapsed_seconds": 11.839
+        "elapsed_seconds": 10.483
       },
       {
         "query": "software engineer ii",
@@ -2156,7 +2156,7 @@
         "first_pass_survivors": 11,
         "original_postings_resolved": 11,
         "jds_resolved": 11,
-        "elapsed_seconds": 4.89
+        "elapsed_seconds": 5.007
       },
       {
         "query": "infrastructure engineer",
@@ -2170,7 +2170,7 @@
         "first_pass_survivors": 39,
         "original_postings_resolved": 39,
         "jds_resolved": 39,
-        "elapsed_seconds": 11.447
+        "elapsed_seconds": 11.687
       },
       {
         "query": "security engineer",
@@ -2184,7 +2184,7 @@
         "first_pass_survivors": 18,
         "original_postings_resolved": 18,
         "jds_resolved": 18,
-        "elapsed_seconds": 6.578
+        "elapsed_seconds": 7.086
       },
       {
         "query": "quantitative developer",
@@ -2198,7 +2198,7 @@
         "first_pass_survivors": 25,
         "original_postings_resolved": 25,
         "jds_resolved": 25,
-        "elapsed_seconds": 8.26
+        "elapsed_seconds": 9.278
       },
       {
         "query": "software engineer java spring",
@@ -2212,7 +2212,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 2.322
+        "elapsed_seconds": 2.241
       },
       {
         "query": "software engineer python authe",
@@ -2226,7 +2226,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.097
+        "elapsed_seconds": 1.056
       },
       {
         "query": "aws data platform engineer",
@@ -2240,7 +2240,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.328
+        "elapsed_seconds": 1.327
       },
       {
         "query": "data engineer applied ai",
@@ -2254,7 +2254,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 5,
-        "elapsed_seconds": 2.139
+        "elapsed_seconds": 1.995
       },
       {
         "query": "asset management technology",
@@ -2268,7 +2268,7 @@
         "first_pass_survivors": 9,
         "original_postings_resolved": 9,
         "jds_resolved": 9,
-        "elapsed_seconds": 3.175
+        "elapsed_seconds": 3.005
       }
     ],
     "capitalone": [
@@ -2284,7 +2284,7 @@
         "first_pass_survivors": 111,
         "original_postings_resolved": 111,
         "jds_resolved": 111,
-        "elapsed_seconds": 43.958
+        "elapsed_seconds": 50.188
       },
       {
         "query": "machine learning engineer",
@@ -2298,7 +2298,7 @@
         "first_pass_survivors": 11,
         "original_postings_resolved": 11,
         "jds_resolved": 11,
-        "elapsed_seconds": 5.384
+        "elapsed_seconds": 6.161
       },
       {
         "query": "data scientist",
@@ -2312,7 +2312,7 @@
         "first_pass_survivors": 19,
         "original_postings_resolved": 19,
         "jds_resolved": 19,
-        "elapsed_seconds": 9.464
+        "elapsed_seconds": 9.36
       },
       {
         "query": "solutions architect",
@@ -2326,7 +2326,7 @@
         "first_pass_survivors": 11,
         "original_postings_resolved": 11,
         "jds_resolved": 11,
-        "elapsed_seconds": 5.366
+        "elapsed_seconds": 5.602
       },
       {
         "query": "data engineer",
@@ -2340,7 +2340,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 5,
-        "elapsed_seconds": 3.427
+        "elapsed_seconds": 3.638
       },
       {
         "query": "platform engineer",
@@ -2354,7 +2354,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.366
+        "elapsed_seconds": 1.487
       },
       {
         "query": "full stack engineer",
@@ -2368,7 +2368,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.365
+        "elapsed_seconds": 1.509
       },
       {
         "query": "forward deployed engineer",
@@ -2382,7 +2382,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 3.301
+        "elapsed_seconds": 3.822
       },
       {
         "query": "software engineer",
@@ -2396,7 +2396,7 @@
         "first_pass_survivors": 88,
         "original_postings_resolved": 88,
         "jds_resolved": 88,
-        "elapsed_seconds": 40.173
+        "elapsed_seconds": 40.943
       }
     ],
     "oracle": [
@@ -2412,7 +2412,7 @@
         "first_pass_survivors": 94,
         "original_postings_resolved": 94,
         "jds_resolved": 94,
-        "elapsed_seconds": 66.981
+        "elapsed_seconds": 39.564
       },
       {
         "query": "machine learning engineer",
@@ -2426,7 +2426,7 @@
         "first_pass_survivors": 39,
         "original_postings_resolved": 39,
         "jds_resolved": 39,
-        "elapsed_seconds": 25.13
+        "elapsed_seconds": 16.462
       },
       {
         "query": "data scientist",
@@ -2440,7 +2440,7 @@
         "first_pass_survivors": 15,
         "original_postings_resolved": 15,
         "jds_resolved": 15,
-        "elapsed_seconds": 9.191
+        "elapsed_seconds": 8.596
       },
       {
         "query": "solutions architect",
@@ -2450,11 +2450,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 43,
-        "first_pass_survivors": 43,
-        "original_postings_resolved": 43,
-        "jds_resolved": 43,
-        "elapsed_seconds": 17.332
+        "unique_contribution": 42,
+        "first_pass_survivors": 42,
+        "original_postings_resolved": 42,
+        "jds_resolved": 42,
+        "elapsed_seconds": 17.321
       },
       {
         "query": "data engineer",
@@ -2468,7 +2468,7 @@
         "first_pass_survivors": 50,
         "original_postings_resolved": 50,
         "jds_resolved": 50,
-        "elapsed_seconds": 18.891
+        "elapsed_seconds": 19.691
       },
       {
         "query": "platform engineer",
@@ -2482,7 +2482,7 @@
         "first_pass_survivors": 34,
         "original_postings_resolved": 34,
         "jds_resolved": 34,
-        "elapsed_seconds": 13.284
+        "elapsed_seconds": 18.258
       },
       {
         "query": "full stack engineer",
@@ -2496,7 +2496,7 @@
         "first_pass_survivors": 27,
         "original_postings_resolved": 27,
         "jds_resolved": 27,
-        "elapsed_seconds": 10.84
+        "elapsed_seconds": 12.123
       },
       {
         "query": "forward deployed engineer",
@@ -2505,12 +2505,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 60,
-        "unique_jobs": 60,
+        "unique_jobs": 59,
         "unique_contribution": 27,
         "first_pass_survivors": 27,
         "original_postings_resolved": 27,
         "jds_resolved": 27,
-        "elapsed_seconds": 11.014
+        "elapsed_seconds": 12.235
       },
       {
         "query": "software engineer",
@@ -2519,12 +2519,12 @@
         "pages_fetched": 12,
         "stop_reason": "page_budget",
         "raw_jobs": 239,
-        "unique_jobs": 239,
-        "unique_contribution": 105,
-        "first_pass_survivors": 105,
-        "original_postings_resolved": 105,
-        "jds_resolved": 105,
-        "elapsed_seconds": 43.845
+        "unique_jobs": 236,
+        "unique_contribution": 103,
+        "first_pass_survivors": 103,
+        "original_postings_resolved": 103,
+        "jds_resolved": 103,
+        "elapsed_seconds": 46.368
       },
       {
         "query": "core infrastructure",
@@ -2538,7 +2538,7 @@
         "first_pass_survivors": 28,
         "original_postings_resolved": 28,
         "jds_resolved": 28,
-        "elapsed_seconds": 11.377
+        "elapsed_seconds": 11.81
       },
       {
         "query": "cleared site reliability engineer database",
@@ -2552,7 +2552,7 @@
         "first_pass_survivors": 32,
         "original_postings_resolved": 32,
         "jds_resolved": 32,
-        "elapsed_seconds": 12.138
+        "elapsed_seconds": 15.333
       },
       {
         "query": "software developer",
@@ -2561,12 +2561,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 59,
-        "unique_jobs": 59,
-        "unique_contribution": 7,
-        "first_pass_survivors": 7,
-        "original_postings_resolved": 7,
-        "jds_resolved": 7,
-        "elapsed_seconds": 5.457
+        "unique_jobs": 58,
+        "unique_contribution": 6,
+        "first_pass_survivors": 6,
+        "original_postings_resolved": 6,
+        "jds_resolved": 6,
+        "elapsed_seconds": 5.641
       },
       {
         "query": "applications developer",
@@ -2580,7 +2580,7 @@
         "first_pass_survivors": 19,
         "original_postings_resolved": 19,
         "jds_resolved": 19,
-        "elapsed_seconds": 9.089
+        "elapsed_seconds": 10.865
       }
     ],
     "walmart": [
@@ -2596,7 +2596,7 @@
         "first_pass_survivors": 80,
         "original_postings_resolved": 80,
         "jds_resolved": 80,
-        "elapsed_seconds": 50.908
+        "elapsed_seconds": 49.817
       },
       {
         "query": "machine learning engineer",
@@ -2610,7 +2610,7 @@
         "first_pass_survivors": 44,
         "original_postings_resolved": 44,
         "jds_resolved": 44,
-        "elapsed_seconds": 30.004
+        "elapsed_seconds": 37.03
       },
       {
         "query": "data scientist",
@@ -2620,11 +2620,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 54,
-        "first_pass_survivors": 54,
-        "original_postings_resolved": 54,
-        "jds_resolved": 54,
-        "elapsed_seconds": 33.469
+        "unique_contribution": 56,
+        "first_pass_survivors": 56,
+        "original_postings_resolved": 56,
+        "jds_resolved": 56,
+        "elapsed_seconds": 36.049
       },
       {
         "query": "solutions architect",
@@ -2634,11 +2634,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 44,
-        "first_pass_survivors": 44,
-        "original_postings_resolved": 44,
-        "jds_resolved": 44,
-        "elapsed_seconds": 29.134
+        "unique_contribution": 43,
+        "first_pass_survivors": 43,
+        "original_postings_resolved": 43,
+        "jds_resolved": 43,
+        "elapsed_seconds": 38.134
       },
       {
         "query": "data engineer",
@@ -2652,7 +2652,7 @@
         "first_pass_survivors": 30,
         "original_postings_resolved": 30,
         "jds_resolved": 30,
-        "elapsed_seconds": 21.043
+        "elapsed_seconds": 25.235
       },
       {
         "query": "platform engineer",
@@ -2662,11 +2662,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 28,
-        "first_pass_survivors": 28,
-        "original_postings_resolved": 28,
-        "jds_resolved": 28,
-        "elapsed_seconds": 20.097
+        "unique_contribution": 29,
+        "first_pass_survivors": 29,
+        "original_postings_resolved": 29,
+        "jds_resolved": 29,
+        "elapsed_seconds": 19.958
       },
       {
         "query": "full stack engineer",
@@ -2680,7 +2680,7 @@
         "first_pass_survivors": 42,
         "original_postings_resolved": 42,
         "jds_resolved": 42,
-        "elapsed_seconds": 35.538
+        "elapsed_seconds": 35.711
       },
       {
         "query": "forward deployed engineer",
@@ -2694,7 +2694,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 3.026
+        "elapsed_seconds": 4.793
       },
       {
         "query": "software engineer",
@@ -2708,7 +2708,7 @@
         "first_pass_survivors": 25,
         "original_postings_resolved": 25,
         "jds_resolved": 25,
-        "elapsed_seconds": 16.889
+        "elapsed_seconds": 17.097
       },
       {
         "query": "usa software engineer ii",
@@ -2722,7 +2722,7 @@
         "first_pass_survivors": 13,
         "original_postings_resolved": 13,
         "jds_resolved": 13,
-        "elapsed_seconds": 7.7
+        "elapsed_seconds": 7.686
       }
     ],
     "cisco": [
@@ -2738,7 +2738,7 @@
         "first_pass_survivors": 65,
         "original_postings_resolved": 65,
         "jds_resolved": 65,
-        "elapsed_seconds": 26.751
+        "elapsed_seconds": 27.569
       },
       {
         "query": "machine learning engineer",
@@ -2748,11 +2748,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 37,
-        "first_pass_survivors": 37,
-        "original_postings_resolved": 37,
-        "jds_resolved": 37,
-        "elapsed_seconds": 15.103
+        "unique_contribution": 38,
+        "first_pass_survivors": 38,
+        "original_postings_resolved": 38,
+        "jds_resolved": 38,
+        "elapsed_seconds": 16.231
       },
       {
         "query": "data scientist",
@@ -2766,7 +2766,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 1.636
+        "elapsed_seconds": 1.854
       },
       {
         "query": "solutions architect",
@@ -2780,7 +2780,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 5,
-        "elapsed_seconds": 3.3
+        "elapsed_seconds": 3.389
       },
       {
         "query": "data engineer",
@@ -2794,7 +2794,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.54
+        "elapsed_seconds": 1.571
       },
       {
         "query": "platform engineer",
@@ -2808,7 +2808,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.568
+        "elapsed_seconds": 1.761
       },
       {
         "query": "full stack engineer",
@@ -2822,7 +2822,7 @@
         "first_pass_survivors": 14,
         "original_postings_resolved": 14,
         "jds_resolved": 14,
-        "elapsed_seconds": 6.499
+        "elapsed_seconds": 6.759
       },
       {
         "query": "forward deployed engineer",
@@ -2836,7 +2836,7 @@
         "first_pass_survivors": 20,
         "original_postings_resolved": 20,
         "jds_resolved": 20,
-        "elapsed_seconds": 8.389
+        "elapsed_seconds": 8.757
       },
       {
         "query": "software engineer",
@@ -2846,11 +2846,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 240,
         "unique_jobs": 240,
-        "unique_contribution": 61,
-        "first_pass_survivors": 61,
-        "original_postings_resolved": 61,
-        "jds_resolved": 61,
-        "elapsed_seconds": 28.039
+        "unique_contribution": 62,
+        "first_pass_survivors": 62,
+        "original_postings_resolved": 62,
+        "jds_resolved": 62,
+        "elapsed_seconds": 29.721
       },
       {
         "query": "full stack backend",
@@ -2864,7 +2864,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.66
+        "elapsed_seconds": 1.447
       },
       {
         "query": "site reliability engineer",
@@ -2874,11 +2874,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 6,
-        "first_pass_survivors": 6,
-        "original_postings_resolved": 6,
-        "jds_resolved": 6,
-        "elapsed_seconds": 3.856
+        "unique_contribution": 5,
+        "first_pass_survivors": 5,
+        "original_postings_resolved": 5,
+        "jds_resolved": 5,
+        "elapsed_seconds": 4.004
       },
       {
         "query": "cloud engineer",
@@ -2888,11 +2888,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 2,
-        "first_pass_survivors": 2,
-        "original_postings_resolved": 2,
-        "jds_resolved": 2,
-        "elapsed_seconds": 2.299
+        "unique_contribution": 3,
+        "first_pass_survivors": 3,
+        "original_postings_resolved": 3,
+        "jds_resolved": 3,
+        "elapsed_seconds": 3.017
       },
       {
         "query": "security engineer remote",
@@ -2902,11 +2902,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 22,
-        "first_pass_survivors": 22,
-        "original_postings_resolved": 22,
-        "jds_resolved": 22,
-        "elapsed_seconds": 9.605
+        "unique_contribution": 20,
+        "first_pass_survivors": 20,
+        "original_postings_resolved": 20,
+        "jds_resolved": 20,
+        "elapsed_seconds": 9.079
       },
       {
         "query": "software engineer collaboration devices",
@@ -2920,7 +2920,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 5,
-        "elapsed_seconds": 3.019
+        "elapsed_seconds": 3.026
       },
       {
         "query": "splunk engineer",
@@ -2934,7 +2934,7 @@
         "first_pass_survivors": 7,
         "original_postings_resolved": 7,
         "jds_resolved": 7,
-        "elapsed_seconds": 3.941
+        "elapsed_seconds": 4.131
       },
       {
         "query": "software engineer solution test iq platform",
@@ -2948,7 +2948,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.216
+        "elapsed_seconds": 0.192
       }
     ],
     "sap": [
@@ -2964,7 +2964,7 @@
         "first_pass_survivors": 116,
         "original_postings_resolved": 116,
         "jds_resolved": 116,
-        "elapsed_seconds": 62.916
+        "elapsed_seconds": 67.265
       },
       {
         "query": "machine learning engineer",
@@ -2978,7 +2978,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.094
+        "elapsed_seconds": 2.165
       },
       {
         "query": "data scientist",
@@ -2992,7 +2992,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.008
+        "elapsed_seconds": 2.169
       },
       {
         "query": "solutions architect",
@@ -3006,7 +3006,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.018
+        "elapsed_seconds": 2.346
       },
       {
         "query": "data engineer",
@@ -3020,7 +3020,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.147
+        "elapsed_seconds": 2.148
       },
       {
         "query": "platform engineer",
@@ -3034,7 +3034,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.071
+        "elapsed_seconds": 2.153
       },
       {
         "query": "full stack engineer",
@@ -3048,7 +3048,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.034
+        "elapsed_seconds": 2.149
       },
       {
         "query": "forward deployed engineer",
@@ -3062,7 +3062,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.108
+        "elapsed_seconds": 2.159
       },
       {
         "query": "software engineer",
@@ -3076,7 +3076,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 3.766
+        "elapsed_seconds": 3.936
       },
       {
         "query": "cloud developer",
@@ -3090,7 +3090,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.083
+        "elapsed_seconds": 2.137
       }
     ],
     "hpe": [
@@ -3106,7 +3106,7 @@
         "first_pass_survivors": 120,
         "original_postings_resolved": 120,
         "jds_resolved": 120,
-        "elapsed_seconds": 64.141
+        "elapsed_seconds": 82.516
       },
       {
         "query": "machine learning engineer",
@@ -3120,7 +3120,7 @@
         "first_pass_survivors": 37,
         "original_postings_resolved": 37,
         "jds_resolved": 37,
-        "elapsed_seconds": 21.983
+        "elapsed_seconds": 24.279
       },
       {
         "query": "data scientist",
@@ -3134,7 +3134,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.966
+        "elapsed_seconds": 2.048
       },
       {
         "query": "solutions architect",
@@ -3148,7 +3148,7 @@
         "first_pass_survivors": 45,
         "original_postings_resolved": 45,
         "jds_resolved": 45,
-        "elapsed_seconds": 25.489
+        "elapsed_seconds": 26.575
       },
       {
         "query": "data engineer",
@@ -3162,7 +3162,7 @@
         "first_pass_survivors": 28,
         "original_postings_resolved": 28,
         "jds_resolved": 28,
-        "elapsed_seconds": 17.944
+        "elapsed_seconds": 15.882
       },
       {
         "query": "platform engineer",
@@ -3176,7 +3176,7 @@
         "first_pass_survivors": 27,
         "original_postings_resolved": 27,
         "jds_resolved": 27,
-        "elapsed_seconds": 18.523
+        "elapsed_seconds": 18.442
       },
       {
         "query": "full stack engineer",
@@ -3190,7 +3190,7 @@
         "first_pass_survivors": 16,
         "original_postings_resolved": 16,
         "jds_resolved": 16,
-        "elapsed_seconds": 12.358
+        "elapsed_seconds": 10.713
       },
       {
         "query": "forward deployed engineer",
@@ -3204,7 +3204,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 4.062
+        "elapsed_seconds": 3.579
       },
       {
         "query": "software engineer",
@@ -3218,7 +3218,7 @@
         "first_pass_survivors": 93,
         "original_postings_resolved": 93,
         "jds_resolved": 93,
-        "elapsed_seconds": 59.003
+        "elapsed_seconds": 58.924
       },
       {
         "query": "ai workflow specialist",
@@ -3232,7 +3232,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.916
+        "elapsed_seconds": 2.14
       }
     ],
     "disney": [
@@ -3248,7 +3248,7 @@
         "first_pass_survivors": 30,
         "original_postings_resolved": 30,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.382
+        "elapsed_seconds": 1.294
       },
       {
         "query": "machine learning engineer",
@@ -3262,7 +3262,7 @@
         "first_pass_survivors": 15,
         "original_postings_resolved": 15,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.041
+        "elapsed_seconds": 1.194
       },
       {
         "query": "data scientist",
@@ -3276,7 +3276,7 @@
         "first_pass_survivors": 15,
         "original_postings_resolved": 15,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.434
+        "elapsed_seconds": 1.125
       },
       {
         "query": "solutions architect",
@@ -3290,7 +3290,7 @@
         "first_pass_survivors": 16,
         "original_postings_resolved": 16,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.554
+        "elapsed_seconds": 1.141
       },
       {
         "query": "data engineer",
@@ -3304,7 +3304,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.422
+        "elapsed_seconds": 1.106
       },
       {
         "query": "platform engineer",
@@ -3318,7 +3318,7 @@
         "first_pass_survivors": 7,
         "original_postings_resolved": 7,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.059
+        "elapsed_seconds": 1.051
       },
       {
         "query": "full stack engineer",
@@ -3332,7 +3332,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.327
+        "elapsed_seconds": 1.117
       },
       {
         "query": "forward deployed engineer",
@@ -3346,7 +3346,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.156
+        "elapsed_seconds": 1.056
       },
       {
         "query": "software engineer",
@@ -3360,7 +3360,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.095
+        "elapsed_seconds": 1.057
       }
     ],
     "ebay": [
@@ -3376,7 +3376,7 @@
         "first_pass_survivors": 40,
         "original_postings_resolved": 40,
         "jds_resolved": 40,
-        "elapsed_seconds": 22.023
+        "elapsed_seconds": 21.154
       },
       {
         "query": "machine learning engineer",
@@ -3390,7 +3390,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.656
+        "elapsed_seconds": 0.684
       },
       {
         "query": "data scientist",
@@ -3404,7 +3404,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.635
+        "elapsed_seconds": 1.1
       },
       {
         "query": "solutions architect",
@@ -3418,7 +3418,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.722
+        "elapsed_seconds": 1.613
       },
       {
         "query": "data engineer",
@@ -3432,7 +3432,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.374
+        "elapsed_seconds": 2.617
       },
       {
         "query": "platform engineer",
@@ -3446,7 +3446,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.361
+        "elapsed_seconds": 2.597
       },
       {
         "query": "full stack engineer",
@@ -3460,7 +3460,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.463
+        "elapsed_seconds": 2.812
       },
       {
         "query": "forward deployed engineer",
@@ -3474,7 +3474,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.704
+        "elapsed_seconds": 0.69
       },
       {
         "query": "software engineer",
@@ -3488,7 +3488,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.665
+        "elapsed_seconds": 0.733
       }
     ],
     "qualcomm": [
@@ -3504,7 +3504,7 @@
         "first_pass_survivors": 30,
         "original_postings_resolved": 30,
         "jds_resolved": 30,
-        "elapsed_seconds": 10.314
+        "elapsed_seconds": 10.097
       },
       {
         "query": "machine learning engineer",
@@ -3518,7 +3518,7 @@
         "first_pass_survivors": 19,
         "original_postings_resolved": 19,
         "jds_resolved": 19,
-        "elapsed_seconds": 6.947
+        "elapsed_seconds": 7.198
       },
       {
         "query": "data scientist",
@@ -3532,7 +3532,7 @@
         "first_pass_survivors": 12,
         "original_postings_resolved": 12,
         "jds_resolved": 12,
-        "elapsed_seconds": 4.227
+        "elapsed_seconds": 4.517
       },
       {
         "query": "solutions architect",
@@ -3546,7 +3546,7 @@
         "first_pass_survivors": 25,
         "original_postings_resolved": 25,
         "jds_resolved": 25,
-        "elapsed_seconds": 9.503
+        "elapsed_seconds": 9.219
       },
       {
         "query": "data engineer",
@@ -3556,11 +3556,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 11,
-        "first_pass_survivors": 11,
-        "original_postings_resolved": 11,
-        "jds_resolved": 11,
-        "elapsed_seconds": 4.65
+        "unique_contribution": 10,
+        "first_pass_survivors": 10,
+        "original_postings_resolved": 10,
+        "jds_resolved": 10,
+        "elapsed_seconds": 4.354
       },
       {
         "query": "platform engineer",
@@ -3574,7 +3574,7 @@
         "first_pass_survivors": 11,
         "original_postings_resolved": 11,
         "jds_resolved": 11,
-        "elapsed_seconds": 4.495
+        "elapsed_seconds": 4.487
       },
       {
         "query": "full stack engineer",
@@ -3584,11 +3584,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 16,
-        "first_pass_survivors": 16,
-        "original_postings_resolved": 16,
-        "jds_resolved": 16,
-        "elapsed_seconds": 6.668
+        "unique_contribution": 15,
+        "first_pass_survivors": 15,
+        "original_postings_resolved": 15,
+        "jds_resolved": 15,
+        "elapsed_seconds": 6.558
       },
       {
         "query": "forward deployed engineer",
@@ -3598,11 +3598,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 2,
-        "first_pass_survivors": 2,
-        "original_postings_resolved": 2,
-        "jds_resolved": 2,
-        "elapsed_seconds": 2.186
+        "unique_contribution": 3,
+        "first_pass_survivors": 3,
+        "original_postings_resolved": 3,
+        "jds_resolved": 3,
+        "elapsed_seconds": 2.728
       },
       {
         "query": "software engineer",
@@ -3616,7 +3616,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.546
+        "elapsed_seconds": 2.046
       }
     ],
     "amd": [
@@ -3632,7 +3632,7 @@
         "first_pass_survivors": 380,
         "original_postings_resolved": 0,
         "jds_resolved": 380,
-        "elapsed_seconds": 3.503
+        "elapsed_seconds": 3.898
       },
       {
         "query": "machine learning",
@@ -3646,7 +3646,7 @@
         "first_pass_survivors": 29,
         "original_postings_resolved": 0,
         "jds_resolved": 29,
-        "elapsed_seconds": 0.675
+        "elapsed_seconds": 0.668
       },
       {
         "query": "data engineer",
@@ -3656,11 +3656,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 300,
         "unique_jobs": 300,
-        "unique_contribution": 74,
-        "first_pass_survivors": 74,
+        "unique_contribution": 73,
+        "first_pass_survivors": 73,
         "original_postings_resolved": 0,
-        "jds_resolved": 74,
-        "elapsed_seconds": 2.194
+        "jds_resolved": 73,
+        "elapsed_seconds": 2.374
       },
       {
         "query": "AI research",
@@ -3670,11 +3670,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 300,
         "unique_jobs": 300,
-        "unique_contribution": 66,
-        "first_pass_survivors": 66,
+        "unique_contribution": 67,
+        "first_pass_survivors": 67,
         "original_postings_resolved": 0,
-        "jds_resolved": 66,
-        "elapsed_seconds": 2.291
+        "jds_resolved": 67,
+        "elapsed_seconds": 2.164
       },
       {
         "query": "platform engineer",
@@ -3688,7 +3688,7 @@
         "first_pass_survivors": 14,
         "original_postings_resolved": 0,
         "jds_resolved": 14,
-        "elapsed_seconds": 2.144
+        "elapsed_seconds": 1.92
       }
     ],
     "zoom": [
@@ -3704,7 +3704,7 @@
         "first_pass_survivors": 22,
         "original_postings_resolved": 22,
         "jds_resolved": 22,
-        "elapsed_seconds": 13.655
+        "elapsed_seconds": 13.951
       },
       {
         "query": "machine learning engineer",
@@ -3718,7 +3718,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.428
+        "elapsed_seconds": 0.587
       },
       {
         "query": "data scientist",
@@ -3732,7 +3732,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.433
+        "elapsed_seconds": 0.525
       },
       {
         "query": "solutions architect",
@@ -3746,7 +3746,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 2.237
+        "elapsed_seconds": 2.54
       },
       {
         "query": "data engineer",
@@ -3760,7 +3760,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 3.115
+        "elapsed_seconds": 3.367
       },
       {
         "query": "platform engineer",
@@ -3774,7 +3774,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.189
+        "elapsed_seconds": 2.14
       },
       {
         "query": "full stack engineer",
@@ -3788,7 +3788,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.452
+        "elapsed_seconds": 0.435
       },
       {
         "query": "forward deployed engineer",
@@ -3802,7 +3802,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.433
+        "elapsed_seconds": 0.426
       },
       {
         "query": "software engineer",
@@ -3816,7 +3816,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.417
+        "elapsed_seconds": 0.448
       }
     ],
     "bytedance": [
@@ -3832,7 +3832,7 @@
         "first_pass_survivors": 145,
         "original_postings_resolved": 145,
         "jds_resolved": 145,
-        "elapsed_seconds": 5.45
+        "elapsed_seconds": 5.372
       },
       {
         "query": "machine learning engineer",
@@ -3846,7 +3846,7 @@
         "first_pass_survivors": 101,
         "original_postings_resolved": 101,
         "jds_resolved": 101,
-        "elapsed_seconds": 3.481
+        "elapsed_seconds": 3.365
       },
       {
         "query": "data scientist",
@@ -3856,11 +3856,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 109,
         "unique_jobs": 109,
-        "unique_contribution": 64,
-        "first_pass_survivors": 64,
-        "original_postings_resolved": 64,
-        "jds_resolved": 64,
-        "elapsed_seconds": 3.174
+        "unique_contribution": 60,
+        "first_pass_survivors": 60,
+        "original_postings_resolved": 60,
+        "jds_resolved": 60,
+        "elapsed_seconds": 3.141
       },
       {
         "query": "solutions architect",
@@ -3869,12 +3869,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 150,
-        "unique_jobs": 150,
-        "unique_contribution": 65,
-        "first_pass_survivors": 65,
-        "original_postings_resolved": 65,
-        "jds_resolved": 65,
-        "elapsed_seconds": 3.399
+        "unique_jobs": 149,
+        "unique_contribution": 64,
+        "first_pass_survivors": 64,
+        "original_postings_resolved": 64,
+        "jds_resolved": 64,
+        "elapsed_seconds": 3.241
       },
       {
         "query": "data engineer",
@@ -3883,12 +3883,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 150,
-        "unique_jobs": 149,
+        "unique_jobs": 150,
         "unique_contribution": 49,
         "first_pass_survivors": 49,
         "original_postings_resolved": 49,
         "jds_resolved": 49,
-        "elapsed_seconds": 3.424
+        "elapsed_seconds": 3.393
       },
       {
         "query": "platform engineer",
@@ -3897,12 +3897,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 150,
-        "unique_jobs": 149,
+        "unique_jobs": 148,
         "unique_contribution": 19,
         "first_pass_survivors": 19,
         "original_postings_resolved": 19,
         "jds_resolved": 19,
-        "elapsed_seconds": 4.051
+        "elapsed_seconds": 3.305
       },
       {
         "query": "full stack engineer",
@@ -3916,7 +3916,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 2.099
+        "elapsed_seconds": 1.988
       },
       {
         "query": "forward deployed engineer",
@@ -3926,11 +3926,11 @@
         "stop_reason": "early_stop",
         "raw_jobs": 3,
         "unique_jobs": 3,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.912
+        "unique_contribution": 1,
+        "first_pass_survivors": 1,
+        "original_postings_resolved": 1,
+        "jds_resolved": 1,
+        "elapsed_seconds": 0.889
       },
       {
         "query": "software engineer",
@@ -3939,12 +3939,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 150,
-        "unique_jobs": 150,
-        "unique_contribution": 15,
-        "first_pass_survivors": 15,
-        "original_postings_resolved": 15,
-        "jds_resolved": 15,
-        "elapsed_seconds": 4.155
+        "unique_jobs": 149,
+        "unique_contribution": 16,
+        "first_pass_survivors": 16,
+        "original_postings_resolved": 16,
+        "jds_resolved": 16,
+        "elapsed_seconds": 3.196
       }
     ],
     "dell": [
@@ -3960,7 +3960,7 @@
         "first_pass_survivors": 30,
         "original_postings_resolved": 30,
         "jds_resolved": 30,
-        "elapsed_seconds": 12.891
+        "elapsed_seconds": 11.733
       },
       {
         "query": "machine learning engineer",
@@ -3974,7 +3974,7 @@
         "first_pass_survivors": 16,
         "original_postings_resolved": 16,
         "jds_resolved": 16,
-        "elapsed_seconds": 11.167
+        "elapsed_seconds": 6.801
       },
       {
         "query": "data scientist",
@@ -3988,7 +3988,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 1.273
+        "elapsed_seconds": 1.156
       },
       {
         "query": "solutions architect",
@@ -4002,7 +4002,7 @@
         "first_pass_survivors": 11,
         "original_postings_resolved": 11,
         "jds_resolved": 11,
-        "elapsed_seconds": 5.535
+        "elapsed_seconds": 5.749
       },
       {
         "query": "data engineer",
@@ -4016,7 +4016,7 @@
         "first_pass_survivors": 7,
         "original_postings_resolved": 7,
         "jds_resolved": 7,
-        "elapsed_seconds": 4.571
+        "elapsed_seconds": 4.168
       },
       {
         "query": "platform engineer",
@@ -4030,7 +4030,7 @@
         "first_pass_survivors": 10,
         "original_postings_resolved": 10,
         "jds_resolved": 10,
-        "elapsed_seconds": 5.25
+        "elapsed_seconds": 5.964
       },
       {
         "query": "full stack engineer",
@@ -4040,11 +4040,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 11,
-        "first_pass_survivors": 11,
-        "original_postings_resolved": 11,
-        "jds_resolved": 11,
-        "elapsed_seconds": 5.775
+        "unique_contribution": 10,
+        "first_pass_survivors": 10,
+        "original_postings_resolved": 10,
+        "jds_resolved": 10,
+        "elapsed_seconds": 5.179
       },
       {
         "query": "forward deployed engineer",
@@ -4058,7 +4058,7 @@
         "first_pass_survivors": 21,
         "original_postings_resolved": 21,
         "jds_resolved": 21,
-        "elapsed_seconds": 9.116
+        "elapsed_seconds": 8.263
       },
       {
         "query": "software engineer",
@@ -4068,11 +4068,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 3,
-        "first_pass_survivors": 3,
-        "original_postings_resolved": 3,
-        "jds_resolved": 3,
-        "elapsed_seconds": 3.743
+        "unique_contribution": 4,
+        "first_pass_survivors": 4,
+        "original_postings_resolved": 4,
+        "jds_resolved": 4,
+        "elapsed_seconds": 4.185
       }
     ],
     "expedia": [
@@ -4088,7 +4088,7 @@
         "first_pass_survivors": 40,
         "original_postings_resolved": 40,
         "jds_resolved": 40,
-        "elapsed_seconds": 20.199
+        "elapsed_seconds": 17.614
       },
       {
         "query": "machine learning engineer",
@@ -4096,13 +4096,13 @@
         "page_budget": 3,
         "pages_fetched": 2,
         "stop_reason": "early_stop",
-        "raw_jobs": 32,
-        "unique_jobs": 32,
-        "unique_contribution": 7,
-        "first_pass_survivors": 7,
-        "original_postings_resolved": 7,
-        "jds_resolved": 7,
-        "elapsed_seconds": 4.13
+        "raw_jobs": 31,
+        "unique_jobs": 31,
+        "unique_contribution": 6,
+        "first_pass_survivors": 6,
+        "original_postings_resolved": 6,
+        "jds_resolved": 6,
+        "elapsed_seconds": 3.135
       },
       {
         "query": "data scientist",
@@ -4116,21 +4116,21 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.316
+        "elapsed_seconds": 0.378
       },
       {
         "query": "solutions architect",
         "group": "official",
         "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 41,
-        "unique_jobs": 41,
+        "pages_fetched": 2,
+        "stop_reason": "early_stop",
+        "raw_jobs": 40,
+        "unique_jobs": 40,
         "unique_contribution": 2,
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 2.376
+        "elapsed_seconds": 1.599
       },
       {
         "query": "data engineer",
@@ -4144,7 +4144,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.715
+        "elapsed_seconds": 1.61
       },
       {
         "query": "platform engineer",
@@ -4158,7 +4158,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.764
+        "elapsed_seconds": 1.676
       },
       {
         "query": "full stack engineer",
@@ -4172,7 +4172,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.319
+        "elapsed_seconds": 0.274
       },
       {
         "query": "forward deployed engineer",
@@ -4180,13 +4180,13 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 1,
-        "unique_jobs": 1,
+        "raw_jobs": 0,
+        "unique_jobs": 0,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.316
+        "elapsed_seconds": 0.25
       },
       {
         "query": "software engineer",
@@ -4194,13 +4194,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 43,
-        "unique_jobs": 43,
+        "raw_jobs": 42,
+        "unique_jobs": 42,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.586
+        "elapsed_seconds": 1.327
       }
     ],
     "intel": [
@@ -4216,7 +4216,7 @@
         "first_pass_survivors": 66,
         "original_postings_resolved": 66,
         "jds_resolved": 66,
-        "elapsed_seconds": 37.261
+        "elapsed_seconds": 41.533
       },
       {
         "query": "machine learning engineer",
@@ -4230,7 +4230,7 @@
         "first_pass_survivors": 9,
         "original_postings_resolved": 9,
         "jds_resolved": 9,
-        "elapsed_seconds": 7.576
+        "elapsed_seconds": 7.633
       },
       {
         "query": "data scientist",
@@ -4244,7 +4244,7 @@
         "first_pass_survivors": 12,
         "original_postings_resolved": 12,
         "jds_resolved": 12,
-        "elapsed_seconds": 8.48
+        "elapsed_seconds": 9.114
       },
       {
         "query": "solutions architect",
@@ -4258,7 +4258,7 @@
         "first_pass_survivors": 17,
         "original_postings_resolved": 17,
         "jds_resolved": 17,
-        "elapsed_seconds": 11.46
+        "elapsed_seconds": 11.905
       },
       {
         "query": "data engineer",
@@ -4268,11 +4268,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 57,
-        "unique_contribution": 24,
-        "first_pass_survivors": 24,
-        "original_postings_resolved": 24,
-        "jds_resolved": 24,
-        "elapsed_seconds": 14.847
+        "unique_contribution": 23,
+        "first_pass_survivors": 23,
+        "original_postings_resolved": 23,
+        "jds_resolved": 23,
+        "elapsed_seconds": 15.393
       },
       {
         "query": "platform engineer",
@@ -4286,7 +4286,7 @@
         "first_pass_survivors": 13,
         "original_postings_resolved": 13,
         "jds_resolved": 13,
-        "elapsed_seconds": 9.139
+        "elapsed_seconds": 10.311
       },
       {
         "query": "full stack engineer",
@@ -4300,7 +4300,7 @@
         "first_pass_survivors": 19,
         "original_postings_resolved": 19,
         "jds_resolved": 19,
-        "elapsed_seconds": 11.792
+        "elapsed_seconds": 14.231
       },
       {
         "query": "forward deployed engineer",
@@ -4314,7 +4314,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.183
+        "elapsed_seconds": 1.27
       },
       {
         "query": "software engineer",
@@ -4328,7 +4328,7 @@
         "first_pass_survivors": 29,
         "original_postings_resolved": 29,
         "jds_resolved": 29,
-        "elapsed_seconds": 26.507
+        "elapsed_seconds": 26.767
       }
     ],
     "mathworks": [
@@ -4344,7 +4344,7 @@
         "first_pass_survivors": 20,
         "original_postings_resolved": 20,
         "jds_resolved": 20,
-        "elapsed_seconds": 9.046
+        "elapsed_seconds": 8.215
       },
       {
         "query": "machine learning engineer",
@@ -4358,7 +4358,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.557
+        "elapsed_seconds": 1.157
       },
       {
         "query": "data scientist",
@@ -4372,7 +4372,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.159
+        "elapsed_seconds": 1.047
       },
       {
         "query": "solutions architect",
@@ -4386,7 +4386,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 2.973
+        "elapsed_seconds": 2.374
       },
       {
         "query": "data engineer",
@@ -4400,7 +4400,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 2.818
+        "elapsed_seconds": 2.704
       },
       {
         "query": "platform engineer",
@@ -4414,7 +4414,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.313
+        "elapsed_seconds": 1.16
       },
       {
         "query": "full stack engineer",
@@ -4428,7 +4428,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.716
+        "elapsed_seconds": 0.541
       },
       {
         "query": "forward deployed engineer",
@@ -4442,7 +4442,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.566
+        "elapsed_seconds": 0.584
       },
       {
         "query": "software engineer",
@@ -4456,7 +4456,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 2.065
+        "elapsed_seconds": 1.89
       }
     ],
     "morgan-stanley": [
@@ -4472,7 +4472,7 @@
         "first_pass_survivors": 30,
         "original_postings_resolved": 30,
         "jds_resolved": 30,
-        "elapsed_seconds": 11.382
+        "elapsed_seconds": 11.209
       },
       {
         "query": "machine learning engineer",
@@ -4486,7 +4486,7 @@
         "first_pass_survivors": 16,
         "original_postings_resolved": 16,
         "jds_resolved": 16,
-        "elapsed_seconds": 6.421
+        "elapsed_seconds": 6.437
       },
       {
         "query": "data scientist",
@@ -4500,7 +4500,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 1.912
+        "elapsed_seconds": 2.115
       },
       {
         "query": "solutions architect",
@@ -4514,7 +4514,7 @@
         "first_pass_survivors": 17,
         "original_postings_resolved": 17,
         "jds_resolved": 17,
-        "elapsed_seconds": 6.29
+        "elapsed_seconds": 6.989
       },
       {
         "query": "data engineer",
@@ -4528,7 +4528,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 3.405
+        "elapsed_seconds": 3.452
       },
       {
         "query": "platform engineer",
@@ -4542,7 +4542,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.976
+        "elapsed_seconds": 2.482
       },
       {
         "query": "full stack engineer",
@@ -4556,7 +4556,7 @@
         "first_pass_survivors": 23,
         "original_postings_resolved": 23,
         "jds_resolved": 23,
-        "elapsed_seconds": 8.39
+        "elapsed_seconds": 7.95
       },
       {
         "query": "forward deployed engineer",
@@ -4570,7 +4570,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 1.338
+        "elapsed_seconds": 1.566
       },
       {
         "query": "software engineer",
@@ -4584,7 +4584,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.371
+        "elapsed_seconds": 1.659
       }
     ],
     "netapp": [
@@ -4595,12 +4595,12 @@
         "pages_fetched": 5,
         "stop_reason": "page_budget",
         "raw_jobs": 75,
-        "unique_jobs": 75,
-        "unique_contribution": 39,
-        "first_pass_survivors": 39,
-        "original_postings_resolved": 39,
-        "jds_resolved": 39,
-        "elapsed_seconds": 25.771
+        "unique_jobs": 73,
+        "unique_contribution": 37,
+        "first_pass_survivors": 37,
+        "original_postings_resolved": 37,
+        "jds_resolved": 37,
+        "elapsed_seconds": 23.229
       },
       {
         "query": "machine learning engineer",
@@ -4609,12 +4609,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 45,
-        "unique_jobs": 45,
-        "unique_contribution": 5,
-        "first_pass_survivors": 5,
-        "original_postings_resolved": 5,
-        "jds_resolved": 5,
-        "elapsed_seconds": 3.72
+        "unique_jobs": 44,
+        "unique_contribution": 7,
+        "first_pass_survivors": 7,
+        "original_postings_resolved": 7,
+        "jds_resolved": 7,
+        "elapsed_seconds": 4.249
       },
       {
         "query": "data scientist",
@@ -4628,7 +4628,7 @@
         "first_pass_survivors": 12,
         "original_postings_resolved": 12,
         "jds_resolved": 12,
-        "elapsed_seconds": 7.803
+        "elapsed_seconds": 7.057
       },
       {
         "query": "solutions architect",
@@ -4642,7 +4642,7 @@
         "first_pass_survivors": 16,
         "original_postings_resolved": 16,
         "jds_resolved": 16,
-        "elapsed_seconds": 8.304
+        "elapsed_seconds": 8.17
       },
       {
         "query": "data engineer",
@@ -4651,12 +4651,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 45,
-        "unique_jobs": 44,
+        "unique_jobs": 45,
         "unique_contribution": 3,
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 2.952
+        "elapsed_seconds": 2.905
       },
       {
         "query": "platform engineer",
@@ -4670,7 +4670,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 4.14
+        "elapsed_seconds": 3.81
       },
       {
         "query": "full stack engineer",
@@ -4679,12 +4679,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 45,
-        "unique_jobs": 44,
+        "unique_jobs": 45,
         "unique_contribution": 4,
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 3.596
+        "elapsed_seconds": 3.26
       },
       {
         "query": "forward deployed engineer",
@@ -4698,7 +4698,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 3.123
+        "elapsed_seconds": 3.083
       },
       {
         "query": "software engineer",
@@ -4712,7 +4712,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 3.146
+        "elapsed_seconds": 2.795
       }
     ],
     "netflix": [
@@ -4728,7 +4728,7 @@
         "first_pass_survivors": 10,
         "original_postings_resolved": 10,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.451
+        "elapsed_seconds": 0.444
       },
       {
         "query": "machine learning engineer",
@@ -4742,7 +4742,7 @@
         "first_pass_survivors": 10,
         "original_postings_resolved": 10,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.316
+        "elapsed_seconds": 0.363
       },
       {
         "query": "data scientist",
@@ -4756,7 +4756,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.375
+        "elapsed_seconds": 0.347
       },
       {
         "query": "solutions architect",
@@ -4770,7 +4770,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.335
+        "elapsed_seconds": 0.464
       },
       {
         "query": "data engineer",
@@ -4784,7 +4784,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.385
+        "elapsed_seconds": 0.328
       },
       {
         "query": "platform engineer",
@@ -4798,7 +4798,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.382
+        "elapsed_seconds": 0.342
       },
       {
         "query": "full stack engineer",
@@ -4812,7 +4812,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.317
+        "elapsed_seconds": 0.356
       },
       {
         "query": "forward deployed engineer",
@@ -4826,7 +4826,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.361
+        "elapsed_seconds": 0.312
       },
       {
         "query": "software engineer",
@@ -4840,7 +4840,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.318
+        "elapsed_seconds": 0.352
       }
     ],
     "paypal": [
@@ -4856,7 +4856,7 @@
         "first_pass_survivors": 30,
         "original_postings_resolved": 30,
         "jds_resolved": 30,
-        "elapsed_seconds": 11.312
+        "elapsed_seconds": 11.775
       },
       {
         "query": "machine learning engineer",
@@ -4870,7 +4870,7 @@
         "first_pass_survivors": 7,
         "original_postings_resolved": 7,
         "jds_resolved": 7,
-        "elapsed_seconds": 2.986
+        "elapsed_seconds": 3.038
       },
       {
         "query": "data scientist",
@@ -4884,7 +4884,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 1.611
+        "elapsed_seconds": 1.663
       },
       {
         "query": "solutions architect",
@@ -4898,7 +4898,7 @@
         "first_pass_survivors": 9,
         "original_postings_resolved": 9,
         "jds_resolved": 9,
-        "elapsed_seconds": 3.442
+        "elapsed_seconds": 4.349
       },
       {
         "query": "data engineer",
@@ -4912,7 +4912,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 2.757
+        "elapsed_seconds": 2.762
       },
       {
         "query": "platform engineer",
@@ -4926,7 +4926,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 2.667
+        "elapsed_seconds": 2.395
       },
       {
         "query": "full stack engineer",
@@ -4940,7 +4940,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 1.182
+        "elapsed_seconds": 1.156
       },
       {
         "query": "forward deployed engineer",
@@ -4954,7 +4954,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 0.485
+        "elapsed_seconds": 0.507
       },
       {
         "query": "software engineer",
@@ -4963,12 +4963,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 30,
-        "unique_jobs": 29,
+        "unique_jobs": 30,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.382
+        "elapsed_seconds": 1.39
       }
     ],
     "redhat": [
@@ -4984,7 +4984,7 @@
         "first_pass_survivors": 13,
         "original_postings_resolved": 13,
         "jds_resolved": 13,
-        "elapsed_seconds": 6.644
+        "elapsed_seconds": 5.98
       },
       {
         "query": "machine learning engineer",
@@ -4998,7 +4998,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.389
+        "elapsed_seconds": 0.396
       },
       {
         "query": "data scientist",
@@ -5012,7 +5012,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.081
+        "elapsed_seconds": 0.762
       },
       {
         "query": "solutions architect",
@@ -5026,7 +5026,7 @@
         "first_pass_survivors": 19,
         "original_postings_resolved": 19,
         "jds_resolved": 19,
-        "elapsed_seconds": 22.13
+        "elapsed_seconds": 11.145
       },
       {
         "query": "data engineer",
@@ -5040,7 +5040,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.468
+        "elapsed_seconds": 0.428
       },
       {
         "query": "platform engineer",
@@ -5054,7 +5054,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.45
+        "elapsed_seconds": 0.404
       },
       {
         "query": "full stack engineer",
@@ -5068,7 +5068,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.463
+        "elapsed_seconds": 0.419
       },
       {
         "query": "forward deployed engineer",
@@ -5082,7 +5082,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.42
+        "elapsed_seconds": 0.389
       },
       {
         "query": "software engineer",
@@ -5096,7 +5096,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 0.902
+        "elapsed_seconds": 0.781
       }
     ],
     "two-sigma": [
@@ -5112,7 +5112,7 @@
         "first_pass_survivors": 12,
         "original_postings_resolved": 12,
         "jds_resolved": 12,
-        "elapsed_seconds": 17.343
+        "elapsed_seconds": 18.341
       },
       {
         "query": "machine learning engineer",
@@ -5126,7 +5126,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 8,
-        "elapsed_seconds": 12.357
+        "elapsed_seconds": 12.681
       },
       {
         "query": "data scientist",
@@ -5140,7 +5140,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 2.335
+        "elapsed_seconds": 2.329
       },
       {
         "query": "solutions architect",
@@ -5154,7 +5154,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 6.05
+        "elapsed_seconds": 5.925
       },
       {
         "query": "data engineer",
@@ -5168,7 +5168,7 @@
         "first_pass_survivors": 13,
         "original_postings_resolved": 13,
         "jds_resolved": 13,
-        "elapsed_seconds": 20.556
+        "elapsed_seconds": 20.793
       },
       {
         "query": "platform engineer",
@@ -5182,7 +5182,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 6.87
+        "elapsed_seconds": 6.351
       },
       {
         "query": "full stack engineer",
@@ -5196,7 +5196,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.09
+        "elapsed_seconds": 1.054
       },
       {
         "query": "forward deployed engineer",
@@ -5210,7 +5210,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.763
+        "elapsed_seconds": 0.773
       },
       {
         "query": "software engineer",
@@ -5224,7 +5224,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 7.295
+        "elapsed_seconds": 7.129
       }
     ],
     "visa": [
@@ -5240,7 +5240,7 @@
         "first_pass_survivors": 60,
         "original_postings_resolved": 60,
         "jds_resolved": 60,
-        "elapsed_seconds": 29.563
+        "elapsed_seconds": 28.431
       },
       {
         "query": "machine learning engineer",
@@ -5254,7 +5254,7 @@
         "first_pass_survivors": 14,
         "original_postings_resolved": 14,
         "jds_resolved": 14,
-        "elapsed_seconds": 8.785
+        "elapsed_seconds": 9.734
       },
       {
         "query": "data scientist",
@@ -5268,7 +5268,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 8,
-        "elapsed_seconds": 5.966
+        "elapsed_seconds": 5.862
       },
       {
         "query": "solutions architect",
@@ -5282,7 +5282,7 @@
         "first_pass_survivors": 21,
         "original_postings_resolved": 21,
         "jds_resolved": 21,
-        "elapsed_seconds": 11.383
+        "elapsed_seconds": 12.081
       },
       {
         "query": "data engineer",
@@ -5296,7 +5296,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 8,
-        "elapsed_seconds": 5.472
+        "elapsed_seconds": 5.847
       },
       {
         "query": "platform engineer",
@@ -5310,7 +5310,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 5.648
+        "elapsed_seconds": 4.851
       },
       {
         "query": "full stack engineer",
@@ -5324,7 +5324,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.485
+        "elapsed_seconds": 1.54
       },
       {
         "query": "forward deployed engineer",
@@ -5338,7 +5338,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.027
+        "elapsed_seconds": 1.078
       },
       {
         "query": "software engineer",
@@ -5348,11 +5348,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 2,
-        "first_pass_survivors": 2,
-        "original_postings_resolved": 2,
-        "jds_resolved": 2,
-        "elapsed_seconds": 3.09
+        "unique_contribution": 1,
+        "first_pass_survivors": 1,
+        "original_postings_resolved": 1,
+        "jds_resolved": 1,
+        "elapsed_seconds": 2.762
       }
     ],
     "workday": [
@@ -5368,7 +5368,7 @@
         "first_pass_survivors": 117,
         "original_postings_resolved": 117,
         "jds_resolved": 117,
-        "elapsed_seconds": 77.357
+        "elapsed_seconds": 70.597
       },
       {
         "query": "machine learning engineer",
@@ -5382,7 +5382,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.484
+        "elapsed_seconds": 1.981
       },
       {
         "query": "data scientist",
@@ -5396,7 +5396,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.003
+        "elapsed_seconds": 1.968
       },
       {
         "query": "solutions architect",
@@ -5406,11 +5406,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 14,
-        "first_pass_survivors": 14,
-        "original_postings_resolved": 14,
-        "jds_resolved": 14,
-        "elapsed_seconds": 13.63
+        "unique_contribution": 13,
+        "first_pass_survivors": 13,
+        "original_postings_resolved": 13,
+        "jds_resolved": 13,
+        "elapsed_seconds": 12.214
       },
       {
         "query": "data engineer",
@@ -5424,7 +5424,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 6.98
+        "elapsed_seconds": 6.508
       },
       {
         "query": "platform engineer",
@@ -5438,7 +5438,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 6.764
+        "elapsed_seconds": 6.512
       },
       {
         "query": "full stack engineer",
@@ -5452,7 +5452,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 7.033
+        "elapsed_seconds": 6.719
       },
       {
         "query": "forward deployed engineer",
@@ -5466,7 +5466,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 5,
-        "elapsed_seconds": 5.263
+        "elapsed_seconds": 4.041
       },
       {
         "query": "software engineer",
@@ -5480,7 +5480,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 18.266
+        "elapsed_seconds": 17.588
       }
     ],
     "zillow": [
@@ -5496,7 +5496,7 @@
         "first_pass_survivors": 48,
         "original_postings_resolved": 48,
         "jds_resolved": 48,
-        "elapsed_seconds": 24.321
+        "elapsed_seconds": 24.813
       },
       {
         "query": "machine learning engineer",
@@ -5510,7 +5510,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.711
+        "elapsed_seconds": 0.666
       },
       {
         "query": "data scientist",
@@ -5524,7 +5524,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.707
+        "elapsed_seconds": 0.663
       },
       {
         "query": "solutions architect",
@@ -5538,7 +5538,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.282
+        "elapsed_seconds": 1.258
       },
       {
         "query": "data engineer",
@@ -5552,7 +5552,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 3.489
+        "elapsed_seconds": 3.388
       },
       {
         "query": "platform engineer",
@@ -5566,7 +5566,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.596
+        "elapsed_seconds": 2.516
       },
       {
         "query": "full stack engineer",
@@ -5580,7 +5580,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.629
+        "elapsed_seconds": 0.612
       },
       {
         "query": "forward deployed engineer",
@@ -5594,7 +5594,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.666
+        "elapsed_seconds": 0.665
       },
       {
         "query": "software engineer",
@@ -5608,7 +5608,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.645
+        "elapsed_seconds": 0.686
       }
     ],
     "chewy": [
@@ -5624,7 +5624,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 2.083
+        "elapsed_seconds": 1.513
       },
       {
         "query": "machine learning engineer",
@@ -5638,7 +5638,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.427
+        "elapsed_seconds": 0.481
       },
       {
         "query": "data scientist",
@@ -5652,7 +5652,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.484
+        "elapsed_seconds": 0.492
       },
       {
         "query": "solutions architect",
@@ -5666,7 +5666,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.446
+        "elapsed_seconds": 0.477
       },
       {
         "query": "data engineer",
@@ -5680,7 +5680,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.442
+        "elapsed_seconds": 0.45
       },
       {
         "query": "platform engineer",
@@ -5694,7 +5694,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.426
+        "elapsed_seconds": 0.435
       },
       {
         "query": "full stack engineer",
@@ -5708,7 +5708,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.59
+        "elapsed_seconds": 0.431
       },
       {
         "query": "forward deployed engineer",
@@ -5722,7 +5722,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.57
+        "elapsed_seconds": 0.436
       },
       {
         "query": "software engineer",
@@ -5736,7 +5736,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.434
+        "elapsed_seconds": 0.43
       }
     ],
     "cvs": [
@@ -5752,7 +5752,7 @@
         "first_pass_survivors": 59,
         "original_postings_resolved": 59,
         "jds_resolved": 59,
-        "elapsed_seconds": 38.863
+        "elapsed_seconds": 36.678
       },
       {
         "query": "machine learning engineer",
@@ -5766,7 +5766,7 @@
         "first_pass_survivors": 12,
         "original_postings_resolved": 12,
         "jds_resolved": 12,
-        "elapsed_seconds": 6.854
+        "elapsed_seconds": 6.814
       },
       {
         "query": "data scientist",
@@ -5780,7 +5780,7 @@
         "first_pass_survivors": 9,
         "original_postings_resolved": 9,
         "jds_resolved": 9,
-        "elapsed_seconds": 4.604
+        "elapsed_seconds": 4.756
       },
       {
         "query": "solutions architect",
@@ -5794,7 +5794,7 @@
         "first_pass_survivors": 16,
         "original_postings_resolved": 16,
         "jds_resolved": 16,
-        "elapsed_seconds": 9.804
+        "elapsed_seconds": 9.763
       },
       {
         "query": "data engineer",
@@ -5808,7 +5808,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 8,
-        "elapsed_seconds": 5.93
+        "elapsed_seconds": 5.655
       },
       {
         "query": "platform engineer",
@@ -5822,7 +5822,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 2.408
+        "elapsed_seconds": 2.291
       },
       {
         "query": "full stack engineer",
@@ -5836,7 +5836,7 @@
         "first_pass_survivors": 16,
         "original_postings_resolved": 16,
         "jds_resolved": 16,
-        "elapsed_seconds": 8.87
+        "elapsed_seconds": 8.498
       },
       {
         "query": "forward deployed engineer",
@@ -5850,7 +5850,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.271
+        "elapsed_seconds": 0.255
       },
       {
         "query": "software engineer",
@@ -5864,7 +5864,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 2.769
+        "elapsed_seconds": 2.651
       }
     ],
     "equinix": [
@@ -5880,7 +5880,7 @@
         "first_pass_survivors": 40,
         "original_postings_resolved": 40,
         "jds_resolved": 0,
-        "elapsed_seconds": 3.615
+        "elapsed_seconds": 2.857
       },
       {
         "query": "machine learning engineer",
@@ -5894,7 +5894,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.708
+        "elapsed_seconds": 2.658
       },
       {
         "query": "data scientist",
@@ -5908,7 +5908,7 @@
         "first_pass_survivors": 20,
         "original_postings_resolved": 20,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.374
+        "elapsed_seconds": 1.314
       },
       {
         "query": "solutions architect",
@@ -5922,7 +5922,7 @@
         "first_pass_survivors": 7,
         "original_postings_resolved": 7,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.896
+        "elapsed_seconds": 1.038
       },
       {
         "query": "data engineer",
@@ -5931,12 +5931,12 @@
         "pages_fetched": 2,
         "stop_reason": "page_budget",
         "raw_jobs": 57,
-        "unique_jobs": 56,
+        "unique_jobs": 57,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 11.931
+        "elapsed_seconds": 6.619
       },
       {
         "query": "platform engineer",
@@ -5950,7 +5950,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.671
+        "elapsed_seconds": 3.064
       },
       {
         "query": "full stack engineer",
@@ -5959,12 +5959,12 @@
         "pages_fetched": 2,
         "stop_reason": "page_budget",
         "raw_jobs": 37,
-        "unique_jobs": 36,
+        "unique_jobs": 37,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.931
+        "elapsed_seconds": 2.341
       },
       {
         "query": "forward deployed engineer",
@@ -5973,12 +5973,12 @@
         "pages_fetched": 2,
         "stop_reason": "page_budget",
         "raw_jobs": 37,
-        "unique_jobs": 36,
+        "unique_jobs": 37,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.343
+        "elapsed_seconds": 2.729
       },
       {
         "query": "software engineer",
@@ -5987,12 +5987,12 @@
         "pages_fetched": 2,
         "stop_reason": "page_budget",
         "raw_jobs": 39,
-        "unique_jobs": 39,
+        "unique_jobs": 38,
         "unique_contribution": 2,
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.365
+        "elapsed_seconds": 3.176
       }
     ],
     "f5": [
@@ -6008,7 +6008,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.46
+        "elapsed_seconds": 1.809
       },
       {
         "query": "machine learning engineer",
@@ -6022,7 +6022,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.443
+        "elapsed_seconds": 0.671
       },
       {
         "query": "data scientist",
@@ -6036,7 +6036,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.39
+        "elapsed_seconds": 0.399
       },
       {
         "query": "solutions architect",
@@ -6050,7 +6050,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.06
+        "elapsed_seconds": 1.083
       },
       {
         "query": "data engineer",
@@ -6064,7 +6064,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.064
+        "elapsed_seconds": 1.239
       },
       {
         "query": "platform engineer",
@@ -6078,7 +6078,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.125
+        "elapsed_seconds": 1.047
       },
       {
         "query": "full stack engineer",
@@ -6092,7 +6092,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.458
+        "elapsed_seconds": 0.4
       },
       {
         "query": "forward deployed engineer",
@@ -6106,7 +6106,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.418
+        "elapsed_seconds": 0.42
       },
       {
         "query": "software engineer",
@@ -6120,7 +6120,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.173
+        "elapsed_seconds": 1.05
       }
     ],
     "wells-fargo": [
@@ -6130,13 +6130,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 32,
-        "unique_jobs": 32,
-        "unique_contribution": 32,
-        "first_pass_survivors": 32,
-        "original_postings_resolved": 32,
-        "jds_resolved": 32,
-        "elapsed_seconds": 20.298
+        "raw_jobs": 27,
+        "unique_jobs": 27,
+        "unique_contribution": 27,
+        "first_pass_survivors": 27,
+        "original_postings_resolved": 27,
+        "jds_resolved": 27,
+        "elapsed_seconds": 17.57
       },
       {
         "query": "machine learning engineer",
@@ -6144,8 +6144,8 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 10,
-        "unique_jobs": 10,
+        "raw_jobs": 9,
+        "unique_jobs": 9,
         "unique_contribution": 4,
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
@@ -6164,7 +6164,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.929
+        "elapsed_seconds": 0.8
       },
       {
         "query": "solutions architect",
@@ -6172,13 +6172,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 43,
-        "unique_jobs": 43,
-        "unique_contribution": 19,
-        "first_pass_survivors": 19,
-        "original_postings_resolved": 19,
-        "jds_resolved": 19,
-        "elapsed_seconds": 13.673
+        "raw_jobs": 36,
+        "unique_jobs": 36,
+        "unique_contribution": 17,
+        "first_pass_survivors": 17,
+        "original_postings_resolved": 17,
+        "jds_resolved": 17,
+        "elapsed_seconds": 12.7
       },
       {
         "query": "data engineer",
@@ -6186,13 +6186,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 60,
-        "unique_jobs": 60,
+        "raw_jobs": 53,
+        "unique_jobs": 53,
         "unique_contribution": 11,
         "first_pass_survivors": 11,
         "original_postings_resolved": 11,
         "jds_resolved": 11,
-        "elapsed_seconds": 9.719
+        "elapsed_seconds": 8.797
       },
       {
         "query": "platform engineer",
@@ -6200,13 +6200,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 54,
-        "unique_jobs": 54,
+        "raw_jobs": 47,
+        "unique_jobs": 47,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 3.089
+        "elapsed_seconds": 2.927
       },
       {
         "query": "full stack engineer",
@@ -6214,13 +6214,13 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 7,
-        "unique_jobs": 7,
+        "raw_jobs": 5,
+        "unique_jobs": 5,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.837
+        "elapsed_seconds": 0.811
       },
       {
         "query": "forward deployed engineer",
@@ -6234,7 +6234,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.841
+        "elapsed_seconds": 0.804
       },
       {
         "query": "software engineer",
@@ -6242,13 +6242,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 45,
-        "unique_jobs": 45,
+        "raw_jobs": 38,
+        "unique_jobs": 38,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 3.011
+        "elapsed_seconds": 3.184
       }
     ],
     "yahoo": [
@@ -6264,7 +6264,7 @@
         "first_pass_survivors": 45,
         "original_postings_resolved": 45,
         "jds_resolved": 45,
-        "elapsed_seconds": 26.739
+        "elapsed_seconds": 23.414
       },
       {
         "query": "machine learning engineer",
@@ -6278,7 +6278,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.673
+        "elapsed_seconds": 0.652
       },
       {
         "query": "data scientist",
@@ -6292,7 +6292,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.625
+        "elapsed_seconds": 0.623
       },
       {
         "query": "solutions architect",
@@ -6306,7 +6306,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 2.176
+        "elapsed_seconds": 1.882
       },
       {
         "query": "data engineer",
@@ -6320,7 +6320,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 2.78
+        "elapsed_seconds": 3.075
       },
       {
         "query": "platform engineer",
@@ -6334,7 +6334,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.446
+        "elapsed_seconds": 2.413
       },
       {
         "query": "full stack engineer",
@@ -6348,7 +6348,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.643
+        "elapsed_seconds": 0.773
       },
       {
         "query": "forward deployed engineer",
@@ -6362,7 +6362,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.622
+        "elapsed_seconds": 0.642
       },
       {
         "query": "software engineer",
@@ -6376,7 +6376,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.636
+        "elapsed_seconds": 2.634
       }
     ],
     "ansys": [
@@ -6392,7 +6392,7 @@
         "first_pass_survivors": 20,
         "original_postings_resolved": 20,
         "jds_resolved": 20,
-        "elapsed_seconds": 6.382
+        "elapsed_seconds": 6.855
       }
     ],
     "flex": [
@@ -6408,7 +6408,7 @@
         "first_pass_survivors": 31,
         "original_postings_resolved": 31,
         "jds_resolved": 31,
-        "elapsed_seconds": 17.775
+        "elapsed_seconds": 18.708
       },
       {
         "query": "machine learning engineer",
@@ -6422,7 +6422,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.175
+        "elapsed_seconds": 1.063
       },
       {
         "query": "data scientist",
@@ -6436,7 +6436,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.979
+        "elapsed_seconds": 1.019
       },
       {
         "query": "solutions architect",
@@ -6450,7 +6450,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 3.543
+        "elapsed_seconds": 3.838
       },
       {
         "query": "data engineer",
@@ -6464,7 +6464,7 @@
         "first_pass_survivors": 40,
         "original_postings_resolved": 40,
         "jds_resolved": 40,
-        "elapsed_seconds": 20.298
+        "elapsed_seconds": 21.678
       },
       {
         "query": "platform engineer",
@@ -6478,7 +6478,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 5,
-        "elapsed_seconds": 3.028
+        "elapsed_seconds": 3.227
       },
       {
         "query": "full stack engineer",
@@ -6492,7 +6492,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.981
+        "elapsed_seconds": 1.007
       },
       {
         "query": "forward deployed engineer",
@@ -6506,7 +6506,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.93
+        "elapsed_seconds": 1.0
       },
       {
         "query": "software engineer",
@@ -6520,7 +6520,7 @@
         "first_pass_survivors": 23,
         "original_postings_resolved": 23,
         "jds_resolved": 23,
-        "elapsed_seconds": 14.957
+        "elapsed_seconds": 15.81
       }
     ],
     "iqvia": [
@@ -6536,7 +6536,7 @@
         "first_pass_survivors": 7,
         "original_postings_resolved": 7,
         "jds_resolved": 7,
-        "elapsed_seconds": 4.54
+        "elapsed_seconds": 4.14
       },
       {
         "query": "machine learning engineer",
@@ -6550,7 +6550,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.749
+        "elapsed_seconds": 0.762
       },
       {
         "query": "data scientist",
@@ -6564,7 +6564,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.859
+        "elapsed_seconds": 0.74
       },
       {
         "query": "solutions architect",
@@ -6578,7 +6578,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 4.354
+        "elapsed_seconds": 3.489
       },
       {
         "query": "data engineer",
@@ -6592,7 +6592,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.714
+        "elapsed_seconds": 0.735
       },
       {
         "query": "platform engineer",
@@ -6606,7 +6606,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.752
+        "elapsed_seconds": 0.72
       },
       {
         "query": "full stack engineer",
@@ -6620,7 +6620,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.794
+        "elapsed_seconds": 0.739
       },
       {
         "query": "forward deployed engineer",
@@ -6634,7 +6634,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.733
+        "elapsed_seconds": 0.74
       },
       {
         "query": "software engineer",
@@ -6648,7 +6648,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.756
+        "elapsed_seconds": 0.731
       }
     ],
     "johnson-johnson": [
@@ -6664,7 +6664,7 @@
         "first_pass_survivors": 58,
         "original_postings_resolved": 58,
         "jds_resolved": 58,
-        "elapsed_seconds": 39.886
+        "elapsed_seconds": 31.017
       },
       {
         "query": "machine learning engineer",
@@ -6672,13 +6672,13 @@
         "page_budget": 3,
         "pages_fetched": 2,
         "stop_reason": "early_stop",
-        "raw_jobs": 37,
-        "unique_jobs": 37,
-        "unique_contribution": 19,
-        "first_pass_survivors": 19,
-        "original_postings_resolved": 19,
-        "jds_resolved": 19,
-        "elapsed_seconds": 10.767
+        "raw_jobs": 36,
+        "unique_jobs": 36,
+        "unique_contribution": 18,
+        "first_pass_survivors": 18,
+        "original_postings_resolved": 18,
+        "jds_resolved": 18,
+        "elapsed_seconds": 9.117
       },
       {
         "query": "data scientist",
@@ -6686,13 +6686,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 60,
-        "unique_jobs": 60,
+        "raw_jobs": 59,
+        "unique_jobs": 59,
         "unique_contribution": 41,
         "first_pass_survivors": 41,
         "original_postings_resolved": 41,
         "jds_resolved": 41,
-        "elapsed_seconds": 21.309
+        "elapsed_seconds": 23.056
       },
       {
         "query": "solutions architect",
@@ -6702,11 +6702,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 25,
-        "first_pass_survivors": 25,
-        "original_postings_resolved": 25,
-        "jds_resolved": 25,
-        "elapsed_seconds": 12.299
+        "unique_contribution": 24,
+        "first_pass_survivors": 24,
+        "original_postings_resolved": 24,
+        "jds_resolved": 24,
+        "elapsed_seconds": 13.559
       },
       {
         "query": "data engineer",
@@ -6720,7 +6720,7 @@
         "first_pass_survivors": 23,
         "original_postings_resolved": 23,
         "jds_resolved": 23,
-        "elapsed_seconds": 12.645
+        "elapsed_seconds": 13.728
       },
       {
         "query": "platform engineer",
@@ -6734,7 +6734,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 4.334
+        "elapsed_seconds": 4.538
       },
       {
         "query": "full stack engineer",
@@ -6748,7 +6748,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 1.848
+        "elapsed_seconds": 2.003
       },
       {
         "query": "forward deployed engineer",
@@ -6756,13 +6756,13 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 1,
-        "unique_jobs": 1,
+        "raw_jobs": 0,
+        "unique_jobs": 0,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.24
+        "elapsed_seconds": 0.232
       },
       {
         "query": "software engineer",
@@ -6776,7 +6776,7 @@
         "first_pass_survivors": 13,
         "original_postings_resolved": 13,
         "jds_resolved": 13,
-        "elapsed_seconds": 8.473
+        "elapsed_seconds": 7.767
       }
     ],
     "nasdaq": [
@@ -6792,7 +6792,7 @@
         "first_pass_survivors": 9,
         "original_postings_resolved": 9,
         "jds_resolved": 9,
-        "elapsed_seconds": 4.615
+        "elapsed_seconds": 4.411
       },
       {
         "query": "machine learning engineer",
@@ -6806,7 +6806,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.572
+        "elapsed_seconds": 0.578
       },
       {
         "query": "data scientist",
@@ -6820,7 +6820,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.544
+        "elapsed_seconds": 0.565
       },
       {
         "query": "solutions architect",
@@ -6834,7 +6834,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.393
+        "elapsed_seconds": 1.344
       },
       {
         "query": "data engineer",
@@ -6848,7 +6848,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.681
+        "elapsed_seconds": 1.436
       },
       {
         "query": "platform engineer",
@@ -6862,7 +6862,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.587
+        "elapsed_seconds": 0.658
       },
       {
         "query": "full stack engineer",
@@ -6876,7 +6876,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.576
+        "elapsed_seconds": 0.608
       },
       {
         "query": "forward deployed engineer",
@@ -6890,7 +6890,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.551
+        "elapsed_seconds": 0.573
       },
       {
         "query": "software engineer",
@@ -6904,7 +6904,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.557
+        "elapsed_seconds": 0.838
       }
     ],
     "stryker": [
@@ -6920,7 +6920,7 @@
         "first_pass_survivors": 23,
         "original_postings_resolved": 23,
         "jds_resolved": 23,
-        "elapsed_seconds": 12.829
+        "elapsed_seconds": 12.779
       },
       {
         "query": "machine learning engineer",
@@ -6934,7 +6934,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 1.933
+        "elapsed_seconds": 1.92
       },
       {
         "query": "data scientist",
@@ -6948,7 +6948,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.104
+        "elapsed_seconds": 1.022
       },
       {
         "query": "solutions architect",
@@ -6962,7 +6962,7 @@
         "first_pass_survivors": 21,
         "original_postings_resolved": 21,
         "jds_resolved": 21,
-        "elapsed_seconds": 15.326
+        "elapsed_seconds": 12.001
       },
       {
         "query": "data engineer",
@@ -6976,7 +6976,7 @@
         "first_pass_survivors": 42,
         "original_postings_resolved": 42,
         "jds_resolved": 42,
-        "elapsed_seconds": 22.278
+        "elapsed_seconds": 20.535
       },
       {
         "query": "platform engineer",
@@ -6990,7 +6990,7 @@
         "first_pass_survivors": 9,
         "original_postings_resolved": 9,
         "jds_resolved": 9,
-        "elapsed_seconds": 6.725
+        "elapsed_seconds": 6.76
       },
       {
         "query": "full stack engineer",
@@ -7004,7 +7004,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.692
+        "elapsed_seconds": 1.444
       },
       {
         "query": "forward deployed engineer",
@@ -7018,7 +7018,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.764
+        "elapsed_seconds": 0.82
       },
       {
         "query": "software engineer",
@@ -7032,7 +7032,7 @@
         "first_pass_survivors": 39,
         "original_postings_resolved": 39,
         "jds_resolved": 39,
-        "elapsed_seconds": 22.8
+        "elapsed_seconds": 22.651
       }
     ],
     "transunion": [
@@ -7048,7 +7048,7 @@
         "first_pass_survivors": 24,
         "original_postings_resolved": 24,
         "jds_resolved": 24,
-        "elapsed_seconds": 10.826
+        "elapsed_seconds": 12.045
       },
       {
         "query": "machine learning engineer",
@@ -7062,7 +7062,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.435
+        "elapsed_seconds": 0.479
       },
       {
         "query": "data scientist",
@@ -7076,7 +7076,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 0.803
+        "elapsed_seconds": 0.804
       },
       {
         "query": "solutions architect",
@@ -7090,7 +7090,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.165
+        "elapsed_seconds": 1.307
       },
       {
         "query": "data engineer",
@@ -7104,7 +7104,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.019
+        "elapsed_seconds": 2.173
       },
       {
         "query": "platform engineer",
@@ -7118,7 +7118,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.49
+        "elapsed_seconds": 0.501
       },
       {
         "query": "full stack engineer",
@@ -7132,7 +7132,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.23
+        "elapsed_seconds": 2.163
       },
       {
         "query": "forward deployed engineer",
@@ -7146,7 +7146,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.426
+        "elapsed_seconds": 0.443
       },
       {
         "query": "software engineer",
@@ -7160,7 +7160,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.427
+        "elapsed_seconds": 0.494
       }
     ],
     "travelers": [
@@ -7170,13 +7170,13 @@
         "page_budget": 6,
         "pages_fetched": 4,
         "stop_reason": "early_stop",
-        "raw_jobs": 44,
-        "unique_jobs": 44,
-        "unique_contribution": 44,
-        "first_pass_survivors": 44,
-        "original_postings_resolved": 44,
-        "jds_resolved": 44,
-        "elapsed_seconds": 36.267
+        "raw_jobs": 42,
+        "unique_jobs": 42,
+        "unique_contribution": 42,
+        "first_pass_survivors": 42,
+        "original_postings_resolved": 42,
+        "jds_resolved": 42,
+        "elapsed_seconds": 21.282
       },
       {
         "query": "machine learning engineer",
@@ -7190,7 +7190,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 8,
-        "elapsed_seconds": 5.087
+        "elapsed_seconds": 3.617
       },
       {
         "query": "data scientist",
@@ -7204,7 +7204,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 3.368
+        "elapsed_seconds": 2.077
       },
       {
         "query": "solutions architect",
@@ -7212,13 +7212,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 46,
-        "unique_jobs": 46,
+        "raw_jobs": 45,
+        "unique_jobs": 45,
         "unique_contribution": 10,
         "first_pass_survivors": 10,
         "original_postings_resolved": 10,
         "jds_resolved": 10,
-        "elapsed_seconds": 7.064
+        "elapsed_seconds": 6.36
       },
       {
         "query": "data engineer",
@@ -7226,13 +7226,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 59,
-        "unique_jobs": 59,
+        "raw_jobs": 57,
+        "unique_jobs": 57,
         "unique_contribution": 12,
         "first_pass_survivors": 12,
         "original_postings_resolved": 12,
         "jds_resolved": 12,
-        "elapsed_seconds": 10.827
+        "elapsed_seconds": 7.476
       },
       {
         "query": "platform engineer",
@@ -7240,13 +7240,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 50,
-        "unique_jobs": 50,
+        "raw_jobs": 48,
+        "unique_jobs": 48,
         "unique_contribution": 1,
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 2.766
+        "elapsed_seconds": 2.629
       },
       {
         "query": "full stack engineer",
@@ -7254,13 +7254,13 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
+        "raw_jobs": 18,
+        "unique_jobs": 18,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.587
+        "elapsed_seconds": 0.585
       },
       {
         "query": "forward deployed engineer",
@@ -7268,13 +7268,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 27,
-        "unique_jobs": 27,
+        "raw_jobs": 26,
+        "unique_jobs": 26,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.403
+        "elapsed_seconds": 2.427
       },
       {
         "query": "software engineer",
@@ -7282,13 +7282,13 @@
         "page_budget": 12,
         "pages_fetched": 4,
         "stop_reason": "early_stop",
-        "raw_jobs": 50,
-        "unique_jobs": 50,
+        "raw_jobs": 48,
+        "unique_jobs": 48,
         "unique_contribution": 5,
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 5,
-        "elapsed_seconds": 6.234
+        "elapsed_seconds": 5.512
       }
     ],
     "verizon": [
@@ -7304,7 +7304,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 0.663
+        "elapsed_seconds": 0.506
       },
       {
         "query": "",
@@ -7318,7 +7318,21 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 0.55
+        "elapsed_seconds": 0.485
+      },
+      {
+        "query": "",
+        "group": "official",
+        "page_budget": 3,
+        "pages_fetched": 1,
+        "stop_reason": "early_stop",
+        "raw_jobs": 8,
+        "unique_jobs": 8,
+        "unique_contribution": 5,
+        "first_pass_survivors": 5,
+        "original_postings_resolved": 5,
+        "jds_resolved": 5,
+        "elapsed_seconds": 1.153
       },
       {
         "query": "",
@@ -7328,25 +7342,11 @@
         "stop_reason": "early_stop",
         "raw_jobs": 9,
         "unique_jobs": 9,
-        "unique_contribution": 6,
-        "first_pass_survivors": 6,
-        "original_postings_resolved": 6,
-        "jds_resolved": 6,
-        "elapsed_seconds": 1.095
-      },
-      {
-        "query": "",
-        "group": "official",
-        "page_budget": 3,
-        "pages_fetched": 1,
-        "stop_reason": "early_stop",
-        "raw_jobs": 11,
-        "unique_jobs": 11,
-        "unique_contribution": 9,
-        "first_pass_survivors": 9,
-        "original_postings_resolved": 9,
-        "jds_resolved": 9,
-        "elapsed_seconds": 1.402
+        "unique_contribution": 7,
+        "first_pass_survivors": 7,
+        "original_postings_resolved": 7,
+        "jds_resolved": 7,
+        "elapsed_seconds": 1.925
       },
       {
         "query": "",
@@ -7360,7 +7360,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 0.271
+        "elapsed_seconds": 0.442
       },
       {
         "query": "",
@@ -7374,53 +7374,51 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 0.48
+        "elapsed_seconds": 0.569
       }
     ]
   },
   "funnel": {
-    "after_dedup": 18190,
-    "after_company": 18190,
-    "after_hard_filter": 14715,
-    "after_prefilter": 2891,
-    "dropped": 15299
+    "after_dedup": 18157,
+    "after_company": 18157,
+    "after_hard_filter": 14685,
+    "after_prefilter": 2886,
+    "dropped": 15271
   },
   "llm": {
-    "reused": 350,
-    "llm": 17,
-    "new_or_changed": 25,
+    "reused": 360,
+    "llm": 2,
+    "new_or_changed": 3,
     "rule": 2524,
-    "sent": 17,
-    "api_requests": 4,
-    "recency_skipped": 8,
+    "sent": 2,
+    "api_requests": 2,
+    "recency_skipped": 1,
     "overflow": 0,
     "peer_reused": 0,
-    "thin_source_rule": 50,
+    "thin_source_rule": 49,
     "retryable_fallbacks": 0,
-    "historical_seen_skipped": 2466,
+    "historical_seen_skipped": 2474,
     "historical_llm_retained": 0,
     "non_material_change_reused": 0,
-    "same_content_reused": 7,
-    "rescored_within_24h": 1,
+    "same_content_reused": 9,
+    "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 10,
-      "material_jd_change": 1,
-      "prior_rule_result_now_eligible_for_llm": 9,
-      "prior_rule_result_recency_gated": 5
+      "genuinely_new_job": 1,
+      "material_jd_change": 2
     },
     "batch_size": 10,
-    "primary_batches_total": 4,
-    "batches_total": 4,
-    "batches_succeeded": 4,
-    "batches_attempted": 4,
+    "primary_batches_total": 2,
+    "batches_total": 2,
+    "batches_succeeded": 2,
+    "batches_attempted": 2,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 37.924,
-    "json_results": 17,
+    "latency_seconds": 6.471,
+    "json_results": 2,
     "batches": [
       {
         "batch": 1,
@@ -7428,442 +7426,109 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1005178-1",
-            "company": "Capital One",
-            "title": "Full-stack Engineer 4"
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-Stack-Engineer-4--Java--JavaScript--SQL--Docker-_R1004925-1",
-            "company": "Capital One",
-            "title": "Full-Stack Engineer 4 (Java, JavaScript, SQL, Docker)"
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-Stack-Engineer-4--Go---Angular---Cloud-Operations-Resilience-Engineering-_R1005054-1",
-            "company": "Capital One",
-            "title": "Full Stack Engineer 4 (Go & Angular) (Cloud Operations Resilience Engineering)"
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-stack-Software-Engineer-5--Data-Insights-Platform--Global-Payment-Network-_R1005041-1",
-            "company": "Capital One",
-            "title": "Full-stack Software Engineer 5, Data Insights Platform (Global Payment Network)"
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Full-stack-Engineer-5---Intelligent-Foundations-and-Experiences--IFX-_R1005018-1",
-            "company": "Capital One",
-            "title": "Full-stack Engineer 5 - Intelligent Foundations and Experiences (IFX)"
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Full-stack-Engineer-4_R1004508-1",
-            "company": "Capital One",
-            "title": "Full-stack Engineer 4"
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Full-stack-Engineer-5_R1004616-1",
-            "company": "Capital One",
-            "title": "Full-stack Engineer 5"
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1004708",
-            "company": "Capital One",
-            "title": "Full-stack Engineer 4"
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Software-Engineer---Stack--AWS--Java--JavaScript--TypeScript-_R1004484-1",
-            "company": "Capital One",
-            "title": "Software Engineer - Stack (AWS, Java, JavaScript, TypeScript)"
-          },
-          {
-            "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/302155",
-            "company": "Dell",
-            "title": "Software Engineer 2"
+            "key": "url::https://www.amazon.jobs/en/jobs/10595565/software-development-engineer-data-and-analytics",
+            "company": "Amazon",
+            "title": "Software Development Engineer, Data and Analytics"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 20.971,
+        "latency_seconds": 3.237,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 10,
-          "input_tokens": 15404,
+          "jobs_scored": 1,
+          "input_tokens": 2810,
           "cached_input_tokens": 0,
-          "output_tokens": 2239,
-          "reasoning_tokens": 1276,
-          "estimated_usd": 0.00266
+          "output_tokens": 244,
+          "reasoning_tokens": 155,
+          "estimated_usd": 0.000403
         },
         "decisions": [
           {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1005178-1",
-            "match_score": 53.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack systems delivery",
-              "Cloud APIs and microservices"
-            ],
-            "main_gaps": [
-              "4 years non-internship experience",
-              "Technical team leadership"
-            ]
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-Stack-Engineer-4--Java--JavaScript--SQL--Docker-_R1004925-1",
-            "match_score": 53.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack systems delivery",
-              "Cloud APIs and microservices"
-            ],
-            "main_gaps": [
-              "4 years non-internship experience",
-              "Technical team leadership"
-            ]
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-Stack-Engineer-4--Go---Angular---Cloud-Operations-Resilience-Engineering-_R1005054-1",
-            "match_score": 52.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Cloud service delivery",
-              "Full-stack systems experience"
-            ],
-            "main_gaps": [
-              "4 years professional experience",
-              "Technical team leadership"
-            ]
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-stack-Software-Engineer-5--Data-Insights-Platform--Global-Payment-Network-_R1005041-1",
-            "match_score": 38.0,
+            "key": "url::https://www.amazon.jobs/en/jobs/10595565/software-development-engineer-data-and-analytics",
+            "match_score": 56.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
               "Distributed systems experience",
-              "Data platform exposure"
+              "Production backend development"
             ],
             "main_gaps": [
-              "6 years professional experience",
-              "Multi-team technical leadership"
+              "Erlang development",
+              "3+ years professional experience"
             ]
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Full-stack-Engineer-5---Intelligent-Foundations-and-Experiences--IFX-_R1005018-1",
-            "match_score": 37.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack systems delivery",
-              "Cloud-native implementation"
-            ],
-            "main_gaps": [
-              "6 years professional experience",
-              "Multi-team technical leadership"
-            ]
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Full-stack-Engineer-4_R1004508-1",
-            "match_score": 53.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack systems delivery",
-              "Cloud APIs and microservices"
-            ],
-            "main_gaps": [
-              "4 years non-internship experience",
-              "Technical team leadership"
-            ]
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Full-stack-Engineer-5_R1004616-1",
-            "match_score": 38.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack systems delivery",
-              "Cloud-native implementation"
-            ],
-            "main_gaps": [
-              "6 years professional experience",
-              "Multi-team technical leadership"
-            ]
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4_R1004708",
-            "match_score": 53.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack systems delivery",
-              "Cloud APIs and microservices"
-            ],
-            "main_gaps": [
-              "4 years non-internship experience",
-              "Technical team leadership"
-            ]
-          },
-          {
-            "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Software-Engineer---Stack--AWS--Java--JavaScript--TypeScript-_R1004484-1",
-            "match_score": 53.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack systems delivery",
-              "Cloud APIs and microservices"
-            ],
-            "main_gaps": [
-              "4 years non-internship experience",
-              "Technical team leadership"
-            ]
-          },
-          {
-            "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/302155",
-            "match_score": 80.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack application development",
-              "Testing and issue resolution"
-            ],
-            "main_gaps": []
           }
         ]
       },
       {
         "batch": 2,
-        "route": "resume_swe",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Ft-Collins-Colorado-United-States-of-America/C---Compiler-Developer_1217583-2",
-            "company": "HPE",
-            "title": "C++ Compiler Developer"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 3.129,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 1,
-          "input_tokens": 3318,
-          "cached_input_tokens": 1851,
-          "output_tokens": 237,
-          "reasoning_tokens": 124,
-          "estimated_usd": 0.000284
-        },
-        "decisions": [
-          {
-            "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Ft-Collins-Colorado-United-States-of-America/C---Compiler-Developer_1217583-2",
-            "match_score": 48.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "C++ programming",
-              "Software testing and debugging"
-            ],
-            "main_gaps": [
-              "Compiler development experience",
-              "4–6 years systems experience"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 3,
-        "route": "resume_ai",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Machine-Learning-Engineer--Data-Curation---Autonomous-Vehicles_JR2028908",
-            "company": "NVIDIA",
-            "title": "Machine Learning Engineer, Data Curation - Autonomous Vehicles"
-          },
-          {
-            "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/AI-Business-Architect--Hybrid-_2028504",
-            "company": "Cisco",
-            "title": "AI Business Architect (Hybrid)"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 5.483,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 2,
-          "input_tokens": 4490,
-          "cached_input_tokens": 0,
-          "output_tokens": 479,
-          "reasoning_tokens": 270,
-          "estimated_usd": 0.000688
-        },
-        "decisions": [
-          {
-            "key": "url::https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Machine-Learning-Engineer--Data-Curation---Autonomous-Vehicles_JR2028908",
-            "match_score": 51.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "ML evaluation pipelines",
-              "Production AI systems"
-            ],
-            "main_gaps": [
-              "5+ years relevant experience",
-              "Computer vision/autonomous vehicles"
-            ]
-          },
-          {
-            "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/AI-Business-Architect--Hybrid-_2028504",
-            "match_score": 32.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "AI implementation experience",
-              "API and MCP integration"
-            ],
-            "main_gaps": [
-              "6+ years architecture experience",
-              "Q2C process architecture"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 4,
         "route": "both",
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://www.amazon.jobs/en/jobs/10599409/software-development-engineer-ii-regression-infrastructure-trainium-manufacturing-infrastucture",
-            "company": "Amazon",
-            "title": "Software Development Engineer II — Regression Infrastructure, Trainium Manufacturing Infrastucture"
-          },
-          {
-            "key": "url::https://www.metacareers.com/jobs/1769429977466758",
-            "company": "Meta",
-            "title": "Software Engineer, Machine Learning - Ads Products"
-          },
-          {
-            "key": "url::https://www.metacareers.com/jobs/4456053234655827",
-            "company": "Meta",
-            "title": "Software Engineer, Product - Ads Products"
-          },
-          {
-            "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792819",
-            "company": "JPMorgan Chase",
-            "title": "Back-end Java Software Engineer III"
+            "key": "url::https://jobs.ashbyhq.com/openai/1a475859-21e3-45fc-9e93-8763aa1d0992",
+            "company": "OpenAI",
+            "title": "Civil & Structural Architect, Power Generation"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 8.341,
+        "latency_seconds": 3.234,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 4,
-          "input_tokens": 5836,
+          "jobs_scored": 1,
+          "input_tokens": 3983,
           "cached_input_tokens": 0,
-          "output_tokens": 891,
-          "reasoning_tokens": 428,
-          "estimated_usd": 0.001029
+          "output_tokens": 219,
+          "reasoning_tokens": 123,
+          "estimated_usd": 0.000508
         },
         "decisions": [
           {
-            "key": "url::https://www.amazon.jobs/en/jobs/10599409/software-development-engineer-ii-regression-infrastructure-trainium-manufacturing-infrastucture",
-            "match_score": 61.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python infrastructure automation",
-              "AWS CI/CD and reliability"
-            ],
-            "main_gaps": [
-              "Hardware and firmware management",
-              "Multi-site on-prem operations"
-            ]
-          },
-          {
-            "key": "url::https://www.metacareers.com/jobs/1769429977466758",
-            "match_score": 29.0,
+            "key": "url::https://jobs.ashbyhq.com/openai/1a475859-21e3-45fc-9e93-8763aa1d0992",
+            "match_score": 5.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production ML system experience",
-              "Model evaluation and iteration"
-            ],
+            "top_match_reasons": [],
             "main_gaps": [
-              "8+ years programming experience",
-              "Privacy-preserving ads measurement"
-            ]
-          },
-          {
-            "key": "url::https://www.metacareers.com/jobs/4456053234655827",
-            "match_score": 34.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack product development",
-              "Production testing and monitoring"
-            ],
-            "main_gaps": [
-              "6+ years large-scale product experience",
-              "Advertiser campaign workflows"
-            ]
-          },
-          {
-            "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792819",
-            "match_score": 65.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "REST APIs and microservices",
-              "Java and Spring Boot"
-            ],
-            "main_gaps": [
-              "3+ years applied experience",
-              "Cucumber or Karate testing"
+              "Civil/structural engineering",
+              "Power-generation project delivery"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 17,
-    "input_tokens": 29048,
-    "cached_input_tokens": 1851,
-    "output_tokens": 3846,
-    "reasoning_tokens": 2098,
-    "estimated_usd": 0.004661,
+    "jobs_scored": 2,
+    "input_tokens": 6793,
+    "cached_input_tokens": 0,
+    "output_tokens": 463,
+    "reasoning_tokens": 278,
+    "estimated_usd": 0.000911,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 17
+    "scored": 2
   },
   "output": {
     "tier_a": 8,
-    "tier_b": 32,
-    "shown": 40,
-    "new_jobs": 56,
-    "new_jobs_added": 1
+    "tier_b": 31,
+    "shown": 39,
+    "new_jobs": 10,
+    "new_jobs_added": 0
   },
   "recency": {
     "lt3h": 0,
-    "3to24h": 0,
-    "1to3d": 128,
+    "3to24h": 1,
+    "1to3d": 127,
     "newly_discovered": 1,
-    "3to7d": 365,
-    "gt7d": 2397
+    "3to7d": 366,
+    "gt7d": 2391
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -7871,23 +7536,24 @@
     "llm": []
   },
   "enrichment": {
-    "discovered": 18235,
-    "needed": 824,
-    "source_jds_available": 17410,
+    "discovered": 18202,
+    "needed": 823,
+    "source_jds_available": 17378,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 825
+    "remaining_no_jd": 824
   },
   "jd_recovery": {
-    "cache_reused": 310,
+    "cache_reused": 312,
     "ai_requests": 1,
-    "detail_requests": 14,
-    "detail_success": 2,
-    "eligible": 5579,
-    "usable_jd": 5567,
+    "detail_requests": 24,
+    "detail_success": 11,
+    "browser_http_requests": 6,
+    "eligible": 5571,
+    "usable_jd": 5559,
     "budget_deferred": 0,
-    "ai_skip": 256,
+    "ai_skip": 255,
     "deterministic_skip": 595,
-    "elapsed_seconds": 26.614,
+    "elapsed_seconds": 25.302,
     "errors": [],
     "per_company": {
       "Google": {
@@ -7922,18 +7588,19 @@
         "usable_jd": 31
       },
       "Meta": {
-        "cache_reused": 253,
-        "eligible": 236,
+        "cache_reused": 255,
+        "eligible": 237,
         "deterministic_skip": 435,
-        "ai_skip": 185,
-        "detail_requests": 2,
-        "detail_success": 2,
+        "ai_skip": 183,
+        "ai_recover": 1,
+        "detail_requests": 1,
+        "detail_success": 1,
         "budget_deferred": 0,
-        "usable_jd": 236
+        "usable_jd": 237
       },
       "TikTok": {
-        "eligible": 428,
-        "usable_jd": 428
+        "eligible": 427,
+        "usable_jd": 427
       },
       "Uber": {
         "eligible": 33,
@@ -7972,8 +7639,8 @@
         "usable_jd": 94
       },
       "Oracle": {
-        "eligible": 60,
-        "usable_jd": 60
+        "eligible": 57,
+        "usable_jd": 57
       },
       "Walmart Global Tech": {
         "eligible": 49,
@@ -8061,8 +7728,9 @@
         "eligible": 15,
         "ai_skip": 11,
         "ai_recover": 1,
-        "detail_requests": 8,
+        "detail_requests": 11,
         "detail_failure": 8,
+        "detail_success": 3,
         "budget_deferred": 0,
         "usable_jd": 7
       },
@@ -8071,8 +7739,8 @@
         "usable_jd": 14
       },
       "Qualcomm": {
-        "eligible": 31,
-        "usable_jd": 31
+        "eligible": 29,
+        "usable_jd": 29
       },
       "AMD": {
         "eligible": 221,
@@ -8107,8 +7775,8 @@
         "usable_jd": 6
       },
       "ByteDance": {
-        "eligible": 236,
-        "usable_jd": 236
+        "eligible": 233,
+        "usable_jd": 233
       },
       "Chime": {
         "eligible": 10,
@@ -8131,8 +7799,8 @@
         "usable_jd": 7
       },
       "Intel": {
-        "eligible": 120,
-        "usable_jd": 120
+        "eligible": 119,
+        "usable_jd": 119
       },
       "MathWorks": {
         "eligible": 11,
@@ -8143,8 +7811,8 @@
         "usable_jd": 31
       },
       "Morgan Stanley": {
-        "eligible": 29,
-        "usable_jd": 29
+        "eligible": 30,
+        "usable_jd": 30
       },
       "NetApp": {
         "eligible": 33,
@@ -8153,9 +7821,12 @@
       "Netflix": {
         "deterministic_skip": 11,
         "cache_reused": 36,
-        "eligible": 19,
-        "ai_skip": 27,
-        "usable_jd": 19
+        "eligible": 18,
+        "ai_skip": 28,
+        "detail_requests": 3,
+        "detail_success": 3,
+        "budget_deferred": 0,
+        "usable_jd": 18
       },
       "OpenAI": {
         "eligible": 348,
@@ -8232,6 +7903,9 @@
         "cache_reused": 5,
         "eligible": 5,
         "ai_skip": 25,
+        "detail_requests": 3,
+        "detail_success": 2,
+        "budget_deferred": 0,
         "usable_jd": 5
       },
       "F5": {
@@ -8263,8 +7937,8 @@
         "usable_jd": 5
       },
       "Johnson & Johnson": {
-        "eligible": 42,
-        "usable_jd": 42
+        "eligible": 43,
+        "usable_jd": 43
       },
       "Nasdaq": {
         "eligible": 2,
@@ -8275,8 +7949,9 @@
         "eligible": 13,
         "cache_reused": 7,
         "ai_skip": 6,
-        "detail_requests": 1,
+        "detail_requests": 3,
         "detail_failure": 1,
+        "detail_success": 2,
         "budget_deferred": 0,
         "usable_jd": 12
       },
