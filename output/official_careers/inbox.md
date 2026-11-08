@@ -1,10 +1,10 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-11-07 07:44 PST
-- Snapshot (UTC): 2026-11-07T15:44:16.184881+00:00
-- Jobs: 39 (Tier A/B only)
-- Last 24 hours: 1
-- Last 3 days: 39
+- Updated (PT): 2026-11-07 16:46 PST
+- Snapshot (UTC): 2026-11-08T00:46:17.325756+00:00
+- Jobs: 24 (Tier A/B only)
+- Last 24 hours: 0
+- Last 3 days: 24
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
@@ -13,8 +13,7 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | A | 92 | official | Cisco | Software Engineer Data & AI II (Full Time) – United States | San Jose, California, US; RTP, North Carolina, US; San Francisco, California, US; Seattle, Washington, US; Carlsbad, California, US | 2026-11-06 | 1to3d | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/Software-Engineer-Data---AI-II--Full-Time----United-States_2030929) |
 | A | 88 | official | Apple | AI Software Evaluation Engineer, Siri AI Quality | Cupertino, United States of America | 2026-11-06 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693908/ai-software-evaluation-engineer-siri-ai-quality) |
 | A | 85 | official | Google | Software Developer III, AI/ML GenAI, Google Ads | Mountain View, CA, USA; Waterloo, ON, Canada | 2026-11-06 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/89559942574285510-software-developer-iii-ai-ml-genai-google-ads) |
-| A | 90 | official | Workday | Forward Deployed Engineer (FDE) - Developer Platform | USA, CA, Pleasanton; USA, GA, Atlanta | 2026-11-05 | 1to3d | - | unreviewed | official_canonical | [open](https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Forward-Deployed-Engineer_JR-0111465) |
-| A | 91 | official | Cisco | Technical Systems Engineer II (Full-Time) - United States | RTP, North Carolina, US | 2026-11-05 | 1to3d | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Technical-Systems-Engineer-II--Full-Time----United-States_2026274) |
+| B | 80 | official | Dell | Software Engineer 2 | Austin, TX, United States | 2026-11-07 | 1to3d | Dell | unreviewed | official_canonical | [open](https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/302155) |
 | B | 85 | official | Samsara | Software Engineering Internship - San Francisco | San Francisco - SF9 | 2026-11-06 | 1to3d | - | unreviewed | official_canonical | [open](https://www.samsara.com/company/careers/roles/8358786?gh_jid=8358786) |
 | B | 85 | official | OpenAI | Applied AI Engineer, Enterprise - EDU | San Francisco; San Francisco, California, United States; New York City; US - Remote | 2026-11-06 | 1to3d | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/087aa4f5-1192-413a-ba34-3ae324cf90e5) |
 | B | 84 | official | Amazon | System Development Engineer, OTS Delivery Software Engineering | Austin, Texas, USA | 2026-11-06 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10598681/system-development-engineer-ots-delivery-software-engineering) |
@@ -33,19 +32,5 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 75 | official | eBay | Full Stack Platform Engineer | Austin | 2026-11-06 | 1to3d | eBay | unreviewed | official_canonical | [open](https://ebay.wd5.myworkdayjobs.com/apply/job/Austin/Full-Stack-Platform-Engineer_R0076716) |
 | B | 75 | official | Zoom | Full Stack Developer | San Jose (CA) | 2026-11-06 | 1to3d | - | unreviewed | official_canonical | [open](https://zoom.wd5.myworkdayjobs.com/Zoom/job/San-Jose-CA/Full-Stack-Developer_R19731-1) |
 | B | 77 | official | Apple | AI Operations, Applied AI Research and Design Developer | Cupertino, United States of America | 2026-11-06 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693283/ai-operations-applied-ai-research-and-design-developer) |
-| B | 83 | official | Oracle | Software Developer 3 | Austin, TX, United States | 2026-11-05 | 1to3d | Oracle | unreviewed | official_canonical | [open](https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/349765) |
-| B | 84 | official | Walmart Global Tech | Software Engineer II / Bentonville, Arkansas | (USA) ISD Office - DGTC AR BENTONVILLE Home Office | 2026-11-05 | 1to3d | - | unreviewed | official_canonical | [open](https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/USA-ISD-Office---DGTC-AR-BENTONVILLE-Home-Office/Software-Engineer-II---Bentonville--Arkansas_R-2686989) |
-| B | 84 | official | OpenAI | Founding Full Stack Software Engineer, Consulting | San Francisco; San Francisco, California, United States; Remote, United States | 2026-11-05 | 1to3d | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/80c40695-5cd7-4206-96b6-873158a8e696) |
-| B | 82 | official | Verkada | Backend Engineer | San Mateo, CA United States; San Mateo, California, United States | 2026-11-05 | 1to3d | - | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/verkada/jobs/5283634007) |
-| B | 83 | official | OpenAI | Software Engineer, Agent Platform | San Francisco; San Francisco, California, United States; New York City; Remote, United States | 2026-11-05 | 1to3d | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/783704d7-5afa-45aa-899b-1d6799f73004) |
-| B | 77 | official | Apple | Release Engineer, Infrastructure Services | Austin Metro Area, United States of America | 2026-11-05 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693205/release-engineer-infrastructure-services) |
-| B | 75 | official | Apple | Software Development Engineer - Test | Sunnyvale, United States of America | 2026-11-05 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200680221/software-development-engineer-test) |
-| B | 75 | official | OpenAI | Forward Deployed Engineer (FDE) - NYC | New York City; New York, New York, United States; Remote, United States | 2026-11-05 | 1to3d | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/9471b38b-f65c-4a01-9626-bd33fca90f1d) |
-| B | 75 | official | Capital One | Data Engineer 5, Insights Platform | Plano, TX | 2026-11-05 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Data-Engineer-5--Insights-Platform_R1003328-1) |
-| B | 75 | official | Capital One | Full-stack Engineer 4 (Bank Tech) | Richmond, VA; Wilmington, DE | 2026-11-05 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-stack-Engineer-4--Bank-Tech-_R1004741-2) |
-| B | 75 | official | Capital One | Full-stack Engineer 4 (Bank Tech) | Richmond, VA; McLean, VA | 2026-11-05 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-stack-Engineer-4--Bank-Tech-_R1003643) |
-| B | 75 | official | Morgan Stanley | AI Full Stack Engineer (Prime Brokerage Technology) | New York, New York, United States of America | 2026-11-05 | 1to3d | Morgan Stanley | unreviewed | official_canonical | [open](https://morganstanley.eightfold.ai/careers/job/549798643526) |
-| B | 78 | official | Amazon | Data Engineer I, Secure Third Party Tools (S3T) | Austin, Texas, USA | 2026-11-05 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10598162/data-engineer-i-secure-third-party-tools-s3t) |
-| B | 72 | official | MathWorks | Software Engineer in Test - MATLAB Editor | US-MA-Natick | 2026-11-05 | 1to3d | - | unreviewed | official_canonical | [open](https://www.mathworks.com/company/jobs/opportunities/37275-software-engineer-in-test-matlab-editor?keywords=ai+engineer) |
-| B | 92 | official | TikTok | Research Engineer, Agentic Video Editing - TikTok | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7704036750285867269) |
+| B | 92 | official | TikTok | Research Engineer, Agentic Video Editing - TikTok | San Jose, California, United States of America | - | 1to3d | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7704036750285867269) |
 | B | 78 | official | Two Sigma | Software Engineer | United States - NY New York | - | 1to3d | - | unreviewed | official_canonical | [open](https://careers.twosigma.com/careers/JobDetail/New-York-New-York-United-States-Software-Engineer/14404) |
