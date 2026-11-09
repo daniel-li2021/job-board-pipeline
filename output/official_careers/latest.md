@@ -1,21 +1,21 @@
-# Big Tech official careers — 7-day view — 2026-11-09_0044
+# Big Tech official careers — 7-day view — 2026-11-09_1548
 
-- Updated (PT): 2026-11-08 16:46 PST
-- Snapshot (UTC): 2026-11-09T00:46:31.130807+00:00
-- Last 24 hours: 0
-- Last 3 days: 3
+- Updated (PT): 2026-11-09 07:50 PST
+- Snapshot (UTC): 2026-11-09T15:50:42.953531+00:00
+- Last 24 hours: 2
+- Last 3 days: 4
 
 Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scoring/ranking.
 
 ## Run stats
 
-- Scraped companies: {'JPMorgan Chase': 557, 'HPE': 293, 'Cisco': 233, 'Wells Fargo': 60, 'Meta': 854, 'Disney': 99, 'Amazon': 757, 'Uber': 184, 'Apple': 327, 'Oracle': 444, 'CVS Health': 124, 'AMD': 564, 'Google': 259, 'Microsoft': 206, 'Capital One': 151, 'Qualcomm': 126, 'Salesforce': 187, 'Intel': 159, 'NVIDIA': 475, 'Adobe': 101, 'TikTok': 712, 'DoorDash': 438, 'Snap': 98, 'Pinterest': 130, 'Snowflake': 271, 'ServiceNow': 420, 'Bloomberg': 18, 'Walmart Global Tech': 366, 'Cloudflare': 461, 'Stripe': 421, 'Coinbase': 207, 'Robinhood': 141, 'Figma': 94, 'GitLab': 140, 'Discord': 27, 'Asana': 74, 'Brex': 255, 'Samsara': 275, 'Lyft': 92, 'Spotify': 61, 'Ramp': 154, 'Notion': 78, 'Linear': 24, 'Cohere': 103, 'SAP': 112, 'eBay': 42, 'Zoom': 27, 'Pure Storage': 223, 'Databricks': 494, 'Roblox': 252, 'Airbnb': 111, 'Anthropic': 544, 'AppLovin': 32, 'ByteDance': 460, 'Chime': 72, 'Dell': 113, 'Dropbox': 22, 'Expedia Group': 48, 'HubSpot': 13, 'Instacart': 82, 'MathWorks': 37, 'MongoDB': 237, 'Morgan Stanley': 103, 'NetApp': 89, 'Netflix': 57, 'OpenAI': 657, 'Palantir': 239, 'PayPal': 60, 'Reddit': 143, 'Red Hat': 34, 'Roku': 74, 'Block / Square': 182, 'Two Sigma': 42, 'Verkada': 275, 'Visa': 121, 'WeRide': 9, 'Workday': 121, 'Zillow': 50, 'Zscaler': 228, 'Chewy': 3, 'Duolingo': 50, 'Equinix': 71, 'F5': 1, 'IXL Learning': 101, 'Yahoo': 49, 'Ansys': 20, 'Flex': 105, 'IQVIA': 13, 'Johnson & Johnson': 187, 'Nasdaq': 13, 'PointClickCare': 74, 'Stryker': 136, 'TransUnion': 27, 'Travelers': 82, 'Verizon': 18, 'Yext': 17}
-- Funnel: after dedup 17547 -> after company filter 17547 -> after hard filter 14141 -> after role+seniority prefilter 2922 | dropped 14625
-- LLM usage: scored 2 / API requests 2 / cache reused 345 (cross-pipeline 1) / rule fallback 2575
-- LLM cache causes: new 2 / material JD 1 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 5 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 2 / jobs scored 2 / tokens input 5075 (cached 0) / output 560 (reasoning 379) / estimated cost $0.0008
-- New jobs discovered this run: 10
-- Output: Tier A 5 / Tier B 18 / shown 23
+- Scraped companies: {'JPMorgan Chase': 566, 'HPE': 293, 'Cisco': 232, 'Wells Fargo': 52, 'Netflix': 5, 'Meta': 852, 'Disney': 100, 'Amazon': 757, 'Uber': 186, 'Apple': 325, 'Oracle': 447, 'CVS Health': 127, 'AMD': 564, 'Google': 259, 'Microsoft': 207, 'Capital One': 152, 'Qualcomm': 127, 'Salesforce': 187, 'Intel': 155, 'NVIDIA': 475, 'Adobe': 100, 'TikTok': 713, 'DoorDash': 440, 'Snap': 98, 'Pinterest': 130, 'Snowflake': 271, 'ServiceNow': 420, 'Bloomberg': 20, 'Walmart Global Tech': 364, 'Cloudflare': 462, 'Stripe': 424, 'Coinbase': 208, 'Robinhood': 145, 'Figma': 93, 'GitLab': 138, 'Discord': 27, 'Asana': 74, 'Brex': 255, 'Samsara': 276, 'Lyft': 90, 'Spotify': 59, 'Ramp': 154, 'Notion': 78, 'Linear': 24, 'Cohere': 103, 'SAP': 108, 'eBay': 42, 'Zoom': 25, 'Pure Storage': 226, 'Databricks': 493, 'Roblox': 252, 'Airbnb': 110, 'Anthropic': 542, 'AppLovin': 31, 'ByteDance': 459, 'Chime': 72, 'Dell': 112, 'Dropbox': 22, 'Expedia Group': 43, 'HubSpot': 13, 'Instacart': 82, 'MathWorks': 38, 'MongoDB': 238, 'Morgan Stanley': 102, 'NetApp': 87, 'OpenAI': 655, 'Palantir': 239, 'PayPal': 60, 'Reddit': 141, 'Red Hat': 37, 'Roku': 75, 'Block / Square': 182, 'Two Sigma': 42, 'Verkada': 275, 'Visa': 122, 'WeRide': 9, 'Workday': 122, 'Zillow': 51, 'Zscaler': 228, 'Chewy': 3, 'Duolingo': 50, 'Equinix': 72, 'F5': 1, 'IXL Learning': 101, 'Yahoo': 49, 'Ansys': 20, 'Flex': 107, 'IQVIA': 13, 'Johnson & Johnson': 177, 'Nasdaq': 13, 'PointClickCare': 74, 'Stryker': 136, 'TransUnion': 27, 'Travelers': 83, 'Verizon': 18, 'Yext': 17}
+- Funnel: after dedup 17486 -> after company filter 17486 -> after hard filter 14083 -> after role+seniority prefilter 2882 | dropped 14604
+- LLM usage: scored 11 / API requests 3 / cache reused 340 (cross-pipeline 0) / rule fallback 2531
+- LLM cache causes: new 11 / material JD 1 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 6 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 3 / jobs scored 11 / tokens input 18162 (cached 0) / output 2356 (reasoning 1319) / estimated cost $0.0030
+- New jobs discovered this run: 96
+- Output: Tier A 5 / Tier B 19 / shown 24
 
 ## Tier A - apply now / referral (5)
 
@@ -27,15 +27,16 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 92 | cached_llm | official | Cisco | Software Engineer Data & AI II (Full Time) – United States | San Jose, California, US; RTP, North Carolina, US; San Francisco, California, US; Seattle, Washington, US; Carlsbad, California, US | 2026-11-06 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/Software-Engineer-Data---AI-II--Full-Time----United-States_2030929) |
 | 91 | cached_llm | official | Cisco | Technical Systems Engineer II (Full-Time) - United States | RTP, North Carolina, US | 2026-11-05 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Technical-Systems-Engineer-II--Full-Time----United-States_2026274) |
 
-## Tier B - worth applying (18)
+## Tier B - worth applying (19)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 84 | llm | official | Apple | Tools & Automation Engineer — Early Career | Sunnyvale, United States of America | 2026-11-09 | 3to24h | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200692689/tools-automation-engineer-early-career) |
+| 75 | rule | official | Capital One | Full Stack Engineer 5 | Chicago, IL | 2026-11-09 | 3to24h | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Full-Stack-Engineer-5_R1001167-1) |
 | 75 | rule | official | Capital One | Full-stack Engineer 4 | Riverwoods, IL | 2026-11-08 | 1to3d | high | swe | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Riverwoods-IL/Full-stack-Engineer-4_R1002548-1) |
 | 80 | cached_llm | official | Dell | Software Engineer 2 | Austin, TX, United States | 2026-11-07 | 1to3d | high | swe | Dell | unreviewed | official_canonical | [open](https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/302155) |
-| 92 | cached_llm | official | TikTok | Research Engineer, Agentic Video Editing - TikTok | San Jose, California, United States of America | - | 1to3d | unknown | swe | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7704036750285867269) |
+| 92 | cached_llm | official | TikTok | Research Engineer, Agentic Video Editing - TikTok | San Jose, California, United States of America | - | 3to7d | unknown | swe | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7704036750285867269) |
 | 88 | cached_llm | official | Apple | AI Software Evaluation Engineer, Siri AI Quality | Cupertino, United States of America | 2026-11-06 | 3to7d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693908/ai-software-evaluation-engineer-siri-ai-quality) |
-| 86 | cached_llm | official | Apple | Software Engineer, Triage Services | Cupertino, United States of America | 2026-11-04 | 3to7d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693271/software-engineer-triage-services) |
 | 85 | cached_llm | official | Google | Software Developer III, AI/ML GenAI, Google Ads | Mountain View, CA, USA; Waterloo, ON, Canada | 2026-11-06 | 3to7d | high | swe | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/89559942574285510-software-developer-iii-ai-ml-genai-google-ads) |
 | 85 | cached_llm | official | Samsara | Software Engineering Internship - San Francisco | San Francisco - SF9 | 2026-11-06 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://www.samsara.com/company/careers/roles/8358786?gh_jid=8358786) |
 | 88 | cached_llm | official | Amazon | Software Dev Engineer I, Security Platform | San Francisco, California, USA | 2026-11-04 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10597112/software-dev-engineer-i-security-platform) |

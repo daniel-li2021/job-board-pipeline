@@ -1758,6 +1758,33 @@
           "url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/302155"
         }
       ]
+    },
+    {
+      "pipeline": "official",
+      "stamp": "2026-11-09_1548",
+      "emitted_at": "2026-11-09T15:50:42.966673+00:00",
+      "event_kind": "new_or_promoted_ab",
+      "count": 1,
+      "jobs": [
+        {
+          "canonical_job_key": "url::https://jobs.apple.com/en-us/details/200692689/tools-automation-engineer-early-career",
+          "job_id": "200692689-3956",
+          "tier": "B",
+          "match_score": 84.0,
+          "company": "Apple",
+          "title": "Tools & Automation Engineer — Early Career",
+          "location": "Sunnyvale, United States of America",
+          "posted_date": "2026-11-09",
+          "date_confidence": "high",
+          "first_seen": "2026-11-09T15:48:23.348666+00:00",
+          "referral_name": "Apple",
+          "review_status": "unreviewed",
+          "official_url": "https://jobs.apple.com/en-us/details/200692689/tools-automation-engineer-early-career",
+          "source_url": "https://jobs.apple.com/en-us/details/200692689/tools-automation-engineer-early-career",
+          "source": "apple_official_careers",
+          "url": "https://jobs.apple.com/en-us/details/200692689/tools-automation-engineer-early-career"
+        }
+      ]
     }
   ]
 }
