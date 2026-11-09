@@ -1,44 +1,45 @@
 {
-  "run_at": "2026-11-09T00:53:20.083551+00:00",
-  "elapsed_seconds": 124.716,
-  "remote_elapsed_seconds": 67.801,
+  "run_at": "2026-11-09T15:52:19.277759+00:00",
+  "elapsed_seconds": 63.107,
+  "remote_elapsed_seconds": 38.821,
   "funnel": {
-    "scoring_candidates": 98
+    "scoring_candidates": 58
   },
   "llm": {
-    "reused": 91,
-    "llm": 15,
-    "new_or_changed": 18,
-    "rule": 9,
-    "sent": 15,
-    "api_requests": 3,
+    "reused": 52,
+    "llm": 5,
+    "new_or_changed": 8,
+    "rule": 6,
+    "sent": 5,
+    "api_requests": 2,
     "recency_skipped": 3,
     "overflow": 0,
-    "peer_reused": 12,
-    "thin_source_rule": 6,
+    "peer_reused": 5,
+    "thin_source_rule": 3,
     "retryable_fallbacks": 0,
     "historical_seen_skipped": 0,
     "historical_llm_retained": 0,
     "non_material_change_reused": 0,
     "same_content_reused": 0,
-    "rescored_within_24h": 0,
+    "rescored_within_24h": 2,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 13,
+      "genuinely_new_job": 1,
+      "material_jd_change": 2,
       "prior_rule_result_now_eligible_for_llm": 5
     },
     "batch_size": 10,
-    "primary_batches_total": 3,
-    "batches_total": 3,
-    "batches_succeeded": 3,
-    "batches_attempted": 3,
+    "primary_batches_total": 2,
+    "batches_total": 2,
+    "batches_succeeded": 2,
+    "batches_attempted": 2,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 34.208,
-    "json_results": 12,
+    "latency_seconds": 15.698,
+    "json_results": 3,
     "batches": [
       {
         "batch": 1,
@@ -51,200 +52,61 @@
             "title": "Test Engineer (Automotive Software Engineer)"
           },
           {
-            "key": "url::https://www.qualtrics.com/careers/us/en/job/8357630?gh_jid=8357630",
-            "company": "Qualtrics",
-            "title": "Software Engineer II - Discover Studio"
-          },
-          {
-            "key": "url::https://www.audiblecareers.com/job/newark/software-development-engineer-ios/27552/102964232304",
-            "company": "Audible",
-            "title": "Software Development Engineer, iOS"
+            "key": "url::https://jobs.lever.co/neighbor/3c27afec-628f-4305-9519-9b525035e3f0",
+            "company": "Neighbor",
+            "title": "Software Engineer"
           },
           {
             "key": "url::https://talentojo.kpit.com/tojo/app/job-apply",
             "company": "KPIT Technologies",
             "title": "Automotive Engineer (Automotive Software Engineer)"
-          },
-          {
-            "key": "url::https://careers.garmin.com/jobs/21982?lang=en-us&previousLocale=en-US",
-            "company": "Garmin",
-            "title": "Java Software Engineer - Observability & Resiliency"
-          },
-          {
-            "key": "url::https://talentojo.kpit.com/tojo/app/job-apply",
-            "company": "KPIT Technologies",
-            "title": "Subject Matter Expert (Automotive Electrical Software Integration)"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 9.21,
+        "latency_seconds": 8.452,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 4,
-          "input_tokens": 5908,
-          "cached_input_tokens": 0,
-          "output_tokens": 808,
-          "reasoning_tokens": 394,
-          "estimated_usd": 0.000995
+          "jobs_scored": 2,
+          "input_tokens": 3425,
+          "cached_input_tokens": 1851,
+          "output_tokens": 733,
+          "reasoning_tokens": 512,
+          "estimated_usd": 0.000542
         },
         "decisions": [
           {
             "key": "url::https://talentojo.kpit.com/tojo/app/job-apply",
-            "match_score": 22.0,
+            "match_score": 18.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Software integration exposure"
+              "Software development experience"
             ],
             "main_gaps": [
-              "Automotive electrical engineering",
-              "Project and client leadership"
+              "Automotive mechanical design"
             ]
           },
           {
-            "key": "url::https://www.qualtrics.com/careers/us/en/job/8357630?gh_jid=8357630",
-            "match_score": 76.0,
+            "key": "url::https://jobs.lever.co/neighbor/3c27afec-628f-4305-9519-9b525035e3f0",
+            "match_score": 74.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Customer-facing full-stack",
-              "React and backend services"
+              "Full-stack software development",
+              "React, TypeScript, AWS"
             ],
             "main_gaps": [
-              "3–5 years’ experience"
-            ]
-          },
-          {
-            "key": "url::https://www.audiblecareers.com/job/newark/software-development-engineer-ios/27552/102964232304",
-            "match_score": 58.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Customer-facing software",
-              "Agile development"
-            ],
-            "main_gaps": [
-              "iOS application development"
-            ]
-          },
-          {
-            "key": "url::https://careers.garmin.com/jobs/21982?lang=en-us&previousLocale=en-US",
-            "match_score": 72.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Cloud deployment and reliability",
-              "Java and distributed systems"
-            ],
-            "main_gaps": [
-              "Spring Boot experience",
-              "AI agents"
+              "2+ years full-time experience"
             ]
           }
         ]
       },
       {
         "batch": 2,
-        "route": "resume_ai",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://job-boards.greenhouse.io/thebrattlegroup/jobs/4751955005",
-            "company": "The Brattle Group",
-            "title": "Data and AI Engineer - July 2027"
-          },
-          {
-            "key": "url::https://jobs.keysight.com/external/jobs/54741?lang=en-us",
-            "company": "Keysight",
-            "title": "Agentic AI — PhD Intern (Autonomous AI Agent)"
-          },
-          {
-            "key": "url::https://jobs.keysight.com/external/jobs/54739?lang=en-us",
-            "company": "Keysight",
-            "title": "Agentic AI — PhD Intern (Modeling Agent)"
-          },
-          {
-            "key": "url::https://jobs.keysight.com/external/jobs/54742?lang=en-us",
-            "company": "Keysight",
-            "title": "Machine Learning — PhD Intern (Modeling and Data Analysis)"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 12.802,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 4,
-          "input_tokens": 7062,
-          "cached_input_tokens": 0,
-          "output_tokens": 1109,
-          "reasoning_tokens": 829,
-          "estimated_usd": 0.001261
-        },
-        "decisions": [
-          {
-            "key": "url::https://job-boards.greenhouse.io/thebrattlegroup/jobs/4751955005",
-            "match_score": 92.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Applied AI workflows",
-              "Data quality and evaluation"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://jobs.keysight.com/external/jobs/54741?lang=en-us",
-            "match_score": 65.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "other",
-            "top_match_reasons": [
-              "Agent tool integration",
-              "LLM evaluation"
-            ],
-            "main_gaps": [
-              "PhD enrollment"
-            ]
-          },
-          {
-            "key": "url::https://jobs.keysight.com/external/jobs/54739?lang=en-us",
-            "match_score": 57.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "other",
-            "top_match_reasons": [
-              "Agent orchestration",
-              "LLM evaluation"
-            ],
-            "main_gaps": [
-              "PhD enrollment",
-              "Modeling workflow expertise"
-            ]
-          },
-          {
-            "key": "url::https://jobs.keysight.com/external/jobs/54742?lang=en-us",
-            "match_score": 38.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "other",
-            "top_match_reasons": [
-              "Model fine-tuning",
-              "Python and C++"
-            ],
-            "main_gaps": [
-              "PhD enrollment",
-              "PyTorch and LibTorch"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 3,
         "route": "both",
         "attempt": "initial",
         "jobs": [
@@ -254,118 +116,62 @@
             "title": "Java Software Developer"
           },
           {
-            "key": "url::https://job-boards.greenhouse.io/tanium/jobs/8335147",
-            "company": "Tanium",
-            "title": "Applied AI Engineer II"
-          },
-          {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
             "company": "Kforce",
             "title": "Data Engineer"
-          },
-          {
-            "key": "url::https://abnormal.ai/careers/jobs/8197230003?gh_jid=8197230003",
-            "company": "Abnormal AI",
-            "title": "Software Engineer II, Attack Detection"
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/tanium/jobs/8359784",
-            "company": "Tanium",
-            "title": "Software Engineer II, AI Security"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 12.196,
+        "latency_seconds": 7.246,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 4,
-          "input_tokens": 6855,
-          "cached_input_tokens": 0,
-          "output_tokens": 1259,
-          "reasoning_tokens": 892,
-          "estimated_usd": 0.001315
+          "jobs_scored": 1,
+          "input_tokens": 3809,
+          "cached_input_tokens": 2724,
+          "output_tokens": 606,
+          "reasoning_tokens": 466,
+          "estimated_usd": 0.000439
         },
         "decisions": [
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 76.0,
+            "match_score": 70.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Python and Spark pipelines",
-              "Databricks data workflows"
+              "Python/Spark data pipelines",
+              "Cloud data workflows"
             ],
             "main_gaps": [
-              "3–5 years data engineering",
-              "Workflow orchestration experience"
-            ]
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/tanium/jobs/8335147",
-            "match_score": 76.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production AI agents",
-              "LLM systems and deployment"
-            ],
-            "main_gaps": [
-              "3+ years professional experience",
-              "Kubernetes hands-on experience"
-            ]
-          },
-          {
-            "key": "url::https://abnormal.ai/careers/jobs/8197230003?gh_jid=8197230003",
-            "match_score": 78.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Backend services and AI agents",
-              "Production evaluation and reliability"
-            ],
-            "main_gaps": [
-              "2+ years software development"
-            ]
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/tanium/jobs/8359784",
-            "match_score": 77.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production RAG and MCP agent",
-              "Scalable backend services"
-            ],
-            "main_gaps": [
-              "3+ years industry experience",
-              "Large-user-scale systems"
+              "3-5 years data engineering",
+              "Workflow orchestration"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 15,
-    "input_tokens": 19825,
-    "cached_input_tokens": 0,
-    "output_tokens": 3176,
-    "reasoning_tokens": 2115,
-    "estimated_usd": 0.003571,
+    "jobs_scored": 5,
+    "input_tokens": 7234,
+    "cached_input_tokens": 4575,
+    "output_tokens": 1339,
+    "reasoning_tokens": 978,
+    "estimated_usd": 0.000981,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 15
+    "scored": 5
   },
   "output": {
-    "tier_a": 11,
-    "tier_b": 8,
-    "tier_c": 79,
-    "shown": 19,
-    "new_jobs": 28,
-    "new_jobs_added": 1
+    "tier_a": 5,
+    "tier_b": 4,
+    "tier_c": 49,
+    "shown": 9,
+    "new_jobs": 4,
+    "new_jobs_added": 0
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -378,13 +184,13 @@
       "page_budget": 6,
       "pages_fetched": 6,
       "stop_reason": "page_budget",
-      "raw_jobs": 90,
-      "unique_jobs": 90,
-      "unique_contribution": 90,
-      "first_pass_survivors": 68,
+      "raw_jobs": 77,
+      "unique_jobs": 77,
+      "unique_contribution": 77,
+      "first_pass_survivors": 58,
       "original_postings_resolved": 15,
       "jds_resolved": 14,
-      "elapsed_seconds": 3.025
+      "elapsed_seconds": 3.328
     },
     {
       "query": "Full Stack",
@@ -392,55 +198,55 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 14,
-      "unique_jobs": 14,
-      "unique_contribution": 13,
-      "first_pass_survivors": 11,
-      "original_postings_resolved": 1,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.528
+      "raw_jobs": 6,
+      "unique_jobs": 6,
+      "unique_contribution": 5,
+      "first_pass_survivors": 4,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.773
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 6,
-      "stop_reason": "page_budget",
-      "raw_jobs": 90,
-      "unique_jobs": 90,
-      "unique_contribution": 76,
-      "first_pass_survivors": 49,
-      "original_postings_resolved": 24,
-      "jds_resolved": 23,
-      "elapsed_seconds": 2.662
+      "pages_fetched": 5,
+      "stop_reason": "empty_page",
+      "raw_jobs": 49,
+      "unique_jobs": 49,
+      "unique_contribution": 36,
+      "first_pass_survivors": 24,
+      "original_postings_resolved": 11,
+      "jds_resolved": 10,
+      "elapsed_seconds": 2.07
     },
     {
       "query": "Machine Learning",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 4,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 37,
-      "unique_jobs": 37,
-      "unique_contribution": 31,
-      "first_pass_survivors": 26,
-      "original_postings_resolved": 18,
-      "jds_resolved": 18,
-      "elapsed_seconds": 1.369
+      "raw_jobs": 9,
+      "unique_jobs": 9,
+      "unique_contribution": 7,
+      "first_pass_survivors": 5,
+      "original_postings_resolved": 2,
+      "jds_resolved": 2,
+      "elapsed_seconds": 0.61
     },
     {
       "query": "Infrastructure",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 6,
-      "stop_reason": "page_budget",
-      "raw_jobs": 90,
-      "unique_jobs": 90,
-      "unique_contribution": 87,
-      "first_pass_survivors": 35,
-      "original_postings_resolved": 11,
-      "jds_resolved": 9,
-      "elapsed_seconds": 2.622
+      "pages_fetched": 2,
+      "stop_reason": "empty_page",
+      "raw_jobs": 13,
+      "unique_jobs": 13,
+      "unique_contribution": 9,
+      "first_pass_survivors": 6,
+      "original_postings_resolved": 4,
+      "jds_resolved": 4,
+      "elapsed_seconds": 0.605
     },
     {
       "query": "Forward Deployed",
@@ -448,27 +254,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 13,
-      "unique_jobs": 13,
-      "unique_contribution": 13,
-      "first_pass_survivors": 8,
-      "original_postings_resolved": 5,
-      "jds_resolved": 5,
-      "elapsed_seconds": 0.475
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
+      "original_postings_resolved": 1,
+      "jds_resolved": 1,
+      "elapsed_seconds": 0.626
     },
     {
       "query": "DevOps",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 14,
-      "unique_jobs": 14,
-      "unique_contribution": 13,
-      "first_pass_survivors": 4,
-      "original_postings_resolved": 3,
-      "jds_resolved": 3,
-      "elapsed_seconds": 0.469
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.173
     },
     {
       "query": "Backend",
@@ -476,41 +282,41 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 12,
-      "unique_jobs": 12,
-      "unique_contribution": 9,
-      "first_pass_survivors": 8,
+      "raw_jobs": 8,
+      "unique_jobs": 8,
+      "unique_contribution": 5,
+      "first_pass_survivors": 5,
       "original_postings_resolved": 2,
       "jds_resolved": 2,
-      "elapsed_seconds": 0.496
+      "elapsed_seconds": 0.61
     },
     {
       "query": "Platform",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 5,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 52,
-      "unique_jobs": 52,
-      "unique_contribution": 45,
-      "first_pass_survivors": 35,
-      "original_postings_resolved": 18,
-      "jds_resolved": 18,
-      "elapsed_seconds": 1.777
+      "raw_jobs": 10,
+      "unique_jobs": 10,
+      "unique_contribution": 6,
+      "first_pass_survivors": 9,
+      "original_postings_resolved": 2,
+      "jds_resolved": 2,
+      "elapsed_seconds": 0.624
     },
     {
       "query": "New Grad",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
       "unique_contribution": 0,
-      "first_pass_survivors": 1,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.487
+      "elapsed_seconds": 0.131
     },
     {
       "query": "LLM",
@@ -518,27 +324,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 3,
-      "unique_jobs": 3,
-      "unique_contribution": 3,
-      "first_pass_survivors": 3,
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.506
+      "elapsed_seconds": 0.603
     },
     {
       "query": "Data Engineer",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 4,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 43,
-      "unique_jobs": 43,
-      "unique_contribution": 38,
-      "first_pass_survivors": 40,
-      "original_postings_resolved": 9,
-      "jds_resolved": 9,
-      "elapsed_seconds": 1.414
+      "raw_jobs": 5,
+      "unique_jobs": 5,
+      "unique_contribution": 3,
+      "first_pass_survivors": 3,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.593
     },
     {
       "query": "Site Reliability",
@@ -552,14 +358,14 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.113
+      "elapsed_seconds": 0.131
     }
   ],
   "enrichment": {
-    "needed": 9,
-    "detail_api_resolved": 263,
+    "needed": 6,
+    "detail_api_resolved": 94,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 9
+    "remaining_no_jd": 6
   }
 }

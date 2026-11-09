@@ -1,32 +1,22 @@
-Syncareer alert — 2026-11-09_0051
+Syncareer alert — 2026-11-09_1551
 
-Updated (PT): 2026-11-08 16:53 PST
-Snapshot (UTC): 2026-11-09T00:53:24.994361+00:00
+Updated (PT): 2026-11-09 07:52 PST
+Snapshot (UTC): 2026-11-09T15:52:21.744326+00:00
 
-19 new matching job(s) this run (hard-filtered).
+9 new matching job(s) this run (hard-filtered).
 
 If you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 97.0 | Syncareer | The Boring Company | Full Stack Software Engineer (associate) | Bastrop, Texas, United States | 2026-11-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.gem.com/the-boring-company/1946fb4f-2b0a-493f-a547-477d149f461d) |
-| A | 94.0 | Syncareer | American Express | Software Engineer I | Sunrise, Florida, United States | 2026-11-06 | No sponsor | - | unreviewed | not_dedicated | [open](https://careers.americanexpress.com/en/sites/CX_1/job/26016174/?intlink=us-amex-career-en-us-navigation-jobs&lastSelectedFacet=LOCATIONS&selectedLocationsFacet=300000000229164) |
-| A | 94.0 | Syncareer | GSK | Engineer I - Forward Deployed Engineer | Cambridge, Massachusetts, United States | 2026-11-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.gsk.com/gb/en/job/450885/Engineer-I-Forward-Deployed-Engineer) |
 | A | 93.0 | Syncareer | Chewy | Software Engineer I, Full Stack, Promotions | Boston, Massachusetts, United States | 2026-11-06 | Sponsor | - | unreviewed | official_identity_unmatched | [open](https://careers.chewy.com/us/en/job/R31442/Software-Engineer-I-Full-Stack-Promotions) |
 | A | 92.0 | Syncareer | The Brattle Group | Data and AI Engineer - July 2027 | San Francisco, California, United States | 2026-11-07 | No sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/thebrattlegroup/jobs/4751955005) |
-| A | 91.0 | Syncareer | Caterpillar | Software Engineer | Irving, Texas, United States | 2026-11-06 | No sponsor | - | unreviewed | not_dedicated | [open](https://cat.wd5.myworkdayjobs.com/en-US/CaterpillarCareers/job/USA---TX---Irving---Walnut-Hill/Software-Engineer_R0000400557) |
-| A | 90.0 | Syncareer | HII | ENGINEER SOFTWARE 1 | Newport News, Virginia, United States | 2026-11-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.huntingtoningalls.com/job/Newport-News-ENGINEER-SOFTWARE-1-Virg/1448477600/) |
-| A | 88.0 | Syncareer | StubHub | Software Engineer I (New Grad) - Consumer Experience | New York, New York, United States | 2026-11-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.eu.greenhouse.io/stubhubinc/jobs/5027626101) |
 | A | 87.0 | Syncareer | Chewy | Software Engineer I | Boston, Massachusetts, United States | 2026-11-06 | Sponsor | - | unreviewed | official_identity_unmatched | [open](https://careers.chewy.com/us/en/job/R31431/Software-Engineer-I) |
 | A | 86.0 | Syncareer | Affirm | Software Engineer II, Backend | United States | 2026-11-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/affirm/jobs/8196112003) |
 | A | 85.0 | Syncareer | Intercontinental Exchange | Junior Software Development Engineer in Test | Atlanta, Georgia, United States | 2026-11-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ice.com/jobs/14205?lang=en-us) |
 | B | 92.0 | Syncareer | New York Times | Backend Engineering Intern | New York, New York, United States | 2026-11-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/thenewyorktimes/jobs/4751973005) |
 | B | 91.0 | Syncareer | New York Times | Full-Stack Engineering Intern | New York, New York, United States | 2026-11-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/thenewyorktimes/jobs/4751907005) |
 | B | 88.0 | Syncareer | Intercontinental Exchange | Associate Full Stack Developer | Jacksonville, Florida, United States | 2026-11-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ice.com/jobs/13532?lang=en-us) |
-| B | 87.0 | Syncareer | Target | Data Engineer - Finance AI (PySpark) | Brooklyn Park, Minnesota, United States | 2026-11-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/7000-Target-Pkwy-NNCD-0375-Brooklyn-ParkMN-55445/Data-Engineer---Finance-Technology-Solutions_R0000444866?Location_Country=bc33aa3152ec42d4995f4791a106ed09&jobFamilyGroup=daccab9f1d25019c1fe2b73634578e0d&jobFamilyGroup=daccab9f1d25018677ebcc363457460e&jobFamilyGroup=daccab9f1d250100d8b2c1363457f90d&jobFamilyGroup=daccab9f1d25014fba00cc363457410e&jobFamilyGroup=daccab9f1d25019b20f8ce3634574b0e&jobFamilyGroup=daccab9f1d25016d41becf3634574d0e&jobFamilyGroup=daccab9f1d25016f145bba363457990d&jobFamilyGroup=daccab9f1d2501682445c5363457210e&jobFamilyGroup=daccab9f1d2501b3957ec0363457e80d&jobFamilyGroup=daccab9f1d2501894c25c6363457230e&jobFamilyGroup=daccab9f1d2501407df4c8363457350e&jobFamilyGroup=daccab9f1d250108ff8cd03634574f0e&jobFamilyGroup=daccab9f1d25014529eac73634572d0e&jobFamilyGroup=daccab9f1d2501c1d3efca3634573f0e&jobFamilyGroup=daccab9f1d25010421c5bd363457be0d) |
-| B | 86.0 | Syncareer | Nationwide | Engineer, Software Engineer | Des Moines, Iowa, United States | 2026-11-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://nationwide.wd1.myworkdayjobs.com/en-US/Nationwide_Career/job/Iowa---Des-Moines-1100-Locust-Street/Engineer--Software-Engineer_101075?jobFamilyGroup=3eb794f2234901a1ead22609558af817&jobFamilyGroup=3eb794f22349010b4ad8f008558aec17&jobFamilyGroup=3eb794f223490110b63e3b09558a0018&jobFamilyGroup=010fc97c79ef01958999113ce9018de3&jobFamilyGroup=010fc97c79ef0177fae34ddee801c8e2&jobFamilyGroup=5a4038b043df01a5b35178dbc700fb73) |
-| B | 82.0 | Syncareer | Paycom | Software Developer | Oklahoma City, Oklahoma, United States | 2026-11-06 | No sponsor | - | unreviewed | not_dedicated | [open](https://pc00.paycomonline.com/v4/ats/web.php/portal/A38173AIE92874820ALRE20847CDE927PIW76526/jobs/572784) |
-| B | 82.0 | Syncareer | Hitachi | Full Stack Developer Intern | Dallas, Texas, United States | 2026-11-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://hitachi.wd1.myworkdayjobs.com/en-US/hitachi/job/Dallas-Texas-United-States/Full-Stack-Developer-Intern_R0149426) |
 | B | 81.0 | Syncareer | WinCo Foods | Software Developer | Boise, Idaho, United States | 2026-11-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://internaljobs.wincofoods.com/internal/jobs/156821-internal?lang=en-us) |
 
-Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-11-09_0051.csv`.
+Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-11-09_1551.csv`.
