@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T00:47:06.043741+00:00",
+  "generated_at": "2026-11-09T00:54:04.867272+00:00",
   "count": 5941,
   "companies": [
     {
@@ -41370,9 +41370,12 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "5eefc56350729a685d59bd02"
+        "5eefc56350729a685d59bd02",
+        "b116df8c7bd2797a219b08d8",
+        "e0d206636b36d47c512ee5ff",
+        "e91622367e3212e1f7053a7b"
       ],
-      "seen_count": 1
+      "seen_count": 4
     },
     {
       "name": "KPM Analytics",
@@ -57412,9 +57415,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "484e35561576e2432e1a8b0b",
         "b61650acee6e9c67ccc25f25"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Qualus",
@@ -69828,16 +69832,19 @@
     },
     {
       "name": "The Brattle Group, Inc.",
-      "aliases": [],
+      "aliases": [
+        "The Brattle Group"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "c53188de78b5de0c5e335d69",
         "ca9b122bcc0c7e734e1590a8"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "The Cervantes Group",
