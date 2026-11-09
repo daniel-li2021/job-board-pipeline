@@ -1,66 +1,55 @@
-# ATS / LinkedIn board — 7-day view — 2026-11-08_2005
+# ATS / LinkedIn board — 7-day view — 2026-11-09_0121
 
-- Updated (PT): 2026-11-08 12:09 PST
-- Snapshot (UTC): 2026-11-08T20:09:37.975451+00:00
-- Last 24 hours: 34
-- Last 3 days: 94
+- Updated (PT): 2026-11-08 17:26 PST
+- Snapshot (UTC): 2026-11-09T01:26:13.742142+00:00
+- Last 24 hours: 24
+- Last 3 days: 69
 
 If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) instead of this file.
 
 ## Run stats
 
-- Source raw: ATS 3014 / Linkedin 4229 / Indeed 513 / Glassdoor 382 (Big Company Official runs separately)
-- Funnel: after dedup 8086 -> after company filter 7605 -> after hard filter 7006 -> after role+seniority prefilter 2323 | dropped 5544
-- LLM usage: jobs scored 2 / API requests 1 / cache reused 280 (cross-pipeline 0) / rule fallback+overflow 1618 (thin local cards 1112, recency-gated 0, overflow 0, new/changed 2)
-- LLM cache causes: new 2 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 4 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 1 / jobs scored 2 / tokens input 5280 (cached 0) / output 324 (reasoning 184) / estimated cost $0.0007
-- New jobs discovered this run: 7
-- Output sizing: Tier A 57 / Tier B 164 / A+B actionable 221 / Shown in latest.md 221 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 1 / 1-3d 151 / newly-disc 75 / 3-7d 89 / >7d 1584
-- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3613 of 3614 / Indeed unique 496 of 496
+- Source raw: ATS 3015 / Linkedin 4229 / Indeed 330 / Glassdoor 382 (Big Company Official runs separately)
+- Funnel: after dedup 7904 -> after company filter 7424 -> after hard filter 6825 -> after role+seniority prefilter 2247 | dropped 5446
+- LLM usage: jobs scored 29 / API requests 4 / cache reused 176 (cross-pipeline 0) / rule fallback+overflow 1624 (thin local cards 1114, recency-gated 0, overflow 0, new/changed 29)
+- LLM cache causes: new 28 / material JD 1 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 5 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 4 / jobs scored 29 / tokens input 27590 (cached 3702) / output 5915 (reasoning 3489) / estimated cost $0.0054
+- New jobs discovered this run: 75
+- Output sizing: Tier A 46 / Tier B 150 / A+B actionable 196 / Shown in latest.md 196 (no hard cap)
+- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 104 / newly-disc 45 / 3-7d 86 / >7d 1594
+- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3613 of 3614 / Indeed unique 316 of 316
 - Linkedin top exact-unique queries: software engineer=1336, ai engineer=912, backend engineer=493
-- Indeed top exact-unique queries: software engineer=224, ai engineer=156, associate software engineer=84, software engineer ii=83, new grad software engineer=80
+- Indeed top exact-unique queries: software engineer=205, ai engineer=71, platform engineer=55, software engineer ii=43, associate software engineer=43
 
-## Tier A - apply now / referral (57)
+## Tier A - apply now / referral (46)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 92 | cached_llm | indeed | Charles Schwab | Associate - Software Development & Engineering | Southlake, TX, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=8f9446125a0508ed) |
+| 92 | cached_llm | indeed | Chewy | Software Engineer I, Full Stack, Promotions | Boston, MA, US | 2026-11-05 | 1to3d | low | swe | - | unreviewed | official_gap | - | [open](https://www.indeed.com/viewjob?jk=e829496aff9e41b2) |
 | 91 | cached_llm | indeed | PNC Financial Services Group | Artificial Intelligence Software Engineer | Pittsburgh, PA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=33520a4677a29d33) |
-| 93 | cached_llm | indeed | HatchWorks AI | AI Software Engineer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=fc4a30350c8b1ad0) |
-| 92 | cached_llm | indeed | The Brattle Group, Inc. | Data and AI Engineer - July 2027 | San Francisco, CA, US | 2026-11-06 | 1to3d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=fd70ee459a4efd4f) |
-| 91 | cached_llm | indeed |  | Software Developer | Tampa, FL, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a3d0b54f6f4ad8aa) |
-| 91 | cached_llm | indeed | Elevation Autism Center | Software Engineer - AI & Workflow Automation | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=e1ae3b91930646c3) |
-| 91 | cached_llm | indeed | Hilton | AI Software Engineer | Dallas, TX, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a737b373a717b2b4) |
-| 85 | cached_llm | indeed | Akamai Technologies | Cloud Software Engineer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=9633699e8f7f5180) |
-| 87 | cached_llm | indeed | Caterpillar | Software Engineer | Irving, TX, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=2cfed2b8d3ffb267) |
-| 87 | cached_llm | indeed | The Home Depot | Software Engineer, Backend & Distributed Systems (REMOTE) | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=78fc552afd6ada32) |
-| 89 | cached_llm | indeed | Affirm | Software Engineer II, Backend | San Francisco, CA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=8446746dd6a6b5fb) |
-| 89 | cached_llm | indeed | Atlassian | Software Engineer | Seattle, WA, US | 2026-11-03 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=aeed06accb445330) |
-| 88 | cached_llm | indeed | Chewy | Software Engineer I | Plantation, FL, US | 2026-11-05 | 1to3d | low | swe | - | unreviewed | official_gap | - | [open](https://www.indeed.com/viewjob?jk=898578dbd83a334b) |
+| 92 | llm | indeed |  | Full Stack Developer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=b1b3498c69da685c) |
+| 89 | cached_llm | indeed | Atlassian | Software Engineer | Seattle, WA, US | 2026-11-03 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=aeed06accb445330) |
+| 88 | cached_llm | indeed | Chewy | Software Engineer I | Boston, MA, US | 2026-11-05 | 1to3d | low | swe | - | unreviewed | official_gap | - | [open](https://www.indeed.com/viewjob?jk=d72546754f770035) |
 | 87 | cached_llm | indeed | Pendo | Software Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a0700ba2444620dc) |
 | 89 | cached_llm | indeed | SuperWise | AI Software Engineer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=6b031814a0f837d3) |
-| 89 | cached_llm | indeed | Webcom Inc. | Application Developer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=c81db3b27d470368) |
+| 89 | cached_llm | indeed | Webcom Inc. | Application Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=c81db3b27d470368) |
 | 89 | cached_llm | indeed |  | Software Developer | New York, NY, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=e93bae2c1ace299c) |
 | 89 | cached_llm | indeed | Atomic Object | Full Stack Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=24e3abd034b0ad18) |
 | 89 | cached_llm | indeed | Dualboot Partners | Full Stack Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=c032597ce617b612) |
 | 89 | cached_llm | indeed | Maverick Power | Junior Software Developer - Research and Development | Plano, TX, US | 2026-11-04 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=641e2bbd6db32281) |
 | 89 | cached_llm | indeed | Sharefile | Application Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=f66e47fe45b3f978) |
-| 88 | cached_llm | indeed | Imaginovation LLC | Web Application Developer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=30fd1022801c7de5) |
-| 88 | cached_llm | indeed | Interface Technologies, Inc. | Software Developer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=81c75bf7eb3e92cb) |
-| 88 | cached_llm | indeed | Sysomos | Data Software Engineer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=9649155700130d18) |
-| 88 | cached_llm | indeed | vaporware | Full Stack Developer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=8fe48b3a45477c51) |
-| 88 | cached_llm | indeed | My Web Programmer | Full Stack Developer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=538c83237022eef8) |
-| 87 | cached_llm | indeed |  | Web Application Developer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=b9d0a8bba63dd88f) |
-| 87 | cached_llm | indeed | sngular | Full Stack Developer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=31323fad06d75f49) |
+| 88 | cached_llm | indeed | Imaginovation LLC | Web Application Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=30fd1022801c7de5) |
+| 88 | cached_llm | indeed | Interface Technologies, Inc. | Software Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=81c75bf7eb3e92cb) |
+| 88 | cached_llm | indeed | Sysomos | Data Software Engineer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=9649155700130d18) |
+| 88 | cached_llm | indeed | vaporware | Full Stack Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=8fe48b3a45477c51) |
+| 87 | cached_llm | indeed | Iowa State University | Software Developer I | Ames, IA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=00899b48c223f3e6) |
+| 87 | cached_llm | indeed | Omniware | Software Engineer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=4e35462ecfca860b) |
+| 87 | cached_llm | indeed | SoftPro | Software Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=2dcad43d9a60883f) |
+| 87 | cached_llm | indeed | Tizbi | Software Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=59ad1e7999ed057b) |
+| 86 | cached_llm | indeed | Gehtsoft USA | Software Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=1d5f9f88f2040c08) |
+| 86 | cached_llm | indeed | Wisdom Soft | Application Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a7655c767a4bc230) |
 | 86 | cached_llm | indeed | Jorie AI | Software Engineer I | Oak Brook, IL, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=04a62168c0646f8c) |
-| 86 | cached_llm | indeed | FPT Software | Software Development Engineer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=113f620df40140e1) |
-| 86 | cached_llm | indeed | Tyrannosaurus Tech | Web Application Developer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=cd7e6347b100f988) |
-| 85 | cached_llm | indeed | 3C Software | Software Systems Engineer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=0abba9cf8baaa4ef) |
-| 85 | cached_llm | indeed | AchieveIt | Software Engineer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=37ccda07d736a320) |
-| 85 | cached_llm | indeed | DEEL | Junior Software Engineer | Chicago, IL, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=25d6f6155c93e498) |
-| 85 | cached_llm | indeed | Tuck Software Group | Full Stack Developer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=372f133c76f12211) |
-| 87 | cached_llm | indeed | Wipro | DEVELOPER L1 - Contractor | Jefferson City, MO, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=5ebb38f57683f933) |
+| 85 | cached_llm | indeed | SDE | Software Development Engineer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=6c3b813439e2773f) |
 | 96 | cached_llm | linkedin | BioSpace | AI Engineer | North Chicago, IL | 2026-11-05 | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-biospace-4487713438) |
 | 95 | cached_llm | linkedin | Emonics LLC | Generative AI Engineer – Entry Level | San Diego, CA | 2026-11-03 | 3to7d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/generative-ai-engineer-%E2%80%93-entry-level-at-emonics-llc-4484645301) |
 | 92 | cached_llm | linkedin | iCapital | Artificial Intelligence / Machine Learning Engineer - Associate | New York, NY | 2026-11-05 | 3to7d | low | ai | - | unreviewed | not_dedicated | yes | [open](https://job-boards.greenhouse.io/icapitalnetwork/jobs/8802717002) |
@@ -83,68 +72,54 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 93 | rule_fallback | linkedin | Kareer Basycs | Junior Python Developer | United States | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-python-developer-at-kareer-basycs-4468572925) |
 | 93 | rule_fallback | linkedin | IBM | Entry Level Software Developer-Tucson-AZ | Tucson, AZ | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/entry-level-software-developer-tucson-az-at-ibm-4468180871) |
 
-## Tier B - worth applying (164)
+## Tier B - worth applying (150)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 90 | cached_llm | indeed | PNC Financial Services Group | Software Engineer - AI Agents / Generative AI | Pittsburgh, PA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=8c57c2b92961f4c5) |
-| 87 | cached_llm | indeed | Iowa State University | Software Developer I | Ames, IA, US | 2026-11-06 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=00899b48c223f3e6) |
-| 87 | cached_llm | indeed | Omniware | Software Engineer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=4e35462ecfca860b) |
-| 87 | cached_llm | indeed | SoftPro | Software Developer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=2dcad43d9a60883f) |
-| 87 | cached_llm | indeed | Tizbi | Software Developer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=59ad1e7999ed057b) |
+| 87 | llm | indeed |  | Educational Software Developer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=19b712fec8e9397a) |
+| 86 | llm | indeed | BI Inform | Data Software Engineer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ca1c9152a2c01746) |
+| 86 | llm | indeed | BOLT System | Software Systems Engineer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=86f88d0b5ac2c4b2) |
+| 86 | llm | indeed | Cicayda | Application Software Developer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=dd7dd32b416e6b2c) |
 | 86 | cached_llm | indeed | Acklen Avenue | Full Stack Software Developer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=0d6d8e14a0b3c27a) |
-| 86 | cached_llm | indeed | Allstacks | Software Data Engineer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=b4e0a270905e8856) |
-| 86 | cached_llm | indeed | Gehtsoft USA | Software Developer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=1d5f9f88f2040c08) |
-| 86 | cached_llm | indeed | Wisdom Soft | Application Developer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a7655c767a4bc230) |
-| 85 | cached_llm | indeed | Rasimo Systems | Systems Software Engineer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=1de5aac9d7c2438c) |
-| 85 | cached_llm | indeed | SDE | Software Development Engineer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=6c3b813439e2773f) |
-| 88 | cached_llm | indeed | PNC Financial Services Group | Software Engineer - AI | Pittsburgh, PA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=906a3c070e730344) |
-| 87 | cached_llm | indeed | DRB Systems | QA Automation Engineer | Akron, OH, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=cbf9e71048659d8b) |
-| 86 | cached_llm | indeed | Integrated Software Solutions | Software Integration Engineer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=03bae894d07a6fba) |
-| 86 | cached_llm | indeed | Wavestone | AI Full Stack Engineer | Pittsburgh, PA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=39ec9f3ca57b0544) |
-| 89 | llm | linkedin | Deloitte | Agentic AI Engineer — Healthcare AI | Miami, FL | 2026-11-08 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/agentic-ai-engineer-%E2%80%94-healthcare-ai-at-deloitte-4426732783) |
-| 86 | cached_llm | indeed | Cook Group | Software Engineer 1, Full-Stack | Bloomington, IN, US | 2026-11-02 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=113791030b03b30c) |
+| 85 | llm | indeed | DevDigital | Web Application Developer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=bc5f14c4553ec7bd) |
+| 85 | llm | indeed | Emma | Software Engineer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=9fad72d6f1be42e0) |
+| 85 | llm | indeed | Metamorph Inc. | Application Developer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=e5b5ee80b4c39907) |
+| 85 | llm | indeed | Trinetix | Software Development Engineer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=581d89034e6cc3f6) |
+| 86 | cached_llm | indeed | Integrated Software Solutions | Software Integration Engineer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=03bae894d07a6fba) |
+| 89 | cached_llm | linkedin | Deloitte | Agentic AI Engineer — Healthcare AI | Miami, FL | 2026-11-08 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/agentic-ai-engineer-%E2%80%94-healthcare-ai-at-deloitte-4426732783) |
 | 82 | cached_llm | indeed | LexisNexis Legal & Professional | Software Engineer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=5639b435392fc072) |
 | 84 | cached_llm | syncareer | U-Haul | Software Developer | Phoenix, Arizona, United States | - | 1to3d |  | swe | - | unreviewed | not_dedicated | yes | [open](https://uhaul.wd1.myworkdayjobs.com/en-US/UhaulJobs/job/Phoenix-Arizona/Software-Developer_R259053?jobFamilyGroup=81586da719a0012db7c8e8630633bf1f&jobFamilyGroup=2a5762831a2b0106f511965ca101a8d9&jobFamilyGroup=81586da719a001e988e2ca630633ab1f) |
-| 84 | cached_llm | indeed | Atlantic BT | Software Systems Engineer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=dc00cabd14660ad1) |
-| 84 | cached_llm | indeed | 3CI | Software Engineer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=023e3b31339348b7) |
-| 84 | cached_llm | indeed | TechOne Software | Software Developer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=499bdfd31ef4d84c) |
-| 83 | cached_llm | indeed | Mediclick | Healthcare Software Developer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=111ccab7b9190ee7) |
-| 83 | cached_llm | indeed | Oak Grove Technologies | Software Systems Engineer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=dc80e55d75618a18) |
-| 83 | cached_llm | indeed | Sitelink Software | Software Developer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ce696a547a9306ba) |
-| 83 | cached_llm | indeed | Softmaxx | Software Engineer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=f7a0a0392c89431f) |
-| 83 | cached_llm | indeed | Systems Atlanta | Software Systems Engineer | Kennesaw, GA, US | 2026-11-06 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=7d5811a214c4331e) |
+| 84 | llm | indeed |  | Application Developer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=1a23b62edf1557a8) |
+| 84 | llm | indeed | Core Technologies | Web Application Developer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ac2d7e8caeab74f3) |
+| 84 | llm | indeed | Oman Systems | Software Developer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=4518d6c3f7edae06) |
+| 84 | cached_llm | indeed | Atlantic BT | Software Systems Engineer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=dc00cabd14660ad1) |
+| 83 | cached_llm | indeed | Mediclick | Healthcare Software Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=111ccab7b9190ee7) |
+| 83 | cached_llm | indeed | Sitelink Software | Software Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ce696a547a9306ba) |
+| 83 | cached_llm | indeed | Softmaxx | Software Engineer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=f7a0a0392c89431f) |
+| 82 | llm | indeed | Kanini Software Solutions | Enterprise Software Engineer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=0754779caea400e4) |
+| 82 | llm | indeed | Solar com | Systems Software Engineer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=d0a7fe4d3dd261ff) |
 | 82 | cached_llm | indeed | Atiba Software | Software Engineer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=41582ece5aeefa95) |
-| 82 | cached_llm | indeed |  | Remote Software Developer | Remote, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=272442f2a6572faa) |
+| 82 | cached_llm | indeed | CLERA | Product Engineer | New York, NY, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=58562e46d6e9e584) |
 | 80 | rule_fallback | linkedin | Rippling | Software Engineer II, Backend - HR Product | Seattle, WA | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-hr-product-at-rippling-4488142498) |
 | 80 | rule_fallback | linkedin | Rippling | Software Engineer II, Backend - Platform Team | New York, NY | 2026-11-05 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-platform-team-at-rippling-4487744540) |
 | 84 | cached_llm | indeed | Assurity Life Insurance Company | Software Engineer II | Lincoln, NE, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=7441762794e9321d) |
-| 83 | cached_llm | indeed | Colorado Public Employees' Retirement Association | Enterprise Applications AI Integration Engineer | Denver, CO, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=3aaf08e69b860b20) |
-| 82 | cached_llm | indeed | Ultimus Fund Solutions, LLC | Data Engineer, AI Development | Omaha, NE, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=c2f127855e71ea6c) |
-| 82 | cached_llm | indeed | Ultimus Fund Solutions, LLC | Data Engineer, AI Development | Cincinnati, OH, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=e0747dd3497a49b5) |
-| 82 | cached_llm | indeed | GiveCampus | AI Platform Engineer | Remote, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=e1eb9e15b5f087e3) |
 | 75 | rule_fallback | linkedin | HP | Software Engineer, Cloud Services | San Francisco, CA | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-cloud-services-at-hp-4488486882) |
 | 75 | rule_fallback | linkedin | Evlo AI | Backend Engineer | San Francisco, CA | 2026-11-05 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/backend-engineer-at-evlo-ai-4486799285) |
 | 75 | rule_fallback | linkedin | FDE Times | Machine Learning Engineer | San Francisco, CA | 2026-11-08 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-fde-times-4486687460) |
 | 75 | rule_fallback | linkedin | Phantom | Software Engineer, Backend (Trading) | United States | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-backend-trading-at-phantom-4486948069) |
-| 75 | rule_fallback | linkedin | Frontier Energy, Inc. | Full Stack Software Engineer | Austin, TX | 2026-11-05 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-frontier-energy-inc-4486901203) |
 | 78 | cached_llm | indeed | Target | Data Engineer - Finance AI (PySpark) | Brooklyn Park, MN, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=a75bf79223441e6b) |
 | 78 | cached_llm | indeed | AbbVie | Associate Software Engineer I | North Chicago, IL, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=aa7fabb119869f42) |
+| 76 | cached_llm | indeed | California Institute of Technology | Software Developer | Pasadena, CA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=72d88e5cd685b994) |
 | 78 | cached_llm | indeed | 360 View | Software Developer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=932606fbee3b8f62) |
 | 78 | cached_llm | indeed | FortyAu | Application Developer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=2cd97992d009cf07) |
 | 78 | cached_llm | indeed |  | Programmer Analyst | Avondale Estates, GA, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=d050711ea5eb3cc4) |
-| 78 | cached_llm | indeed | CLERA | Product Engineer | San Francisco, CA, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=68e113334bc43b04) |
 | 78 | cached_llm | linkedin | Stronghold Investment Management | Software Engineer I | Dallas, TX | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-i-at-stronghold-investment-management-4452683045) |
-| 77 | cached_llm | indeed | Sandalwood Engineering & Ergonomics | Full Stack Software Developer | Livonia, MI, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=8ff84b64c0893cc6) |
 | 76 | cached_llm | indeed | Oman Systems | Software Developer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=f3f43f5ee9024ba4) |
-| 76 | cached_llm | indeed | GK Software USA | Retail Software Engineer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=6f2ae85a991e0591) |
-| 76 | cached_llm | indeed | PtEverywhere | Healthcare Software Developer | Raleigh, NC, US | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=2bc33564502a78b7) |
+| 76 | cached_llm | indeed | GK Software USA | Retail Software Engineer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=6f2ae85a991e0591) |
+| 76 | cached_llm | indeed | PtEverywhere | Healthcare Software Developer | Raleigh, NC, US | 2026-11-07 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=2bc33564502a78b7) |
 | 78 | cached_llm | indeed | Charles Schwab | Jr. Software Developer | Omaha, NE, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=75affc7c74831fbc) |
 | 75 | cached_llm | linkedin | Optum | Associate Software Engineer | Minneapolis, MN | 2026-11-07 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/associate-software-engineer-at-optum-4488743838) |
-| 75 | cached_llm | indeed | Optum | Associate Software Engineer | Minneapolis, MN, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=ddf558005b461d6a) |
-| 77 | cached_llm | indeed | University of Dubuque | Enterprise Systems Integration Analyst/Programmer | Dubuque, IA, US | 2026-11-06 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=cc6a14572c1349ae) |
-| 75 | cached_llm | indeed | KMS Technology | Software QA Engineer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=5916e863004fb048) |
-| 72 | cached_llm | indeed | Qoppa Software | Java Software Developer | Atlanta, GA, US | 2026-11-06 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=85783eaee55b243a) |
+| 74 | llm | indeed | Bridge Connector | Integration Software Engineer | Nashville, TN, US | 2026-11-08 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=b7a8ea8dc0fb24d5) |
 | 89 | cached_llm | linkedin | American Bureau of Shipping (ABS) | AI/ML Engineer | Washington, DC | 2026-11-03 | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-american-bureau-of-shipping-abs-4478713336) |
 | 87 | cached_llm | linkedin | Corgi | Applied AI Engineer | San Francisco, CA | 2026-11-02 | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/applied-ai-engineer-at-corgi-4486126617) |
 | 88 | cached_llm | linkedin | MOBIS North America | AI / Machine Learning Model Development Engineer | Plymouth, MI | 2026-11-03 | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/ai-machine-learning-model-development-engineer-at-mobis-north-america-4487057709) |
