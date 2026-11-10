@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-10T15:52:29.939825+00:00",
-  "count": 6021,
+  "generated_at": "2026-11-10T15:54:24.881476+00:00",
+  "count": 6023,
   "companies": [
     {
       "name": "01.com",
@@ -7151,8 +7151,11 @@
       "sponsor": "likely",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
-      "seen_count": 1
+      "seen_job_keys": [
+        "03a6523f70196f874237f66e",
+        "b0e399395be06d2d29f0836f"
+      ],
+      "seen_count": 2
     },
     {
       "name": "August Home",
@@ -9587,9 +9590,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "270f59ad0c8ee6559b098ded",
         "54f5cb71b6c6485b288644c8"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Binance",
@@ -10031,9 +10035,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "7374415f78a2e2c9ee494c8e"
+        "7374415f78a2e2c9ee494c8e",
+        "a4b8f554470c2aba016b7061"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Blacktop Omnimedia, LLC",
@@ -14699,11 +14704,12 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "0b859bf2def163ad044a1e90",
         "27adcb3f734d1319644bca31",
         "dd295dc78031ccb77486682c",
         "e85b909d9e2b73271edc965a"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "Chattanooga-Hamilton County Air Pollution Control Bureau",
@@ -21540,6 +21546,19 @@
       "tags": [],
       "seen_job_keys": [
         "30e9596f7f7ccdf4f6013955"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Deutsche Bank",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "dfd4e7db0a0ffde697b3fe39"
       ],
       "seen_count": 1
     },
@@ -38072,6 +38091,7 @@
         "969d7f5b5ae691d6d2da9296",
         "a0a9d766125d4556a4c708c2",
         "a41eafdacf65f48784643f4b",
+        "cfb14cc54955f1a1fa377e54",
         "d52439bf217344c269cc34b9",
         "ddbaac51bf6567863355ba7e",
         "f06c84294666ce069be878f2",
@@ -38080,7 +38100,7 @@
         "f78e81f08c3856ee4f7bdfdd",
         "f958a3050e5ea470add7e18a"
       ],
-      "seen_count": 20
+      "seen_count": 21
     },
     {
       "name": "Intercom",
@@ -61415,10 +61435,11 @@
       "seen_job_keys": [
         "274ccdd28574998ce95240c1",
         "596416ad7296cf5c3dd83278",
+        "a570a022c92f04067d39d6bb",
         "c75dd504f2bef1f79cba2609",
         "cf17c674751717431ced711b"
       ],
-      "seen_count": 4
+      "seen_count": 5
     },
     {
       "name": "S&K SALES",
@@ -67508,6 +67529,19 @@
         "14c0d6b259c54b4c3ebfb66b"
       ],
       "seen_count": 2
+    },
+    {
+      "name": "Stoneridge",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "198941846b551c6fc27e433d"
+      ],
+      "seen_count": 1
     },
     {
       "name": "Storable",
