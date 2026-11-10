@@ -266,7 +266,9 @@
       "stamp": "2026-11-10_0051",
       "title": "Syncareer alert 2026-11-10_0051 (4 new A/B)",
       "body": "Syncareer alert — 2026-11-10_0051\n\nUpdated (PT): 2026-11-09 16:51 PST\nSnapshot (UTC): 2026-11-10T00:51:47.218959+00:00\n\n4 new matching job(s) this run (hard-filtered).\n\nIf you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).\n\n| Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| A | 92.0 | Syncareer | The Brattle Group | Data and AI Engineer - July 2027 | San Francisco, California, United States | 2026-11-07 | No sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/thebrattlegroup/jobs/4751955005) |\n| B | 92.0 | Syncareer | New York Times | Backend Engineering Intern | New York, New York, United States | 2026-11-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/thenewyorktimes/jobs/4751973005) |\n| B | 91.0 | Syncareer | New York Times | Full-Stack Engineering Intern | New York, New York, United States | 2026-11-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/thenewyorktimes/jobs/4751907005) |\n| B | 86.0 | Syncareer | Affirm | Software Engineer II, Backend | United States | 2026-11-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/affirm/jobs/8196112003) |\n\nInbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-11-10_0051.csv`.",
-      "status": "pending"
+      "status": "delivered",
+      "issue_url": "https://github.com/daniel-li2021/job-board-pipeline/issues/288",
+      "delivered_at": "2026-11-10T00:51:55.186259+00:00"
     }
   ]
 }
