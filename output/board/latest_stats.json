@@ -1,149 +1,2664 @@
 {
-  "run_at": "2026-11-10T07:06:07.721592+00:00",
-  "elapsed_seconds": 178.421,
+  "run_at": "2026-11-10T16:21:24.722137+00:00",
+  "elapsed_seconds": 524.53,
   "source_raw": {
-    "ats": 3021,
+    "ats": 3026,
     "linkedin": 4246,
-    "indeed": 600,
+    "indeed": 760,
     "glassdoor": 381
   },
-  "remote_elapsed_seconds": 16.307,
+  "remote_elapsed_seconds": 22.445,
   "funnel": {
-    "after_dedup": 8194,
-    "after_company": 7704,
-    "after_hard_filter": 7101,
-    "after_prefilter": 2349,
-    "official_duplicates_suppressed": 420,
+    "after_dedup": 8359,
+    "after_company": 7854,
+    "after_hard_filter": 7249,
+    "after_prefilter": 2399,
+    "official_duplicates_suppressed": 438,
     "retry_only_carried": 0,
-    "dropped": 5631
+    "dropped": 5741
   },
   "llm": {
-    "reused": 297,
-    "llm": 2,
-    "new_or_changed": 2,
+    "reused": 210,
+    "llm": 121,
+    "new_or_changed": 121,
     "rule": 1630,
-    "sent": 2,
-    "api_requests": 1,
+    "sent": 121,
+    "api_requests": 14,
     "recency_skipped": 0,
     "overflow": 0,
     "peer_reused": 0,
-    "thin_source_rule": 1123,
+    "thin_source_rule": 1122,
     "retryable_fallbacks": 0,
-    "historical_seen_skipped": 507,
+    "historical_seen_skipped": 508,
     "historical_llm_retained": 0,
     "non_material_change_reused": 0,
-    "same_content_reused": 4,
-    "rescored_within_24h": 1,
+    "same_content_reused": 6,
+    "rescored_within_24h": 4,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 1,
-      "prior_rule_result_now_eligible_for_llm": 1
+      "genuinely_new_job": 117,
+      "material_jd_change": 4
     },
     "batch_size": 10,
-    "primary_batches_total": 1,
-    "batches_total": 1,
-    "batches_succeeded": 1,
-    "batches_attempted": 1,
+    "primary_batches_total": 14,
+    "batches_total": 14,
+    "batches_succeeded": 14,
+    "batches_attempted": 14,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 6.862,
-    "json_results": 2,
+    "latency_seconds": 271.484,
+    "json_results": 121,
     "batches": [
       {
         "batch": 1,
-        "route": "both",
+        "route": "resume_swe",
         "attempt": "initial",
         "jobs": [
           {
-            "key": "id::indeed::in-4e7d12f591e01f35",
-            "company": "Lumenalta",
-            "title": "Technical Interviewer - Data Engineer"
+            "key": "id::indeed::in-d676453a0e4e37b2",
+            "company": "Alldus",
+            "title": "Founding Forward Deployed Engineer"
           },
           {
-            "key": "url::https://www.audiblecareers.com/job/cambridge/software-development-engineer-audible-ai-voice-production/27552/102015023760",
-            "company": "Audible",
-            "title": "Software Development Engineer, Audible AI Voice Production"
+            "key": "id::indeed::in-2cb144f73c61c658",
+            "company": "Cummins",
+            "title": "Electronic Systems Engineer - Software"
+          },
+          {
+            "key": "id::indeed::in-f74dca91e85e66c6",
+            "company": "HealthPartners",
+            "title": "Software Engineer – Health Plan Systems"
+          },
+          {
+            "key": "id::indeed::in-9bdc36e363d86a15",
+            "company": "Intellibee Inc",
+            "title": "Java Full-Stack Developer"
+          },
+          {
+            "key": "id::indeed::in-745b927808f1a162",
+            "company": "Intégral",
+            "title": "Cloud Engineer"
+          },
+          {
+            "key": "id::indeed::in-6967a6efb98e4ad2",
+            "company": "Katalyst Healthcares & Life Sciences",
+            "title": "Python Full Stack Developer"
+          },
+          {
+            "key": "id::indeed::in-ac6b376db2fd7a14",
+            "company": "Kinsale Insurance Company",
+            "title": "Data Engineer"
+          },
+          {
+            "key": "id::indeed::in-9794aa5bd04a7a00",
+            "company": "JPMorganChase",
+            "title": "Software Engineer II: Fullstack"
+          },
+          {
+            "key": "id::indeed::in-448dc7f15d31ad09",
+            "company": "Tesla",
+            "title": "Software QA Engineer, Service Applications"
+          },
+          {
+            "key": "id::indeed::in-b24059dc323d65e3",
+            "company": "All IT Solutions LLC",
+            "title": "Enterprise DevOps Engineer"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 6.862,
+        "latency_seconds": 23.584,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 2,
-          "input_tokens": 3789,
+          "jobs_scored": 10,
+          "input_tokens": 9894,
           "cached_input_tokens": 0,
-          "output_tokens": 485,
-          "reasoning_tokens": 329,
-          "estimated_usd": 0.000621
+          "output_tokens": 2338,
+          "reasoning_tokens": 1428,
+          "estimated_usd": 0.002158
         },
         "decisions": [
           {
-            "key": "id::indeed::in-4e7d12f591e01f35",
-            "match_score": 28.0,
-            "seniority_fit": "mismatch",
+            "key": "id::indeed::in-d676453a0e4e37b2",
+            "match_score": 77.0,
+            "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Data/backend engineering"
+              "FastAPI and TypeScript",
+              "Production deployment ownership"
             ],
             "main_gaps": [
-              "5+ years engineering experience",
-              "Prior engineering hiring experience"
+              "Customer workflow discovery",
+              "Independent customer ownership"
             ]
           },
           {
-            "key": "url::https://www.audiblecareers.com/job/cambridge/software-development-engineer-audible-ai-voice-production/27552/102015023760",
-            "match_score": 85.0,
+            "key": "id::indeed::in-2cb144f73c61c658",
+            "match_score": 67.0,
             "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Production software development",
-              "Testing and operational excellence"
+              "Software testing and reliability",
+              "Early-career software engineering"
+            ],
+            "main_gaps": [
+              "Embedded product software",
+              "Hardware-in-the-loop testing"
+            ]
+          },
+          {
+            "key": "id::indeed::in-f74dca91e85e66c6",
+            "match_score": 72.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Application development and testing",
+              "Relational database experience"
+            ],
+            "main_gaps": [
+              "Three years application development"
+            ]
+          },
+          {
+            "key": "id::indeed::in-9bdc36e363d86a15",
+            "match_score": 45.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "React development",
+              "Agile team experience"
+            ],
+            "main_gaps": [
+              "Java and Spring experience",
+              "Oracle database experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-745b927808f1a162",
+            "match_score": 35.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "AWS and Terraform",
+              "Cloud automation experience"
+            ],
+            "main_gaps": [
+              "Security+ and cloud certification",
+              "DoD cybersecurity operations"
+            ]
+          },
+          {
+            "key": "id::indeed::in-6967a6efb98e4ad2",
+            "match_score": 40.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python full-stack development"
+            ],
+            "main_gaps": [
+              "Eight years Python experience",
+              "Clinical domain experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-ac6b376db2fd7a14",
+            "match_score": 78.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production data pipelines",
+              "Databricks and SQL"
+            ],
+            "main_gaps": [
+              "Data modeling at scale",
+              "Database security and recovery"
+            ]
+          },
+          {
+            "key": "id::indeed::in-9794aa5bd04a7a00",
+            "match_score": 76.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Full-stack SDLC experience",
+              "CI/CD and operational stability"
+            ],
+            "main_gaps": [
+              "Two years applied experience",
+              "Enterprise AI coding tools"
+            ]
+          },
+          {
+            "key": "id::indeed::in-448dc7f15d31ad09",
+            "match_score": 74.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Automated regression testing",
+              "Python and SQL validation"
+            ],
+            "main_gaps": [
+              "Selenium test automation"
+            ]
+          },
+          {
+            "key": "id::indeed::in-b24059dc323d65e3",
+            "match_score": 34.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "AWS and Terraform",
+              "GitHub Actions experience"
+            ],
+            "main_gaps": [
+              "Salesforce Copado release engineering",
+              "Enterprise DevOps experience"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 2,
+        "route": "resume_swe",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "id::indeed::in-478db9f2ff7f209d",
+            "company": "Alldus",
+            "title": "Full-Stack Engineer"
+          },
+          {
+            "key": "id::indeed::in-b54113429600105d",
+            "company": "Azenta Life Sciences",
+            "title": "Full Stack Software Engineer"
+          },
+          {
+            "key": "id::indeed::in-5db3427e7898fb0b",
+            "company": "Bitsight",
+            "title": "Software Engineer, Full Stack"
+          },
+          {
+            "key": "id::indeed::in-cf2a7b1382343582",
+            "company": "Council On Foreign Relations",
+            "title": "DevOps Engineer / Site Reliability Engineer"
+          },
+          {
+            "key": "id::indeed::in-b2978fecd124be03",
+            "company": "Evercommerce",
+            "title": "EverHealth - Software Engineer"
+          },
+          {
+            "key": "id::indeed::in-df51796b52314aa3",
+            "company": "Garmin",
+            "title": "Software Engineer (Python/Java)"
+          },
+          {
+            "key": "id::indeed::in-d31d1361be339f3f",
+            "company": "Mercury Insurance Company",
+            "title": "Software Engineer I"
+          },
+          {
+            "key": "id::indeed::in-95553cab06f86346",
+            "company": "Octave Intelligence",
+            "title": "Customer Software Engineer"
+          },
+          {
+            "key": "id::indeed::in-baabb4ad4e91f349",
+            "company": "Regions Financial",
+            "title": "Software Engineer - Fraud Systems"
+          },
+          {
+            "key": "id::indeed::in-a07f26140fb4092c",
+            "company": "Regions Financial",
+            "title": "Software Engineer - Risk Systems"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 19.853,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 10,
+          "input_tokens": 12766,
+          "cached_input_tokens": 1851,
+          "output_tokens": 2154,
+          "reasoning_tokens": 1270,
+          "estimated_usd": 0.002187
+        },
+        "decisions": [
+          {
+            "key": "id::indeed::in-478db9f2ff7f209d",
+            "match_score": 68.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "End-to-end full-stack delivery",
+              "React and API development"
+            ],
+            "main_gaps": [
+              "Ruby on Rails experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-b54113429600105d",
+            "match_score": 75.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "React and Python platform work",
+              "AWS deployment and CI/CD"
+            ],
+            "main_gaps": [
+              "3+ years professional experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-5db3427e7898fb0b",
+            "match_score": 89.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python and FastAPI services",
+              "React and REST APIs"
             ],
             "main_gaps": []
+          },
+          {
+            "key": "id::indeed::in-cf2a7b1382343582",
+            "match_score": 50.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "AWS deployment and CI/CD",
+              "Tracing and reliability testing"
+            ],
+            "main_gaps": [
+              "SRE on-call ownership",
+              "Terraform and zero-trust operations"
+            ]
+          },
+          {
+            "key": "id::indeed::in-b2978fecd124be03",
+            "match_score": 67.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Full-stack platform development",
+              "AI workflow and service experience"
+            ],
+            "main_gaps": [
+              "5+ years professional experience",
+              "Event-driven production systems"
+            ]
+          },
+          {
+            "key": "id::indeed::in-df51796b52314aa3",
+            "match_score": 72.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python and Java skills",
+              "Automation and cloud deployment"
+            ],
+            "main_gaps": [
+              "2 years relevant experience",
+              "Ansible implementation"
+            ]
+          },
+          {
+            "key": "id::indeed::in-d31d1361be339f3f",
+            "match_score": 90.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Direct Engineer I seniority fit",
+              "Production software and testing"
+            ],
+            "main_gaps": []
+          },
+          {
+            "key": "id::indeed::in-95553cab06f86346",
+            "match_score": 52.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Technical troubleshooting experience",
+              "Computer science degree"
+            ],
+            "main_gaps": [
+              "Customer support and training",
+              "Windows Server environments"
+            ]
+          },
+          {
+            "key": "id::indeed::in-baabb4ad4e91f349",
+            "match_score": 35.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Application development experience",
+              "Testing and debugging"
+            ],
+            "main_gaps": [
+              "7 years of experience",
+              "Senior ownership and mentoring"
+            ]
+          },
+          {
+            "key": "id::indeed::in-a07f26140fb4092c",
+            "match_score": 77.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python and React development",
+              "APIs, SQL, and cloud experience"
+            ],
+            "main_gaps": []
+          }
+        ]
+      },
+      {
+        "batch": 3,
+        "route": "resume_swe",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "id::indeed::in-e82198081d6f52da",
+            "company": "Startekk Inc",
+            "title": "Full Stack Engineer"
+          },
+          {
+            "key": "id::indeed::in-d16a1fa1238de86e",
+            "company": "bet365",
+            "title": "Infrastructure Engineer"
+          },
+          {
+            "key": "id::indeed::in-740ef285e4d0b125",
+            "company": "clickhouse",
+            "title": "Full Stack Software Engineer - Billing Team"
+          },
+          {
+            "key": "id::indeed::in-eca569c4e3833c39",
+            "company": "Allegro MicroSystems",
+            "title": "Cloud Platform Engineer"
+          },
+          {
+            "key": "id::indeed::in-cd99e92933cede59",
+            "company": "All IT Solutions LLC",
+            "title": "Programmer 6"
+          },
+          {
+            "key": "id::indeed::in-3b9d6eb99d5991fd",
+            "company": "CBRE",
+            "title": "Automation Engineer"
+          },
+          {
+            "key": "id::indeed::in-5e870940467bef5f",
+            "company": "CURSOR",
+            "title": "Forward Deployed Engineer, Western Europe"
+          },
+          {
+            "key": "id::indeed::in-e755e25169228232",
+            "company": "Duly Health and Care",
+            "title": "Data Engineer I"
+          },
+          {
+            "key": "id::indeed::in-685bc1bcddac3a20",
+            "company": "Evercommerce",
+            "title": "EverHealth - Forward Deployed Engineer (Remote, US)"
+          },
+          {
+            "key": "id::indeed::in-bde9c4a85ad839d8",
+            "company": "Ford Motor Company",
+            "title": "DAT2.X AEB Software Integration Engineer"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 17.532,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 10,
+          "input_tokens": 12415,
+          "cached_input_tokens": 1851,
+          "output_tokens": 1837,
+          "reasoning_tokens": 946,
+          "estimated_usd": 0.001993
+        },
+        "decisions": [
+          {
+            "key": "id::indeed::in-e82198081d6f52da",
+            "match_score": 74.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Full-stack web applications",
+              "APIs and automated testing"
+            ],
+            "main_gaps": [
+              "Salesforce automation testing",
+              "Healthcare PHI experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-d16a1fa1238de86e",
+            "match_score": 36.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Cloud infrastructure",
+              "Operational automation"
+            ],
+            "main_gaps": [
+              "Citrix and identity administration",
+              "PowerShell enterprise operations"
+            ]
+          },
+          {
+            "key": "id::indeed::in-740ef285e4d0b125",
+            "match_score": 48.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "React and TypeScript",
+              "Cloud software delivery"
+            ],
+            "main_gaps": [
+              "Five-plus years experience",
+              "Billing platform expertise"
+            ]
+          },
+          {
+            "key": "id::indeed::in-eca569c4e3833c39",
+            "match_score": 62.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "CI/CD and cloud deployment",
+              "Terraform and scripting"
+            ],
+            "main_gaps": [
+              "Three-plus years cloud engineering",
+              "Terraform implementation experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-cd99e92933cede59",
+            "match_score": 29.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Java programming",
+              "Agile software development"
+            ],
+            "main_gaps": [
+              "Spring and Hibernate experience",
+              "Oracle and JBoss experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-3b9d6eb99d5991fd",
+            "match_score": 14.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Software troubleshooting"
+            ],
+            "main_gaps": [
+              "PLC programming",
+              "Robotics and SCADA"
+            ]
+          },
+          {
+            "key": "id::indeed::in-5e870940467bef5f",
+            "match_score": 55.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production retrieval systems",
+              "AI evaluation and monitoring"
+            ],
+            "main_gaps": [
+              "Five-plus years experience",
+              "Production agent ownership"
+            ]
+          },
+          {
+            "key": "id::indeed::in-e755e25169228232",
+            "match_score": 89.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python and SQL pipelines",
+              "Spark and Databricks"
+            ],
+            "main_gaps": []
+          },
+          {
+            "key": "id::indeed::in-685bc1bcddac3a20",
+            "match_score": 51.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production data pipelines",
+              "Python and SQL"
+            ],
+            "main_gaps": [
+              "Five-plus years experience",
+              "BI dashboards and data modeling"
+            ]
+          },
+          {
+            "key": "id::indeed::in-bde9c4a85ad839d8",
+            "match_score": 45.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python software development",
+              "Data analysis and testing"
+            ],
+            "main_gaps": [
+              "ADAS and embedded systems",
+              "Control algorithms and sensors"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 4,
+        "route": "resume_swe",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "id::indeed::in-2c81ebcd56383ad7",
+            "company": "Fortis Construction",
+            "title": "Data Engineer"
+          },
+          {
+            "key": "id::indeed::in-9cecd7d88562092d",
+            "company": "Hamilton Company",
+            "title": "Software Engineer"
+          },
+          {
+            "key": "id::indeed::in-6c6fc0f234b10cae",
+            "company": "ION Group",
+            "title": "Developer"
+          },
+          {
+            "key": "id::indeed::in-31203acfb843b63b",
+            "company": "Intellibee Inc",
+            "title": "Routing Platform Dev Engineer"
+          },
+          {
+            "key": "id::indeed::in-d1ce8c2bb2e05265",
+            "company": "MIO Partners",
+            "title": "Data Engineer, Market Data"
+          },
+          {
+            "key": "id::indeed::in-8c4256b4f6e32677",
+            "company": "Sherman and Reilly Inc",
+            "title": "Product Data Engineer"
+          },
+          {
+            "key": "id::indeed::in-06e5a0eec644bd46",
+            "company": "Superior Beverage Group",
+            "title": "Data Engineer"
+          },
+          {
+            "key": "id::indeed::in-d97b195607ec8cfb",
+            "company": "University of Hawaii system",
+            "title": "READVERTISE** IT Specialist/Java Web Applications Developer"
+          },
+          {
+            "key": "url::https://careers.tiktokusds.com/usds/position/7049891976959478029/detail",
+            "company": "TikTok USDS JV",
+            "title": "Site Reliability Engineer, E-Commerce"
+          },
+          {
+            "key": "id::indeed::in-8bbfed589d37c29c",
+            "company": "Advantest",
+            "title": "Entry-Level Application Engineer – Semiconductor Test"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 17.751,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 10,
+          "input_tokens": 11405,
+          "cached_input_tokens": 1851,
+          "output_tokens": 1858,
+          "reasoning_tokens": 1150,
+          "estimated_usd": 0.001903
+        },
+        "decisions": [
+          {
+            "key": "id::indeed::in-2c81ebcd56383ad7",
+            "match_score": 72.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production data pipelines",
+              "Cloud deployment experience"
+            ],
+            "main_gaps": [
+              "Data warehouse/lake experience",
+              "Data modeling experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-9cecd7d88562092d",
+            "match_score": 71.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Full-stack software development",
+              "REST APIs and SQL"
+            ],
+            "main_gaps": [
+              "C++ desktop development",
+              "NET and Entity Framework"
+            ]
+          },
+          {
+            "key": "id::indeed::in-6c6fc0f234b10cae",
+            "match_score": 72.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Software testing and debugging",
+              "Systems and data structures"
+            ],
+            "main_gaps": [
+              "Production C++ experience",
+              "Unix system programming"
+            ]
+          },
+          {
+            "key": "id::indeed::in-31203acfb843b63b",
+            "match_score": 36.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Linux and concurrency fundamentals"
+            ],
+            "main_gaps": [
+              "Low-level C programming",
+              "Platform and hardware integration"
+            ]
+          },
+          {
+            "key": "id::indeed::in-d1ce8c2bb2e05265",
+            "match_score": 47.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python and SQL pipelines",
+              "AWS production experience"
+            ],
+            "main_gaps": [
+              "Financial market data experience",
+              "AWS data services"
+            ]
+          },
+          {
+            "key": "id::indeed::in-8c4256b4f6e32677",
+            "match_score": 24.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Data quality experience"
+            ],
+            "main_gaps": [
+              "SolidWorks PDM and SAP",
+              "BOM and change management"
+            ]
+          },
+          {
+            "key": "id::indeed::in-06e5a0eec644bd46",
+            "match_score": 66.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python ETL and data workflows",
+              "SQL and cloud platforms"
+            ],
+            "main_gaps": [
+              "BI dashboards and visualization",
+              "Three years analytics experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-d97b195607ec8cfb",
+            "match_score": 73.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Java and full-stack development",
+              "Testing and stakeholder collaboration"
+            ],
+            "main_gaps": [
+              "Three years IT experience",
+              "JSP and JSTL"
+            ]
+          },
+          {
+            "key": "url::https://careers.tiktokusds.com/usds/position/7049891976959478029/detail",
+            "match_score": 75.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production reliability and observability",
+              "Distributed systems and cloud"
+            ],
+            "main_gaps": [
+              "Large-scale SRE ownership",
+              "On-call incident management"
+            ]
+          },
+          {
+            "key": "id::indeed::in-8bbfed589d37c29c",
+            "match_score": 43.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Programming and troubleshooting",
+              "Entry-level seniority fit"
+            ],
+            "main_gaps": [
+              "Electronics and lab equipment",
+              "Semiconductor test development"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 5,
+        "route": "resume_swe",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "id::indeed::in-90bed0168b4a7c55",
+            "company": "Bay Systems Consulting, Inc.",
+            "title": "Site Reliability Engineer"
+          },
+          {
+            "key": "id::indeed::in-2b279bbd3c426ed8",
+            "company": "Comcast",
+            "title": "Site Reliability Engineer 2 - Freewheel"
+          },
+          {
+            "key": "id::indeed::in-f6b03d6650e4e06a",
+            "company": "GuruSchools",
+            "title": "Infrastructure / Virtualization Engineer"
+          },
+          {
+            "key": "id::indeed::in-2cd4a598a9a11563",
+            "company": "KIDDE-FENWAL",
+            "title": "Firmware Engineer"
+          },
+          {
+            "key": "id::indeed::in-ccb7b13a2a3f7f3f",
+            "company": "MATRIXEDGE",
+            "title": "Kubernetes DevOps Engineer (RKE2 / GitOps)"
+          },
+          {
+            "key": "id::indeed::in-7835b2fca5643fb1",
+            "company": "Pima County",
+            "title": "ITSD – Infrastructure Systems & Network Engr I"
+          },
+          {
+            "key": "id::indeed::in-84bcb5a04cce932d",
+            "company": "TSMC",
+            "title": "Product Engineer"
+          },
+          {
+            "key": "id::indeed::in-bff43bdc0bacaba4",
+            "company": "Trane Technologies",
+            "title": "Automation Engineer- Plant"
+          },
+          {
+            "key": "id::indeed::in-554e90f0ce472eb6",
+            "company": "UnderDefense",
+            "title": "Middle SOC Security Engineer"
+          },
+          {
+            "key": "id::indeed::in-4a6e45257d1357ef",
+            "company": "Werfen",
+            "title": "Software Automation Test Engineer II"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 18.472,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 10,
+          "input_tokens": 13116,
+          "cached_input_tokens": 1851,
+          "output_tokens": 2070,
+          "reasoning_tokens": 1171,
+          "estimated_usd": 0.00218
+        },
+        "decisions": [
+          {
+            "key": "id::indeed::in-90bed0168b4a7c55",
+            "match_score": 64.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python automation",
+              "production reliability"
+            ],
+            "main_gaps": [
+              "HPC infrastructure operations",
+              "network troubleshooting"
+            ]
+          },
+          {
+            "key": "id::indeed::in-2b279bbd3c426ed8",
+            "match_score": 72.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "AWS deployments",
+              "CI/CD and monitoring"
+            ],
+            "main_gaps": [
+              "Linux administration",
+              "SRE capacity planning"
+            ]
+          },
+          {
+            "key": "id::indeed::in-f6b03d6650e4e06a",
+            "match_score": 36.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Linux exposure",
+              "scripting"
+            ],
+            "main_gaps": [
+              "VMware and Nutanix",
+              "Windows server administration"
+            ]
+          },
+          {
+            "key": "id::indeed::in-2cd4a598a9a11563",
+            "match_score": 18.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "other",
+            "top_match_reasons": [
+              "C++ programming",
+              "software testing"
+            ],
+            "main_gaps": [
+              "Embedded firmware leadership",
+              "8–10 years experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-ccb7b13a2a3f7f3f",
+            "match_score": 66.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Docker and CI/CD",
+              "Linux and scripting"
+            ],
+            "main_gaps": [
+              "Kubernetes administration",
+              "ArgoCD and Helm"
+            ]
+          },
+          {
+            "key": "id::indeed::in-7835b2fca5643fb1",
+            "match_score": 57.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Computer science degree",
+              "infrastructure documentation"
+            ],
+            "main_gaps": [
+              "IT infrastructure support",
+              "Network and systems administration"
+            ]
+          },
+          {
+            "key": "id::indeed::in-84bcb5a04cce932d",
+            "match_score": 25.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "other",
+            "top_match_reasons": [
+              "Python and SQL",
+              "data analysis"
+            ],
+            "main_gaps": [
+              "Semiconductor device physics",
+              "Process integration"
+            ]
+          },
+          {
+            "key": "id::indeed::in-bff43bdc0bacaba4",
+            "match_score": 68.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python and SQL automation",
+              "REST API integration"
+            ],
+            "main_gaps": [
+              "MES and OT systems",
+              "Manufacturing automation"
+            ]
+          },
+          {
+            "key": "id::indeed::in-554e90f0ce472eb6",
+            "match_score": 43.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python scripting",
+              "log processing experience"
+            ],
+            "main_gaps": [
+              "SIEM platform experience",
+              "Detection rule development"
+            ]
+          },
+          {
+            "key": "id::indeed::in-4a6e45257d1357ef",
+            "match_score": 78.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Automated testing",
+              "Python and API development"
+            ],
+            "main_gaps": [
+              "2–5 years professional experience"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 6,
+        "route": "resume_swe",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "id::indeed::in-8bbb7bf999eb3ba6",
+            "company": "Werfen",
+            "title": "Software Test Engineer I"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 4.004,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 1,
+          "input_tokens": 3053,
+          "cached_input_tokens": 1851,
+          "output_tokens": 216,
+          "reasoning_tokens": 136,
+          "estimated_usd": 0.000247
+        },
+        "decisions": [
+          {
+            "key": "id::indeed::in-8bbb7bf999eb3ba6",
+            "match_score": 87.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "automated testing and regression",
+              "0–3 years experience"
+            ],
+            "main_gaps": [
+              "software security practices"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 7,
+        "route": "resume_ai",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "id::indeed::in-4b917b817923dca9",
+            "company": "Duly Health and Care",
+            "title": "AI Engineer I"
+          },
+          {
+            "key": "id::indeed::in-0d7cd483f7d7bead",
+            "company": "Eli Lilly",
+            "title": "Physical AI Engineer - Lilly Medicine Foundry"
+          },
+          {
+            "key": "id::indeed::in-4e9268afcadc23a6",
+            "company": "Pika",
+            "title": "Applied AI Engineer, Creative Experiences"
+          },
+          {
+            "key": "id::indeed::in-4e14233d994a6a07",
+            "company": "California Institute of Technology",
+            "title": "Data Science Engineer"
+          },
+          {
+            "key": "id::indeed::in-c8b57d69118a966b",
+            "company": "KLA",
+            "title": "Data Scientist"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 14.63,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 5,
+          "input_tokens": 7778,
+          "cached_input_tokens": 0,
+          "output_tokens": 1074,
+          "reasoning_tokens": 721,
+          "estimated_usd": 0.001315
+        },
+        "decisions": [
+          {
+            "key": "id::indeed::in-4b917b817923dca9",
+            "match_score": 94.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production LLM and RAG",
+              "AI deployment and CI/CD"
+            ],
+            "main_gaps": []
+          },
+          {
+            "key": "id::indeed::in-0d7cd483f7d7bead",
+            "match_score": 39.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "AI model deployment",
+              "Cloud AI experience"
+            ],
+            "main_gaps": [
+              "Robotics and sensor integration",
+              "GMP manufacturing systems"
+            ]
+          },
+          {
+            "key": "id::indeed::in-4e9268afcadc23a6",
+            "match_score": 76.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Generative AI implementation",
+              "QLoRA fine-tuning"
+            ],
+            "main_gaps": [
+              "Creative multimodal workflows",
+              "Audience or growth experimentation"
+            ]
+          },
+          {
+            "key": "id::indeed::in-4e14233d994a6a07",
+            "match_score": 45.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python research engineering",
+              "Data pipeline development"
+            ],
+            "main_gaps": [
+              "Algebraic geometry and symbolic computation",
+              "R programming"
+            ]
+          },
+          {
+            "key": "id::indeed::in-c8b57d69118a966b",
+            "match_score": 36.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Machine learning experience",
+              "Data analysis experience"
+            ],
+            "main_gaps": [
+              "Five years' experience",
+              "Optimization modeling"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 8,
+        "route": "both",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "id::indeed::in-f034b897568f041b",
+            "company": "",
+            "title": "ML Data Engineer"
+          },
+          {
+            "key": "id::indeed::in-5caa29e05b1a4e83",
+            "company": "",
+            "title": "Open Source Maintainer / Core Contributor - Software Engineer (AI Review)"
+          },
+          {
+            "key": "id::indeed::in-da9e97ae3c690e1e",
+            "company": "Alldus",
+            "title": "Forward Deployed Engineer"
+          },
+          {
+            "key": "id::indeed::in-4ff520889cab7469",
+            "company": "Alldus",
+            "title": "Founding Data Engineer"
+          },
+          {
+            "key": "id::indeed::in-336bd30f9bbbea18",
+            "company": "Alldus",
+            "title": "Founding Software Engineer"
+          },
+          {
+            "key": "id::indeed::in-45386e460c613d38",
+            "company": "Alldus",
+            "title": "ML / AI Research Engineer"
+          },
+          {
+            "key": "id::indeed::in-810f23cd98f3ee1a",
+            "company": "Alldus",
+            "title": "Software Engineers (C++)"
+          },
+          {
+            "key": "id::indeed::in-b174b02f58feb33f",
+            "company": "Citrin Cooperman Advisors LLC",
+            "title": "Forward Deployed Engineer"
+          },
+          {
+            "key": "id::indeed::in-50f9145e8ea95143",
+            "company": "Computer Services",
+            "title": "AI Engineer"
+          },
+          {
+            "key": "id::indeed::in-71c2b4967f6e4b60",
+            "company": "David AI",
+            "title": "Forward Deployed Engineer, Production"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 27.554,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 10,
+          "input_tokens": 9975,
+          "cached_input_tokens": 0,
+          "output_tokens": 2645,
+          "reasoning_tokens": 1735,
+          "estimated_usd": 0.00232
+        },
+        "decisions": [
+          {
+            "key": "id::indeed::in-f034b897568f041b",
+            "match_score": 48.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Data pipeline engineering",
+              "Production ML infrastructure"
+            ],
+            "main_gaps": [
+              "5+ years data infrastructure",
+              "3D and hardware-collected data"
+            ]
+          },
+          {
+            "key": "id::indeed::in-5caa29e05b1a4e83",
+            "match_score": 67.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Testing and debugging",
+              "Production software experience"
+            ],
+            "main_gaps": [
+              "Maintainer-level review experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-da9e97ae3c690e1e",
+            "match_score": 73.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production AI tools",
+              "Full-stack integrations"
+            ],
+            "main_gaps": [
+              "3+ years production experience",
+              "Sales automation experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-4ff520889cab7469",
+            "match_score": 51.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Data ingestion pipelines",
+              "Vectorized enterprise data"
+            ],
+            "main_gaps": [
+              "5+ years data infrastructure",
+              "Graph and orchestration platforms"
+            ]
+          },
+          {
+            "key": "id::indeed::in-336bd30f9bbbea18",
+            "match_score": 77.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "React and TypeScript",
+              "Production APIs and services"
+            ],
+            "main_gaps": [
+              "2+ years professional experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-45386e460c613d38",
+            "match_score": 76.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "LLM fine-tuning and serving",
+              "Production RAG and agents"
+            ],
+            "main_gaps": [
+              "RLHF and DPO pipelines"
+            ]
+          },
+          {
+            "key": "id::indeed::in-810f23cd98f3ee1a",
+            "match_score": 53.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "C++ programming",
+              "Distributed systems foundations"
+            ],
+            "main_gaps": [
+              "Low-latency C++ systems",
+              "Production trading platforms"
+            ]
+          },
+          {
+            "key": "id::indeed::in-b174b02f58feb33f",
+            "match_score": 58.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production LLM agents",
+              "Cloud deployment and evaluation"
+            ],
+            "main_gaps": [
+              "5–8 years experience",
+              "Client-facing technical delivery"
+            ]
+          },
+          {
+            "key": "id::indeed::in-50f9145e8ea95143",
+            "match_score": 79.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Reusable AI and agent systems",
+              "LLM evaluation and testing"
+            ],
+            "main_gaps": [
+              "3–5 years relevant experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-71c2b4967f6e4b60",
+            "match_score": 84.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Experiment and evaluation tooling",
+              "Applied AI production systems"
+            ],
+            "main_gaps": []
+          }
+        ]
+      },
+      {
+        "batch": 9,
+        "route": "both",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "id::indeed::in-aea291cf81c25b6e",
+            "company": "Geopaq Logic",
+            "title": "AI Engineer"
+          },
+          {
+            "key": "id::indeed::in-ce2ecb53ab54f6bc",
+            "company": "GuruSchools",
+            "title": "AI Azure Full stack Engineer"
+          },
+          {
+            "key": "id::indeed::in-78d9a978fcec0d5f",
+            "company": "Locality",
+            "title": "Data Engineer (Contract to Perm)"
+          },
+          {
+            "key": "id::indeed::in-976c4c962cb459b8",
+            "company": "Olive Systems",
+            "title": "Forward Deployed Engineer (FDE)"
+          },
+          {
+            "key": "id::indeed::in-c69c83487c8be0c7",
+            "company": "Pika",
+            "title": "Forward Deployed Engineer, Applied AI"
+          },
+          {
+            "key": "id::indeed::in-7e17504df025a788",
+            "company": "TDIndustries",
+            "title": "AI Solutions Engineer"
+          },
+          {
+            "key": "url::https://careers.tiktokusds.com/usds/position/7704803508650002693/detail",
+            "company": "TikTok USDS JV",
+            "title": "Software Engineer, AI-Powered Software Assurance"
+          },
+          {
+            "key": "id::indeed::in-48bb75c1f5a3be31",
+            "company": "Capital One",
+            "title": "Full-stack Engineer 4"
+          },
+          {
+            "key": "id::indeed::in-b57e8fd20029ecc5",
+            "company": "JPMorganChase",
+            "title": "Software Engineer III - Java / AI / Spark / SRE"
+          },
+          {
+            "key": "id::indeed::in-34e6cb8a08282ae3",
+            "company": "OpenAI",
+            "title": "Full-Stack Software Engineer, Child Safety Tools & Systems"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 22.58,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 10,
+          "input_tokens": 12682,
+          "cached_input_tokens": 2724,
+          "output_tokens": 1983,
+          "reasoning_tokens": 1238,
+          "estimated_usd": 0.002015
+        },
+        "decisions": [
+          {
+            "key": "id::indeed::in-aea291cf81c25b6e",
+            "match_score": 52.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "RAG and AI agents",
+              "Databricks, Spark, and SQL"
+            ],
+            "main_gaps": [
+              "8 years AI experience",
+              "Data migration and client-facing delivery"
+            ]
+          },
+          {
+            "key": "id::indeed::in-ce2ecb53ab54f6bc",
+            "match_score": 30.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Full-stack application development",
+              "REST APIs and CI/CD"
+            ],
+            "main_gaps": [
+              "8+ years experience",
+              "C#/.NET and Azure"
+            ]
+          },
+          {
+            "key": "id::indeed::in-78d9a978fcec0d5f",
+            "match_score": 54.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Databricks and Spark pipelines",
+              "SQL and data quality"
+            ],
+            "main_gaps": [
+              "Identity graph and adtech",
+              "4+ years platform ownership"
+            ]
+          },
+          {
+            "key": "id::indeed::in-976c4c962cb459b8",
+            "match_score": 69.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production systems shipped",
+              "End-to-end AI and software"
+            ],
+            "main_gaps": [
+              "Customer-facing delivery experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-c69c83487c8be0c7",
+            "match_score": 76.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "QLoRA fine-tuning and evaluation",
+              "AI workflows to deployment"
+            ],
+            "main_gaps": [
+              "External client delivery",
+              "Commercial engagement ownership"
+            ]
+          },
+          {
+            "key": "id::indeed::in-7e17504df025a788",
+            "match_score": 64.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production LLM and RAG systems",
+              "Full-stack APIs and applications"
+            ],
+            "main_gaps": [
+              "5–7 years experience",
+              "Azure AI and Microsoft stack"
+            ]
+          },
+          {
+            "key": "url::https://careers.tiktokusds.com/usds/position/7704803508650002693/detail",
+            "match_score": 67.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Agentic workflows and retrieval",
+              "AI evaluation and backend services"
+            ],
+            "main_gaps": [
+              "Code-analysis techniques",
+              "Kubernetes production operations"
+            ]
+          },
+          {
+            "key": "id::indeed::in-48bb75c1f5a3be31",
+            "match_score": 46.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Cloud-native software development",
+              "Backend and distributed systems"
+            ],
+            "main_gaps": [
+              "4 years non-internship experience",
+              "Technical leadership and mentoring"
+            ]
+          },
+          {
+            "key": "id::indeed::in-b57e8fd20029ecc5",
+            "match_score": 55.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python, Java, and AWS",
+              "AI evaluation and Spark"
+            ],
+            "main_gaps": [
+              "3+ years applied experience",
+              "Enterprise AI-tool leadership"
+            ]
+          },
+          {
+            "key": "id::indeed::in-34e6cb8a08282ae3",
+            "match_score": 47.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Full-stack and retrieval systems",
+              "Data-intensive AI applications"
+            ],
+            "main_gaps": [
+              "7+ years engineering",
+              "High-severity harm systems"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 10,
+        "route": "both",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "id::indeed::in-5a801c17208508ed",
+            "company": "Alldus",
+            "title": "AI Engineer"
+          },
+          {
+            "key": "id::indeed::in-f17b1b3ceaa7a856",
+            "company": "Alldus",
+            "title": "AI Engineer"
+          },
+          {
+            "key": "id::indeed::in-b3acdb90551f8ab2",
+            "company": "Alldus",
+            "title": "Agent Platform Engineer, Voice"
+          },
+          {
+            "key": "id::indeed::in-a4185099f89735d3",
+            "company": "Alldus",
+            "title": "Founding AI Engineer"
+          },
+          {
+            "key": "id::indeed::in-0acc2ff42546844a",
+            "company": "Alldus",
+            "title": "Founding Applied AI Engineer"
+          },
+          {
+            "key": "id::indeed::in-64981cbefd1e423d",
+            "company": "Alldus",
+            "title": "Founding Software Engineer"
+          },
+          {
+            "key": "id::indeed::in-7654ee96ef1ac71f",
+            "company": "Alldus",
+            "title": "Full-Stack Engineer"
+          },
+          {
+            "key": "id::indeed::in-3407480e72fc3505",
+            "company": "Alldus",
+            "title": "Platform Engineer"
+          },
+          {
+            "key": "id::indeed::in-1f7d60473a379db0",
+            "company": "Alldus",
+            "title": "Software Development Engineer in Test (SDET)"
+          },
+          {
+            "key": "id::indeed::in-30b61294c579fda5",
+            "company": "Alldus",
+            "title": "Software Engineer"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 24.032,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 10,
+          "input_tokens": 7959,
+          "cached_input_tokens": 2724,
+          "output_tokens": 2303,
+          "reasoning_tokens": 1324,
+          "estimated_usd": 0.001702
+        },
+        "decisions": [
+          {
+            "key": "id::indeed::in-5a801c17208508ed",
+            "match_score": 77.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production AI agents",
+              "LLM evaluation frameworks"
+            ],
+            "main_gaps": [
+              "Sandboxed agent permissions",
+              "Experimentation and feature flags"
+            ]
+          },
+          {
+            "key": "id::indeed::in-f17b1b3ceaa7a856",
+            "match_score": 73.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production AI solutions",
+              "RAG and agent systems"
+            ],
+            "main_gaps": [
+              "5+ years engineering experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-b3acdb90551f8ab2",
+            "match_score": 67.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Async distributed systems",
+              "Production agent infrastructure"
+            ],
+            "main_gaps": [
+              "Voice and telephony systems",
+              "Real-time audio pipelines"
+            ]
+          },
+          {
+            "key": "id::indeed::in-a4185099f89735d3",
+            "match_score": 74.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production LLM and RAG",
+              "Document processing and evaluation"
+            ],
+            "main_gaps": [
+              "3+ years production AI"
+            ]
+          },
+          {
+            "key": "id::indeed::in-0acc2ff42546844a",
+            "match_score": 86.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production AI agents",
+              "Full-stack cloud applications"
+            ],
+            "main_gaps": [
+              "Human approval workflows"
+            ]
+          },
+          {
+            "key": "id::indeed::in-64981cbefd1e423d",
+            "match_score": 85.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production AI agents",
+              "APIs and data pipelines"
+            ],
+            "main_gaps": [
+              "Human approval workflows"
+            ]
+          },
+          {
+            "key": "id::indeed::in-7654ee96ef1ac71f",
+            "match_score": 73.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "React TypeScript Node.js",
+              "Full-stack product delivery"
+            ],
+            "main_gaps": [
+              "3+ years commercial experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-3407480e72fc3505",
+            "match_score": 58.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Cloud deployment experience",
+              "Kubernetes and Terraform"
+            ],
+            "main_gaps": [
+              "Deep Linux troubleshooting",
+              "Kubernetes operations"
+            ]
+          },
+          {
+            "key": "id::indeed::in-1f7d60473a379db0",
+            "match_score": 59.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "CI/CD and regression testing",
+              "AI evaluation experience"
+            ],
+            "main_gaps": [
+              "4+ years test automation",
+              "UI automation frameworks"
+            ]
+          },
+          {
+            "key": "id::indeed::in-30b61294c579fda5",
+            "match_score": 74.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python and TypeScript",
+              "Production AI and data pipelines"
+            ],
+            "main_gaps": [
+              "4+ years production software"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 11,
+        "route": "both",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "id::indeed::in-5d834c725fa38cfa",
+            "company": "Alldus",
+            "title": "Software Engineer"
+          },
+          {
+            "key": "id::indeed::in-a42274e5b7a3c52a",
+            "company": "Alldus",
+            "title": "Software Engineer"
+          },
+          {
+            "key": "id::indeed::in-b40e6814878cec99",
+            "company": "Alldus",
+            "title": "Software Engineer"
+          },
+          {
+            "key": "id::indeed::in-df3f3637183932a8",
+            "company": "Alldus",
+            "title": "Software Engineer"
+          },
+          {
+            "key": "id::indeed::in-551f469437c583d7",
+            "company": "Alldus",
+            "title": "Software Engineer (New Grad)"
+          },
+          {
+            "key": "id::indeed::in-85d8b5a966472ff4",
+            "company": "Alldus",
+            "title": "Software Engineers (Python/QDE)"
+          },
+          {
+            "key": "id::indeed::in-ae04bc11f61c0b48",
+            "company": "Allegiant Air",
+            "title": "Software Engineer in Test (SET)"
+          },
+          {
+            "key": "id::indeed::in-2542e1c2f80e6d8e",
+            "company": "BlueCross BlueShield of Tennessee",
+            "title": "Software Engineer"
+          },
+          {
+            "key": "id::indeed::in-c069408a71190a23",
+            "company": "Chowbus",
+            "title": "Full Stack Engineer, Business Applications & AI"
+          },
+          {
+            "key": "id::indeed::in-9f55908349877be3",
+            "company": "Diversify",
+            "title": "AI-Enabled Software Engineer"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 20.579,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 10,
+          "input_tokens": 9423,
+          "cached_input_tokens": 2724,
+          "output_tokens": 1922,
+          "reasoning_tokens": 1026,
+          "estimated_usd": 0.001658
+        },
+        "decisions": [
+          {
+            "key": "id::indeed::in-5d834c725fa38cfa",
+            "match_score": 74.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "production backend systems",
+              "end-to-end product ownership"
+            ],
+            "main_gaps": [
+              "3 years backend experience",
+              "startup experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-a42274e5b7a3c52a",
+            "match_score": 54.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Node.js, TypeScript, React",
+              "production software delivery"
+            ],
+            "main_gaps": [
+              "5 years experience",
+              "real-time voice and EHR integrations"
+            ]
+          },
+          {
+            "key": "id::indeed::in-b40e6814878cec99",
+            "match_score": 77.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "full-stack product engineering",
+              "ML-powered systems"
+            ],
+            "main_gaps": [
+              "computer vision experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-df3f3637183932a8",
+            "match_score": 67.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "document ingestion pipelines",
+              "AI workflow development"
+            ],
+            "main_gaps": [
+              "4 years software experience",
+              "early-stage startup experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-551f469437c583d7",
+            "match_score": 88.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "production AI agents",
+              "LLM evaluation and guardrails"
+            ],
+            "main_gaps": [
+              "AI coding assistant experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-85d8b5a966472ff4",
+            "match_score": 48.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "C++ programming",
+              "distributed systems"
+            ],
+            "main_gaps": [
+              "advanced production C++",
+              "low-latency systems"
+            ]
+          },
+          {
+            "key": "id::indeed::in-ae04bc11f61c0b48",
+            "match_score": 61.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "automated testing and CI/CD",
+              "API testing with Postman"
+            ],
+            "main_gaps": [
+              "2 years test automation",
+              "modern UI automation frameworks"
+            ]
+          },
+          {
+            "key": "id::indeed::in-2542e1c2f80e6d8e",
+            "match_score": 52.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "enterprise application development",
+              "production support and testing"
+            ],
+            "main_gaps": [
+              "C# and .NET",
+              "3 years systems programming"
+            ]
+          },
+          {
+            "key": "id::indeed::in-c069408a71190a23",
+            "match_score": 74.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "production backend services",
+              "AI agent workflows"
+            ],
+            "main_gaps": [
+              "3–5 years experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-9f55908349877be3",
+            "match_score": 34.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "AI agent tooling",
+              "software quality gates"
+            ],
+            "main_gaps": [
+              "8+ years experience",
+              "engineering leadership"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 12,
+        "route": "both",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "id::indeed::in-d9b6249037321ae8",
+            "company": "LTM Limited",
+            "title": "Specialist - Software Engineering"
+          },
+          {
+            "key": "id::indeed::in-efcd7a6d0eed1648",
+            "company": "Mutual of Omaha",
+            "title": "Full Stack Engineer"
+          },
+          {
+            "key": "id::indeed::in-974d819a9501cf3a",
+            "company": "Pacific Northwest National Laboratory",
+            "title": "Machine Learning Engineer II"
+          },
+          {
+            "key": "id::indeed::in-f915b54ac06288c6",
+            "company": "Planview",
+            "title": "Software Engineer I"
+          },
+          {
+            "key": "id::indeed::in-afc61c0ca011b279",
+            "company": "Siemens",
+            "title": "Software Engineer"
+          },
+          {
+            "key": "id::indeed::in-11e431b22b298930",
+            "company": "Yale University",
+            "title": "IT, Software Engineer 3"
+          },
+          {
+            "key": "id::indeed::in-65b6706006394933",
+            "company": "",
+            "title": "Frontend / UI Engineer — AI Code Review (Remote)"
+          },
+          {
+            "key": "id::indeed::in-612ff623e5492905",
+            "company": "",
+            "title": "Model-Based Systems Engineer (SysML v2) — AI Review"
+          },
+          {
+            "key": "id::indeed::in-5c2875a7f43e722d",
+            "company": "Alldus",
+            "title": "Forward Deployed Engineer"
+          },
+          {
+            "key": "id::indeed::in-a6bc103cfcf31fa5",
+            "company": "Alldus",
+            "title": "Forward Deployed Engineer, AI"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 19.594,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 10,
+          "input_tokens": 12160,
+          "cached_input_tokens": 2724,
+          "output_tokens": 1878,
+          "reasoning_tokens": 1232,
+          "estimated_usd": 0.00191
+        },
+        "decisions": [
+          {
+            "key": "id::indeed::in-d9b6249037321ae8",
+            "match_score": 68.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production AI implementation",
+              "Backend APIs and AWS"
+            ],
+            "main_gaps": [
+              "MS SQL Server",
+              "AWS architecture depth"
+            ]
+          },
+          {
+            "key": "id::indeed::in-efcd7a6d0eed1648",
+            "match_score": 68.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "other",
+            "top_match_reasons": [
+              "React full-stack delivery",
+              "Production APIs and CI/CD"
+            ],
+            "main_gaps": [
+              "5+ years experience",
+              "MuleSoft integration"
+            ]
+          },
+          {
+            "key": "id::indeed::in-974d819a9501cf3a",
+            "match_score": 88.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "LLM implementation and fine-tuning",
+              "Agentic AI and evaluation"
+            ],
+            "main_gaps": []
+          },
+          {
+            "key": "id::indeed::in-f915b54ac06288c6",
+            "match_score": 91.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production software delivery",
+              "Testing and debugging"
+            ],
+            "main_gaps": []
+          },
+          {
+            "key": "id::indeed::in-afc61c0ca011b279",
+            "match_score": 72.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Distributed backend services",
+              "AI systems and AWS"
+            ],
+            "main_gaps": [
+              "3+ years professional experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-11e431b22b298930",
+            "match_score": 53.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Cloud platform engineering",
+              "Backend APIs and Terraform"
+            ],
+            "main_gaps": [
+              "Go or Ruby experience",
+              "Four years experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-65b6706006394933",
+            "match_score": 72.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "React frontend experience",
+              "Automated testing and debugging"
+            ],
+            "main_gaps": []
+          },
+          {
+            "key": "id::indeed::in-612ff623e5492905",
+            "match_score": 61.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Software testing and debugging",
+              "AI output evaluation"
+            ],
+            "main_gaps": [
+              "SysML v2 expertise"
+            ]
+          },
+          {
+            "key": "id::indeed::in-5c2875a7f43e722d",
+            "match_score": 75.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "AI agents and integrations",
+              "Production deployment experience"
+            ],
+            "main_gaps": [
+              "Customer-facing implementation experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-a6bc103cfcf31fa5",
+            "match_score": 78.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production LLM applications",
+              "Python, SQL, and Databricks"
+            ],
+            "main_gaps": [
+              "3+ years deployment experience"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 13,
+        "route": "both",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "id::indeed::in-316621f2694b00b5",
+            "company": "Alldus",
+            "title": "Forward Deployed Engineer/Deployment Strategist"
+          },
+          {
+            "key": "id::indeed::in-0bdef54fff09e6a8",
+            "company": "Blueprint Technologies",
+            "title": "AI Data Engineer - AI Training data"
+          },
+          {
+            "key": "id::indeed::in-f25f5180be91edf1",
+            "company": "Cytek Biosciences, Inc.",
+            "title": "Jr. Forward Deployed Engineer"
+          },
+          {
+            "key": "id::indeed::in-003a11fc0469edb7",
+            "company": "Encova Insurance",
+            "title": "Commercial Lines AI Solutions Engineer"
+          },
+          {
+            "key": "id::indeed::in-e9a2aa98e5eddfa1",
+            "company": "Family Dollar",
+            "title": "AI Developer"
+          },
+          {
+            "key": "id::indeed::in-dfcc4eec8d6bbebb",
+            "company": "Naval Nuclear Laboratory",
+            "title": "Experienced Data Scientist"
+          },
+          {
+            "key": "id::indeed::in-9399b065ff346d5d",
+            "company": "Optimizely",
+            "title": "Forward Deployed Engineer"
+          },
+          {
+            "key": "id::indeed::in-3847125ff9baca77",
+            "company": "Safe Security",
+            "title": "Forward Deployed Engineer"
+          },
+          {
+            "key": "id::indeed::in-7361a11e9e0c9408",
+            "company": "Startekk Inc",
+            "title": "Conversational Data Engineer"
+          },
+          {
+            "key": "id::indeed::in-d0159644a1227ad0",
+            "company": "Ericsson",
+            "title": "AI & Cloud Integration Engineer"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 29.952,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 10,
+          "input_tokens": 14034,
+          "cached_input_tokens": 2724,
+          "output_tokens": 2698,
+          "reasoning_tokens": 1785,
+          "estimated_usd": 0.002507
+        },
+        "decisions": [
+          {
+            "key": "id::indeed::in-316621f2694b00b5",
+            "match_score": 78.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "production software delivery",
+              "AI retrieval and integrations"
+            ],
+            "main_gaps": [
+              "customer-facing technical experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-0bdef54fff09e6a8",
+            "match_score": 52.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python data pipelines",
+              "distributed data processing"
+            ],
+            "main_gaps": [
+              "5+ years data engineering",
+              "Azure storage"
+            ]
+          },
+          {
+            "key": "id::indeed::in-f25f5180be91edf1",
+            "match_score": 94.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "AI assistants and workflows",
+              "recent-graduate fit"
+            ],
+            "main_gaps": []
+          },
+          {
+            "key": "id::indeed::in-003a11fc0469edb7",
+            "match_score": 56.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "AI agent development",
+              "RAG evaluation and deployment"
+            ],
+            "main_gaps": [
+              "Microsoft Copilot/Power Platform",
+              "commercial insurance expertise"
+            ]
+          },
+          {
+            "key": "id::indeed::in-e9a2aa98e5eddfa1",
+            "match_score": 68.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "production agents and RAG",
+              "AI evaluation and deployment"
+            ],
+            "main_gaps": [
+              "2+ years AI development",
+              "retail operational systems"
+            ]
+          },
+          {
+            "key": "id::indeed::in-dfcc4eec8d6bbebb",
+            "match_score": 38.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "citizen_or_clearance",
+            "top_match_reasons": [
+              "Python and SQL analysis",
+              "cross-functional problem solving"
+            ],
+            "main_gaps": [
+              "4+ years relevant experience",
+              "advanced data science practice"
+            ]
+          },
+          {
+            "key": "id::indeed::in-9399b065ff346d5d",
+            "match_score": 73.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "RAG applications",
+              "API integration and deployment"
+            ],
+            "main_gaps": [
+              "3+ years customer-facing technical experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-3847125ff9baca77",
+            "match_score": 77.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python scripts and APIs",
+              "AI platform implementation"
+            ],
+            "main_gaps": [
+              "customer-facing delivery experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-7361a11e9e0c9408",
+            "match_score": 58.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "data ingestion and processing",
+              "Python and SQL"
+            ],
+            "main_gaps": [
+              "healthcare PHI/HIPAA experience",
+              "Salesforce automation testing"
+            ]
+          },
+          {
+            "key": "id::indeed::in-d0159644a1227ad0",
+            "match_score": 72.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python APIs and automation",
+              "AI applications and testing"
+            ],
+            "main_gaps": [
+              "3 years integration experience",
+              "IP networking and DNS"
+            ]
+          }
+        ]
+      },
+      {
+        "batch": 14,
+        "route": "both",
+        "attempt": "initial",
+        "jobs": [
+          {
+            "key": "id::indeed::in-7c4cd3deddc9b78f",
+            "company": "Hines",
+            "title": "AI Embedded Business Automation Engineer"
+          },
+          {
+            "key": "id::indeed::in-1fa4cea3d2271a34",
+            "company": "John Deere",
+            "title": "Robotics Engineer"
+          },
+          {
+            "key": "id::indeed::in-b19fe4b6072f854d",
+            "company": "KLA",
+            "title": "Software Technology Specialist"
+          },
+          {
+            "key": "id::indeed::in-cfdeb9fb0380e1ef",
+            "company": "Centella",
+            "title": "AI & Automation Engineer"
+          },
+          {
+            "key": "id::indeed::in-4ec9519ccfc6a108",
+            "company": "PM Group",
+            "title": "CQV Engineer I"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "scoring_version": "v7-compact-early-career",
+        "reasoning_effort": "medium",
+        "status": "success",
+        "latency_seconds": 11.367,
+        "usage": {
+          "model": "gpt-6-luna",
+          "api_requests": 1,
+          "jobs_scored": 5,
+          "input_tokens": 8661,
+          "cached_input_tokens": 2724,
+          "output_tokens": 1028,
+          "reasoning_tokens": 668,
+          "estimated_usd": 0.001135
+        },
+        "decisions": [
+          {
+            "key": "id::indeed::in-7c4cd3deddc9b78f",
+            "match_score": 77.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production agentic AI",
+              "RAG solution delivery"
+            ],
+            "main_gaps": [
+              "Enterprise systems integration",
+              "Executive stakeholder ownership"
+            ]
+          },
+          {
+            "key": "id::indeed::in-1fa4cea3d2271a34",
+            "match_score": 57.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "C++ software development",
+              "Python and ML experience"
+            ],
+            "main_gaps": [
+              "Embedded robotics integration",
+              "Image processing experience"
+            ]
+          },
+          {
+            "key": "id::indeed::in-b19fe4b6072f854d",
+            "match_score": 32.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Complex software product experience",
+              "Python development"
+            ],
+            "main_gaps": [
+              "10+ years experience",
+              "C#/.NET and Windows internals"
+            ]
+          },
+          {
+            "key": "id::indeed::in-cfdeb9fb0380e1ef",
+            "match_score": 58.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production AI workflows",
+              "Stakeholder workflow design"
+            ],
+            "main_gaps": [
+              "Dynamics 365/Power Platform",
+              "Copilot Studio/Azure AI"
+            ]
+          },
+          {
+            "key": "id::indeed::in-4ec9519ccfc6a108",
+            "match_score": 43.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Pharmaceutical industry exposure",
+              "Technical documentation experience"
+            ],
+            "main_gaps": [
+              "CQV/GMP qualification testing"
+            ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 2,
-    "input_tokens": 3789,
-    "cached_input_tokens": 0,
-    "output_tokens": 485,
-    "reasoning_tokens": 329,
-    "estimated_usd": 0.000621,
+    "jobs_scored": 121,
+    "input_tokens": 145321,
+    "cached_input_tokens": 25599,
+    "output_tokens": 26004,
+    "reasoning_tokens": 15830,
+    "estimated_usd": 0.02523,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "persisted_retry_jobs": 1,
+    "persisted_retry_jobs": 0,
     "retry_only_carried": 0,
-    "scored": 2,
+    "scored": 121,
     "retryable": 0
   },
   "output": {
-    "tier_a": 29,
-    "tier_b": 151,
-    "ab_before_cap": 180,
-    "shown": 180,
-    "new_jobs": 21,
-    "new_jobs_added": 7,
+    "tier_a": 33,
+    "tier_b": 153,
+    "ab_before_cap": 186,
+    "shown": 186,
+    "new_jobs": 404,
+    "new_jobs_added": 19,
     "new_jobs_by_source": {
       "ats": {
-        "found": 6,
+        "found": 8,
         "added": 0
       },
       "linkedin": {
-        "found": 15,
-        "added": 7
-      },
-      "indeed": {
         "found": 0,
         "added": 0
+      },
+      "indeed": {
+        "found": 396,
+        "added": 19
       },
       "glassdoor": {
         "found": 0,
@@ -154,10 +2669,10 @@
   "recency": {
     "lt3h": 0,
     "3to24h": 0,
-    "1to3d": 11,
-    "newly_discovered": 230,
-    "3to7d": 87,
-    "gt7d": 1601
+    "1to3d": 19,
+    "newly_discovered": 252,
+    "3to7d": 88,
+    "gt7d": 1602
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -165,19 +2680,19 @@
     "llm": []
   },
   "drops": {
-    "company_hidden_external": 164,
+    "company_hidden_external": 174,
     "company_excluded": 112,
-    "citizen_or_clearance": 336,
+    "citizen_or_clearance": 338,
     "non_us_location": 53,
     "ineligible_current_student_requirement": 45,
     "ineligible_2027_graduate_requirement": 21,
     "incomplete_jd_clearance_risk": 148,
-    "prefilter:senior": 3432,
-    "prefilter:negative_family": 885,
-    "prefilter:sales_heavy": 31,
-    "prefilter:no_positive_family": 384,
-    "prefilter:hardware": 4,
-    "prefilter:high_yoe": 16
+    "prefilter:senior": 3503,
+    "prefilter:negative_family": 890,
+    "prefilter:sales_heavy": 30,
+    "prefilter:no_positive_family": 403,
+    "prefilter:hardware": 6,
+    "prefilter:high_yoe": 18
   },
   "query_diagnostics": {
     "linkedin": [
@@ -224,8 +2739,8 @@
         "unique_jobs": 20,
         "unique_contribution": 18,
         "first_pass_survivors": 19,
-        "original_postings_resolved": 101,
-        "jds_resolved": 91,
+        "original_postings_resolved": 100,
+        "jds_resolved": 90,
         "elapsed_seconds": 24.601,
         "new_to_ledger": 10,
         "rediscovered": 10,
@@ -257,7 +2772,7 @@
         "unique_jobs": 0,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
-        "original_postings_resolved": 79,
+        "original_postings_resolved": 80,
         "jds_resolved": 76,
         "elapsed_seconds": 0.0,
         "new_to_ledger": 0,
@@ -278,32 +2793,32 @@
         "raw_jobs": 300,
         "unique_jobs": 300,
         "unique_contribution": 300,
-        "first_pass_survivors": 214,
-        "original_postings_resolved": 43,
-        "jds_resolved": 43,
-        "elapsed_seconds": 3.885,
+        "first_pass_survivors": 217,
+        "original_postings_resolved": 62,
+        "jds_resolved": 62,
+        "elapsed_seconds": 3.864,
         "hours_old": 48,
-        "identified_jobs": 211,
+        "identified_jobs": 217,
         "cross_source_overlap": 0,
-        "cross_source_unique": 211
+        "cross_source_unique": 217
       },
       {
         "query": "ai engineer",
         "group": "primary",
         "page_budget": 3,
-        "pages_fetched": 2,
+        "pages_fetched": 3,
         "stop_reason": "exhausted",
-        "raw_jobs": 137,
-        "unique_jobs": 137,
-        "unique_contribution": 107,
-        "first_pass_survivors": 104,
-        "original_postings_resolved": 7,
-        "jds_resolved": 7,
-        "elapsed_seconds": 1.864,
+        "raw_jobs": 233,
+        "unique_jobs": 233,
+        "unique_contribution": 209,
+        "first_pass_survivors": 184,
+        "original_postings_resolved": 26,
+        "jds_resolved": 26,
+        "elapsed_seconds": 3.51,
         "hours_old": 48,
-        "identified_jobs": 98,
+        "identified_jobs": 174,
         "cross_source_overlap": 0,
-        "cross_source_unique": 98
+        "cross_source_unique": 174
       },
       {
         "query": "software engineer i",
@@ -311,17 +2826,17 @@
         "page_budget": 1,
         "pages_fetched": 1,
         "stop_reason": "exhausted",
-        "raw_jobs": 56,
-        "unique_jobs": 56,
-        "unique_contribution": 30,
-        "first_pass_survivors": 27,
-        "original_postings_resolved": 2,
-        "jds_resolved": 2,
-        "elapsed_seconds": 0.913,
+        "raw_jobs": 87,
+        "unique_jobs": 87,
+        "unique_contribution": 66,
+        "first_pass_survivors": 58,
+        "original_postings_resolved": 10,
+        "jds_resolved": 10,
+        "elapsed_seconds": 1.418,
         "hours_old": 24,
-        "identified_jobs": 27,
+        "identified_jobs": 58,
         "cross_source_overlap": 0,
-        "cross_source_unique": 27
+        "cross_source_unique": 58
       },
       {
         "query": "software engineer ii",
@@ -331,15 +2846,15 @@
         "stop_reason": "page_budget",
         "raw_jobs": 100,
         "unique_jobs": 100,
-        "unique_contribution": 7,
-        "first_pass_survivors": 79,
-        "original_postings_resolved": 19,
-        "jds_resolved": 19,
-        "elapsed_seconds": 1.282,
+        "unique_contribution": 8,
+        "first_pass_survivors": 87,
+        "original_postings_resolved": 28,
+        "jds_resolved": 28,
+        "elapsed_seconds": 1.275,
         "hours_old": 24,
-        "identified_jobs": 78,
+        "identified_jobs": 87,
         "cross_source_overlap": 0,
-        "cross_source_unique": 78
+        "cross_source_unique": 87
       },
       {
         "query": "associate software engineer",
@@ -349,15 +2864,15 @@
         "stop_reason": "page_budget",
         "raw_jobs": 100,
         "unique_jobs": 100,
-        "unique_contribution": 0,
-        "first_pass_survivors": 76,
-        "original_postings_resolved": 19,
-        "jds_resolved": 19,
-        "elapsed_seconds": 1.248,
+        "unique_contribution": 3,
+        "first_pass_survivors": 85,
+        "original_postings_resolved": 26,
+        "jds_resolved": 26,
+        "elapsed_seconds": 1.467,
         "hours_old": 24,
-        "identified_jobs": 76,
+        "identified_jobs": 85,
         "cross_source_overlap": 0,
-        "cross_source_unique": 76
+        "cross_source_unique": 85
       },
       {
         "query": "new grad software engineer",
@@ -367,15 +2882,15 @@
         "stop_reason": "page_budget",
         "raw_jobs": 100,
         "unique_jobs": 100,
-        "unique_contribution": 1,
-        "first_pass_survivors": 72,
-        "original_postings_resolved": 20,
-        "jds_resolved": 20,
-        "elapsed_seconds": 1.303,
+        "unique_contribution": 2,
+        "first_pass_survivors": 79,
+        "original_postings_resolved": 24,
+        "jds_resolved": 24,
+        "elapsed_seconds": 1.295,
         "hours_old": 24,
-        "identified_jobs": 72,
+        "identified_jobs": 79,
         "cross_source_overlap": 0,
-        "cross_source_unique": 72
+        "cross_source_unique": 79
       },
       {
         "query": "backend engineer",
@@ -385,33 +2900,33 @@
         "stop_reason": "page_budget",
         "raw_jobs": 100,
         "unique_jobs": 100,
-        "unique_contribution": 37,
-        "first_pass_survivors": 77,
-        "original_postings_resolved": 12,
-        "jds_resolved": 12,
-        "elapsed_seconds": 1.288,
+        "unique_contribution": 23,
+        "first_pass_survivors": 85,
+        "original_postings_resolved": 21,
+        "jds_resolved": 21,
+        "elapsed_seconds": 1.481,
         "hours_old": 24,
-        "identified_jobs": 76,
+        "identified_jobs": 85,
         "cross_source_overlap": 0,
-        "cross_source_unique": 76
+        "cross_source_unique": 85
       },
       {
         "query": "full stack engineer",
         "group": "secondary",
         "page_budget": 1,
         "pages_fetched": 1,
-        "stop_reason": "exhausted",
-        "raw_jobs": 79,
-        "unique_jobs": 79,
-        "unique_contribution": 29,
-        "first_pass_survivors": 58,
-        "original_postings_resolved": 3,
-        "jds_resolved": 3,
-        "elapsed_seconds": 1.041,
+        "stop_reason": "page_budget",
+        "raw_jobs": 100,
+        "unique_jobs": 100,
+        "unique_contribution": 45,
+        "first_pass_survivors": 72,
+        "original_postings_resolved": 7,
+        "jds_resolved": 7,
+        "elapsed_seconds": 1.488,
         "hours_old": 24,
-        "identified_jobs": 56,
+        "identified_jobs": 70,
         "cross_source_overlap": 0,
-        "cross_source_unique": 56
+        "cross_source_unique": 70
       },
       {
         "query": "platform engineer",
@@ -422,14 +2937,14 @@
         "raw_jobs": 100,
         "unique_jobs": 100,
         "unique_contribution": 58,
-        "first_pass_survivors": 80,
-        "original_postings_resolved": 18,
-        "jds_resolved": 18,
-        "elapsed_seconds": 1.381,
+        "first_pass_survivors": 79,
+        "original_postings_resolved": 24,
+        "jds_resolved": 24,
+        "elapsed_seconds": 1.387,
         "hours_old": 24,
-        "identified_jobs": 80,
+        "identified_jobs": 78,
         "cross_source_overlap": 0,
-        "cross_source_unique": 80
+        "cross_source_unique": 78
       },
       {
         "query": "applied ai engineer",
@@ -439,15 +2954,15 @@
         "stop_reason": "page_budget",
         "raw_jobs": 100,
         "unique_jobs": 100,
-        "unique_contribution": 21,
-        "first_pass_survivors": 72,
-        "original_postings_resolved": 13,
-        "jds_resolved": 13,
-        "elapsed_seconds": 1.431,
+        "unique_contribution": 12,
+        "first_pass_survivors": 83,
+        "original_postings_resolved": 24,
+        "jds_resolved": 24,
+        "elapsed_seconds": 1.294,
         "hours_old": 24,
-        "identified_jobs": 72,
+        "identified_jobs": 83,
         "cross_source_overlap": 0,
-        "cross_source_unique": 72
+        "cross_source_unique": 83
       },
       {
         "query": "machine learning engineer",
@@ -457,33 +2972,33 @@
         "stop_reason": "page_budget",
         "raw_jobs": 100,
         "unique_jobs": 100,
-        "unique_contribution": 52,
-        "first_pass_survivors": 80,
-        "original_postings_resolved": 10,
-        "jds_resolved": 10,
-        "elapsed_seconds": 1.416,
+        "unique_contribution": 36,
+        "first_pass_survivors": 88,
+        "original_postings_resolved": 27,
+        "jds_resolved": 27,
+        "elapsed_seconds": 1.443,
         "hours_old": 24,
-        "identified_jobs": 80,
+        "identified_jobs": 88,
         "cross_source_overlap": 0,
-        "cross_source_unique": 80
+        "cross_source_unique": 88
       },
       {
         "query": "ml engineer",
         "group": "secondary",
         "page_budget": 1,
         "pages_fetched": 1,
-        "stop_reason": "exhausted",
-        "raw_jobs": 92,
-        "unique_jobs": 92,
-        "unique_contribution": 21,
-        "first_pass_survivors": 68,
-        "original_postings_resolved": 9,
-        "jds_resolved": 9,
-        "elapsed_seconds": 1.251,
+        "stop_reason": "page_budget",
+        "raw_jobs": 100,
+        "unique_jobs": 100,
+        "unique_contribution": 24,
+        "first_pass_survivors": 75,
+        "original_postings_resolved": 20,
+        "jds_resolved": 20,
+        "elapsed_seconds": 1.359,
         "hours_old": 24,
-        "identified_jobs": 67,
+        "identified_jobs": 75,
         "cross_source_overlap": 0,
-        "cross_source_unique": 67
+        "cross_source_unique": 75
       },
       {
         "query": "llm engineer",
@@ -493,15 +3008,15 @@
         "stop_reason": "page_budget",
         "raw_jobs": 100,
         "unique_jobs": 100,
-        "unique_contribution": 33,
-        "first_pass_survivors": 83,
-        "original_postings_resolved": 10,
-        "jds_resolved": 10,
-        "elapsed_seconds": 1.5,
+        "unique_contribution": 27,
+        "first_pass_survivors": 84,
+        "original_postings_resolved": 24,
+        "jds_resolved": 24,
+        "elapsed_seconds": 1.415,
         "hours_old": 24,
-        "identified_jobs": 82,
+        "identified_jobs": 84,
         "cross_source_overlap": 0,
-        "cross_source_unique": 82
+        "cross_source_unique": 84
       },
       {
         "query": "infrastructure engineer",
@@ -511,15 +3026,15 @@
         "stop_reason": "page_budget",
         "raw_jobs": 100,
         "unique_jobs": 100,
-        "unique_contribution": 43,
-        "first_pass_survivors": 72,
-        "original_postings_resolved": 17,
-        "jds_resolved": 17,
-        "elapsed_seconds": 1.373,
+        "unique_contribution": 62,
+        "first_pass_survivors": 66,
+        "original_postings_resolved": 21,
+        "jds_resolved": 21,
+        "elapsed_seconds": 1.52,
         "hours_old": 24,
-        "identified_jobs": 70,
+        "identified_jobs": 66,
         "cross_source_overlap": 0,
-        "cross_source_unique": 70
+        "cross_source_unique": 66
       },
       {
         "query": "site reliability engineer",
@@ -527,17 +3042,17 @@
         "page_budget": 1,
         "pages_fetched": 1,
         "stop_reason": "exhausted",
-        "raw_jobs": 10,
-        "unique_jobs": 10,
-        "unique_contribution": 8,
-        "first_pass_survivors": 9,
-        "original_postings_resolved": 1,
-        "jds_resolved": 1,
-        "elapsed_seconds": 0.327,
+        "raw_jobs": 20,
+        "unique_jobs": 20,
+        "unique_contribution": 14,
+        "first_pass_survivors": 18,
+        "original_postings_resolved": 7,
+        "jds_resolved": 7,
+        "elapsed_seconds": 0.441,
         "hours_old": 24,
-        "identified_jobs": 9,
+        "identified_jobs": 18,
         "cross_source_overlap": 0,
-        "cross_source_unique": 9
+        "cross_source_unique": 18
       },
       {
         "query": "forward deployed engineer",
@@ -545,35 +3060,35 @@
         "page_budget": 1,
         "pages_fetched": 1,
         "stop_reason": "exhausted",
-        "raw_jobs": 48,
-        "unique_jobs": 48,
-        "unique_contribution": 16,
-        "first_pass_survivors": 36,
-        "original_postings_resolved": 3,
-        "jds_resolved": 3,
-        "elapsed_seconds": 0.751,
+        "raw_jobs": 69,
+        "unique_jobs": 69,
+        "unique_contribution": 30,
+        "first_pass_survivors": 54,
+        "original_postings_resolved": 6,
+        "jds_resolved": 6,
+        "elapsed_seconds": 1.041,
         "hours_old": 24,
-        "identified_jobs": 36,
+        "identified_jobs": 54,
         "cross_source_overlap": 0,
-        "cross_source_unique": 36
+        "cross_source_unique": 54
       },
       {
         "query": "data engineer",
         "group": "specialty",
         "page_budget": 1,
         "pages_fetched": 1,
-        "stop_reason": "exhausted",
-        "raw_jobs": 74,
-        "unique_jobs": 74,
-        "unique_contribution": 40,
-        "first_pass_survivors": 58,
-        "original_postings_resolved": 7,
-        "jds_resolved": 7,
-        "elapsed_seconds": 1.043,
+        "stop_reason": "page_budget",
+        "raw_jobs": 100,
+        "unique_jobs": 100,
+        "unique_contribution": 71,
+        "first_pass_survivors": 84,
+        "original_postings_resolved": 21,
+        "jds_resolved": 21,
+        "elapsed_seconds": 1.417,
         "hours_old": 24,
-        "identified_jobs": 57,
+        "identified_jobs": 84,
         "cross_source_overlap": 0,
-        "cross_source_unique": 57
+        "cross_source_unique": 84
       }
     ],
     "glassdoor": [
@@ -912,8 +3427,8 @@
         "unique_contribution": 3627
       },
       "indeed": {
-        "identified_jobs": 578,
-        "unique_contribution": 578
+        "identified_jobs": 741,
+        "unique_contribution": 741
       },
       "glassdoor": {
         "identified_jobs": 373,
@@ -922,50 +3437,10 @@
     },
     "queries": {
       "linkedin": {
-        "software engineer ii": {
-          "identified_jobs": 78,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 78
-        },
-        "backend engineer": {
-          "identified_jobs": 492,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 492
-        },
         "llm engineer": {
           "identified_jobs": 71,
           "cross_source_overlap": 0,
           "cross_source_unique": 71
-        },
-        "data engineer": {
-          "identified_jobs": 37,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 37
-        },
-        "new grad software engineer": {
-          "identified_jobs": 50,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 50
-        },
-        "applied ai engineer": {
-          "identified_jobs": 26,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 26
-        },
-        "forward deployed engineer": {
-          "identified_jobs": 32,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 32
-        },
-        "full-stack engineer": {
-          "identified_jobs": 414,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 414
-        },
-        "software engineer": {
-          "identified_jobs": 1344,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 1344
         },
         "platform engineer": {
           "identified_jobs": 115,
@@ -977,10 +3452,30 @@
           "cross_source_overlap": 1,
           "cross_source_unique": 912
         },
-        "machine learning engineer": {
-          "identified_jobs": 113,
+        "infrastructure engineer": {
+          "identified_jobs": 38,
           "cross_source_overlap": 0,
-          "cross_source_unique": 113
+          "cross_source_unique": 38
+        },
+        "new grad software engineer": {
+          "identified_jobs": 50,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 50
+        },
+        "forward deployed engineer": {
+          "identified_jobs": 32,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 32
+        },
+        "full-stack engineer": {
+          "identified_jobs": 414,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 414
+        },
+        "software engineer i": {
+          "identified_jobs": 65,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 65
         },
         "associate software engineer": {
           "identified_jobs": 31,
@@ -992,199 +3487,219 @@
           "cross_source_overlap": 0,
           "cross_source_unique": 7
         },
-        "software engineer i": {
-          "identified_jobs": 65,
+        "full stack engineer": {
+          "identified_jobs": 85,
           "cross_source_overlap": 0,
-          "cross_source_unique": 65
+          "cross_source_unique": 85
+        },
+        "machine learning engineer": {
+          "identified_jobs": 113,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 113
         },
         "site reliability engineer": {
           "identified_jobs": 40,
           "cross_source_overlap": 0,
           "cross_source_unique": 40
         },
-        "full stack engineer": {
-          "identified_jobs": 85,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 85
-        },
-        "infrastructure engineer": {
-          "identified_jobs": 38,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 38
-        }
-      },
-      "indeed": {
-        "software engineer ii": {
-          "identified_jobs": 78,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 78
-        },
-        "backend engineer": {
-          "identified_jobs": 76,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 76
-        },
-        "llm engineer": {
-          "identified_jobs": 82,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 82
-        },
-        "software engineer i": {
-          "identified_jobs": 27,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 27
-        },
-        "data engineer": {
-          "identified_jobs": 57,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 57
-        },
-        "new grad software engineer": {
-          "identified_jobs": 72,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 72
-        },
         "applied ai engineer": {
-          "identified_jobs": 72,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 72
-        },
-        "site reliability engineer": {
-          "identified_jobs": 9,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 9
-        },
-        "forward deployed engineer": {
-          "identified_jobs": 36,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 36
-        },
-        "software engineer": {
-          "identified_jobs": 211,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 211
-        },
-        "ai engineer": {
-          "identified_jobs": 98,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 98
-        },
-        "machine learning engineer": {
-          "identified_jobs": 80,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 80
-        },
-        "ml engineer": {
-          "identified_jobs": 67,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 67
-        },
-        "associate software engineer": {
-          "identified_jobs": 76,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 76
-        },
-        "platform engineer": {
-          "identified_jobs": 80,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 80
-        },
-        "full stack engineer": {
-          "identified_jobs": 56,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 56
-        },
-        "infrastructure engineer": {
-          "identified_jobs": 70,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 70
-        }
-      },
-      "glassdoor": {
-        "software engineer ii": {
-          "identified_jobs": 29,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 29
-        },
-        "backend engineer": {
-          "identified_jobs": 29,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 29
-        },
-        "llm engineer": {
-          "identified_jobs": 22,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 22
-        },
-        "data engineer": {
-          "identified_jobs": 27,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 27
-        },
-        "new grad software engineer": {
-          "identified_jobs": 28,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 28
-        },
-        "applied ai engineer": {
-          "identified_jobs": 27,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 27
-        },
-        "site reliability engineer": {
-          "identified_jobs": 22,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 22
-        },
-        "forward deployed engineer": {
-          "identified_jobs": 28,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 28
-        },
-        "software engineer": {
-          "identified_jobs": 28,
-          "cross_source_overlap": 0,
-          "cross_source_unique": 28
-        },
-        "associate software engineer": {
           "identified_jobs": 26,
           "cross_source_overlap": 0,
           "cross_source_unique": 26
         },
+        "data engineer": {
+          "identified_jobs": 37,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 37
+        },
+        "software engineer": {
+          "identified_jobs": 1344,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 1344
+        },
+        "backend engineer": {
+          "identified_jobs": 492,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 492
+        },
+        "software engineer ii": {
+          "identified_jobs": 78,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 78
+        }
+      },
+      "indeed": {
+        "llm engineer": {
+          "identified_jobs": 84,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 84
+        },
+        "platform engineer": {
+          "identified_jobs": 78,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 78
+        },
+        "ai engineer": {
+          "identified_jobs": 174,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 174
+        },
+        "ml engineer": {
+          "identified_jobs": 75,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 75
+        },
+        "forward deployed engineer": {
+          "identified_jobs": 54,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 54
+        },
+        "new grad software engineer": {
+          "identified_jobs": 79,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 79
+        },
+        "software engineer i": {
+          "identified_jobs": 58,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 58
+        },
+        "infrastructure engineer": {
+          "identified_jobs": 66,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 66
+        },
+        "associate software engineer": {
+          "identified_jobs": 85,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 85
+        },
+        "full stack engineer": {
+          "identified_jobs": 70,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 70
+        },
         "machine learning engineer": {
-          "identified_jobs": 26,
-          "cross_source_overlap": 1,
-          "cross_source_unique": 25
+          "identified_jobs": 88,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 88
+        },
+        "site reliability engineer": {
+          "identified_jobs": 18,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 18
+        },
+        "applied ai engineer": {
+          "identified_jobs": 83,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 83
+        },
+        "data engineer": {
+          "identified_jobs": 84,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 84
+        },
+        "software engineer": {
+          "identified_jobs": 217,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 217
+        },
+        "backend engineer": {
+          "identified_jobs": 85,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 85
+        },
+        "software engineer ii": {
+          "identified_jobs": 87,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 87
+        }
+      },
+      "glassdoor": {
+        "llm engineer": {
+          "identified_jobs": 22,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 22
+        },
+        "platform engineer": {
+          "identified_jobs": 29,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 29
+        },
+        "infrastructure engineer": {
+          "identified_jobs": 28,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 28
         },
         "ai engineer": {
           "identified_jobs": 27,
           "cross_source_overlap": 0,
           "cross_source_unique": 27
         },
-        "ml engineer": {
-          "identified_jobs": 23,
+        "new grad software engineer": {
+          "identified_jobs": 28,
           "cross_source_overlap": 0,
-          "cross_source_unique": 23
+          "cross_source_unique": 28
+        },
+        "forward deployed engineer": {
+          "identified_jobs": 28,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 28
         },
         "software engineer i": {
           "identified_jobs": 30,
           "cross_source_overlap": 0,
           "cross_source_unique": 30
         },
-        "platform engineer": {
-          "identified_jobs": 29,
+        "ml engineer": {
+          "identified_jobs": 23,
           "cross_source_overlap": 0,
-          "cross_source_unique": 29
+          "cross_source_unique": 23
+        },
+        "associate software engineer": {
+          "identified_jobs": 26,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 26
         },
         "full stack engineer": {
           "identified_jobs": 22,
           "cross_source_overlap": 0,
           "cross_source_unique": 22
         },
-        "infrastructure engineer": {
+        "machine learning engineer": {
+          "identified_jobs": 26,
+          "cross_source_overlap": 1,
+          "cross_source_unique": 25
+        },
+        "site reliability engineer": {
+          "identified_jobs": 22,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 22
+        },
+        "applied ai engineer": {
+          "identified_jobs": 27,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 27
+        },
+        "data engineer": {
+          "identified_jobs": 27,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 27
+        },
+        "software engineer": {
           "identified_jobs": 28,
           "cross_source_overlap": 0,
           "cross_source_unique": 28
+        },
+        "backend engineer": {
+          "identified_jobs": 29,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 29
+        },
+        "software engineer ii": {
+          "identified_jobs": 29,
+          "cross_source_overlap": 0,
+          "cross_source_unique": 29
         }
       }
     }
@@ -1194,14 +3709,14 @@
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
     "direct": {
-      "needed": 24,
-      "http_requests": 17,
+      "needed": 55,
+      "http_requests": 48,
       "scrapling_requests": 1,
-      "identity_needed": 17,
-      "identities_resolved": 14,
+      "identity_needed": 48,
+      "identities_resolved": 38,
       "cache_reused": 1,
-      "jds_resolved": 2,
-      "direct_http_resolved": 2,
+      "jds_resolved": 4,
+      "direct_http_resolved": 4,
       "remaining_no_jd": 3269,
       "failure_reasons": {
         "structured_jd_not_found": 1,
@@ -1210,19 +3725,20 @@
     },
     "remaining_no_jd": 3224,
     "failure_reasons": {
-      "no_enrichment_path": 2651,
-      "linkedin_rate_limited": 135,
+      "no_enrichment_path": 2650,
+      "linkedin_rate_limited": 136,
       "linkedin_http_429": 6,
-      "official_detail_deferred": 46,
+      "official_detail_deferred": 45,
+      "structured_jd_not_found": 1,
       "no_direct_or_official_url": 6,
       "linkedin_http_network_error": 2,
       "glassdoor_detail_http_403_static_card_only": 378
     }
   },
-  "direct_original_attempts": 18,
+  "direct_original_attempts": 49,
   "peer_jds_resolved": 0,
   "online_recovery": {
-    "jobs_processed": 17,
+    "jobs_processed": 48,
     "jds_recovered": 22,
     "search_requests": 3,
     "page_requests": 3,
