@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-09 17:21 PST
-- Snapshot (UTC): 2026-11-10T01:21:52.654407+00:00
-- Jobs: 49 (Tier A/B only)
-- Last 24 hours: 41
-- Last 3 days: 49
+- Updated (PT): 2026-11-09 23:06 PST
+- Snapshot (UTC): 2026-11-10T07:06:07.721592+00:00
+- Jobs: 52 (Tier A/B only)
+- Last 24 hours: 47
+- Last 3 days: 52
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -20,6 +20,7 @@ The 7-day dump is `latest.md`.
 | A | 89 | indeed | Hardin Design & Development | Web Developer - Entry Level | Madison, WI, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=64268ced8e3ef386) |
 | A | 89 | indeed | SuperWise | AI Software Engineer | Nashville, TN, US | 2026-11-08 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6b031814a0f837d3) |
 | A | 88 | indeed |  | Full Stack Software Engineer | New York, NY, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2d584768db27968b) |
+| B | 85 | linkedin | Audible | Software Development Engineer, Audible AI Voice Production | Cambridge, MA | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.audiblecareers.com/job/cambridge/software-development-engineer-audible-ai-voice-production/27552/102015023760) |
 | B | 85 | indeed | Pylon | Generalist Software Engineer(s) | San Francisco, CA, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=207ee30e3f0913f4) |
 | B | 86 | indeed | ALLETE | Programmer Analyst I | Duluth, MN, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=86e9be6768e2af54) |
 | B | 86 | indeed | Brock Solutions | Software Integration Engineer | Miami, FL, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=915fc45aab77592a) |
@@ -40,19 +41,21 @@ The 7-day dump is `latest.md`.
 | B | 80 | indeed | Raven3 Real Estate | Artificial Intelligence Engineer | Remote, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=3d00818bfbd07ec5) |
 | B | 82 | indeed | Infosys | AWS Java Full Stack Developer | Tampa, FL, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=4e8997ca2020068b) |
 | B | 82 | indeed | Infosys | AWS Python Data Engineer | Charlotte, NC, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=079707d7be76b93a) |
-| B | 80 | linkedin | Rippling | Software Engineer II, Backend - HR Product | Seattle, WA | 2026-11-06 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-hr-product-at-rippling-4488142498) |
 | B | 83 | indeed | AECOM | Digital Solutions Software Developer I | Tallahassee, FL, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=3a2cebdb06127b5c) |
 | B | 82 | indeed | Fidelity Investments | Full Stack Software Engineer, Python | Westlake, TX, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=64d04ba01cebc191) |
 | B | 83 | indeed | Stuller Inc | Data Engineer | Lafayette, LA, US | 2026-11-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=059526f83e58aa3e) |
 | B | 83 | indeed | University of West Georgia | Web Developer Associate | Carrollton, GA, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2aecfed37c7ef988) |
 | B | 80 | indeed | Infosys | AWS Redshift Data Engineer | Charlotte, NC, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=80549622dc4e268d) |
 | B | 82 | indeed | Wings Credit Union | AI Solutions Engineer | Colorado Springs, CO, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=7d3d693e27c2f5b5) |
-| B | 75 | indeed | Lumenalta | Technical Interviewer - Data Engineer | Remote, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=4e7d12f591e01f35) |
-| B | 75 | linkedin | HP | Software Engineer, Cloud Services | San Francisco, CA | 2026-11-07 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-cloud-services-at-hp-4488486882) |
+| B | 78 | linkedin | T-Mobile | T-Ads Engineer, Software Full Stack | Bellevue, WA | 2026-11-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/t-ads-engineer-software-full-stack-at-t-mobile-4488452353) |
+| B | 79 | linkedin | Evlo AI | Software Engineer - Full Stack | Austin, TX | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-evlo-ai-4487928870) |
+| B | 79 | linkedin | Evlo AI | Software Engineer - Full Stack | Dallas, TX | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-evlo-ai-4487947483) |
+| B | 75 | linkedin | Jack | Software Engineer | San Francisco Bay Area | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-jack-4487925534) |
+| B | 77 | linkedin | LTM | Full Stack .NET Developer | Irving, TX | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-net-developer-at-ltm-4487919484) |
 | B | 75 | linkedin | FDE Times | Machine Learning Engineer | San Francisco, CA | 2026-11-08 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-fde-times-4486687460) |
+| B | 79 | linkedin | Joblet-AI | Fullstack Software Engineer (Remote) | United States | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/fullstack-software-engineer-remote-at-joblet-ai-4487912319) |
 | B | 79 | indeed | Westley Resource | Palantir Forward Deployed Software Engineer | Princeton, NJ, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=cbbc288609469572) |
 | B | 78 | indeed | QUO | Junior Fullstack Engineer | San Francisco, CA, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6f47a8672ad99301) |
-| B | 78 | linkedin | Stronghold Investment Management | Software Engineer I | Dallas, TX | 2026-11-06 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-i-at-stronghold-investment-management-4452683045) |
 | B | 77 | indeed | Greenlight Guru | Healthcare Software Engineer | Indianapolis, IN, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d0a5208c29826d1e) |
 | B | 79 | indeed | Infosys | Java Full Stack Engineer with Python and AWS | Atlanta, GA, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c5c176d0dfdeb13a) |
 | B | 78 | indeed | Infosys | Java Full stack Support Engineer | Dallas, TX, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b3e795d9cd60173f) |
