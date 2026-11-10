@@ -1,70 +1,83 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 3951,
+  "count": 3971,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-11-08T20:00:38.552738+00:00",
+    "scraped_at": "2026-11-10T07:04:05.730197+00:00",
     "collector": {
-      "commit": "9c3ea842599a2d555bda130280f5c67b3211b056",
+      "commit": "7694f7c088c36f8e4e6fe92b0391b5ee1529b50d",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 45.989,
+    "elapsed_seconds": 77.008,
     "query_stats": [
       {
-        "query": "ai engineer",
+        "query": "full-stack engineer",
         "group": "primary",
-        "page_budget": 3,
+        "page_budget": 2,
         "pages_fetched": 2,
-        "stop_reason": "recovery_search_budget",
+        "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 18,
-        "first_pass_survivors": 16,
+        "unique_contribution": 19,
+        "first_pass_survivors": 18,
         "original_postings_resolved": 0,
-        "jds_resolved": 6,
-        "elapsed_seconds": 15.496,
-        "new_to_ledger": 9,
-        "rediscovered": 11,
+        "jds_resolved": 2,
+        "elapsed_seconds": 13.21,
+        "new_to_ledger": 13,
+        "rediscovered": 7,
         "page_yields": [
           {
             "page": 0,
             "raw": 10,
-            "new_to_ledger": 7,
-            "known": 3
+            "new_to_ledger": 5,
+            "known": 5
           },
           {
             "page": 1,
             "raw": 10,
-            "new_to_ledger": 2,
-            "known": 8
+            "new_to_ledger": 8,
+            "known": 2
           }
         ]
-      },
-      {
-        "query": "backend engineer",
-        "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "recovery_search_budget",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0,
-        "new_to_ledger": 0,
-        "rediscovered": 0,
-        "page_yields": []
       },
       {
         "query": "software engineer",
         "group": "primary",
         "page_budget": 5,
+        "pages_fetched": 2,
+        "stop_reason": "recovery_search_budget",
+        "raw_jobs": 20,
+        "unique_jobs": 20,
+        "unique_contribution": 18,
+        "first_pass_survivors": 19,
+        "original_postings_resolved": 0,
+        "jds_resolved": 6,
+        "elapsed_seconds": 24.601,
+        "new_to_ledger": 10,
+        "rediscovered": 10,
+        "page_yields": [
+          {
+            "page": 0,
+            "raw": 10,
+            "new_to_ledger": 6,
+            "known": 4
+          },
+          {
+            "page": 1,
+            "raw": 10,
+            "new_to_ledger": 4,
+            "known": 6
+          }
+        ]
+      },
+      {
+        "query": "ai engineer",
+        "group": "primary",
+        "page_budget": 3,
         "pages_fetched": 0,
         "stop_reason": "recovery_search_budget",
         "raw_jobs": 0,
@@ -82,96 +95,229 @@
     "search_collection": {
       "cooldown_active": false,
       "probe": false,
-      "query_cursor": 64,
-      "requests": 2,
-      "responses": 2,
-      "pages_fetched": 2,
+      "query_cursor": 65,
+      "requests": 4,
+      "responses": 4,
+      "pages_fetched": 4,
       "http_status": 0,
       "rate_limited": false,
       "budget_exhausted": false,
       "rate_limit_event": {},
       "transport_stop_reason": "",
-      "new_to_ledger": 9,
-      "rediscovered": 11,
+      "new_to_ledger": 23,
+      "rediscovered": 17,
       "coverage_limited": true
     },
     "detail_enrichment": {
-      "eligible": 6,
+      "eligible": 10,
       "cache_reused": 0,
       "requests": 2,
       "responses": 2,
-      "successful_responses": 2,
+      "successful_responses": 1,
       "attempted_ids": [
-        "4426732783",
-        "4488776973"
+        "4488785584",
+        "4487912319"
       ],
       "http_status_counts": {
-        "200": 2
+        "200": 1,
+        "429": 1
       },
       "request_limit": 12,
-      "budget_deferred": 4,
-      "budget_exhausted": true,
+      "budget_deferred": 0,
+      "budget_exhausted": false,
       "retry_deferred": 0,
       "retry_attempts": 0,
       "exact_official": 0,
       "official_deferred": 0,
-      "rate_limited": false,
-      "jds_resolved": 2,
+      "rate_limited": true,
+      "jds_resolved": 1,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 2,
+      "detail_jds_fetched": 1,
       "intentional_skips": 0,
-      "blocked": "",
+      "blocked": "blocked with HTTP 429",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 4,
+      "remaining_no_jd": 9,
       "failure_reasons": {
-        "no_description": 2,
-        "linkedin_rate_limited": 2
+        "linkedin_http_429": 1,
+        "no_description": 8
       },
-      "transport_stop_reason": "recovery_detail_budget",
-      "protected_requests": 0,
-      "protected_jds_resolved": 0,
-      "protected_deferred": 4,
+      "rate_limit_event": {
+        "at": "2026-11-10T07:05:22.674315+00:00",
+        "endpoint": "detail",
+        "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4487912319",
+        "query": "Fullstack Software Engineer (Remote)",
+        "page": null,
+        "retry_after": "",
+        "retry_after_until": "2026-11-10T07:05:22.674315+00:00",
+        "request_ordinal": 6,
+        "endpoint_ordinal": 2,
+        "round_counts": {
+          "search": 4,
+          "detail": 2
+        },
+        "rolling_counts": {
+          "60": {
+            "search": 2,
+            "detail": 2
+          },
+          "3600": {
+            "search": 4,
+            "detail": 2
+          },
+          "86400": {
+            "search": 4,
+            "detail": 2
+          }
+        }
+      },
+      "protected_requests": 1,
+      "protected_jds_resolved": 1,
+      "protected_deferred": 8,
       "queue": [
         {
-          "job_id": "4426732783",
-          "first_seen": "2026-11-08T20:00:38.552738+00:00",
+          "job_id": "4487928870",
+          "first_seen": "2026-11-10T07:04:05.730197+00:00",
           "priority": "high",
           "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": "2026-11-08T20:04:45.735420+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4488776973",
-          "first_seen": "2026-11-08T20:00:38.552738+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": "2026-11-08T20:04:45.735420+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4488785584",
-          "first_seen": "2026-11-08T20:00:38.552738+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": "2026-11-08T20:00:38.552738+00:00",
+          "deferred_at": "2026-11-10T07:04:05.730197+00:00",
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "recovery_detail_budget",
+          "deferred_reason": "linkedin_rate_limited",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4487947483",
+          "first_seen": "2026-11-10T07:04:05.730197+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": "2026-11-10T07:04:05.730197+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_rate_limited",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4488452353",
+          "first_seen": "2026-11-10T07:04:05.730197+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-10T07:04:05.730197+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_rate_limited",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4489410685",
+          "first_seen": "2026-11-10T07:04:05.730197+00:00",
+          "priority": "normal",
+          "needs_jd": null,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": true,
+          "method": "remote_exact_peer",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4487925534",
+          "first_seen": "2026-11-10T07:04:05.730197+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-10T07:04:05.730197+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_rate_limited",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4487919484",
+          "first_seen": "2026-11-10T07:04:05.730197+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-10T07:04:05.730197+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_rate_limited",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4487912319",
+          "first_seen": "2026-11-10T07:04:05.730197+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": null,
+          "attempted_at": "2026-11-10T07:05:09.940965+00:00",
+          "attempted_this_phase": true,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4489421005",
+          "first_seen": "2026-11-10T07:04:05.730197+00:00",
+          "priority": "normal",
+          "needs_jd": null,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": true,
+          "method": "remote_exact_peer",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4489417211",
+          "first_seen": "2026-11-10T07:04:05.730197+00:00",
+          "priority": "low",
+          "needs_jd": true,
+          "deferred_at": "2026-11-10T07:04:05.730197+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_rate_limited",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4489118409",
+          "first_seen": "2026-11-10T07:04:05.730197+00:00",
+          "priority": "normal",
+          "needs_jd": null,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": true,
+          "method": "remote_exact_peer",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4489180653",
+          "first_seen": "2026-11-10T07:04:05.730197+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": "2026-11-10T07:04:05.730197+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_rate_limited",
           "past_fresh": false
         },
         {
@@ -184,86 +330,62 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "recovery_detail_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4488743838",
-          "first_seen": "2026-11-08T20:00:38.552738+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "exact_indeed_peer",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4488486882",
-          "first_seen": "2026-11-07T07:03:06.912323+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-07T07:03:06.912323+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "recovery_detail_budget",
+          "deferred_reason": "linkedin_rate_limited",
           "past_fresh": true
         },
         {
-          "job_id": "4488142498",
-          "first_seen": "2026-11-07T07:03:06.912323+00:00",
-          "priority": "normal",
+          "job_id": "4488785584",
+          "first_seen": "2026-11-08T20:00:38.552738+00:00",
+          "priority": "high",
           "needs_jd": true,
-          "deferred_at": "2026-11-07T07:03:06.912323+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "recovery_detail_budget",
+          "deferred_at": "2026-11-08T20:00:38.552738+00:00",
+          "attempted_at": "2026-11-10T07:05:09.940965+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
           "past_fresh": true
         }
       ],
       "admission": {
-        "candidates": 8,
-        "rules_skipped": 1,
+        "candidates": 22,
+        "rules_skipped": 9,
         "rule_reasons": {
-          "prefilter:senior": 1
+          "prefilter:senior": 8,
+          "citizen_or_clearance": 1
         },
         "cache_reused": 0,
-        "non_linkedin_resolved": 1,
-        "triage_evaluated": 6,
+        "non_linkedin_resolved": 3,
+        "triage_evaluated": 8,
         "triage_deferred": 0,
-        "worth_detail": 6
+        "worth_detail": 10
       },
       "cooldown_active": false,
       "probe": false,
       "round_request_limit": 12,
       "round_requests": 2,
-      "status": "active"
+      "status": "cooldown"
     },
     "official_enrichment": {
-      "dedicated_matches": 2,
-      "cache": 4,
       "exact_indeed_peer": 1,
+      "dedicated_matches": 7,
+      "remote_exact_peer": 5,
+      "cache": 2,
       "search_provider_failures": 1,
-      "no_match": 4,
-      "search_requests": 8,
+      "no_match": 8,
+      "search_requests": 11,
       "search_provider": "bing",
-      "official_page_requests": 6,
-      "remaining_no_jd": 13
+      "official_page_requests": 5,
+      "remaining_no_jd": 29
     },
     "partial": true,
     "blocked_reason": "focused query coverage",
-    "collected_count": 18,
+    "collected_count": 37,
     "carried_count": 3935,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-11-08T20:05:00.324117+00:00"
+    "jd_recovery_at": "2026-11-10T07:05:24.327139+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -4298,7 +4420,28 @@
     "linkedin|id|4488785584": "2026-11-08T20:00:38.552738+00:00",
     "linkedin|id|4454821312": "2026-09-06T03:50:27.645294+00:00",
     "linkedin|id|4486687460": "2026-11-08T20:00:38.552738+00:00",
-    "linkedin|id|4488743838": "2026-11-08T20:00:38.552738+00:00"
+    "linkedin|id|4488743838": "2026-11-08T20:00:38.552738+00:00",
+    "linkedin|id|4487928870": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4487947483": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4488452353": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4487430804": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4434996712": "2026-09-06T06:53:36.440106+00:00",
+    "linkedin|id|4487421164": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4489410685": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4487925534": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4487919484": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4489180743": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4468144788": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4487912319": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4489421005": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4489195031": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4489417211": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4489118409": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4489180653": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4488867480": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4487431257": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4487938867": "2026-11-10T07:04:05.730197+00:00",
+    "linkedin|id|4487945794": "2026-11-10T07:04:05.730197+00:00"
   },
   "jobs": [
     {
@@ -9735,7 +9878,7 @@
       "title": "Senior Full-Stack Engineer - Alpaca Connect",
       "location": "New York, NY",
       "posted_date": "2026-10-25",
-      "aggregator_posted_date": "2026-10-25",
+      "aggregator_posted_date": "2026-11-10",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-engineer-alpaca-connect-at-alpaca-4483372897",
@@ -9746,13 +9889,14 @@
       "first_seen": "2026-10-25T20:28:17.788896+00:00",
       "discovery_queries": {
         "linkedin": [
-          "full-stack engineer"
+          "full-stack engineer",
+          "software engineer"
         ]
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-25T20:28:17.788896+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471492428",
@@ -13609,6 +13753,64 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4489180653",
+      "source": "linkedin",
+      "company": "Amazon Web Services (AWS)",
+      "title": "Software Development Engineer, AWS Route 53, AWS Route 53 Frontier Resolver",
+      "location": "Seattle, WA",
+      "posted_date": "2026-11-10",
+      "aggregator_posted_date": "2026-11-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-aws-route-53-aws-route-53-frontier-resolver-at-amazon-web-services-aws-4489180653",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "candidate:3beda97bb5": {
+          "input_hash": "7c4cbfb3442e2732c878",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "5985f001a39b347378f4",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "b1a069eeae749b4445d7",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "97b9eda65d993c69a49c",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-10T07:05:24.327139+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "Relevant cloud infrastructure role; level and qualifications remain unknown."
+      },
+      "linkedin_detail_triage_hash": "3465c34d54060ee2ca37",
+      "linkedin_detail_deferred_at": "2026-11-10T07:04:05.730197+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4470216352",
       "source": "linkedin",
       "company": "Amazon Web Services (AWS)",
@@ -16378,7 +16580,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460258076",
@@ -16998,7 +17200,7 @@
       "title": "Senior Fullstack Software Engineer, DX",
       "location": "San Francisco, CA",
       "posted_date": "2026-09-27",
-      "aggregator_posted_date": "2026-10-18",
+      "aggregator_posted_date": "2026-11-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-fullstack-software-engineer-dx-at-atlassian-4454867046",
@@ -17013,8 +17215,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-19T04:00:20.814811+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4467438821",
@@ -17304,7 +17506,7 @@
       "title": "Full-Stack Engineer - Fleet Management",
       "location": "San Francisco, CA",
       "posted_date": "2026-10-18",
-      "aggregator_posted_date": "2026-10-18",
+      "aggregator_posted_date": "2026-11-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-fleet-management-at-atoms-4479932992",
@@ -17318,6 +17520,7 @@
           "full-stack engineer"
         ]
       },
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "recovery_methods": {
         "generic_search": {
           "input_hash": "3ec99c3777cb0a2ed597",
@@ -17325,13 +17528,8 @@
           "outcome": "no_match"
         }
       },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-19T04:00:32.707631+00:00",
-      "official_search_status": "no_match",
-      "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-10-19T04:00:20.814811+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4432919024",
@@ -17846,6 +18044,40 @@
       "verified_this_run": false,
       "enrichment_deferred_reason": "linkedin_rate_limited",
       "enrichment_failure_reason": "linkedin_rate_limited"
+    },
+    {
+      "job_id": "4489118409",
+      "source": "linkedin",
+      "company": "Audible",
+      "title": "Software Development Engineer, Audible AI Voice Production",
+      "location": "Cambridge, MA",
+      "posted_date": "2026-11-09",
+      "aggregator_posted_date": "2026-11-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-audible-ai-voice-production-at-audible-4489118409",
+      "official_url": "",
+      "description": "Job Summary\nAt Audible, we believe stories have the power to transform lives. It’s why we work with some of the world’s leading creators to produce and share audio storytelling with our millions of global listeners. We are dreamers and inventors who come from a wide range of backgrounds and experiences to empower and inspire each other. Imagine your future with us.\nABOUT THIS ROLE\nAs a Software Development Engineer, it’s up to you to define, design and refine the tech that keeps us one step ahead of listeners. Anticipate. Innovate. Bring challenging ideas and we’ll support you with the latest tech, tools, and systems that you need to succeed. We pride ourselves on our ability to imagine and invent solutions to problems of the future. You’ll be essential in this forward-thinking approach to development. Together with the team, you’ll build and maintain our platform to bring thousands of stories to millions of listeners and unleash the power of the human voice.\nABOUT YOU\nIf you’re a dedicated problem solver, this is the role for you. Identifying and overcoming challenges is at the heart of everything you do; whether it’s looking ahead to our listeners problems, or analyzing every inefficiency, you thrive when you strive for perfection. We look for people who take responsibility, who feel the pride in a job well done and see every failure as an opportunity to learn. With a knowledgeable team around you, and opportunities to challenge yourself, it’s a perfect environment to develop and apply your new skills.\nAs a Software Development Engineer, you will...\nDevelop, test, and maintain software components and applications for the world's largest audiobook creator and provider\nIdentify and resolve software defects through code review, log analysis, metrics examination, debugging, and other troubleshooting methods\nWrite maintainable and scalable code for software components as part of an agile engineering team\nCollaborate with stakeholders to envision, design, develop, test, and launch customer-centric software that inspires and impacts users\nApply computer science, engineering, and analysis principles to solve moderate-scale problems\nContinuously enhance testability, operational excellence (OE), and documentation for owned software components\nHandle data classification, storage, and management in accordance with company policies\nParticipate in the interview process and provide mentorship to fellow engineers\nABOUT AUDIBLE\nAudible is the leading producer and provider of audio storytelling. We spark listeners’ imaginations, offering immersive, cinematic experiences full of inspiration and insight to enrich our customers daily lives. We are a global company with an entrepreneurial spirit. We are dreamers and inventors who are passionate about the positive impact Audible can make for our customers and our neighbors. This spirit courses throughout Audible, supporting a culture of creativity and inclusion built on our People Principles and our mission to build more equitable communities in the cities we call home.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://www.audiblecareers.com/job/cambridge/software-development-engineer-audible-ai-voice-production/27552/102015023760",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-10T07:04:05.730197+00:00",
+      "jd_recovery_at": "2026-11-10T07:04:05.730197+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-10T07:04:05.730197+00:00",
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4472204970",
@@ -20411,6 +20643,36 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4487421164",
+      "source": "linkedin",
+      "company": "Beckman Coulter Life Sciences",
+      "title": "Senior Full-Stack Software Developer",
+      "location": "Austin, TX",
+      "posted_date": "2026-11-09",
+      "aggregator_posted_date": "2026-11-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-software-developer-at-beckman-coulter-life-sciences-4487421164",
+      "official_url": "",
+      "description": "**Bring more to life.** Are you ready to accelerate your potential and make a real difference within life sciences, diagnostics and biotechnology? At Beckman Coulter Life Sciences, one of Danaher’s 15\\+ operating companies, our work saves lives—and we’re all united by a shared commitment to innovate for tangible impact. You’ll thrive in a culture of belonging where you and your unique viewpoint matter. And by harnessing Danaher’s system of continuous improvement, you help turn ideas into impact – innovating at the speed of life. At Beckman Coulter Life Sciences, we know time is the most critical facet in the laboratory today: time to get life\\-saving therapies to patients faster; reclaiming time by automating tedious manual workflows; and saving time spent addressing erroneous or complex results. We are partners in time and accelerate answers to critical questions through the power of automation. We develop innovations for scientists by scientists, with many of our 3,300\\+ global colleagues coming from the laboratory. It’s all part of our time\\-tested approach to bringing meaningful innovations at the speed of life since 1935\\. And we’re just beginning. Working together, let’s put our time and talents together to advance human health for tomorrow. Learn about the Danaher Business System which makes everything possible. The Senior Full\\-Stack Software Developer is responsible for developing, enhancing, and maintaining enterprise applications and digital platforms across front\\-end, back\\-end, and CMS technologies. The ideal candidate will have strong expertise in React.js, Next.js, JavaScript, TypeScript, .NET, Sitecore CMS, and Vercel, with proven experience designing APIs, building scalable web applications, integrating CMS solutions, and supporting secure, high\\-performing enterprise digital experiences. This position reports to the Software Engineering Manager and is part of the Commercial Operations Technology Team and will be fully remote. **In this role, you will have the opportunity to:** * Lead the architecture and delivery of secure, scalable enterprise applications across React.js, Next.js, .NET, Sitecore, and Vercel, driving best practices for performance, SEO, accessibility, and caching. * Design and build scalable Sitecore and Next.js solutions, including reusable React components, REST/GraphQL integrations, and SOLR/Coveo search, adhering to Sitecore Helix principles and coding standards. * Work closely with business analysts, software engineers, architects, business stakeholders, and end users to gather requirements, analyze business needs, and implement new features. * Strong communication skills and ability to translate conceptual business requirements into documented technical specifications, architecture designs, and robust technical solutions with IT and Marketing teams. * Lead code reviews, establish and champion coding standards, development best practices, and SDLC processes to ensure scalable, maintainable and high\\-quality applications. **The essential requirements of the job include:** * Bachelor’s or Master’s degree in Computer Science, Information Technology or equivalent experience with 12\\+ years in software development. * Strong expertise in JavaScript, TypeScript, React.js, and Next.js, with working knowledge of .NET/C\\#, ASP.NET Core, object\\-oriented programming, and backend development. * 7\\+ years of hands\\-on Sitecore experience, including Sitecore 10\\.3, headless architecture, Helix principles, Next.js integration, Vercel, Experience Edge, GraphQL, CMS migrations, and enterprise search with SOLR/Coveo. * Strong cross\\-functional communication and collaboration skills, with experience partnering across IT, Marketing, and business teams to deliver solutions that enhance customer experience. * Experience with Microsoft Azure, Azure DevOps, Azure CI/CD pipelines, Git/GitHub, and automated build and release deployments. **It would be a plus if you also possess previous experience in:** * Demonstrates ability to leverage AI coding tools and LLMs to improve development efficiency, code quality, testing, and troubleshooting. * Contributes to Agile practices including sprint planning, backlog refinement and technical discussions. **Travel, Motor Vehicle Record \\& Physical/Environment Requirements:** *if applicable for role* * Ability to travel – 5% domestic and international Beckman Coulter Life Sciences, a Danaher operating company, offers a broad array of comprehensive, competitive benefit programs that add value to our lives. Whether it’s a health care program or paid time off, our programs contribute to life beyond the job. Check out our benefits at Danaher Benefits Info. At Beckman Coulter Life Scienceswe believe in designing a better, more sustainable workforce. We recognize the benefits of flexible, remote working arrangements for eligible roles and are committed to providing enriching careers, no matter the work arrangement. This position is eligible for a remote work arrangement in which you can work remotely from your home. Additional information about this remote work arrangement will be provided by your interview team. Explore the flexibility and challenge that working for Beckman Coulter Life Sciencescan provide. The annual salary range for this role is 100k \\-135k USD *.* This is the range that we in good faith believe is the range of possible compensation for this role at the time of this posting. This range may be modified in the future. This job is also eligible for bonus/incentive pay. We offer comprehensive package of benefits including paid time off, medical/dental/vision insurance and 401(k) to eligible employees. Note: No amount of pay is considered to be wages or compensation until such amount is earned, vested, and determinable. The amount and availability of any bonus, commission, benefits, or any other form of compensation and benefits that are allocable to a particular employee remains in the Company's sole discretion unless and until paid and may be modified at the Company’s sole discretion, consistent with the law. Join our winning team today. Together, we’ll accelerate the real\\-life impact of tomorrow’s science and technology. We partner with customers across the globe to help them solve their most complex challenges, architecting solutions that bring the power of science to life. For more information, visit www.danaher.com.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "jd_recovery_at": "2026-11-10T07:04:05.730197+00:00",
+      "enrichment_method": "exact_indeed_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4408940437",
       "source": "linkedin",
       "company": "Bedrock Robotics",
@@ -20946,7 +21208,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469986153",
@@ -26926,7 +27188,7 @@
       "title": "Senior Software Engineer, Java",
       "location": "New York, NY",
       "posted_date": "2026-09-27",
-      "aggregator_posted_date": "2026-10-18",
+      "aggregator_posted_date": "2026-11-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-java-at-clear-4436371317",
@@ -26941,8 +27203,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-18T22:00:09.153867+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4441242438",
@@ -27278,6 +27540,32 @@
       "enrichment_method": "remote_exact_peer",
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-09-26T19:15:15.514315+00:00"
+    },
+    {
+      "job_id": "4489195031",
+      "source": "linkedin",
+      "company": "CVS Health",
+      "title": "Senior Software Development Engineer",
+      "location": "Austin, TX",
+      "posted_date": "2026-11-10",
+      "aggregator_posted_date": "2026-11-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-development-engineer-at-cvs-health-4489195031",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4473586636",
@@ -29783,7 +30071,7 @@
         }
       },
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4480853136",
@@ -29836,7 +30124,7 @@
         }
       },
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4473255746",
@@ -31214,7 +31502,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468123266",
@@ -38065,6 +38353,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4461439688",
+      "source": "linkedin",
+      "company": "CoreWeave",
+      "title": "Senior Software Engineer, Weave - Weights & Biases",
+      "location": "Seattle, WA",
+      "posted_date": "2026-09-26",
+      "aggregator_posted_date": "2026-11-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-weave-weights-biases-at-coreweave-4461439688",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-05T11:58:36.340966+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4486126617",
       "source": "linkedin",
       "company": "Corgi",
@@ -38782,7 +39095,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4454826253",
@@ -38807,7 +39120,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4454818358",
@@ -39141,6 +39454,32 @@
       "recovery_methods": {},
       "source_verified_at": "2026-10-30T05:09:06.244547+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4489180743",
+      "source": "linkedin",
+      "company": "Cupertino Electric, Inc.",
+      "title": "Senior Full Stack Developer",
+      "location": "San Jose, CA",
+      "posted_date": "2026-11-10",
+      "aggregator_posted_date": "2026-11-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-developer-at-cupertino-electric-inc-4489180743",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4475399298",
@@ -40274,7 +40613,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4426732785",
@@ -40758,7 +41097,7 @@
       "title": "Cyber Full-Stack Technical Software Engineer",
       "location": "Columbus, OH",
       "posted_date": "2026-09-27",
-      "aggregator_posted_date": "2026-09-27",
+      "aggregator_posted_date": "2026-11-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/cyber-full-stack-technical-software-engineer-at-deloitte-4434994842",
@@ -40773,8 +41112,33 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-28T04:00:17.977240+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4434996712",
+      "source": "linkedin",
+      "company": "Deloitte",
+      "title": "Cyber Full-Stack Technical Software Engineer",
+      "location": "Cincinnati, OH",
+      "posted_date": "2026-11-09",
+      "aggregator_posted_date": "2026-11-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/cyber-full-stack-technical-software-engineer-at-deloitte-4434996712",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-06T06:53:36.440106+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4435103498",
@@ -47063,6 +47427,92 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4487928870",
+      "source": "linkedin",
+      "company": "Evlo AI",
+      "title": "Software Engineer - Full Stack",
+      "location": "Austin, TX",
+      "posted_date": "2026-11-09",
+      "aggregator_posted_date": "2026-11-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-evlo-ai-4487928870",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "314f38fe34795249cd1e",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-10T07:05:24.327139+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "Relevant full-stack role; seniority and responsibilities remain unknown."
+      },
+      "linkedin_detail_triage_hash": "d04d3da82eac9284365a",
+      "linkedin_detail_deferred_at": "2026-11-10T07:04:05.730197+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4487947483",
+      "source": "linkedin",
+      "company": "Evlo AI",
+      "title": "Software Engineer - Full Stack",
+      "location": "Dallas, TX",
+      "posted_date": "2026-11-09",
+      "aggregator_posted_date": "2026-11-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-evlo-ai-4487947483",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "710b5c1d3cca4e23204f",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-10T07:05:24.327139+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "Relevant full-stack role; seniority and responsibilities remain unknown."
+      },
+      "linkedin_detail_triage_hash": "6e32f003d5c1fd6d1243",
+      "linkedin_detail_deferred_at": "2026-11-10T07:04:05.730197+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4472361480",
       "source": "linkedin",
       "company": "Excelon Solutions",
@@ -47805,9 +48255,9 @@
       "linkedin_detail_triage_hash": "67bd707bc18649be9be5",
       "linkedin_detail_deferred_at": "2026-11-08T20:00:38.552738+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "recovery_detail_budget",
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4466410620",
@@ -54196,6 +54646,76 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4487945794",
+      "source": "linkedin",
+      "company": "Google",
+      "title": "Senior Software Engineer, Cloud Workspace (multiple openings)",
+      "location": "Durham, NC",
+      "posted_date": "2026-11-09",
+      "aggregator_posted_date": "2026-11-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-cloud-workspace-multiple-openings-at-google-4487945794",
+      "official_url": "",
+      "description": "Google Cloud accelerates every organization’s ability to digitally transform its business and industry. We deliver enterprise-grade solutions that leverage Google’s cutting-edge technology, and tools that help developers build more sustainably. Customers in more than 200 countries and territories turn to Google Cloud as their trusted partner to enable growth and solve their most critical business problems. Google's software developers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products need to handle information at massive scale, and extend well beyond web search. We're looking for software developers who bring fresh ideas from all areas, including information retrieval, distributed computing, large-scale system design, networking and data storage, security, artificial intelligence, natural language processing, UI design and mobile; the list goes on and is growing every day. As a software developer, you will work on a specific project critical to Google’s needs with opportunities to switch teams and projects as you and our fast-paced business grow and evolve. We need our software developers to be versatile, display leadership qualities and be enthusiastic to take on new problems across the full-stack as we continue to push technology forward. The US base salary range for this full-time position is $174,000 - $253,000 + 15% bonus target + equity + benefits determined by role, level, and location. Individual pay is determined by additional factors, including job-related skills, experience, and relevant education or training. Learn more about benefits at Google . Position reports to the Google office & may allow for a hybrid schedule as per Google policy. Design, develop, test, deploy, maintain, and enhance software solutions. Manage project priorities, deadlines and deliverables. Participate in, or lead design reviews with peers and stakeholders to decide amongst available technologies. Review code developed by other developers and provide feedback to ensure best practices (e.g., style guidelines, checking code in, accuracy, testability, and efficiency). Contribute to existing documentation or educational content and adapt content based on product/program updates and user feedback; and Triage product or system issues and debug/track/resolve by analyzing the sources of issues and the impact on hardware, network, or service operations and quality. Minimum qualifications: Bachelor’s degree in Computer Science, Engineering, Mathematics, Information Systems, or a related field and 5 years of progressive, post-baccalaureate experience in the job offered or in a Software Engineer-related occupation. Position requires the following: 5 years of experience in Software development utilizing C++, Kotlin, Python, Java, JavaScript, or TypeScript; 5 years of experience in Data structures, Algorithms, and Debugging and testing; 5 years of experience in one of the following: Web application development, Mobile app development, Backend infrastructure systems, Distributed systems, or Building applications for a browser; 2 years of experience in System Design; and 1 year of experience in a technical leadership role, including leading projects, serving as a subject matter expert, or working cross-functionally with other teams.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "application_url": "https://www.google.com/about/careers/applications/jobs/results/72804199263281862-senior-software-engineer-cloud-workspace-multiple-openings",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-10T07:04:05.730197+00:00",
+      "jd_recovery_at": "2026-11-10T07:04:05.730197+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-10T07:04:05.730197+00:00",
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4487938867",
+      "source": "linkedin",
+      "company": "Google",
+      "title": "Senior Software Engineer, Cloud- Foundation and Security Platform (multiple openings)",
+      "location": "Durham, NC",
+      "posted_date": "2026-11-09",
+      "aggregator_posted_date": "2026-11-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-cloud-foundation-and-security-platform-multiple-openings-at-google-4487938867",
+      "official_url": "",
+      "description": "Google Cloud accelerates every organization’s ability to digitally transform its business and industry. We deliver enterprise-grade solutions that leverage Google’s cutting-edge technology, and tools that help developers build more sustainably. Customers in more than 200 countries and territories turn to Google Cloud as their trusted partner to enable growth and solve their most critical business problems. Google's software developers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products need to handle information at massive scale, and extend well beyond web search. We're looking for software developers who bring fresh ideas from all areas, including information retrieval, distributed computing, large-scale system design, networking and data storage, security, artificial intelligence, natural language processing, UI design and mobile; the list goes on and is growing every day. As a software developer, you will work on a specific project critical to Google’s needs with opportunities to switch teams and projects as you and our fast-paced business grow and evolve. We need our software developers to be versatile, display leadership qualities and be enthusiastic to take on new problems across the full-stack as we continue to push technology forward. The US base salary range for this full-time position is $174,000 - $253,000 + 15% bonus target + equity + benefits determined by role, level, and location. Individual pay is determined by additional factors, including job-related skills, experience, and relevant education or training. Learn more about benefits at Google. Position reports to the Google office & may allow for a hybrid schedule as per Google policy. Design, develop, test, deploy, maintain, and enhance software solutions. Manage project priorities, deadlines and deliverables. Participate in, or lead design reviews with peers and stakeholders to decide amongst available technologies. Review code developed by other developers and provide feedback to ensure best practices (e.g., style guidelines, checking code in, accuracy, testability, production principles and efficiency). Triage product or system issues and debug/track/resolve by analyzing the sources of issues and the impact on hardware, network, or service operations and quality. Minimum qualifications: Bachelor’s degree in Computer Science, Engineering, Mathematics, Information Systems, or a related field and 5 years of progressive, post-baccalaureate experience in the job offered or in a Software Engineer-related occupation. Position requires the following: 5 years of experience in Software development utilizing C++, Python, Go, Java, or JavaScript; 5 years of experience in Data structures and algorithms; 4 years of experience in Production systems, large-scale distributed systems, and cloud computing; 3 years of experience in two of the following: Security (authorization, access management, or anti-abuse), API design, REST API development (throttling, latency, or quota management), Front-end development, Compliance (access control, encryption, data governance, or data security), Reliability, End to end testing, Test automation, Data infrastructure, Service Regionalization, Data processing, or Relational and non-relational databases; 2 years of experience in Testing, maintaining, or launching software products; 1 year of experience in Software design, system design and architecture; and 1 year of experience in a technical leadership role, including leading projects involving multiple engineers, leading teams, serving as a subject matter expert, working closely with stakeholders within and outside of teams, managing key stakeholders, or reviewing code designs from more junior team members.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "application_url": "https://www.google.com/about/careers/applications/jobs/results/140241645441295046-senior-software-engineer-cloud-foundation-and-security-platform-multiple-openings",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-10T07:04:05.730197+00:00",
+      "jd_recovery_at": "2026-11-10T07:04:05.730197+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-10T07:04:05.730197+00:00",
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468790961",
       "source": "linkedin",
       "company": "Google",
@@ -58260,7 +58780,7 @@
       "title": "Software Developer",
       "location": "Austin, TX",
       "posted_date": "2026-10-12",
-      "aggregator_posted_date": "2026-11-03",
+      "aggregator_posted_date": "2026-11-10",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-developer-at-haystack-4473183815",
@@ -58288,8 +58808,8 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-11-03T23:14:02.379864+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470240432",
@@ -58324,7 +58844,7 @@
       "title": "Software Engineer",
       "location": "Milwaukee, WI",
       "posted_date": "2026-10-12",
-      "aggregator_posted_date": "2026-11-03",
+      "aggregator_posted_date": "2026-11-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-haystack-4473401171",
@@ -58352,8 +58872,8 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-11-03T23:14:02.379864+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4477058723",
@@ -62102,6 +62622,74 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4489421005",
+      "source": "linkedin",
+      "company": "JPMorganChase",
+      "title": "Java Fullstack Software Engineer II - Kubernetes / React",
+      "location": "Tampa, FL",
+      "posted_date": "2026-11-10",
+      "aggregator_posted_date": "2026-11-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/java-fullstack-software-engineer-ii-kubernetes-react-at-jpmorganchase-4489421005",
+      "official_url": "",
+      "description": "Your next career move starts here — at JPMorganChase, you will have the opportunity to grow your engineering skills while contributing to technology that powers global payments and transfers for some of the world's largest corporations, financial institutions, and merchants. We invest in our people, our platforms, and our culture, and we want you to be part of what we are building next. As a Software Engineer II at JPMorganChase within the Commercial & Investment Bank Payments and Transfers Technology team in Tampa, FL, you will be an integral member of an agile engineering team responsible for designing and delivering secure, scalable, and reliable software solutions that support global money movement. You will collaborate with experienced engineers and cross-functional partners to build and maintain full-stack applications that serve clients across payments, liquidity, and transfer services. This is an exciting opportunity to develop your technical foundation, embrace AI-assisted development practices, and grow your career within a world-class technology organization. Job responsibilities Executes standard software solution, design, development, and technical troubleshooting Writes secure and high-quality code using the syntax of at least one programming language with limited guidance Leverages enterprise-authorized AI coding assist tools within the work environment to improve code quality, delivery speed, and productivity (e.g., code generation/refactoring, unit test creation, documentation), while validating outputs through peer review, automated testing, and secure coding standards. Designs, develops, codes, and troubleshoots with consideration of upstream and downstream systems and technical implications Applies knowledge of tools within the Software Development Life Cycle toolchain, including enterprise-authorized AI-assisted development and automation capabilities, to improve the value realized by automation Applies technical troubleshooting to breakdown solutions and solve technical problems of basic complexity Gathers, analyzes, and draws conclusions from large, diverse data sets to identify problems and contribute to decision-making in service of secure, stable application development Learns and applies system processes, methodologies, and skills for the development of secure, stable code and systems Required qualifications, capabilities, and skills Formal training or certification on software engineering concepts and 2+ years applied experience Hands-on practical experience in system design, application development, testing, and operational stability Experience developing, debugging, and maintaining code using Java and Spring Boot in a corporate or production environment Working knowledge of React or a comparable JavaScript framework for building responsive, user-facing web applications Hands-on experience with Kubernetes for container orchestration, deployment management, and application scaling Hands-on experience using enterprise-authorized AI-assisted software development tools (e.g., for coding, test creation, troubleshooting, or documentation), with demonstrated ability to critically evaluate, validate, and refine AI-generated outputs for correctness, performance, and security Understanding of responsible AI use in engineering workflows, including data sensitivity considerations, secure handling of inputs/outputs, and adherence to resiliency and security expectations Overall knowledge of the Software Development Life Cycle Solid understanding of agile methodologies, including CI/CD, application resiliency, and security best practices Preferred qualifications, capabilities, and skills Exposure to payments or financial services domain concepts such as transaction processing, clearing, settlement, or liquidity management Familiarity with cloud infrastructure technologies including compute, storage, container services, and serverless functions (e.g., AWS, Azure, or GCP) Experience with observability and monitoring tooling such as Datadog, Grafana, or Splunk for production system health and incident response Knowledge of REST API design principles and microservices architecture patterns Experience contributing to agile ceremonies, sprint planning, and cross-functional engineering collaboration",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210762543",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-10T07:04:05.730197+00:00",
+      "jd_recovery_at": "2026-11-10T07:04:05.730197+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-10T07:04:05.730197+00:00",
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4489410685",
+      "source": "linkedin",
+      "company": "JPMorganChase",
+      "title": "Java Fullstack Software Engineer III - Kubernetes / React",
+      "location": "Tampa, FL",
+      "posted_date": "2026-11-10",
+      "aggregator_posted_date": "2026-11-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/java-fullstack-software-engineer-iii-kubernetes-react-at-jpmorganchase-4489410685",
+      "official_url": "",
+      "description": "At JPMorganChase, we build technology that powers some of the most complex and consequential financial operations in the world — and we are looking for engineers who are ready to grow with us. Join a team where your full-stack expertise shapes the platforms that support management and operational functions across the Commercial & Investment Bank, and where your career development is just as important as the products you deliver. As a Software Engineer III at JPMorganChase within the Commercial & Investment Bank Management and Support Functions Technology team in Tampa, FL, you will serve as a seasoned member of an agile engineering team responsible for designing and delivering secure, scalable, and reliable full-stack software solutions. You will build robust Java backend services alongside modern React front-end interfaces, deploy and manage containerized workloads on Kubernetes, and collaborate with cross-functional partners to deliver technology that supports critical business operations at scale. This is an opportunity to deepen your technical craft, embrace AI-assisted development practices, and contribute to a culture of inclusion, innovation, and continuous improvement. Job Responsibilities Execute software solutions across design, development, and technical troubleshooting, thinking beyond routine or conventional approaches to build solutions and break down complex technical problems Create secure, high-quality production code and maintain algorithms that run synchronously with appropriate systems across management and support function platforms Develop and maintain scalable backend services and REST APIs using Java and Spring Boot, ensuring high availability, performance, and maintainability in a large corporate environment Build and enhance responsive, user-facing web applications using React, delivering intuitive and accessible experiences for internal and external stakeholders Deploy, manage, and monitor containerized applications using Kubernetes, ensuring platform reliability, scalability, and operational stability across environments Leverage enterprise-authorized AI coding assist tools to improve code quality, delivery speed, and productivity — including code generation, refactoring, unit test creation, and documentation — while validating outputs through peer review, automated testing, and secure coding standards; contribute learnings and reusable patterns to improve broader team effectiveness Apply knowledge of tools within the Software Development Life Cycle toolchain, including enterprise-authorized AI-assisted development and automation capabilities, to improve the value realized by automation Produce architecture and design artifacts for complex applications while ensuring design constraints are met throughout software code development Proactively identify hidden problems and patterns in data, using insights to drive improvements to coding hygiene and system architecture Contribute to a team culture of diversity, opportunity, inclusion, and respect Required qualifications, capabilities, and skills Formal training or certification on software engineering concepts and 3+ years applied experience Hands-on practical experience in system design, application development, testing, and operational stability Proficiency in Java backend development using Spring Boot, including REST API design and microservices architecture patterns Hands-on experience building and maintaining front-end applications using React or a comparable modern JavaScript framework Demonstrated experience deploying and managing containerized applications using Kubernetes in a production or near-production environment Hands-on experience using enterprise-authorized AI-assisted software development tools (e.g., for coding, test creation, troubleshooting, or documentation), with demonstrated ability to critically evaluate, validate, and refine AI-generated outputs for correctness, performance, and security Understanding of responsible AI use in engineering workflows, including data sensitivity considerations, secure handling of inputs/outputs, and adherence to resiliency and security expectations; ability to guide peers on safe and effective usage within team practices Overall knowledge of the Software Development Life Cycle Solid understanding of agile methodologies, including CI/CD, application resiliency, and security best practices Preferred qualifications, capabilities, and skills Familiarity with Commercial & Investment Bank management or operational support domain concepts such as reporting, workflow automation, or data visualization Experience with relational or distributed database technologies including SQL, Oracle, or NoSQL platforms for data modeling and query optimization Exposure to cloud infrastructure technologies including compute, container services, and storage (e.g., AWS, Azure, or GCP) Experience with observability and monitoring tooling such as Datadog, Grafana, or Splunk for production system health and incident response Knowledge of event-driven architecture patterns and asynchronous messaging frameworks such as Apache Kafka",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210759118",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-10T07:04:05.730197+00:00",
+      "jd_recovery_at": "2026-11-10T07:04:05.730197+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-10T07:04:05.730197+00:00",
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4476117968",
       "source": "linkedin",
       "company": "JPMorganChase",
@@ -63222,6 +63810,64 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4489417211",
+      "source": "linkedin",
+      "company": "JPMorganChase",
+      "title": "Software Engineer III (Java)",
+      "location": "Jersey City, NJ",
+      "posted_date": "2026-11-10",
+      "aggregator_posted_date": "2026-11-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-iii-java-at-jpmorganchase-4489417211",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "candidate:ebc2381e94": {
+          "input_hash": "0d03ed277024e9c0990b",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "588de1e269b6bae66c0e",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "02e858fcfbaca1df86db",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "f3142b0a000cf1a39405",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-10T07:05:24.327139+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "low",
+        "reason": "Engineer III may exceed target seniority, but requirements could clarify fit."
+      },
+      "linkedin_detail_triage_hash": "d7a6b500d10a5e944718",
+      "linkedin_detail_deferred_at": "2026-11-10T07:04:05.730197+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4461709050",
       "source": "linkedin",
       "company": "JPMorganChase",
@@ -64103,6 +64749,49 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4487925534",
+      "source": "linkedin",
+      "company": "Jack",
+      "title": "Software Engineer",
+      "location": "San Francisco Bay Area",
+      "posted_date": "2026-11-09",
+      "aggregator_posted_date": "2026-11-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-jack-4487925534",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "aadda0bc681cde058f22",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-10T07:05:24.327139+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Software engineering role; responsibilities and seniority are unspecified."
+      },
+      "linkedin_detail_triage_hash": "33cd3deb77d45457d8eb",
+      "linkedin_detail_deferred_at": "2026-11-10T07:04:05.730197+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4460253097",
       "source": "linkedin",
       "company": "Jack & Jill",
@@ -64620,6 +65309,49 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4487912319",
+      "source": "linkedin",
+      "company": "Joblet-AI",
+      "title": "Fullstack Software Engineer (Remote)",
+      "location": "United States",
+      "posted_date": "2026-11-09",
+      "aggregator_posted_date": "2026-11-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/fullstack-software-engineer-remote-at-joblet-ai-4487912319",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "b407577d5dac8ec6eec1",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-10T07:05:24.327139+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "Relevant full-stack role; AI association and seniority need clarification."
+      },
+      "linkedin_detail_triage_hash": "a38d21a59cbc7c89f22f",
+      "linkedin_detail_attempted_at": "2026-11-10T07:05:09.940965+00:00",
+      "enrichment_status": "deferred",
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true,
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4472033860",
@@ -67314,6 +68046,49 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4487919484",
+      "source": "linkedin",
+      "company": "LTM",
+      "title": "Full Stack .NET Developer",
+      "location": "Irving, TX",
+      "posted_date": "2026-11-09",
+      "aggregator_posted_date": "2026-11-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-net-developer-at-ltm-4487919484",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "9f8f039b4def3b298e2d",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-10T07:05:24.327139+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Full-stack development role; .NET requirements and seniority could affect fit."
+      },
+      "linkedin_detail_triage_hash": "0cc020bc4b26636db4a6",
+      "linkedin_detail_deferred_at": "2026-11-10T07:04:05.730197+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4477467793",
       "source": "linkedin",
       "company": "LVT (LiveView Technologies)",
@@ -69813,7 +70588,7 @@
       "direct_original_fetched_at": "2026-10-17T23:30:25.820907+00:00",
       "application_url": "https://app.careerpuck.com/job-board/lyft/job/8689127002?gh_jid=8689127002",
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4463615189",
@@ -71568,7 +72343,7 @@
       "title": "Software Engineer",
       "location": "San Francisco, CA",
       "posted_date": "2026-09-27",
-      "aggregator_posted_date": "2026-10-18",
+      "aggregator_posted_date": "2026-11-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-medallion-4435231668",
@@ -71583,8 +72358,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-19T04:00:20.814811+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4453273198",
@@ -74743,7 +75518,7 @@
       "direct_original_fetched_at": "2026-10-18T22:00:09.153867+00:00",
       "application_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Machine-Learning-Engineer--GeForce-G-Assist_JR2027676-1",
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460093289",
@@ -75316,7 +76091,7 @@
       "title": "Senior Software Engineer, CUDA UMD - Graphs and GPU Sharing",
       "location": "Santa Clara, CA",
       "posted_date": "2026-09-27",
-      "aggregator_posted_date": "2026-10-18",
+      "aggregator_posted_date": "2026-11-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-cuda-umd-graphs-and-gpu-sharing-at-nvidia-4395470524",
@@ -75331,15 +76106,14 @@
         ]
       },
       "recovery_methods": {},
-      "application_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Software-Engineer--CUDA-UMD---Graphs-and-GPU-Sharing_JR2014056",
-      "official_jd_fetched_at": "2026-10-18T20:42:36.809475+00:00",
-      "official_search_verified": true,
-      "enrichment_method": "official_cache",
+      "enrichment_method": "board_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-18T20:42:36.809475+00:00",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-18T22:00:09.153867+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4481628395",
@@ -79145,7 +79919,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4483345611",
@@ -79777,6 +80551,32 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4487431257",
+      "source": "linkedin",
+      "company": "Oracle",
+      "title": "Senior Application Software Engineer",
+      "location": "Nashville, TN",
+      "posted_date": "2026-11-10",
+      "aggregator_posted_date": "2026-11-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-application-software-engineer-at-oracle-4487431257",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4459268071",
       "source": "linkedin",
       "company": "Oracle",
@@ -80388,7 +81188,7 @@
       "title": "Senior Software Developer",
       "location": "Nashville, TN",
       "posted_date": "2026-09-27",
-      "aggregator_posted_date": "2026-10-18",
+      "aggregator_posted_date": "2026-11-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-developer-at-oracle-4441551240",
@@ -80409,8 +81209,8 @@
       "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-27T20:50:30.947234+00:00",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-18T22:00:09.153867+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4432750306",
@@ -87878,7 +88678,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4488785584",
@@ -87892,7 +88692,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/%23machine-learning-engineer-%E2%80%93-agentic-ai-at-qualcomm-innovation-center-inc-4488785584",
       "official_url": "",
-      "description": "",
+      "description": "Company: Qualcomm Technologies, Inc. Job Area: Engineering Group, Engineering Group > Modem Technologies Software General Summary: *** This position is not eligible for Qualcomm immigration sponsorship.*** We are seeking an experienced Machine Learning Engineer specializing in Agentic AI to join our Core Enterprise AI team. The ideal candidate will design, develop, and deploy next-generation AI systems powered by Large Language Models (LLMs), Agentic AI, Hybrid AI architectures, Retrieval-Augmented Generation (RAG), and autonomous intelligent agents . This role focuses on building enterprise-grade AI solutions capable of reasoning, planning, tool usage, workflow orchestration, and autonomous task execution. Key Responsibilities: Design and implement Agentic AI systems capable of autonomous reasoning, planning, tool usage, and multi-step execution to solve complex enterprise problems. Build and optimize RAG, Hybrid AI, and knowledge-grounded architectures that augment LLMs with enterprise data, external tools, and domain-specific context. Develop and advance self-improving AI agents leveraging feedback loops, reflection, reinforcement learning techniques, automated evaluations, memory systems, and continuous learning frameworks. Research, develop, and apply LLM post-training techniques , including supervised fine-tuning (SFT), preference optimization, reinforcement learning, distillation, and domain adaptation to improve model performance for enterprise use cases. Create robust evaluation, benchmarking, observability, and safety frameworks for measuring agent quality, reliability, efficiency, and business impact. Build and maintain multi-agent systems and orchestration frameworks that enable collaborative agent workflows and intelligent task automation. Collaborate with cross-functional teams to identify high-value opportunities and deliver scalable AI solutions that drive measurable business outcomes. Stay at the forefront of advancements in Agentic AI, reasoning models, post-training, model routing, autonomous agents, and enterprise AI architectures , bringing innovative solutions into production. Minimum Qualifications: • Bachelor's degree in Computer Engineering, Computer Science, Electrical Engineering, or related field. Preferred Qualifications: Experience with popular LLM frameworks (Langchain, LlamaIndex, Transformers) Knowledge of prompt engineering and chain-of-thought techniques Experience with containerization and microservices architecture Background in Reinforcement Learning Contributions to open-source AI projects Experience with ML ops and model deployment pipelines Skills and Competencies: Strong programming skills in Python and experience with ML frameworks (PyTorch, TensorFlow) Practical experience with LLM deployments and fine-tuning Experience with vector databases and embedding models Familiarity with modern AI/ML infrastructure and cloud platforms (AWS, GCP, Azure) Strong understanding of RAG architectures and implementation Strong problem-solving and analytical skills Excellent communication and collaboration abilities Experience with agile development methodologies Ability to balance multiple projects and priorities Strong focus on code quality and best practices Understanding of AI ethics and responsible AI development Qualcomm is an equal opportunity employer. If you are an individual with a disability and need an accommodation during the application/hiring process, rest assured that Qualcomm is committed to providing an accessible process. You may e-mail disability-accomodations@qualcomm.com or call Qualcomm's toll-free number found here . Upon request, Qualcomm will provide reasonable accommodations to support individuals with disabilities to be able participate in the hiring process. Qualcomm is also committed to making our workplace accessible for individuals with disabilities. (Keep in mind that this email address is used to provide reasonable accommodations for individuals with disabilities. We will not respond here to requests for updates on applications or resume inquiries). To all Staffing and Recruiting Agencies : Our Careers Site is only for individuals seeking a job at Qualcomm. Staffing and recruiting agencies and individuals being represented by an agency are not authorized to use this site or to submit profiles, applications or resumes, and any such submissions will be considered unsolicited. Qualcomm does not accept unsolicited resumes or applications from agencies. Please do not forward resumes to our jobs alias, Qualcomm employees or any other company location. Qualcomm is not responsible for any fees related to unsolicited resumes/applications. EEO Employer: Qualcomm is an equal opportunity employer; all qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, Veteran status, or any other protected classification. Qualcomm expects its employees to abide by all applicable policies and procedures, including but not limited to security and other requirements regarding protection of Company confidential information and other confidential and/or proprietary information, to the extent those requirements are permissible under applicable law. Pay range and Other Compensation & Benefits : $114,500.00 - $171,700.00 The above pay scale reflects the broad, minimum to maximum, pay scale for this job code for the location for which it has been posted. Even more importantly, please note that salary is only one component of total compensation at Qualcomm. We also offer a competitive annual discretionary bonus program and opportunity for annual RSU grants (employees on sales-incentive plans are not eligible for our annual bonus). In addition, our highly competitive benefits package is designed to support your success at work, at home, and at play. Your recruiter will be happy to discuss all that Qualcomm has to offer – and you can review more details about our US benefits at this link . If you would like more information about this role, please contact Qualcomm Careers .",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-08T20:00:38.552738+00:00",
@@ -87933,10 +88733,13 @@
       },
       "linkedin_detail_triage_hash": "4ecdde5b892486fd3142",
       "linkedin_detail_deferred_at": "2026-11-08T20:00:38.552738+00:00",
-      "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "recovery_detail_budget",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "linkedin_detail_attempted_at": "2026-11-10T07:05:09.940965+00:00",
+      "linkedin_detail_fetched_at": "2026-11-10T07:05:09.940965+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4478324045",
@@ -88936,6 +89739,32 @@
       "official_search_status": "no_match",
       "source_verified_at": "2026-09-23T21:01:41.872169+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4487430804",
+      "source": "linkedin",
+      "company": "Rad AI",
+      "title": "Senior Software Engineer, Full Stack - Reporting Product",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-11-10",
+      "aggregator_posted_date": "2026-11-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-full-stack-reporting-product-at-rad-ai-4487430804",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468169697",
@@ -93282,7 +94111,7 @@
       "official_jd_fetched_at": "2026-10-17T23:30:25.820907+00:00",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4481975804",
@@ -99553,7 +100382,7 @@
       "title": "Full Stack Software Engineer",
       "location": "Hawthorne, CA",
       "posted_date": "2026-10-18",
-      "aggregator_posted_date": "2026-10-18",
+      "aggregator_posted_date": "2026-11-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-spacex-4463718858",
@@ -99568,8 +100397,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-19T04:00:20.814811+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4398057793",
@@ -99822,7 +100651,7 @@
       "title": "Full Stack Software Engineer, Launch Software",
       "location": "Cape Canaveral, FL",
       "posted_date": "2026-09-28",
-      "aggregator_posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-11-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-launch-software-at-spacex-4472498421",
@@ -99836,6 +100665,7 @@
           "full-stack engineer"
         ]
       },
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "recovery_methods": {
         "generic_search": {
           "input_hash": "b4e1ba6b6bbede2d0298",
@@ -99843,20 +100673,8 @@
           "outcome": "no_match"
         }
       },
-      "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_cooldown",
-      "source_verified_at": "2026-09-29T05:14:01.400356+00:00",
-      "verified_this_run": false,
-      "recovery_triage": {
-        "action": "recover",
-        "priority": "high",
-        "confidence": 0.89,
-        "delta": 5,
-        "reason": "Full-stack software role directly relevant"
-      },
-      "recovery_input_hash": "d5297fcca8aedde4bec3",
-      "official_search_attempted_at": "2026-09-29T05:14:23.661396+00:00",
-      "official_search_status": "no_match"
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4452627519",
@@ -101127,7 +101945,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4445407063",
@@ -103852,6 +104670,49 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-30T05:09:06.244547+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4488452353",
+      "source": "linkedin",
+      "company": "T-Mobile",
+      "title": "T-Ads Engineer, Software Full Stack",
+      "location": "Bellevue, WA",
+      "posted_date": "2026-11-10",
+      "aggregator_posted_date": "2026-11-10",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/t-ads-engineer-software-full-stack-at-t-mobile-4488452353",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "9dc918aa7556307d8468",
+          "attempted_at": "2026-11-10T07:04:05.730197+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-10T07:05:24.327139+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Full-stack software role; ad-tech responsibilities and qualifications could affect fit."
+      },
+      "linkedin_detail_triage_hash": "d22b5208f2cdcc2c963e",
+      "linkedin_detail_deferred_at": "2026-11-10T07:04:05.730197+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469337524",
@@ -116620,7 +117481,7 @@
       "title": "Senior, Software Engineer - Python",
       "location": "Sunnyvale, CA",
       "posted_date": "2026-09-27",
-      "aggregator_posted_date": "2026-10-18",
+      "aggregator_posted_date": "2026-11-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-python-at-walmart-4405599209",
@@ -116635,8 +117496,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-18T22:00:09.153867+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4444186290",
@@ -116836,7 +117697,7 @@
       "title": "Senior Software Engineer- Backend",
       "location": "Sunnyvale, CA",
       "posted_date": "2026-09-26",
-      "aggregator_posted_date": "2026-10-18",
+      "aggregator_posted_date": "2026-11-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-backend-at-walmart-global-tech-4416365897",
@@ -116847,13 +117708,12 @@
       "first_seen": "2026-09-06T00:48:23.207467+00:00",
       "discovery_queries": {
         "linkedin": [
-          "backend engineer",
           "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-18T22:00:09.153867+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4398410645",
@@ -117644,31 +118504,6 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-10-17T23:30:25.820907+00:00",
-      "verified_this_run": false
-    },
-    {
-      "job_id": "4461439688",
-      "source": "linkedin",
-      "company": "Weights & Biases",
-      "title": "Senior Software Engineer, Weave - Weights & Biases",
-      "location": "Seattle, WA",
-      "posted_date": "2026-09-26",
-      "aggregator_posted_date": "2026-10-18",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-weave-weights-biases-at-weights-biases-4461439688",
-      "official_url": "",
-      "description": "",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "2026-09-05T11:58:36.340966+00:00",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer"
-        ]
-      },
-      "recovery_methods": {},
-      "source_verified_at": "2026-10-18T22:00:09.153867+00:00",
       "verified_this_run": false
     },
     {
@@ -118555,7 +119390,7 @@
       "title": "C++ Software Engineer – WEX",
       "location": "Chicago, IL",
       "posted_date": "2026-09-26",
-      "aggregator_posted_date": "2026-10-18",
+      "aggregator_posted_date": "2026-11-09",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/c%2B%2B-software-engineer-%E2%80%93-wex-at-wolverine-trading-4453734725",
@@ -118570,8 +119405,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-18T22:00:09.153867+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4467882411",
@@ -119365,6 +120200,32 @@
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": false,
       "recovery_status": "filtered"
+    },
+    {
+      "job_id": "4488867480",
+      "source": "linkedin",
+      "company": "Xplor Technologies",
+      "title": "Senior Software Engineer",
+      "location": "Atlanta, GA",
+      "posted_date": "2026-11-09",
+      "aggregator_posted_date": "2026-11-09",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-at-xplor-technologies-4488867480",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-10T07:04:05.730197+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4387663037",
