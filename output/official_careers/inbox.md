@@ -1,23 +1,34 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-11-09 16:45 PST
-- Snapshot (UTC): 2026-11-10T00:45:17.081455+00:00
-- Jobs: 17 (Tier A/B only)
-- Last 24 hours: 0
-- Last 3 days: 17
+- Updated (PT): 2026-11-10 07:48 PST
+- Snapshot (UTC): 2026-11-10T15:48:35.613356+00:00
+- Jobs: 28 (Tier A/B only)
+- Last 24 hours: 11
+- Last 3 days: 28
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 88 | official | Apple | Software Engineer, Deployment Compliance | Seattle, United States of America | 2026-11-10 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200691617/software-engineer-deployment-compliance) |
+| A | 86 | official | Google | Software Engineer, AI/ML, ML Infrastructure, Search Ads | Mountain View, CA, USA; Pittsburgh, PA, USA | 2026-11-10 | 3to24h | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/115014381934125766-software-engineer-ai-ml-ml-infrastructure-search-ads) |
 | A | 92 | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-11-09 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557053863) |
 | A | 90 | official | Amazon | Software Development Engineer, Audible AI Voice Production | Cambridge, Massachusetts, USA | 2026-11-09 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10599972/software-development-engineer-audible-ai-voice-production) |
 | A | 87 | official | Microsoft | Software Engineering | United States, Washington, Redmond | 2026-11-09 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557039397) |
 | A | 89 | official | Notion | Software Engineer, Web Infrastructure | San Francisco, California; San Francisco, California, United States; New York, New York; Remote, United States | 2026-11-09 | 1to3d | - | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/notion/06c2599d-4dd5-4f97-843f-7194b546f042) |
 | A | 86 | official | Visa | Associate Data Engineer | US - Foster City, CA | 2026-11-09 | 1to3d | Visa | unreviewed | official_canonical | [open](https://visa.wd5.myworkdayjobs.com/Visa/job/US---Foster-City-CA/Associate-Data-Engineer_REF089618W) |
-| B | 85 | official | Google | Software Engineer III, Full Stack | Cambridge, MA, USA | 2026-11-09 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/81817033515115206-software-engineer-iii-full-stack) |
+| B | 84 | official | Microsoft | Software Engineer 2 - CoreAI | United States, Washington, Redmond | 2026-11-10 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557042277) |
+| B | 75 | official | Microsoft | Software Engineer/Developer | United States, Washington, Redmond; United States, North Dakota, Fargo; United States, North Carolina, Charlotte; United States, Texas, Las Colinas | 2026-11-10 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556943785) |
+| B | 75 | official | Capital One | Full-stack Engineer 4 | McLean, VA; Richmond, VA | 2026-11-10 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4--Manager-IC-_R1001253-1) |
+| B | 75 | official | Capital One | Data Engineer 4 - Nexus Products | New York, NY | 2026-11-10 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Data-Engineer-4---Nexus-Products_R1001571-1) |
+| B | 75 | official | Capital One | Data Engineer 4 - Payment Networks | New York, NY | 2026-11-10 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Data-Engineer-4---Payment-Networks_R1001573-1) |
+| B | 75 | official | Capital One | Data Engineer 4 - HR Tech | McLean, VA; Richmond, VA | 2026-11-10 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Data-Engineer-4---HR-Tech_R1001595-1) |
+| B | 75 | official | Capital One | Full Stack Engineer 5 - Global Workforce Services - AI Automation | Richmond, VA; McLean, VA | 2026-11-10 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-Stack-Engineer-5---Global-Workforce-Services---AI-Automation_R1003984-1) |
+| B | 75 | official | Dell | Agentic Context Engineering Architect & AI Practitioner | Hopkinton, MA, United States | 2026-11-10 | 3to24h | Dell | unreviewed | official_canonical | [open](https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/299014) |
+| B | 76 | official | Amazon | Software Development Engineer | Newark, New Jersey, USA | 2026-11-10 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10601102/software-development-engineer) |
 | B | 84 | official | Apple | Tools & Automation Engineer — Early Career | Sunnyvale, United States of America | 2026-11-09 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200692689/tools-automation-engineer-early-career) |
 | B | 75 | official | Microsoft | Software Engineer II | United States, Washington, Redmond | 2026-11-09 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557044529) |
+| B | 75 | official | Capital One | Data Engineer 4 | McLean, VA; Richmond, VA; Chicago, IL; Plano, TX | 2026-11-09 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Data-Engineer-4_R1002442-1) |
 | B | 75 | official | Capital One | Data Engineer 4 | McLean, VA; Chicago, IL | 2026-11-09 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Data-Engineer-4_R1001834-1) |
 | B | 75 | official | Capital One | Full-stack Engineer 4 - RiskTech | McLean, VA; Richmond, VA | 2026-11-09 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4---RiskTech_R1001603-1) |
 | B | 75 | official | Capital One | Full Stack Engineer 4 (Python, AWS, AI, Snowflake, Databricks) | Plano, TX; McLean, VA; Richmond, VA; Chicago, IL; New York, NY | 2026-11-09 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-Stack-Engineer-4--Python--AWS--AI--Snowflake--Databricks-_R1000984-1) |
