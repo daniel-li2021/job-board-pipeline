@@ -3,32 +3,6 @@
   "events": [
     {
       "pipeline": "syncareer",
-      "stamp": "2026-10-26_2351",
-      "emitted_at": "2026-10-26T23:51:38.930741+00:00",
-      "event_kind": "new_matching",
-      "count": 1,
-      "jobs": [
-        {
-          "canonical_job_key": "id::syncareer::d6f6e40fb6379defb2e63b07690f2be3",
-          "job_id": "d6f6e40fb6379defb2e63b07690f2be3",
-          "tier": "B",
-          "match_score": 83.0,
-          "fit_score": 83.0,
-          "company": "Paycom",
-          "title": "Software Developer",
-          "location": "Grapevine, Texas, United States",
-          "posted_date": "2026-10-24",
-          "posting_date": "2026-10-24",
-          "date_confidence": "medium",
-          "first_seen": "2026-10-25T23:51:18.742556+00:00",
-          "review_status": "unreviewed",
-          "job_url": "https://pc00.paycomonline.com/v4/ats/web.php/portal/A38173AIE92874820ALRE20847CDE927PIW76526/jobs/570247",
-          "url": "https://pc00.paycomonline.com/v4/ats/web.php/portal/A38173AIE92874820ALRE20847CDE927PIW76526/jobs/570247"
-        }
-      ]
-    },
-    {
-      "pipeline": "syncareer",
       "stamp": "2026-10-27_1451",
       "emitted_at": "2026-10-27T14:52:48.498366+00:00",
       "event_kind": "new_matching",
@@ -7822,6 +7796,83 @@
           "review_status": "unreviewed",
           "job_url": "https://internaljobs.wincofoods.com/internal/jobs/156821-internal?lang=en-us",
           "url": "https://internaljobs.wincofoods.com/internal/jobs/156821-internal?lang=en-us"
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
+      "stamp": "2026-11-10_0051",
+      "emitted_at": "2026-11-10T00:51:47.274230+00:00",
+      "event_kind": "new_matching",
+      "count": 4,
+      "jobs": [
+        {
+          "canonical_job_key": "id::syncareer::250bc6fd0578fe6bc724fddda669fab2",
+          "job_id": "250bc6fd0578fe6bc724fddda669fab2",
+          "tier": "A",
+          "match_score": 92.0,
+          "fit_score": 92.0,
+          "company": "The Brattle Group",
+          "title": "Data and AI Engineer - July 2027",
+          "location": "San Francisco, California, United States",
+          "posted_date": "2026-11-07",
+          "posting_date": "2026-11-07",
+          "date_confidence": "medium",
+          "first_seen": "2026-11-09T00:51:15.368932+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4751955005",
+          "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4751955005"
+        },
+        {
+          "canonical_job_key": "id::syncareer::58340b3d6d3c8c79b4f3a54892169f74",
+          "job_id": "58340b3d6d3c8c79b4f3a54892169f74",
+          "tier": "B",
+          "match_score": 92.0,
+          "fit_score": 92.0,
+          "company": "New York Times",
+          "title": "Backend Engineering Intern",
+          "location": "New York, New York, United States",
+          "posted_date": "2026-11-07",
+          "posting_date": "2026-11-07",
+          "date_confidence": "medium",
+          "first_seen": "2026-11-08T15:51:13.442792+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://job-boards.greenhouse.io/thenewyorktimes/jobs/4751973005",
+          "url": "https://job-boards.greenhouse.io/thenewyorktimes/jobs/4751973005"
+        },
+        {
+          "canonical_job_key": "id::syncareer::25d4ec6c91eefa8b4a18e78cccbfa240",
+          "job_id": "25d4ec6c91eefa8b4a18e78cccbfa240",
+          "tier": "B",
+          "match_score": 91.0,
+          "fit_score": 91.0,
+          "company": "New York Times",
+          "title": "Full-Stack Engineering Intern",
+          "location": "New York, New York, United States",
+          "posted_date": "2026-11-07",
+          "posting_date": "2026-11-07",
+          "date_confidence": "medium",
+          "first_seen": "2026-11-08T15:51:13.442792+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://job-boards.greenhouse.io/thenewyorktimes/jobs/4751907005",
+          "url": "https://job-boards.greenhouse.io/thenewyorktimes/jobs/4751907005"
+        },
+        {
+          "canonical_job_key": "id::syncareer::bb064c786ac27b5ffb71e50cce37a4a2",
+          "job_id": "bb064c786ac27b5ffb71e50cce37a4a2",
+          "tier": "B",
+          "match_score": 86.0,
+          "fit_score": 86.0,
+          "company": "Affirm",
+          "title": "Software Engineer II, Backend",
+          "location": "United States",
+          "posted_date": "2026-11-07",
+          "posting_date": "2026-11-07",
+          "date_confidence": "medium",
+          "first_seen": "2026-11-08T15:51:13.442792+00:00",
+          "review_status": "unreviewed",
+          "job_url": "https://job-boards.greenhouse.io/affirm/jobs/8196112003",
+          "url": "https://job-boards.greenhouse.io/affirm/jobs/8196112003"
         }
       ]
     }

@@ -1,9 +1,9 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-11-09 07:52 PST
-- Snapshot (UTC): 2026-11-09T15:52:21.805854+00:00
+- Updated (PT): 2026-11-09 16:51 PST
+- Snapshot (UTC): 2026-11-10T00:51:47.273985+00:00
 - Jobs: 28
-- Last 24 hours: 1
+- Last 24 hours: 0
 - Last 3 days: 28
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
@@ -11,7 +11,7 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | A | 92.0 | Syncareer | The Brattle Group | Data and AI Engineer - July 2027 | San Francisco, California, United States | 2026-11-07 | No sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/thebrattlegroup/jobs/4751955005) |
-| A | 86.0 | Syncareer | Affirm | Software Engineer II, Backend | United States | 2026-11-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/affirm/jobs/8196112003) |
+| B | 86.0 | Syncareer | Affirm | Software Engineer II, Backend | United States | 2026-11-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/affirm/jobs/8196112003) |
 | B | 92.0 | Syncareer | New York Times | Backend Engineering Intern | New York, New York, United States | 2026-11-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/thenewyorktimes/jobs/4751973005) |
 | B | 91.0 | Syncareer | New York Times | Full-Stack Engineering Intern | New York, New York, United States | 2026-11-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/thenewyorktimes/jobs/4751907005) |
 | B | 81.0 | Syncareer | WinCo Foods | Software Developer | Boise, Idaho, United States | 2026-11-06 | Sponsor | - | unreviewed | not_dedicated | [open](https://internaljobs.wincofoods.com/internal/jobs/156821-internal?lang=en-us) |

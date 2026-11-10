@@ -1,16 +1,6 @@
 {
   "receipts": [
     {
-      "id": "3da91dc5ba4917e994338b2d1a4a0b15ea4d06e39f34773601d5c83f592a164b",
-      "pipeline": "syncareer",
-      "stamp": "2026-10-26_2351",
-      "title": "Syncareer alert 2026-10-26_2351 (1 new A/B)",
-      "body": "Syncareer alert — 2026-10-26_2351\n\nUpdated (PT): 2026-10-26 16:51 PDT\nSnapshot (UTC): 2026-10-26T23:51:38.873198+00:00\n\n1 new matching job(s) this run (hard-filtered).\n\nIf you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).\n\n| Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| B | 83.0 | Syncareer | Paycom | Software Developer | Grapevine, Texas, United States | 2026-10-24 | No sponsor | - | unreviewed | not_dedicated | [open](https://pc00.paycomonline.com/v4/ats/web.php/portal/A38173AIE92874820ALRE20847CDE927PIW76526/jobs/570247) |\n\nInbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-10-26_2351.csv`.",
-      "status": "delivered",
-      "issue_url": "https://github.com/daniel-li2021/job-board-pipeline/issues/232",
-      "delivered_at": "2026-10-26T23:51:47.003147+00:00"
-    },
-    {
       "id": "6bdc5273c591ed0994f1086f88d30200c94847e67f6321be7c82ccf92bb5dc73",
       "pipeline": "syncareer",
       "stamp": "2026-10-27_1451",
@@ -269,6 +259,14 @@
       "status": "delivered",
       "issue_url": "https://github.com/daniel-li2021/job-board-pipeline/issues/286",
       "delivered_at": "2026-11-09T15:52:29.417672+00:00"
+    },
+    {
+      "id": "784e63fb67a61020af450a069638d9521bf81e9255f3e6607cfac5584cd341e4",
+      "pipeline": "syncareer",
+      "stamp": "2026-11-10_0051",
+      "title": "Syncareer alert 2026-11-10_0051 (4 new A/B)",
+      "body": "Syncareer alert — 2026-11-10_0051\n\nUpdated (PT): 2026-11-09 16:51 PST\nSnapshot (UTC): 2026-11-10T00:51:47.218959+00:00\n\n4 new matching job(s) this run (hard-filtered).\n\nIf you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).\n\n| Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| A | 92.0 | Syncareer | The Brattle Group | Data and AI Engineer - July 2027 | San Francisco, California, United States | 2026-11-07 | No sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/thebrattlegroup/jobs/4751955005) |\n| B | 92.0 | Syncareer | New York Times | Backend Engineering Intern | New York, New York, United States | 2026-11-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/thenewyorktimes/jobs/4751973005) |\n| B | 91.0 | Syncareer | New York Times | Full-Stack Engineering Intern | New York, New York, United States | 2026-11-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/thenewyorktimes/jobs/4751907005) |\n| B | 86.0 | Syncareer | Affirm | Software Engineer II, Backend | United States | 2026-11-07 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/affirm/jobs/8196112003) |\n\nInbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-11-10_0051.csv`.",
+      "status": "pending"
     }
   ]
 }

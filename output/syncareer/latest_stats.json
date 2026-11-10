@@ -1,31 +1,30 @@
 {
-  "run_at": "2026-11-09T15:52:19.277759+00:00",
-  "elapsed_seconds": 63.107,
-  "remote_elapsed_seconds": 38.821,
+  "run_at": "2026-11-10T00:51:44.916426+00:00",
+  "elapsed_seconds": 32.249,
+  "remote_elapsed_seconds": 23.189,
   "funnel": {
-    "scoring_candidates": 58
+    "scoring_candidates": 24
   },
   "llm": {
-    "reused": 52,
-    "llm": 5,
-    "new_or_changed": 8,
-    "rule": 6,
-    "sent": 5,
+    "reused": 21,
+    "llm": 2,
+    "new_or_changed": 3,
+    "rule": 1,
+    "sent": 2,
     "api_requests": 2,
-    "recency_skipped": 3,
+    "recency_skipped": 1,
     "overflow": 0,
-    "peer_reused": 5,
-    "thin_source_rule": 3,
+    "peer_reused": 0,
+    "thin_source_rule": 0,
     "retryable_fallbacks": 0,
     "historical_seen_skipped": 0,
     "historical_llm_retained": 0,
     "non_material_change_reused": 0,
     "same_content_reused": 0,
-    "rescored_within_24h": 2,
+    "rescored_within_24h": 1,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 1,
       "material_jd_change": 2,
-      "prior_rule_result_now_eligible_for_llm": 5
+      "prior_rule_result_now_eligible_for_llm": 1
     },
     "batch_size": 10,
     "primary_batches_total": 2,
@@ -38,8 +37,8 @@
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 15.698,
-    "json_results": 3,
+    "latency_seconds": 7.055,
+    "json_results": 2,
     "batches": [
       {
         "batch": 1,
@@ -50,57 +49,36 @@
             "key": "url::https://talentojo.kpit.com/tojo/app/job-apply",
             "company": "KPIT Technologies",
             "title": "Test Engineer (Automotive Software Engineer)"
-          },
-          {
-            "key": "url::https://jobs.lever.co/neighbor/3c27afec-628f-4305-9519-9b525035e3f0",
-            "company": "Neighbor",
-            "title": "Software Engineer"
-          },
-          {
-            "key": "url::https://talentojo.kpit.com/tojo/app/job-apply",
-            "company": "KPIT Technologies",
-            "title": "Automotive Engineer (Automotive Software Engineer)"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 8.452,
+        "latency_seconds": 3.773,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 2,
-          "input_tokens": 3425,
+          "jobs_scored": 1,
+          "input_tokens": 2316,
           "cached_input_tokens": 1851,
-          "output_tokens": 733,
-          "reasoning_tokens": 512,
-          "estimated_usd": 0.000542
+          "output_tokens": 318,
+          "reasoning_tokens": 232,
+          "estimated_usd": 0.000224
         },
         "decisions": [
           {
             "key": "url::https://talentojo.kpit.com/tojo/app/job-apply",
-            "match_score": 18.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Software development experience"
-            ],
-            "main_gaps": [
-              "Automotive mechanical design"
-            ]
-          },
-          {
-            "key": "url::https://jobs.lever.co/neighbor/3c27afec-628f-4305-9519-9b525035e3f0",
-            "match_score": 74.0,
+            "match_score": 66.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Full-stack software development",
-              "React, TypeScript, AWS"
+              "Automated test frameworks",
+              "CI/CD and defect analysis"
             ],
             "main_gaps": [
-              "2+ years full-time experience"
+              "Automotive-domain experience",
+              "Automotive system-level testing"
             ]
           }
         ]
@@ -114,62 +92,57 @@
             "key": "url::https://www.kforce.com/find-work/search-jobs",
             "company": "Kforce",
             "title": "Java Software Developer"
-          },
-          {
-            "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "company": "Kforce",
-            "title": "Data Engineer"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 7.246,
+        "latency_seconds": 3.282,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
           "jobs_scored": 1,
-          "input_tokens": 3809,
+          "input_tokens": 3328,
           "cached_input_tokens": 2724,
-          "output_tokens": 606,
-          "reasoning_tokens": 466,
-          "estimated_usd": 0.000439
+          "output_tokens": 249,
+          "reasoning_tokens": 163,
+          "estimated_usd": 0.000212
         },
         "decisions": [
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 70.0,
-            "seniority_fit": "stretch",
+            "match_score": 72.0,
+            "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Python/Spark data pipelines",
-              "Cloud data workflows"
+              "Backend APIs and distributed systems",
+              "Dockerized cloud services"
             ],
             "main_gaps": [
-              "3-5 years data engineering",
-              "Workflow orchestration"
+              "Hands-on Java/Spring Boot experience",
+              "Messaging and queuing technologies"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 5,
-    "input_tokens": 7234,
+    "jobs_scored": 2,
+    "input_tokens": 5644,
     "cached_input_tokens": 4575,
-    "output_tokens": 1339,
-    "reasoning_tokens": 978,
-    "estimated_usd": 0.000981,
+    "output_tokens": 567,
+    "reasoning_tokens": 395,
+    "estimated_usd": 0.000436,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 5
+    "scored": 2
   },
   "output": {
-    "tier_a": 5,
-    "tier_b": 4,
-    "tier_c": 49,
-    "shown": 9,
+    "tier_a": 1,
+    "tier_b": 3,
+    "tier_c": 20,
+    "shown": 4,
     "new_jobs": 4,
     "new_jobs_added": 0
   },
@@ -182,15 +155,15 @@
       "query": "Software",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 6,
-      "stop_reason": "page_budget",
-      "raw_jobs": 77,
-      "unique_jobs": 77,
-      "unique_contribution": 77,
-      "first_pass_survivors": 58,
-      "original_postings_resolved": 15,
-      "jds_resolved": 14,
-      "elapsed_seconds": 3.328
+      "pages_fetched": 4,
+      "stop_reason": "empty_page",
+      "raw_jobs": 37,
+      "unique_jobs": 37,
+      "unique_contribution": 37,
+      "first_pass_survivors": 24,
+      "original_postings_resolved": 7,
+      "jds_resolved": 6,
+      "elapsed_seconds": 1.823
     },
     {
       "query": "Full Stack",
@@ -198,27 +171,27 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 5,
-      "first_pass_survivors": 4,
+      "raw_jobs": 4,
+      "unique_jobs": 4,
+      "unique_contribution": 3,
+      "first_pass_survivors": 2,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.773
+      "elapsed_seconds": 0.656
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 5,
+      "pages_fetched": 4,
       "stop_reason": "empty_page",
-      "raw_jobs": 49,
-      "unique_jobs": 49,
-      "unique_contribution": 36,
-      "first_pass_survivors": 24,
+      "raw_jobs": 33,
+      "unique_jobs": 33,
+      "unique_contribution": 23,
+      "first_pass_survivors": 18,
       "original_postings_resolved": 11,
       "jds_resolved": 10,
-      "elapsed_seconds": 2.07
+      "elapsed_seconds": 1.49
     },
     {
       "query": "Machine Learning",
@@ -226,13 +199,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 9,
-      "unique_jobs": 9,
-      "unique_contribution": 7,
-      "first_pass_survivors": 5,
+      "raw_jobs": 7,
+      "unique_jobs": 7,
+      "unique_contribution": 5,
+      "first_pass_survivors": 4,
       "original_postings_resolved": 2,
       "jds_resolved": 2,
-      "elapsed_seconds": 0.61
+      "elapsed_seconds": 0.544
     },
     {
       "query": "Infrastructure",
@@ -240,13 +213,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 13,
-      "unique_jobs": 13,
-      "unique_contribution": 9,
-      "first_pass_survivors": 6,
-      "original_postings_resolved": 4,
-      "jds_resolved": 4,
-      "elapsed_seconds": 0.605
+      "raw_jobs": 5,
+      "unique_jobs": 5,
+      "unique_contribution": 4,
+      "first_pass_survivors": 3,
+      "original_postings_resolved": 2,
+      "jds_resolved": 2,
+      "elapsed_seconds": 0.566
     },
     {
       "query": "Forward Deployed",
@@ -260,7 +233,7 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 0.626
+      "elapsed_seconds": 0.537
     },
     {
       "query": "DevOps",
@@ -274,7 +247,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.173
+      "elapsed_seconds": 0.109
     },
     {
       "query": "Backend",
@@ -282,30 +255,16 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 8,
-      "unique_jobs": 8,
-      "unique_contribution": 5,
-      "first_pass_survivors": 5,
-      "original_postings_resolved": 2,
-      "jds_resolved": 2,
-      "elapsed_seconds": 0.61
+      "raw_jobs": 4,
+      "unique_jobs": 4,
+      "unique_contribution": 3,
+      "first_pass_survivors": 2,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.525
     },
     {
       "query": "Platform",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 2,
-      "stop_reason": "empty_page",
-      "raw_jobs": 10,
-      "unique_jobs": 10,
-      "unique_contribution": 6,
-      "first_pass_survivors": 9,
-      "original_postings_resolved": 2,
-      "jds_resolved": 2,
-      "elapsed_seconds": 0.624
-    },
-    {
-      "query": "New Grad",
       "group": "syncareer",
       "page_budget": 6,
       "pages_fetched": 1,
@@ -316,10 +275,38 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.131
+      "elapsed_seconds": 0.101
+    },
+    {
+      "query": "New Grad",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 2,
+      "stop_reason": "empty_page",
+      "raw_jobs": 4,
+      "unique_jobs": 4,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.532
     },
     {
       "query": "LLM",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 1,
+      "stop_reason": "empty_page",
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.103
+    },
+    {
+      "query": "Data Engineer",
       "group": "syncareer",
       "page_budget": 6,
       "pages_fetched": 2,
@@ -330,21 +317,7 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.603
-    },
-    {
-      "query": "Data Engineer",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 2,
-      "stop_reason": "empty_page",
-      "raw_jobs": 5,
-      "unique_jobs": 5,
-      "unique_contribution": 3,
-      "first_pass_survivors": 3,
-      "original_postings_resolved": 0,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.593
+      "elapsed_seconds": 0.547
     },
     {
       "query": "Site Reliability",
@@ -358,14 +331,14 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.131
+      "elapsed_seconds": 0.102
     }
   ],
   "enrichment": {
-    "needed": 6,
-    "detail_api_resolved": 94,
+    "needed": 1,
+    "detail_api_resolved": 49,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 6
+    "remaining_no_jd": 1
   }
 }

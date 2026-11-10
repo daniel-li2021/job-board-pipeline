@@ -2,6 +2,159 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-11-10T00:51:44.916426+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 2,
+      "cache_reused": 21,
+      "peer_reused": 0,
+      "same_content_reused": 0,
+      "non_material_change_reused": 0,
+      "new_or_changed": 3,
+      "new_or_changed_reasons": {
+        "material_jd_change": 2,
+        "prior_rule_result_now_eligible_for_llm": 1
+      },
+      "rescored_within_24h": 1,
+      "fallback_count": 0,
+      "rule_count": 1,
+      "requests": 2,
+      "input_tokens": 5644,
+      "cached_input_tokens": 4575,
+      "output_tokens": 567,
+      "reasoning_tokens": 395,
+      "estimated_usd": 0.000436,
+      "latency_seconds": 7.055,
+      "latency_measured": true,
+      "effective_rpm": 17.01,
+      "effective_tpm": 52822.11,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 2,
+      "funnel": {
+        "scoring_candidates": 24
+      },
+      "output": {
+        "tier_a": 1,
+        "tier_b": 3,
+        "tier_c": 20,
+        "shown": 4,
+        "new_jobs": 4,
+        "new_jobs_added": 0
+      },
+      "enrichment": {
+        "needed": 1,
+        "detail_api_resolved": 49,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 1
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://talentojo.kpit.com/tojo/app/job-apply",
+              "company": "KPIT Technologies",
+              "title": "Test Engineer (Automotive Software Engineer)"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.773,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2316,
+            "cached_input_tokens": 1851,
+            "output_tokens": 318,
+            "reasoning_tokens": 232,
+            "estimated_usd": 0.000224
+          },
+          "decisions": [
+            {
+              "key": "url::https://talentojo.kpit.com/tojo/app/job-apply",
+              "match_score": 66.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Automated test frameworks",
+                "CI/CD and defect analysis"
+              ],
+              "main_gaps": [
+                "Automotive-domain experience",
+                "Automotive system-level testing"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "Java Software Developer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.282,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3328,
+            "cached_input_tokens": 2724,
+            "output_tokens": 249,
+            "reasoning_tokens": 163,
+            "estimated_usd": 0.000212
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "match_score": 72.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend APIs and distributed systems",
+                "Dockerized cloud services"
+              ],
+              "main_gaps": [
+                "Hands-on Java/Spring Boot experience",
+                "Messaging and queuing technologies"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-11-09T15:52:19.277759+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -12099,69 +12252,6 @@
           ]
         }
       ]
-    },
-    {
-      "pipeline": "syncareer",
-      "run_at": "2026-10-30T23:53:48.871891+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "",
-      "reasoning_effort": "",
-      "jobs_scored": 0,
-      "cache_reused": 8,
-      "peer_reused": 8,
-      "same_content_reused": 0,
-      "non_material_change_reused": 0,
-      "new_or_changed": 0,
-      "new_or_changed_reasons": {},
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 2,
-      "requests": 0,
-      "input_tokens": 0,
-      "cached_input_tokens": 0,
-      "output_tokens": 0,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.0,
-      "latency_seconds": 0.0,
-      "latency_measured": true,
-      "effective_rpm": null,
-      "effective_tpm": null,
-      "json_reliability": null,
-      "json_reliability_measured": true,
-      "batches_total": 0,
-      "primary_batches_total": 0,
-      "batches_attempted": 0,
-      "batches_succeeded": 0,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 0,
-      "funnel": {
-        "scoring_candidates": 0
-      },
-      "output": {
-        "tier_a": 0,
-        "tier_b": 0,
-        "tier_c": 0,
-        "shown": 0,
-        "new_jobs": 0,
-        "new_jobs_added": 0
-      },
-      "enrichment": {
-        "needed": 0,
-        "detail_api_resolved": 0,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 0
-      },
-      "comparison": {},
-      "batches": []
     }
   ]
 }
