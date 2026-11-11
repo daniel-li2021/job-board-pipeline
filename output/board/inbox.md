@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-10 17:21 PST
-- Snapshot (UTC): 2026-11-11T01:21:47.415439+00:00
-- Jobs: 61 (Tier A/B only)
-- Last 24 hours: 46
-- Last 3 days: 61
+- Updated (PT): 2026-11-10 22:41 PST
+- Snapshot (UTC): 2026-11-11T06:41:30.577743+00:00
+- Jobs: 63 (Tier A/B only)
+- Last 24 hours: 48
+- Last 3 days: 63
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -42,6 +42,7 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | Bottomline | Infrastructure Automation Engineer | Portsmouth, NH, US | 2026-11-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6e30de0ce7252efc) |
 | B | 82 | indeed | Purism | Full-Stack Web Developer | San Francisco, CA, US | 2026-11-06 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f5f37d8fe463dea8) |
 | B | 81 | indeed | Forsys Inc. | Software Engineer (Multiple Openings) | Round Rock, TX, US | 2026-08-04 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f3b16353ac2f482f) |
+| B | 84 | linkedin | Uber | Software Engineer II | New York, NY | 2026-11-10 | newly_discovered | Uber | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-uber-4487857409) |
 | B | 84 | indeed | Uber | Software Engineer II | New York, NY, US | 2026-11-10 | newly_discovered | Uber | unreviewed | pending_official_refresh | [open](https://www.indeed.com/viewjob?jk=e5c6e15de361f6a7) |
 | B | 82 | indeed | Fidelity Investments | Full Stack Software Engineer, Python | Westlake, TX, US | 2026-11-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=64d04ba01cebc191) |
 | B | 84 | indeed |  | Early Career Research Engineer | Palo Alto, CA, US | 2026-11-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a84ceb7d2164b72d) |
@@ -51,7 +52,8 @@ The 7-day dump is `latest.md`.
 | B | 75 | indeed | FIS | Mainframe Software Engineer I | Columbus, GA, US | 2026-11-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b5e41e54ced74e36) |
 | B | 77 | indeed | Regions Financial | Software Engineer - Risk Systems | Hoover, AL, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a07f26140fb4092c) |
 | B | 77 | indeed | Hennepin County | IT Developer | MN, US | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=de7965a0f16786c8) |
-| B | 75 | linkedin | T-Mobile | T-Ads Engineer, Software Full Stack | Bellevue, WA | 2026-11-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/t-ads-engineer-software-full-stack-at-t-mobile-4488452353) |
+| B | 78 | linkedin | T-Mobile | T-Ads Engineer, Software Full Stack | Bellevue, WA | 2026-11-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/t-ads-engineer-software-full-stack-at-t-mobile-4488452353) |
+| B | 75 | linkedin | Audible | Software Development Engineer | Newark, NJ | 2026-11-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-development-engineer-at-audible-4489624893) |
 | B | 75 | linkedin | Evlo AI | Software Engineer - Full Stack | Austin, TX | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-evlo-ai-4487928870) |
 | B | 75 | linkedin | Evlo AI | Software Engineer - Full Stack | Dallas, TX | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-evlo-ai-4487947483) |
 | B | 75 | linkedin | Jack | Software Engineer | San Francisco Bay Area | 2026-11-09 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-jack-4487925534) |

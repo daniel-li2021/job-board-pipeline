@@ -2,6 +2,203 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-11-11T06:41:30.577743+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 2,
+      "cache_reused": 361,
+      "peer_reused": 0,
+      "same_content_reused": 10,
+      "non_material_change_reused": 0,
+      "new_or_changed": 2,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 1,
+        "prior_rule_result_now_eligible_for_llm": 1
+      },
+      "rescored_within_24h": 1,
+      "fallback_count": 0,
+      "rule_count": 1636,
+      "requests": 2,
+      "input_tokens": 6493,
+      "cached_input_tokens": 0,
+      "output_tokens": 638,
+      "reasoning_tokens": 464,
+      "estimated_usd": 0.000968,
+      "latency_seconds": 7.837,
+      "latency_measured": true,
+      "effective_rpm": 15.31,
+      "effective_tpm": 54594.87,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 2,
+      "funnel": {
+        "after_dedup": 8443,
+        "after_company": 7904,
+        "after_hard_filter": 7294,
+        "after_prefilter": 2452,
+        "official_duplicates_suppressed": 453,
+        "retry_only_carried": 0,
+        "dropped": 5765
+      },
+      "output": {
+        "tier_a": 32,
+        "tier_b": 155,
+        "ab_before_cap": 187,
+        "shown": 187,
+        "new_jobs": 9,
+        "new_jobs_added": 2,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 2,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 7,
+            "added": 2
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 3277,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 62,
+          "identity_needed": 53,
+          "identities_resolved": 42,
+          "cache_reused": 2,
+          "http_requests": 51,
+          "jds_resolved": 3,
+          "direct_http_resolved": 3,
+          "remaining_no_jd": 3277,
+          "failure_reasons": {
+            "no_direct_or_official_url": 9
+          }
+        },
+        "remaining_no_jd": 3233,
+        "failure_reasons": {
+          "no_enrichment_path": 2657,
+          "linkedin_rate_limited": 135,
+          "linkedin_http_429": 6,
+          "no_direct_or_official_url": 9,
+          "official_detail_deferred": 46,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 378
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/affirm/jobs/8196112003",
+              "company": "Affirm",
+              "title": "Software Engineer II, Backend"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 4.251,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 2291,
+            "cached_input_tokens": 0,
+            "output_tokens": 376,
+            "reasoning_tokens": 292,
+            "estimated_usd": 0.000417
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/affirm/jobs/8196112003",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production Python backend systems",
+                "AWS and distributed systems"
+              ],
+              "main_gaps": [
+                "1.5+ years engineering experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::indeed::in-a9bdfdcde5b338fb",
+              "company": "AstraZeneca",
+              "title": "AI Engineer – Discovery"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.586,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 4202,
+            "cached_input_tokens": 0,
+            "output_tokens": 262,
+            "reasoning_tokens": 172,
+            "estimated_usd": 0.000551
+          },
+          "decisions": [
+            {
+              "key": "id::indeed::in-a9bdfdcde5b338fb",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production AI/ML systems",
+                "Python and data pipelines"
+              ],
+              "main_gaps": [
+                "5 years biological AI/ML",
+                "Wet-lab and biomedical data"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-11-11T01:21:47.415439+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -32870,296 +33067,6 @@
               "main_gaps": [
                 "Robotics systems integration",
                 "ROS and embedded hardware"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-11-05T07:16:13.062218+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 6,
-      "cache_reused": 432,
-      "peer_reused": 0,
-      "same_content_reused": 10,
-      "non_material_change_reused": 0,
-      "new_or_changed": 8,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 7,
-        "prior_rule_result_now_eligible_for_llm": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1541,
-      "requests": 3,
-      "input_tokens": 13135,
-      "cached_input_tokens": 0,
-      "output_tokens": 1602,
-      "reasoning_tokens": 1223,
-      "estimated_usd": 0.002114,
-      "latency_seconds": 21.657,
-      "latency_measured": true,
-      "effective_rpm": 8.31,
-      "effective_tpm": 40828.37,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 3,
-      "primary_batches_total": 3,
-      "batches_attempted": 3,
-      "batches_succeeded": 3,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 6,
-      "funnel": {
-        "after_dedup": 8660,
-        "after_company": 7766,
-        "after_hard_filter": 7172,
-        "after_prefilter": 2389,
-        "official_duplicates_suppressed": 410,
-        "retry_only_carried": 0,
-        "dropped": 6053
-      },
-      "output": {
-        "tier_a": 67,
-        "tier_b": 166,
-        "ab_before_cap": 233,
-        "shown": 233,
-        "new_jobs": 42,
-        "new_jobs_added": 7,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 4,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 38,
-            "added": 7
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 3190,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 248,
-          "identity_needed": 235,
-          "identities_resolved": 101,
-          "cache_reused": 2,
-          "http_requests": 100,
-          "budget_deferred": 133,
-          "remaining_no_jd": 3190,
-          "failure_reasons": {
-            "no_direct_or_official_url": 13
-          }
-        },
-        "remaining_no_jd": 3144,
-        "failure_reasons": {
-          "no_enrichment_path": 2594,
-          "linkedin_rate_limited": 108,
-          "linkedin_http_429": 6,
-          "official_detail_deferred": 44,
-          "no_direct_or_official_url": 13,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 377
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4486555733",
-              "company": "Twitch",
-              "title": "Software Dev Engineer I - Security Platform"
-            },
-            {
-              "key": "id::linkedin::4487073466",
-              "company": "Walgreens",
-              "title": "Software Engineer (Java, Backend)"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 7.652,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 2,
-            "input_tokens": 3727,
-            "cached_input_tokens": 0,
-            "output_tokens": 557,
-            "reasoning_tokens": 432,
-            "estimated_usd": 0.000651
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4486555733",
-              "match_score": 90.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production backend services",
-                "AWS and CI/CD deployment"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "id::linkedin::4487073466",
-              "match_score": 76.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Backend APIs and microservices",
-                "Testing and software delivery"
-              ],
-              "main_gaps": [
-                "Professional Java experience",
-                "Two years' experience"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4487523221",
-              "company": "TikTok USDS Joint Venture",
-              "title": "Machine Learning Engineer, Search - USDS"
-            },
-            {
-              "key": "id::linkedin::4486557061",
-              "company": "Uline",
-              "title": "AI Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 8.093,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 2,
-            "input_tokens": 3997,
-            "cached_input_tokens": 0,
-            "output_tokens": 631,
-            "reasoning_tokens": 503,
-            "estimated_usd": 0.000715
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4487523221",
-              "match_score": 66.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Search retrieval optimization",
-                "Production LLM systems"
-              ],
-              "main_gaps": [
-                "Large-scale ranking systems",
-                "Personalized recommendation experience"
-              ]
-            },
-            {
-              "key": "id::linkedin::4486557061",
-              "match_score": 76.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production GenAI applications",
-                "Python data pipelines"
-              ],
-              "main_gaps": [
-                "2+ years experience"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 3,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4487713438",
-              "company": "BioSpace",
-              "title": "AI Engineer"
-            },
-            {
-              "key": "id::linkedin::4487549890",
-              "company": "Stripe",
-              "title": "Machine Learning Engineer, Radar"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 5.912,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 2,
-            "input_tokens": 5411,
-            "cached_input_tokens": 0,
-            "output_tokens": 414,
-            "reasoning_tokens": 288,
-            "estimated_usd": 0.000748
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4487713438",
-              "match_score": 96.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production RAG systems",
-                "Model serving and evaluation"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "id::linkedin::4487549890",
-              "match_score": 45.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production ML systems",
-                "Model evaluation"
-              ],
-              "main_gaps": [
-                "5+ years production ML",
-                "Led end-to-end ML projects"
               ]
             }
           ]
