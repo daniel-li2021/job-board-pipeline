@@ -1,20 +1,24 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-11-11 16:46 PST
-- Snapshot (UTC): 2026-11-12T00:46:58.043089+00:00
-- Jobs: 40 (Tier A/B only)
-- Last 24 hours: 0
-- Last 3 days: 40
+- Updated (PT): 2026-11-12 07:48 PST
+- Snapshot (UTC): 2026-11-12T15:48:45.166963+00:00
+- Jobs: 44 (Tier A/B only)
+- Last 24 hours: 4
+- Last 3 days: 44
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 86 | official | Google | Forward Deployed Engineer II, Generative AI, Google Cloud | Sunnyvale, CA, USA | 2026-11-12 | 3to24h | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/77331446980584134-forward-deployed-engineer-ii-generative-ai-google-cloud) |
+| A | 86 | official | Capital One | Associate, Data Scientist - US Card | McLean, VA | 2026-11-12 | 3to24h | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Associate--Data-Scientist---US-Card_R1005289-1) |
 | A | 89 | official | Microsoft | Software Development Engineer | United States, Washington, Redmond | 2026-11-11 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557050698) |
 | A | 88 | official | CVS Health | Data Scientist - Pharmacy Benefits | New York-161 Ave of the Americas; Chicago-525 West Monroe | 2026-11-11 | 1to3d | CVS | unreviewed | official_canonical | [open](https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/New-York-161-Ave-of-the-Americas/Data-Scientist---Pharmacy-Benefits_R1094628) |
 | A | 88 | official | Apple | Software Engineer, Deployment Compliance | Seattle, United States of America | 2026-11-10 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200691617/software-engineer-deployment-compliance) |
 | A | 86 | official | Google | Software Engineer, AI/ML, ML Infrastructure, Search Ads | Mountain View, CA, USA; Pittsburgh, PA, USA | 2026-11-10 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/115014381934125766-software-engineer-ai-ml-ml-infrastructure-search-ads) |
 | A | 88 | official | NetApp | Full Stack Engineer - NetApp Digital Advisor | Morrisville, North Carolina, United States | 2026-11-10 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.netapp.com/en/job/morrisville/full-stack-engineer-netapp-digital-advisor/27600/103127293536) |
+| B | 82 | official | Google | Software Engineer, Knowledge Catalog For AI | Kirkland, WA, USA; Sunnyvale, CA, USA | 2026-11-12 | 3to24h | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/99790896123257542-software-engineer-knowledge-catalog-for-ai) |
+| B | 78 | official | Microsoft | Data Engineer | United States, Multiple Locations, Multiple Locations | 2026-11-12 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557056093) |
 | B | 83 | official | Amazon | Software Engineer I, Commerce | San Francisco, California, USA | 2026-11-11 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10599912/software-engineer-i-commerce) |
 | B | 76 | official | Apple | Machine Learning Engineer, (Applied Machine Learning), AI & Data Platf | Sunnyvale, United States of America | 2026-11-11 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693613/machine-learning-engineer-applied-machine-learning-ai-data-platforms-aidp) |
 | B | 75 | official | Microsoft | Applied ML Engineer | United States, Washington, Redmond | 2026-11-11 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557023169) |
@@ -44,7 +48,7 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 75 | official | Dell | Agentic Context Engineering Architect & AI Practitioner | Hopkinton, MA, United States | 2026-11-10 | 1to3d | Dell | unreviewed | official_canonical | [open](https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/299014) |
 | B | 75 | official | eBay | Platform Engineer, Java Frameworks | Austin | 2026-11-10 | 1to3d | eBay | unreviewed | official_canonical | [open](https://ebay.wd5.myworkdayjobs.com/apply/job/Austin/Platform-Engineer--Java-Frameworks_R0076323) |
 | B | 76 | official | Amazon | Software Development Engineer | Newark, New Jersey, USA | 2026-11-10 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10601102/software-development-engineer) |
-| B | 79 | official | MathWorks | Software Developer in Test - Shared Platform | US-MA-Natick | 2026-11-10 | 1to3d | - | unreviewed | official_canonical | [open](https://www.mathworks.com/company/jobs/opportunities/37901-software-developer-in-test-shared-platform?keywords=ai+engineer) |
+| B | 79 | official | MathWorks | Software Developer in Test - Shared Platform | US-MA-Natick | 2026-11-10 | 1to3d | - | unreviewed | official_canonical | [open](https://www.mathworks.com/company/jobs/opportunities/37901-software-developer-in-test-shared-platform?keywords=ai+engineer&page=2) |
 | B | 75 | official | Amazon | Software Development Engineer I, Inference models optimization, AWS Ne | Cupertino, California, USA | 2026-11-10 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10598223/software-development-engineer-i-inference-models-optimization-aws-neuron-inference) |
 | B | 72 | official | Apple | DevOps Engineer - Retail Engineering Apps & Services | Sunnyvale, United States of America | 2026-11-10 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693083/devops-engineer-retail-engineering-apps-services) |
 | B | 74 | official | Cisco | Cloud Engineer II (Full Time) - United States | RTP, North Carolina, US; Richardson, Texas, US | 2026-11-10 | 1to3d | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Cloud-Engineer-II--Full-Time----United-States_2031378) |
