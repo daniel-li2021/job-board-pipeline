@@ -1,70 +1,83 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 3980,
+  "count": 4008,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-11-11T06:39:54.929424+00:00",
+    "scraped_at": "2026-11-12T09:58:37.236663+00:00",
     "collector": {
-      "commit": "99663e216bc82feeafd009c781984be902a98dd8",
+      "commit": "b54fb1765d1a33d0ff61f6e308cc34b8cac9dfff",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 36.672,
+    "elapsed_seconds": 110.745,
     "query_stats": [
-      {
-        "query": "software engineer",
-        "group": "primary",
-        "page_budget": 5,
-        "pages_fetched": 2,
-        "stop_reason": "recovery_search_budget",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 19,
-        "first_pass_survivors": 19,
-        "original_postings_resolved": 0,
-        "jds_resolved": 7,
-        "elapsed_seconds": 11.289,
-        "new_to_ledger": 10,
-        "rediscovered": 10,
-        "page_yields": [
-          {
-            "page": 0,
-            "raw": 10,
-            "new_to_ledger": 4,
-            "known": 6
-          },
-          {
-            "page": 1,
-            "raw": 10,
-            "new_to_ledger": 6,
-            "known": 4
-          }
-        ]
-      },
       {
         "query": "ai engineer",
         "group": "primary",
         "page_budget": 3,
-        "pages_fetched": 0,
-        "stop_reason": "recovery_search_budget",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
+        "pages_fetched": 3,
+        "stop_reason": "page_budget",
+        "raw_jobs": 30,
+        "unique_jobs": 30,
+        "unique_contribution": 28,
+        "first_pass_survivors": 28,
         "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0,
-        "new_to_ledger": 0,
-        "rediscovered": 0,
-        "page_yields": []
+        "jds_resolved": 11,
+        "elapsed_seconds": 29.709,
+        "new_to_ledger": 23,
+        "rediscovered": 7,
+        "page_yields": [
+          {
+            "page": 0,
+            "raw": 10,
+            "new_to_ledger": 7,
+            "known": 3
+          },
+          {
+            "page": 1,
+            "raw": 10,
+            "new_to_ledger": 9,
+            "known": 1
+          },
+          {
+            "page": 2,
+            "raw": 10,
+            "new_to_ledger": 7,
+            "known": 3
+          }
+        ]
       },
       {
-        "query": "backend engineer",
+        "query": "full-stack engineer",
         "group": "primary",
         "page_budget": 2,
+        "pages_fetched": 1,
+        "stop_reason": "recovery_search_budget",
+        "raw_jobs": 10,
+        "unique_jobs": 10,
+        "unique_contribution": 10,
+        "first_pass_survivors": 10,
+        "original_postings_resolved": 0,
+        "jds_resolved": 4,
+        "elapsed_seconds": 13.109,
+        "new_to_ledger": 7,
+        "rediscovered": 3,
+        "page_yields": [
+          {
+            "page": 0,
+            "raw": 10,
+            "new_to_ledger": 7,
+            "known": 3
+          }
+        ]
+      },
+      {
+        "query": "software engineer",
+        "group": "primary",
+        "page_budget": 5,
         "pages_fetched": 0,
         "stop_reason": "recovery_search_budget",
         "raw_jobs": 0,
@@ -82,59 +95,141 @@
     "search_collection": {
       "cooldown_active": false,
       "probe": false,
-      "query_cursor": 66,
-      "requests": 2,
-      "responses": 2,
-      "pages_fetched": 2,
+      "query_cursor": 67,
+      "requests": 4,
+      "responses": 4,
+      "pages_fetched": 4,
       "http_status": 0,
       "rate_limited": false,
       "budget_exhausted": false,
       "rate_limit_event": {},
       "transport_stop_reason": "",
-      "new_to_ledger": 10,
+      "new_to_ledger": 30,
       "rediscovered": 10,
       "coverage_limited": true
     },
     "detail_enrichment": {
-      "eligible": 11,
+      "eligible": 18,
       "cache_reused": 0,
-      "requests": 1,
-      "responses": 1,
-      "successful_responses": 1,
+      "requests": 4,
+      "responses": 4,
+      "successful_responses": 4,
       "attempted_ids": [
-        "4489180653"
+        "4481572374",
+        "4487866275",
+        "4481742585",
+        "4482024226"
       ],
       "http_status_counts": {
-        "200": 1
+        "200": 4
       },
-      "request_limit": 1,
-      "budget_deferred": 10,
+      "request_limit": 12,
+      "budget_deferred": 14,
       "budget_exhausted": true,
       "retry_deferred": 0,
       "retry_attempts": 0,
       "exact_official": 0,
       "official_deferred": 0,
       "rate_limited": false,
-      "jds_resolved": 1,
+      "jds_resolved": 4,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 1,
+      "detail_jds_fetched": 4,
       "intentional_skips": 0,
       "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 10,
+      "remaining_no_jd": 14,
       "failure_reasons": {
-        "no_description": 10
+        "no_description": 14
       },
-      "protected_requests": 0,
-      "protected_jds_resolved": 0,
-      "protected_deferred": 9,
+      "transport_stop_reason": "recovery_detail_budget",
+      "protected_requests": 2,
+      "protected_jds_resolved": 2,
+      "protected_deferred": 14,
       "queue": [
         {
-          "job_id": "4488652298",
-          "first_seen": "2026-11-11T06:39:54.929424+00:00",
+          "job_id": "4482024226",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": null,
+          "attempted_at": "2026-11-12T09:59:46.049786+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4489050949",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-12T09:58:37.236663+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "recovery_detail_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4490050406",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-12T09:58:37.236663+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "recovery_detail_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4490052330",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-12T09:58:37.236663+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "recovery_detail_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4489022816",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": "2026-11-12T09:58:37.236663+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "recovery_detail_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4489023720",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": "2026-11-12T09:58:37.236663+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "recovery_detail_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4481788431",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
           "priority": "normal",
           "needs_jd": null,
           "deferred_at": null,
@@ -146,34 +241,60 @@
           "past_fresh": false
         },
         {
-          "job_id": "4487866275",
-          "first_seen": "2026-11-11T06:39:54.929424+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": "2026-11-11T06:39:54.929424+00:00",
+          "job_id": "4482062764",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
+          "priority": "low",
+          "needs_jd": false,
+          "deferred_at": null,
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
+          "deferred_reason": "linkedin_detail_not_worthwhile",
           "past_fresh": false
         },
         {
-          "job_id": "4489624893",
-          "first_seen": "2026-11-11T06:39:54.929424+00:00",
+          "job_id": "4482065820",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
+          "priority": "low",
+          "needs_jd": false,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_not_worthwhile",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4489018727",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
           "priority": "normal",
           "needs_jd": true,
-          "deferred_at": "2026-11-11T06:39:54.929424+00:00",
+          "deferred_at": "2026-11-12T09:58:37.236663+00:00",
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
+          "deferred_reason": "recovery_detail_budget",
           "past_fresh": false
         },
         {
-          "job_id": "4487857409",
-          "first_seen": "2026-11-11T06:39:54.929424+00:00",
+          "job_id": "4481742585",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": null,
+          "attempted_at": "2026-11-12T09:59:46.049786+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4489975807",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
           "priority": "normal",
           "needs_jd": null,
           "deferred_at": null,
@@ -185,30 +306,95 @@
           "past_fresh": false
         },
         {
+          "job_id": "4489904299",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-12T09:58:37.236663+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "recovery_detail_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4490027993",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
+          "priority": "normal",
+          "needs_jd": null,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": true,
+          "method": "exact_indeed_peer",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4489060587",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-12T09:58:37.236663+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "recovery_detail_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4490056220",
+          "first_seen": "2026-11-12T09:58:37.236663+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-12T09:58:37.236663+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "recovery_detail_budget",
+          "past_fresh": false
+        },
+        {
           "job_id": "4481572374",
           "first_seen": "2026-11-11T06:39:54.929424+00:00",
           "priority": "high",
           "needs_jd": true,
           "deferred_at": "2026-11-11T06:39:54.929424+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4489180653",
-          "first_seen": "2026-11-10T07:04:05.730197+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": "2026-11-10T07:04:05.730197+00:00",
-          "attempted_at": "2026-11-11T06:40:31.254670+00:00",
+          "attempted_at": "2026-11-12T09:59:46.049786+00:00",
           "attempted_this_phase": true,
           "resolved": true,
           "method": "linkedin_http",
           "deferred_reason": null,
-          "past_fresh": false
+          "past_fresh": true
+        },
+        {
+          "job_id": "4487866275",
+          "first_seen": "2026-11-11T06:39:54.929424+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": "2026-11-11T06:39:54.929424+00:00",
+          "attempted_at": "2026-11-12T09:59:46.049786+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
+          "past_fresh": true
+        },
+        {
+          "job_id": "4489624893",
+          "first_seen": "2026-11-11T06:39:54.929424+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-11T06:39:54.929424+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": true,
+          "method": "exact_indeed_peer",
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": true
         },
         {
           "job_id": "4487928870",
@@ -220,8 +406,8 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
+          "deferred_reason": "recovery_detail_budget",
+          "past_fresh": true
         },
         {
           "job_id": "4487947483",
@@ -233,34 +419,8 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4486687460",
-          "first_seen": "2026-11-08T20:00:38.552738+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-08T20:00:38.552738+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
+          "deferred_reason": "recovery_detail_budget",
           "past_fresh": true
-        },
-        {
-          "job_id": "4489417211",
-          "first_seen": "2026-11-10T07:04:05.730197+00:00",
-          "priority": "low",
-          "needs_jd": true,
-          "deferred_at": "2026-11-10T07:04:05.730197+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "exact_indeed_peer",
-          "deferred_reason": "linkedin_detail_cooldown",
-          "past_fresh": false
         },
         {
           "job_id": "4487925534",
@@ -272,21 +432,8 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4487912319",
-          "first_seen": "2026-11-10T07:04:05.730197+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": "2026-11-10T07:05:09.940965+00:00",
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
+          "deferred_reason": "recovery_detail_budget",
+          "past_fresh": true
         },
         {
           "job_id": "4487919484",
@@ -298,8 +445,8 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
+          "deferred_reason": "recovery_detail_budget",
+          "past_fresh": true
         },
         {
           "job_id": "4488452353",
@@ -311,49 +458,48 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
+          "deferred_reason": "recovery_detail_budget",
+          "past_fresh": true
         }
       ],
       "admission": {
-        "candidates": 19,
-        "rules_skipped": 5,
+        "candidates": 35,
+        "rules_skipped": 11,
         "rule_reasons": {
-          "prefilter:senior": 5
+          "prefilter:senior": 11
         },
         "cache_reused": 0,
-        "non_linkedin_resolved": 3,
-        "triage_evaluated": 10,
-        "triage_deferred": 0,
-        "worth_detail": 11
+        "non_linkedin_resolved": 4,
+        "triage_evaluated": 13,
+        "triage_deferred": 2,
+        "worth_detail": 18
       },
       "cooldown_active": false,
-      "probe": true,
-      "round_request_limit": 1,
-      "round_requests": 1,
-      "status": "probe"
+      "probe": false,
+      "round_request_limit": 12,
+      "round_requests": 4,
+      "status": "active"
     },
     "official_enrichment": {
-      "remote_exact_peer": 2,
-      "dedicated_matches": 4,
+      "exact_indeed_peer": 5,
       "cache": 4,
-      "exact_indeed_peer": 2,
+      "dedicated_matches": 4,
+      "remote_exact_peer": 4,
       "search_provider_failures": 1,
-      "no_match": 9,
-      "deferred": 1,
-      "search_requests": 15,
+      "no_match": 13,
+      "search_requests": 17,
       "search_provider": "bing",
-      "official_page_requests": 8,
-      "remaining_no_jd": 12
+      "official_page_requests": 4,
+      "remaining_no_jd": 25
     },
     "partial": true,
     "blocked_reason": "focused query coverage",
-    "collected_count": 19,
-    "carried_count": 3961,
+    "collected_count": 38,
+    "carried_count": 3970,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-11-11T06:40:32.158669+00:00"
+    "jd_recovery_at": "2026-11-12T10:00:31.622744+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -4418,7 +4564,35 @@
     "linkedin|id|4487857409": "2026-11-11T06:39:54.929424+00:00",
     "linkedin|id|4489605166": "2026-11-11T06:39:54.929424+00:00",
     "linkedin|id|4481572374": "2026-11-11T06:39:54.929424+00:00",
-    "linkedin|id|4489651819": "2026-11-11T06:39:54.929424+00:00"
+    "linkedin|id|4489651819": "2026-11-11T06:39:54.929424+00:00",
+    "linkedin|id|4482024226": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4489050949": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4490081970": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4490050406": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4489930684": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4490052330": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4489022816": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4489023720": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4481788431": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4488247050": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4482062764": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4482065820": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4433816910": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4489018727": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4489954877": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4481742585": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4489934811": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4488289163": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4482032099": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4489982746": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4464675875": "2026-09-08T23:53:29.967326+00:00",
+    "linkedin|id|4489975807": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4489904299": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4490043711": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4490027993": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4489060587": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4480729798": "2026-11-12T09:58:37.236663+00:00",
+    "linkedin|id|4490056220": "2026-11-12T09:58:37.236663+00:00"
   },
   "jobs": [
     {
@@ -6492,7 +6666,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4472372492",
@@ -7251,7 +7425,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-11T06:39:54.929424+00:00",
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4474986948",
@@ -9351,7 +9525,7 @@
       "title": "Senior Machine Learning Engineer, Trust",
       "location": "San Francisco, CA",
       "posted_date": "2026-09-27",
-      "aggregator_posted_date": "2026-09-29",
+      "aggregator_posted_date": "2026-11-11",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-trust-at-airbnb-4454831670",
@@ -9366,8 +9540,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-29T22:23:38.308407+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471842229",
@@ -9465,7 +9639,7 @@
       "title": "Staff Machine Learning Engineer, Assistance Engineering",
       "location": "San Francisco, CA",
       "posted_date": "2026-09-21",
-      "aggregator_posted_date": "2026-09-29",
+      "aggregator_posted_date": "2026-11-11",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/staff-machine-learning-engineer-assistance-engineering-at-airbnb-4432499181",
@@ -9480,15 +9654,14 @@
         ]
       },
       "recovery_methods": {},
-      "application_url": "https://careers.airbnb.com/positions/8024316?gh_jid=8024316",
-      "official_jd_fetched_at": "2026-09-26T19:15:15.514315+00:00",
-      "official_search_verified": true,
-      "enrichment_method": "official_cache",
+      "enrichment_method": "board_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-09-26T19:15:15.514315+00:00",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-29T22:23:38.308407+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4434182251",
@@ -9856,6 +10029,35 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-04T20:00:16.973103+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4489975807",
+      "source": "linkedin",
+      "company": "Allegion",
+      "title": "Full Stack Software Engineer",
+      "location": "Carmel, IN",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-allegion-4489975807",
+      "official_url": "",
+      "description": "**Creating Peace of Mind by Pioneering Safety and Security** ------------------------------------------------------------ *At Allegion, we help keep the people you know and love safe and secure where they live, work and visit. With more than 40 brands, 14,000\\+ employees globally and products sold in 130 countries, we specialize in security around the doorway and beyond.* *Additionally, Allegion is proud to be recognized with the 2026 Gallup Exceptional Workplace Award (GEWA) for the third consecutive year, earning distinction in both the employee engagement and strengths categories. This year, Allegion also received Gallup’s With Distinction honor — a designation reserved for a select group of organizations that go above and beyond in building exceptional workplace cultures.* **Creating Peace of Mind by Pioneering Safety and Security** At Allegion, we help keep the people you know and love safe and secure where they live, work and visit. With more than 30 brands, 12,000\\+ employees globally and products sold in 130 countries, we specialize in security around the doorway and beyond. Additionally, in 2024 we were awarded the Gallup Exceptional Workplace Award, which recognizes the most engaged workplace cultures in the world. **Full Stack Software Engineer** Allegion is looking for a Full Stack engineer to work as part of a highly engaged small team within a global organization of 12,000\\+ employees, representing 30\\+ brands (including Schlage, Von Duprin and LCN) focused on safety, security and access management. You’ll work on solutions that will enable collaboration and efficiencies in the building construction lifecycle. **What you’ll do:** * Handle complex full\\-stack tasks across cloud projects, including APIs, cloud services and UI components * Proactively solve challenges in scalability, API robustness and system integration * Develop and maintain scalable and high\\-performance web applications * Consistently deliver high\\-quality, maintainable code that follows cloud\\-native patterns * Conduct code reviews and testing to ensure best practices are followed and maintain code quality * Provide accurate estimates for assigned tasks and understand how your work connects across the team * Troubleshoot and resolve complex technical issues, providing timely and effective solutions * Communicate technical solutions clearly across teams and stakeholders * Stay updated with the latest industry trends, technologies and best practices and apply them to enhance our applications **What you need to succeed:** * Bachelor’s Degree or equivalent in years of relevant work experience * 0\\-5 years of relevant work experience * Mastery of programming concepts, tools and frameworks in cloud platform development * Understanding of how to use AI tooling in the development process * Understanding of how components interact across a cloud ecosystem * Experience of REST\\-based API development and usage with ASP.NET, NET Core, and C\\# * Typescript/Javascript (Angular preferred) * Experience with Azure * Experience with SQL Databases * Team player with the ability to adapt to changing priorities and goals * Strong problem solving and analytical skills **Technologies and practices we use:** * Angular * NPM * .NET C\\# * SQL Databases * Continuous Integration \\& Delivery * Cloud serverless infrastructure * Azure **Allegion is a Great Place to Grow your Career if:** * You're seeking a rewarding opportunity that allows you to truly help others. With thousands of employees and customers around the world, there’s plenty of room to make an impact. As our values state, “this is your business, run with it”. * You’re looking for a company that will invest in your professional development. As we grow, we want you to grow with us. * You want a culture that promotes work\\-life balance. Our employees enjoy generous paid time off, because at Allegion we recognize that you have a full life outside of work! **What You’ll Get from Us:** * Health, dental and vision insurance coverage, helping you “be safe, be healthy” * Unlimited Paid Time Off * A commitment to your future with a 401K plan, which currently offers a 6% company match and no vesting period * Health Savings Accounts: Tax\\-advantaged savings account used for healthcare expenses * Flexible Spending Accounts: Tax\\-advantaged spending accounts for healthcare and/or dependent daycare expenses * Disability Insurance: Short\\-Term and Long\\-Term coverage, paid for by Allegion, provides income replacement for illness or injury * Life Insurance: Term life coverage with the option to purchase supplemental coverage * Tuition Reimbursement * Voluntary Wellness Program: Simply complete wellness activities and earn up to $2,000 in rewards * Employee Discounts through Perks at Work * Community involvement and opportunities to give back so you can “serve others, not yourself” * Opportunities to leverage your unique strengths through CliftonStrengths assessment \\& coaching **Apply Today!** Join our team of experts today and help us make tomorrow’s world a safer place! Not sure if your experience perfectly aligns with the role? Studies have shown that some people are less likely to apply to jobs unless they meet every single qualification and every single preferred qualification of a job posting. At Allegion, we are dedicated to building a diverse, inclusive, and authentic workplace. So, if you’re excited about this role but your past experience doesn’t align perfectly with every item in the job description, we encourage you to apply anyway. You may be just the right candidate for this role. **We Celebrate Who We Are!** ---------------------------- Allegion is committed to building and maintaining a diverse and inclusive workplace. Together, we embrace all differences and similarities among colleagues, as well as the differences and similarities within the relationships that we foster with customers, suppliers and the communities where we live and work. Whatever your background, experience, race, color, national origin, religion, age, gender, gender identity, disability status, sexual orientation, protected veteran status, or any other characteristic protected by law, we will make sure that you have every opportunity to impress us in your application and the opportunity to give your best at work, not because we’re required to, but because it’s the right thing to do. We are also committed to providing accommodations for persons with disabilities. If for any reason you cannot apply through our career site and require an accommodation or assistance, please contact our Talent Acquisition Team. © Allegion plc, 2023 \\| Block D, Iveagh Court, Harcourt Road, Dublin 2, Co. Dublin, Ireland REGISTERED IN IRELAND WITH LIMITED LIABILITY REGISTERED NUMBER 527370 Allegion is an equal opportunity and affirmative action employer",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "jd_recovery_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_method": "exact_indeed_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468943230",
@@ -10269,6 +10471,40 @@
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4481788431",
+      "source": "linkedin",
+      "company": "Amazon",
+      "title": "Machine Learning Engineer, Foundational AI (FAI)",
+      "location": "Sunnyvale, CA",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-foundational-ai-fai-at-amazon-4481788431",
+      "official_url": "",
+      "description": "Description\nThe Foundational AI (FAI) team is looking for a passionate, talented, and inventive Machine Learning Engineer with a strong deep learning background, to build industry-leading Generative Artificial Intelligence (GenAI) technology with Large Language Models (LLMs).\nKey job responsibilities\nAs a Machine Learning Engineer with the FAI team, you will support the development of RL Gyms, assess their usefulness for the frontier model advancement and build techniques to advance the state of the art with LLMs. You will support the foundational model development in an applied research role. Your work will directly impact our customers in the form of products and services that make use of GenAI technology. You will leverage Amazon’s heterogeneous data sources and large-scale computing resources to accelerate advances in LLMs.\nAbout the team\nThe FAI team supports the growth and progress of RL Gyms and assess the value of RL gyms for the frontier model advancement. The team has a mission to push boundaries in GenAI with LLMs, in order to provide the best-possible experience for our customers.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://www.amazon.jobs/en/jobs/10571446/machine-learning-engineer-foundational-ai-fai",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-12T09:58:37.236663+00:00",
+      "jd_recovery_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-12T09:58:37.236663+00:00",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4458116051",
@@ -11154,7 +11390,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-early-career-2027-us-at-amazon-4481572374",
       "official_url": "",
-      "description": "",
+      "description": "Description Application deadline: Applications will be accepted on an ongoing basis There’s a universe of opportunity at Amazon. At Amazon, your career doesn’t follow a straight line. It accelerates, twists, and challenges you in ways you never expected. From the moment you join, you’re part of something big: building products or services that reach millions and shaping how people live, work, and connect every day. This is where your ideas turn into real impact. You’ll work with world class tools, global platforms, and systems built to operate at an extraordinary scale. You’ll move fast, experiment and launch solutions that matter. With endless opportunities to explore across teams and roles, you’ll learn quickly, apply what you know and discover skills you didn’t know existed. This is an environment designed for builders who want to see the impact of their work in the world. Ready to start your adventure? What’s in it for you? With teams across the Amazon universe, you don’t have to choose one path too early. You’ll take ownership, build new skills, and shape a career that evolves as you do Key job responsibilities Collaborate and communicate effectively with experienced cross-disciplinary Amazonians to design, build, and operate innovative products and services that delight our customers, while participating in technical discussions to drive solutions forward. Break down complex, ambiguous problems into well-defined, solvable components before implementation. Contribute to the design and development of scalable, reliable services, with distributed-systems scope varying by team. Conduct code reviews as a core engineering practice, providing constructive feedback and validating correctness. Contribute to clear and accurate technical documentation. Use GenAI and AI-powered tools to enhance development productivity, and critically validate, verify, and integrate AI-generated code, exercising sound judgement about when to trust AI output. Write clean, maintainable code following best practices and design patterns. Work in an agile environment practicing CI/CD principles while participating in operational responsibilities including on-call duties. Demonstrate operational excellence through monitoring, troubleshooting, and resolving production issues. Basic Qualifications Are 18 years of age or older Experience with at least one general-purpose programming language such as Java, Python, C++, C#, Go, Rust, or TypeScript Experience with data structure implementation, basic algorithm development, and/or object-oriented design principles Experience using AI-assisted development tools in academic or professional settings Currently has, or is in the process of obtaining a bachelor's or master’s degree in Computer Science, Computer Engineering, Data Science, Information Systems, or related STEM fields Preferred Qualifications Experience from previous technical internship(s) or demonstrated project experience Experience with one or more of the following: AI tools for development productivity, Cloud platforms (preferably AWS), Database systems (SQL and NoSQL), Contributing to open-source projects, Version control systems, Debugging and troubleshooting complex systems Demonstrated ability to learn and adapt to new technologies quickly Basic understanding of software development lifecycle (SDLC) Strong problem-solving and analytical skills Excellent written and verbal communication skills Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability, or other legally protected status. Los Angeles County applicants: Job duties for this position include: work safely and cooperatively with other employees, supervisors, and staff; adhere to standards of excellence despite stressful conditions; communicate effectively and respectfully with employees, supervisors, and staff to ensure exceptional customer service; and follow all federal, state, and local laws and Company policies. Criminal history may have a direct, adverse, and negative relationship with some of the material job duties of this position. These include the duties and responsibilities listed above, as well as the abilities to adhere to company policies, exercise sound judgment, effectively manage stress and work safely and respectfully with others, exhibit trustworthiness and professionalism, and safeguard business operations and the Company’s reputation. Pursuant to the Los Angeles County Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records. Our inclusive culture empowers Amazonians to deliver the best results for our customers. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please visit https://amazon.jobs/content/en/how-we-hire/accommodations for more information. If the country/region you’re applying in isn’t listed, please contact your Recruiting Partner. The starting pay for this position is listed below. Starting Day 1 of employment, Amazon offers EAP, Mental Health Support, Medical Advice Line, 401(k) matching. Learn more about our benefits at https://hiring.amazon.com/why-amazon/benefits. ARLINGTON, VA, USA - 128,700.00 USD Annually AUSTIN, TX, USA - 128,700.00 USD Annually Arlington, VA, USA - 128,700.00 USD Annually Austin, TX, USA - 128,700.00 USD Annually BOSTON, MA, USA - 128,700.00 USD Annually Boston, MA, USA - 128,700.00 USD Annually DENVER, CO, USA - 128,700.00 USD Annually DETROIT, MI, USA - 128,700.00 USD Annually Denver, CO, USA - 128,700.00 USD Annually Detroit, MI, USA - 128,700.00 USD Annually MADISON, WI, USA - 128,700.00 USD Annually Madison, WI, USA - 128,700.00 USD Annually Minneapolis, MN, USA - 128,700.00 USD Annually SANTA CLARA, CA, USA - 148,100.00 USD Annually Santa Clara, CA, USA - 148,100.00 USD Annually Seattle, WA, USA - 128,700.00 USD Annually Company - Amazon.com Services LLC Job ID: A10583340",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-11T06:39:54.929424+00:00",
@@ -11190,10 +11426,13 @@
       },
       "linkedin_detail_triage_hash": "6f7a4205def66765bfc6",
       "linkedin_detail_deferred_at": "2026-11-11T06:39:54.929424+00:00",
-      "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "linkedin_detail_attempted_at": "2026-11-12T09:59:46.049786+00:00",
+      "linkedin_detail_fetched_at": "2026-11-12T09:59:46.049786+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4470200755",
@@ -11783,7 +12022,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4473573134",
@@ -14258,7 +14497,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-aws-dynamodb-at-amazon-web-services-aws-4487866275",
       "official_url": "",
-      "description": "",
+      "description": "Description Want to help shape the future of one of the largest NoSQL database services on the planet? The Amazon DynamoDB team is looking for deeply technical, team-first-mentality software engineers who are willing to commit themselves to providing best in class database performance to AWS customers. DynamoDB is a key-value and document database that delivers single-digit-millisecond performance at any scale. As a fast-growing service at the core of the AWS Cloud, our business and engineering decisions have widespread impact across AWS, Amazon, and beyond. Many of the world's fastest growing businesses, such as Lyft, Airbnb, and Redfin, as well as enterprises, such as Samsung, Toyota, and Capital One, depend on the scale and performance of DynamoDB to support their mission-critical workloads. DynamoDB engineers are constantly challenged to think of unique and innovative solutions. The quality bar is high. As an engineer here, you will work on the hardest engineering problems in distributed systems at a massive scale and on multiple dimensions. You will exercise your intellectual curiosity, work with motivated teams of sharp individuals, and get insightful guidance from senior and principal engineers. Key job responsibilities This is a hands-on position in which you will own everything from end to end: requirements gathering, designs, design reviews, implementations, code reviews, incremental feature launches, operations, mentoring, and the driving of continuous improvement. About The Team AWS values diverse experiences. Even if you do not meet all of the preferred qualifications and skills listed in the job description, we encourage candidates to apply. If your career is just starting, hasn’t followed a traditional path, or includes alternative experiences, don’t let it stop you from applying. Why AWS? Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted cloud platform. We pioneered cloud computing and never stopped innovating — that’s why customers from the most successful startups to Global 500 companies trust our robust suite of products and services to power their businesses. Inclusive Team Culture Here at AWS, it’s in our nature to learn and be curious. Our employee-led affinity groups foster a culture of inclusion that empower us to be proud of our differences. Ongoing events and learning experiences, including our Conversations on Race and Ethnicity (CORE) and AmazeCon conferences, inspire us to never stop embracing our uniqueness. Mentorship & Career Growth We’re continuously raising our performance bar as we strive to become Earth’s Best Employer. That’s why you’ll find endless knowledge-sharing, mentorship and other career-advancing resources here to help you develop into a better-rounded professional. Work/Life Balance We value work-life harmony. Achieving success at work should never come at the expense of sacrifices at home, which is why we strive for flexibility as part of our working culture. When we feel supported in the workplace and at home, there’s nothing we can’t achieve in the cloud. Basic Qualifications 3+ years of non-internship professional software development experience 2+ years of non-internship design or architecture (design patterns, reliability and scaling) of new and existing systems experience Experience programming with at least one software programming language Preferred Qualifications 3+ years of full software development life cycle, including coding standards, code reviews, source control management, build processes, testing, and operations experience Bachelor's degree in computer science or equivalent Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability, or other legally protected status. Our inclusive culture empowers Amazonians to deliver the best results for our customers. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please visit https://amazon.jobs/content/en/how-we-hire/accommodations for more information. If the country/region you’re applying in isn’t listed, please contact your Recruiting Partner. The base salary range for this position is listed below. Your Amazon package will include sign-on payments and restricted stock units (RSUs). Final compensation will be determined based on factors including experience, qualifications, and location. Amazon also offers comprehensive benefits including health insurance (medical, dental, vision, prescription, Basic Life & AD&D insurance and option for Supplemental life plans, EAP, Mental Health Support, Medical Advice Line, Flexible Spending Accounts, Adoption and Surrogacy Reimbursement coverage), 401(k) matching, paid time off, and parental leave. Learn more about our benefits at https://amazon.jobs/en/benefits. USA, WA, Seattle - 143,700.00 - 194,400.00 USD annually Company - Amazon Development Center U.S., Inc. Job ID: A10601721",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-11T06:39:54.929424+00:00",
@@ -14294,10 +14533,13 @@
       },
       "linkedin_detail_triage_hash": "596ae6b5cf54ae2ff9b1",
       "linkedin_detail_deferred_at": "2026-11-11T06:39:54.929424+00:00",
-      "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "linkedin_detail_attempted_at": "2026-11-12T09:59:46.049786+00:00",
+      "linkedin_detail_fetched_at": "2026-11-12T09:59:46.049786+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4468306797",
@@ -18229,7 +18471,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-at-audible-4489624893",
       "official_url": "",
-      "description": "",
+      "description": "At Audible, we believe stories have the power to transform lives. It’s why we work with some of the world’s leading creators to produce and share audio storytelling with our millions of global listeners. We are dreamers and inventors who come from a wide range of backgrounds and experiences to empower and inspire each other. Imagine your future with us. ABOUT THIS ROLE As a Software Development Engineer, it’s up to you to define, design and refine the tech that keeps us one step ahead of listeners. Anticipate. Innovate. Bring challenging ideas and we’ll support you with the latest tech, tools, and systems that you need to succeed. We pride ourselves on our ability to imagine and invent solutions to problems of the future. You’ll be essential in this forward\\-thinking approach to development. Together with the team, you’ll build and maintain our platform to bring thousands of stories to millions of listeners and unleash the power of the human voice. ABOUT YOU If you’re a dedicated problem solver, this is the role for you. Identifying and overcoming challenges is at the heart of everything you do; whether it’s looking ahead to our listeners problems, or analyzing every inefficiency, you thrive when you strive for perfection. We look for people who take responsibility, who feel the pride in a job well done and see every failure as an opportunity to learn. With a knowledgeable team around you, and opportunities to challenge yourself, it’s a perfect environment to develop and apply your new skills. As a Software Development Engineer, you will... * Develop, test, and maintain software components and applications for the world's largest audiobook creator and provider * Identify and resolve software defects through code review, log analysis, metrics examination, debugging, and other troubleshooting methods * Write maintainable and scalable code for software components as part of an agile engineering team * Collaborate with stakeholders to envision, design, develop, test, and launch customer\\-centric software that inspires and impacts users * Apply computer science, engineering, and analysis principles to solve moderate\\-scale problems * Continuously enhance testability, operational excellence (OE), and documentation for owned software components * Handle data classification, storage, and management in accordance with company policies * Participate in the interview process and provide mentorship to fellow engineers ABOUT AUDIBLE Audible is the leading producer and provider of audio storytelling. We spark listeners’ imaginations, offering immersive, cinematic experiences full of inspiration and insight to enrich our customers daily lives. We are a global company with an entrepreneurial spirit. We are dreamers and inventors who are passionate about the positive impact Audible can make for our customers and our neighbors. This spirit courses throughout Audible, supporting a culture of creativity and inclusion built on our People Principles and our mission to build more equitable communities in the cities we call home. Basic Qualifications * Experience with at least one modern language such as Java, Python, C\\+\\+, or C\\# including object\\-oriented design * Experience with data structure implementation, basic algorithm development, and/or object\\-oriented design principles * Bachelor's degree in Computer Science or a closely related field Preferred Qualifications * Experience in optimization mathematics such as linear programming and nonlinear optimization * Experience with distributed, multi\\-tiered systems, algorithms, and relational databases * Experience from previous technical internship(s) or demonstrated project experience * Experience with Cloud platforms (preferably AWS), database systems (SQL and NoSQL), AI tools for development productivity, contributing to open\\-source projects, and/or version control systems Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability, or other legally protected status. Our inclusive culture empowers Amazonians to deliver the best results for our customers. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please visit https://amazon.jobs/content/en/how\\-we\\-hire/accommodations for more information. If the country/region you’re applying in isn’t listed, please contact your Recruiting Partner. The base salary range for this position is listed below. Your Amazon package will include sign\\-on payments and restricted stock units (RSUs). Final compensation will be determined based on factors including experience, qualifications, and location. Amazon also offers comprehensive benefits including health insurance (medical, dental, vision, prescription, Basic Life \\& AD\\&D insurance and option for Supplemental life plans, EAP, Mental Health Support, Medical Advice Line, Flexible Spending Accounts, Adoption and Surrogacy Reimbursement coverage), 401(k) matching, paid time off, and parental leave. Learn more about our benefits at https://amazon.jobs/en/benefits. USA, NJ, Newark \\- 121,600\\.00 \\- 180,600\\.00 USD annually",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-11T06:39:54.929424+00:00",
@@ -18255,10 +18497,12 @@
       },
       "linkedin_detail_triage_hash": "fe3208f4f61537d5adcd",
       "linkedin_detail_deferred_at": "2026-11-11T06:39:54.929424+00:00",
-      "enrichment_status": "deferred",
+      "enrichment_status": "resolved",
       "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "jd_recovery_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_method": "exact_indeed_peer"
     },
     {
       "job_id": "4489118409",
@@ -19382,28 +19626,23 @@
       "title": "Senior Full Stack Software Engineer",
       "location": "Miami, FL",
       "posted_date": "2026-09-29",
-      "aggregator_posted_date": "2026-09-29",
+      "aggregator_posted_date": "2026-11-11",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-software-engineer-at-bel-usa-llc-4473542491",
       "official_url": "",
-      "description": "We are seeking a highly skilled and solutions-driven Senior Full-Stack Software Engineer to design, build, and maintain scalable, high-quality software systems that power our growing business. This engineer will work across the full technology stack—front end, back end, APIs, and databases—to deliver secure, reliable features for both internal and external users. As a key member of the engineering team, the Senior Full-Stack Software Engineer will partner closely with Product, Design, and Engineering leadership to shape technical direction, enhance platform performance, and uphold modern development practices. This role will also contribute to engineering standards, developer tooling, and continuous improvement efforts that strengthen our overall technology foundation. Essential Functions: ( The reason this job exists is to perform these functions. These functions are performed regularly, seriously impacts other jobs, and there are a limited number of employees whose performance of the function can be distributed.) Design and build modern eCommerce services within a scalable, secure, AI-driven platform. Develop high-quality front-end interfaces using React or similar frameworks. Implement and maintain APIs, data models, microservices, and background workers. Design and optimize SQL/NoSQL schemas, queries, and overall data performance. Own the full development lifecycle: design, coding, code reviews, testing, deployment, and documentation. Write clean, maintainable, well-tested code aligned with engineering standards. Instrument applications with logging, metrics, tracing, and contribute to reliable alerting and runbooks. Build with security, privacy, and performance in mind from the start. Participate in on-call rotations and drive reliability improvements through post-incident reviews. Collaborate effectively with cross-functional teams and contribute to a strong engineering and review culture. Essential Qualifications: (To perform this job successfully, an individual must be able to perform each essential duty satisfactorily. The requirements listed below are representative of the competencies (minimum knowledge, skill, and ability) required. Reasonable accommodation may be made to enable individuals with disabilities to perform the essential functions.) Education/Certification Bachelor’s degree in computer science or related field. Experience Required Minimum of 5 years of professional software engineering experience, including ownership of production systems. Hands-on experience with Node.js, React, and TypeScript, including component architecture, state management, data-fetching patterns, forms, accessibility, profiling, and testing (e.g., React Testing Library, Playwright). Experience designing and implementing APIs, asynchronous patterns, and scalable back-end services. Solid foundation in web fundamentals: HTTP, caching, cookies, security headers/CSP, OAuth/OIDC, secure coding. Strong experience with SQL and NoSQL database design, migrations, and performance optimization. Demonstrated ability to ship reliable, observable, maintainable software and collaborate with Product and Design teams. Only applicants authorized to work in the U.S. need apply. BEL USA does not sponsor applicants or employees for work authorization, e.g., H-1B, or for permanent residence. BEL USA is proud to be a certified Great Place to Work and Top Workplace! 80% of our employees think BEL is a great place to work. Grow your career with BEL, a company that puts its people first. Working at Bel USA, LLC | Great Place To Work®",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-29T22:23:38.308407+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer"
+          "full-stack engineer"
         ]
       },
       "recovery_methods": {},
-      "linkedin_detail_fetched_at": "2026-09-29T22:24:09.404611+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_cache",
-      "enrichment_status": "resolved",
-      "direct_original_fetched": true,
-      "source_verified_at": "2026-09-30T19:34:21.706555+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468598931",
@@ -21710,6 +21949,35 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4490027993",
+      "source": "linkedin",
+      "company": "Bloom Healthcare",
+      "title": "Full Stack Software Developer",
+      "location": "Lakewood, CO",
+      "posted_date": "2026-11-12",
+      "aggregator_posted_date": "2026-11-12",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-developer-at-bloom-healthcare-4490027993",
+      "official_url": "",
+      "description": "**Location:** Lakewood, CO, Hybrid schedule 3\\-4 days per week on site **Job Status:** Full\\-Time **About Bloom** Bloom Healthcare is a pioneering value\\-based primary care and hospice practice transforming healthcare delivery for vulnerable patients. Our model of care is proven to provide exceptional care to the homebound population, and we’ve generated outstanding quality results in CMS Innovation Center models compared to our peers. Software is a growing part of how Bloom delivers care, and we build custom tools that support clinicians and patients at every stage of their care journey. **The Role** You’ll join a collaborative tech team at an exciting time, help shape what we build from the first conversation, and see how your work makes a real difference in patients’ lives. We create and maintain cross\\-platform healthcare applications for both internal and external users. You’ll work closely with a product manager, other developers, clinicians, and staff, and contribute across the full stack: front\\-end, back\\-end services, databases, and cloud infrastructure, with an emphasis on reliability and long\\-term maintainability. This role is ideal for someone who is team\\-oriented, takes pride in clean, maintainable code, and enjoys shaping a solution from start to finish rather than building from individual specs. You’ll treat clinicians and staff as customers, and you’ll be comfortable working through ambiguity. **What You’ll Do** * Requirements and Planning: Partner with the product manager, clinicians, and staff early to clarify needs, shape requirements, and break work into actionable pieces. Work items are often a starting point, not a finished spec. * Feature Development: Independently design and implement user\\-facing features and back\\-end services, helping define scope along the way and balancing delivery speed with long\\-term maintainability. * Cross\\-Platform Development: Build and maintain cross\\-platform healthcare applications for internal and external users, balancing usability, reliability, and data security. * Code Quality: Write clean, maintainable, well\\-documented code that follows modern development practices. * Integration: Develop and maintain robust APIs for communication between application components and external systems. * Testing and Debugging: Investigate root causes and implement durable fixes. * Service Mindset: Listen closely to the people who use our software, communicate clearly, and follow through on what they need. * Collaboration and Culture: Be a reliable teammate who brings sound judgment, accountability, humility, and follow\\-through. **Our Tech Stack** * Back end: .NET Core, C\\#, Entity Framework * Front end: Modern Angular and TypeScript * Database: SQL Server * Cloud and hosting: Azure (Bicep templates) with Docker containers * DevOps: GitLab CI/CD pipelines * Mobile: Capacitor Experience with similar technologies is welcome. If you’ve built production software in a comparable stack, we’re happy to help you ramp up on ours. **What You Bring (Basic Qualifications)** * Bachelor’s degree in computer science or a related field (or equivalent experience) * 3\\+ years of professional experience in full\\-stack software development * Experience with a modern backend language (C\\#, Java, TypeScript, etc.) * Experience with a modern JavaScript framework (Angular, React, etc.) * Familiarity with relational databases and SQL * Familiarity with REST APIs and testing tools * Familiarity with automated testing frameworks (xUnit, Jest, Puppeteer, etc.) * Familiarity with cloud infrastructure and basic administration * Familiarity with CI/CD and DevOps tools * Experience using AI\\-assisted development tools (e.g., GitHub Copilot, Claude Code, Cursor), with sound judgment on code quality, security, and data privacy * Excellent written and verbal communication skills **Nice to Have (Preferred Qualifications)** * Experience with HIPAA, PHI handling, and security best practices, or other work in healthcare or another regulated environment * Experience building user\\-facing AI features, such as chatbots or virtual assistants * Familiarity with healthcare standards like FHIR, HL7, or other interoperability protocols * Experience with cross\\-platform mobile development (e.g., Capacitor, Ionic, React Native) * Hands\\-on experience with any of the technologies in our stack above * Experience with system administration and cloud best practices What matters most is your ability to learn quickly, communicate clearly, and collaborate across disciplines. **Why Bloom?** * Mission\\-driven work: See your impact on patients and care teams * A growing tech team: Our development, IT, and data team has grown rapidly in the past year, and you’ll have a real voice in how it grows from here * Expanding reach: Bloom has expanded into four new regions in recent years, which means new patients, new care settings, and new problems for our software to solve * Culture: We build a culture that puts our team first so they can put our patients first. * Modern stack: AI\\-assisted development with solid human judgement is encouraged * Top Workplace: Voted a Top Workplace for seven consecutive years * Flexibility: Hybrid schedule with in\\-office lunch provided * Benefits: health, dental, vision, 401(k), PTO, potential for performance\\-based bonuses **Compensation:** The pay range for this role in Colorado is $110,000 to $140,000 annually. Actual compensation may vary based on qualifications, experience, and location within the state. Bloom Healthcare is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees. Bloom Healthcare only contacts through official channels using the @bloomhealthcare.com domain. We are aware of a fraudulent Gmail account impersonating our recruiting team and have reported it to Google. XfhMGVY4QQ",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "jd_recovery_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_method": "exact_indeed_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4460424185",
       "source": "linkedin",
       "company": "Bloomberg",
@@ -22613,6 +22881,49 @@
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T04:00:16.469096+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4489018727",
+      "source": "linkedin",
+      "company": "Bolton & Menk, Inc.",
+      "title": "AI/ML Engineer",
+      "location": "Minneapolis, MN",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-ml-engineer-at-bolton-menk-inc-4489018727",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "24c1703714a775bead49",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-12T10:00:31.622744+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "AI/ML engineering is relevant; responsibilities could reveal hands-on software fit."
+      },
+      "linkedin_detail_triage_hash": "ee06311be498abd22221",
+      "linkedin_detail_deferred_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469965618",
@@ -25211,6 +25522,52 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4482024226",
+      "source": "linkedin",
+      "company": "Brain Co.",
+      "title": "Machine Learning Engineer, 2027 New Grad",
+      "location": "San Francisco Bay Area",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-2027-new-grad-at-brain-co-4482024226",
+      "official_url": "",
+      "description": "Our Mission Rebuild how the world works, to make institutions work better for the people they serve. About Brain Co. Brain Co. builds AI-native operating systems for large, regulated institutions. Each system is built for a specific industry, powered by agents that push real workflows forward. Underneath it all is Atlas, our proprietary platform that keeps customers in control, secure by design, and never locked into one model. Why Now Brain Co. is entering its next phase of production deployments on a national scale with an elite team built from Palantir, Google, Meta, and Nvidia, and a growing footprint across government, insurance, health, and financial services. Joining now means shaping both the company and a new category of applied AI. Every project here ships to production and is expected to create measurable customer value and impact. You'll work alongside exceptional peers on some of the hardest problems in applied AI. It’s the kind of work you'll still be proud of in ten years from now. At Brain Co., new-grad engineers contribute to real production systems and see their work deployed at global scale. About The Role As a Machine Learning Engineer at Brain Co., you will play a crucial role in deploying state-of-the-art models to automate various real world problems in sectors such as healthcare, government and energy. Part of the role will involve turning research breakthroughs into practical solutions for various nation states. This role is your opportunity to make a significant impact by making AI technology both accessible and influential. What You’ll Work On Innovate and Deploy: Design and deploy advanced LLM models to tackle real-world problems, particularly in automating complex, manual processes in a range of real-world verticals. Optimize and Scale: Build scalable data pipelines, optimize models for performance and accuracy, and prepare them for production. Monitor and maintain deployed models to ensure they continue delivering value across various governments worldwide. Make a Difference: Engage in projects including but not limited to optimizing the world's most advanced energy production systems, modernizing core government workflows, or improving patient outcomes in advanced public healthcare systems. Your work will directly impact how AI benefits individuals, businesses, and society at large. Engage with Leaders: interact directly with government officials in various countries and apply the first of its kind AI solutions while working alongside experienced ex. Founders, AI researchers, and software engineers to understand complex business challenges and deliver AI-powered solutions. Join a dynamic team where ideas are exchanged freely and creativity flourishes. You will be able to wear many hats: software building, product management, sales, interpersonal skills. Learn and Lead: Keep abreast of the latest developments in machine learning and AI. Participate in code reviews, share knowledge, and set an example with high-quality engineering practices. You Might Be a Great Fit If You… Expect to complete a bachelor’s degree in Computer Science, Engineering, Machine Learning, Data Science, or a related field in Spring 2027. Have hands-on experience building GenAI-focused applications (e.g., agents, reasoning workflows, or RAG) and a solid understanding of how large language models are architected and operated. Have personally implemented models in common ML frameworks such as PyTorch, Jax or TensorFlow. Possess a strong foundation in data structures, algorithms, and software engineering principles. Exhibit excellent problem-solving and analytical skills, with a proactive approach to challenges. Can work collaboratively with cross-functional teams. Thrive in fast-paced environments where priorities or deadlines may compete. Are eager to own problems end-to-end and willing to acquire any necessary knowledge to get the job done. Job Details & Benefits Eligibility: Completing a bachelor’s degree in Spring 2027. Competitive full-time compensation and benefits Support and feedback from experienced platform engineers Opportunity to work on real production systems used globally Meaningful ownership from day one, with room to grow alongside the team Daily lunches (if onsite) Compensation We pay competitively for every role and back that with meaningful equity, because we want the people building Brain Co. to genuinely share in what we build together. Beyond salary and equity, we invest in country-specific benefits because we want our team to feel taken care of, not only compensated. The annual base salary range for this role is $140,000 - $190,000 . We publish this range for every role, as a matter of policy regardless of whether local law requires it. Actual pay will depend on skills, scope, and experience.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "5d07e52ea18eb9c1a39d",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-12T09:58:37.236663+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "New-grad ML role directly matches target; qualifications and work scope determine fit."
+      },
+      "linkedin_detail_triage_hash": "213dc512d9a957dea163",
+      "linkedin_detail_attempted_at": "2026-11-12T09:59:46.049786+00:00",
+      "linkedin_detail_fetched_at": "2026-11-12T09:59:46.049786+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4473989585",
       "source": "linkedin",
       "company": "Brain Co.",
@@ -27780,7 +28137,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4473586636",
@@ -30342,6 +30699,110 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4482062764",
+      "source": "linkedin",
+      "company": "Capital One",
+      "title": "AI Engineer 5 (MLX, Agentic AI, Gen AI platform Services)",
+      "location": "McLean, VA",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-5-mlx-agentic-ai-gen-ai-platform-services-at-capital-one-4482062764",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "cbae54f4a7fcd935f09f",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "2520e3482dfeb9a2597d",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "2233ca913661ceee52d6",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-12T10:00:31.622744+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": false,
+        "priority": "low",
+        "reason": "Engineer 5 title signals seniority outside the early-career target."
+      },
+      "linkedin_detail_triage_hash": "8cda90ce562a30132473",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4482065820",
+      "source": "linkedin",
+      "company": "Capital One",
+      "title": "AI Engineer 5 (MLX, Agentic AI, Gen AI platform Services)",
+      "location": "New York, NY",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-5-mlx-agentic-ai-gen-ai-platform-services-at-capital-one-4482065820",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "584728ba3adb53cf5395",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "654b8e63f5e005754e67",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "eeda8cf274ad54d98cc3",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-12T10:00:31.622744+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": false,
+        "priority": "low",
+        "reason": "Engineer 5 title signals seniority outside the early-career target."
+      },
+      "linkedin_detail_triage_hash": "c536319093f843e2a6fb",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4473255746",
       "source": "linkedin",
       "company": "Capital One",
@@ -32187,7 +32648,7 @@
       "title": "Sr. Software Engineer",
       "location": "Holmdel, NJ",
       "posted_date": "2026-11-03",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-11",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/sr-software-engineer-at-centralreach-4476314560",
@@ -32203,8 +32664,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-04T20:00:16.973103+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4467770943",
@@ -37461,7 +37922,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4462679145",
@@ -41838,6 +42299,32 @@
       "official_search_status": "deferred"
     },
     {
+      "job_id": "4489934811",
+      "source": "linkedin",
+      "company": "Deloitte",
+      "title": "Lead AI and Data Science Engineer II",
+      "location": "Tampa, FL",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/lead-ai-and-data-science-engineer-ii-at-deloitte-4489934811",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4467176694",
       "source": "linkedin",
       "company": "Deloitte",
@@ -44200,6 +44687,49 @@
       "recovery_methods": {},
       "source_verified_at": "2026-10-17T23:30:25.820907+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4489060587",
+      "source": "linkedin",
+      "company": "EVONA",
+      "title": "Full Stack Engineer",
+      "location": "Denver, CO",
+      "posted_date": "2026-11-12",
+      "aggregator_posted_date": "2026-11-12",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-at-evona-4489060587",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "9c516ff14262279b9984",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-12T10:00:31.622744+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Full-stack engineering is relevant; experience expectations and duties could change fit."
+      },
+      "linkedin_detail_triage_hash": "425981b074fb407b4eb2",
+      "linkedin_detail_deferred_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468585329",
@@ -47097,6 +47627,92 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4489022816",
+      "source": "linkedin",
+      "company": "Evlo AI",
+      "title": "LLM / GenAI Engineer",
+      "location": "New York, NY",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/llm-genai-engineer-at-evlo-ai-4489022816",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "47dc2726c0f9eddd71e2",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-12T10:00:31.622744+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "LLM/GenAI work matches target; seniority and required skills remain unknown."
+      },
+      "linkedin_detail_triage_hash": "2c211d35c05327c8160d",
+      "linkedin_detail_deferred_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4489023720",
+      "source": "linkedin",
+      "company": "Evlo AI",
+      "title": "LLM / GenAI Engineer",
+      "location": "Seattle, WA",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/llm-genai-engineer-at-evlo-ai-4489023720",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "4c85c67fe43539179938",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-12T10:00:31.622744+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "LLM/GenAI work matches target; seniority and required skills remain unknown."
+      },
+      "linkedin_detail_triage_hash": "2acecef800e638007821",
+      "linkedin_detail_deferred_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4469486457",
       "source": "linkedin",
       "company": "Evlo AI",
@@ -47678,7 +48294,7 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4487947483",
@@ -47721,7 +48337,93 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "recovery_detail_budget"
+    },
+    {
+      "job_id": "4490050406",
+      "source": "linkedin",
+      "company": "Excellus BCBS",
+      "title": "AI Engineer",
+      "location": "DeWitt, NY",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-excellus-bcbs-4490050406",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "4f9f3d239cf783d8f59b",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-12T10:00:31.622744+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "AI Engineer role is relevant; healthcare context and requirements could change fit."
+      },
+      "linkedin_detail_triage_hash": "e0c9876aca65190335e7",
+      "linkedin_detail_deferred_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4490052330",
+      "source": "linkedin",
+      "company": "Excellus BCBS",
+      "title": "AI Engineer",
+      "location": "Rochester, NY",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-excellus-bcbs-4490052330",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "017f385db92848778366",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-12T10:00:31.622744+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "AI Engineer role is relevant; healthcare context and requirements could change fit."
+      },
+      "linkedin_detail_triage_hash": "c49f09983d6273ba571a",
+      "linkedin_detail_deferred_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4472361480",
@@ -55948,7 +56650,7 @@
       "title": "Software Engineer III, AI/ML GenAI, Google Cloud AI",
       "location": "Kirkland, WA",
       "posted_date": "2026-09-29",
-      "aggregator_posted_date": "2026-09-29",
+      "aggregator_posted_date": "2026-11-11",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-iii-ai-ml-genai-google-cloud-ai-at-google-4454236760",
@@ -55963,15 +56665,14 @@
         ]
       },
       "recovery_methods": {},
-      "application_url": "https://www.google.com/about/careers/applications/jobs/results/121713962638025414-software-engineer-iii-ai-ml-genai-google-cloud-ai",
-      "official_jd_fetched_at": "2026-09-29T22:23:38.308407+00:00",
-      "official_search_verified": true,
-      "enrichment_method": "official_cache",
+      "enrichment_method": "board_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-09-29T22:23:38.308407+00:00",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-30T05:10:49.340469+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4454250616",
@@ -56816,6 +57517,32 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4433816910",
+      "source": "linkedin",
+      "company": "Google",
+      "title": "Staff Software Engineer, AI/ML GenAI, Google Cloud AI",
+      "location": "Kirkland, WA",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/staff-software-engineer-ai-ml-genai-google-cloud-ai-at-google-4433816910",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4460251709",
@@ -63097,7 +63824,7 @@
       "linkedin_detail_attempted_at": "2026-09-25T07:49:35.464359+00:00",
       "recovery_methods": {},
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468507096",
@@ -64565,7 +65292,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4487298651",
@@ -64995,7 +65722,7 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4460253097",
@@ -66875,7 +67602,7 @@
         }
       },
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4467130152",
@@ -68287,7 +69014,7 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4477467793",
@@ -71157,6 +71884,32 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4489982746",
+      "source": "linkedin",
+      "company": "MITRE",
+      "title": "Senior Generative AI Engineer",
+      "location": "Fort Meade, MD",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-generative-ai-engineer-at-mitre-4489982746",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468797941",
       "source": "linkedin",
       "company": "MMD Services",
@@ -71381,6 +72134,52 @@
       "recovery_methods": {},
       "source_verified_at": "2026-10-12T04:00:09.749628+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4481742585",
+      "source": "linkedin",
+      "company": "Magna International",
+      "title": "Junior AI Engineer",
+      "location": "Troy, MI",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/junior-ai-engineer-at-magna-international-4481742585",
+      "official_url": "",
+      "description": "Job descriptions may display in multiple languages based on your language selection. What We Offer At Magna, you can expect an engaging and dynamic environment where you can help to develop industry-leading automotive technologies. We invest in our employees, providing them with the support and resources they need to succeed. As a member of our global team, you can expect exciting, varied responsibilities as well as a wide range of development prospects. Because we believe that your career path should be as unique as you are. Group Summary Cosma provides a comprehensive range of body, chassis and engineering solutions to global customers. Through our robust product engineering, outstanding tooling capabilities and diverse process expertise, we continue to bring lightweight and innovative products to market. Job Responsibilities Department: Information Technology Job Level: Junior / Entry Level Reports To: IT Operations Manager Location: Hybrid / On-site as applicable in Michigan and Toronto Canada area No relocation or sponsorship offered Position Summary We are seeking a Junior AI Engineer to join our team and help design, develop, integrate, and support artificial intelligence solutions that improve business processes and employee productivity. The Junior AI Engineer will work alongside experienced engineers and IT teams to build process improvement applications using technologies such as: generative AI, large language models (LLMs), machine learning, APIs, automation, software applications and cloud services. This is an ideal opportunity for an early-career engineer who has a strong foundation in software development and wants to gain hands-on experience delivering secure, responsible, enterprise-scale process improvement software. Key Responsibilities Assist with the design and development of AI-enabled applications, and automation solutions. Develop applications that integrate with LLMs, traditional machine learning models, and generative AI services. Build and maintain prompts, structured outputs, tool/function integrations, and AI workflows. Assist with implementing Retrieval-Augmented Generation (RAG) solutions using enterprise data sources. Evaluate model responses for accuracy, relevance, reliability, and overall user experience. Participate in prototyping and proof-of-concept development for new AI use cases. Software Engineering & Integration Develop and maintain applications and services using Python, .NET, and other supported development languages. Build and consume REST APIs and integrate AI capabilities with existing enterprise applications. Work with structured and unstructured data from databases, documents, APIs, and business systems. Use source control and modern software development practices, including Git, CI/CD, testing, and code reviews. Assist with troubleshooting, debugging, performance optimization, and production support. Quality, Security & Governance Follow organizational standards for Responsible AI, security, privacy, and data governance. Assist with implementing logging, monitoring, evaluation, and feedback mechanisms for applications. Ensure sensitive and confidential organizational information is handled appropriately. Integrate applications to function with existing CAD, FEA, and PDM software. Collaboration & Continuous Learning Translate business requirements into technical prototypes and solutions with guidance from senior team members. Stay informed about developments in generative AI, machine learning, software engineering, and CAD/FEA automation. Share findings, demonstrations, documentation, and lessons learned with the broader technology organization. Required Qualifications Bachelor's degree in Computer Science, Software Engineering, Data Science, Information Technology, related discipline, or equivalent practical experience. 0–2 years of professional software development, data, automation, or AI experience. Programming experience with Python. Understanding of software development fundamentals, including: APIs Data structures Object-oriented programming Source control/Git Testing and debugging Basic understanding of machine learning, generative AI, and large language models. Familiarity with JSON, REST APIs, SQL, and common data formats. Strong analytical and problem-solving skills. Strong written and verbal communication skills. Ability and willingness to learn new technologies quickly. Preferred Qualifications Experience or academic/project exposure to one or more of the following is beneficial: Web development .NET / development CAD and FEA software integration AI agents and agentic workflows Microsoft Copilot Studio Prompt engineering Retrieval-Augmented Generation (RAG) Vector databases and semantic/vector search Semantic Kernel or similar AI orchestration frameworks Machine learning frameworks such as PyTorch or TensorFlow Docker and containerized applications GitHub CI/CD pipelines SQL and NoSQL databases Enterprise identity and security concepts Data analytics and visualization Knowledge & Skills The successful candidate should demonstrate: Curiosity: Strong interest in emerging technologies and experimentation. Engineering mindset: Ability to move beyond demonstrations and build maintainable solutions. Problem solving: Ability to break complex business problems into manageable technical components. Responsible AI awareness: Understanding that AI solutions require attention to security, privacy, bias, accuracy, and human oversight. Collaboration: Ability to work effectively across technical and business teams. Communication: Ability to explain technical concepts clearly to both technical and nontechnical audiences. Adaptability: Comfortable working in a rapidly evolving technology environment. Awareness, Unity, Empowerment At Magna, we believe that a diverse workforce is critical to our success. That’s why we are proud to be an equal opportunity employer. We hire on the basis of experience and qualifications, and in consideration of job requirements, regardless of, in particular, color, ancestry, religion, gender, origin, sexual orientation, age, citizenship, marital status, disability or gender identity. Magna takes the privacy of your personal information seriously. We discourage you from sending applications via email or traditional mail to comply with GDPR requirements and your local Data Privacy Law. AI-Assisted Screening Disclosure As part of our commitment to a fair, consistent, and efficient recruitment process, we may use artificial intelligence (AI) tools to assist in the initial screening of applications submitted through our Workday system. These tools help identify qualifications and experience that align with the role requirements. Please note that AI is used solely to support our recruiters. Final decisions are always made by the hiring manager and the hiring team. Importantly, no applicant data is shared externally through these AI tools. All information remains securely within our systems and is handled in accordance with our privacy and data protection policies. Under conditions defined by applicable law, you may have the right to request an explanation of how AI is used to support decision-making. If you have any questions or concerns about this process, feel free to contact our Talent Attraction team. Worker Type Regular / Permanent Group Cosma International",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "fa533e5471ab1e6f4541",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-12T09:58:37.236663+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "Junior AI Engineer aligns with target; qualifications and duties could affect fit."
+      },
+      "linkedin_detail_triage_hash": "57f193ed21908e2e99a5",
+      "linkedin_detail_attempted_at": "2026-11-12T09:59:46.049786+00:00",
+      "linkedin_detail_fetched_at": "2026-11-12T09:59:46.049786+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4462326237",
@@ -72487,6 +73286,59 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4490056220",
+      "source": "linkedin",
+      "company": "McKesson",
+      "title": "Full Stack Software Engineer",
+      "location": "Richmond, VA",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-mckesson-4490056220",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "9e43e1198a7f3045dca6",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "a65787ff88501d04a31c",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "f40332f53d8baddb6d94",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-12T10:00:31.622744+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Full-stack software role fits target; requirements and scope remain unknown."
+      },
+      "linkedin_detail_triage_hash": "b17d8116c44485cb495e",
+      "linkedin_detail_deferred_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4466742045",
       "source": "linkedin",
       "company": "McKesson",
@@ -73337,7 +74189,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-11T06:39:54.929424+00:00",
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470432181",
@@ -74553,7 +75405,7 @@
       "direct_original_fetched_at": "2026-10-20T07:02:05.435297+00:00",
       "application_url": "https://www.mongodb.com/careers/job/?gh_jid=8189170",
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4481502658",
@@ -74587,7 +75439,7 @@
       "direct_original_fetched_at": "2026-10-20T07:02:05.435297+00:00",
       "application_url": "https://www.mongodb.com/careers/job/?gh_jid=8189170",
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4457389222",
@@ -75948,6 +76800,41 @@
       "direct_original_fetched_at": "2026-10-31T19:02:39.248330+00:00",
       "source_verified_at": "2026-10-31T19:02:39.248330+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4480729798",
+      "source": "linkedin",
+      "company": "NVIDIA",
+      "title": "Senior Full-Stack Software Engineer - VLSI Tools",
+      "location": "Durham, NC",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-software-engineer-vlsi-tools-at-nvidia-4480729798",
+      "official_url": "",
+      "description": "Widely considered to be one of the technology world’s most desirable employers, NVIDIA is an industry leader with groundbreaking developments in High-Performance Computing, Artificial Intelligence and Visualization. The GPU, our invention, serves as the visual cortex of modern computers and is at the heart of our products and services. Our work opens up new universes to explore, enables amazing creativity and discovery and powers what were once science fiction inventions from artificial intelligence to autonomous cars. We are now looking for a highly motivated Full-Stack Web Applications Engineers to join this dynamic and innovative Hardware Infrastructure team! Our team is building scalable web services for VLSI designs. This software development team is a multifaceted Agile software team with high production quality standards. We are looking for motivated engineers to build and maintain a new generation of services that enables greater chip design productivity. What you’ll be doing: Working on backend and frontend design and development of web applications targeting VLSI design and modeling. Collecting requirements and provide consultation to end users about their needs and use cases. Analyzing performance bottlenecks. Supporting and maintaining large scale data platform with high QoS. Building infrastructure and microservices for various big-data scenarios. What we need to see: 5+ years of experience. Bachelors or Masters in Computer Science or related engineering or equivalent experience. Knowledge of VLSI design, modeling and verification. Experience with JavaScript and Node.js Knowledge of modern frontend frameworks like Vue.js, React.js, Svelte, or Ember.js Comprehensive grasp of web development core concepts and industry standards Experience with design and development of distributed microservices. In depth understanding of database concepts and object modeling. Detailed knowledge of object oriented design, data structures and algorithms Excellent interpersonal skills Ways to stand out from the crowd: In depth familiarity with coding assistant tools (i.e.: Cursor, Claude Code, Co-pilot) Background with SQL and at least one SQL database server. Experience of developing web services for chip design, modeling and verification. Experience with MongoDB or other noSQL datastores and knowledge of Python or Golang. Flexibility/adaptability for working in a dynamic diverse environment with different frameworks and requirements. #LI-Hybrid Your base salary will be determined based on your location, experience, and other objective job-related factors. The expected base salary ranges for this position are: 152,000 USD – 241,500 USD for Level 3; and 184,000 USD – 287,500 USD for Level 4. You will also be eligible for equity and benefits . Applications for this job will be accepted at least until November 3, 2026. This posting is for an existing vacancy. NVIDIA uses AI tools in its recruiting processes. NVIDIA is committed to fostering an inclusive work environment and proud to be an equal opportunity employer. As we highly value diversity in our current and future employees, we do not discriminate (including in our hiring and promotion practices) on the basis of race, religion, color, national origin, gender, gender expression, sexual orientation, age, marital status, veteran status, disability status or any other characteristic protected by law.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "application_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Full-Stack-Software-Engineer---VLSI-Tools_JR2012368",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-12T09:58:37.236663+00:00",
+      "jd_recovery_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-12T09:58:37.236663+00:00",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4460680708",
@@ -80185,6 +81072,49 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4489904299",
+      "source": "linkedin",
+      "company": "Optum",
+      "title": "Full Stack Software Engineer",
+      "location": "Eden Prairie, MN",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-optum-4489904299",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "ae6f1fc174ff528b18da",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-12T10:00:31.622744+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Full-stack software role fits target; requirements and scope remain unknown."
+      },
+      "linkedin_detail_triage_hash": "fb7d21c29a313952fe61",
+      "linkedin_detail_deferred_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4484942467",
       "source": "linkedin",
       "company": "Optum",
@@ -80355,6 +81285,36 @@
       "recovery_methods": {},
       "source_verified_at": "2026-10-10T02:39:30.958223+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4490081970",
+      "source": "linkedin",
+      "company": "Optum",
+      "title": "Senior AI/ML Engineer - Remote",
+      "location": "Eden Prairie, MN",
+      "posted_date": "2026-11-12",
+      "aggregator_posted_date": "2026-11-12",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-ai-ml-engineer-remote-at-optum-4490081970",
+      "official_url": "",
+      "description": "Optum Tech is a global leader in health care innovation. Our teams develop cutting\\-edge solutions that help people live healthier lives and help make the health system work better for everyone. From advanced data analytics and AI to cybersecurity, we use innovative approaches to solve some of health care's most complex challenges. Your contributions here have the potential to change lives. Ready to build the next breakthrough? Join us in making healthcare work better for everyone through people\\-led, responsible AI while **Caring. Connecting. Growing together.** The Optum AI Science team are driving the next generation of healthcare software and analytics platforms by translating complex clinical, administrative, and financial challenges into intelligent, automated systems. As a Senior AI/ML Engineer, you will design, build, and deploy production\\-grade machine learning models and end\\-to\\-end automated workflows that operate at enterprise scale. In this role, you will leverage advanced agentic coding frameworks and tools such as Claude Code and Codex, orchestrate interactive data intelligence using Databricks Genie, and train custom models that deliver measurable impact across the healthcare ecosystem. You will work alongside cross\\-functional engineering and product teams to integrate responsible AI practices into core software architectures. You'll enjoy the flexibility to work remotely \\* from anywhere within the U.S. as you take on some tough challenges. For all hires in the Minneapolis or Washington, D.C. area, you will be required to work in the office a minimum of four days per week. **Primary Responsibilities:** * Design, develop, and deploy production\\-ready AI/ML models and automated engineering workflows to solve complex healthcare data and operational challenges * Train, fine\\-tune, evaluate, and monitor machine learning and deep learning models across structured, unstructured, and multimodal healthcare datasets * Build scalable end\\-to\\-end data pipelines and workflow orchestration solutions, integrating tools like Databricks Genie to provide conversational data analytics and automated insight generation * Utilize enterprise\\-approved modern AI engineering and coding tools (including Claude Code and Codex) to accelerate development cycles, automate routine tasks, and optimize code quality * Apply rigorous responsible AI principles, ensuring all AI\\-assisted outputs, data handling, and automated decisions adhere to strict governance, security, transparency, and accuracy standards * Collaborate with software engineers, data architects, and clinical/business stakeholders to integrate AI services into enterprise microservices and distributed applications You'll be rewarded and recognized for your performance in an environment that will challenge you and give you clear direction on what it takes to succeed in your role as well as provide development for other roles you may be interested in. **Required Qualifications:** * Bachelor's degree in Computer Science, Artificial Intelligence, Computer Engineering or similar * 4\\+ years of professional software engineering and machine learning engineering experience, with a proven track record of deploying models into production environments * Demonstrated experience training, fine\\-tuning, and evaluating machine learning or deep learning models (e.g., using PyTorch, TensorFlow, Scikit\\-learn, or Hugging Face) * Proven experience building end\\-to\\-end AI/ML workflows and data pipelines using modern cloud/data platforms (such as Databricks, Apache Spark, or cloud orchestration frameworks) * Hands\\-on experience working with AI\\-assisted software development tools and agentic coding workflows (such as Claude Code, OpenAI Codex, or equivalent developer automation utilities) * Proficiency in Python and software engineering best practices, including version control, CI/CD, API design, containerization (Docker/Kubernetes), and automated testing **Preferred Qualifications:** * Experience architecting and deploying Databricks Genie spaces, semantic data models, or conversational BI solutions * Experience operating within regulated healthcare data domains (e.g., HIPAA compliance, clinical terminology, claims processing, or electronic health records) * Experience establishing model governance, automated monitoring, and responsible AI guardrails in mission\\-critical applications * Proven background in natural language processing (NLP), large language models (LLMs), retrieval\\-augmented generation (RAG), and agentic workflow orchestration * All employees working remotely will be required to adhere to UnitedHealth Group's Telecommuter Policy Pay is based on several factors including but not limited to local labor markets, education, work experience, certifications, etc. In addition to your salary, we offer benefits such as, a comprehensive benefits package, incentive and recognition programs, equity stock purchase and 401k contribution (all benefits are subject to eligibility requirements). No matter where or when you begin a career with us, you'll find a far\\-reaching choice of benefits and incentives. The salary for this role will range from $120,100 \\- $214,500 annually based on full\\-time employment. We comply with all minimum wage laws as applicable. **Application Deadline:** This will be posted for a minimum of 2 business days or until a sufficient candidate pool has been collected. Job posting may come down early due to volume of applicants. *At UnitedHealth Group, our mission is to help people live healthier lives and help make the health system work better for everyone. Together, we are shaping the future of healthcare by harnessing technology and innovation to make care simpler to navigate, more affordable and more connected for the people we serve. We are committed to creating an inclusive workplace where everyone feels welcomed, valued, heard and respected, empowering people to bring their authentic selves to work and strengthening our collective impact through diverse talents, backgrounds, experiences and perspectives.* *UnitedHealth Group and its affiliated brands are an Equal Employment Opportunity employer under applicable law and qualified applicants will receive consideration for employment without regard to race, national origin, religion, age, color, sex, sexual orientation, gender identity, disability, or protected veteran status, or any other characteristic protected by local, state, or federal laws, rules, or regulations.* *UnitedHealth Group and its affiliated brands are a drug\\-free workplace. Candidates are required to pass a drug test before beginning employment.* *\\#optumtechpj*",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "jd_recovery_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_method": "exact_indeed_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4476387566",
@@ -83507,6 +84467,32 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4488289163",
+      "source": "linkedin",
+      "company": "Palo Alto Networks",
+      "title": "Principal Machine Learning Engineer (Advanced Threat Protection)",
+      "location": "Santa Clara, CA",
+      "posted_date": "2026-11-12",
+      "aggregator_posted_date": "2026-11-12",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/principal-machine-learning-engineer-advanced-threat-protection-at-palo-alto-networks-4488289163",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4460405060",
       "source": "linkedin",
       "company": "Palo Alto Networks",
@@ -84128,7 +85114,7 @@
       "direct_original_fetched_at": "2026-09-29T05:14:01.400356+00:00",
       "application_url": "https://paypal.eightfold.ai/careers/job/274922508777",
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4472755523",
@@ -89490,13 +90476,38 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4464675875",
+      "source": "linkedin",
+      "company": "RLI Insurance Company",
+      "title": "Experienced AI Engineer - Generative AI/Machine Learning",
+      "location": "Peoria, AZ",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/experienced-ai-engineer-generative-ai-machine-learning-at-rli-insurance-company-4464675875",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-08T23:53:29.967326+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4464683680",
       "source": "linkedin",
       "company": "RLI Insurance Company",
       "title": "Experienced AI Engineer - Generative AI/Machine Learning",
       "location": "Chicago, IL",
       "posted_date": "2026-09-30",
-      "aggregator_posted_date": "2026-10-21",
+      "aggregator_posted_date": "2026-11-11",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/experienced-ai-engineer-generative-ai-machine-learning-at-rli-insurance-company-4464683680",
@@ -89511,8 +90522,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-22T05:10:09.128611+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470448656",
@@ -101490,7 +102501,7 @@
       "title": "Sr. Full Stack Engineer, Manufacturing Systems",
       "location": "Hawthorne, CA",
       "posted_date": "2026-09-29",
-      "aggregator_posted_date": "2026-09-29",
+      "aggregator_posted_date": "2026-11-11",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/sr-full-stack-engineer-manufacturing-systems-at-spacex-4445661346",
@@ -101505,8 +102516,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-30T05:10:49.340469+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471113474",
@@ -102338,7 +103349,7 @@
       "title": "GenAI Engineer (LLM)",
       "location": "Tempe, AZ",
       "posted_date": "2026-10-30",
-      "aggregator_posted_date": "2026-10-30",
+      "aggregator_posted_date": "2026-11-11",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/genai-engineer-llm-at-state-farm-4485105262",
@@ -102352,6 +103363,10 @@
           "ai engineer"
         ]
       },
+      "linkedin_detail_fetched_at": "2026-10-31T04:23:05.016908+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_cache",
+      "enrichment_status": "resolved",
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "high",
@@ -102359,13 +103374,9 @@
       },
       "linkedin_detail_triage_hash": "2b8d42b2a4bafbdcfe0d",
       "linkedin_detail_attempted_at": "2026-10-31T04:23:05.016908+00:00",
-      "linkedin_detail_fetched_at": "2026-10-31T04:23:05.016908+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_cache",
-      "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-31T19:02:39.248330+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4485113207",
@@ -104945,7 +105956,7 @@
       "enrichment_status": "deferred",
       "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
       "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_detail_round_budget"
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4469337524",
@@ -108759,7 +109770,7 @@
       "title": "Machine Learning Engineer Graduate (E-Commerce Recommendation Foundation) - 2027 Start",
       "location": "Seattle, WA",
       "posted_date": "2026-10-21",
-      "aggregator_posted_date": "2026-10-21",
+      "aggregator_posted_date": "2026-11-11",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-graduate-e-commerce-recommendation-foundation-2027-start-at-tiktok-4453028913",
@@ -108774,17 +109785,17 @@
         ]
       },
       "recovery_methods": {},
-      "application_url": "https://lifeattiktok.com/search/7672880386574338309",
-      "official_search_verified": true,
-      "official_jd_fetched_at": "2026-10-22T05:10:09.128611+00:00",
-      "jd_recovery_at": "2026-10-22T05:10:09.128611+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "enrichment_method": "board_cache",
       "enrichment_status": "resolved",
+      "jd_recovery_at": "2026-10-22T05:10:09.128611+00:00",
       "official_search_status": "resolved",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-12T09:58:37.236663+00:00",
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-22T05:10:09.128611+00:00",
-      "source_verified_at": "2026-10-22T05:10:09.128611+00:00",
-      "verified_this_run": false
+      "application_url": "https://lifeattiktok.com/search/7672880386574338309",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4449988079",
@@ -108858,7 +109869,7 @@
       "title": "Machine Learning Engineer Graduate (E-Commerce Recommendation/Search Alliance) - 2027 Start",
       "location": "San Jose, CA",
       "posted_date": "2026-09-29",
-      "aggregator_posted_date": "2026-09-29",
+      "aggregator_posted_date": "2026-11-11",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-graduate-e-commerce-recommendation-search-alliance-2027-start-at-tiktok-4449968567",
@@ -108873,15 +109884,14 @@
         ]
       },
       "recovery_methods": {},
-      "application_url": "https://lifeattiktok.com/search/7669913085331409205",
-      "official_jd_fetched_at": "2026-09-29T22:23:38.308407+00:00",
-      "official_search_verified": true,
-      "enrichment_method": "official_cache",
+      "enrichment_method": "board_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-09-29T22:23:38.308407+00:00",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-09-30T05:10:49.340469+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4449984411",
@@ -113112,7 +114122,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4478743207",
@@ -113226,6 +114236,32 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T19:15:15.514315+00:00",
       "official_search_status": "deferred"
+    },
+    {
+      "job_id": "4482032099",
+      "source": "linkedin",
+      "company": "Uber",
+      "title": "Sr Machine Learning Engineer",
+      "location": "Sunnyvale, CA",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-machine-learning-engineer-at-uber-4482032099",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470228478",
@@ -113415,6 +114451,41 @@
       "direct_original_fetched_at": "2026-10-28T05:56:19.380067+00:00",
       "source_verified_at": "2026-10-28T05:56:19.380067+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4489930684",
+      "source": "linkedin",
+      "company": "Uber",
+      "title": "Staff Machine Learning Engineer - Rider Intelligence",
+      "location": "Seattle, WA",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/staff-machine-learning-engineer-rider-intelligence-at-uber-4489930684",
+      "official_url": "",
+      "description": "About the role and team The Rider Intelligence team powers personalization across Uber’s app homepage, helping users discover and access the most relevant services at the right time. Our work spans ranking homepage components, predicting and suggesting users’ next destinations, understanding user intent to deliver tailored experiences, presenting promotions at the right time, and optimizing the overall homepage experience across multiple business lines, including Rides, Eats, Grocery, and more. As a Staff Machine Learning Engineer, you will shape the technical and scientific direction across these problem domains and lead the design and development of ML solutions, such as real-time sequential recommendation models, intent-aware ranking, and LLM-based and agentic solutions that go beyond traditional retrieval and ranking approaches. You will partner closely with product teams to deliver personalized user experiences, drive technical strategy across teams, and mentor engineers at various levels to elevate the team's technical excellence. What You’ll Do Drive ML technical strategy: Shape the technical and scientific direction of homepage personalization and recommendation systems. Build advanced ML solutions: Lead the development of sequential recommendation models, intent-aware ranking, and LLM-based and agentic solutions. Deliver product impact: Partner with cross-functional teams to improve user experience, engagement, and business outcomes across Uber’s business lines. Provide technical leadership: Drive engineering excellence, influence technical decisions across teams, and mentor ML engineers. Basic Qualifications Deep expertise in machine learning, deep learning, and recommendation systems, including ranking, sequential modeling, and transformer architectures. Strong programming skills in Python3 with hands-on experience using ML frameworks such as PyTorch or TensorFlow. Proven track record of leading complex ML initiatives, driving measurable business impact, and influencing technical direction across teams. Preferred Qualifications 8+ years of industry experience designing, developing, and deploying machine learning models in large-scale production environments. Master's or PhD degree in Computer Science, Machine Learning, or a related field. Experience with advanced recommendation architectures, such as transformer-based sequential modeling, generative recommendation, and foundation models for personalization. Experience applying LLMs and agentic AI to personalization, recommendation, or user intent understanding. Experience optimizing multi-objective ranking systems across engagement, conversion, revenue, and long-term user value. Demonstrated research contributions through publications at top-tier ML conferences, patents, or successful application of novel ML techniques in production. For San Francisco, CA-based roles: The base salary range for this role is USD $232,000 per year - USD $258,000 per year. For Seattle, WA-based roles: The base salary range for this role is USD $232,000 per year - USD $258,000 per year. For Sunnyvale, CA-based roles: The base salary range for this role is USD $232,000 per year - USD $258,000 per year. For all US locations, you will be eligible to participate in Uber's bonus program, and may be offered an equity award & other types of comp. All full-time employees are eligible to participate in a 401(k) plan. You will also be eligible for various benefits.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "application_url": "https://jobs.uber.com/en/jobs/303297",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-12T09:58:37.236663+00:00",
+      "jd_recovery_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-12T09:58:37.236663+00:00",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4479073952",
@@ -113986,6 +115057,49 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4489050949",
+      "source": "linkedin",
+      "company": "Univera Healthcare",
+      "title": "AI Engineer",
+      "location": "Buffalo, NY",
+      "posted_date": "2026-11-12",
+      "aggregator_posted_date": "2026-11-12",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-univera-healthcare-4489050949",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "818b585c96c7fb70a321",
+          "attempted_at": "2026-11-12T09:58:37.236663+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-12T10:00:31.622744+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "AI Engineer role is relevant; healthcare context and requirements could change fit."
+      },
+      "linkedin_detail_triage_hash": "081996b79cc0fcdcedb9",
+      "linkedin_detail_deferred_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469496618",
@@ -115764,6 +116878,41 @@
       "enrichment_method": "board_cache"
     },
     {
+      "job_id": "4489954877",
+      "source": "linkedin",
+      "company": "Verizon",
+      "title": "Senior Agentic AI Engineer",
+      "location": "Lake Mary, FL",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-agentic-ai-engineer-at-verizon-4489954877",
+      "official_url": "",
+      "description": "When you join Verizon You want more out of a career. A place to share your ideas freely — even if they’re daring or different. Where the true you can learn, grow, and thrive. At Verizon, we power and empower how people live, work and play by connecting them to what brings them joy. We do what we love — driving innovation, creativity, and impact in the world. Our V Team is a community of people who anticipate, lead, and believe that listening is where learning begins. In crisis and in celebration, we come together — lifting our communities and building trust in how we show up, everywhere & always. Want in? Join the #VTeamLife. What you'll be doing… As a Senior Agentic AI Engineer within our team, you will be at the forefront of Verizon's transformation toward centralized intelligence and enterprise-grade AI agents that drive action. Our team manages a broad portfolio of business processes underpinned by analytics, and you will lead the evolution from reactive reporting to autonomous, intelligent execution. You will architect and deploy multi-agent systems capable of reasoning, planning, and collaborating across complex business domains—closing the loop between AI investment and measurable business outcomes. Responsibilities include: Architecting and deploying scalable multi-agent AI systems—designing agent workflows, communication protocols (A2A), and task delegation hierarchies for fleets of cooperative AI agents. Integrating LLMs with enterprise systems via APIs, function calling, and the Model Context Protocol (MCP) to enable agents that can reason, plan, use tools, and act autonomously. Building and operating enterprise Agent Factory pipelines—moving from reactive, episodic analytics to autonomous, continuously executing intelligent workflows. Designing and implementing retrieval-augmented generation (RAG) systems with ONNX-based embeddings and vector databases to power context-aware, hyper-personalized outputs at scale. Managing agent memory and state architecture—implementing short-term, medium-term, and long-term memory using tools like LangGraph for reliable multi-step task execution. Owning the full agent and model lifecycle: feature engineering, training, production deployment (Cloud Run, Vertex AI), and continuous monitoring with observability tooling. Establishing security guardrails, permission boundaries, short-lived agent identity tokens, and safety constraints for production agentic systems. Developing and maintaining propensity models, classification systems, and forecasting solutions that feed downstream agent decision-making. Translating complex agentic AI outputs into clear operational strategies and presenting findings to senior leadership and cross-functional business partners. Performing advanced AI-augmented analytics and generative AI model validation to ensure accuracy, reliability, and measurable business performance. What we're looking for… You are a senior AI engineer who has moved beyond building models into building agents—systems that reason, plan, and act. You have a strong foundation in data science and machine learning, and you've extended that into LLM orchestration, multi-agent architecture, and production agentic systems. You have the strategic vision to evaluate when an autonomous agent is the right solution, and the communication skills to explain complex, probabilistic AI behaviors clearly to executive, security, and business stakeholders. You'll need to have: Bachelor's degree or four or more years of work experience. Four or more years of relevant experience required, demonstrated through one or a combination of work and/or military experience, or specialized training. Four or more years of relevant work experience, with two or more years focused specifically on Generative AI, LLMs, and autonomous agent systems. Four or more years of experience developing and implementing analytical or AI solutions to complex business problems. Hands-on proficiency with multi-agent orchestration frameworks: LangChain, LangGraph, Google Agent Development Kit (ADK), LlamaIndex, or AutoGen. Experience designing agent-to-agent (A2A) communication protocols, task delegation hierarchies, and the Model Context Protocol (MCP) for enterprise tool integration. Experience with agent memory and state management: short-term context, long-term storage, context window optimization, and stateful workflow execution. Demonstrated knowledge of retrieval-augmented generation (RAG), ONNX-based embeddings, vector databases (Pinecone, Weaviate, pgvector), and semantic search. Demonstrated knowledge of cloud-scale data engineering: BigQuery pipelines and GCP (Cloud Run, Vertex AI, Amazon Bedrock, or Azure equivalent). Experience with Python and SQL for statistical modeling, prompt engineering, token management, and large-scale data extraction. Even better if you have one or more of the following: A Master's degree in a quantitative discipline such as Data Science, Computer Science, Statistics, Mathematics, Engineering, or Operations Research. Familiarity with ML/LLM monitoring and observability tooling (e.g., OpenTelemetry, Arize Phoenix, Galileo) for tracking model drift, accuracy degradation, and agent output quality over time. Experience with generative AI-augmented analytics: AI testing frameworks, model validation pipelines, and LLMOps tooling including observability and token management. Experience with AI governance, security, compliance, and financial ROI modeling for AI agent deployments. Domain expertise in customer, churn prediction, customer lifetime value (CLV) modeling, or related commercial analytics in Consumer, Telecommunications, Financial Services, or Technology industries. A passion for educating and communicating AI findings with integrity to all levels—from reviewing raw outputs with colleagues to presenting AI strategy and business impact to executive stakeholders. High curiosity, an investigative mindset, and the flexibility to adapt to new challenges while staying focused on the team's deliverables. If Verizon and this role sound like a fit for you, we encourage you to apply even if you don’t meet every “even better” qualification listed above. Where you’ll be working In this hybrid role, you'll have a defined work location that includes working from home and a minimum of three days per week in the office, which will be set by your manager. Employees are responsible for maintaining compliance with hybrid work policies. Scheduled Weekly Hours 40 Equal Employment Opportunity Verizon is an equal opportunity employer. We evaluate qualified applicants without regard to veteran status, disability or other legally protected characteristics. Benefits and Compensation Our benefits are designed to help you move forward in your career, and in areas of your life outside of Verizon. From health and wellness benefit options including: medical, dental, vision, short and long term disability, basic life insurance, supplemental life insurance, AD&D insurance, identity theft protection, pet insurance and group home & auto insurance. We also offer a matched 401(k) savings plan, up to 8 company paid holidays per year and up to 6 personal days per year, paid parental leave, adoption assistance and tuition assistance, plus other incentives, we’ve got you covered with our award-winning total rewards package. Depending on the role, employees have the opportunity to receive compensation in the form of premium pay such as overtime, shift differential, holiday pay, allowances, etc. Newly hired employees receive up to 15 days of vacation per year, which grows with additional service. For part-timers, your coverage will vary as you may be eligible for some of these benefits depending on your individual circumstances. The salary will vary depending on your location and confirmed job-related skills and experience. This is an incentive based position with the potential to earn more. For part-time roles, your compensation will be adjusted to reflect your hours. The annual salary range for the location(s) listed on this job requisition based on a full-time schedule is: $101,000.00 - $194,000.00.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "application_url": "https://mycareer.verizon.com/jobs/r-1101071/senior-agentic-ai-engineer/",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-12T09:58:37.236663+00:00",
+      "jd_recovery_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-12T09:58:37.236663+00:00",
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4488070932",
       "source": "linkedin",
       "company": "Verkada",
@@ -116406,6 +117555,32 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-03T23:14:02.379864+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4488247050",
+      "source": "linkedin",
+      "company": "Virtusa",
+      "title": "Senior Software Engineer",
+      "location": "Phoenix, AZ",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-at-virtusa-4488247050",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4384550743",
@@ -117628,7 +118803,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4451616418",
@@ -117710,7 +118885,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4454160912",
@@ -118270,7 +119445,7 @@
       "direct_original_fetched_at": "2026-10-20T07:02:05.435297+00:00",
       "application_url": "https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/Sunnyvale-CA/Senior-Software-Engineer-III---Backend--Marketplace_R-2117435",
       "source_verified_at": "2026-11-11T06:39:54.929424+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4473595661",
@@ -122240,6 +123415,36 @@
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T22:00:07.759820+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4490043711",
+      "source": "linkedin",
+      "company": "iCapital",
+      "title": "Full Stack Engineer - Vice President",
+      "location": "Salt Lake City, UT",
+      "posted_date": "2026-11-11",
+      "aggregator_posted_date": "2026-11-11",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-vice-president-at-icapital-4490043711",
+      "official_url": "",
+      "description": "**About the Role** The Full Stack Engineer, Vice President at iCapital will work end\\-to\\-end on new features, enhancements, and defect resolution on one or more of iCapital's software platforms. You will work closely with our Product Management team throughout the software development process, detailing requirements, reviewing work in progress, and addressing issues found in manual test efforts. **Responsibilities** * Web application development in React as front end and Ruby on Rails as a backend. * Strong grasp of system design, architecture, and trade\\-offs. Able to mentor junior engineers effectively. * Participate in architecture reviews and technical design. * Active participation in daily stand\\-up meetings * Active participation in Peer Code Reviews as part of our standard SDLC and Change **Qualifications** * 8\\+ years software engineering experience building enterprise SaaS cloud\\-based solutions * 6\\+ years of Ruby on Rails development experience * 6\\+ years of hands\\-on experience with modern JS frameworks such as React * 6\\+ years of front end and back\\-end test automation development using RSpec, Cucumber or similar * Technical leadership/management experience * Demonstrated understanding of relational database concepts and modeling practices. * Familiarity with cloud\\-based technologies – K8S, AWS etc. * Ability to work in an Agile / Kanban methodology * Ability to work independently or as part of a group effort, as required * Solid problem\\-solving ability * Excellent communication skills * Collaborative approach to software development **Benefits** The base salary range for this role is $140,000 to $165,000 depending on level. iCapital offers a compensation package which includes salary, equity for all full\\-time employees, and an annual performance bonus. Employees also receive a comprehensive benefits package that includes an employer matched retirement plan, generously subsidized healthcare with 100% employer paid dental, vision, telemedicine, and virtual mental health counseling, parental leave, and unlimited paid time off (PTO). We believe the best ideas and innovation happen when we are together. Employees in this role will work in the office Monday\\-Thursday, with the flexibility to work remotely on Friday. For additional information on iCapital, please visit https://www.icapitalnetwork.com/about\\-us Twitter: @icapitalnetwork \\| Awards Disclaimer: https://www.icapitalnetwork.com/about\\-us/recognition/ iCapital is proud to be an Equal Employment Opportunity and Affirmative Action employer. We do not discriminate based upon race, religion, color, national origin, gender, sexual orientation, gender identity, age, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-12T09:58:37.236663+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "jd_recovery_at": "2026-11-12T09:58:37.236663+00:00",
+      "enrichment_method": "exact_indeed_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-12T09:58:37.236663+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4387280011",
