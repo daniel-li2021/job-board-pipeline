@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-11 17:21 PST
-- Snapshot (UTC): 2026-11-12T01:21:58.666200+00:00
-- Jobs: 85 (Tier A/B only)
-- Last 24 hours: 55
-- Last 3 days: 85
+- Updated (PT): 2026-11-12 02:01 PST
+- Snapshot (UTC): 2026-11-12T10:01:23.485260+00:00
+- Jobs: 96 (Tier A/B only)
+- Last 24 hours: 64
+- Last 3 days: 96
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -15,7 +15,9 @@ The 7-day dump is `latest.md`.
 | A | 95 | indeed | Berkley | AI Developer | Manassas, VA, US | 2026-11-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d5ef382d2001203b) |
 | A | 95 | indeed | iPipeline | Software Development Engineer (Emerging Professionals Jan 2027) | Fort Lauderdale, FL, US | 2026-10-02 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=77260b209c2cbc4a) |
 | A | 91 | indeed | Audible | Software Development Engineer | Newark, NJ, US | 2026-11-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=670dac68e1dfbce7) |
+| A | 91 | linkedin | Audible | Software Development Engineer | Newark, NJ | 2026-11-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-development-engineer-at-audible-4489624893) |
 | A | 91 | indeed | Planview | Software Engineer I | Austin, TX, US | 2026-11-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f915b54ac06288c6) |
+| A | 94 | linkedin | Magna International | Junior AI Engineer | Troy, MI | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/junior-ai-engineer-at-magna-international-4481742585) |
 | A | 91 | indeed | Goldman Sachs | The Core Engineering, Software Engineering, Legal Engineering Associat | Dallas, TX, US | 2026-11-10 | 1to3d | - | unreviewed | official_unsupported | [open](https://www.indeed.com/viewjob?jk=c05ee5ed370193f8) |
 | A | 90 | indeed | DAT Freight & Analytics | Data Software Engineer | Portland, OR, US | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=dd6d6f6a1d5da9f1) |
 | A | 90 | indeed | Mercury Insurance Company | Software Engineer I | Remote, US | 2026-11-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d31d1361be339f3f) |
@@ -55,18 +57,26 @@ The 7-day dump is `latest.md`.
 | B | 84 | indeed | JustKan RCS | Full Stack Developer | Houston, TX, US | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=cd1cb12c80657995) |
 | B | 83 | indeed |  | Forward Deployed Engineer | Raleigh, WV, US | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f730ac2be9271873) |
 | B | 81 | indeed | Infosys | Java Backend Developer with AWS and AI Expereince | New York, NY, US | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=93c2170c210cea42) |
-| B | 84 | linkedin | Uber | Software Engineer II | New York, NY | 2026-11-10 | newly_discovered | Uber | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-uber-4487857409) |
+| B | 80 | linkedin | Evlo AI | LLM / GenAI Engineer | New York, NY | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/llm-genai-engineer-at-evlo-ai-4489022816) |
+| B | 80 | linkedin | Evlo AI | LLM / GenAI Engineer | Seattle, WA | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/llm-genai-engineer-at-evlo-ai-4489023720) |
+| B | 84 | linkedin | Uber | Software Engineer II | New York, NY | 2026-11-10 | 1to3d | Uber | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-uber-4487857409) |
 | B | 84 | indeed | Uber | Software Engineer II | San Francisco, CA, US | 2026-11-10 | 1to3d | Uber | unreviewed | official_ambiguous | [open](https://www.indeed.com/viewjob?jk=7f6def876cf1bee8) |
 | B | 83 | indeed | Jerry's Enterprises Inc | Software Engineer | Edina, MN, US | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a27af34b30846015) |
 | B | 82 | indeed | Synchrony | API Software Development Engineer - I | Alpharetta, GA, US | 2026-11-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=094bcd14e47d75c5) |
 | B | 77 | indeed | Regions Financial | Software Engineer - Risk Systems | Atlanta, GA, US | 2026-11-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a07f26140fb4092c) |
 | B | 77 | indeed | Hennepin County | IT Developer | MN, US | 2026-11-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=de7965a0f16786c8) |
-| B | 75 | linkedin | Audible | Software Development Engineer | Newark, NJ | 2026-11-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-development-engineer-at-audible-4489624893) |
 | B | 75 | linkedin | T-Mobile | T-Ads Engineer, Software Full Stack | Bellevue, WA | 2026-11-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/t-ads-engineer-software-full-stack-at-t-mobile-4488452353) |
+| B | 78 | linkedin | McKesson | Full Stack Software Engineer | Richmond, VA | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-mckesson-4490056220) |
+| B | 78 | linkedin | Optum | Full Stack Software Engineer | Eden Prairie, MN | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-optum-4489904299) |
 | B | 75 | linkedin | Evlo AI | Software Engineer - Full Stack | Austin, TX | 2026-11-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-evlo-ai-4487928870) |
 | B | 75 | linkedin | Evlo AI | Software Engineer - Full Stack | Dallas, TX | 2026-11-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-evlo-ai-4487947483) |
 | B | 75 | linkedin | Jack | Software Engineer | San Francisco Bay Area | 2026-11-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-jack-4487925534) |
+| B | 79 | linkedin | Excellus BCBS | AI Engineer | DeWitt, NY | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-excellus-bcbs-4490050406) |
+| B | 79 | linkedin | Excellus BCBS | AI Engineer | Rochester, NY | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-excellus-bcbs-4490052330) |
+| B | 79 | linkedin | Univera Healthcare | AI Engineer | Buffalo, NY | 2026-11-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-univera-healthcare-4489050949) |
 | B | 75 | linkedin | LTM | Full Stack .NET Developer | Irving, TX | 2026-11-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-net-developer-at-ltm-4487919484) |
+| B | 79 | linkedin | Bolton & Menk, Inc. | AI/ML Engineer | Minneapolis, MN | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-bolton-menk-inc-4489018727) |
+| B | 78 | linkedin | EVONA | Full Stack Engineer | Denver, CO | 2026-11-12 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-engineer-at-evona-4489060587) |
 | B | 75 | linkedin | Joblet-AI | Fullstack Software Engineer (Remote) | United States | 2026-11-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/fullstack-software-engineer-remote-at-joblet-ai-4487912319) |
 | B | 78 | indeed | LexisNexis Risk Solutions | Software Engineer II | Alpharetta, GA, US | 2026-11-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=dc79d409f8bd0dcc) |
 | B | 78 | indeed | Garmin | Software Engineer - Garmin Health | Olathe, KS, US | 2026-11-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b4f2ef9aecb02b1f) |
@@ -85,6 +95,7 @@ The 7-day dump is `latest.md`.
 | B | 76 | indeed | Intercontinental Exchange | Associate Software Developer | Jacksonville, FL, US | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d862ef297b5dcc90) |
 | B | 76 | indeed | Pika | Applied AI Engineer, Creative Experiences | Palo Alto, CA, US | 2026-11-09 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=4e9268afcadc23a6) |
 | B | 77 | indeed | Alldus | AI Engineer | New York, NY, US | 2026-11-10 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5a801c17208508ed) |
+| B | 76 | linkedin | Allegion | Full Stack Software Engineer | Carmel, IN | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-allegion-4489975807) |
 | B | 76 | indeed | Allegion | Full Stack Software Engineer | Carmel, IN, US | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5e25c28ee031a9ce) |
 | B | 76 | indeed | ELITEBRAIN | Software Engineer - Backend | Pembroke Pines, FL, US | 2026-11-11 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5b33189053dfbcc2) |
 | B | 75 | indeed | iPipeline | Software Quality Engineer (Emerging Professional Jan 2027) | Fort Lauderdale, FL, US | 2026-10-14 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=fa127223f5699739) |
