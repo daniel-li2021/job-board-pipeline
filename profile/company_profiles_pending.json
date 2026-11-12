@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-12T01:32:33.454439+00:00",
-  "count": 6152,
+  "generated_at": "2026-11-12T10:04:59.375077+00:00",
+  "count": 6153,
   "companies": [
     {
       "name": "01.com",
@@ -3264,11 +3264,12 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "2d6f58b7f31983d91208d94c",
         "5d229e7d49f5a025a58df7d3",
         "bc22b28198d6b843853080ce",
         "dd9c15e44f1bd5f6565ce76a"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "Allegro MicroSystems",
@@ -10371,9 +10372,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "773093b326089cd95e6d46f8"
+        "773093b326089cd95e6d46f8",
+        "b2660f918e126b497a4b763e"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Bloomberg Industry Group",
@@ -10960,16 +10962,19 @@
     },
     {
       "name": "Bolton & Menk",
-      "aliases": [],
+      "aliases": [
+        "Bolton & Menk, Inc."
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "0aa2b8d57bc403951535b98f",
         "feab3bd90bba0f1342f7187c"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Bonaire Software Solutions",
@@ -26967,6 +26972,19 @@
       "tags": [],
       "seen_job_keys": [
         "00b6077a30fe4ef45583314a"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "EVONA",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "2541a5db4030ec3cc53ab7d7"
       ],
       "seen_count": 1
     },
