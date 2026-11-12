@@ -1,25 +1,25 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-11-11 07:46 PST
-- Snapshot (UTC): 2026-11-11T15:46:51.723453+00:00
-- Jobs: 48 (Tier A/B only)
-- Last 24 hours: 2
-- Last 3 days: 48
+- Updated (PT): 2026-11-11 16:46 PST
+- Snapshot (UTC): 2026-11-12T00:46:58.043089+00:00
+- Jobs: 40 (Tier A/B only)
+- Last 24 hours: 0
+- Last 3 days: 40
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 89 | official | Microsoft | Software Development Engineer | United States, Washington, Redmond | 2026-11-11 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557050698) |
+| A | 88 | official | CVS Health | Data Scientist - Pharmacy Benefits | New York-161 Ave of the Americas; Chicago-525 West Monroe | 2026-11-11 | 1to3d | CVS | unreviewed | official_canonical | [open](https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/New-York-161-Ave-of-the-Americas/Data-Scientist---Pharmacy-Benefits_R1094628) |
 | A | 88 | official | Apple | Software Engineer, Deployment Compliance | Seattle, United States of America | 2026-11-10 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200691617/software-engineer-deployment-compliance) |
 | A | 86 | official | Google | Software Engineer, AI/ML, ML Infrastructure, Search Ads | Mountain View, CA, USA; Pittsburgh, PA, USA | 2026-11-10 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/115014381934125766-software-engineer-ai-ml-ml-infrastructure-search-ads) |
 | A | 88 | official | NetApp | Full Stack Engineer - NetApp Digital Advisor | Morrisville, North Carolina, United States | 2026-11-10 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.netapp.com/en/job/morrisville/full-stack-engineer-netapp-digital-advisor/27600/103127293536) |
-| A | 92 | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-11-09 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557053863) |
-| A | 90 | official | Amazon | Software Development Engineer, Audible AI Voice Production | Cambridge, Massachusetts, USA | 2026-11-09 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10599972/software-development-engineer-audible-ai-voice-production) |
-| A | 87 | official | Microsoft | Software Engineering | United States, Washington, Redmond | 2026-11-09 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557039397) |
-| A | 89 | official | Notion | Software Engineer, Web Infrastructure | San Francisco, California; San Francisco, California, United States; New York, New York; Remote, United States | 2026-11-09 | 1to3d | - | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/notion/06c2599d-4dd5-4f97-843f-7194b546f042) |
-| A | 89 | official | Visa | Associate Data Engineer | US - Foster City, CA | 2026-11-09 | 1to3d | Visa | unreviewed | official_canonical | [open](https://visa.wd5.myworkdayjobs.com/Visa/job/US---Foster-City-CA/Associate-Data-Engineer_REF089618W) |
-| B | 83 | official | Amazon | Software Engineer I, Commerce | San Francisco, California, USA | 2026-11-11 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10599912/software-engineer-i-commerce) |
-| B | 76 | official | Apple | Machine Learning Engineer, (Applied Machine Learning), AI & Data Platf | Sunnyvale, United States of America | 2026-11-11 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693613/machine-learning-engineer-applied-machine-learning-ai-data-platforms-aidp) |
+| B | 83 | official | Amazon | Software Engineer I, Commerce | San Francisco, California, USA | 2026-11-11 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10599912/software-engineer-i-commerce) |
+| B | 76 | official | Apple | Machine Learning Engineer, (Applied Machine Learning), AI & Data Platf | Sunnyvale, United States of America | 2026-11-11 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693613/machine-learning-engineer-applied-machine-learning-ai-data-platforms-aidp) |
+| B | 75 | official | Microsoft | Applied ML Engineer | United States, Washington, Redmond | 2026-11-11 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557023169) |
+| B | 72 | official | Apple | Data Scientist - Business Process Re-Engineering | Austin, United States of America | 2026-11-11 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200694519/data-scientist-business-process-re-engineering) |
+| B | 72 | official | Apple | Software Engineer, Apple Ads | Austin, United States of America | 2026-11-11 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200694381/software-engineer-apple-ads) |
 | B | 84 | official | Microsoft | Software Engineer 2 - CoreAI | United States, Washington, Redmond | 2026-11-10 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557042277) |
 | B | 84 | official | Uber | Software Engineer II | San Francisco, CA, United States | 2026-11-10 | 1to3d | Uber | unreviewed | official_canonical | [open](https://jobs.uber.com/en/jobs/303784) |
 | B | 84 | official | Microsoft | Software Engineer II- Copilot, Agents and Platforms | United States, Washington, Redmond; United States, California, Mountain View; United States, New York, New York | 2026-11-10 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557055713) |
@@ -45,16 +45,8 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 75 | official | eBay | Platform Engineer, Java Frameworks | Austin | 2026-11-10 | 1to3d | eBay | unreviewed | official_canonical | [open](https://ebay.wd5.myworkdayjobs.com/apply/job/Austin/Platform-Engineer--Java-Frameworks_R0076323) |
 | B | 76 | official | Amazon | Software Development Engineer | Newark, New Jersey, USA | 2026-11-10 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10601102/software-development-engineer) |
 | B | 79 | official | MathWorks | Software Developer in Test - Shared Platform | US-MA-Natick | 2026-11-10 | 1to3d | - | unreviewed | official_canonical | [open](https://www.mathworks.com/company/jobs/opportunities/37901-software-developer-in-test-shared-platform?keywords=ai+engineer) |
+| B | 75 | official | Amazon | Software Development Engineer I, Inference models optimization, AWS Ne | Cupertino, California, USA | 2026-11-10 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10598223/software-development-engineer-i-inference-models-optimization-aws-neuron-inference) |
 | B | 72 | official | Apple | DevOps Engineer - Retail Engineering Apps & Services | Sunnyvale, United States of America | 2026-11-10 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693083/devops-engineer-retail-engineering-apps-services) |
 | B | 74 | official | Cisco | Cloud Engineer II (Full Time) - United States | RTP, North Carolina, US; Richardson, Texas, US | 2026-11-10 | 1to3d | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/RTP-North-Carolina-US/Cloud-Engineer-II--Full-Time----United-States_2031378) |
 | B | 74 | official | Qualcomm | #Wireless Software Integration & Test Engineer | San Diego, California, United States of America | 2026-11-10 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446722041728) |
 | B | 74 | official | NetApp | Software Engineer | Morrisville, North Carolina, United States; United States | 2026-11-10 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.netapp.com/en/job/morrisville/software-engineer/27600/103118417344) |
-| B | 84 | official | Apple | Tools & Automation Engineer — Early Career | Sunnyvale, United States of America | 2026-11-09 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200692689/tools-automation-engineer-early-career) |
-| B | 75 | official | Microsoft | Software Engineer II | United States, Washington, Redmond | 2026-11-09 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557044529) |
-| B | 75 | official | Capital One | Data Engineer 4 | McLean, VA; Richmond, VA; Chicago, IL; Plano, TX | 2026-11-09 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Data-Engineer-4_R1002442-1) |
-| B | 75 | official | Capital One | Data Engineer 4 | McLean, VA; Chicago, IL | 2026-11-09 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Data-Engineer-4_R1001834-1) |
-| B | 75 | official | Capital One | Full-stack Engineer 4 - RiskTech | McLean, VA; Richmond, VA | 2026-11-09 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-stack-Engineer-4---RiskTech_R1001603-1) |
-| B | 75 | official | Capital One | Full Stack Engineer 4 (Python, AWS, AI, Snowflake, Databricks) | Plano, TX; McLean, VA; Richmond, VA; Chicago, IL; New York, NY | 2026-11-09 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Plano-TX/Full-Stack-Engineer-4--Python--AWS--AI--Snowflake--Databricks-_R1000984-1) |
-| B | 75 | official | Capital One | Full Stack Engineer 5 | Chicago, IL | 2026-11-09 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Full-Stack-Engineer-5_R1001167-1) |
-| B | 75 | official | Cisco | Software Engineer- Simulation Models | Milpitas, California, US | 2026-11-09 | 1to3d | - | unreviewed | official_canonical | [open](https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Milpitas-California-US/Software-Engineer--Simulation-Models_2022348) |
-| B | 76 | official | Amazon | Data Scientist I, NEST | Bellevue, Washington, USA | 2026-11-09 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10600616/data-scientist-i-nest) |
