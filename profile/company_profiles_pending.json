@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-13T00:53:01.582495+00:00",
-  "count": 6176,
+  "generated_at": "2026-11-13T00:55:09.844423+00:00",
+  "count": 6181,
   "companies": [
     {
       "name": "01.com",
@@ -4928,6 +4928,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Antithesis",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "3cb9b75978d38a6ccde5b118"
+      ],
       "seen_count": 1
     },
     {
@@ -11192,6 +11205,7 @@
         "536634438252497bf8a41684",
         "779f944935fad206b2841077",
         "7835fbdf36cc5ec1ae02a8ed",
+        "8eb3eefdf4eb7420002d1be2",
         "b8f804091b188e5addfa8d8f",
         "c2d29bc5e3170b0deb71591e",
         "c82c2c39099f441460221c34",
@@ -11199,7 +11213,7 @@
         "cfddfe5db8966ee6b1b2487a",
         "f3880c7c8cf4dc189bb1bf2e"
       ],
-      "seen_count": 12
+      "seen_count": 13
     },
     {
       "name": "Bottomline",
@@ -13145,9 +13159,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "06371e317a5a5b51c1fea26b"
+        "06371e317a5a5b51c1fea26b",
+        "4d20daab375e24e8df55cb29"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Callaway Golf",
@@ -20689,6 +20704,19 @@
       "seen_count": 1
     },
     {
+      "name": "D&H Distributing",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "7f38184570c78cef1d667b97"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "D'Addario & Company, Inc",
       "aliases": [],
       "size": "unknown",
@@ -20958,6 +20986,19 @@
       "tags": [],
       "seen_job_keys": [
         "e61ba3001453f81dac8137cb"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Danaher",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "0ced94c76ae8ffbf03ff578e"
       ],
       "seen_count": 1
     },
@@ -29215,6 +29256,19 @@
       "tags": [],
       "seen_job_keys": [
         "9fa80679a9b5c38c9ca301d3"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Flow Traders",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "3108c542031eaa0f4ea5adf8"
       ],
       "seen_count": 1
     },
@@ -49505,15 +49559,17 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "1a16959b62a992332c7a0d6f",
         "551794f4ba127060ade7c647",
         "67f89b4a8291abcb7e6d7bb7",
         "84015aa94a83a9ab13cac99b",
         "97403400a220d9dc03dcc518",
         "9776c1bf142c854e14ef300c",
+        "d7873ab2bc300d38b76fb7a0",
         "e7ef3b7ec1248cc187e4f09d",
         "f25b8522b0cabf5a774d6257"
       ],
-      "seen_count": 7
+      "seen_count": 9
     },
     {
       "name": "Montana Instruments Corporation",
@@ -53661,6 +53717,19 @@
       "tags": [],
       "seen_job_keys": [
         "bfdcdbae04f1007f51f4a67a"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "OKX",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "58295467d41fc685cf66424d"
       ],
       "seen_count": 1
     },
@@ -59402,9 +59471,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "3fecda3155fc18f801382b4c"
+        "3fecda3155fc18f801382b4c",
+        "8fbd9c68f8a9aa2b798452b5"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Pueblo Community College",
@@ -61076,9 +61146,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "ec5cd7ef7756358b3a3e8c70",
         "fdef1a23865499e29aa7045a"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "RedBeard Solutions",
@@ -61671,9 +61742,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "ecce56a166cb78965c949bd0"
+        "ecce56a166cb78965c949bd0",
+        "f3f493568ef450b8cb01b2eb"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "RentVision",
@@ -65462,9 +65534,11 @@
       "seen_job_keys": [
         "7d4a96cfd937ccc5ac457156",
         "84f7f968bc1bef1ed76feefd",
-        "add5aa6f69f334d7f2c9c132"
+        "add5aa6f69f334d7f2c9c132",
+        "d7a7025fe710717cab664ce7",
+        "f9eba552dd9c72dca11a725e"
       ],
-      "seen_count": 3
+      "seen_count": 5
     },
     {
       "name": "SHARP CORPORATION",
@@ -67017,9 +67091,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "2aaffbe3fc968e5af40e6054",
         "c522c69cbadc194726136afb"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Softclouds",
