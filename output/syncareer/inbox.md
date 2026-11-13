@@ -1,28 +1,34 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-11-12 07:54 PST
-- Snapshot (UTC): 2026-11-12T15:54:27.393385+00:00
-- Jobs: 38
-- Last 24 hours: 14
-- Last 3 days: 38
+- Updated (PT): 2026-11-12 16:54 PST
+- Snapshot (UTC): 2026-11-13T00:54:15.135413+00:00
+- Jobs: 43
+- Last 24 hours: 15
+- Last 3 days: 43
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | B | 78.0 | Syncareer | Kalshi | Software Engineer, Marketing | New York, New York, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/kalshi/49734bb7-ca1f-40fe-a5cf-27ccb8f70c6e) |
-| A | 94.0 | Syncareer | Vizient | Associate Software Engineer (Hybrid) | Irving, Texas, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://vizient.wd1.myworkdayjobs.com/en-US/Vizient_Careers/job/Irving-TX-75062-Vizient-Corporate-HQ/Associate-Software-Engineer--Hybrid-_35388R) |
-| B | 77.0 | Syncareer | Experis | Consultant (Software Developer) | Milwaukee, Wisconsin, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.experis.com/en/job/417907/consultant-software-developer-) |
-| A | 87.0 | Syncareer | Avanade | Consultant, AI Full-Stack Developer | Chicago, Illinois, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://avanadecareers.dejobs.org/chicago-il/consultant-ai-full-stack-developer/BC0ACB3858E342E1AE059FDF4F59D70A/job/) |
-| B | 75.0 | Syncareer | Ribbon Communications | AI Engineer- Co-Op | Westford, Massachusetts, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://vhr-genband.wd1.myworkdayjobs.com/en-US/ribboncareers/job/USA-MA-Westford/AI-Engineer--Co-Op_REQ-2026-3083) |
 | B | 85.0 | Syncareer | Bose | Data Engineer Co-Op | Framingham, Massachusetts, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://boseallaboutme.wd503.myworkdayjobs.com/en-US/Bose_Careers/job/US-MA---Framingham/Data-Engineer-Co-Op_R29270) |
+| A | 87.0 | Syncareer | Avanade | Consultant, AI Full-Stack Developer | Chicago, Illinois, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://avanadecareers.dejobs.org/chicago-il/consultant-ai-full-stack-developer/BC0ACB3858E342E1AE059FDF4F59D70A/job/) |
+| B | 77.0 | Syncareer | Experis | Consultant (Software Developer) | Milwaukee, Wisconsin, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.experis.com/en/job/417907/consultant-software-developer-) |
+| A | 94.0 | Syncareer | Vizient | Associate Software Engineer (Hybrid) | Irving, Texas, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://vizient.wd1.myworkdayjobs.com/en-US/Vizient_Careers/job/Irving-TX-75062-Vizient-Corporate-HQ/Associate-Software-Engineer--Hybrid-_35388R) |
+| B | 75.0 | Syncareer | Ribbon Communications | AI Engineer- Co-Op | Westford, Massachusetts, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://vhr-genband.wd1.myworkdayjobs.com/en-US/ribboncareers/job/USA-MA-Westford/AI-Engineer--Co-Op_REQ-2026-3083) |
+| B | 85.0 | Syncareer | Intercontinental Exchange | Associate Software Developer | Jacksonville, Florida, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ice.com/jobs/14039?lang=en-us) |
+| B | 82.0 | Syncareer | Antithesis | Applied AI Software Engineer | Vienna, Virginia, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/antithesis/914da3e5-43c0-4d97-93af-33213e584a13) |
+| B | 85.0 | Syncareer | Commure | Software Engineer, Autonomous Revenue Operations | Mountain View, California, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/Commure/3e3934a8-ef1e-47bc-84a9-9807b01bc666) |
+| A | 88.0 | Syncareer | SoFi | Software Engineer, Streaming and Workflows | Seattle, Washington, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://sofi.com/careers/job/8198207003?gh_jid=8198207003) |
+| A | 89.0 | Syncareer | Audible | Software Development Engineer | Newark, New Jersey, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.audiblecareers.com/job/newark/software-development-engineer/27552/103126128144) |
+| A | 89.0 | Syncareer | Medtronic | Software Engineer II - CRM | Minneapolis, Minnesota, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://medtronic.wd1.myworkdayjobs.com/en-US/MedtronicCareers/job/Minneapolis-Minnesota-United-States-of-America/Software-Engineer-II---CRM_R81671?locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea) |
+| B | 74.0 | Syncareer | CDK Global | Associate Software Engineer | Austin, Texas, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://cdk.wd1.myworkdayjobs.com/en-US/CDK/job/Austin-TX-USA/Associate-Software-Engineer_JR9345-1) |
+| A | 92.0 | Syncareer | SharkNinja | Forward Deployed Engineer - Entry Level | Needham, Massachusetts, United States | 2026-11-11 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/sharkninjaoperatingllc/jobs/4728305006) |
 | B | 84.0 | Syncareer | Ford Motor Company | Machine Learning Engineer | Dearborn, Michigan, United States | 2026-11-10 | No sponsor | - | unreviewed | not_dedicated | [open](https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/73932/?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000425727%253B300000000425151%253B300000000425265%253B300000000425079) |
-| B | 76.0 | Syncareer | Pika | Applied AI Engineer, Creative Experiences | Palo Alto, California, United States | 2026-11-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/pika/b075e6fb-df01-4eac-9437-1c1db97ea881) |
 | A | 92.0 | Syncareer | Mercor | Software Engineer, Applied AI- Evals | San Francisco, California, United States | 2026-11-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/mercor/4b0920c5-49f9-4851-a8ca-26825ff570f8) |
 | B | 78.0 | Syncareer | Garmin | Software Engineer - Garmin Health | Olathe, Kansas, United States | 2026-11-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.garmin.com/jobs/22181?lang=en-us&previousLocale=en-US) |
 | B | 82.0 | Syncareer | The Coca-Cola Company | Software Engineer I | Atlanta, Georgia, United States | 2026-11-10 | No sponsor | - | unreviewed | not_dedicated | [open](https://coke.wd1.myworkdayjobs.com/en-US/coca-cola-careers/job/US---GA---Atlanta/Software-Engineer-I_R-148843) |
 | B | 79.0 | Syncareer | Autodesk | Software Engineer | Novi, Michigan, United States | 2026-11-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.autodesk.com/careers/job/1443154451251) |
-| B | 79.0 | Syncareer | Pika | Forward Deployed Engineer, Applied AI | Palo Alto, California, United States | 2026-11-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/pika/3800dd06-4d34-4557-a038-b8cda5980b6c) |
 | B | 93.0 | Syncareer | Jabil | AI Agent Developer Intern (Supply Chain IT - AI & Enablement) | St. Petersburg/Tampa, Florida, United States | 2026-11-10 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.jabil.com/jobs.html?jobitem=j2469054-il-united%20states%20of%20america-ai%20agent%20developer%20intern%20(supply%20chain%20it%20-%20ai%20%26%20enablement)) |
 | B | 72.0 | Syncareer | Teradyne | Software Engineer, (Teradyne, North Reading, MA) | North Reading, Massachusetts, United States | 2026-11-10 | No sponsor | - | unreviewed | not_dedicated | [open](https://jobs.teradyne.com/Teradyne/job/North-Reading-Software-Engineer%2C-%28Teradyne%2C-North-Reading%2C-MA%29-MA/1410993000/) |
 | B | 78.0 | Syncareer | Transamerica | Intermediate Software Engineer | Denver, Colorado, United States | 2026-11-10 | No sponsor | - | unreviewed | not_dedicated | [open](https://transamerica.wd5.myworkdayjobs.com/en-US/US/job/Denver-Colorado/Intermediate-Software-Engineer_R20063169) |
@@ -46,5 +52,4 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 84.0 | Syncareer | IBM | Quantum EDA Software Developer | Yorktown Heights, New York, United States | 2026-11-09 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=139841&source=WEB_Search_NA) |
 | A | 91.0 | Syncareer | Oak Ridge National Laboratory | Data Systems AI / ML Engineer | Oak Ridge, Tennessee, United States | 2026-11-08 | No sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ornl.gov/job/Oak-Ridge-Data-Systems-AI-ML-Engineer-TN-37830/1448818900/) |
 | A | 88.0 | Syncareer | Tesla | Software Engineer, Agentic Tooling, Tesla SI | Palo Alto, California, United States | 2026-11-11 | Sponsor | YES (Tesla) | unreviewed | official_unsupported | [open](https://www.tesla.com/careers/search/job/277287) |
-| B | 76.0 | Syncareer | SAP | SAP iXp Intern - AI Developer | Palo Alto, California, United States | 2026-11-10 | Sponsor | YES (SAP) | unreviewed | official_identity_unmatched | [open](https://jobs.sap.com/en/jobs/744000160905751/sap-ixp-intern-ai-developer/) |
 | B | 88.0 | Syncareer | Tesla | Associate Data Engineer, Manufacturing Planning Systems, Semi | Sparks, Nevada, United States | 2026-11-09 | Sponsor | YES (Tesla) | unreviewed | official_unsupported | [open](https://www.tesla.com/careers/search/job/289265) |
