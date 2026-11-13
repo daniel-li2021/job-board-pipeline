@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-13T01:32:41.823403+00:00",
-  "count": 6236,
+  "generated_at": "2026-11-13T07:07:48.410939+00:00",
+  "count": 6237,
   "companies": [
     {
       "name": "01.com",
@@ -2835,18 +2835,21 @@
     },
     {
       "name": "Aktra Inc",
-      "aliases": [],
+      "aliases": [
+        "AKTRA INC"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "likely",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "1f74527eaf29cd560dd01161",
         "2bd8e87cef1592a667c7af1c",
         "84d84bc58cd5c399c563eacf",
         "a5c03b48b33ab7a4315df712"
       ],
-      "seen_count": 3
+      "seen_count": 4
     },
     {
       "name": "Akur8",
@@ -18476,6 +18479,19 @@
         "fbd7739f52b4c2f028ab0318"
       ],
       "seen_count": 6
+    },
+    {
+      "name": "Comscore, Inc.",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "0fae8c8bc880d49dee24b2c3"
+      ],
+      "seen_count": 1
     },
     {
       "name": "Comtech Systems",
@@ -35967,9 +35983,10 @@
       "tags": [],
       "seen_job_keys": [
         "53abea293f68b22d0a02dc26",
-        "a097a8da7d3aa5c22ce861a2"
+        "a097a8da7d3aa5c22ce861a2",
+        "d914e78700f2cd8af94e8cbe"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "highbrow-tech LLC",
@@ -56417,9 +56434,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "3d5d4815cf27c79ae9d0b340"
+        "3d5d4815cf27c79ae9d0b340",
+        "c808a3ced2cb2c078c02c6ab"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Patrick Industries",
@@ -65583,16 +65601,19 @@
     },
     {
       "name": "Senseye Inc.",
-      "aliases": [],
+      "aliases": [
+        "Senseye, Inc."
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "ac06d9203c28f3830ce97059"
+        "ac06d9203c28f3830ce97059",
+        "b4fd0ac5ab2c03264ea5e2d4"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Sensible Care",
@@ -66840,7 +66861,9 @@
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
-      "seen_job_keys": [],
+      "seen_job_keys": [
+        "c3c759cce88c9b509a626119"
+      ],
       "seen_count": 1
     },
     {
