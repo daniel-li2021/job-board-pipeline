@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T16:28:26.984471+00:00",
+  "generated_at": "2026-11-14T00:54:06.516765+00:00",
   "count": 6267,
   "companies": [
     {
@@ -41325,7 +41325,9 @@
     },
     {
       "name": "jamf",
-      "aliases": [],
+      "aliases": [
+        "Jamf"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
@@ -41333,9 +41335,11 @@
       "tags": [],
       "seen_job_keys": [
         "10c88042e173ad99b9d30f72",
-        "423b53535368c4d7d1ebac11"
+        "1adcb489b94c7bb5df57dec9",
+        "423b53535368c4d7d1ebac11",
+        "e9e50b912af36f45b907aeaa"
       ],
-      "seen_count": 2
+      "seen_count": 4
     },
     {
       "name": "Jane Street",
@@ -43633,13 +43637,14 @@
         "8a0a6d8c5eb1e997359c49c2",
         "979cfe9fbc2df342728ef342",
         "bfd5a8d3ded3a12cce3c8c60",
+        "d0758edc4c57954cba6132b3",
         "da877fe0bb6718c470ee64a7",
         "e4597e4e840bf0a3d3f70cbd",
         "e90161ccd18427d719594f23",
         "eabce9ffedae3ecc80250762",
         "f4e21e4ab06bdcf6fe0e8c9e"
       ],
-      "seen_count": 14
+      "seen_count": 15
     },
     {
       "name": "Koch Ag & Energy Solutions, LLC",
@@ -58129,9 +58134,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "2cd8575d86ad1c5e6f2b5ec6",
         "5ebeddda229bb296a111db58"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Pivotal Partners",
@@ -63620,9 +63626,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "1aa181bc73ecd47193c232bc"
+        "1aa181bc73ecd47193c232bc",
+        "61fa3b823cac458df42fac68"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "RLink Solutions LLC",
@@ -72467,9 +72474,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "23273e52fff94132507b1b0f"
+        "23273e52fff94132507b1b0f",
+        "de6c2135012b7f634ff4998e"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Tandem Diabetes Care, Inc.",
