@@ -1,10 +1,10 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-11-13 16:39 PST
-- Snapshot (UTC): 2026-11-14T00:39:52.223646+00:00
-- Jobs: 27 (Tier A/B only)
+- Updated (PT): 2026-11-14 07:40 PST
+- Snapshot (UTC): 2026-11-14T15:40:45.446710+00:00
+- Jobs: 36 (Tier A/B only)
 - Last 24 hours: 3
-- Last 3 days: 27
+- Last 3 days: 36
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
@@ -15,10 +15,15 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | A | 86 | official | Google | Forward Deployed Engineer II, Generative AI, Google Cloud | Sunnyvale, CA, USA | 2026-11-12 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/77331446980584134-forward-deployed-engineer-ii-generative-ai-google-cloud) |
 | A | 86 | official | Microsoft | Applied Scientist II | United States, Washington, Redmond; United States, California, Mountain View | 2026-11-12 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557070643) |
 | A | 86 | official | Capital One | Associate, Data Scientist - US Card | McLean, VA | 2026-11-12 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Associate--Data-Scientist---US-Card_R1005289-1) |
-| B | 83 | official | Microsoft | Software Engineer - MBO | United States, Washington, Redmond | 2026-11-14 | lt3h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557073410) |
-| B | 83 | official | Equinix | AI/Machine Learning Experience Engineer | Toronto, Ontario, Canada; Dallas, Texas, United States | 2026-11-13T14:13:59Z | 3to24h | Equinix | unreviewed | official_canonical | [open](https://careers.equinix.com/jobs/ai-machine-learning-experience-engineer-dallas-texas-united-states-toronto-ontario-canada) |
-| B | 74 | official | Equinix | Production Reliability Engineer, AI Platform | Toronto, Ontario, Canada; Dallas, Texas, United States | 2026-11-13T14:13:59Z | 3to24h | Equinix | unreviewed | official_canonical | [open](https://careers.equinix.com/jobs/production-reliability-engineer-ai-platform-toronto-ontario-canada-dallas-texas-united-states) |
+| B | 83 | official | Microsoft | Software Engineer - MBO | United States, Washington, Redmond | 2026-11-14 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557073410) |
+| B | 74 | official | Apple | Systems Software Developer, CAD Infrastructure | Cupertino, United States of America | 2026-11-14 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200694942/systems-software-developer-cad-infrastructure) |
+| B | 74 | official | Apple | Systems Software Developer, CAD Infrastructure | Beaverton, United States of America | 2026-11-14 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200694969/systems-software-developer-cad-infrastructure) |
+| B | 86 | official | Apple | Software Engineer, Apple Ads | Cupertino, United States of America | 2026-11-13 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200694842/software-engineer-apple-ads) |
+| B | 82 | official | Apple | Software Engineer - Distributed Data Systems | San Diego, United States of America | 2026-11-13 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200694753/software-engineer-distributed-data-systems) |
 | B | 84 | official | OpenAI | Full Stack Software Engineer, ChatGPT Finances | San Francisco; San Francisco, California, United States; Remote, United States | 2026-11-13 | 1to3d | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/26cfb873-f30a-4a13-b7b6-52833ea48ec9) |
+| B | 82 | official | Apple | Software Development Engineer, Enterprise and Education, CoreOS | Cupertino, United States of America | 2026-11-13 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200694773/software-development-engineer-enterprise-and-education-coreos) |
+| B | 83 | official | Equinix | AI/Machine Learning Experience Engineer | Toronto, Ontario, Canada; Dallas, Texas, United States | 2026-11-13T14:13:59Z | 1to3d | Equinix | unreviewed | official_canonical | [open](https://careers.equinix.com/jobs/ai-machine-learning-experience-engineer-dallas-texas-united-states-toronto-ontario-canada) |
+| B | 76 | official | Apple | Software Development Engineer, Test Tooling | Cupertino, United States of America | 2026-11-13 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693291/software-development-engineer-test-tooling) |
 | B | 75 | official | Oracle | Software Developer 3 | Czech Republic | 2026-11-13 | 1to3d | Oracle | unreviewed | official_canonical | [open](https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/347608) |
 | B | 75 | official | Capital One | Full Stack Engineer 4 | New York, NY | 2026-11-13 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/Full-Stack-Engineer-4_R1004419-1) |
 | B | 75 | official | Capital One | Full-Stack Engineer 4 (Mobile) | Richmond, VA | 2026-11-13 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-Stack-Engineer-4--Mobile-_R1002855-2) |
@@ -27,7 +32,10 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 75 | official | Capital One | Full Stack Engineer 4 | Richmond, VA | 2026-11-13 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Richmond-VA/Full-Stack-Engineer-4_R1001376) |
 | B | 75 | official | Capital One | Full-stack Engineer 4 | Chicago, IL | 2026-11-13 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/Chicago-IL/Full-stack-Engineer-4_R1001741-2) |
 | B | 75 | official | Capital One | Full Stack Engineer 4 (Java, AWS) | McLean, VA | 2026-11-13 | 1to3d | Capital One | unreviewed | official_canonical | [open](https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Full-Stack-Engineer-4--GoLang--AWS-_R1003153) |
+| B | 77 | official | Apple | Machine Learning Engineer | Cupertino, United States of America | 2026-11-13 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200694852/machine-learning-engineer) |
 | B | 76 | official | Microsoft | Software Engineer | United States, Washington, Redmond | 2026-11-13 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557072925) |
+| B | 74 | official | Apple | Software Engineer, Infrastructure Applications | Sunnyvale, United States of America | 2026-11-13 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200693202/software-engineer-infrastructure-applications) |
+| B | 74 | official | Equinix | Production Reliability Engineer, AI Platform | Toronto, Ontario, Canada; Dallas, Texas, United States | 2026-11-13T14:13:59Z | 1to3d | Equinix | unreviewed | official_canonical | [open](https://careers.equinix.com/jobs/production-reliability-engineer-ai-platform-toronto-ontario-canada-dallas-texas-united-states) |
 | B | 82 | official | Google | Software Engineer, Knowledge Catalog For AI | Kirkland, WA, USA; Sunnyvale, CA, USA | 2026-11-12 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/99790896123257542-software-engineer-knowledge-catalog-for-ai) |
 | B | 82 | official | Microsoft | Applied Scientist | United States, Washington, Redmond; United States, New York, New York; United States, California, Mountain View | 2026-11-12 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557069985) |
 | B | 75 | official | Microsoft | Software Engineer II | United States, Washington, Redmond | 2026-11-12 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393556969536) |
@@ -36,4 +44,5 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 78 | official | Microsoft | Data Engineer | United States, Multiple Locations, Multiple Locations | 2026-11-12 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557056093) |
 | B | 76 | official | Amazon | Software Dev Engineer II - AMZ10563957 | Seattle, Washington, USA | 2026-11-12 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10603765/software-dev-engineer-ii-amz10563957) |
 | B | 76 | official | Amazon | Software Dev Engineer II - AMZ10563972 | Seattle, Washington, USA | 2026-11-12 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10603740/software-dev-engineer-ii-amz10563972) |
+| B | 75 | official | Apple | UI Software Engineer - Apple TV | San Diego, United States of America | 2026-11-12 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200694832/ui-software-engineer-apple-tv) |
 | B | 76 | official | Snowflake | Software Engineer, Identity & Access Management | US-WA-Bellevue; Bellevue, Washington, United States; Remote, United States | 2026-11-12 | 1to3d | - | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/snowflake/d699971b-0c25-48e4-8733-7e8bd2328536) |
