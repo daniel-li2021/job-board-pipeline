@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-14T15:45:37.261839+00:00",
-  "count": 6327,
+  "generated_at": "2026-11-14T15:55:11.798576+00:00",
+  "count": 6331,
   "companies": [
     {
       "name": "01.com",
@@ -11696,16 +11696,20 @@
     },
     {
       "name": "bp",
-      "aliases": [],
+      "aliases": [
+        "BP"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "8e6d5f32271e14c53233fdc7"
+        "7a5aace90c9e7f08edc4f9a9",
+        "8e6d5f32271e14c53233fdc7",
+        "bfa9990f880b6f7cd7c4822f"
       ],
-      "seen_count": 1
+      "seen_count": 3
     },
     {
       "name": "Bracco Medical Technologies",
@@ -32139,9 +32143,10 @@
         "2e7ecc5bc04dd6b50cf9d571",
         "2f31701ee13f3915d924f203",
         "4fb82cb40a3db841787cdc15",
+        "917234cf0759c09efd918e2b",
         "c8fbf41ab41d036ab405963c"
       ],
-      "seen_count": 4
+      "seen_count": 5
     },
     {
       "name": "Gehtsoft USA",
@@ -32193,6 +32198,7 @@
         "1a4b2811a2d1c457d2422f3a",
         "2b65fb18df5a7c6ade3e4021",
         "34a800b6cf7a4e60fea16065",
+        "4c4a20fd89f571ec65a5cee7",
         "5aeafa6b01f918d3302e1a42",
         "664be8ce4f991192cb226a62",
         "74d513663dd035cf843290bb",
@@ -32204,7 +32210,7 @@
         "ee6391e296ec8e6cc91bcda2",
         "f0efaee27ed5c6212c5183b2"
       ],
-      "seen_count": 17
+      "seen_count": 18
     },
     {
       "name": "Gelber Group",
@@ -39824,6 +39830,19 @@
       "tags": [],
       "seen_job_keys": [
         "b8557a27145156cff13ef26c"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Installed Building Products",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "6013612b2206c826d293b088"
       ],
       "seen_count": 1
     },
@@ -54672,9 +54691,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "517005f231b0f34aac0ab989"
+        "517005f231b0f34aac0ab989",
+        "b54a755a07432493d87ab0ce"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Oak Grove Technologies",
@@ -55504,6 +55524,19 @@
         "c8a42cf043186bec7061f419"
       ],
       "seen_count": 2
+    },
+    {
+      "name": "OneSpan",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "f76dd93bdf5babacd5d175b5"
+      ],
+      "seen_count": 1
     },
     {
       "name": "OneWell Health Care",
@@ -57293,9 +57326,10 @@
       "tags": [],
       "seen_job_keys": [
         "3d5d4815cf27c79ae9d0b340",
+        "b404cf9ae78c8c3a2ee8aa84",
         "c808a3ced2cb2c078c02c6ab"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Patrick Industries",
@@ -61359,6 +61393,19 @@
         "8f12379500d74f6a1c6f88a2"
       ],
       "seen_count": 3
+    },
+    {
+      "name": "Quadrature",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "34932eac863916e54aa78e21"
+      ],
+      "seen_count": 1
     },
     {
       "name": "QUADRIC PTY LTD",
@@ -74696,6 +74743,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "TextNow",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "86a132ee2e0fc3953b340730"
+      ],
       "seen_count": 1
     },
     {
