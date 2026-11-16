@@ -3,33 +3,6 @@
   "events": [
     {
       "pipeline": "official",
-      "stamp": "2026-11-01_1547",
-      "emitted_at": "2026-11-01T15:50:18.337694+00:00",
-      "event_kind": "new_or_promoted_ab",
-      "count": 1,
-      "jobs": [
-        {
-          "canonical_job_key": "url::https://intel.wd1.myworkdayjobs.com/External/job/US-Arizona-Phoenix/Software-Application-Development-Engineer_JR0288523",
-          "job_id": "JR0288523",
-          "tier": "B",
-          "match_score": 87.0,
-          "company": "Intel",
-          "title": "Software Application Development Engineer",
-          "location": "US, Arizona, Phoenix; US, Oregon, Hillsboro",
-          "posted_date": "2026-10-30",
-          "date_confidence": "high",
-          "first_seen": "2026-11-01T15:47:28.762894+00:00",
-          "referral_name": "Intel",
-          "review_status": "unreviewed",
-          "official_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Arizona-Phoenix/Software-Application-Development-Engineer_JR0288523",
-          "source_url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Arizona-Phoenix/Software-Application-Development-Engineer_JR0288523",
-          "source": "intel_official_careers",
-          "url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Arizona-Phoenix/Software-Application-Development-Engineer_JR0288523"
-        }
-      ]
-    },
-    {
-      "pipeline": "official",
       "stamp": "2026-11-02_1548",
       "emitted_at": "2026-11-02T15:51:34.696711+00:00",
       "event_kind": "new_or_promoted_ab",
@@ -1845,6 +1818,51 @@
           "source_url": "https://www.amazon.jobs/en/jobs/10603740/software-dev-engineer-ii-amz10563972",
           "source": "amazon_official_careers",
           "url": "https://www.amazon.jobs/en/jobs/10603740/software-dev-engineer-ii-amz10563972"
+        }
+      ]
+    },
+    {
+      "pipeline": "official",
+      "stamp": "2026-11-16_1538",
+      "emitted_at": "2026-11-16T15:40:55.385486+00:00",
+      "event_kind": "new_or_promoted_ab",
+      "count": 2,
+      "jobs": [
+        {
+          "canonical_job_key": "url::https://www.google.com/about/careers/applications/jobs/results/114224284045320902-t-software-engineer-iii-ai-ml-genai-google-cloud",
+          "job_id": "114224284045320902",
+          "tier": "A",
+          "match_score": 86.0,
+          "company": "Google",
+          "title": "[T] Software Engineer III, AI/ML GenAI, Google Cloud",
+          "location": "New York, NY, USA",
+          "posted_date": "2026-11-16",
+          "date_confidence": "high",
+          "first_seen": "2026-11-16T15:38:52.858635+00:00",
+          "referral_name": "Google",
+          "review_status": "unreviewed",
+          "official_url": "https://www.google.com/about/careers/applications/jobs/results/114224284045320902-t-software-engineer-iii-ai-ml-genai-google-cloud",
+          "source_url": "https://www.google.com/about/careers/applications/jobs/results/114224284045320902-t-software-engineer-iii-ai-ml-genai-google-cloud",
+          "source": "google_official_careers",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/114224284045320902-t-software-engineer-iii-ai-ml-genai-google-cloud"
+        },
+        {
+          "canonical_job_key": "url::https://www.google.com/about/careers/applications/jobs/results/143282246063661766-software-engineer-home-and-health-infrastructure-special-projects",
+          "job_id": "143282246063661766",
+          "tier": "B",
+          "match_score": 74.0,
+          "company": "Google",
+          "title": "Software Engineer, Home and Health Infrastructure, Special Projects",
+          "location": "Los Angeles, CA, USA",
+          "posted_date": "2026-11-16",
+          "date_confidence": "high",
+          "first_seen": "2026-11-16T15:38:52.858635+00:00",
+          "referral_name": "Google",
+          "review_status": "unreviewed",
+          "official_url": "https://www.google.com/about/careers/applications/jobs/results/143282246063661766-software-engineer-home-and-health-infrastructure-special-projects",
+          "source_url": "https://www.google.com/about/careers/applications/jobs/results/143282246063661766-software-engineer-home-and-health-infrastructure-special-projects",
+          "source": "google_official_careers",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/143282246063661766-software-engineer-home-and-health-infrastructure-special-projects"
         }
       ]
     }
