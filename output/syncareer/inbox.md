@@ -1,24 +1,23 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-11-16 07:52 PST
-- Snapshot (UTC): 2026-11-16T15:52:59.438256+00:00
-- Jobs: 31
-- Last 24 hours: 5
-- Last 3 days: 31
+- Updated (PT): 2026-11-16 16:52 PST
+- Snapshot (UTC): 2026-11-17T00:52:21.462290+00:00
+- Jobs: 25
+- Last 24 hours: 1
+- Last 3 days: 25
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | B | 84.0 | Syncareer | Experis | AI Engineer | Jersey City, New Jersey, United States | 2026-11-15 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.experis.com/en/job/413874/ai-engineer) |
-| B | 93.0 | Syncareer | Kforce | Junior Data Engineer | Durham, North Carolina, United States | 2026-11-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.kforce.com/find-work/search-jobs/#/detail/MTY5Nn5BUUd-MjE5NDMwNVQxfjk5/) |
+| B | 89.0 | Syncareer | Kforce | Junior Data Engineer | Durham, North Carolina, United States | 2026-11-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.kforce.com/find-work/search-jobs/#/detail/MTY5Nn5BUUd-MjE5NDMwNVQxfjk5/) |
 | A | 96.0 | Syncareer | The Boring Company | Full Stack Web Developer | Las Vegas, Nevada, United States | 2026-11-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.gem.com/the-boring-company/2b319704-7d85-4f10-9cf2-f60229e0992f) |
 | B | 91.0 | Syncareer | Keysight | IT Engineer,Software,Entry | Colorado Springs, Colorado, United States | 2026-11-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.keysight.com/external/jobs/56558?lang=en-us) |
-| A | 89.0 | Syncareer | Fannie Mae | Software Engineer - Associate (AWS) | Reston, Virginia, United States | 2026-11-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://fanniemae.wd1.myworkdayjobs.com/en-US/FannieMaeCareers/job/Reston-VA/Software-Engineer---Associate--AWS-_JR3005) |
-| A | 89.0 | Syncareer | Reynolds and Reynolds | Software Conversion Developer | Dayton, Ohio, United States | 2026-11-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.reyrey.com/company/careers/job-openings/8901) |
+| B | 89.0 | Syncareer | Fannie Mae | Software Engineer - Associate (AWS) | Reston, Virginia, United States | 2026-11-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://fanniemae.wd1.myworkdayjobs.com/en-US/FannieMaeCareers/job/Reston-VA/Software-Engineer---Associate--AWS-_JR3005) |
+| B | 89.0 | Syncareer | Reynolds and Reynolds | Software Conversion Developer | Dayton, Ohio, United States | 2026-11-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.reyrey.com/company/careers/job-openings/8901) |
 | B | 84.0 | Syncareer | Reynolds and Reynolds | Entry Level Software Quality Analyst | North Andover, Massachusetts, United States | 2026-11-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.reyrey.com/company/careers/job-openings/7755) |
 | B | 78.0 | Syncareer | Panasonic | AI Automation Process Assurance Engineer I | Irvine, California, United States | 2026-11-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.na.panasonic.com/jobs/52744?lang=en-us&previousLocale=en-US) |
-| B | 82.0 | Syncareer | NICE | Forward Deployed Engineer | United States | 2026-11-14 | Sponsor | - | unreviewed | not_dedicated | [open](https://boards.eu.greenhouse.io/nice/jobs/5034012101?gh_jid=5034012101) |
 | A | 91.0 | Syncareer | Q2 Software | Software Engineer | Austin, Texas, United States | 2026-11-13 | No sponsor | - | unreviewed | not_dedicated | [open](https://q2ebanking.wd5.myworkdayjobs.com/en-US/Q2/job/Austin-TX/Software-Engineer_REQ-12953?jobFamilies=8b86f00a4a2a01e03cacfbdc0288b96a&jobFamilies=8b86f00a4a2a0161c8f6dbdc0288ab6a&jobFamilies=54838d87026b0142d4a0dd78070250f5&jobFamilies=54838d87026b019304a74a65070243f5&jobFamilies=8b86f00a4a2a0105bcc1d3dc0288a76a) |
 | A | 86.0 | Syncareer | Highmark Health | Associate Software Engineer | Pennsylvania, United States | 2026-11-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://highmarkhealth.wd1.myworkdayjobs.com/en-US/highmark/job/PA-Working-at-Home---Pennsylvania/Associate-Software-Engineer_J290145?jobFamilyGroup=1a08264f4d6a10d2ee5e2b75fc74f3d9&jobFamilyGroup=1a08264f4d6a10d2ee5e3fa63130f3e1&jobFamilyGroup=a5e8692f5a3101037aedbf73176faee6&jobFamilyGroup=1a08264f4d6a10d2ee5e230f9decf3d5&jobFamilyGroup=053c776fd4bb019fe08d20f1c21f94d2&jobFamilyGroup=1a08264f4d6a10d2ee5dfd20d12cf3c1&jobFamilyGroup=053c776fd4bb012bb44142e1c21f27d2&jobFamilyGroup=1a08264f4d6a10d2ee5e3a53c747f3df&jobFamilyGroup=1a08264f4d6a10d2ee5df5caece1f3bd&jobFamilyGroup=1a08264f4d6a10d2ee5e16c8206ff3cf&jobFamilyGroup=a5e8692f5a310176ffa2cb73176fb4e6&jobFamilyGroup=1a08264f4d6a10d2ee5e3529d476f3dd&jobFamilyGroup=1a08264f4d6a10d2ee5def2a6494f3b9&jobFamilyGroup=053c776fd4bb01c9d297dcd3c21fffd1&jobFamilyGroup=053c776fd4bb01fb310c58c7c21fd6d1&jobFamilyGroup=a5e8692f5a310149b360cf73176fb6e6) |
 | B | 86.0 | Syncareer | Intuitive | Software Engineer | Sunnyvale, California, United States | 2026-11-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.intuitive.com/en/jobs/744000161528139/JOB222028/software-engineer/) |
@@ -35,9 +34,4 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | A | 92.0 | Syncareer | BP | Forward Deployed Engineer - AI & Trading | Houston, Texas, United States | 2026-11-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://bpinternational.wd3.myworkdayjobs.com/en-US/bpCareers/job/United-Kingdom---London/Forward-Deployed-Engineer---AI---Trading_RQ117964-1?locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db) |
 | A | 90.0 | Syncareer | Affirm | Software Engineer I, Backend (Continuous Delivery) | United States | 2026-11-13 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/affirm/jobs/8181183003) |
 | A | 90.0 | Syncareer | Infosys | AI Engineer | Temple Terrace, Florida, United States | 2026-11-13 | No sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155792BR) |
-| B | 78.0 | Syncareer | Tandem Diabetes | Software Test Engineer I (Systems Test) | High Bluff, California, United States | 2026-11-12 | No sponsor | - | unreviewed | not_dedicated | [open](https://tandemdiabetes.wd12.myworkdayjobs.com/en-US/tandemdiabetes/job/California---High-Bluff/Software-Test-Engineer-I--Systems-Test-_JR101674) |
-| B | 78.0 | Syncareer | Twitch | Software Engineer I, Commerce | San Francisco, California, United States | 2026-11-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/twitch/jobs/8934067002) |
-| A | 88.0 | Syncareer | Jamf | Associate Software Engineer | United States | 2026-11-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.jamf.com/about/careers/jobs/?gh_jid=6253670004&gh_jid=6253670004) |
-| B | 90.0 | Syncareer | Rivian | Software Engineer II, Autonomy Evaluation & Metrics Platform | Palo Alto, California, United States | 2026-11-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.rivian.com/careers-home/jobs/35829?lang=en-us&previousLocale=en-US) |
-| B | 83.0 | Syncareer | Comcast | Machine Learning Engineer 2 | Sunnyvale, California, United States | 2026-11-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.comcast.com/job/sunnyvale/machine-learning-engineer-2/45483/103216872384) |
-| A | 90.0 | Syncareer | Jamf | Associate Software Engineer (Full Stack) | United States | 2026-11-12 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.jamf.com/about/careers/jobs/?gh_jid=6254227004&gh_jid=6254227004) |
+| B | 85.0 | Syncareer | Databricks | Associate Forward Deployed Engineer | Mountain View, California, United States | 2026-11-14 | Sponsor | YES (Databricks) | unreviewed | official_identity_unmatched | [open](https://www.databricks.com/company/careers/professional-services-operations/associate-forward-deployed-engineer-8910846002) |

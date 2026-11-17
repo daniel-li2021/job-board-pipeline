@@ -1,45 +1,45 @@
 {
-  "run_at": "2026-11-16T15:52:57.833549+00:00",
-  "elapsed_seconds": 93.287,
-  "remote_elapsed_seconds": 54.567,
+  "run_at": "2026-11-17T00:52:19.387202+00:00",
+  "elapsed_seconds": 62.129,
+  "remote_elapsed_seconds": 36.043,
   "funnel": {
-    "scoring_candidates": 73
+    "scoring_candidates": 47
   },
   "llm": {
-    "reused": 64,
-    "llm": 9,
-    "new_or_changed": 12,
-    "rule": 5,
-    "sent": 9,
-    "api_requests": 3,
+    "reused": 40,
+    "llm": 5,
+    "new_or_changed": 7,
+    "rule": 2,
+    "sent": 5,
+    "api_requests": 2,
     "recency_skipped": 2,
     "overflow": 0,
-    "peer_reused": 2,
-    "thin_source_rule": 3,
+    "peer_reused": 0,
+    "thin_source_rule": 0,
     "retryable_fallbacks": 0,
     "historical_seen_skipped": 0,
     "historical_llm_retained": 0,
     "non_material_change_reused": 0,
-    "same_content_reused": 1,
+    "same_content_reused": 0,
     "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 5,
-      "material_jd_change": 5,
-      "prior_rule_result_now_eligible_for_llm": 2
+      "genuinely_new_job": 3,
+      "material_jd_change": 3,
+      "prior_rule_result_now_eligible_for_llm": 1
     },
     "batch_size": 10,
-    "primary_batches_total": 3,
-    "batches_total": 3,
-    "batches_succeeded": 3,
-    "batches_attempted": 3,
+    "primary_batches_total": 2,
+    "batches_total": 2,
+    "batches_succeeded": 2,
+    "batches_attempted": 2,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 27.784,
-    "json_results": 8,
+    "latency_seconds": 22.564,
+    "json_results": 5,
     "batches": [
       {
         "batch": 1,
@@ -47,237 +47,158 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "company": "Kforce",
-            "title": "Junior Software Engineer"
+            "key": "url::https://www.kpmguscareers.com/jobdetail?jobId=139872",
+            "company": "KPMG",
+            "title": "Associate, R&D Tax Credits - Software Engineer"
           },
           {
-            "key": "url::https://careers.cisco.com/global/en/job/2022501/Software-Engineer-Wireless-Networking",
-            "company": "Cisco",
-            "title": "Software Engineer (Wireless Networking)"
+            "key": "url::https://careers.cargill.com/en/job/reserve/infrastructure-operations-engineer/23251/99985074832",
+            "company": "Cargill",
+            "title": "Infrastructure Operations Engineer"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 10.18,
+        "latency_seconds": 6.516,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
           "jobs_scored": 2,
-          "input_tokens": 3074,
+          "input_tokens": 2996,
           "cached_input_tokens": 0,
-          "output_tokens": 810,
-          "reasoning_tokens": 592,
-          "estimated_usd": 0.000712
+          "output_tokens": 532,
+          "reasoning_tokens": 361,
+          "estimated_usd": 0.000566
         },
         "decisions": [
           {
-            "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 86.0,
-            "seniority_fit": "good",
+            "key": "url::https://www.kpmguscareers.com/jobdetail?jobId=139872",
+            "match_score": 54.0,
+            "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Junior-level software engineering",
-              "C++ and analytical foundation"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://careers.cisco.com/global/en/job/2022501/Software-Engineer-Wireless-Networking",
-            "match_score": 52.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "C++ and Python foundation",
-              "Linux development familiarity"
+              "Software development experience",
+              "Autonomous coding and testing"
             ],
             "main_gaps": [
-              "Embedded systems experience",
-              "802.11 networking protocols"
+              "Visual Basic and SQL Server expertise",
+              "R&D tax-credit consulting experience"
+            ]
+          },
+          {
+            "key": "url::https://careers.cargill.com/en/job/reserve/infrastructure-operations-engineer/23251/99985074832",
+            "match_score": 52.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Cloud deployment and reliability",
+              "Infrastructure troubleshooting experience"
+            ],
+            "main_gaps": [
+              "Network operations and protocol analysis",
+              "Two years relevant infrastructure experience"
             ]
           }
         ]
       },
       {
         "batch": 2,
-        "route": "resume_ai",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://www.experis.com/en/job/413874/ai-engineer",
-            "company": "Experis",
-            "title": "AI Engineer"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 4.841,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 1,
-          "input_tokens": 2597,
-          "cached_input_tokens": 0,
-          "output_tokens": 338,
-          "reasoning_tokens": 251,
-          "estimated_usd": 0.000429
-        },
-        "decisions": [
-          {
-            "key": "url::https://www.experis.com/en/job/413874/ai-engineer",
-            "match_score": 84.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production RAG and AI agents",
-              "Python, Spark, and Databricks"
-            ],
-            "main_gaps": [
-              "Cybersecurity threat analytics"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 3,
         "route": "both",
         "attempt": "initial",
         "jobs": [
+          {
+            "key": "url::https://careers.jackhenry.com/job/allen/data-engineer-ii/42859/103388183664",
+            "company": "Jack Henry & Associates",
+            "title": "Data Engineer II"
+          },
           {
             "key": "url::https://www.databricks.com/company/careers/professional-services-operations/associate-forward-deployed-engineer-8910846002",
             "company": "Databricks",
             "title": "Associate Forward Deployed Engineer"
           },
           {
-            "key": "url::https://jobs.ashbyhq.com/mirage/d9805fdf-950e-45ec-b9be-be18f1cb6b5e",
-            "company": "Captions",
-            "title": "Software Engineer, iOS"
-          },
-          {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
             "company": "Kforce",
             "title": "Junior Data Engineer"
-          },
-          {
-            "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "company": "Kforce",
-            "title": "AI Engineer with Python Contractor"
-          },
-          {
-            "key": "url::https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/73114?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000425727%253B300000000425151%253B300000000425265%253B300000000425079",
-            "company": "Ford Motor Company",
-            "title": "Machine Learning Engineer"
-          },
-          {
-            "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155974BR",
-            "company": "Infosys",
-            "title": "AI ML Developer"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 12.763,
+        "latency_seconds": 16.048,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 5,
-          "input_tokens": 8000,
+          "jobs_scored": 3,
+          "input_tokens": 5470,
           "cached_input_tokens": 0,
-          "output_tokens": 1255,
-          "reasoning_tokens": 763,
-          "estimated_usd": 0.001427
+          "output_tokens": 1764,
+          "reasoning_tokens": 1431,
+          "estimated_usd": 0.001429
         },
         "decisions": [
           {
-            "key": "url::https://www.databricks.com/company/careers/professional-services-operations/associate-forward-deployed-engineer-8910846002",
-            "match_score": 88.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack production delivery",
-              "Cloud, Spark, and AI"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://jobs.ashbyhq.com/mirage/d9805fdf-950e-45ec-b9be-be18f1cb6b5e",
-            "match_score": 43.0,
+            "key": "url::https://careers.jackhenry.com/job/allen/data-engineer-ii/42859/103388183664",
+            "match_score": 73.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Strong CS fundamentals"
+              "Data pipeline engineering",
+              "Cloud CI/CD and observability"
             ],
             "main_gaps": [
-              "Native iOS product experience",
-              "Swift and AVFoundation"
+              "3+ years experience",
+              "CDC/Kafka/SSIS"
+            ]
+          },
+          {
+            "key": "url::https://www.databricks.com/company/careers/professional-services-operations/associate-forward-deployed-engineer-8910846002",
+            "match_score": 85.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production data and AI systems",
+              "Full-stack cloud engineering"
+            ],
+            "main_gaps": [
+              "Customer-facing delivery"
             ]
           },
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 93.0,
+            "match_score": 89.0,
             "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Production RAG and agents",
-              "Python APIs and MCP"
+              "SQL and data transformations",
+              "Pipeline quality and troubleshooting"
             ],
             "main_gaps": []
-          },
-          {
-            "key": "url::https://efds.fa.em5.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/73114?lastSelectedFacet=LOCATIONS&mode=location&selectedLocationsFacet=300000000425727%253B300000000425151%253B300000000425265%253B300000000425079",
-            "match_score": 68.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production AI systems",
-              "ML evaluation and deployment"
-            ],
-            "main_gaps": [
-              "GCP production ML",
-              "Manufacturing ML experience"
-            ]
-          },
-          {
-            "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155974BR",
-            "match_score": 74.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production LLM and RAG",
-              "Scalable Python APIs"
-            ],
-            "main_gaps": [
-              "Commercial traditional ML",
-              "Enterprise A2A frameworks"
-            ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 9,
-    "input_tokens": 13671,
+    "jobs_scored": 5,
+    "input_tokens": 8466,
     "cached_input_tokens": 0,
-    "output_tokens": 2403,
-    "reasoning_tokens": 1606,
-    "estimated_usd": 0.002568,
+    "output_tokens": 2296,
+    "reasoning_tokens": 1792,
+    "estimated_usd": 0.001995,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 9
+    "scored": 5
   },
   "output": {
-    "tier_a": 5,
-    "tier_b": 10,
-    "tier_c": 58,
-    "shown": 15,
-    "new_jobs": 5,
-    "new_jobs_added": 1
+    "tier_a": 1,
+    "tier_b": 8,
+    "tier_c": 38,
+    "shown": 9,
+    "new_jobs": 6,
+    "new_jobs_added": 0
   },
   "screen_method": "cache+llm",
   "failures": {
@@ -288,46 +209,18 @@
       "query": "Software",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 6,
+      "pages_fetched": 5,
       "stop_reason": "empty_page",
-      "raw_jobs": 69,
-      "unique_jobs": 69,
-      "unique_contribution": 69,
-      "first_pass_survivors": 58,
-      "original_postings_resolved": 25,
-      "jds_resolved": 22,
-      "elapsed_seconds": 3.574
+      "raw_jobs": 52,
+      "unique_jobs": 52,
+      "unique_contribution": 52,
+      "first_pass_survivors": 42,
+      "original_postings_resolved": 21,
+      "jds_resolved": 21,
+      "elapsed_seconds": 2.804
     },
     {
       "query": "Full Stack",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 2,
-      "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 3,
-      "first_pass_survivors": 6,
-      "original_postings_resolved": 2,
-      "jds_resolved": 2,
-      "elapsed_seconds": 0.685
-    },
-    {
-      "query": "AI",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 5,
-      "stop_reason": "empty_page",
-      "raw_jobs": 46,
-      "unique_jobs": 46,
-      "unique_contribution": 38,
-      "first_pass_survivors": 32,
-      "original_postings_resolved": 9,
-      "jds_resolved": 8,
-      "elapsed_seconds": 2.576
-    },
-    {
-      "query": "Machine Learning",
       "group": "syncareer",
       "page_budget": 6,
       "pages_fetched": 2,
@@ -337,22 +230,50 @@
       "unique_contribution": 1,
       "first_pass_survivors": 3,
       "original_postings_resolved": 2,
-      "jds_resolved": 1,
-      "elapsed_seconds": 0.747
+      "jds_resolved": 2,
+      "elapsed_seconds": 0.674
+    },
+    {
+      "query": "AI",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 3,
+      "stop_reason": "empty_page",
+      "raw_jobs": 28,
+      "unique_jobs": 28,
+      "unique_contribution": 25,
+      "first_pass_survivors": 19,
+      "original_postings_resolved": 7,
+      "jds_resolved": 6,
+      "elapsed_seconds": 1.183
+    },
+    {
+      "query": "Machine Learning",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 2,
+      "stop_reason": "empty_page",
+      "raw_jobs": 1,
+      "unique_jobs": 1,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.677
     },
     {
       "query": "Infrastructure",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 3,
+      "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 17,
-      "unique_jobs": 17,
-      "unique_contribution": 9,
-      "first_pass_survivors": 12,
-      "original_postings_resolved": 9,
+      "raw_jobs": 14,
+      "unique_jobs": 14,
+      "unique_contribution": 7,
+      "first_pass_survivors": 9,
+      "original_postings_resolved": 6,
       "jds_resolved": 5,
-      "elapsed_seconds": 1.393
+      "elapsed_seconds": 0.666
     },
     {
       "query": "Forward Deployed",
@@ -360,41 +281,41 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 6,
-      "unique_jobs": 6,
-      "unique_contribution": 6,
-      "first_pass_survivors": 5,
+      "raw_jobs": 3,
+      "unique_jobs": 3,
+      "unique_contribution": 3,
+      "first_pass_survivors": 3,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.753
+      "elapsed_seconds": 0.682
     },
     {
       "query": "DevOps",
-      "group": "syncareer",
-      "page_budget": 6,
-      "pages_fetched": 1,
-      "stop_reason": "network_error",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
-      "unique_contribution": 1,
-      "first_pass_survivors": 1,
-      "original_postings_resolved": 0,
-      "jds_resolved": 0,
-      "elapsed_seconds": 0.526
-    },
-    {
-      "query": "Backend",
       "group": "syncareer",
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
       "raw_jobs": 1,
       "unique_jobs": 1,
-      "unique_contribution": 0,
+      "unique_contribution": 1,
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 1.053
+      "elapsed_seconds": 0.78
+    },
+    {
+      "query": "Backend",
+      "group": "syncareer",
+      "page_budget": 6,
+      "pages_fetched": 1,
+      "stop_reason": "empty_page",
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
+      "original_postings_resolved": 0,
+      "jds_resolved": 0,
+      "elapsed_seconds": 0.211
     },
     {
       "query": "Platform",
@@ -402,13 +323,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 13,
-      "unique_jobs": 13,
-      "unique_contribution": 5,
-      "first_pass_survivors": 10,
-      "original_postings_resolved": 2,
-      "jds_resolved": 2,
-      "elapsed_seconds": 0.898
+      "raw_jobs": 9,
+      "unique_jobs": 9,
+      "unique_contribution": 4,
+      "first_pass_survivors": 7,
+      "original_postings_resolved": 1,
+      "jds_resolved": 1,
+      "elapsed_seconds": 0.72
     },
     {
       "query": "New Grad",
@@ -422,21 +343,21 @@
       "first_pass_survivors": 4,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.677
+      "elapsed_seconds": 0.707
     },
     {
       "query": "LLM",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 1,
-      "unique_jobs": 1,
-      "unique_contribution": 1,
-      "first_pass_survivors": 1,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.618
+      "elapsed_seconds": 0.175
     },
     {
       "query": "Data Engineer",
@@ -444,13 +365,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 9,
-      "unique_jobs": 9,
-      "unique_contribution": 8,
-      "first_pass_survivors": 6,
+      "raw_jobs": 5,
+      "unique_jobs": 5,
+      "unique_contribution": 4,
+      "first_pass_survivors": 4,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.717
+      "elapsed_seconds": 0.697
     },
     {
       "query": "Site Reliability",
@@ -464,14 +385,14 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 0.197
+      "elapsed_seconds": 0.256
     }
   ],
   "enrichment": {
-    "needed": 11,
-    "detail_api_resolved": 109,
+    "needed": 4,
+    "detail_api_resolved": 76,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 11
+    "remaining_no_jd": 4
   }
 }
