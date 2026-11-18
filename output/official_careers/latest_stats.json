@@ -1,92 +1,92 @@
 {
-  "run_at": "2026-11-18T00:39:20.843650+00:00",
-  "elapsed_seconds": 338.891,
-  "scrape_elapsed_seconds": 479.948,
+  "run_at": "2026-11-18T15:38:44.686432+00:00",
+  "elapsed_seconds": 150.127,
+  "scrape_elapsed_seconds": 445.11,
   "source_raw": {
-    "Amazon": 770,
-    "JPMorgan Chase": 576,
+    "Chewy": 3,
+    "Apple": 117,
+    "Oracle": 451,
+    "Amazon": 772,
+    "JPMorgan Chase": 568,
     "Meta": 24,
-    "Apple": 328,
-    "Oracle": 453,
-    "Google": 271,
+    "Google": 278,
     "Johnson & Johnson": 1,
     "Cisco": 19,
-    "Workday": 5,
+    "Workday": 4,
     "HPE": 8,
     "CVS Health": 3,
     "Travelers": 3,
-    "Disney": 115,
+    "Disney": 112,
     "Expedia Group": 6,
-    "Qualcomm": 121,
+    "Qualcomm": 117,
     "NetApp": 95,
     "Capital One": 27,
-    "Microsoft": 215,
-    "AMD": 544,
+    "Microsoft": 218,
+    "AMD": 543,
     "IQVIA": 2,
     "Walmart Global Tech": 5,
     "Verizon": 26,
-    "Flex": 3,
+    "Flex": 2,
     "Wells Fargo": 1,
-    "PayPal": 69,
+    "PayPal": 70,
     "F5": 1,
     "Zoom": 1,
     "MathWorks": 45,
     "NVIDIA": 3,
-    "Uber": 192,
+    "Uber": 190,
     "Visa": 1,
     "Yahoo": 1,
-    "Red Hat": 1,
     "TikTok": 704,
-    "DoorDash": 414,
-    "Snap": 102,
+    "DoorDash": 415,
+    "Snap": 101,
     "Pinterest": 129,
-    "Snowflake": 271,
-    "ServiceNow": 451,
+    "Snowflake": 272,
+    "ServiceNow": 448,
     "Bloomberg": 20,
-    "Cloudflare": 478,
-    "Stripe": 426,
-    "Coinbase": 212,
-    "Robinhood": 155,
+    "Cloudflare": 490,
+    "Stripe": 430,
+    "Coinbase": 213,
+    "Robinhood": 156,
     "Figma": 92,
-    "GitLab": 147,
-    "Discord": 25,
+    "GitLab": 146,
+    "Discord": 26,
     "Asana": 77,
     "Brex": 258,
-    "Samsara": 272,
-    "Lyft": 76,
-    "Spotify": 65,
+    "Samsara": 273,
+    "Lyft": 78,
+    "Spotify": 68,
     "Ramp": 169,
-    "Notion": 80,
+    "Notion": 81,
     "Linear": 25,
     "Cohere": 104,
-    "Pure Storage": 237,
+    "SAP": 107,
+    "Pure Storage": 238,
     "Databricks": 489,
-    "Roblox": 247,
-    "Airbnb": 98,
-    "Anthropic": 530,
-    "AppLovin": 30,
-    "ByteDance": 458,
-    "Chime": 74,
+    "Roblox": 245,
+    "Airbnb": 95,
+    "Anthropic": 526,
+    "AppLovin": 32,
+    "ByteDance": 457,
+    "Chime": 75,
     "Dell": 98,
     "Dropbox": 29,
-    "HubSpot": 16,
+    "HubSpot": 17,
     "Instacart": 74,
-    "MongoDB": 249,
-    "Morgan Stanley": 113,
+    "MongoDB": 247,
+    "Morgan Stanley": 112,
     "Netflix": 56,
-    "OpenAI": 665,
-    "Palantir": 234,
+    "OpenAI": 666,
+    "Palantir": 235,
     "Reddit": 129,
-    "Roku": 81,
+    "Roku": 78,
     "Block / Square": 168,
-    "Two Sigma": 41,
-    "Verkada": 276,
+    "Two Sigma": 38,
+    "Verkada": 275,
     "WeRide": 10,
-    "Zscaler": 230,
-    "Chewy": 3,
-    "Duolingo": 50,
+    "Zscaler": 237,
+    "Duolingo": 49,
     "Equinix": 78,
-    "IXL Learning": 99,
+    "IXL Learning": 97,
     "Ansys": 18,
     "PointClickCare": 83,
     "Yext": 20
@@ -105,7 +105,7 @@
         "first_pass_survivors": 120,
         "original_postings_resolved": 120,
         "jds_resolved": 120,
-        "elapsed_seconds": 4.347
+        "elapsed_seconds": 4.279
       },
       {
         "query": "\"Machine Learning Engineer\"",
@@ -119,7 +119,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.069
+        "elapsed_seconds": 2.243
       },
       {
         "query": "\"Data Scientist\"",
@@ -133,7 +133,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.29
+        "elapsed_seconds": 2.0
       },
       {
         "query": "\"Solutions Architect\"",
@@ -147,7 +147,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.236
+        "elapsed_seconds": 0.211
       },
       {
         "query": "\"Data Engineer\"",
@@ -155,13 +155,13 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 2,
-        "unique_jobs": 2,
+        "raw_jobs": 3,
+        "unique_jobs": 3,
         "unique_contribution": 1,
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 0.216
+        "elapsed_seconds": 0.301
       },
       {
         "query": "\"Platform Engineer\"",
@@ -171,11 +171,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 5,
-        "first_pass_survivors": 5,
-        "original_postings_resolved": 5,
-        "jds_resolved": 5,
-        "elapsed_seconds": 2.027
+        "unique_contribution": 6,
+        "first_pass_survivors": 6,
+        "original_postings_resolved": 6,
+        "jds_resolved": 6,
+        "elapsed_seconds": 2.305
       },
       {
         "query": "\"Full Stack Engineer\"",
@@ -189,7 +189,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.566
+        "elapsed_seconds": 2.021
       },
       {
         "query": "\"Forward Deployed Engineer\"",
@@ -199,11 +199,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 25,
-        "first_pass_survivors": 25,
-        "original_postings_resolved": 25,
-        "jds_resolved": 25,
-        "elapsed_seconds": 2.181
+        "unique_contribution": 27,
+        "first_pass_survivors": 27,
+        "original_postings_resolved": 27,
+        "jds_resolved": 27,
+        "elapsed_seconds": 2.045
       },
       {
         "query": "\"Software Engineer\"",
@@ -217,7 +217,7 @@
         "first_pass_survivors": 70,
         "original_postings_resolved": 70,
         "jds_resolved": 70,
-        "elapsed_seconds": 5.343
+        "elapsed_seconds": 5.063
       },
       {
         "query": "\"Infrastructure Engineer\"",
@@ -231,7 +231,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.115
+        "elapsed_seconds": 1.944
       },
       {
         "query": "\"Software Engineer III\"",
@@ -239,13 +239,13 @@
         "page_budget": 5,
         "pages_fetched": 4,
         "stop_reason": "early_stop",
-        "raw_jobs": 73,
-        "unique_jobs": 73,
-        "unique_contribution": 14,
-        "first_pass_survivors": 14,
-        "original_postings_resolved": 14,
-        "jds_resolved": 14,
-        "elapsed_seconds": 2.352
+        "raw_jobs": 75,
+        "unique_jobs": 75,
+        "unique_contribution": 17,
+        "first_pass_survivors": 17,
+        "original_postings_resolved": 17,
+        "jds_resolved": 17,
+        "elapsed_seconds": 2.28
       },
       {
         "query": "\"Web Solutions Engineer\"",
@@ -259,7 +259,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.419
+        "elapsed_seconds": 1.474
       },
       {
         "query": "\"DeepMind\"",
@@ -273,7 +273,7 @@
         "first_pass_survivors": 20,
         "original_postings_resolved": 20,
         "jds_resolved": 20,
-        "elapsed_seconds": 1.424
+        "elapsed_seconds": 1.249
       }
     ],
     "amazon": [
@@ -289,7 +289,7 @@
         "first_pass_survivors": 120,
         "original_postings_resolved": 120,
         "jds_resolved": 120,
-        "elapsed_seconds": 4.17
+        "elapsed_seconds": 5.614
       },
       {
         "query": "machine learning engineer",
@@ -303,7 +303,7 @@
         "first_pass_survivors": 49,
         "original_postings_resolved": 49,
         "jds_resolved": 49,
-        "elapsed_seconds": 2.344
+        "elapsed_seconds": 2.439
       },
       {
         "query": "data scientist",
@@ -317,7 +317,7 @@
         "first_pass_survivors": 60,
         "original_postings_resolved": 60,
         "jds_resolved": 60,
-        "elapsed_seconds": 1.647
+        "elapsed_seconds": 1.847
       },
       {
         "query": "solutions architect",
@@ -327,11 +327,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 59,
-        "first_pass_survivors": 59,
-        "original_postings_resolved": 59,
-        "jds_resolved": 59,
-        "elapsed_seconds": 2.027
+        "unique_contribution": 58,
+        "first_pass_survivors": 58,
+        "original_postings_resolved": 58,
+        "jds_resolved": 58,
+        "elapsed_seconds": 2.797
       },
       {
         "query": "data engineer",
@@ -345,7 +345,7 @@
         "first_pass_survivors": 57,
         "original_postings_resolved": 57,
         "jds_resolved": 57,
-        "elapsed_seconds": 1.959
+        "elapsed_seconds": 2.252
       },
       {
         "query": "platform engineer",
@@ -353,13 +353,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 50,
-        "unique_jobs": 50,
-        "unique_contribution": 49,
-        "first_pass_survivors": 49,
-        "original_postings_resolved": 49,
-        "jds_resolved": 49,
-        "elapsed_seconds": 1.628
+        "raw_jobs": 49,
+        "unique_jobs": 49,
+        "unique_contribution": 48,
+        "first_pass_survivors": 48,
+        "original_postings_resolved": 48,
+        "jds_resolved": 48,
+        "elapsed_seconds": 2.049
       },
       {
         "query": "full stack engineer",
@@ -373,7 +373,7 @@
         "first_pass_survivors": 14,
         "original_postings_resolved": 14,
         "jds_resolved": 14,
-        "elapsed_seconds": 0.307
+        "elapsed_seconds": 0.551
       },
       {
         "query": "forward deployed engineer",
@@ -387,7 +387,7 @@
         "first_pass_survivors": 41,
         "original_postings_resolved": 41,
         "jds_resolved": 41,
-        "elapsed_seconds": 1.908
+        "elapsed_seconds": 2.125
       },
       {
         "query": "software engineer",
@@ -397,11 +397,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 240,
         "unique_jobs": 240,
-        "unique_contribution": 206,
-        "first_pass_survivors": 206,
-        "original_postings_resolved": 206,
-        "jds_resolved": 206,
-        "elapsed_seconds": 7.126
+        "unique_contribution": 207,
+        "first_pass_survivors": 207,
+        "original_postings_resolved": 207,
+        "jds_resolved": 207,
+        "elapsed_seconds": 9.022
       },
       {
         "query": "software development engineer",
@@ -415,7 +415,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.833
+        "elapsed_seconds": 2.13
       },
       {
         "query": "systems development engineer",
@@ -429,7 +429,7 @@
         "first_pass_survivors": 48,
         "original_postings_resolved": 48,
         "jds_resolved": 48,
-        "elapsed_seconds": 2.323
+        "elapsed_seconds": 2.541
       },
       {
         "query": "site reliability engineer",
@@ -443,7 +443,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 0.227
+        "elapsed_seconds": 0.425
       },
       {
         "query": "applied scientist",
@@ -457,149 +457,7 @@
         "first_pass_survivors": 34,
         "original_postings_resolved": 34,
         "jds_resolved": 34,
-        "elapsed_seconds": 1.193
-      }
-    ],
-    "apple": [
-      {
-        "query": "ai engineer",
-        "group": "official",
-        "page_budget": 6,
-        "pages_fetched": 6,
-        "stop_reason": "page_budget",
-        "raw_jobs": 120,
-        "unique_jobs": 120,
-        "unique_contribution": 120,
-        "first_pass_survivors": 120,
-        "original_postings_resolved": 120,
-        "jds_resolved": 120,
-        "elapsed_seconds": 27.167
-      },
-      {
-        "query": "machine learning engineer",
-        "group": "official",
-        "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 60,
-        "unique_jobs": 60,
-        "unique_contribution": 3,
-        "first_pass_survivors": 3,
-        "original_postings_resolved": 3,
-        "jds_resolved": 3,
-        "elapsed_seconds": 20.718
-      },
-      {
-        "query": "data scientist",
-        "group": "official",
-        "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 60,
-        "unique_jobs": 60,
-        "unique_contribution": 2,
-        "first_pass_survivors": 2,
-        "original_postings_resolved": 2,
-        "jds_resolved": 2,
-        "elapsed_seconds": 3.118
-      },
-      {
-        "query": "solutions architect",
-        "group": "official",
-        "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 60,
-        "unique_jobs": 60,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 10.69
-      },
-      {
-        "query": "data engineer",
-        "group": "official",
-        "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 60,
-        "unique_jobs": 60,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 16.727
-      },
-      {
-        "query": "platform engineer",
-        "group": "official",
-        "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 60,
-        "unique_jobs": 60,
-        "unique_contribution": 2,
-        "first_pass_survivors": 2,
-        "original_postings_resolved": 2,
-        "jds_resolved": 2,
-        "elapsed_seconds": 31.485
-      },
-      {
-        "query": "full stack engineer",
-        "group": "official",
-        "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 60,
-        "unique_jobs": 60,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 27.189
-      },
-      {
-        "query": "forward deployed engineer",
-        "group": "official",
-        "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 60,
-        "unique_jobs": 60,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 15.972
-      },
-      {
-        "query": "software engineer",
-        "group": "official",
-        "page_budget": 12,
-        "pages_fetched": 12,
-        "stop_reason": "page_budget",
-        "raw_jobs": 240,
-        "unique_jobs": 240,
-        "unique_contribution": 119,
-        "first_pass_survivors": 119,
-        "original_postings_resolved": 119,
-        "jds_resolved": 119,
-        "elapsed_seconds": 110.798
-      },
-      {
-        "query": "apps-and-frameworks-SFTWR-AF",
-        "group": "official",
-        "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 60,
-        "unique_jobs": 60,
-        "unique_contribution": 25,
-        "first_pass_survivors": 25,
-        "original_postings_resolved": 25,
-        "jds_resolved": 25,
-        "elapsed_seconds": 23.588
+        "elapsed_seconds": 1.292
       }
     ],
     "microsoft": [
@@ -615,7 +473,7 @@
         "first_pass_survivors": 60,
         "original_postings_resolved": 60,
         "jds_resolved": 60,
-        "elapsed_seconds": 27.384
+        "elapsed_seconds": 27.962
       },
       {
         "query": "machine learning engineer",
@@ -625,11 +483,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 13,
-        "first_pass_survivors": 13,
-        "original_postings_resolved": 13,
-        "jds_resolved": 13,
-        "elapsed_seconds": 6.836
+        "unique_contribution": 11,
+        "first_pass_survivors": 11,
+        "original_postings_resolved": 11,
+        "jds_resolved": 11,
+        "elapsed_seconds": 5.866
       },
       {
         "query": "data scientist",
@@ -643,7 +501,7 @@
         "first_pass_survivors": 26,
         "original_postings_resolved": 26,
         "jds_resolved": 26,
-        "elapsed_seconds": 10.918
+        "elapsed_seconds": 11.946
       },
       {
         "query": "solutions architect",
@@ -653,11 +511,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 22,
-        "first_pass_survivors": 22,
-        "original_postings_resolved": 22,
-        "jds_resolved": 22,
-        "elapsed_seconds": 8.986
+        "unique_contribution": 24,
+        "first_pass_survivors": 24,
+        "original_postings_resolved": 24,
+        "jds_resolved": 24,
+        "elapsed_seconds": 11.916
       },
       {
         "query": "data engineer",
@@ -671,7 +529,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.229
+        "elapsed_seconds": 1.423
       },
       {
         "query": "platform engineer",
@@ -685,7 +543,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.157
+        "elapsed_seconds": 1.396
       },
       {
         "query": "full stack engineer",
@@ -695,11 +553,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 15,
-        "first_pass_survivors": 15,
-        "original_postings_resolved": 15,
-        "jds_resolved": 15,
-        "elapsed_seconds": 7.042
+        "unique_contribution": 16,
+        "first_pass_survivors": 16,
+        "original_postings_resolved": 16,
+        "jds_resolved": 16,
+        "elapsed_seconds": 7.555
       },
       {
         "query": "forward deployed engineer",
@@ -709,11 +567,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 22,
-        "first_pass_survivors": 22,
-        "original_postings_resolved": 22,
-        "jds_resolved": 22,
-        "elapsed_seconds": 10.281
+        "unique_contribution": 23,
+        "first_pass_survivors": 23,
+        "original_postings_resolved": 23,
+        "jds_resolved": 23,
+        "elapsed_seconds": 11.132
       },
       {
         "query": "software engineer",
@@ -727,7 +585,7 @@
         "first_pass_survivors": 41,
         "original_postings_resolved": 41,
         "jds_resolved": 41,
-        "elapsed_seconds": 21.864
+        "elapsed_seconds": 22.303
       }
     ],
     "tiktok": [
@@ -743,7 +601,7 @@
         "first_pass_survivors": 199,
         "original_postings_resolved": 199,
         "jds_resolved": 199,
-        "elapsed_seconds": 5.086
+        "elapsed_seconds": 3.942
       },
       {
         "query": "machine learning engineer",
@@ -757,7 +615,7 @@
         "first_pass_survivors": 128,
         "original_postings_resolved": 128,
         "jds_resolved": 128,
-        "elapsed_seconds": 2.777
+        "elapsed_seconds": 2.663
       },
       {
         "query": "data scientist",
@@ -771,7 +629,7 @@
         "first_pass_survivors": 109,
         "original_postings_resolved": 109,
         "jds_resolved": 109,
-        "elapsed_seconds": 2.667
+        "elapsed_seconds": 2.668
       },
       {
         "query": "solutions architect",
@@ -785,7 +643,7 @@
         "first_pass_survivors": 76,
         "original_postings_resolved": 76,
         "jds_resolved": 76,
-        "elapsed_seconds": 2.723
+        "elapsed_seconds": 2.506
       },
       {
         "query": "data engineer",
@@ -799,7 +657,7 @@
         "first_pass_survivors": 61,
         "original_postings_resolved": 61,
         "jds_resolved": 61,
-        "elapsed_seconds": 2.751
+        "elapsed_seconds": 2.623
       },
       {
         "query": "platform engineer",
@@ -813,7 +671,7 @@
         "first_pass_survivors": 62,
         "original_postings_resolved": 62,
         "jds_resolved": 62,
-        "elapsed_seconds": 2.52
+        "elapsed_seconds": 2.68
       },
       {
         "query": "full stack engineer",
@@ -827,7 +685,7 @@
         "first_pass_survivors": 26,
         "original_postings_resolved": 26,
         "jds_resolved": 26,
-        "elapsed_seconds": 1.779
+        "elapsed_seconds": 1.558
       },
       {
         "query": "forward deployed engineer",
@@ -841,7 +699,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.591
+        "elapsed_seconds": 0.601
       },
       {
         "query": "software engineer",
@@ -855,7 +713,7 @@
         "first_pass_survivors": 43,
         "original_postings_resolved": 43,
         "jds_resolved": 43,
-        "elapsed_seconds": 3.662
+        "elapsed_seconds": 3.38
       }
     ],
     "uber": [
@@ -867,11 +725,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 80,
         "unique_jobs": 80,
-        "unique_contribution": 65,
-        "first_pass_survivors": 65,
-        "original_postings_resolved": 65,
-        "jds_resolved": 65,
-        "elapsed_seconds": 28.277
+        "unique_contribution": 66,
+        "first_pass_survivors": 66,
+        "original_postings_resolved": 66,
+        "jds_resolved": 66,
+        "elapsed_seconds": 25.111
       },
       {
         "query": "machine learning engineer",
@@ -881,11 +739,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 24,
-        "first_pass_survivors": 24,
-        "original_postings_resolved": 24,
-        "jds_resolved": 24,
-        "elapsed_seconds": 10.957
+        "unique_contribution": 23,
+        "first_pass_survivors": 23,
+        "original_postings_resolved": 23,
+        "jds_resolved": 23,
+        "elapsed_seconds": 9.633
       },
       {
         "query": "data scientist",
@@ -895,11 +753,11 @@
         "stop_reason": "early_stop",
         "raw_jobs": 38,
         "unique_jobs": 38,
-        "unique_contribution": 19,
-        "first_pass_survivors": 19,
-        "original_postings_resolved": 19,
-        "jds_resolved": 19,
-        "elapsed_seconds": 7.862
+        "unique_contribution": 18,
+        "first_pass_survivors": 18,
+        "original_postings_resolved": 18,
+        "jds_resolved": 18,
+        "elapsed_seconds": 7.308
       },
       {
         "query": "solutions architect",
@@ -909,11 +767,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 46,
         "unique_jobs": 46,
-        "unique_contribution": 26,
-        "first_pass_survivors": 26,
-        "original_postings_resolved": 26,
-        "jds_resolved": 26,
-        "elapsed_seconds": 11.24
+        "unique_contribution": 25,
+        "first_pass_survivors": 25,
+        "original_postings_resolved": 25,
+        "jds_resolved": 25,
+        "elapsed_seconds": 9.754
       },
       {
         "query": "data engineer",
@@ -927,7 +785,7 @@
         "first_pass_survivors": 16,
         "original_postings_resolved": 16,
         "jds_resolved": 16,
-        "elapsed_seconds": 7.871
+        "elapsed_seconds": 7.683
       },
       {
         "query": "platform engineer",
@@ -941,7 +799,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 3.607
+        "elapsed_seconds": 3.518
       },
       {
         "query": "full stack engineer",
@@ -955,7 +813,7 @@
         "first_pass_survivors": 17,
         "original_postings_resolved": 17,
         "jds_resolved": 17,
-        "elapsed_seconds": 8.144
+        "elapsed_seconds": 7.805
       },
       {
         "query": "forward deployed engineer",
@@ -969,7 +827,7 @@
         "first_pass_survivors": 7,
         "original_postings_resolved": 7,
         "jds_resolved": 7,
-        "elapsed_seconds": 4.88
+        "elapsed_seconds": 4.682
       },
       {
         "query": "software engineer",
@@ -983,7 +841,7 @@
         "first_pass_survivors": 13,
         "original_postings_resolved": 13,
         "jds_resolved": 13,
-        "elapsed_seconds": 7.773
+        "elapsed_seconds": 7.52
       }
     ],
     "snap": [
@@ -993,13 +851,13 @@
         "page_budget": 4,
         "pages_fetched": 4,
         "stop_reason": "page_budget",
-        "raw_jobs": 75,
-        "unique_jobs": 75,
-        "unique_contribution": 62,
-        "first_pass_survivors": 62,
-        "original_postings_resolved": 62,
-        "jds_resolved": 62,
-        "elapsed_seconds": 30.068
+        "raw_jobs": 74,
+        "unique_jobs": 74,
+        "unique_contribution": 61,
+        "first_pass_survivors": 61,
+        "original_postings_resolved": 61,
+        "jds_resolved": 61,
+        "elapsed_seconds": 31.116
       },
       {
         "query": "machine learning engineer",
@@ -1013,7 +871,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 4.04
+        "elapsed_seconds": 4.136
       },
       {
         "query": "data scientist",
@@ -1027,7 +885,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.668
+        "elapsed_seconds": 0.854
       },
       {
         "query": "solutions architect",
@@ -1041,7 +899,7 @@
         "first_pass_survivors": 9,
         "original_postings_resolved": 9,
         "jds_resolved": 9,
-        "elapsed_seconds": 6.238
+        "elapsed_seconds": 6.889
       },
       {
         "query": "data engineer",
@@ -1055,7 +913,7 @@
         "first_pass_survivors": 12,
         "original_postings_resolved": 12,
         "jds_resolved": 12,
-        "elapsed_seconds": 7.518
+        "elapsed_seconds": 7.875
       },
       {
         "query": "platform engineer",
@@ -1069,7 +927,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 5,
-        "elapsed_seconds": 4.732
+        "elapsed_seconds": 5.481
       },
       {
         "query": "full stack engineer",
@@ -1083,7 +941,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 1.976
+        "elapsed_seconds": 1.998
       },
       {
         "query": "forward deployed engineer",
@@ -1097,7 +955,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.677
+        "elapsed_seconds": 0.923
       },
       {
         "query": "software engineer",
@@ -1111,7 +969,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 8,
-        "elapsed_seconds": 6.571
+        "elapsed_seconds": 9.577
       }
     ],
     "servicenow": [
@@ -1121,13 +979,13 @@
         "page_budget": 4,
         "pages_fetched": 4,
         "stop_reason": "page_budget",
-        "raw_jobs": 319,
-        "unique_jobs": 319,
-        "unique_contribution": 319,
-        "first_pass_survivors": 319,
-        "original_postings_resolved": 319,
-        "jds_resolved": 319,
-        "elapsed_seconds": 187.71
+        "raw_jobs": 318,
+        "unique_jobs": 318,
+        "unique_contribution": 318,
+        "first_pass_survivors": 318,
+        "original_postings_resolved": 318,
+        "jds_resolved": 318,
+        "elapsed_seconds": 184.638
       },
       {
         "query": "machine learning engineer",
@@ -1141,7 +999,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.092
+        "elapsed_seconds": 1.038
       },
       {
         "query": "data scientist",
@@ -1149,13 +1007,13 @@
         "page_budget": 3,
         "pages_fetched": 2,
         "stop_reason": "early_stop",
-        "raw_jobs": 182,
-        "unique_jobs": 182,
-        "unique_contribution": 15,
-        "first_pass_survivors": 15,
-        "original_postings_resolved": 15,
-        "jds_resolved": 15,
-        "elapsed_seconds": 9.586
+        "raw_jobs": 181,
+        "unique_jobs": 181,
+        "unique_contribution": 16,
+        "first_pass_survivors": 16,
+        "original_postings_resolved": 16,
+        "jds_resolved": 16,
+        "elapsed_seconds": 10.107
       },
       {
         "query": "solutions architect",
@@ -1163,13 +1021,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 298,
-        "unique_jobs": 298,
-        "unique_contribution": 108,
-        "first_pass_survivors": 108,
-        "original_postings_resolved": 108,
-        "jds_resolved": 108,
-        "elapsed_seconds": 64.268
+        "raw_jobs": 296,
+        "unique_jobs": 296,
+        "unique_contribution": 106,
+        "first_pass_survivors": 106,
+        "original_postings_resolved": 106,
+        "jds_resolved": 106,
+        "elapsed_seconds": 62.029
       },
       {
         "query": "data engineer",
@@ -1179,11 +1037,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 300,
         "unique_jobs": 300,
-        "unique_contribution": 1,
-        "first_pass_survivors": 1,
-        "original_postings_resolved": 1,
-        "jds_resolved": 1,
-        "elapsed_seconds": 2.558
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 1.899
       },
       {
         "query": "platform engineer",
@@ -1197,7 +1055,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 5.415
+        "elapsed_seconds": 5.218
       },
       {
         "query": "full stack engineer",
@@ -1205,13 +1063,13 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 70,
-        "unique_jobs": 70,
+        "raw_jobs": 68,
+        "unique_jobs": 68,
         "unique_contribution": 1,
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.079
+        "elapsed_seconds": 1.026
       },
       {
         "query": "forward deployed engineer",
@@ -1219,13 +1077,13 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 67,
-        "unique_jobs": 67,
+        "raw_jobs": 68,
+        "unique_jobs": 68,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.444
+        "elapsed_seconds": 0.457
       },
       {
         "query": "software engineer",
@@ -1233,13 +1091,13 @@
         "page_budget": 4,
         "pages_fetched": 3,
         "stop_reason": "early_stop",
-        "raw_jobs": 282,
-        "unique_jobs": 282,
+        "raw_jobs": 279,
+        "unique_jobs": 279,
         "unique_contribution": 1,
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 2.334
+        "elapsed_seconds": 2.261
       }
     ],
     "bloomberg": [
@@ -1255,7 +1113,7 @@
         "first_pass_survivors": 20,
         "original_postings_resolved": 20,
         "jds_resolved": 20,
-        "elapsed_seconds": 29.774
+        "elapsed_seconds": 32.225
       },
       {
         "query": "machine learning engineer",
@@ -1269,7 +1127,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.607
+        "elapsed_seconds": 5.098
       },
       {
         "query": "data scientist",
@@ -1283,7 +1141,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.475
+        "elapsed_seconds": 5.069
       },
       {
         "query": "solutions architect",
@@ -1297,7 +1155,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.665
+        "elapsed_seconds": 4.902
       },
       {
         "query": "data engineer",
@@ -1311,7 +1169,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.584
+        "elapsed_seconds": 4.999
       },
       {
         "query": "platform engineer",
@@ -1325,7 +1183,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.517
+        "elapsed_seconds": 4.943
       },
       {
         "query": "full stack engineer",
@@ -1339,7 +1197,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.513
+        "elapsed_seconds": 5.086
       },
       {
         "query": "forward deployed engineer",
@@ -1353,7 +1211,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.543
+        "elapsed_seconds": 5.076
       },
       {
         "query": "software engineer",
@@ -1367,7 +1225,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 6.062
+        "elapsed_seconds": 6.623
       }
     ],
     "jpmorgan": [
@@ -1379,11 +1237,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 80,
         "unique_jobs": 80,
-        "unique_contribution": 48,
-        "first_pass_survivors": 48,
-        "original_postings_resolved": 48,
-        "jds_resolved": 48,
-        "elapsed_seconds": 17.603
+        "unique_contribution": 47,
+        "first_pass_survivors": 47,
+        "original_postings_resolved": 47,
+        "jds_resolved": 47,
+        "elapsed_seconds": 17.013
       },
       {
         "query": "machine learning engineer",
@@ -1397,24 +1255,10 @@
         "first_pass_survivors": 44,
         "original_postings_resolved": 44,
         "jds_resolved": 44,
-        "elapsed_seconds": 15.371
+        "elapsed_seconds": 14.303
       },
       {
         "query": "data scientist",
-        "group": "official",
-        "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 60,
-        "unique_jobs": 60,
-        "unique_contribution": 37,
-        "first_pass_survivors": 37,
-        "original_postings_resolved": 37,
-        "jds_resolved": 37,
-        "elapsed_seconds": 12.791
-      },
-      {
-        "query": "solutions architect",
         "group": "official",
         "page_budget": 3,
         "pages_fetched": 3,
@@ -1425,7 +1269,21 @@
         "first_pass_survivors": 36,
         "original_postings_resolved": 36,
         "jds_resolved": 36,
-        "elapsed_seconds": 12.265
+        "elapsed_seconds": 11.942
+      },
+      {
+        "query": "solutions architect",
+        "group": "official",
+        "page_budget": 3,
+        "pages_fetched": 3,
+        "stop_reason": "page_budget",
+        "raw_jobs": 60,
+        "unique_jobs": 60,
+        "unique_contribution": 33,
+        "first_pass_survivors": 33,
+        "original_postings_resolved": 33,
+        "jds_resolved": 33,
+        "elapsed_seconds": 11.123
       },
       {
         "query": "data engineer",
@@ -1439,7 +1297,7 @@
         "first_pass_survivors": 25,
         "original_postings_resolved": 25,
         "jds_resolved": 25,
-        "elapsed_seconds": 9.39
+        "elapsed_seconds": 9.104
       },
       {
         "query": "platform engineer",
@@ -1449,14 +1307,28 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 29,
-        "first_pass_survivors": 29,
-        "original_postings_resolved": 29,
-        "jds_resolved": 29,
-        "elapsed_seconds": 10.491
+        "unique_contribution": 27,
+        "first_pass_survivors": 27,
+        "original_postings_resolved": 27,
+        "jds_resolved": 27,
+        "elapsed_seconds": 10.198
       },
       {
         "query": "full stack engineer",
+        "group": "official",
+        "page_budget": 3,
+        "pages_fetched": 3,
+        "stop_reason": "page_budget",
+        "raw_jobs": 60,
+        "unique_jobs": 60,
+        "unique_contribution": 23,
+        "first_pass_survivors": 23,
+        "original_postings_resolved": 23,
+        "jds_resolved": 23,
+        "elapsed_seconds": 9.268
+      },
+      {
+        "query": "forward deployed engineer",
         "group": "official",
         "page_budget": 3,
         "pages_fetched": 3,
@@ -1467,21 +1339,7 @@
         "first_pass_survivors": 20,
         "original_postings_resolved": 20,
         "jds_resolved": 20,
-        "elapsed_seconds": 8.42
-      },
-      {
-        "query": "forward deployed engineer",
-        "group": "official",
-        "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 60,
-        "unique_jobs": 60,
-        "unique_contribution": 21,
-        "first_pass_survivors": 21,
-        "original_postings_resolved": 21,
-        "jds_resolved": 21,
-        "elapsed_seconds": 8.824
+        "elapsed_seconds": 8.078
       },
       {
         "query": "software engineer",
@@ -1491,11 +1349,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 80,
         "unique_jobs": 80,
-        "unique_contribution": 13,
-        "first_pass_survivors": 13,
-        "original_postings_resolved": 13,
-        "jds_resolved": 13,
-        "elapsed_seconds": 7.289
+        "unique_contribution": 12,
+        "first_pass_survivors": 12,
+        "original_postings_resolved": 12,
+        "jds_resolved": 12,
+        "elapsed_seconds": 7.365
       },
       {
         "query": "full stack",
@@ -1509,7 +1367,7 @@
         "first_pass_survivors": 38,
         "original_postings_resolved": 38,
         "jds_resolved": 38,
-        "elapsed_seconds": 12.514
+        "elapsed_seconds": 13.669
       },
       {
         "query": "python react",
@@ -1523,7 +1381,7 @@
         "first_pass_survivors": 21,
         "original_postings_resolved": 21,
         "jds_resolved": 21,
-        "elapsed_seconds": 7.928
+        "elapsed_seconds": 7.875
       },
       {
         "query": "pyspark databricks",
@@ -1531,13 +1389,13 @@
         "page_budget": 3,
         "pages_fetched": 3,
         "stop_reason": "page_budget",
-        "raw_jobs": 43,
-        "unique_jobs": 43,
+        "raw_jobs": 45,
+        "unique_jobs": 45,
         "unique_contribution": 19,
         "first_pass_survivors": 19,
         "original_postings_resolved": 19,
         "jds_resolved": 19,
-        "elapsed_seconds": 7.145
+        "elapsed_seconds": 8.013
       },
       {
         "query": "experienced software engineer java python",
@@ -1551,7 +1409,7 @@
         "first_pass_survivors": 19,
         "original_postings_resolved": 19,
         "jds_resolved": 19,
-        "elapsed_seconds": 7.919
+        "elapsed_seconds": 8.884
       },
       {
         "query": "agentic ai",
@@ -1561,11 +1419,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 21,
-        "first_pass_survivors": 21,
-        "original_postings_resolved": 21,
-        "jds_resolved": 21,
-        "elapsed_seconds": 8.286
+        "unique_contribution": 22,
+        "first_pass_survivors": 22,
+        "original_postings_resolved": 22,
+        "jds_resolved": 22,
+        "elapsed_seconds": 8.365
       },
       {
         "query": "site reliability engineer",
@@ -1575,11 +1433,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 34,
-        "first_pass_survivors": 34,
-        "original_postings_resolved": 34,
-        "jds_resolved": 34,
-        "elapsed_seconds": 12.061
+        "unique_contribution": 33,
+        "first_pass_survivors": 33,
+        "original_postings_resolved": 33,
+        "jds_resolved": 33,
+        "elapsed_seconds": 11.327
       },
       {
         "query": "software engineer ii",
@@ -1593,7 +1451,7 @@
         "first_pass_survivors": 21,
         "original_postings_resolved": 21,
         "jds_resolved": 21,
-        "elapsed_seconds": 8.599
+        "elapsed_seconds": 8.339
       },
       {
         "query": "infrastructure engineer",
@@ -1607,7 +1465,7 @@
         "first_pass_survivors": 41,
         "original_postings_resolved": 41,
         "jds_resolved": 41,
-        "elapsed_seconds": 13.785
+        "elapsed_seconds": 15.155
       },
       {
         "query": "security engineer",
@@ -1621,7 +1479,7 @@
         "first_pass_survivors": 15,
         "original_postings_resolved": 15,
         "jds_resolved": 15,
-        "elapsed_seconds": 6.767
+        "elapsed_seconds": 6.819
       },
       {
         "query": "quantitative developer",
@@ -1635,7 +1493,7 @@
         "first_pass_survivors": 26,
         "original_postings_resolved": 26,
         "jds_resolved": 26,
-        "elapsed_seconds": 9.737
+        "elapsed_seconds": 9.467
       },
       {
         "query": "software engineer java spring",
@@ -1645,11 +1503,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 20,
         "unique_jobs": 20,
-        "unique_contribution": 11,
-        "first_pass_survivors": 11,
-        "original_postings_resolved": 11,
-        "jds_resolved": 11,
-        "elapsed_seconds": 3.986
+        "unique_contribution": 10,
+        "first_pass_survivors": 10,
+        "original_postings_resolved": 10,
+        "jds_resolved": 10,
+        "elapsed_seconds": 4.498
       },
       {
         "query": "software engineer python authe",
@@ -1663,7 +1521,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 1.653
+        "elapsed_seconds": 1.624
       },
       {
         "query": "aws data platform engineer",
@@ -1677,7 +1535,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.127
+        "elapsed_seconds": 1.114
       },
       {
         "query": "data engineer applied ai",
@@ -1691,7 +1549,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 1.896
+        "elapsed_seconds": 1.946
       },
       {
         "query": "asset management technology",
@@ -1705,7 +1563,7 @@
         "first_pass_survivors": 9,
         "original_postings_resolved": 9,
         "jds_resolved": 9,
-        "elapsed_seconds": 3.303
+        "elapsed_seconds": 3.41
       }
     ],
     "oracle": [
@@ -1721,7 +1579,7 @@
         "first_pass_survivors": 63,
         "original_postings_resolved": 63,
         "jds_resolved": 63,
-        "elapsed_seconds": 25.419
+        "elapsed_seconds": 31.129
       },
       {
         "query": "machine learning engineer",
@@ -1735,7 +1593,7 @@
         "first_pass_survivors": 47,
         "original_postings_resolved": 47,
         "jds_resolved": 47,
-        "elapsed_seconds": 18.45
+        "elapsed_seconds": 23.39
       },
       {
         "query": "data scientist",
@@ -1749,7 +1607,7 @@
         "first_pass_survivors": 18,
         "original_postings_resolved": 18,
         "jds_resolved": 18,
-        "elapsed_seconds": 9.292
+        "elapsed_seconds": 11.561
       },
       {
         "query": "solutions architect",
@@ -1759,11 +1617,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 43,
-        "first_pass_survivors": 43,
-        "original_postings_resolved": 43,
-        "jds_resolved": 43,
-        "elapsed_seconds": 19.487
+        "unique_contribution": 41,
+        "first_pass_survivors": 41,
+        "original_postings_resolved": 41,
+        "jds_resolved": 41,
+        "elapsed_seconds": 20.82
       },
       {
         "query": "data engineer",
@@ -1772,12 +1630,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 60,
-        "unique_jobs": 60,
-        "unique_contribution": 52,
-        "first_pass_survivors": 52,
-        "original_postings_resolved": 52,
-        "jds_resolved": 52,
-        "elapsed_seconds": 21.12
+        "unique_jobs": 59,
+        "unique_contribution": 51,
+        "first_pass_survivors": 51,
+        "original_postings_resolved": 51,
+        "jds_resolved": 51,
+        "elapsed_seconds": 28.79
       },
       {
         "query": "platform engineer",
@@ -1791,7 +1649,7 @@
         "first_pass_survivors": 40,
         "original_postings_resolved": 40,
         "jds_resolved": 40,
-        "elapsed_seconds": 16.25
+        "elapsed_seconds": 19.804
       },
       {
         "query": "full stack engineer",
@@ -1800,12 +1658,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 60,
-        "unique_jobs": 60,
-        "unique_contribution": 22,
-        "first_pass_survivors": 22,
-        "original_postings_resolved": 22,
-        "jds_resolved": 22,
-        "elapsed_seconds": 10.22
+        "unique_jobs": 59,
+        "unique_contribution": 23,
+        "first_pass_survivors": 23,
+        "original_postings_resolved": 23,
+        "jds_resolved": 23,
+        "elapsed_seconds": 12.397
       },
       {
         "query": "forward deployed engineer",
@@ -1819,7 +1677,7 @@
         "first_pass_survivors": 32,
         "original_postings_resolved": 32,
         "jds_resolved": 32,
-        "elapsed_seconds": 14.056
+        "elapsed_seconds": 17.74
       },
       {
         "query": "software engineer",
@@ -1833,7 +1691,7 @@
         "first_pass_survivors": 31,
         "original_postings_resolved": 31,
         "jds_resolved": 31,
-        "elapsed_seconds": 14.558
+        "elapsed_seconds": 18.686
       },
       {
         "query": "core infrastructure",
@@ -1843,11 +1701,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 32,
-        "first_pass_survivors": 32,
-        "original_postings_resolved": 32,
-        "jds_resolved": 32,
-        "elapsed_seconds": 14.561
+        "unique_contribution": 33,
+        "first_pass_survivors": 33,
+        "original_postings_resolved": 33,
+        "jds_resolved": 33,
+        "elapsed_seconds": 16.932
       },
       {
         "query": "cleared site reliability engineer database",
@@ -1857,11 +1715,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 32,
-        "first_pass_survivors": 32,
-        "original_postings_resolved": 32,
-        "jds_resolved": 32,
-        "elapsed_seconds": 15.143
+        "unique_contribution": 33,
+        "first_pass_survivors": 33,
+        "original_postings_resolved": 33,
+        "jds_resolved": 33,
+        "elapsed_seconds": 17.456
       },
       {
         "query": "software developer",
@@ -1871,11 +1729,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 59,
         "unique_jobs": 59,
-        "unique_contribution": 13,
-        "first_pass_survivors": 13,
-        "original_postings_resolved": 13,
-        "jds_resolved": 13,
-        "elapsed_seconds": 7.433
+        "unique_contribution": 10,
+        "first_pass_survivors": 10,
+        "original_postings_resolved": 10,
+        "jds_resolved": 10,
+        "elapsed_seconds": 7.916
       },
       {
         "query": "applications developer",
@@ -1885,11 +1743,153 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 22,
-        "first_pass_survivors": 22,
-        "original_postings_resolved": 22,
-        "jds_resolved": 22,
-        "elapsed_seconds": 11.673
+        "unique_contribution": 23,
+        "first_pass_survivors": 23,
+        "original_postings_resolved": 23,
+        "jds_resolved": 23,
+        "elapsed_seconds": 15.942
+      }
+    ],
+    "sap": [
+      {
+        "query": "ai engineer",
+        "group": "official",
+        "page_budget": 4,
+        "pages_fetched": 4,
+        "stop_reason": "page_budget",
+        "raw_jobs": 100,
+        "unique_jobs": 100,
+        "unique_contribution": 95,
+        "first_pass_survivors": 95,
+        "original_postings_resolved": 95,
+        "jds_resolved": 95,
+        "elapsed_seconds": 51.078
+      },
+      {
+        "query": "machine learning engineer",
+        "group": "official",
+        "page_budget": 3,
+        "pages_fetched": 3,
+        "stop_reason": "page_budget",
+        "raw_jobs": 75,
+        "unique_jobs": 75,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 1.993
+      },
+      {
+        "query": "data scientist",
+        "group": "official",
+        "page_budget": 3,
+        "pages_fetched": 3,
+        "stop_reason": "page_budget",
+        "raw_jobs": 75,
+        "unique_jobs": 75,
+        "unique_contribution": 2,
+        "first_pass_survivors": 2,
+        "original_postings_resolved": 2,
+        "jds_resolved": 2,
+        "elapsed_seconds": 4.872
+      },
+      {
+        "query": "solutions architect",
+        "group": "official",
+        "page_budget": 3,
+        "pages_fetched": 3,
+        "stop_reason": "page_budget",
+        "raw_jobs": 75,
+        "unique_jobs": 75,
+        "unique_contribution": 7,
+        "first_pass_survivors": 7,
+        "original_postings_resolved": 7,
+        "jds_resolved": 7,
+        "elapsed_seconds": 5.519
+      },
+      {
+        "query": "data engineer",
+        "group": "official",
+        "page_budget": 3,
+        "pages_fetched": 3,
+        "stop_reason": "page_budget",
+        "raw_jobs": 75,
+        "unique_jobs": 75,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 2.177
+      },
+      {
+        "query": "platform engineer",
+        "group": "official",
+        "page_budget": 3,
+        "pages_fetched": 3,
+        "stop_reason": "page_budget",
+        "raw_jobs": 75,
+        "unique_jobs": 75,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 2.05
+      },
+      {
+        "query": "full stack engineer",
+        "group": "official",
+        "page_budget": 3,
+        "pages_fetched": 3,
+        "stop_reason": "page_budget",
+        "raw_jobs": 75,
+        "unique_jobs": 75,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 2.129
+      },
+      {
+        "query": "forward deployed engineer",
+        "group": "official",
+        "page_budget": 3,
+        "pages_fetched": 3,
+        "stop_reason": "page_budget",
+        "raw_jobs": 75,
+        "unique_jobs": 75,
+        "unique_contribution": 1,
+        "first_pass_survivors": 1,
+        "original_postings_resolved": 1,
+        "jds_resolved": 1,
+        "elapsed_seconds": 2.657
+      },
+      {
+        "query": "software engineer",
+        "group": "official",
+        "page_budget": 4,
+        "pages_fetched": 4,
+        "stop_reason": "page_budget",
+        "raw_jobs": 100,
+        "unique_jobs": 100,
+        "unique_contribution": 2,
+        "first_pass_survivors": 2,
+        "original_postings_resolved": 2,
+        "jds_resolved": 2,
+        "elapsed_seconds": 3.696
+      },
+      {
+        "query": "cloud developer",
+        "group": "official",
+        "page_budget": 3,
+        "pages_fetched": 3,
+        "stop_reason": "page_budget",
+        "raw_jobs": 75,
+        "unique_jobs": 75,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 2.059
       }
     ],
     "disney": [
@@ -1900,12 +1900,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 30,
-        "unique_jobs": 30,
-        "unique_contribution": 30,
-        "first_pass_survivors": 30,
-        "original_postings_resolved": 30,
+        "unique_jobs": 29,
+        "unique_contribution": 29,
+        "first_pass_survivors": 29,
+        "original_postings_resolved": 29,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.522
+        "elapsed_seconds": 2.596
       },
       {
         "query": "machine learning engineer",
@@ -1915,11 +1915,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 17,
-        "first_pass_survivors": 17,
-        "original_postings_resolved": 17,
+        "unique_contribution": 18,
+        "first_pass_survivors": 18,
+        "original_postings_resolved": 18,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.631
+        "elapsed_seconds": 2.506
       },
       {
         "query": "data scientist",
@@ -1929,11 +1929,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 19,
-        "first_pass_survivors": 19,
-        "original_postings_resolved": 19,
+        "unique_contribution": 18,
+        "first_pass_survivors": 18,
+        "original_postings_resolved": 18,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.294
+        "elapsed_seconds": 2.125
       },
       {
         "query": "solutions architect",
@@ -1943,11 +1943,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 20,
-        "first_pass_survivors": 20,
-        "original_postings_resolved": 20,
+        "unique_contribution": 18,
+        "first_pass_survivors": 18,
+        "original_postings_resolved": 18,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.43
+        "elapsed_seconds": 2.221
       },
       {
         "query": "data engineer",
@@ -1957,11 +1957,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 4,
-        "first_pass_survivors": 4,
-        "original_postings_resolved": 4,
+        "unique_contribution": 3,
+        "first_pass_survivors": 3,
+        "original_postings_resolved": 3,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.693
+        "elapsed_seconds": 2.1
       },
       {
         "query": "platform engineer",
@@ -1975,7 +1975,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.873
+        "elapsed_seconds": 3.416
       },
       {
         "query": "full stack engineer",
@@ -1985,11 +1985,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 7,
-        "first_pass_survivors": 7,
-        "original_postings_resolved": 7,
+        "unique_contribution": 9,
+        "first_pass_survivors": 9,
+        "original_postings_resolved": 9,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.557
+        "elapsed_seconds": 2.08
       },
       {
         "query": "forward deployed engineer",
@@ -2003,7 +2003,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.352
+        "elapsed_seconds": 1.903
       },
       {
         "query": "software engineer",
@@ -2013,11 +2013,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 6,
-        "first_pass_survivors": 6,
-        "original_postings_resolved": 6,
+        "unique_contribution": 5,
+        "first_pass_survivors": 5,
+        "original_postings_resolved": 5,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.291
+        "elapsed_seconds": 1.992
       }
     ],
     "qualcomm": [
@@ -2033,7 +2033,7 @@
         "first_pass_survivors": 30,
         "original_postings_resolved": 30,
         "jds_resolved": 30,
-        "elapsed_seconds": 9.801
+        "elapsed_seconds": 13.041
       },
       {
         "query": "machine learning engineer",
@@ -2043,11 +2043,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 23,
-        "first_pass_survivors": 23,
-        "original_postings_resolved": 23,
-        "jds_resolved": 23,
-        "elapsed_seconds": 8.892
+        "unique_contribution": 22,
+        "first_pass_survivors": 22,
+        "original_postings_resolved": 22,
+        "jds_resolved": 22,
+        "elapsed_seconds": 10.572
       },
       {
         "query": "data scientist",
@@ -2057,11 +2057,11 @@
         "stop_reason": "early_stop",
         "raw_jobs": 13,
         "unique_jobs": 13,
-        "unique_contribution": 12,
-        "first_pass_survivors": 12,
-        "original_postings_resolved": 12,
-        "jds_resolved": 12,
-        "elapsed_seconds": 3.856
+        "unique_contribution": 11,
+        "first_pass_survivors": 11,
+        "original_postings_resolved": 11,
+        "jds_resolved": 11,
+        "elapsed_seconds": 5.26
       },
       {
         "query": "solutions architect",
@@ -2075,7 +2075,7 @@
         "first_pass_survivors": 25,
         "original_postings_resolved": 25,
         "jds_resolved": 25,
-        "elapsed_seconds": 8.022
+        "elapsed_seconds": 11.381
       },
       {
         "query": "data engineer",
@@ -2089,7 +2089,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 2.876
+        "elapsed_seconds": 4.533
       },
       {
         "query": "platform engineer",
@@ -2099,11 +2099,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 9,
-        "first_pass_survivors": 9,
-        "original_postings_resolved": 9,
-        "jds_resolved": 9,
-        "elapsed_seconds": 3.724
+        "unique_contribution": 7,
+        "first_pass_survivors": 7,
+        "original_postings_resolved": 7,
+        "jds_resolved": 7,
+        "elapsed_seconds": 4.381
       },
       {
         "query": "full stack engineer",
@@ -2117,7 +2117,7 @@
         "first_pass_survivors": 13,
         "original_postings_resolved": 13,
         "jds_resolved": 13,
-        "elapsed_seconds": 5.023
+        "elapsed_seconds": 7.046
       },
       {
         "query": "forward deployed engineer",
@@ -2131,7 +2131,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.372
+        "elapsed_seconds": 1.594
       },
       {
         "query": "software engineer",
@@ -2145,7 +2145,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.392
+        "elapsed_seconds": 1.496
       }
     ],
     "amd": [
@@ -2155,13 +2155,13 @@
         "page_budget": 4,
         "pages_fetched": 4,
         "stop_reason": "page_budget",
-        "raw_jobs": 357,
-        "unique_jobs": 357,
-        "unique_contribution": 357,
-        "first_pass_survivors": 357,
+        "raw_jobs": 355,
+        "unique_jobs": 355,
+        "unique_contribution": 355,
+        "first_pass_survivors": 355,
         "original_postings_resolved": 0,
-        "jds_resolved": 357,
-        "elapsed_seconds": 4.533
+        "jds_resolved": 355,
+        "elapsed_seconds": 3.635
       },
       {
         "query": "machine learning",
@@ -2171,11 +2171,11 @@
         "stop_reason": "early_stop",
         "raw_jobs": 89,
         "unique_jobs": 89,
-        "unique_contribution": 24,
-        "first_pass_survivors": 24,
+        "unique_contribution": 25,
+        "first_pass_survivors": 25,
         "original_postings_resolved": 0,
-        "jds_resolved": 24,
-        "elapsed_seconds": 1.591
+        "jds_resolved": 25,
+        "elapsed_seconds": 0.48
       },
       {
         "query": "data engineer",
@@ -2185,11 +2185,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 300,
         "unique_jobs": 300,
-        "unique_contribution": 82,
-        "first_pass_survivors": 82,
+        "unique_contribution": 83,
+        "first_pass_survivors": 83,
         "original_postings_resolved": 0,
-        "jds_resolved": 82,
-        "elapsed_seconds": 3.384
+        "jds_resolved": 83,
+        "elapsed_seconds": 2.835
       },
       {
         "query": "AI research",
@@ -2203,7 +2203,7 @@
         "first_pass_survivors": 65,
         "original_postings_resolved": 0,
         "jds_resolved": 65,
-        "elapsed_seconds": 4.06
+        "elapsed_seconds": 3.208
       },
       {
         "query": "platform engineer",
@@ -2213,11 +2213,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 300,
         "unique_jobs": 300,
-        "unique_contribution": 14,
-        "first_pass_survivors": 14,
+        "unique_contribution": 13,
+        "first_pass_survivors": 13,
         "original_postings_resolved": 0,
-        "jds_resolved": 14,
-        "elapsed_seconds": 2.323
+        "jds_resolved": 13,
+        "elapsed_seconds": 2.278
       }
     ],
     "bytedance": [
@@ -2233,7 +2233,7 @@
         "first_pass_survivors": 145,
         "original_postings_resolved": 145,
         "jds_resolved": 145,
-        "elapsed_seconds": 5.417
+        "elapsed_seconds": 5.306
       },
       {
         "query": "machine learning engineer",
@@ -2247,7 +2247,7 @@
         "first_pass_survivors": 101,
         "original_postings_resolved": 101,
         "jds_resolved": 101,
-        "elapsed_seconds": 3.942
+        "elapsed_seconds": 3.52
       },
       {
         "query": "data scientist",
@@ -2257,11 +2257,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 107,
         "unique_jobs": 107,
-        "unique_contribution": 60,
-        "first_pass_survivors": 60,
-        "original_postings_resolved": 60,
-        "jds_resolved": 60,
-        "elapsed_seconds": 3.068
+        "unique_contribution": 57,
+        "first_pass_survivors": 57,
+        "original_postings_resolved": 57,
+        "jds_resolved": 57,
+        "elapsed_seconds": 3.586
       },
       {
         "query": "solutions architect",
@@ -2275,7 +2275,7 @@
         "first_pass_survivors": 64,
         "original_postings_resolved": 64,
         "jds_resolved": 64,
-        "elapsed_seconds": 3.201
+        "elapsed_seconds": 3.33
       },
       {
         "query": "data engineer",
@@ -2285,11 +2285,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 150,
         "unique_jobs": 150,
-        "unique_contribution": 52,
-        "first_pass_survivors": 52,
-        "original_postings_resolved": 52,
-        "jds_resolved": 52,
-        "elapsed_seconds": 3.321
+        "unique_contribution": 51,
+        "first_pass_survivors": 51,
+        "original_postings_resolved": 51,
+        "jds_resolved": 51,
+        "elapsed_seconds": 3.349
       },
       {
         "query": "platform engineer",
@@ -2303,7 +2303,7 @@
         "first_pass_survivors": 19,
         "original_postings_resolved": 19,
         "jds_resolved": 19,
-        "elapsed_seconds": 3.299
+        "elapsed_seconds": 3.233
       },
       {
         "query": "full stack engineer",
@@ -2313,11 +2313,11 @@
         "stop_reason": "early_stop",
         "raw_jobs": 55,
         "unique_jobs": 55,
-        "unique_contribution": 3,
-        "first_pass_survivors": 3,
-        "original_postings_resolved": 3,
-        "jds_resolved": 3,
-        "elapsed_seconds": 2.013
+        "unique_contribution": 4,
+        "first_pass_survivors": 4,
+        "original_postings_resolved": 4,
+        "jds_resolved": 4,
+        "elapsed_seconds": 2.002
       },
       {
         "query": "forward deployed engineer",
@@ -2327,11 +2327,11 @@
         "stop_reason": "early_stop",
         "raw_jobs": 6,
         "unique_jobs": 6,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.867
+        "unique_contribution": 1,
+        "first_pass_survivors": 1,
+        "original_postings_resolved": 1,
+        "jds_resolved": 1,
+        "elapsed_seconds": 0.886
       },
       {
         "query": "software engineer",
@@ -2340,12 +2340,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 150,
-        "unique_jobs": 149,
-        "unique_contribution": 14,
-        "first_pass_survivors": 14,
-        "original_postings_resolved": 14,
-        "jds_resolved": 14,
-        "elapsed_seconds": 3.306
+        "unique_jobs": 148,
+        "unique_contribution": 15,
+        "first_pass_survivors": 15,
+        "original_postings_resolved": 15,
+        "jds_resolved": 15,
+        "elapsed_seconds": 3.353
       }
     ],
     "dell": [
@@ -2361,7 +2361,7 @@
         "first_pass_survivors": 20,
         "original_postings_resolved": 20,
         "jds_resolved": 20,
-        "elapsed_seconds": 11.49
+        "elapsed_seconds": 11.925
       },
       {
         "query": "machine learning engineer",
@@ -2375,7 +2375,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 5.723
+        "elapsed_seconds": 5.728
       },
       {
         "query": "data scientist",
@@ -2383,13 +2383,13 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 10,
-        "unique_jobs": 10,
+        "raw_jobs": 12,
+        "unique_jobs": 12,
         "unique_contribution": 3,
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 1.807
+        "elapsed_seconds": 2.526
       },
       {
         "query": "solutions architect",
@@ -2399,11 +2399,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 60,
-        "unique_contribution": 26,
-        "first_pass_survivors": 26,
-        "original_postings_resolved": 26,
-        "jds_resolved": 26,
-        "elapsed_seconds": 12.276
+        "unique_contribution": 25,
+        "first_pass_survivors": 25,
+        "original_postings_resolved": 25,
+        "jds_resolved": 25,
+        "elapsed_seconds": 14.109
       },
       {
         "query": "data engineer",
@@ -2417,7 +2417,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 8,
-        "elapsed_seconds": 5.553
+        "elapsed_seconds": 5.882
       },
       {
         "query": "platform engineer",
@@ -2431,7 +2431,7 @@
         "first_pass_survivors": 12,
         "original_postings_resolved": 12,
         "jds_resolved": 12,
-        "elapsed_seconds": 7.288
+        "elapsed_seconds": 7.109
       },
       {
         "query": "full stack engineer",
@@ -2441,11 +2441,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 60,
         "unique_jobs": 59,
-        "unique_contribution": 5,
-        "first_pass_survivors": 5,
-        "original_postings_resolved": 5,
-        "jds_resolved": 5,
-        "elapsed_seconds": 4.556
+        "unique_contribution": 6,
+        "first_pass_survivors": 6,
+        "original_postings_resolved": 6,
+        "jds_resolved": 6,
+        "elapsed_seconds": 4.853
       },
       {
         "query": "forward deployed engineer",
@@ -2459,7 +2459,7 @@
         "first_pass_survivors": 17,
         "original_postings_resolved": 17,
         "jds_resolved": 17,
-        "elapsed_seconds": 8.795
+        "elapsed_seconds": 8.623
       },
       {
         "query": "software engineer",
@@ -2473,7 +2473,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 3.467
+        "elapsed_seconds": 3.071
       }
     ],
     "mathworks": [
@@ -2489,7 +2489,7 @@
         "first_pass_survivors": 24,
         "original_postings_resolved": 24,
         "jds_resolved": 24,
-        "elapsed_seconds": 10.752
+        "elapsed_seconds": 9.893
       },
       {
         "query": "machine learning engineer",
@@ -2503,7 +2503,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.152
+        "elapsed_seconds": 1.222
       },
       {
         "query": "data scientist",
@@ -2517,7 +2517,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.05
+        "elapsed_seconds": 0.861
       },
       {
         "query": "solutions architect",
@@ -2531,7 +2531,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 8,
-        "elapsed_seconds": 3.287
+        "elapsed_seconds": 3.019
       },
       {
         "query": "data engineer",
@@ -2545,7 +2545,7 @@
         "first_pass_survivors": 7,
         "original_postings_resolved": 7,
         "jds_resolved": 7,
-        "elapsed_seconds": 3.21
+        "elapsed_seconds": 3.074
       },
       {
         "query": "platform engineer",
@@ -2559,7 +2559,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.393
+        "elapsed_seconds": 1.681
       },
       {
         "query": "full stack engineer",
@@ -2573,7 +2573,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.625
+        "elapsed_seconds": 0.814
       },
       {
         "query": "forward deployed engineer",
@@ -2587,7 +2587,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.614
+        "elapsed_seconds": 0.721
       },
       {
         "query": "software engineer",
@@ -2601,7 +2601,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.895
+        "elapsed_seconds": 2.223
       }
     ],
     "morgan-stanley": [
@@ -2617,7 +2617,7 @@
         "first_pass_survivors": 30,
         "original_postings_resolved": 30,
         "jds_resolved": 30,
-        "elapsed_seconds": 9.696
+        "elapsed_seconds": 14.439
       },
       {
         "query": "machine learning engineer",
@@ -2631,7 +2631,7 @@
         "first_pass_survivors": 21,
         "original_postings_resolved": 21,
         "jds_resolved": 21,
-        "elapsed_seconds": 6.746
+        "elapsed_seconds": 10.772
       },
       {
         "query": "data scientist",
@@ -2645,7 +2645,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 1.658
+        "elapsed_seconds": 2.72
       },
       {
         "query": "solutions architect",
@@ -2659,7 +2659,7 @@
         "first_pass_survivors": 16,
         "original_postings_resolved": 16,
         "jds_resolved": 16,
-        "elapsed_seconds": 5.163
+        "elapsed_seconds": 9.124
       },
       {
         "query": "data engineer",
@@ -2669,11 +2669,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 8,
-        "first_pass_survivors": 8,
-        "original_postings_resolved": 8,
-        "jds_resolved": 8,
-        "elapsed_seconds": 3.553
+        "unique_contribution": 7,
+        "first_pass_survivors": 7,
+        "original_postings_resolved": 7,
+        "jds_resolved": 7,
+        "elapsed_seconds": 4.74
       },
       {
         "query": "platform engineer",
@@ -2687,7 +2687,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 2.547
+        "elapsed_seconds": 3.503
       },
       {
         "query": "full stack engineer",
@@ -2701,7 +2701,7 @@
         "first_pass_survivors": 25,
         "original_postings_resolved": 25,
         "jds_resolved": 25,
-        "elapsed_seconds": 8.315
+        "elapsed_seconds": 12.437
       },
       {
         "query": "forward deployed engineer",
@@ -2715,7 +2715,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 1.279
+        "elapsed_seconds": 1.901
       },
       {
         "query": "software engineer",
@@ -2729,7 +2729,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.622
+        "elapsed_seconds": 2.709
       }
     ],
     "netapp": [
@@ -2740,12 +2740,12 @@
         "pages_fetched": 4,
         "stop_reason": "page_budget",
         "raw_jobs": 60,
-        "unique_jobs": 59,
-        "unique_contribution": 31,
-        "first_pass_survivors": 31,
-        "original_postings_resolved": 31,
-        "jds_resolved": 31,
-        "elapsed_seconds": 20.362
+        "unique_jobs": 57,
+        "unique_contribution": 32,
+        "first_pass_survivors": 32,
+        "original_postings_resolved": 32,
+        "jds_resolved": 32,
+        "elapsed_seconds": 15.827
       },
       {
         "query": "machine learning engineer",
@@ -2759,7 +2759,7 @@
         "first_pass_survivors": 16,
         "original_postings_resolved": 16,
         "jds_resolved": 16,
-        "elapsed_seconds": 9.934
+        "elapsed_seconds": 6.152
       },
       {
         "query": "data scientist",
@@ -2769,11 +2769,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 45,
         "unique_jobs": 45,
-        "unique_contribution": 12,
-        "first_pass_survivors": 12,
-        "original_postings_resolved": 12,
-        "jds_resolved": 12,
-        "elapsed_seconds": 7.199
+        "unique_contribution": 11,
+        "first_pass_survivors": 11,
+        "original_postings_resolved": 11,
+        "jds_resolved": 11,
+        "elapsed_seconds": 5.955
       },
       {
         "query": "solutions architect",
@@ -2787,7 +2787,7 @@
         "first_pass_survivors": 12,
         "original_postings_resolved": 12,
         "jds_resolved": 12,
-        "elapsed_seconds": 7.622
+        "elapsed_seconds": 5.747
       },
       {
         "query": "data engineer",
@@ -2797,11 +2797,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 45,
         "unique_jobs": 45,
-        "unique_contribution": 3,
-        "first_pass_survivors": 3,
-        "original_postings_resolved": 3,
-        "jds_resolved": 3,
-        "elapsed_seconds": 3.099
+        "unique_contribution": 2,
+        "first_pass_survivors": 2,
+        "original_postings_resolved": 2,
+        "jds_resolved": 2,
+        "elapsed_seconds": 2.918
       },
       {
         "query": "platform engineer",
@@ -2810,12 +2810,12 @@
         "pages_fetched": 3,
         "stop_reason": "page_budget",
         "raw_jobs": 45,
-        "unique_jobs": 44,
+        "unique_jobs": 45,
         "unique_contribution": 8,
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 8,
-        "elapsed_seconds": 5.287
+        "elapsed_seconds": 4.475
       },
       {
         "query": "full stack engineer",
@@ -2825,11 +2825,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 45,
         "unique_jobs": 45,
-        "unique_contribution": 6,
-        "first_pass_survivors": 6,
-        "original_postings_resolved": 6,
-        "jds_resolved": 6,
-        "elapsed_seconds": 4.067
+        "unique_contribution": 7,
+        "first_pass_survivors": 7,
+        "original_postings_resolved": 7,
+        "jds_resolved": 7,
+        "elapsed_seconds": 4.381
       },
       {
         "query": "forward deployed engineer",
@@ -2843,7 +2843,7 @@
         "first_pass_survivors": 5,
         "original_postings_resolved": 5,
         "jds_resolved": 5,
-        "elapsed_seconds": 4.88
+        "elapsed_seconds": 3.311
       },
       {
         "query": "software engineer",
@@ -2857,7 +2857,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 2.803
+        "elapsed_seconds": 2.651
       }
     ],
     "netflix": [
@@ -2873,7 +2873,7 @@
         "first_pass_survivors": 10,
         "original_postings_resolved": 10,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.465
+        "elapsed_seconds": 0.641
       },
       {
         "query": "machine learning engineer",
@@ -2887,7 +2887,7 @@
         "first_pass_survivors": 9,
         "original_postings_resolved": 9,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.315
+        "elapsed_seconds": 0.399
       },
       {
         "query": "data scientist",
@@ -2901,7 +2901,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.313
+        "elapsed_seconds": 0.358
       },
       {
         "query": "solutions architect",
@@ -2915,7 +2915,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.282
+        "elapsed_seconds": 0.42
       },
       {
         "query": "data engineer",
@@ -2929,7 +2929,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.32
+        "elapsed_seconds": 0.406
       },
       {
         "query": "platform engineer",
@@ -2943,7 +2943,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.374
+        "elapsed_seconds": 0.457
       },
       {
         "query": "full stack engineer",
@@ -2956,8 +2956,8 @@
         "unique_contribution": 2,
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.303
+        "jds_resolved": 1,
+        "elapsed_seconds": 0.522
       },
       {
         "query": "forward deployed engineer",
@@ -2971,7 +2971,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.301
+        "elapsed_seconds": 0.474
       },
       {
         "query": "software engineer",
@@ -2985,7 +2985,7 @@
         "first_pass_survivors": 7,
         "original_postings_resolved": 7,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.297
+        "elapsed_seconds": 0.6
       }
     ],
     "paypal": [
@@ -3001,7 +3001,7 @@
         "first_pass_survivors": 30,
         "original_postings_resolved": 30,
         "jds_resolved": 30,
-        "elapsed_seconds": 10.02
+        "elapsed_seconds": 17.859
       },
       {
         "query": "machine learning engineer",
@@ -3015,7 +3015,7 @@
         "first_pass_survivors": 8,
         "original_postings_resolved": 8,
         "jds_resolved": 8,
-        "elapsed_seconds": 3.629
+        "elapsed_seconds": 5.319
       },
       {
         "query": "data scientist",
@@ -3029,7 +3029,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 1.926
+        "elapsed_seconds": 3.022
       },
       {
         "query": "solutions architect",
@@ -3037,13 +3037,13 @@
         "page_budget": 3,
         "pages_fetched": 2,
         "stop_reason": "early_stop",
-        "raw_jobs": 15,
-        "unique_jobs": 15,
-        "unique_contribution": 13,
-        "first_pass_survivors": 13,
-        "original_postings_resolved": 13,
-        "jds_resolved": 13,
-        "elapsed_seconds": 4.173
+        "raw_jobs": 16,
+        "unique_jobs": 16,
+        "unique_contribution": 14,
+        "first_pass_survivors": 14,
+        "original_postings_resolved": 14,
+        "jds_resolved": 14,
+        "elapsed_seconds": 7.209
       },
       {
         "query": "data engineer",
@@ -3057,7 +3057,7 @@
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 3.103
+        "elapsed_seconds": 4.524
       },
       {
         "query": "platform engineer",
@@ -3071,7 +3071,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.856
+        "elapsed_seconds": 2.623
       },
       {
         "query": "full stack engineer",
@@ -3085,7 +3085,7 @@
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 1.114
+        "elapsed_seconds": 1.746
       },
       {
         "query": "forward deployed engineer",
@@ -3099,7 +3099,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 0.766
+        "elapsed_seconds": 1.307
       },
       {
         "query": "software engineer",
@@ -3113,7 +3113,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 1.831
+        "elapsed_seconds": 2.276
       }
     ],
     "two-sigma": [
@@ -3129,7 +3129,7 @@
         "first_pass_survivors": 12,
         "original_postings_resolved": 12,
         "jds_resolved": 12,
-        "elapsed_seconds": 19.267
+        "elapsed_seconds": 21.163
       },
       {
         "query": "machine learning engineer",
@@ -3137,13 +3137,13 @@
         "page_budget": 3,
         "pages_fetched": 2,
         "stop_reason": "early_stop",
-        "raw_jobs": 12,
-        "unique_jobs": 12,
-        "unique_contribution": 8,
-        "first_pass_survivors": 8,
-        "original_postings_resolved": 8,
-        "jds_resolved": 8,
-        "elapsed_seconds": 12.944
+        "raw_jobs": 11,
+        "unique_jobs": 11,
+        "unique_contribution": 7,
+        "first_pass_survivors": 7,
+        "original_postings_resolved": 7,
+        "jds_resolved": 7,
+        "elapsed_seconds": 13.095
       },
       {
         "query": "data scientist",
@@ -3157,7 +3157,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.191
+        "elapsed_seconds": 1.24
       },
       {
         "query": "solutions architect",
@@ -3171,7 +3171,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 6.28
+        "elapsed_seconds": 7.173
       },
       {
         "query": "data engineer",
@@ -3181,11 +3181,11 @@
         "stop_reason": "page_budget",
         "raw_jobs": 30,
         "unique_jobs": 30,
-        "unique_contribution": 13,
-        "first_pass_survivors": 13,
-        "original_postings_resolved": 13,
-        "jds_resolved": 13,
-        "elapsed_seconds": 21.26
+        "unique_contribution": 12,
+        "first_pass_survivors": 12,
+        "original_postings_resolved": 12,
+        "jds_resolved": 12,
+        "elapsed_seconds": 22.631
       },
       {
         "query": "platform engineer",
@@ -3193,13 +3193,13 @@
         "page_budget": 3,
         "pages_fetched": 2,
         "stop_reason": "early_stop",
-        "raw_jobs": 13,
-        "unique_jobs": 13,
+        "raw_jobs": 12,
+        "unique_jobs": 12,
         "unique_contribution": 3,
         "first_pass_survivors": 3,
         "original_postings_resolved": 3,
         "jds_resolved": 3,
-        "elapsed_seconds": 6.66
+        "elapsed_seconds": 7.339
       },
       {
         "query": "full stack engineer",
@@ -3213,7 +3213,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.168
+        "elapsed_seconds": 1.192
       },
       {
         "query": "forward deployed engineer",
@@ -3227,7 +3227,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.763
+        "elapsed_seconds": 0.919
       },
       {
         "query": "software engineer",
@@ -3235,13 +3235,13 @@
         "page_budget": 4,
         "pages_fetched": 4,
         "stop_reason": "page_budget",
-        "raw_jobs": 34,
-        "unique_jobs": 34,
-        "unique_contribution": 1,
-        "first_pass_survivors": 1,
-        "original_postings_resolved": 1,
-        "jds_resolved": 1,
-        "elapsed_seconds": 7.424
+        "raw_jobs": 32,
+        "unique_jobs": 32,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 7.034
       }
     ],
     "chewy": [
@@ -3257,7 +3257,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 1.22
+        "elapsed_seconds": 1.257
       },
       {
         "query": "machine learning engineer",
@@ -3271,7 +3271,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.417
+        "elapsed_seconds": 0.521
       },
       {
         "query": "data scientist",
@@ -3285,7 +3285,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.54
+        "elapsed_seconds": 0.488
       },
       {
         "query": "solutions architect",
@@ -3293,13 +3293,13 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 2,
-        "unique_jobs": 2,
-        "unique_contribution": 1,
-        "first_pass_survivors": 1,
-        "original_postings_resolved": 1,
-        "jds_resolved": 1,
-        "elapsed_seconds": 0.834
+        "raw_jobs": 1,
+        "unique_jobs": 1,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 0.862
       },
       {
         "query": "data engineer",
@@ -3307,13 +3307,13 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 3,
-        "unique_jobs": 3,
+        "raw_jobs": 2,
+        "unique_jobs": 2,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.427
+        "elapsed_seconds": 0.716
       },
       {
         "query": "platform engineer",
@@ -3327,7 +3327,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.423
+        "elapsed_seconds": 0.572
       },
       {
         "query": "full stack engineer",
@@ -3335,13 +3335,13 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 1,
-        "unique_jobs": 1,
+        "raw_jobs": 0,
+        "unique_jobs": 0,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.58
+        "elapsed_seconds": 0.525
       },
       {
         "query": "forward deployed engineer",
@@ -3355,7 +3355,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.453
+        "elapsed_seconds": 0.524
       },
       {
         "query": "software engineer",
@@ -3363,13 +3363,13 @@
         "page_budget": 4,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 2,
-        "unique_jobs": 2,
+        "raw_jobs": 1,
+        "unique_jobs": 1,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.442
+        "elapsed_seconds": 0.617
       }
     ],
     "equinix": [
@@ -3385,7 +3385,7 @@
         "first_pass_survivors": 45,
         "original_postings_resolved": 45,
         "jds_resolved": 0,
-        "elapsed_seconds": 3.487
+        "elapsed_seconds": 2.517
       },
       {
         "query": "machine learning engineer",
@@ -3399,7 +3399,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 0,
-        "elapsed_seconds": 3.447
+        "elapsed_seconds": 3.794
       },
       {
         "query": "data scientist",
@@ -3413,7 +3413,7 @@
         "first_pass_survivors": 16,
         "original_postings_resolved": 16,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.632
+        "elapsed_seconds": 1.968
       },
       {
         "query": "solutions architect",
@@ -3427,7 +3427,7 @@
         "first_pass_survivors": 12,
         "original_postings_resolved": 12,
         "jds_resolved": 0,
-        "elapsed_seconds": 1.214
+        "elapsed_seconds": 1.93
       },
       {
         "query": "data engineer",
@@ -3441,7 +3441,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 15.909
+        "elapsed_seconds": 6.067
       },
       {
         "query": "platform engineer",
@@ -3455,7 +3455,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.464
+        "elapsed_seconds": 3.454
       },
       {
         "query": "full stack engineer",
@@ -3469,7 +3469,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 4.25
+        "elapsed_seconds": 2.426
       },
       {
         "query": "forward deployed engineer",
@@ -3483,7 +3483,7 @@
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 2.874
+        "elapsed_seconds": 2.922
       },
       {
         "query": "software engineer",
@@ -3497,7 +3497,7 @@
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 0,
-        "elapsed_seconds": 3.148
+        "elapsed_seconds": 2.913
       }
     ],
     "ansys": [
@@ -3513,7 +3513,7 @@
         "first_pass_survivors": 18,
         "original_postings_resolved": 18,
         "jds_resolved": 18,
-        "elapsed_seconds": 7.785
+        "elapsed_seconds": 10.624
       }
     ],
     "verizon": [
@@ -3523,13 +3523,13 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 1,
-        "unique_jobs": 1,
+        "raw_jobs": 2,
+        "unique_jobs": 2,
         "unique_contribution": 1,
         "first_pass_survivors": 1,
         "original_postings_resolved": 1,
         "jds_resolved": 1,
-        "elapsed_seconds": 0.517
+        "elapsed_seconds": 0.533
       },
       {
         "query": "",
@@ -3543,7 +3543,7 @@
         "first_pass_survivors": 9,
         "original_postings_resolved": 9,
         "jds_resolved": 9,
-        "elapsed_seconds": 1.14
+        "elapsed_seconds": 1.438
       },
       {
         "query": "",
@@ -3557,7 +3557,7 @@
         "first_pass_survivors": 4,
         "original_postings_resolved": 4,
         "jds_resolved": 4,
-        "elapsed_seconds": 0.617
+        "elapsed_seconds": 0.778
       },
       {
         "query": "",
@@ -3565,13 +3565,13 @@
         "page_budget": 3,
         "pages_fetched": 1,
         "stop_reason": "early_stop",
-        "raw_jobs": 9,
-        "unique_jobs": 9,
+        "raw_jobs": 8,
+        "unique_jobs": 8,
         "unique_contribution": 6,
         "first_pass_survivors": 6,
         "original_postings_resolved": 6,
         "jds_resolved": 6,
-        "elapsed_seconds": 0.873
+        "elapsed_seconds": 1.15
       },
       {
         "query": "",
@@ -3585,7 +3585,7 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 0.645
+        "elapsed_seconds": 0.582
       },
       {
         "query": "",
@@ -3599,53 +3599,50 @@
         "first_pass_survivors": 2,
         "original_postings_resolved": 2,
         "jds_resolved": 2,
-        "elapsed_seconds": 0.354
+        "elapsed_seconds": 0.625
       }
     ]
   },
   "funnel": {
-    "after_dedup": 13614,
-    "after_company": 13614,
-    "after_hard_filter": 10565,
-    "after_prefilter": 2477,
-    "dropped": 11137
+    "after_dedup": 13570,
+    "after_company": 13570,
+    "after_hard_filter": 10484,
+    "after_prefilter": 2483,
+    "dropped": 11087
   },
   "llm": {
-    "reused": 302,
-    "llm": 81,
-    "new_or_changed": 123,
-    "rule": 2094,
-    "sent": 81,
-    "api_requests": 10,
-    "recency_skipped": 41,
+    "reused": 324,
+    "llm": 12,
+    "new_or_changed": 17,
+    "rule": 2147,
+    "sent": 12,
+    "api_requests": 2,
+    "recency_skipped": 4,
     "overflow": 0,
     "peer_reused": 0,
-    "thin_source_rule": 300,
+    "thin_source_rule": 363,
     "retryable_fallbacks": 0,
-    "historical_seen_skipped": 1753,
+    "historical_seen_skipped": 1780,
     "historical_llm_retained": 0,
     "non_material_change_reused": 0,
-    "same_content_reused": 11,
-    "rescored_within_24h": 13,
+    "same_content_reused": 10,
+    "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 70,
-      "material_jd_change": 4,
-      "prior_rule_result_now_eligible_for_llm": 17,
-      "prior_rule_result_recency_gated": 32
+      "genuinely_new_job": 17
     },
     "batch_size": 10,
-    "primary_batches_total": 10,
-    "batches_total": 10,
-    "batches_succeeded": 10,
-    "batches_attempted": 10,
+    "primary_batches_total": 2,
+    "batches_total": 2,
+    "batches_succeeded": 2,
+    "batches_attempted": 2,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 168.261,
-    "json_results": 81,
+    "latency_seconds": 31.041,
+    "json_results": 12,
     "batches": [
       {
         "batch": 1,
@@ -3653,1738 +3650,303 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607210/software-development-engineer-checkout-engineering-excellence-team",
+            "key": "url::https://www.amazon.jobs/en/jobs/10607522/sde-ii-air-safety-gateway-optimization",
             "company": "Amazon",
-            "title": "Software Development Engineer, Checkout Engineering Excellence Team"
+            "title": "SDE-II, Air Safety & Gateway Optimization"
           },
           {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607477/software-development-engineer-ii-s3",
-            "company": "Amazon",
-            "title": "Software Development Engineer II, S3"
+            "key": "url::https://explore.jobs.netflix.net/careers/job/790319561012",
+            "company": "Netflix",
+            "title": "Full-stack Engineer 4, User Data & Consent Experiences"
           },
           {
-            "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557072549",
-            "company": "Microsoft",
-            "title": "Software Engineer II - XBOX"
-          },
-          {
-            "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/350771",
-            "company": "Oracle",
-            "title": "Software Developer 3"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200694753/software-engineer-distributed-data-systems",
-            "company": "Apple",
-            "title": "Software Engineer - Distributed Data Systems"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200693202/software-engineer-infrastructure-applications",
-            "company": "Apple",
-            "title": "Software Engineer, Infrastructure Applications"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200693291/software-development-engineer-test-tooling",
-            "company": "Apple",
-            "title": "Software Development Engineer, Test Tooling"
-          },
-          {
-            "key": "url::https://careers.roblox.com/jobs/8386848?gh_jid=8386848",
-            "company": "Roblox",
-            "title": "Software Engineer, Communication Safety"
-          },
-          {
-            "key": "url::https://wd5.myworkdaysite.com/recruiting/chewy/External/job/USA---MA---Boston---BOS1/Software-Engineer-II_R31215",
-            "company": "Chewy",
-            "title": "Software Engineer II"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607646/software-development-engineer-aws-managed-prometheus",
-            "company": "Amazon",
-            "title": "Software Development Engineer, AWS Managed Prometheus"
+            "key": "url::https://stripe.com/jobs/search?gh_jid=7917880",
+            "company": "Stripe",
+            "title": "Technical Solutions Engineer"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 20.914,
+        "latency_seconds": 8.308,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 10,
-          "input_tokens": 9494,
+          "jobs_scored": 3,
+          "input_tokens": 5863,
           "cached_input_tokens": 0,
-          "output_tokens": 2500,
-          "reasoning_tokens": 1538,
-          "estimated_usd": 0.002199
+          "output_tokens": 661,
+          "reasoning_tokens": 424,
+          "estimated_usd": 0.000917
         },
         "decisions": [
           {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607210/software-development-engineer-checkout-engineering-excellence-team",
-            "match_score": 65.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "CI/CD and release safety",
-              "Backend reliability"
-            ],
-            "main_gaps": [
-              "3+ years non-internship experience",
-              "2+ years architecture experience"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607477/software-development-engineer-ii-s3",
-            "match_score": 61.0,
+            "key": "url::https://www.amazon.jobs/en/jobs/10607522/sde-ii-air-safety-gateway-optimization",
+            "match_score": 54.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Distributed backend systems",
-              "Cloud deployment experience"
+              "Production backend services",
+              "AWS deployment and operations"
             ],
             "main_gaps": [
               "3+ years non-internship experience",
-              "Java distributed systems experience"
+              "2+ years system architecture"
             ]
           },
           {
-            "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557072549",
-            "match_score": 84.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Backend APIs and distributed systems",
-              "Production reliability and CI/CD"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/350771",
-            "match_score": 75.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "REST APIs and microservices",
-              "Cloud, containers, and CI/CD"
-            ],
-            "main_gaps": [
-              "2 years developer experience"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200694753/software-engineer-distributed-data-systems",
-            "match_score": 74.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Data ingestion pipelines",
-              "Distributed systems experience"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200693202/software-engineer-infrastructure-applications",
-            "match_score": 72.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Cloud infrastructure deployment",
-              "Reliability and observability"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200693291/software-development-engineer-test-tooling",
-            "match_score": 70.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Automated regression testing",
-              "Evaluation and test tooling"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://careers.roblox.com/jobs/8386848?gh_jid=8386848",
-            "match_score": 84.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python backend services",
-              "ML evaluation and inference"
-            ],
-            "main_gaps": [
-              "Production incident response"
-            ]
-          },
-          {
-            "key": "url::https://wd5.myworkdaysite.com/recruiting/chewy/External/job/USA---MA---Boston---BOS1/Software-Engineer-II_R31215",
-            "match_score": 57.0,
+            "key": "url::https://explore.jobs.netflix.net/careers/job/790319561012",
+            "match_score": 52.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Microservices and API development",
-              "AWS and Terraform exposure"
+              "React and TypeScript",
+              "Full-stack product development"
             ],
             "main_gaps": [
-              "4+ years Java and Spring",
-              "4+ years distributed APIs"
+              "5+ years professional experience",
+              "GraphQL and server-driven UI"
             ]
           },
           {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607646/software-development-engineer-aws-managed-prometheus",
-            "match_score": 56.0,
-            "seniority_fit": "mismatch",
+            "key": "url::https://stripe.com/jobs/search?gh_jid=7917880",
+            "match_score": 58.0,
+            "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Distributed data processing",
-              "Production observability"
+              "Full-stack application development",
+              "API and integration experience"
             ],
             "main_gaps": [
-              "3+ years non-internship experience",
-              "Time-series storage and query systems"
+              "4 years full-stack experience",
+              "External developer support"
             ]
           }
         ]
       },
       {
         "batch": 2,
-        "route": "resume_swe",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607536/software-development-engineer",
-            "company": "Amazon",
-            "title": "Software Development Engineer"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607548/software-development-engineer-network-monitoring-and-remediation-nmr",
-            "company": "Amazon",
-            "title": "Software Development Engineer, Network Monitoring and Remediation (NMR)"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695375/embedded-software-engineer-always-on-platforms-core-os",
-            "company": "Apple",
-            "title": "Embedded Software Engineer - Always On Platforms, Core OS"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695296/site-reliability-engineer-info-apps",
-            "company": "Apple",
-            "title": "Site Reliability Engineer — Info Apps"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695484/software-development-engineer-location-technologies-sensing-connectivity",
-            "company": "Apple",
-            "title": "Software Development Engineer - Location Technologies, Sensing & Connectivity"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695275/bluetooth-thread-embedded-software-engineer-wireless-technologies-ecosystems",
-            "company": "Apple",
-            "title": "Bluetooth/Thread Embedded Software Engineer, Wireless Technologies & Ecosystems"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695213/ios-software-engineer-video-applications",
-            "company": "Apple",
-            "title": "iOS Software Engineer - Video Applications"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695206/software-development-engineer",
-            "company": "Apple",
-            "title": "Software Development Engineer"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200693159/software-engineer-freeform-application",
-            "company": "Apple",
-            "title": "Software Engineer, Freeform Application"
-          },
-          {
-            "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/350821",
-            "company": "Oracle",
-            "title": "OCI Intern Conversion - Undergrad Software Engineer Full-Time - Nashville, TN - February 2027"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 12.149,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 10,
-          "input_tokens": 6668,
-          "cached_input_tokens": 1851,
-          "output_tokens": 1528,
-          "reasoning_tokens": 804,
-          "estimated_usd": 0.001264
-        },
-        "decisions": [
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607536/software-development-engineer",
-            "match_score": 91.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production software delivery",
-              "AWS and distributed systems"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607548/software-development-engineer-network-monitoring-and-remediation-nmr",
-            "match_score": 52.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Distributed systems",
-              "Operational reliability"
-            ],
-            "main_gaps": [
-              "3+ years non-internship experience",
-              "Large-scale network systems"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695375/embedded-software-engineer-always-on-platforms-core-os",
-            "match_score": 32.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "C++ programming",
-              "Production software testing"
-            ],
-            "main_gaps": [
-              "Embedded firmware",
-              "Low-power systems"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695296/site-reliability-engineer-info-apps",
-            "match_score": 74.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Cloud deployment and operations",
-              "Reliability and observability"
-            ],
-            "main_gaps": [
-              "Backend availability ownership"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695484/software-development-engineer-location-technologies-sensing-connectivity",
-            "match_score": 66.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Strong software engineering",
-              "Data-intensive backend experience"
-            ],
-            "main_gaps": [
-              "On-device software",
-              "Location sensing systems"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695275/bluetooth-thread-embedded-software-engineer-wireless-technologies-ecosystems",
-            "match_score": 30.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "C++ programming",
-              "Software testing"
-            ],
-            "main_gaps": [
-              "Embedded wireless software",
-              "Bluetooth or Thread"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695213/ios-software-engineer-video-applications",
-            "match_score": 34.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Full-stack application development",
-              "Customer-facing software"
-            ],
-            "main_gaps": [
-              "Senior engineering scope",
-              "Native video applications"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695206/software-development-engineer",
-            "match_score": 76.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "CI/CD and deployment",
-              "Testing and automation"
-            ],
-            "main_gaps": [
-              "Developer pipeline tooling"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200693159/software-engineer-freeform-application",
-            "match_score": 62.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Frontend application development",
-              "User-facing product experience"
-            ],
-            "main_gaps": [
-              "Native iOS or macOS development"
-            ]
-          },
-          {
-            "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/350821",
-            "match_score": 18.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "other",
-            "top_match_reasons": [
-              "Cloud infrastructure experience",
-              "Early-career software engineering"
-            ],
-            "main_gaps": [
-              "OCI intern conversion eligibility"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 3,
-        "route": "resume_swe",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://careers.qualcomm.com/careers/job/446722119778",
-            "company": "Qualcomm",
-            "title": "#Software Engineer - Automotive Platform"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200693970/wireless-rf-ota-mimo-systems-engineer",
-            "company": "Apple",
-            "title": "Wireless RF OTA MIMO Systems Engineer"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607673/solutions-architect-iii-amz10587288",
-            "company": "Amazon",
-            "title": "Solutions Architect III - AMZ10587288"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695546/security-site-reliability-engineer-apple-service-engineering",
-            "company": "Apple",
-            "title": "Security Site Reliability Engineer - Apple Service Engineering"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200694660/content-developer-retail-marcom-engineering",
-            "company": "Apple",
-            "title": "Content Developer- Retail & Marcom Engineering"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695356/network-engineer-infrastructure-services",
-            "company": "Apple",
-            "title": "Network Engineer, Infrastructure Services"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695493/cellular-rf-systems-architect-rf-configuration",
-            "company": "Apple",
-            "title": "Cellular RF Systems Architect - RF Configuration"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695000/optical-network-engineer-infrastructure-services",
-            "company": "Apple",
-            "title": "Optical Network Engineer, Infrastructure Services"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607403/software-dev-engineer-ii-amz10587293",
-            "company": "Amazon",
-            "title": "Software Dev Engineer II - AMZ10587293"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695477/media-ip-soc-performance-engineer-platform-architecture",
-            "company": "Apple",
-            "title": "Media-IP SoC Performance Engineer, Platform Architecture"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 17.554,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 10,
-          "input_tokens": 6194,
-          "cached_input_tokens": 1851,
-          "output_tokens": 2034,
-          "reasoning_tokens": 1134,
-          "estimated_usd": 0.00147
-        },
-        "decisions": [
-          {
-            "key": "url::https://careers.qualcomm.com/careers/job/446722119778",
-            "match_score": 82.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Software fundamentals",
-              "Production debugging and testing"
-            ],
-            "main_gaps": [
-              "Embedded/SoC debugging"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200693970/wireless-rf-ota-mimo-systems-engineer",
-            "match_score": 35.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Test-system development"
-            ],
-            "main_gaps": [
-              "RF/OTA MIMO systems"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607673/solutions-architect-iii-amz10587288",
-            "match_score": 57.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "AWS deployment experience",
-              "Distributed application design"
-            ],
-            "main_gaps": [
-              "Customer-facing cloud architecture",
-              "Database architecture and tuning"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695546/security-site-reliability-engineer-apple-service-engineering",
-            "match_score": 66.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production reliability",
-              "Service deployment and observability"
-            ],
-            "main_gaps": [
-              "Security service operations"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200694660/content-developer-retail-marcom-engineering",
-            "match_score": 42.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Data workflow experience"
-            ],
-            "main_gaps": [
-              "CMS/catalog content operations"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695356/network-engineer-infrastructure-services",
-            "match_score": 52.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Cloud infrastructure experience"
-            ],
-            "main_gaps": [
-              "Enterprise network operations"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695493/cellular-rf-systems-architect-rf-configuration",
-            "match_score": 25.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Software tooling experience"
-            ],
-            "main_gaps": [
-              "Cellular RF configuration"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695000/optical-network-engineer-infrastructure-services",
-            "match_score": 39.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Infrastructure deployment experience"
-            ],
-            "main_gaps": [
-              "Optical network engineering"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607403/software-dev-engineer-ii-amz10587293",
-            "match_score": 74.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Distributed software development",
-              "Object-oriented design"
-            ],
-            "main_gaps": [
-              "C++/Java production experience"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695477/media-ip-soc-performance-engineer-platform-architecture",
-            "match_score": 32.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Software-hardware collaboration"
-            ],
-            "main_gaps": [
-              "Media SoC performance analysis"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 4,
-        "route": "resume_swe",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695466/quality-engineer-health-software",
-            "company": "Apple",
-            "title": "Quality Engineer - Health Software"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695197/retail-network-engineer-infrastructure-services",
-            "company": "Apple",
-            "title": "Retail Network Engineer, Infrastructure Services"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695070/gpu-physical-design-engineer",
-            "company": "Apple",
-            "title": "GPU Physical Design Engineer"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 3.872,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 3,
-          "input_tokens": 2629,
-          "cached_input_tokens": 1851,
-          "output_tokens": 363,
-          "reasoning_tokens": 144,
-          "estimated_usd": 0.000278
-        },
-        "decisions": [
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695466/quality-engineer-health-software",
-            "match_score": 78.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "API integration testing",
-              "Production reliability"
-            ],
-            "main_gaps": [
-              "Dedicated test automation framework experience"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695197/retail-network-engineer-infrastructure-services",
-            "match_score": 48.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Infrastructure operations",
-              "Technical troubleshooting"
-            ],
-            "main_gaps": [
-              "Network design expertise",
-              "Retail network deployment"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695070/gpu-physical-design-engineer",
-            "match_score": 8.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Software engineering background"
-            ],
-            "main_gaps": [
-              "RTL-to-tapeout physical design",
-              "Large chip integration"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 5,
-        "route": "resume_ai",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607380/applied-scientist-ii-amz10564086",
-            "company": "Amazon",
-            "title": "Applied Scientist II - AMZ10564086"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607204/simulation-modeling-applied-scientist-prime-air-flight-sciences-high-fidelity-methods",
-            "company": "Amazon",
-            "title": "Simulation & Modeling Applied Scientist, Prime Air Flight Sciences High Fidelity Methods"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607436/data-scientist-ii-pxt-central-science",
-            "company": "Amazon",
-            "title": "Data Scientist II, PXT Central Science"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695313/ai-security-systems-architect-marcom",
-            "company": "Apple",
-            "title": "AI Security Systems Architect, Marcom"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 11.956,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 4,
-          "input_tokens": 4960,
-          "cached_input_tokens": 0,
-          "output_tokens": 913,
-          "reasoning_tokens": 595,
-          "estimated_usd": 0.000953
-        },
-        "decisions": [
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607380/applied-scientist-ii-amz10564086",
-            "match_score": 63.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "ML model development",
-              "Production AI systems"
-            ],
-            "main_gaps": [
-              "Advertising model architectures",
-              "Ad-tech optimization"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607204/simulation-modeling-applied-scientist-prime-air-flight-sciences-high-fidelity-methods",
-            "match_score": 18.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Simulation software"
-            ],
-            "main_gaps": [
-              "Flight vehicle simulation",
-              "Aerodynamics and flight physics"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607436/data-scientist-ii-pxt-central-science",
-            "match_score": 48.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "GenAI evaluation",
-              "Quantitative modeling"
-            ],
-            "main_gaps": [
-              "Multi-year data science experience",
-              "Researcher coaching and publications"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695313/ai-security-systems-architect-marcom",
-            "match_score": 42.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production AI systems",
-              "AI guardrails"
-            ],
-            "main_gaps": [
-              "Security systems architecture",
-              "Security engineering experience"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 6,
         "route": "both",
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://www.google.com/about/careers/applications/jobs/results/81598080377332422-software-engineer-iii-ai-agent-architecture",
+            "key": "url::https://www.google.com/about/careers/applications/jobs/results/83521813409080006-data-engineer-youtube",
             "company": "Google",
-            "title": "Software Engineer III, AI Agent Architecture"
+            "title": "Data Engineer, YouTube"
           },
           {
-            "key": "url::https://www.google.com/about/careers/applications/jobs/results/114224284045320902-software-engineer-iii-ai-ml-genai-google-cloud",
+            "key": "url::https://www.google.com/about/careers/applications/jobs/results/105450198435537606-security-engineer-enterprise-security",
             "company": "Google",
-            "title": "Software Engineer III, AI/ML GenAI, Google Cloud"
+            "title": "Security Engineer, Enterprise Security"
           },
           {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607008/data-engineer-applied-ai-solutions",
+            "key": "url::https://www.google.com/about/careers/applications/jobs/results/138588379385078470-software-engineer-iii-infrastructure-google-cloud-platforms",
+            "company": "Google",
+            "title": "Software Engineer III, Infrastructure, Google Cloud Platforms"
+          },
+          {
+            "key": "url::https://www.amazon.jobs/en/jobs/10607764/software-development-engineer-robotics-2027",
             "company": "Amazon",
-            "title": "Data Engineer, Applied AI Solutions"
+            "title": "Software Development Engineer, ROBOTICS - 2027"
           },
           {
-            "key": "url::https://www.amazon.jobs/en/jobs/10584066/software-development-engineer-ads-ai-core-infrastructure-aci-ads-ai-core-infrastructure",
+            "key": "url::https://www.amazon.jobs/en/jobs/10603760/software-development-engineer-ii-ec2-core-platform",
             "company": "Amazon",
-            "title": "Software Development Engineer, Ads AI Core Infrastructure (ACI), Ads AI Core Infrastructure"
+            "title": "Software Development Engineer II, EC2 Core Platform"
           },
           {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607515/software-development-engineer-sponsored-products",
-            "company": "Amazon",
-            "title": "Software Development Engineer, Sponsored Products"
+            "key": "url::https://www.google.com/about/careers/applications/jobs/results/78569338159669958-software-engineer-iii-ai-ml-genai-workspace-drive",
+            "company": "Google",
+            "title": "Software Engineer III, AI/ML GenAI, Workspace Drive"
           },
           {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607665/software-development-engineer-ii-amazon-partner-tech-amazon-ads",
-            "company": "Amazon",
-            "title": "Software Development Engineer II, Amazon, Partner Tech Amazon Ads"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695237/software-engineer-application-developer-experience",
-            "company": "Apple",
-            "title": "Software Engineer, Application Developer Experience"
-          },
-          {
-            "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210769834",
+            "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210807003",
             "company": "JPMorgan Chase",
-            "title": "Software Engineer III- Python / AWS / AI Enablement"
+            "title": "Data Engineer III-Python/SQL/Snowflake"
           },
           {
-            "key": "url::https://careers.airbnb.com/positions/8397762?gh_jid=8397762",
-            "company": "Airbnb",
-            "title": "Software Engineer, DevAI"
+            "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8378911",
+            "company": "Pure Storage",
+            "title": "Cloud Native Architect, Portwork-SLED"
           },
           {
-            "key": "url::https://jobs.apple.com/en-us/details/200694963/machine-learning-research-engineer-fitness-intelligence-watch-software",
-            "company": "Apple",
-            "title": "Machine Learning Research Engineer, Fitness Intelligence – Watch Software"
+            "key": "url::https://lifeattiktok.com/search/7669654422861383941",
+            "company": "TikTok",
+            "title": "Data Scientist Graduate (TikTok Product) - 2027 Start"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 24.178,
+        "latency_seconds": 22.733,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 10,
-          "input_tokens": 11646,
+          "jobs_scored": 9,
+          "input_tokens": 10646,
           "cached_input_tokens": 0,
-          "output_tokens": 2541,
-          "reasoning_tokens": 1536,
-          "estimated_usd": 0.002435
+          "output_tokens": 2020,
+          "reasoning_tokens": 1322,
+          "estimated_usd": 0.002075
         },
         "decisions": [
           {
-            "key": "url::https://www.google.com/about/careers/applications/jobs/results/81598080377332422-software-engineer-iii-ai-agent-architecture",
-            "match_score": 84.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production AI agents",
-              "End-to-end ML systems"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://www.google.com/about/careers/applications/jobs/results/114224284045320902-software-engineer-iii-ai-ml-genai-google-cloud",
-            "match_score": 82.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "LLM systems and evaluation",
-              "ML deployment infrastructure"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607008/data-engineer-applied-ai-solutions",
-            "match_score": 48.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "AI-oriented data pipelines",
-              "Data quality and observability"
-            ],
-            "main_gaps": [
-              "5+ years data engineering",
-              "AWS warehouse and ETL scale"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10584066/software-development-engineer-ads-ai-core-infrastructure-aci-ads-ai-core-infrastructure",
-            "match_score": 56.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Agent infrastructure",
-              "Distributed backend services"
-            ],
-            "main_gaps": [
-              "3+ years non-internship SDE",
-              "2+ years system architecture"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607515/software-development-engineer-sponsored-products",
-            "match_score": 53.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Scalable APIs",
-              "Production ML systems"
-            ],
-            "main_gaps": [
-              "3+ years non-internship SDE",
-              "Recommendation and optimization systems"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607665/software-development-engineer-ii-amazon-partner-tech-amazon-ads",
-            "match_score": 58.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Agentic solutions and knowledge bases",
-              "End-to-end service delivery"
-            ],
-            "main_gaps": [
-              "3+ years non-internship SDE",
-              "2+ years system architecture"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695237/software-engineer-application-developer-experience",
-            "match_score": 85.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production backend services",
-              "CI/CD and release workflows"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210769834",
-            "match_score": 68.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python and AWS services",
-              "MCP and AI integrations"
-            ],
-            "main_gaps": [
-              "3+ years applied experience",
-              "Enterprise AI development tools"
-            ]
-          },
-          {
-            "key": "url::https://careers.airbnb.com/positions/8397762?gh_jid=8397762",
-            "match_score": 77.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Applied AI platforms",
-              "Cross-stack product engineering"
-            ],
-            "main_gaps": [
-              "Developer infrastructure experience"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200694963/machine-learning-research-engineer-fitness-intelligence-watch-software",
-            "match_score": 85.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Model evaluation and adaptation",
-              "Shipping production AI software"
-            ],
-            "main_gaps": []
-          }
-        ]
-      },
-      {
-        "batch": 7,
-        "route": "both",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200694852/machine-learning-engineer",
-            "company": "Apple",
-            "title": "Machine Learning Engineer"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200694398/applied-machine-learning-research-engineer-multimodal-for-human-understanding",
-            "company": "Apple",
-            "title": "Applied Machine Learning Research Engineer - Multimodal for Human Understanding"
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5206870008",
-            "company": "Anthropic",
-            "title": "Developer Relations, Platform"
-          },
-          {
-            "key": "url::https://mycareer.verizon.com/jobs/r-1103685/forward-deployed-ai-engineer",
-            "company": "Verizon",
-            "title": "Forward Deployed AI Engineer"
-          },
-          {
-            "key": "url::https://www.google.com/about/careers/applications/jobs/results/125165077576721094-software-engineer-iii-infrastructure-core-compute-analytics",
-            "company": "Google",
-            "title": "Software Engineer III, Infrastructure, Core Compute Analytics"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607712/software-development-engineer-devices-software-services",
-            "company": "Amazon",
-            "title": "Software Development Engineer, Devices Software & Services"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607713/software-development-engineer-devices-software-services",
-            "company": "Amazon",
-            "title": "Software Development Engineer, Devices Software & Services"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607206/software-development-engineer-amazon-customer-service-ai-powered-content-solutions",
-            "company": "Amazon",
-            "title": "Software Development Engineer, Amazon Customer Service AI powered Content Solutions"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607207/software-development-engineer-ii-amazon-registries",
-            "company": "Amazon",
-            "title": "Software Development Engineer II, Amazon Registries"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10606737/software-development-engineer-customer-experience-and-business-trends",
-            "company": "Amazon",
-            "title": "Software Development Engineer, Customer Experience and Business Trends"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 29.83,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 10,
-          "input_tokens": 12678,
-          "cached_input_tokens": 2724,
-          "output_tokens": 2215,
-          "reasoning_tokens": 1218,
-          "estimated_usd": 0.00213
-        },
-        "decisions": [
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200694852/machine-learning-engineer",
-            "match_score": 73.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "ML service deployment",
-              "production backend platform"
-            ],
-            "main_gaps": [
-              "distributed ML infrastructure"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200694398/applied-machine-learning-research-engineer-multimodal-for-human-understanding",
-            "match_score": 53.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "VLM document processing",
-              "production AI systems"
-            ],
-            "main_gaps": [
-              "computer vision research",
-              "multimodal model development"
-            ]
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5206870008",
-            "match_score": 67.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "LLM agent development",
-              "developer-facing APIs"
-            ],
-            "main_gaps": [
-              "technical content track record",
-              "developer community growth"
-            ]
-          },
-          {
-            "key": "url::https://mycareer.verizon.com/jobs/r-1103685/forward-deployed-ai-engineer",
-            "match_score": 69.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "production RAG systems",
-              "agent evaluation pipelines"
-            ],
-            "main_gaps": [
-              "4+ years relevant experience",
-              "time-series forecasting"
-            ]
-          },
-          {
-            "key": "url::https://www.google.com/about/careers/applications/jobs/results/125165077576721094-software-engineer-iii-infrastructure-core-compute-analytics",
-            "match_score": 64.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "distributed systems",
-              "Python and SQL analytics"
-            ],
-            "main_gaps": [
-              "large-scale compute infrastructure",
-              "statistical modeling and simulation"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607712/software-development-engineer-devices-software-services",
-            "match_score": 68.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "AI platform services",
-              "agent evaluation tooling"
-            ],
-            "main_gaps": [
-              "3+ years professional experience",
-              "2+ years system architecture"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607713/software-development-engineer-devices-software-services",
-            "match_score": 68.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "AI platform services",
-              "agent evaluation tooling"
-            ],
-            "main_gaps": [
-              "3+ years professional experience",
-              "2+ years system architecture"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607206/software-development-engineer-amazon-customer-service-ai-powered-content-solutions",
-            "match_score": 58.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "scalable backend services",
-              "knowledge platform experience"
-            ],
-            "main_gaps": [
-              "technical leadership at scale",
-              "3+ years professional experience"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607207/software-development-engineer-ii-amazon-registries",
-            "match_score": 66.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "full-stack product development",
-              "AI personalization systems"
-            ],
-            "main_gaps": [
-              "3+ years professional experience",
-              "2+ years system architecture"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10606737/software-development-engineer-customer-experience-and-business-trends",
-            "match_score": 71.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "GenAI evaluation platform",
-              "LLM quality measurement"
-            ],
-            "main_gaps": [
-              "3+ years professional experience",
-              "technical leadership and mentoring"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 8,
-        "route": "both",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10606046/software-development-engineer-ii-genai-ml-amazon-catalog-services-team",
-            "company": "Amazon",
-            "title": "Software Development Engineer II- GENAI/ML, Amazon Catalog services team"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607627/software-development-engineer-ii-aft-inventory-ims-team",
-            "company": "Amazon",
-            "title": "Software Development Engineer II, AFT Inventory/IMS Team"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607531/applied-scientist-quantum-device-integration-amazon-s-center-for-quantum-computing-device-team",
-            "company": "Amazon",
-            "title": "Applied Scientist, Quantum Device Integration, Amazon's Center for Quantum Computing, Device Team"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695220/machine-learning-engineer-platform-icloud-mail-intelligence",
-            "company": "Apple",
-            "title": "Machine Learning Engineer Platform - iCloud Mail Intelligence"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695462/software-development-engineer-vision-products-software",
-            "company": "Apple",
-            "title": "Software Development Engineer, Vision Products Software"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695298/ai-applied-scientist-ai-evaluation-science",
-            "company": "Apple",
-            "title": "AI Applied Scientist, AI Evaluation Science"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200693162/application-software-engineer-productivity-apps",
-            "company": "Apple",
-            "title": "Application Software Engineer, Productivity Apps"
-          },
-          {
-            "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/350645",
-            "company": "Oracle",
-            "title": "Junior Android Software Engineer"
-          },
-          {
-            "key": "url::https://careers.qualcomm.com/careers/job/446722177119",
-            "company": "Qualcomm",
-            "title": "Machine Learning Compiler Engineer"
-          },
-          {
-            "key": "url::https://jobs.ashbyhq.com/openai/1327d083-c932-4aed-aadc-57586521ee60",
-            "company": "OpenAI",
-            "title": "Software Engineer, Presence"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 16.358,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 10,
-          "input_tokens": 10476,
-          "cached_input_tokens": 2724,
-          "output_tokens": 1551,
-          "reasoning_tokens": 802,
-          "estimated_usd": 0.001578
-        },
-        "decisions": [
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10606046/software-development-engineer-ii-genai-ml-amazon-catalog-services-team",
+            "key": "url::https://www.google.com/about/careers/applications/jobs/results/83521813409080006-data-engineer-youtube",
             "match_score": 70.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "distributed systems",
-              "AI evaluation frameworks"
+              "Python/SQL pipelines",
+              "LLM evaluation workflows"
             ],
             "main_gaps": [
-              "3+ years professional software experience",
-              "2+ years system architecture"
+              "3 years data engineering",
+              "Stakeholder requirements ownership"
             ]
           },
           {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607627/software-development-engineer-ii-aft-inventory-ims-team",
-            "match_score": 64.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "backend software development",
-              "testing and operations"
-            ],
-            "main_gaps": [
-              "3+ years professional software experience",
-              "2+ years system architecture"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607531/applied-scientist-quantum-device-integration-amazon-s-center-for-quantum-computing-device-team",
-            "match_score": 10.0,
+            "key": "url::https://www.google.com/about/careers/applications/jobs/results/105450198435537606-security-engineer-enterprise-security",
+            "match_score": 38.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
-            "top_match_reasons": [],
-            "main_gaps": [
-              "quantum device integration",
-              "cryogenic hardware research"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695220/machine-learning-engineer-platform-icloud-mail-intelligence",
-            "match_score": 69.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "ML platform experience",
-              "production retrieval systems"
+              "AI-powered engineering",
+              "Python software development"
             ],
             "main_gaps": [
-              "large-scale ML infrastructure"
+              "Security engineering experience",
+              "IAM and threat modeling"
             ]
           },
           {
-            "key": "url::https://jobs.apple.com/en-us/details/200695462/software-development-engineer-vision-products-software",
-            "match_score": 59.0,
-            "seniority_fit": "stretch",
+            "key": "url::https://www.google.com/about/careers/applications/jobs/results/138588379385078470-software-engineer-iii-infrastructure-google-cloud-platforms",
+            "match_score": 53.0,
+            "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "AI product engineering",
-              "multimodal systems"
+              "Distributed systems",
+              "Infrastructure deployment experience"
             ],
             "main_gaps": [
-              "computer vision systems"
+              "C++ programming experience",
+              "Large-scale infrastructure experience"
             ]
           },
           {
-            "key": "url::https://jobs.apple.com/en-us/details/200695298/ai-applied-scientist-ai-evaluation-science",
-            "match_score": 73.0,
-            "seniority_fit": "stretch",
+            "key": "url::https://www.amazon.jobs/en/jobs/10607764/software-development-engineer-robotics-2027",
+            "match_score": 82.0,
+            "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "LLM evaluation platform",
-              "human-study validation"
+              "Software development and testing",
+              "Distributed systems experience"
             ],
             "main_gaps": [
-              "evaluation science methodology"
+              "TCP/IP networking fundamentals"
             ]
           },
           {
-            "key": "url::https://jobs.apple.com/en-us/details/200693162/application-software-engineer-productivity-apps",
+            "key": "url::https://www.amazon.jobs/en/jobs/10603760/software-development-engineer-ii-ec2-core-platform",
+            "match_score": 49.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production software delivery",
+              "Reliability and testing"
+            ],
+            "main_gaps": [
+              "3 years professional development",
+              "Large-scale system design"
+            ]
+          },
+          {
+            "key": "url::https://www.google.com/about/careers/applications/jobs/results/78569338159669958-software-engineer-iii-ai-ml-genai-workspace-drive",
+            "match_score": 88.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production GenAI systems",
+              "End-to-end model evaluation"
+            ],
+            "main_gaps": []
+          },
+          {
+            "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210807003",
             "match_score": 68.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "full-stack product development",
-              "user-facing applications"
+              "Python data pipelines",
+              "Spark and Databricks"
             ],
             "main_gaps": [
-              "iOS/macOS development"
+              "3 years applied data engineering"
             ]
           },
           {
-            "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/350645",
-            "match_score": 55.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "non_us",
-            "top_match_reasons": [
-              "Java programming",
-              "automated testing"
-            ],
-            "main_gaps": [
-              "hands-on Android development"
-            ]
-          },
-          {
-            "key": "url::https://careers.qualcomm.com/careers/job/446722177119",
-            "match_score": 49.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "applied mathematics",
-              "ML optimization experience"
-            ],
-            "main_gaps": [
-              "compiler development",
-              "computer architecture"
-            ]
-          },
-          {
-            "key": "url::https://jobs.ashbyhq.com/openai/1327d083-c932-4aed-aadc-57586521ee60",
-            "match_score": 38.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "AI agent systems",
-              "backend production engineering"
-            ],
-            "main_gaps": [
-              "9+ years engineering experience",
-              "technical leadership at scale"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 9,
-        "route": "both",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://jobs.ashbyhq.com/openai/60f8bcbc-3ca5-42f4-a73b-e864a6340a16",
-            "company": "OpenAI",
-            "title": "Full Stack Software Engineer, DotCom"
-          },
-          {
-            "key": "url::https://jobs.ashbyhq.com/openai/7447dd43-9bf5-445f-bb8c-ba57756c8d04",
-            "company": "OpenAI",
-            "title": "Full Stack Software Engineer, Dots for Companies"
-          },
-          {
-            "key": "url::https://jobs.ashbyhq.com/ramp/3cfbf693-58e3-423f-87a8-a93dbd0839b0",
-            "company": "Ramp",
-            "title": "Software Engineer, Backend, AI Ventures"
-          },
-          {
-            "key": "id::amd_official_careers::97274",
-            "company": "AMD",
-            "title": "GPU Kernel Engineer"
-          },
-          {
-            "key": "id::amd_official_careers::99727",
-            "company": "AMD",
-            "title": "ML Compiler Engineer"
-          },
-          {
-            "key": "url::https://www.google.com/about/careers/applications/jobs/results/121215133593543366-software-engineer-iii-ai-ml-genai-google-workspace",
-            "company": "Google",
-            "title": "Software Engineer III, AI/ML GenAI, Google Workspace"
-          },
-          {
-            "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557072831",
-            "company": "Microsoft",
-            "title": "Cloud Solution Architect - Application Modernization"
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/doordashusa/jobs/8396696",
-            "company": "DoorDash",
-            "title": "Hardware Systems Engineer"
-          },
-          {
-            "key": "url::http://block.xyz/careers/jobs/5485151008?gh_jid=5485151008",
-            "company": "Block / Square",
-            "title": "Sales Compensation Systems & Data Engineer"
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607137/systems-automation-engineer-ii-data-center-operations-business-automation-optimization",
-            "company": "Amazon",
-            "title": "Systems Automation Engineer II, Data Center Operations, Business Automation & Optimization"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 20.092,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 10,
-          "input_tokens": 14742,
-          "cached_input_tokens": 2724,
-          "output_tokens": 2141,
-          "reasoning_tokens": 1362,
-          "estimated_usd": 0.0023
-        },
-        "decisions": [
-          {
-            "key": "url::https://jobs.ashbyhq.com/openai/60f8bcbc-3ca5-42f4-a73b-e864a6340a16",
-            "match_score": 48.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "React and Next.js",
-              "Full-stack web delivery"
-            ],
-            "main_gaps": [
-              "7+ years frontend experience",
-              "Polished high-traffic web experiences"
-            ]
-          },
-          {
-            "key": "url::https://jobs.ashbyhq.com/openai/7447dd43-9bf5-445f-bb8c-ba57756c8d04",
-            "match_score": 56.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "AI agent product experience",
-              "Full-stack production systems"
-            ],
-            "main_gaps": [
-              "Senior or Staff ownership",
-              "Enterprise identity and permissions"
-            ]
-          },
-          {
-            "key": "url::https://jobs.ashbyhq.com/ramp/3cfbf693-58e3-423f-87a8-a93dbd0839b0",
-            "match_score": 80.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production AI products",
-              "Backend APIs and services"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "id::amd_official_careers::97274",
-            "match_score": 43.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python and C++",
-              "AI inference experience"
-            ],
-            "main_gaps": [
-              "GPU kernel development",
-              "GPU performance optimization"
-            ]
-          },
-          {
-            "key": "id::amd_official_careers::99727",
-            "match_score": 53.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "C++ and Python",
-              "Machine learning experience"
-            ],
-            "main_gaps": [
-              "Compiler development",
-              "MLIR or accelerator toolchains"
-            ]
-          },
-          {
-            "key": "url::https://www.google.com/about/careers/applications/jobs/results/121215133593543366-software-engineer-iii-ai-ml-genai-google-workspace",
-            "match_score": 86.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "End-to-end LLM systems",
-              "Python and model evaluation"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557072831",
-            "match_score": 43.0,
+            "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8378911",
+            "match_score": 29.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
               "Cloud deployment experience",
-              "Application modernization skills"
+              "Docker and Terraform"
             ],
             "main_gaps": [
-              "4+ years relevant experience",
-              "Customer-facing cloud architecture"
+              "Senior customer-facing architecture",
+              "Kubernetes administration certification"
             ]
           },
           {
-            "key": "url::https://job-boards.greenhouse.io/doordashusa/jobs/8396696",
-            "match_score": 12.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "other",
-            "top_match_reasons": [
-              "Software engineering background"
-            ],
-            "main_gaps": [
-              "Mechatronics hardware architecture",
-              "8+ years robotics experience"
-            ]
-          },
-          {
-            "key": "url::http://block.xyz/careers/jobs/5485151008?gh_jid=5485151008",
-            "match_score": 42.0,
-            "seniority_fit": "mismatch",
+            "key": "url::https://lifeattiktok.com/search/7669654422861383941",
+            "match_score": 75.0,
+            "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Data pipelines and integrations",
-              "Automated testing"
+              "Computer science and applied math",
+              "Python/SQL and classification"
             ],
             "main_gaps": [
-              "Sales commission systems",
-              "Compensation calculation workflows"
-            ]
-          },
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607137/systems-automation-engineer-ii-data-center-operations-business-automation-optimization",
-            "match_score": 58.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "AWS production deployments",
-              "Automation and AI evaluation"
-            ],
-            "main_gaps": [
-              "5+ years systems engineering",
-              "24/7 infrastructure operations"
-            ]
-          }
-        ]
-      },
-      {
-        "batch": 10,
-        "route": "both",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607138/systems-automation-engineer-availability-data-center-operations-business-automation-optimization",
-            "company": "Amazon",
-            "title": "Systems Automation Engineer, Availability , Data Center Operations, Business Automation & Optimization"
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695284/ai-measurement-scientist-ai-evaluation-platform",
-            "company": "Apple",
-            "title": "AI Measurement Scientist, AI Evaluation Platform"
-          },
-          {
-            "key": "url::https://careers.qualcomm.com/careers/job/446721491121",
-            "company": "Qualcomm",
-            "title": "Multimedia-System HW Validation and Integration Engineer"
-          },
-          {
-            "key": "id::amd_official_careers::98135",
-            "company": "AMD",
-            "title": "Datacenter and AI Infrastructure Silicon Performance Architect"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 11.358,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 4,
-          "input_tokens": 6203,
-          "cached_input_tokens": 2724,
-          "output_tokens": 1017,
-          "reasoning_tokens": 730,
-          "estimated_usd": 0.000884
-        },
-        "decisions": [
-          {
-            "key": "url::https://www.amazon.jobs/en/jobs/10607138/systems-automation-engineer-availability-data-center-operations-business-automation-optimization",
-            "match_score": 67.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python automation",
-              "AWS CI/CD"
-            ],
-            "main_gaps": [
-              "SRE/operations experience",
-              "Network troubleshooting"
-            ]
-          },
-          {
-            "key": "url::https://jobs.apple.com/en-us/details/200695284/ai-measurement-scientist-ai-evaluation-platform",
-            "match_score": 76.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "LLM evaluation platform",
-              "Evaluation metrics"
-            ],
-            "main_gaps": []
-          },
-          {
-            "key": "url::https://careers.qualcomm.com/careers/job/446721491121",
-            "match_score": 38.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Automated testing",
-              "Python scripting"
-            ],
-            "main_gaps": [
-              "Silicon validation",
-              "Lab instrumentation"
-            ]
-          },
-          {
-            "key": "id::amd_official_careers::98135",
-            "match_score": 28.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Datacenter systems",
-              "AI infrastructure"
-            ],
-            "main_gaps": [
-              "Microarchitecture performance analysis",
-              "Hardware profiling"
+              "Product experimentation and causal inference"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 81,
-    "input_tokens": 85690,
-    "cached_input_tokens": 16449,
-    "output_tokens": 16803,
-    "reasoning_tokens": 9863,
-    "estimated_usd": 0.015491,
+    "jobs_scored": 12,
+    "input_tokens": 16509,
+    "cached_input_tokens": 0,
+    "output_tokens": 2681,
+    "reasoning_tokens": 1746,
+    "estimated_usd": 0.002992,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 81
+    "scored": 12
   },
   "output": {
     "tier_a": 4,
     "tier_b": 20,
     "shown": 24,
-    "new_jobs": 339,
-    "new_jobs_added": 9
+    "new_jobs": 105,
+    "new_jobs_added": 3
   },
   "recency": {
-    "lt3h": 1,
-    "3to24h": 0,
-    "1to3d": 146,
-    "newly_discovered": 3,
-    "3to7d": 269,
-    "gt7d": 2058
+    "lt3h": 0,
+    "3to24h": 10,
+    "1to3d": 147,
+    "newly_discovered": 5,
+    "3to7d": 265,
+    "gt7d": 2056
   },
   "screen_method": "cache+llm",
   "failures": {
     "scrape": {
+      "apple": [
+        "apple network error: HTTPSConnectionPool(host='jobs.apple.com', port=443): Read timed out. (read timeout=30)"
+      ],
       "nvidia": [
         "NVIDIA workday probe blocked with HTTP 429"
       ],
@@ -5392,22 +3954,19 @@
         "Salesforce workday probe blocked with HTTP 429"
       ],
       "adobe": [
-        "Adobe workday probe blocked with HTTP 429"
+        "Adobe workday blocked with HTTP 429"
       ],
       "meta": [
         "Meta careers Relay bundle did not expose the current job-search doc_id"
       ],
       "capitalone": [
-        "Capital One workday probe blocked with HTTP 429"
+        "Capital One workday blocked with HTTP 429"
       ],
       "walmart": [
         "Walmart Global Tech workday blocked with HTTP 429"
       ],
       "cisco": [
         "Cisco workday blocked with HTTP 429"
-      ],
-      "sap": [
-        "sap search network error: HTTPSConnectionPool(host='careers.sap.com', port=443): Read timed out. (read timeout=30)"
       ],
       "hpe": [
         "HPE workday probe blocked with HTTP 429"
@@ -5431,7 +3990,7 @@
         "Visa workday probe blocked with HTTP 429"
       ],
       "workday": [
-        "Workday workday probe blocked with HTTP 429"
+        "Workday workday blocked with HTTP 429"
       ],
       "zillow": [
         "Zillow workday probe blocked with HTTP 429"
@@ -5443,7 +4002,7 @@
         "F5 workday probe blocked with HTTP 429"
       ],
       "wells-fargo": [
-        "Wells Fargo workday probe blocked with HTTP 429"
+        "Wells Fargo workday blocked with HTTP 429"
       ],
       "yahoo": [
         "Yahoo workday probe blocked with HTTP 429"
@@ -5473,41 +4032,36 @@
     "llm": []
   },
   "enrichment": {
-    "discovered": 13670,
-    "needed": 536,
-    "source_jds_available": 13134,
+    "discovered": 13570,
+    "needed": 594,
+    "source_jds_available": 12976,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 536
+    "remaining_no_jd": 594
   },
   "jd_recovery": {
     "cache_reused": 51,
     "ai_requests": 1,
-    "detail_requests": 22,
-    "detail_success": 4,
-    "browser_http_requests": 6,
-    "eligible": 4206,
-    "usable_jd": 4189,
+    "detail_requests": 20,
+    "detail_success": 2,
+    "eligible": 4105,
+    "usable_jd": 4087,
     "budget_deferred": 0,
-    "ai_skip": 67,
-    "deterministic_skip": 195,
-    "elapsed_seconds": 16.063,
+    "ai_skip": 66,
+    "deterministic_skip": 191,
+    "elapsed_seconds": 15.794,
     "errors": [],
     "per_company": {
       "Google": {
-        "eligible": 133,
-        "usable_jd": 133
+        "eligible": 135,
+        "usable_jd": 135
       },
       "Amazon": {
-        "eligible": 472,
-        "usable_jd": 472
-      },
-      "Apple": {
-        "eligible": 143,
-        "usable_jd": 143
+        "eligible": 468,
+        "usable_jd": 468
       },
       "Microsoft": {
-        "eligible": 45,
-        "usable_jd": 45
+        "eligible": 44,
+        "usable_jd": 44
       },
       "TikTok": {
         "eligible": 421,
@@ -5530,36 +4084,36 @@
         "usable_jd": 23
       },
       "Snowflake": {
-        "eligible": 41,
-        "usable_jd": 41
+        "eligible": 42,
+        "usable_jd": 42
       },
       "ServiceNow": {
-        "eligible": 60,
-        "usable_jd": 60
+        "eligible": 62,
+        "usable_jd": 62
       },
       "Bloomberg": {
         "eligible": 6,
         "usable_jd": 6
       },
       "JPMorgan Chase": {
-        "eligible": 126,
-        "usable_jd": 126
+        "eligible": 127,
+        "usable_jd": 127
       },
       "Oracle": {
         "eligible": 67,
         "usable_jd": 67
       },
       "Cloudflare": {
-        "eligible": 97,
-        "usable_jd": 97
+        "eligible": 101,
+        "usable_jd": 101
       },
       "Stripe": {
-        "eligible": 151,
-        "usable_jd": 151
+        "eligible": 155,
+        "usable_jd": 155
       },
       "Coinbase": {
-        "eligible": 55,
-        "usable_jd": 55
+        "eligible": 56,
+        "usable_jd": 56
       },
       "Robinhood": {
         "eligible": 41,
@@ -5590,12 +4144,12 @@
         "usable_jd": 51
       },
       "Lyft": {
-        "eligible": 19,
-        "usable_jd": 19
+        "eligible": 20,
+        "usable_jd": 20
       },
       "Spotify": {
-        "eligible": 12,
-        "usable_jd": 12
+        "eligible": 14,
+        "usable_jd": 14
       },
       "Ramp": {
         "eligible": 66,
@@ -5613,14 +4167,18 @@
         "eligible": 37,
         "usable_jd": 37
       },
+      "SAP": {
+        "eligible": 35,
+        "usable_jd": 35
+      },
       "Disney": {
-        "deterministic_skip": 88,
+        "deterministic_skip": 85,
         "cache_reused": 3,
-        "eligible": 19,
-        "ai_skip": 6,
+        "eligible": 20,
+        "ai_skip": 5,
         "ai_recover": 5,
-        "detail_requests": 16,
-        "detail_failure": 16,
+        "detail_requests": 17,
+        "detail_failure": 17,
         "budget_deferred": 0,
         "usable_jd": 3
       },
@@ -5629,8 +4187,8 @@
         "usable_jd": 43
       },
       "AMD": {
-        "eligible": 199,
-        "usable_jd": 199
+        "eligible": 201,
+        "usable_jd": 201
       },
       "Pure Storage": {
         "eligible": 60,
@@ -5649,16 +4207,16 @@
         "usable_jd": 5
       },
       "Anthropic": {
-        "eligible": 159,
-        "usable_jd": 159
+        "eligible": 158,
+        "usable_jd": 158
       },
       "AppLovin": {
-        "eligible": 6,
-        "usable_jd": 6
+        "eligible": 7,
+        "usable_jd": 7
       },
       "ByteDance": {
-        "eligible": 234,
-        "usable_jd": 234
+        "eligible": 233,
+        "usable_jd": 233
       },
       "Chime": {
         "eligible": 11,
@@ -5685,32 +4243,33 @@
         "usable_jd": 34
       },
       "Morgan Stanley": {
-        "eligible": 41,
-        "usable_jd": 41
-      },
-      "NetApp": {
         "eligible": 38,
         "usable_jd": 38
       },
+      "NetApp": {
+        "eligible": 37,
+        "usable_jd": 37
+      },
       "Netflix": {
-        "deterministic_skip": 11,
+        "deterministic_skip": 10,
         "cache_reused": 31,
-        "eligible": 15,
+        "eligible": 16,
         "ai_skip": 30,
-        "detail_requests": 3,
-        "detail_success": 3,
+        "ai_recover": 1,
+        "detail_requests": 2,
+        "detail_success": 2,
         "budget_deferred": 0,
-        "usable_jd": 15
+        "usable_jd": 16
       },
       "OpenAI": {
         "eligible": 355,
         "usable_jd": 355
       },
       "Palantir": {
-        "eligible": 177,
+        "eligible": 178,
         "cache_reused": 2,
         "ai_skip": 2,
-        "usable_jd": 177
+        "usable_jd": 178
       },
       "PayPal": {
         "eligible": 12,
@@ -5729,12 +4288,12 @@
         "usable_jd": 22
       },
       "Two Sigma": {
-        "eligible": 36,
-        "usable_jd": 36
+        "eligible": 33,
+        "usable_jd": 33
       },
       "Verkada": {
-        "eligible": 52,
-        "usable_jd": 52
+        "eligible": 51,
+        "usable_jd": 51
       },
       "WeRide": {
         "eligible": 7,
@@ -5745,8 +4304,8 @@
         "usable_jd": 16
       },
       "Chewy": {
-        "eligible": 3,
-        "usable_jd": 3
+        "eligible": 2,
+        "usable_jd": 2
       },
       "Duolingo": {
         "eligible": 5,
@@ -5757,14 +4316,11 @@
         "cache_reused": 7,
         "eligible": 7,
         "ai_skip": 20,
-        "detail_requests": 2,
-        "detail_success": 1,
-        "budget_deferred": 0,
         "usable_jd": 7
       },
       "IXL Learning": {
-        "eligible": 52,
-        "usable_jd": 52
+        "eligible": 51,
+        "usable_jd": 51
       },
       "Ansys": {
         "eligible": 5,
@@ -5788,6 +4344,9 @@
         "eligible": 4,
         "usable_jd": 4
       },
+      "Apple": {
+        "usable_jd": 0
+      },
       "NVIDIA": {
         "usable_jd": 0
       },
@@ -5810,9 +4369,6 @@
         "usable_jd": 0
       },
       "Cisco": {
-        "usable_jd": 0
-      },
-      "SAP": {
         "usable_jd": 0
       },
       "HPE": {

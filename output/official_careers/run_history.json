@@ -2,6 +2,405 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-11-18T15:38:44.686432+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 12,
+      "cache_reused": 324,
+      "peer_reused": 0,
+      "same_content_reused": 10,
+      "non_material_change_reused": 0,
+      "new_or_changed": 17,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 17
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 2147,
+      "requests": 2,
+      "input_tokens": 16509,
+      "cached_input_tokens": 0,
+      "output_tokens": 2681,
+      "reasoning_tokens": 1746,
+      "estimated_usd": 0.002992,
+      "latency_seconds": 31.041,
+      "latency_measured": true,
+      "effective_rpm": 3.87,
+      "effective_tpm": 37092.88,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 12,
+      "funnel": {
+        "after_dedup": 13570,
+        "after_company": 13570,
+        "after_hard_filter": 10484,
+        "after_prefilter": 2483,
+        "dropped": 11087
+      },
+      "output": {
+        "tier_a": 4,
+        "tier_b": 20,
+        "shown": 24,
+        "new_jobs": 105,
+        "new_jobs_added": 3
+      },
+      "enrichment": {
+        "discovered": 13570,
+        "needed": 594,
+        "source_jds_available": 12976,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 594
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10607522/sde-ii-air-safety-gateway-optimization",
+              "company": "Amazon",
+              "title": "SDE-II, Air Safety & Gateway Optimization"
+            },
+            {
+              "key": "url::https://explore.jobs.netflix.net/careers/job/790319561012",
+              "company": "Netflix",
+              "title": "Full-stack Engineer 4, User Data & Consent Experiences"
+            },
+            {
+              "key": "url::https://stripe.com/jobs/search?gh_jid=7917880",
+              "company": "Stripe",
+              "title": "Technical Solutions Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 8.308,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 5863,
+            "cached_input_tokens": 0,
+            "output_tokens": 661,
+            "reasoning_tokens": 424,
+            "estimated_usd": 0.000917
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10607522/sde-ii-air-safety-gateway-optimization",
+              "match_score": 54.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production backend services",
+                "AWS deployment and operations"
+              ],
+              "main_gaps": [
+                "3+ years non-internship experience",
+                "2+ years system architecture"
+              ]
+            },
+            {
+              "key": "url::https://explore.jobs.netflix.net/careers/job/790319561012",
+              "match_score": 52.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React and TypeScript",
+                "Full-stack product development"
+              ],
+              "main_gaps": [
+                "5+ years professional experience",
+                "GraphQL and server-driven UI"
+              ]
+            },
+            {
+              "key": "url::https://stripe.com/jobs/search?gh_jid=7917880",
+              "match_score": 58.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "API and integration experience"
+              ],
+              "main_gaps": [
+                "4 years full-stack experience",
+                "External developer support"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/83521813409080006-data-engineer-youtube",
+              "company": "Google",
+              "title": "Data Engineer, YouTube"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/105450198435537606-security-engineer-enterprise-security",
+              "company": "Google",
+              "title": "Security Engineer, Enterprise Security"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/138588379385078470-software-engineer-iii-infrastructure-google-cloud-platforms",
+              "company": "Google",
+              "title": "Software Engineer III, Infrastructure, Google Cloud Platforms"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10607764/software-development-engineer-robotics-2027",
+              "company": "Amazon",
+              "title": "Software Development Engineer, ROBOTICS - 2027"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10603760/software-development-engineer-ii-ec2-core-platform",
+              "company": "Amazon",
+              "title": "Software Development Engineer II, EC2 Core Platform"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/78569338159669958-software-engineer-iii-ai-ml-genai-workspace-drive",
+              "company": "Google",
+              "title": "Software Engineer III, AI/ML GenAI, Workspace Drive"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210807003",
+              "company": "JPMorgan Chase",
+              "title": "Data Engineer III-Python/SQL/Snowflake"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8378911",
+              "company": "Pure Storage",
+              "title": "Cloud Native Architect, Portwork-SLED"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669654422861383941",
+              "company": "TikTok",
+              "title": "Data Scientist Graduate (TikTok Product) - 2027 Start"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 22.733,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 9,
+            "input_tokens": 10646,
+            "cached_input_tokens": 0,
+            "output_tokens": 2020,
+            "reasoning_tokens": 1322,
+            "estimated_usd": 0.002075
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/83521813409080006-data-engineer-youtube",
+              "match_score": 70.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python/SQL pipelines",
+                "LLM evaluation workflows"
+              ],
+              "main_gaps": [
+                "3 years data engineering",
+                "Stakeholder requirements ownership"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/105450198435537606-security-engineer-enterprise-security",
+              "match_score": 38.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AI-powered engineering",
+                "Python software development"
+              ],
+              "main_gaps": [
+                "Security engineering experience",
+                "IAM and threat modeling"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/138588379385078470-software-engineer-iii-infrastructure-google-cloud-platforms",
+              "match_score": 53.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Distributed systems",
+                "Infrastructure deployment experience"
+              ],
+              "main_gaps": [
+                "C++ programming experience",
+                "Large-scale infrastructure experience"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10607764/software-development-engineer-robotics-2027",
+              "match_score": 82.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Software development and testing",
+                "Distributed systems experience"
+              ],
+              "main_gaps": [
+                "TCP/IP networking fundamentals"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10603760/software-development-engineer-ii-ec2-core-platform",
+              "match_score": 49.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production software delivery",
+                "Reliability and testing"
+              ],
+              "main_gaps": [
+                "3 years professional development",
+                "Large-scale system design"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/78569338159669958-software-engineer-iii-ai-ml-genai-workspace-drive",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production GenAI systems",
+                "End-to-end model evaluation"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210807003",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python data pipelines",
+                "Spark and Databricks"
+              ],
+              "main_gaps": [
+                "3 years applied data engineering"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8378911",
+              "match_score": 29.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud deployment experience",
+                "Docker and Terraform"
+              ],
+              "main_gaps": [
+                "Senior customer-facing architecture",
+                "Kubernetes administration certification"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7669654422861383941",
+              "match_score": 75.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Computer science and applied math",
+                "Python/SQL and classification"
+              ],
+              "main_gaps": [
+                "Product experimentation and causal inference"
+              ]
+            }
+          ]
+        }
+      ],
+      "scrape_failure_sources": [
+        "apple",
+        "nvidia",
+        "salesforce",
+        "adobe",
+        "meta",
+        "capitalone",
+        "walmart",
+        "cisco",
+        "hpe",
+        "ebay",
+        "zoom",
+        "expedia",
+        "intel",
+        "redhat",
+        "visa",
+        "workday",
+        "zillow",
+        "cvs",
+        "f5",
+        "wells-fargo",
+        "yahoo",
+        "flex",
+        "iqvia",
+        "johnson-johnson",
+        "nasdaq",
+        "stryker",
+        "transunion",
+        "travelers"
+      ],
+      "scrape_failure_causes": {
+        "apple": "timeout",
+        "nvidia": "429",
+        "salesforce": "429",
+        "adobe": "429",
+        "meta": "error",
+        "capitalone": "429",
+        "walmart": "429",
+        "cisco": "429",
+        "hpe": "429",
+        "ebay": "429",
+        "zoom": "429",
+        "expedia": "429",
+        "intel": "429",
+        "redhat": "429",
+        "visa": "429",
+        "workday": "429",
+        "zillow": "429",
+        "cvs": "429",
+        "f5": "429",
+        "wells-fargo": "429",
+        "yahoo": "429",
+        "flex": "429",
+        "iqvia": "429",
+        "johnson-johnson": "429",
+        "nasdaq": "429",
+        "stryker": "429",
+        "transunion": "429",
+        "travelers": "429"
+      }
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-11-18T00:39:20.843650+00:00",
       "mode": "pipeline",
       "health": "degraded",
@@ -17178,161 +17577,6 @@
               "main_gaps": [
                 "ANE/kernel optimization",
                 "Low-level systems performance"
-              ]
-            }
-          ]
-        }
-      ],
-      "scrape_failure_sources": [],
-      "scrape_failure_causes": {}
-    },
-    {
-      "pipeline": "official",
-      "run_at": "2026-11-08T15:46:05.633773+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 2,
-      "cache_reused": 360,
-      "peer_reused": 0,
-      "same_content_reused": 9,
-      "non_material_change_reused": 0,
-      "new_or_changed": 3,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 1,
-        "material_jd_change": 2
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 2524,
-      "requests": 2,
-      "input_tokens": 6793,
-      "cached_input_tokens": 0,
-      "output_tokens": 463,
-      "reasoning_tokens": 278,
-      "estimated_usd": 0.000911,
-      "latency_seconds": 6.471,
-      "latency_measured": true,
-      "effective_rpm": 18.54,
-      "effective_tpm": 67278.63,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "primary_batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 2,
-      "funnel": {
-        "after_dedup": 18157,
-        "after_company": 18157,
-        "after_hard_filter": 14685,
-        "after_prefilter": 2886,
-        "dropped": 15271
-      },
-      "output": {
-        "tier_a": 8,
-        "tier_b": 31,
-        "shown": 39,
-        "new_jobs": 10,
-        "new_jobs_added": 0
-      },
-      "enrichment": {
-        "discovered": 18202,
-        "needed": 823,
-        "source_jds_available": 17378,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 824
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10595565/software-development-engineer-data-and-analytics",
-              "company": "Amazon",
-              "title": "Software Development Engineer, Data and Analytics"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 3.237,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 2810,
-            "cached_input_tokens": 0,
-            "output_tokens": 244,
-            "reasoning_tokens": 155,
-            "estimated_usd": 0.000403
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10595565/software-development-engineer-data-and-analytics",
-              "match_score": 56.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Distributed systems experience",
-                "Production backend development"
-              ],
-              "main_gaps": [
-                "Erlang development",
-                "3+ years professional experience"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://jobs.ashbyhq.com/openai/1a475859-21e3-45fc-9e93-8763aa1d0992",
-              "company": "OpenAI",
-              "title": "Civil & Structural Architect, Power Generation"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 3.234,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3983,
-            "cached_input_tokens": 0,
-            "output_tokens": 219,
-            "reasoning_tokens": 123,
-            "estimated_usd": 0.000508
-          },
-          "decisions": [
-            {
-              "key": "url::https://jobs.ashbyhq.com/openai/1a475859-21e3-45fc-9e93-8763aa1d0992",
-              "match_score": 5.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [],
-              "main_gaps": [
-                "Civil/structural engineering",
-                "Power-generation project delivery"
               ]
             }
           ]
