@@ -1,82 +1,34 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 4251,
+  "count": 4264,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-11-17T07:53:12.094912+00:00",
+    "scraped_at": "2026-11-18T08:56:37.422222+00:00",
     "collector": {
-      "commit": "a633ca9343ce7aef1128f3d5945e95b63bad3eec",
+      "commit": "957a644b7f0b4e7441ddcc16f3cc7bac9448fcbe",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 142.882,
+    "elapsed_seconds": 41.702,
     "query_stats": [
-      {
-        "query": "software engineer",
-        "group": "primary",
-        "page_budget": 5,
-        "pages_fetched": 5,
-        "stop_reason": "page_budget",
-        "raw_jobs": 50,
-        "unique_jobs": 50,
-        "unique_contribution": 47,
-        "first_pass_survivors": 46,
-        "original_postings_resolved": 0,
-        "jds_resolved": 10,
-        "elapsed_seconds": 51.319,
-        "new_to_ledger": 36,
-        "rediscovered": 14,
-        "page_yields": [
-          {
-            "page": 0,
-            "raw": 10,
-            "new_to_ledger": 5,
-            "known": 5
-          },
-          {
-            "page": 1,
-            "raw": 10,
-            "new_to_ledger": 10,
-            "known": 0
-          },
-          {
-            "page": 2,
-            "raw": 10,
-            "new_to_ledger": 6,
-            "known": 4
-          },
-          {
-            "page": 3,
-            "raw": 10,
-            "new_to_ledger": 6,
-            "known": 4
-          },
-          {
-            "page": 4,
-            "raw": 10,
-            "new_to_ledger": 9,
-            "known": 1
-          }
-        ]
-      },
       {
         "query": "ai engineer",
         "group": "primary",
         "page_budget": 3,
-        "pages_fetched": 3,
-        "stop_reason": "page_budget",
-        "raw_jobs": 30,
-        "unique_jobs": 30,
-        "unique_contribution": 29,
-        "first_pass_survivors": 29,
+        "pages_fetched": 2,
+        "stop_reason": "recovery_search_budget",
+        "raw_jobs": 20,
+        "unique_jobs": 20,
+        "unique_contribution": 20,
+        "first_pass_survivors": 20,
         "original_postings_resolved": 0,
-        "jds_resolved": 3,
-        "elapsed_seconds": 37.922,
-        "new_to_ledger": 21,
-        "rediscovered": 9,
+        "jds_resolved": 8,
+        "elapsed_seconds": 13.925,
+        "new_to_ledger": 13,
+        "rediscovered": 7,
         "page_yields": [
           {
             "page": 0,
@@ -87,408 +39,183 @@
           {
             "page": 1,
             "raw": 10,
-            "new_to_ledger": 7,
-            "known": 3
-          },
-          {
-            "page": 2,
-            "raw": 10,
-            "new_to_ledger": 7,
-            "known": 3
+            "new_to_ledger": 6,
+            "known": 4
           }
         ]
       },
       {
-        "query": "backend engineer",
+        "query": "full-stack engineer",
         "group": "primary",
         "page_budget": 2,
-        "pages_fetched": 1,
-        "stop_reason": "blocked_http_429",
-        "raw_jobs": 10,
+        "pages_fetched": 0,
+        "stop_reason": "recovery_search_budget",
+        "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
-        "first_pass_survivors": 10,
+        "first_pass_survivors": 0,
         "original_postings_resolved": 0,
-        "jds_resolved": 5,
-        "elapsed_seconds": 23.587,
-        "new_to_ledger": 3,
-        "rediscovered": 4,
-        "page_yields": [
-          {
-            "page": 0,
-            "raw": 10,
-            "new_to_ledger": 3,
-            "known": 4
-          }
-        ]
+        "jds_resolved": 0,
+        "elapsed_seconds": 0.0,
+        "new_to_ledger": 0,
+        "rediscovered": 0,
+        "page_yields": []
+      },
+      {
+        "query": "software engineer",
+        "group": "primary",
+        "page_budget": 5,
+        "pages_fetched": 0,
+        "stop_reason": "recovery_search_budget",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 0.0,
+        "new_to_ledger": 0,
+        "rediscovered": 0,
+        "page_yields": []
       }
     ],
     "search_collection": {
       "cooldown_active": false,
       "probe": false,
-      "query_cursor": 72,
-      "requests": 10,
-      "responses": 10,
-      "pages_fetched": 9,
-      "http_status": 429,
-      "rate_limited": true,
+      "query_cursor": 73,
+      "requests": 2,
+      "responses": 2,
+      "pages_fetched": 2,
+      "http_status": 0,
+      "rate_limited": false,
       "budget_exhausted": false,
-      "rate_limit_event": {
-        "at": "2026-11-17T07:55:04.938575+00:00",
-        "endpoint": "search",
-        "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
-        "query": "backend engineer",
-        "page": 1,
-        "retry_after": "",
-        "retry_after_until": "2026-11-17T07:55:04.938575+00:00",
-        "request_ordinal": 10,
-        "endpoint_ordinal": 10,
-        "round_counts": {
-          "search": 10,
-          "detail": 0
-        },
-        "rolling_counts": {
-          "60": {
-            "search": 5,
-            "detail": 0
-          },
-          "3600": {
-            "search": 10,
-            "detail": 0
-          },
-          "86400": {
-            "search": 10,
-            "detail": 0
-          }
-        }
-      },
+      "rate_limit_event": {},
       "transport_stop_reason": "",
-      "new_to_ledger": 60,
-      "rediscovered": 27,
-      "coverage_limited": false
+      "new_to_ledger": 13,
+      "rediscovered": 7,
+      "coverage_limited": true
     },
     "detail_enrichment": {
-      "eligible": 32,
+      "eligible": 13,
       "cache_reused": 0,
-      "requests": 0,
-      "responses": 0,
-      "successful_responses": 0,
-      "attempted_ids": [],
-      "http_status_counts": {},
+      "requests": 2,
+      "responses": 2,
+      "successful_responses": 2,
+      "attempted_ids": [
+        "4491435680",
+        "4430167628"
+      ],
+      "http_status_counts": {
+        "200": 2
+      },
       "request_limit": 12,
-      "budget_deferred": 0,
-      "budget_exhausted": false,
+      "budget_deferred": 11,
+      "budget_exhausted": true,
       "retry_deferred": 0,
       "retry_attempts": 0,
       "exact_official": 0,
       "official_deferred": 0,
       "rate_limited": false,
-      "jds_resolved": 0,
+      "jds_resolved": 2,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 0,
+      "detail_jds_fetched": 2,
       "intentional_skips": 0,
-      "blocked": "rate_limited_no_further_requests",
+      "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 32,
+      "remaining_no_jd": 11,
       "failure_reasons": {
-        "linkedin_rate_limited": 32
+        "linkedin_rate_limited": 7,
+        "no_description": 4
       },
-      "protected_requests": 0,
-      "protected_jds_resolved": 0,
-      "protected_deferred": 17,
+      "transport_stop_reason": "recovery_detail_budget",
+      "protected_requests": 1,
+      "protected_jds_resolved": 1,
+      "protected_deferred": 11,
       "queue": [
         {
-          "job_id": "4490197011",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
+          "job_id": "4491547571",
+          "first_seen": "2026-11-18T08:56:37.422222+00:00",
           "priority": "normal",
           "needs_jd": null,
           "deferred_at": null,
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": true,
-          "method": "remote_exact_peer",
+          "method": "exact_indeed_peer",
           "deferred_reason": null,
           "past_fresh": false
         },
         {
-          "job_id": "4490193317",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
+          "job_id": "4491429718",
+          "first_seen": "2026-11-18T08:56:37.422222+00:00",
           "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "remote_exact_peer",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4490146444",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "remote_exact_peer",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4490161693",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
+          "needs_jd": true,
+          "deferred_at": "2026-11-18T08:56:37.422222+00:00",
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
+          "deferred_reason": "recovery_detail_budget",
           "past_fresh": false
         },
         {
-          "job_id": "4475377787",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
+          "job_id": "4490808576",
+          "first_seen": "2026-11-18T08:56:37.422222+00:00",
           "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
+          "needs_jd": true,
+          "deferred_at": "2026-11-18T08:56:37.422222+00:00",
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
+          "deferred_reason": "recovery_detail_budget",
           "past_fresh": false
         },
         {
-          "job_id": "4490140825",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
+          "job_id": "4491176386",
+          "first_seen": "2026-11-18T08:56:37.422222+00:00",
           "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "remote_exact_peer",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4490199022",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "direct_careers",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4491105342",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
+          "needs_jd": true,
+          "deferred_at": "2026-11-18T08:56:37.422222+00:00",
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
+          "deferred_reason": "recovery_detail_budget",
           "past_fresh": false
         },
         {
-          "job_id": "4490158906",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4491103270",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4461127871",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "remote_exact_peer",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4490960068",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4490114678",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4491030182",
-          "first_seen": "2026-11-14T08:24:22.168358+00:00",
+          "job_id": "4491435680",
+          "first_seen": "2026-11-18T08:56:37.422222+00:00",
           "priority": "high",
           "needs_jd": true,
-          "deferred_at": "2026-11-14T08:24:22.168358+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
-          "past_fresh": true
-        },
-        {
-          "job_id": "4490960048",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
           "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
+          "attempted_at": "2026-11-18T08:57:05.625731+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
           "deferred_reason": null,
           "past_fresh": false
         },
         {
-          "job_id": "4490117631",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
+          "job_id": "4491408375",
+          "first_seen": "2026-11-18T08:56:37.422222+00:00",
           "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
+          "needs_jd": true,
+          "deferred_at": "2026-11-18T08:56:37.422222+00:00",
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": null,
+          "deferred_reason": "recovery_detail_budget",
           "past_fresh": false
         },
         {
-          "job_id": "4490946663",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4490107089",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4489754221",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4490950170",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4491110337",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4490944892",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4490189549",
-          "first_seen": "2026-11-17T07:53:12.094912+00:00",
+          "job_id": "4491448040",
+          "first_seen": "2026-11-18T08:56:37.422222+00:00",
           "priority": "normal",
           "needs_jd": null,
           "deferred_at": null,
@@ -509,7 +236,7 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_rate_limited",
+          "deferred_reason": "recovery_detail_budget",
           "past_fresh": true
         },
         {
@@ -522,46 +249,7 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_rate_limited",
-          "past_fresh": true
-        },
-        {
-          "job_id": "4489597016",
-          "first_seen": "2026-11-14T08:24:22.168358+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-14T08:24:22.168358+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
-          "past_fresh": true
-        },
-        {
-          "job_id": "4474709089",
-          "first_seen": "2026-11-15T08:03:29.455844+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-15T08:03:29.455844+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
-          "past_fresh": true
-        },
-        {
-          "job_id": "4489595513",
-          "first_seen": "2026-11-14T08:24:22.168358+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-14T08:24:22.168358+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
+          "deferred_reason": "recovery_detail_budget",
           "past_fresh": true
         },
         {
@@ -574,7 +262,7 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_rate_limited",
+          "deferred_reason": "recovery_detail_budget",
           "past_fresh": true
         },
         {
@@ -587,46 +275,7 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_rate_limited",
-          "past_fresh": true
-        },
-        {
-          "job_id": "4482791859",
-          "first_seen": "2026-11-14T08:24:22.168358+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-14T08:24:22.168358+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
-          "past_fresh": true
-        },
-        {
-          "job_id": "4487100444",
-          "first_seen": "2026-11-15T08:03:29.455844+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-15T08:03:29.455844+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
-          "past_fresh": true
-        },
-        {
-          "job_id": "4488955203",
-          "first_seen": "2026-11-14T08:24:22.168358+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-14T08:24:22.168358+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
+          "deferred_reason": "recovery_detail_budget",
           "past_fresh": true
         },
         {
@@ -639,20 +288,7 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_rate_limited",
-          "past_fresh": true
-        },
-        {
-          "job_id": "4488922800",
-          "first_seen": "2026-11-14T08:24:22.168358+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-14T08:24:22.168358+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
+          "deferred_reason": "recovery_detail_budget",
           "past_fresh": true
         },
         {
@@ -665,20 +301,7 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_rate_limited",
-          "past_fresh": true
-        },
-        {
-          "job_id": "4484487870",
-          "first_seen": "2026-11-14T08:24:22.168358+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-14T08:24:22.168358+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
+          "deferred_reason": "recovery_detail_budget",
           "past_fresh": true
         },
         {
@@ -691,7 +314,7 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_rate_limited",
+          "deferred_reason": "recovery_detail_budget",
           "past_fresh": true
         },
         {
@@ -700,52 +323,52 @@
           "priority": "normal",
           "needs_jd": true,
           "deferred_at": "2026-11-15T21:57:24.043710+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
+          "attempted_at": "2026-11-18T08:57:05.625731+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
           "past_fresh": true
         }
       ],
       "admission": {
-        "candidates": 67,
-        "rules_skipped": 28,
+        "candidates": 20,
+        "rules_skipped": 5,
         "rule_reasons": {
-          "prefilter:senior": 27,
-          "company_excluded": 1
+          "prefilter:senior": 5
         },
         "cache_reused": 0,
-        "non_linkedin_resolved": 7,
-        "worth_detail": 17
+        "non_linkedin_resolved": 2,
+        "triage_evaluated": 5,
+        "triage_deferred": 0,
+        "worth_detail": 13
       },
       "cooldown_active": false,
       "probe": false,
       "round_request_limit": 12,
-      "round_requests": 0,
+      "round_requests": 2,
       "status": "active"
     },
     "official_enrichment": {
-      "dedicated_matches": 10,
-      "remote_exact_peer": 10,
-      "exact_indeed_peer": 1,
-      "cache": 4,
+      "cache": 3,
+      "exact_indeed_peer": 2,
+      "dedicated_matches": 2,
+      "remote_exact_peer": 2,
       "search_provider_failures": 1,
-      "no_match": 15,
-      "direct_careers": 1,
-      "search_requests": 24,
+      "no_match": 5,
+      "search_requests": 6,
       "search_provider": "bing",
-      "official_page_requests": 14,
-      "remaining_no_jd": 66
+      "official_page_requests": 0,
+      "remaining_no_jd": 13
     },
     "partial": true,
-    "blocked_reason": "blocked with HTTP 429",
-    "collected_count": 83,
-    "carried_count": 4169,
+    "blocked_reason": "focused query coverage",
+    "collected_count": 20,
+    "carried_count": 4244,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-11-17T07:55:36.571965+00:00"
+    "jd_recovery_at": "2026-11-18T08:57:20.327762+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -5085,7 +4708,20 @@
     "linkedin|id|4490684551": "2026-11-17T07:53:12.094912+00:00",
     "linkedin|id|4490135353": "2026-11-17T07:53:12.094912+00:00",
     "linkedin|id|4490944892": "2026-11-17T07:53:12.094912+00:00",
-    "linkedin|id|4490189549": "2026-11-17T07:53:12.094912+00:00"
+    "linkedin|id|4490189549": "2026-11-17T07:53:12.094912+00:00",
+    "linkedin|id|4490466422": "2026-11-18T08:56:37.422222+00:00",
+    "linkedin|id|4491547571": "2026-11-18T08:56:37.422222+00:00",
+    "linkedin|id|4458577100": "2026-09-15T17:09:12.592377+00:00",
+    "linkedin|id|4491429718": "2026-11-18T08:56:37.422222+00:00",
+    "linkedin|id|4490808576": "2026-11-18T08:56:37.422222+00:00",
+    "linkedin|id|4490802115": "2026-11-18T08:56:37.422222+00:00",
+    "linkedin|id|4491176386": "2026-11-18T08:56:37.422222+00:00",
+    "linkedin|id|4491435680": "2026-11-18T08:56:37.422222+00:00",
+    "linkedin|id|4491408375": "2026-11-18T08:56:37.422222+00:00",
+    "linkedin|id|4491781459": "2026-11-18T08:56:37.422222+00:00",
+    "linkedin|id|4491592343": "2026-11-18T08:56:37.422222+00:00",
+    "linkedin|id|4491448040": "2026-11-18T08:56:37.422222+00:00",
+    "linkedin|id|4491788380": "2026-11-18T08:56:37.422222+00:00"
   },
   "jobs": [
     {
@@ -8520,7 +8156,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4456257799",
@@ -8595,7 +8231,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4456262858",
@@ -10991,7 +10627,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4467650300",
@@ -12577,7 +12213,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4455936436",
@@ -12775,6 +12411,32 @@
       "official_search_status": "no_match",
       "source_verified_at": "2026-09-25T11:28:01.704188+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4491781459",
+      "source": "linkedin",
+      "company": "Amazon",
+      "title": "Sr. Machine Learning Engineer",
+      "location": "Seattle, WA",
+      "posted_date": "2026-11-18",
+      "aggregator_posted_date": "2026-11-18",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/sr-machine-learning-engineer-at-amazon-4491781459",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-18T08:56:37.422222+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468696310",
@@ -13230,7 +12892,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4475396011",
@@ -13718,7 +13380,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471816403",
@@ -16641,7 +16303,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4425529596",
@@ -17199,6 +16861,49 @@
       "enrichment_method": "linkedin_http"
     },
     {
+      "job_id": "4490808576",
+      "source": "linkedin",
+      "company": "Amoha Recruitment Services LLC",
+      "title": "Artificial Intelligence Engineer",
+      "location": "San Francisco Bay Area",
+      "posted_date": "2026-11-17",
+      "aggregator_posted_date": "2026-11-17",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/artificial-intelligence-engineer-at-amoha-recruitment-services-llc-4490808576",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-18T08:56:37.422222+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "21053bc04b610e5f9f8f",
+          "attempted_at": "2026-11-18T08:56:37.422222+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-18T08:57:20.327762+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Relevant AI title; role scope and experience requirements could change fit."
+      },
+      "linkedin_detail_triage_hash": "8f1ad5df293b0fc88cf8",
+      "linkedin_detail_deferred_at": "2026-11-18T08:56:37.422222+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4472788503",
       "source": "linkedin",
       "company": "Amplitude",
@@ -17430,7 +17135,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:company_excluded",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4447587557",
@@ -18237,10 +17942,10 @@
       "linkedin_detail_triage_hash": "07d2157c077cac37698a",
       "linkedin_detail_deferred_at": "2026-11-15T21:57:24.043710+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-15T21:57:24.043710+00:00",
       "verified_this_run": false,
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4484831140",
@@ -18611,7 +18316,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4449599799",
@@ -22729,7 +22434,7 @@
         }
       },
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4485097824",
@@ -24068,7 +23773,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:company_excluded",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4459262953",
@@ -27259,6 +26964,32 @@
       "official_search_status": "no_match"
     },
     {
+      "job_id": "4491788380",
+      "source": "linkedin",
+      "company": "Boston Scientific",
+      "title": "Principal AI Engineer - Agentic Solutions & Delivery",
+      "location": "Arden Hills, MN",
+      "posted_date": "2026-11-18",
+      "aggregator_posted_date": "2026-11-18",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/principal-ai-engineer-agentic-solutions-delivery-at-boston-scientific-4491788380",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-18T08:56:37.422222+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4470671979",
       "source": "linkedin",
       "company": "Boston Scientific",
@@ -27402,10 +27133,10 @@
       "linkedin_detail_triage_hash": "6af39f4dc12120d4207f",
       "linkedin_detail_deferred_at": "2026-11-15T21:57:24.043710+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-15T21:57:24.043710+00:00",
       "verified_this_run": false,
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4362406858",
@@ -30037,7 +29768,7 @@
       "enrichment_status": "deferred",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4480586635",
@@ -32727,7 +32458,7 @@
         }
       },
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4475510554",
@@ -32780,7 +32511,7 @@
         }
       },
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4480839605",
@@ -35456,7 +35187,7 @@
         }
       },
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470172563",
@@ -38520,7 +38251,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471981744",
@@ -38567,6 +38298,49 @@
       "jd_recovery_at": "2026-09-30T19:34:33.158144+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved"
+    },
+    {
+      "job_id": "4491429718",
+      "source": "linkedin",
+      "company": "Cognizant",
+      "title": "AI/ML Engineer - Agentic AI (Remote)",
+      "location": "Englewood, CO",
+      "posted_date": "2026-11-17",
+      "aggregator_posted_date": "2026-11-17",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-ml-engineer-agentic-ai-remote-at-cognizant-4491429718",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-18T08:56:37.422222+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "63b0bb16b255bf5d1bde",
+          "attempted_at": "2026-11-18T08:56:37.422222+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-18T08:57:20.327762+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Relevant AI role; seniority and hands-on agentic AI requirements are unknown."
+      },
+      "linkedin_detail_triage_hash": "c8b63d2ee28dc0d913d8",
+      "linkedin_detail_deferred_at": "2026-11-18T08:56:37.422222+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4473386667",
@@ -39563,7 +39337,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4489783011",
@@ -39589,7 +39363,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4476794745",
@@ -39814,7 +39588,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4365019669",
@@ -40173,7 +39947,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4475880448",
@@ -40507,7 +40281,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4404241480",
@@ -41261,7 +41035,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4472772286",
@@ -46634,7 +46408,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4475326917",
@@ -48294,7 +48068,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4490960068",
@@ -48330,7 +48104,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4430588949",
@@ -49028,7 +48802,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4484274600",
@@ -49614,10 +49388,10 @@
       "linkedin_detail_triage_hash": "084e6b843571a13eddf8",
       "linkedin_detail_deferred_at": "2026-11-15T21:57:24.043710+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-15T21:57:24.043710+00:00",
       "verified_this_run": false,
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4478075241",
@@ -50392,6 +50166,32 @@
       "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-09-24T15:01:40.886255+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4491592343",
+      "source": "linkedin",
+      "company": "Etsy",
+      "title": "Senior Machine Learning Engineer I, Search Ranking",
+      "location": "Brooklyn, NY",
+      "posted_date": "2026-11-17",
+      "aggregator_posted_date": "2026-11-17",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-i-search-ranking-at-etsy-4491592343",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-18T08:56:37.422222+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4466308463",
@@ -51553,6 +51353,49 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4491408375",
+      "source": "linkedin",
+      "company": "Evlo AI",
+      "title": "Machine Learning Engineer",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-11-17",
+      "aggregator_posted_date": "2026-11-17",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-evlo-ai-4491408375",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-18T08:56:37.422222+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "5de216d5ca53d0777525",
+          "attempted_at": "2026-11-18T08:56:37.422222+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-18T08:57:20.327762+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Relevant ML role; seniority and engineering focus could change fit."
+      },
+      "linkedin_detail_triage_hash": "581edb17f6ce789c4f5e",
+      "linkedin_detail_deferred_at": "2026-11-18T08:56:37.422222+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4469935653",
       "source": "linkedin",
       "company": "Evlo AI",
@@ -51935,10 +51778,10 @@
       "linkedin_detail_triage_hash": "0034eb09310e243fbc42",
       "linkedin_detail_deferred_at": "2026-11-15T21:57:24.043710+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-15T21:57:24.043710+00:00",
       "verified_this_run": false,
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4489821355",
@@ -55408,6 +55251,35 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4491547571",
+      "source": "linkedin",
+      "company": "Free Market Health",
+      "title": "AI Engineer I",
+      "location": "Pittsburgh, PA",
+      "posted_date": "2026-11-17",
+      "aggregator_posted_date": "2026-11-17",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-i-at-free-market-health-4491547571",
+      "official_url": "",
+      "description": "**Why FMH** Every day, someone receives a life\\-changing diagnosis. Getting the right medication should be straightforward \\- but too often it isn’t. Specialty medications move through a complex network of providers, health plans, pharmacies, and manufacturers. Administrative delays, disconnected systems, and limited visibility can slow treatment when time matters most. **Free Market Health exists to make that process work better.** Our technology connects stakeholders across the specialty pharmacy ecosystem, helping prescriptions reach the right pharmacy while improving visibility, reducing friction, and keeping treatment moving forward for the patients who depend on them. We focus on the most important stakeholder of all: **the patient.** **Y****our impact** Free Market Health is seeking an **AI Engineer I, Embedded AI** to join our AI \\& Data Science team and help bring practical AI solutions into day\\-to\\-day business operations. Embedded within an assigned business area, you will learn its workflows, systems, data, and priorities while helping build, deploy, and improve AI\\-enabled applications. Working alongside experienced engineers and business partners, you will gain hands\\-on experience delivering reliable solutions that improve efficiency, quality, and operational outcomes. This is an excellent opportunity for an early\\-career engineer who enjoys solving real business problems, wants exposure to modern AI engineering practices, and is motivated to grow into greater technical independence. **What** **You’ll** **Do** ### **Partner with the Business** * Develop an understanding of your assigned business area’s workflows, systems, data, priorities, and operational challenges. * Work with business users and senior team members to identify opportunities where AI, automation, or process improvements could create meaningful value. * Translate defined business problems and requirements into appropriately scoped technical tasks. * Build relationships with business users and learn how technical solutions support their day\\-to\\-day work. * Support the implementation and adoption of new AI capabilities. * Help measure outcomes such as adoption, time saved, quality improvements, reduced manual effort, and other business impact. ### **Build and Support AI Solutions** * Design, build, test, and deploy AI agents, copilots, automations, and supporting services with guidance from experienced team members. * Develop agentic workflows that connect enterprise data, APIs, applications, and tools. * Build integrations using REST APIs, Model Context Protocol, and other enterprise integration patterns. * Implement LLM application patterns such as tool calling, structured outputs, retrieval\\-augmented generation, grounding, and multi\\-step workflows. * Build retrieval solutions using structured and unstructured data, embeddings, vector search, and enterprise knowledge sources. * Develop tests and evaluations to measure AI behavior, accuracy, reliability, and task completion. * Monitor deployed solutions for reliability, quality, usage, and cost. * Apply established security, access\\-control, responsible AI, human\\-oversight, and governance practices. * Help evaluate when conventional software, automation, data solutions, or process improvements may be more appropriate than an AI\\-based solution. * Write clear, maintainable code and documentation while contributing to reusable engineering components and patterns. **What** **We’re** **Looking For** * At least one year of software engineering, data engineering, AI engineering, or comparable applied development experience. * Relevant experience may come from professional work, internships, apprenticeships, open\\-source contributions, or substantial project work. * Experience building software, automations, integrations, or AI\\-enabled applications. ### **Technical Skills** * Proficiency in Python and working knowledge of SQL. * Familiarity with Databricks or a comparable modern data platform. * Familiarity with a major public cloud platform. Azure experience is preferred. * Experience using AI\\-assisted development environments such as Cursor or Claude Code. * Understanding of LLM application patterns, including prompting, tool calling, retrieval\\-augmented generation, structured outputs, and agentic workflows. * Familiarity with Model Context Protocol and emerging agent\\-interoperability approaches. * Experience working with REST APIs. * Familiarity with Git, testing, code review, and modern software development practices. ### **Business and Collaboration Skills** * Ability to collaborate effectively with technical and non\\-technical partners. * Strong problem\\-solving skills and curiosity about how business processes work. * Ability to translate reasonably well\\-defined business problems into technical tasks with guidance. * Openness to feedback and a commitment to learning from experienced team members. * Motivation to develop increasing technical independence. * A practical, outcome\\-focused approach to technology and problem\\-solving. **Nice to Haves** * Experience with Azure AI Foundry. * Experience with LangGraph, LangChain, or similar frameworks. * Experience with vector search, embeddings, enterprise search, or RAG. * Exposure to AI evaluation, tracing, or monitoring. * Exposure to CI/CD practices and production deployment. * Familiarity with AI security, governance, responsible AI, and human\\-in\\-the\\-loop patterns. * Experience working in healthcare or another regulated industry. **Life at FMH** We’re building more than a company. We’re building a team of ambitious, curious people who are passionate about solving meaningful problems, growing their careers, and genuinely enjoying the journey together. Based in Pittsburgh’s Strip District, FMH draws inspiration from the city we call home. Our value of Grit isn’t just a word on a wall. It’s a mindset inspired by the city around us: **showing up, rolling up our sleeves, and finding a way forward no matter the challenge.** As FMH continues to grow, so do the opportunities for our people to leave their mark. Guided by our core values of **Integrity, Adaptability, Grit, and Collaboration**, we foster an environment where trust is earned, new ideas are welcomed, challenges are embraced, and success is shared. You will be surrounded by people who care deeply about the work they do and the people they do it with. **Together, we’re building something special, and we’re just getting started.** **Benefits** * Unlimited PTO * 100% employer\\-paid individual medical, dental, and vision premiums * Employer HSA contribution * Paid parental leave * 401(k) match * Transportation and parking benefits * Flexible, collaborative work environment *Benefit eligibility is based on employment status.* **Build What’s Next With Us** Healthcare is evolving \\- **and so are we.** If you’re excited by meaningful challenges, collaborative teammates, and the opportunity to help build a growing healthcare technology company, we’d love to hear from you. **Equal Opportunity Employer** Free Market Health is proud to be an Equal Opportunity Employer. We believe that a diverse and inclusive workplace makes us better teammates and problem solvers and we encourage all qualified individuals to apply. Employment decisions are based on business needs, qualifications, and merit. FMH is also committed to providing reasonable accommodations throughout the hiring process. If you require assistance or accommodation due to a disability, we will work with you to meet your needs.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-18T08:56:37.422222+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "jd_recovery_at": "2026-11-18T08:56:37.422222+00:00",
+      "enrichment_method": "exact_indeed_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4470438852",
       "source": "linkedin",
       "company": "Freedom Behavioral",
@@ -57806,7 +57678,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4414938751",
@@ -59387,7 +59259,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-17T07:53:12.094912+00:00",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4479394463",
@@ -60084,7 +59956,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-17T07:53:12.094912+00:00",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4430382893",
@@ -60221,7 +60093,7 @@
       "title": "Senior Software Engineer, Machine Learning, Applied AI",
       "location": "Kirkland, WA",
       "posted_date": "2026-10-27",
-      "aggregator_posted_date": "2026-10-27",
+      "aggregator_posted_date": "2026-11-17",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-machine-learning-applied-ai-at-google-4483636074",
@@ -60235,19 +60107,18 @@
           "ai engineer"
         ]
       },
-      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "application_url": "https://www.google.com/about/careers/applications/jobs/results/82989677698523846-senior-software-engineer-machine-learning-applied-ai",
-      "official_search_verified": true,
-      "official_jd_fetched_at": "2026-10-28T05:56:19.380067+00:00",
-      "jd_recovery_at": "2026-10-28T05:56:19.380067+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "enrichment_method": "board_cache",
       "enrichment_status": "resolved",
+      "jd_recovery_at": "2026-10-28T05:56:19.380067+00:00",
       "official_search_status": "resolved",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-18T08:56:37.422222+00:00",
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-28T05:56:19.380067+00:00",
-      "source_verified_at": "2026-10-28T05:56:19.380067+00:00",
-      "verified_this_run": false
+      "application_url": "https://www.google.com/about/careers/applications/jobs/results/82989677698523846-senior-software-engineer-machine-learning-applied-ai",
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4483035376",
@@ -60518,6 +60389,40 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T19:15:15.514315+00:00",
       "official_search_status": "deferred"
+    },
+    {
+      "job_id": "4491448040",
+      "source": "linkedin",
+      "company": "Google",
+      "title": "Software Engineer III, AI Agent Architecture",
+      "location": "Irvine, CA",
+      "posted_date": "2026-11-17",
+      "aggregator_posted_date": "2026-11-17",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-iii-ai-agent-architecture-at-google-4491448040",
+      "official_url": "",
+      "description": "Google Cloud's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. We're looking for engineers who bring fresh ideas from all areas, including information retrieval, distributed computing, large-scale system design, networking and data storage, security, artificial intelligence, natural language processing, UI design and mobile; the list goes on and is growing every day. As a software engineer, you will work on a specific project critical to Google Cloud's needs with opportunities to switch teams and projects as you and our fast-paced business grow and evolve. You will anticipate our customer needs and be empowered to act like an owner, take action and innovate. We need our engineers to be versatile, display leadership qualities and be enthusiastic to take on new problems across the full-stack as we continue to push technology forward. Enterprise General Intelligence is the core AI platform and innovation team. We build the agent infrastructure, auto-learning loops, human-in-the-loop platforms, and intelligent applications that automate and augment mission-critical enterprise workflows across Google Cloud, Alphabet Finance, and Global Business Operations. Google Cloud accelerates every organization’s ability to digitally transform its business and industry. We deliver enterprise-grade solutions that leverage Google’s cutting-edge technology, and tools that help developers build more sustainably. Customers in more than 200 countries and territories turn to Google Cloud as their trusted partner to enable growth and solve their most critical business problems. Individual pay is determined by factors including job-related skills, experience, and relevant education or training. US: $147000 - $210000 (USD) + 15% bonus target + equity + benefits Learn more about benefits at Google . Build solutions primarily using the GCP AI Stack. Manage individual project priorities, deadlines, and deliverables, producing high-quality code and engineering artifacts. Contribute to the design of agent architectures, prompts, and interaction models, often in collaboration with senior engineers. Develop and utilize frameworks for evaluating agent performance and overall effectiveness. Design, develop, test, deploy, maintain, and improve AI agent systems and components. Minimum qualifications: Bachelor’s degree or equivalent practical experience. 2 years of experience with software development in one or more programming languages, or 1 year of experience with an advanced degree. 1 year of experience with one or more of the following: Speech/audio (e.g., technology duplicating and responding to the human voice), reinforcement learning (e.g., sequential decision making), ML infrastructure, or specialization in another ML field. 1 year of experience with end-to-end Machine Learning (e.g., model deployment, model evaluation, data processing, debugging). Preferred qualifications: Master's degree or PhD in Computer Science or related technical fields. Experience in Machine Learning, Deep Learning, or Artificial Intelligence. Experience in Generative AI agent development. Experience in building products or solutions using Large Language Models (LLMs).",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-18T08:56:37.422222+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://www.google.com/about/careers/applications/jobs/results/81598080377332422-software-engineer-iii-ai-agent-architecture",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-18T08:56:37.422222+00:00",
+      "jd_recovery_at": "2026-11-18T08:56:37.422222+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-18T08:56:37.422222+00:00",
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469693678",
@@ -63048,7 +62953,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4486185996",
@@ -63100,7 +63005,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468260532",
@@ -63661,7 +63566,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469019390",
@@ -64135,7 +64040,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4490611232",
@@ -64161,7 +64066,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4483156837",
@@ -64239,7 +64144,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4490604499",
@@ -64265,7 +64170,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4480174295",
@@ -64335,7 +64240,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471774448",
@@ -66666,7 +66571,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468124168",
@@ -67364,7 +67269,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4401128372",
@@ -67495,7 +67400,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4369769068",
@@ -67969,7 +67874,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-17T07:53:12.094912+00:00",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4489421005",
@@ -68037,7 +67942,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-17T07:53:12.094912+00:00",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4489410685",
@@ -68105,7 +68010,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-17T07:53:12.094912+00:00",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4476117968",
@@ -68192,7 +68097,7 @@
       "official_jd_fetched_at": "2026-10-03T19:00:17.057219+00:00",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470902689",
@@ -70937,10 +70842,10 @@
       "linkedin_detail_triage_hash": "50940de36d4c7deda417",
       "linkedin_detail_deferred_at": "2026-11-15T21:57:24.043710+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-15T21:57:24.043710+00:00",
       "verified_this_run": false,
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4472033860",
@@ -72608,6 +72513,52 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4491435680",
+      "source": "linkedin",
+      "company": "KPMG US",
+      "title": "Associate, AI Engineer",
+      "location": "Atlanta, GA",
+      "posted_date": "2026-11-18",
+      "aggregator_posted_date": "2026-11-18",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/associate-ai-engineer-at-kpmg-us-4491435680",
+      "official_url": "",
+      "description": "The KPMG Advisory practice is at the forefront of transformation, offering excellent opportunities for individuals to advance their careers and expertise with KPMG. Looking ahead, we anticipate continued evolution and success within the practice, fostering both personal and professional development, thereby creating new pathways for growth. In this ever-changing market environment, our professionals must be adaptable and thrive in a collaborative, team-driven culture. At KPMG, our people are our number one priority. With a wealth of learning and career development opportunities, a world-class training facility, and leading market tools, we help our people continue to grow both professionally and personally. If you're looking for a firm with a strong team connection where you can be your whole self, have an impact, advance your skills, deepen your experiences, and have the flexibility and access to constantly find new areas of inspiration and expand your capabilities, then consider a career in Advisory. KPMG is currently seeking an Associate, AI Engineer to join our Advisory Services practice. Responsibilities: Develop GenAI / LLM applications and integrations using foundational models under the guidance of senior team members Develop and test AI models, conversational agents, and workflow automation components under the guidance of senior team members Assist with data preparation, transformation, and validation to support AI/ML model training and deployment Configure and integrate AI solutions into enterprise applications (CRM, ERP, collaboration tools) using cloud platforms Document processes, code, and technical workflows to support knowledge sharing and project continuity; collaborate with project teams to troubleshoot technical issues and ensure solutions meet client requirements Stay current on emerging AI tools and frameworks, experimenting and applying them to real-world client projects Act with integrity, professionalism, and personal responsibility to uphold KPMG's respectful and courteous work environment Qualifications: Minimum one years of recent professional or academic experience in AI/ML, data science, software engineering, or cloud technologies Bachelor's degree from an accredited college or university in computer science, data science, engineering, or related field; Master's degree from an accredited college or university a plus Experience with at least one major cloud AI platform (Azure AI, AWS AI/Bedrock, or Google Cloud Vertex AI) Proficiency in Python or another programming language commonly used in AI/ML Familiarity with conversational AI frameworks (LLM's, chatbots, virtual assistants, agents) and APIs Strong analytical skills and attention to detail with the ability to work in a team-based, client-focused environment Ability to travel as required Applicants must be authorized to work in the U.S. without the need for employment-based visa sponsorship now or in the future; KPMG LLP will not sponsor applicants for U.S. work visa status for this opportunity (no sponsorship is available for H-1B, L-1, TN, O-1, E-3, H-1B1, F-1, J-1, OPT, CPT or any other employment-based visa) KPMG LLP and its affiliates and subsidiaries (“KPMG”) complies with all local/state regulations regarding displaying salary ranges. If required, the ranges displayed below or via the URL below are specifically for those potential hires who will work in the location(s) listed. Any offered salary is determined based on relevant factors such as applicant's skills, job responsibilities, prior relevant experience, certain degrees and certifications and market considerations. In addition, KPMG LLP is proud to offer a comprehensive, competitive benefits package, with options designed to help you make the best decisions for yourself, your family, and your lifestyle. Available benefits are based on eligibility. Depending on job classification, standard work hours, and years of service, KPMG LLP provides a Total Rewards Package that includes 401(k) and medical and may include dental, vision, disability and life insurance, personal well-being and Personal Time Off. Additionally, each year KPMG publishes a calendar of holidays to be observed during the year depending on your job classification and entity affiliation. Additional details about our benefits can be found towards the bottom of our KPMG US Careers site at Benefits & How We Work. Follow this link to obtain salary ranges by city outside of CA: https://kpmg.com/us/en/how-we-work/pay-transparency.html/?id=M101ADV_6_26 KPMG LLP and its affiliates and subsidiaries (\"KPMG\") is an equal opportunity employer. KPMG complies with all applicable federal, state, and local laws regarding recruitment and hiring. All qualified applicants are considered for employment without regard to race/ethnicity, color, creed, religion, age, sex/gender, national origin, ancestry, citizenship status, marital status, sexual orientation, gender identity or expression, disability, pregnancy, childbirth or other related condition, military/veteran status, genetic information, status as a victim of domestic violence or sexual abuse or any other legally protected status. The attached link contains further information regarding the firm's compliance with federal, state, and local recruitment and hiring laws. KPMG recruits on a rolling basis. Candidates are considered as they apply, until the opportunity is filled. Candidates are encouraged to apply expeditiously to any role(s) for which they are qualified that is also of interest to them. Los Angeles County applicants: Material job duties for this position are listed above. Criminal history may have a direct, adverse, and negative relationship with some of the material job duties of this position. These include the duties and responsibilities listed above, as well as the abilities to adhere to company policies, exercise sound judgment, effectively manage stress and work safely and respectfully with others, exhibit trustworthiness, and safeguard business operations and company reputation. Pursuant to the California Fair Chance Act, Los Angeles County Fair Chance Ordinance for Employers, Fair Chance Initiative for Hiring Ordinance, and San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-18T08:56:37.422222+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "9584eba2e8034f7bd74c",
+          "attempted_at": "2026-11-18T08:56:37.422222+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-18T08:56:37.422222+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "Associate AI role matches target seniority; qualifications and responsibilities remain unclear."
+      },
+      "linkedin_detail_triage_hash": "b383cb371d47f497a1b0",
+      "linkedin_detail_attempted_at": "2026-11-18T08:57:05.625731+00:00",
+      "linkedin_detail_fetched_at": "2026-11-18T08:57:05.625731+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4484904214",
       "source": "linkedin",
       "company": "Kalepa",
@@ -72835,7 +72786,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4451975420",
@@ -74309,7 +74260,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4473372532",
@@ -74645,6 +74596,32 @@
       "recovery_methods": {},
       "source_verified_at": "2026-11-01T20:00:46.767463+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4490802115",
+      "source": "linkedin",
+      "company": "Liine",
+      "title": "Senior Machine Learning Engineer",
+      "location": "Raleigh, NC",
+      "posted_date": "2026-11-17",
+      "aggregator_posted_date": "2026-11-17",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-machine-learning-engineer-at-liine-4490802115",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-18T08:56:37.422222+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468783529",
@@ -76916,7 +76893,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4490143935",
@@ -76942,7 +76919,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469336564",
@@ -79872,10 +79849,10 @@
       "linkedin_detail_triage_hash": "ef9c1b70c7b4a44de58b",
       "linkedin_detail_deferred_at": "2026-11-15T21:57:24.043710+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-15T21:57:24.043710+00:00",
       "verified_this_run": false,
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4473763712",
@@ -79998,7 +79975,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4475307861",
@@ -81638,6 +81615,49 @@
       "recovery_status": "filtered"
     },
     {
+      "job_id": "4491176386",
+      "source": "linkedin",
+      "company": "Murphy USA",
+      "title": "AI/Machine Learning Engineer",
+      "location": "El Dorado, AR",
+      "posted_date": "2026-11-17",
+      "aggregator_posted_date": "2026-11-17",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-machine-learning-engineer-at-murphy-usa-4491176386",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-18T08:56:37.422222+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "b924e4e27a6a2f83b512",
+          "attempted_at": "2026-11-18T08:56:37.422222+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-18T08:57:20.327762+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Relevant ML role; required experience and applied responsibilities are unknown."
+      },
+      "linkedin_detail_triage_hash": "bd2fd6fdf7e22756f22e",
+      "linkedin_detail_deferred_at": "2026-11-18T08:56:37.422222+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4482483213",
       "source": "linkedin",
       "company": "MyOme",
@@ -82911,7 +82931,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-17T07:53:12.094912+00:00",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4489548323",
@@ -82981,7 +83001,7 @@
       "title": "Applied AI Engineer",
       "location": "New York, NY",
       "posted_date": "2026-10-04",
-      "aggregator_posted_date": "2026-10-04",
+      "aggregator_posted_date": "2026-11-17",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/applied-ai-engineer-at-nyu-langone-health-4429630004",
@@ -82996,8 +83016,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-05T05:25:02.062366+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470662511",
@@ -83485,7 +83505,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-17T07:53:12.094912+00:00",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461136761",
@@ -83601,7 +83621,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-17T07:53:12.094912+00:00",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4473368880",
@@ -83891,7 +83911,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4354022361",
@@ -85912,7 +85932,7 @@
       "official_jd_fetched_at": "2026-10-04T20:38:30.474792+00:00",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4417168161",
@@ -87380,7 +87400,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4472723573",
@@ -88305,7 +88325,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4472729300",
@@ -89387,7 +89407,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4490906178",
@@ -89413,7 +89433,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4458776940",
@@ -91023,7 +91043,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4481203728",
@@ -91270,7 +91290,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4491113135",
@@ -91296,7 +91316,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4487713237",
@@ -92044,7 +92064,7 @@
       "title": "Machine Learning Engineer",
       "location": "Annapolis Junction, MD",
       "posted_date": "2026-11-14",
-      "aggregator_posted_date": "2026-11-14",
+      "aggregator_posted_date": "2026-11-17",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-at-peraton-4481937260",
@@ -92060,8 +92080,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:company_excluded",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-15T08:03:29.455844+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469933806",
@@ -92789,7 +92809,7 @@
       "official_jd_fetched_at": "2026-10-03T19:00:17.057219+00:00",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4182358258",
@@ -93097,7 +93117,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4416252959",
@@ -95854,7 +95874,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469009469",
@@ -99954,7 +99974,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4460335262",
@@ -100029,7 +100049,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4415351613",
@@ -101677,7 +101697,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-17T07:53:12.094912+00:00",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4490146444",
@@ -101712,7 +101732,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-17T07:53:12.094912+00:00",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4463470511",
@@ -106003,6 +106023,36 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4490466422",
+      "source": "linkedin",
+      "company": "Signature Aviation",
+      "title": "Senior Engineer, AI Platforms",
+      "location": "Orlando, FL",
+      "posted_date": "2026-11-17",
+      "aggregator_posted_date": "2026-11-17",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-engineer-ai-platforms-at-signature-aviation-4490466422",
+      "official_url": "",
+      "description": "At Signature Aviation, we are modernizing operations and customer experiences through technology and AI. We are seeking a Senior Engineer – AI Platforms to help design, build, and implement AI\\-driven solutions that support intelligent automation, predictive insights, and AI\\-enabled workflows. In this role, you will contribute to the development of LLM\\-based applications and AI integrations across enterprise platforms, partnering closely with architects, product teams, and data teams to deliver secure, scalable, and responsible AI solutions.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-18T08:56:37.422222+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "jd_recovery_at": "2026-11-18T08:56:37.422222+00:00",
+      "enrichment_method": "exact_indeed_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4471506051",
       "source": "linkedin",
       "company": "Signify Technology",
@@ -108799,10 +108849,10 @@
       "linkedin_detail_triage_hash": "7f1ae16060ea642f37d6",
       "linkedin_detail_deferred_at": "2026-11-15T21:57:24.043710+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-15T21:57:24.043710+00:00",
       "verified_this_run": false,
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "enrichment_failure_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "recovery_detail_budget"
     },
     {
       "job_id": "4444041916",
@@ -109394,7 +109444,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-c%2B%2B-raptor-at-spacex-4430167628",
       "official_url": "",
-      "description": "",
+      "description": "SpaceX was founded under the belief that a future where humanity is out exploring the stars is fundamentally more exciting than one where we are not. Today SpaceX is actively developing the technologies to make this possible, with the ultimate goal of enabling human life on Mars. SOFTWARE ENGINEER, C++ (RAPTOR) We are looking for exceptional C++ software engineers who thrive on building high-performance, reliable systems that directly impact production speed and quality. Our team develops the core real-time software that powers advanced metal additive manufacturing machines for Raptor engines. In this role, you will own critical software across controls, data acquisition, build logic, and in-situ monitoring — turning complex engineering designs into flight-ready hardware at scale. You will architect production-grade C++ systems that push the limits of speed, precision, and reliability in one of the world’s most demanding manufacturing environments. Responsibilities Architect and develop high-performance C++ software for production-scale manufacturing systems Design and implement real-time control software, data acquisition pipelines, and monitoring algorithms Collaborate closely with controls, automation, and hardware engineers to integrate software with motion systems, sensors, and laser hardware Continuously improve system reliability, speed, and quality through elegant software solutions Participate in design reviews, code reviews, and architecture discussions to maintain exceptional code quality and best practices Provide first-principles solutions to production engineering challenges, rapidly iterating from concept to deployed software Basic Qualifications Bachelor’s degree in computer science, engineering, math, or related STEM discipline and 2+ years of professional software development experience; OR 4+ years of professional C++ development experience in lieu of a degree Strong experience writing production-grade, high-performance C++ code Experience with modern CI/CD tools and Linux environments Preferred Skills And Experience Experience with real-time or embedded systems development Familiarity with libraries such as QT, Boost, VTK, CUDA, or build tools like CMake Experience with microcontrollers, FPGAs, or hardware-software integration Background in manufacturing systems, controls software, or additive manufacturing processes (laser powder bed fusion or similar) Compensation And Benefits Pay range: Level I: $120,000.00 - $145,000.00/per year Level II: $140,000.00 - $170,000.00/per year Your actual level and base salary will be determined on a case-by-case basis and may vary based on the following considerations: job-related knowledge and skills, education, and experience. Base salary is just one part of your total rewards package at SpaceX. You may also be eligible for long-term incentives, in the form of company stock, stock options, or long-term cash awards, as well as potential discretionary bonuses and the ability to purchase additional stock at a discount through an Employee Stock Purchase Plan. You will also receive access to comprehensive medical, vision, and dental coverage, access to a 401(k) retirement plan, short and long-term disability insurance, life insurance, paid parental leave, and various other discounts and perks. You may also accrue 3 weeks of paid vacation and will be eligible for 10 or more paid holidays per year. Employees accrue paid sick leave pursuant to Company policy which satisfies or exceeds the accrual, carryover, and use requirements of the law. Itar Requirements To conform to U.S. Government export regulations, applicant must be a (i) U.S. citizen or national, (ii) U.S. lawful, permanent resident (aka green card holder), (iii) Refugee under 8 U.S.C. 1157, or (iv) Asylee under 8 U.S.C. 1158, or be eligible to obtain the required authorizations from the U.S. Department of State. Learn more about the ITAR here. SpaceX is an Equal Opportunity Employer; employment with SpaceX is governed on the basis of merit, competence and qualifications and will not be influenced in any manner by race, color, religion, gender, national origin/ethnicity, veteran status, disability status, age, sexual orientation, gender identity, marital status, mental or physical disability or any other legally protected status. Applicants wishing to view a copy of SpaceX’s Affirmative Action Plan for veterans and individuals with disabilities, or applicants requiring reasonable accommodation to the application/interview process should reach out to EEOCompliance@spacex.com .",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-15T21:57:24.043710+00:00",
@@ -109420,11 +109470,13 @@
       },
       "linkedin_detail_triage_hash": "0e45f21541c07b1091ca",
       "linkedin_detail_deferred_at": "2026-11-15T21:57:24.043710+00:00",
-      "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-11-15T21:57:24.043710+00:00",
       "verified_this_run": false,
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "linkedin_detail_attempted_at": "2026-11-18T08:57:05.625731+00:00",
+      "linkedin_detail_fetched_at": "2026-11-18T08:57:05.625731+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4384543380",
@@ -109789,7 +109841,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470439877",
@@ -110411,7 +110463,7 @@
       "title": "senior engineer, AI (Nashville, TN)",
       "location": "Nashville, TN",
       "posted_date": "2026-09-26",
-      "aggregator_posted_date": "2026-11-08",
+      "aggregator_posted_date": "2026-11-17",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-engineer-ai-nashville-tn-at-starbucks-4471044729",
@@ -110426,8 +110478,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-11-08T20:00:38.552738+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4445407063",
@@ -111814,7 +111866,7 @@
       "official_jd_fetched_at": "2026-10-30T05:09:06.244547+00:00",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4487549890",
@@ -112169,13 +112221,47 @@
       "enrichment_deferred_reason": "linkedin_detail_round_budget"
     },
     {
+      "job_id": "4458577100",
+      "source": "linkedin",
+      "company": "Stripe",
+      "title": "Staff Machine Learning Engineer, Financial Connections",
+      "location": "New York, NY",
+      "posted_date": "2026-11-18",
+      "aggregator_posted_date": "2026-11-18",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/staff-machine-learning-engineer-financial-connections-at-stripe-4458577100",
+      "official_url": "",
+      "description": "<h2 id=\"who-we-are\"><strong>Who we are</strong></h2> <h3 id=\"about-the-team\"><strong>About the team</strong></h3> <p>Financial Connections is Stripe's open banking platform, enabling businesses to securely access consumer-permissioned financial data. Our platform connects to thousands of financial institutions, powering use cases from account verification to risk assessment to personal financial management. Across the Financial Connections Engineering org, we focus on delivering high-quality, enriched bank data at scale — building the ML systems that transform raw financial data into actionable signals for both internal Stripe teams and external merchants.</p> <p>Our ML work spans transaction categorization, risk scoring, data enrichment, and the development of intelligent systems that improve data quality across our network. We operate at the intersection of fintech infrastructure and applied machine learning, solving problems that directly impact Stripe's ability to serve millions of businesses and consumers.</p> <h2 id=\"what-youll-do\"><strong>What you'll do</strong></h2> <p>We're looking for machine learning engineers who want to build intelligent systems that provide financial data at scale. You'll play a key role in designing, training, and deploying ML models that improve the quality, accuracy, and usefulness of financial data across Stripe's ecosystem.</p> <h3 id=\"responsibilities\"><strong>Responsibilities</strong></h3> <ul> <li>Design, build, train, evaluate, deploy, and own ML models in production that improve transaction categorization, risk scoring, and data enrichment across Financial Connections</li> <li>Design and build large-scale ML systems that operate on diverse financial data from thousands of institutions</li> <li>Experiment and iterate on ML models (using tools such as PyTorch, TensorFlow, XGBoost) to achieve key business goals around data quality and accuracy</li> <li>Develop pipelines and automated processes to train and evaluate models in offline and online environments</li> <li>Integrate ML models into production systems and ensure their scalability and reliability</li> <li>Collaborate with product, data science, and engineering partners across Stripe to identify opportunities where ML can improve outcomes for merchants and consumers</li> <li>Engage with the latest ML/AI developments and take calculated risks in transforming innovative ideas into productionized solutions</li> <li>Mentor engineers and contribute to a strong ML engineering culture within the team</li> </ul> <h2 id=\"who-you-are\"><strong>Who you are</strong></h2> <p>We're looking for someone who meets the minimum requirements to be considered for the role. If you meet these requirements, you are encouraged to apply. The preferred qualifications are a bonus, not a requirement.</p> <h3 id=\"minimum-requirements\"><strong>Minimum requirements</strong></h3> <ul> <li>10+ years of industry experience building and shipping ML systems in production</li> <li>Proficient with ML libraries and frameworks such as PyTorch, TensorFlow, XGBoost, as well as Spark</li> <li>Hands-on experience in designing, training, and evaluating machine learning models</li> <li>Hands-on experience in productionizing and deploying models at scale</li> <li>Hands-on experience in orchestrating data pipelines and efficiently leveraging large-scale datasets</li> <li>Strong collaboration skills and the ability to work across teams and contribute to peers' success</li> <li>Ability to thrive with a high level of autonomy and responsibility and an entrepreneurial mindset</li> </ul> <h3 id=\"preferred-qualifications\"><strong>Preferred qualifications</strong></h3> <ul> <li>MS or PhD degree in ML/AI or a related field (e.g., math, physics, statistics, computer science)</li> <li>Experience in fintech, open banking, or financial data domains</li> <li>Experience with NLP, LLMs, or text classification at scale</li> <li>Experience in adversarial or noisy-data domains such as fraud detection, risk modeling, or data quality</li> <li>Proven track record of building and deploying ML systems that have effectively solved ambiguous business problems</li> <li>Experience with deep learning architectures, including transformers</li> </ul>",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-15T17:09:12.592377+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://stripe.com/jobs/search?gh_jid=8148653",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-18T08:56:37.422222+00:00",
+      "jd_recovery_at": "2026-11-18T08:56:37.422222+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-18T08:56:37.422222+00:00",
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4458578088",
       "source": "linkedin",
       "company": "Stripe",
       "title": "Staff Machine Learning Engineer, Financial Connections",
       "location": "San Francisco, CA",
       "posted_date": "2026-09-23",
-      "aggregator_posted_date": "2026-09-28",
+      "aggregator_posted_date": "2026-11-18",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/staff-machine-learning-engineer-financial-connections-at-stripe-4458578088",
@@ -112190,8 +112276,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-09-29T05:14:01.400356+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4458583072",
@@ -112216,7 +112302,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4490575347",
@@ -113039,7 +113125,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469287739",
@@ -116282,7 +116368,7 @@
       "title": "Generative AI & Machine Learning Engineer",
       "location": "McLean, VA",
       "posted_date": "2026-10-05",
-      "aggregator_posted_date": "2026-10-27",
+      "aggregator_posted_date": "2026-11-17",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/generative-ai-machine-learning-engineer-at-thomson-reuters-4349250403",
@@ -116305,9 +116391,8 @@
       "official_jd_fetched_at": "2026-10-28T05:56:19.380067+00:00",
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-06T05:42:20.415919+00:00",
-      "application_url": "https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/United-States-of-America-McLean-Virginia/Generative-AI---Machine-Learning-Engineer_JREQ193871?Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=d903bb3fedad45039383f6de334ad4db&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=d4afdeb461d446e4babd204bd102dba8&Location_Country=6cb77610a8a543aea2d6bc10457e35d4",
-      "source_verified_at": "2026-10-28T05:56:19.380067+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4473817939",
@@ -116594,7 +116679,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4465163059",
@@ -117784,7 +117869,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-17T07:53:12.094912+00:00",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469052004",
@@ -118088,7 +118173,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4490117631",
@@ -118134,7 +118219,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4475395812",
@@ -120473,7 +120558,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4481248748",
@@ -122324,7 +122409,7 @@
       "title": "Staff Machine Learning Engineer - Applied AI",
       "location": "San Francisco, CA",
       "posted_date": "2026-10-27",
-      "aggregator_posted_date": "2026-10-27",
+      "aggregator_posted_date": "2026-11-17",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/staff-machine-learning-engineer-applied-ai-at-uber-4458562159",
@@ -122339,17 +122424,17 @@
         ]
       },
       "recovery_methods": {},
-      "application_url": "https://jobs.uber.com/en/jobs/145860",
-      "official_search_verified": true,
-      "official_jd_fetched_at": "2026-10-28T05:56:19.380067+00:00",
-      "jd_recovery_at": "2026-10-28T05:56:19.380067+00:00",
-      "enrichment_method": "remote_exact_peer",
+      "enrichment_method": "board_cache",
       "enrichment_status": "resolved",
+      "jd_recovery_at": "2026-10-28T05:56:19.380067+00:00",
       "official_search_status": "resolved",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-18T08:56:37.422222+00:00",
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-28T05:56:19.380067+00:00",
-      "source_verified_at": "2026-10-28T05:56:19.380067+00:00",
-      "verified_this_run": false
+      "application_url": "https://jobs.uber.com/en/jobs/145860",
+      "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4489930684",
@@ -122938,7 +123023,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469961670",
@@ -123327,7 +123412,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4449233515",
@@ -123378,7 +123463,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468906267",
@@ -128761,7 +128846,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4437900105",
@@ -128786,7 +128871,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4445763464",
