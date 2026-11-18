@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-18 08:21 PST
-- Snapshot (UTC): 2026-11-18T16:21:09.476318+00:00
-- Jobs: 84 (Tier A/B only)
-- Last 24 hours: 49
-- Last 3 days: 84
+- Updated (PT): 2026-11-18 12:25 PST
+- Snapshot (UTC): 2026-11-18T20:25:26.084387+00:00
+- Jobs: 86 (Tier A/B only)
+- Last 24 hours: 51
+- Last 3 days: 86
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -76,6 +76,8 @@ The 7-day dump is `latest.md`.
 | B | 75 | linkedin | Evlo AI | Software Engineer - Full Stack | Raleigh, NC | 2026-11-15 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-evlo-ai-4490246260) |
 | B | 75 | linkedin | Murphy USA | AI/Machine Learning Engineer | El Dorado, AR | 2026-11-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-machine-learning-engineer-at-murphy-usa-4491176386) |
 | B | 75 | linkedin | Arup | AI/ML Engineer | New York, NY | 2026-11-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-arup-4489754221) |
+| B | 75 | linkedin | Column | Software Engineer | San Francisco, CA | 2026-11-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-column-4491752462) |
+| B | 75 | linkedin | Crypto.com | Software Engineer, Prediction Markets Platform | Chicago, IL | 2026-11-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-prediction-markets-platform-at-crypto-com-4481889667) |
 | B | 75 | linkedin | Commence | AI/ML Engineer | Washington, DC | 2026-11-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-commence-4490950170) |
 | B | 75 | linkedin | Imprint | Software Engineer, Backend | New York, NY | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-backend-at-imprint-4490944892) |
 | B | 75 | linkedin | Brady Corporation | Software Engineer | Plymouth, MN | 2026-11-15 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-brady-corporation-4489382522) |

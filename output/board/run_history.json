@@ -2,6 +2,160 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-11-18T20:25:26.084387+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 1,
+      "cache_reused": 373,
+      "peer_reused": 0,
+      "same_content_reused": 2,
+      "non_material_change_reused": 0,
+      "new_or_changed": 1,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1800,
+      "requests": 1,
+      "input_tokens": 4323,
+      "cached_input_tokens": 0,
+      "output_tokens": 417,
+      "reasoning_tokens": 330,
+      "estimated_usd": 0.000641,
+      "latency_seconds": 7.226,
+      "latency_measured": true,
+      "effective_rpm": 8.3,
+      "effective_tpm": 39357.87,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 1,
+      "funnel": {
+        "after_dedup": 8809,
+        "after_company": 8266,
+        "after_hard_filter": 7641,
+        "after_prefilter": 2582,
+        "official_duplicates_suppressed": 408,
+        "retry_only_carried": 0,
+        "dropped": 6018
+      },
+      "output": {
+        "tier_a": 47,
+        "tier_b": 174,
+        "ab_before_cap": 221,
+        "shown": 221,
+        "new_jobs": 26,
+        "new_jobs_added": 2,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 10,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 16,
+            "added": 2
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 3481,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 53,
+          "identity_needed": 46,
+          "identities_resolved": 23,
+          "cache_reused": 1,
+          "http_requests": 33,
+          "jds_resolved": 8,
+          "direct_http_resolved": 8,
+          "remaining_no_jd": 3481,
+          "failure_reasons": {
+            "linkedin_rate_limited": 7
+          }
+        },
+        "remaining_no_jd": 3433,
+        "failure_reasons": {
+          "no_enrichment_path": 2838,
+          "linkedin_rate_limited": 162,
+          "linkedin_http_429": 6,
+          "official_detail_deferred": 46,
+          "linkedin_http_network_error": 2,
+          "indeed_detail_missing_or_thin": 1,
+          "glassdoor_detail_http_403_static_card_only": 378
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5483945008",
+              "company": "Anthropic",
+              "title": "Applied AI Engineer, Commercial"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 7.226,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 4323,
+            "cached_input_tokens": 0,
+            "output_tokens": 417,
+            "reasoning_tokens": 330,
+            "estimated_usd": 0.000641
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5483945008",
+              "match_score": 70.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM systems",
+                "Agent and evaluation engineering"
+              ],
+              "main_gaps": [
+                "4+ years experience",
+                "Customer-facing technical engagements"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-11-18T16:21:09.476318+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -31301,174 +31455,6 @@
                 "Trino, Exasol, ClickHouse, and dbt",
                 "24-month lakehouse platform experience"
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-11-12T10:01:23.485260+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 2,
-      "cache_reused": 378,
-      "peer_reused": 1,
-      "same_content_reused": 11,
-      "non_material_change_reused": 0,
-      "new_or_changed": 2,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 2
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1678,
-      "requests": 1,
-      "input_tokens": 4961,
-      "cached_input_tokens": 0,
-      "output_tokens": 412,
-      "reasoning_tokens": 285,
-      "estimated_usd": 0.000702,
-      "latency_seconds": 5.218,
-      "latency_measured": true,
-      "effective_rpm": 11.5,
-      "effective_tpm": 61782.29,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 1,
-      "primary_batches_total": 1,
-      "batches_attempted": 1,
-      "batches_succeeded": 1,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 2,
-      "funnel": {
-        "after_dedup": 8586,
-        "after_company": 8022,
-        "after_hard_filter": 7412,
-        "after_prefilter": 2502,
-        "official_duplicates_suppressed": 444,
-        "retry_only_carried": 0,
-        "dropped": 5871
-      },
-      "output": {
-        "tier_a": 41,
-        "tier_b": 177,
-        "ab_before_cap": 218,
-        "shown": 218,
-        "new_jobs": 34,
-        "new_jobs_added": 11,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 10,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 24,
-            "added": 11
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 3289,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 71,
-          "identity_needed": 62,
-          "http_requests": 62,
-          "identities_resolved": 46,
-          "jds_resolved": 3,
-          "direct_http_resolved": 3,
-          "remaining_no_jd": 3289,
-          "failure_reasons": {
-            "no_direct_or_official_url": 9
-          }
-        },
-        "remaining_no_jd": 3247,
-        "failure_reasons": {
-          "no_enrichment_path": 2671,
-          "linkedin_rate_limited": 135,
-          "linkedin_http_429": 6,
-          "official_detail_deferred": 46,
-          "no_direct_or_official_url": 9,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 378
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4482024226",
-              "company": "Brain Co.",
-              "title": "Machine Learning Engineer, 2027 New Grad"
-            },
-            {
-              "key": "id::linkedin::4481742585",
-              "company": "Magna International",
-              "title": "Junior AI Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 5.218,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 2,
-            "input_tokens": 4961,
-            "cached_input_tokens": 0,
-            "output_tokens": 412,
-            "reasoning_tokens": 285,
-            "estimated_usd": 0.000702
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4482024226",
-              "match_score": 73.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Production LLM and RAG",
-                "End-to-end AI deployment"
-              ],
-              "main_gaps": [
-                "Spring 2027 bachelor's eligibility"
-              ]
-            },
-            {
-              "key": "id::linkedin::4481742585",
-              "match_score": 94.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production AI applications",
-                "RAG, APIs, and evaluation"
-              ],
-              "main_gaps": []
             }
           ]
         }
