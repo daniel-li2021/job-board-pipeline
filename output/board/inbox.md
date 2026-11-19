@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-18 17:21 PST
-- Snapshot (UTC): 2026-11-19T01:21:43.234914+00:00
-- Jobs: 79 (Tier A/B only)
-- Last 24 hours: 48
-- Last 3 days: 79
+- Updated (PT): 2026-11-19 00:10 PST
+- Snapshot (UTC): 2026-11-19T08:10:40.159369+00:00
+- Jobs: 80 (Tier A/B only)
+- Last 24 hours: 49
+- Last 3 days: 80
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -51,6 +51,7 @@ The 7-day dump is `latest.md`.
 | B | 84 | indeed | GitHub | Software Engineer II, Enterprise Server | Remote, US | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8f221018f76820d8) |
 | B | 83 | indeed | ALASKA HOUSING FINANCE CORPORATION | Full Stack Developer I-IV | Anchorage, AK, US | 2026-11-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=df35cf514f4e0e0e) |
 | B | 83 | indeed | McLane Company | Platform Engineer I | Temple, TX, US | 2026-11-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=91de21fc8b71e5c9) |
+| B | 80 | linkedin | Rippling | Software Engineer II, Backend - IT Product | Seattle, WA | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-it-product-at-rippling-4492235273) |
 | B | 80 | linkedin | Collins Aerospace | Software Engineer II | West Valley City, UT | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-collins-aerospace-4491105342) |
 | B | 84 | indeed | Hayes Company LLC | Software Engineer II | Dallas, TX, US | 2026-11-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=998b204bbe27230e) |
 | B | 83 | indeed | HEB | Software Engineer II (Full Stack/Angular/NestJS) - Austin, TX | Austin, TX, US | 2026-11-17 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8a108887eb305c1d) |
