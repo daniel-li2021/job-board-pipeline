@@ -1,10 +1,10 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-11-18 16:38 PST
-- Snapshot (UTC): 2026-11-19T00:38:39.753869+00:00
-- Jobs: 26 (Tier A/B only)
-- Last 24 hours: 1
-- Last 3 days: 26
+- Updated (PT): 2026-11-19 07:38 PST
+- Snapshot (UTC): 2026-11-19T15:38:25.471527+00:00
+- Jobs: 22 (Tier A/B only)
+- Last 24 hours: 3
+- Last 3 days: 22
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
@@ -15,15 +15,14 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | A | 91 | official | Amazon | Software Development Engineer | Cambridge, Massachusetts, USA | 2026-11-17 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10607536/software-development-engineer) |
 | A | 88 | official | Microsoft | Software Engineer Agentic Security | United States, Washington, Redmond | 2026-11-17 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557074643) |
 | A | 86 | official | Google | Software Engineer III, AI/ML GenAI, Google Workspace | Sunnyvale, CA, USA | 2026-11-17 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/121215133593543366-software-engineer-iii-ai-ml-genai-google-workspace) |
+| B | 75 | official | Microsoft | Software Engineer II | United States, Washington, Redmond | 2026-11-19 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557040900) |
+| B | 76 | official | Amazon | Software Engineer I, Commerce | Seattle, Washington, USA | 2026-11-19 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10607758/software-engineer-i-commerce) |
 | B | 85 | official | Snowflake | Software Engineer - Customer Experience Engineering | US-WA-Bellevue; Bellevue, Washington, United States | 2026-11-18 | 1to3d | - | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/snowflake/196f1cca-6ee6-4023-b2e7-9f8ba18d1dae) |
 | B | 85 | official | JPMorgan Chase | Data Scientist Associate | Plano, TX, United States | 2026-11-18 | 1to3d | J.P. Morgan | unreviewed | official_canonical | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210810053) |
-| B | 84 | official | Apple | Software Engineer, Full Stack and Cloud | Cupertino, United States of America | 2026-11-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200695576/software-engineer-full-stack-and-cloud) |
 | B | 82 | official | Google | Software Engineer III, AI/ML, Google Cloud Compute Infrastructure | Kirkland, WA, USA; Sunnyvale, CA, USA | 2026-11-18 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/123736245036556998-software-engineer-iii-ai-ml-google-cloud-compute-infrastructure) |
 | B | 82 | official | Amazon | Software Development Engineer, ROBOTICS - 2027 | Austin, Texas, USA | 2026-11-18 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10607764/software-development-engineer-robotics-2027) |
-| B | 82 | official | Apple | Software Engineer, Satellite Operations | San Diego, United States of America | 2026-11-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200695636/software-engineer-satellite-operations) |
 | B | 82 | official | NetApp | NetApp Emerging Talent - Entry Level Software Engineer (Systems) | San Jose, California, United States; Morrisville, North Carolina, United States | 2026-11-18 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.netapp.com/en/job/san-jose/netapp-emerging-talent-entry-level-software-engineer-systems/27600/103479747760) |
 | B | 79 | official | Amazon | Software Development Engineer, AWS | Minneapolis, Minnesota, USA | 2026-11-18 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10607584/software-development-engineer-aws) |
-| B | 77 | official | Apple | Build, Release & Infrastructure Engineer | Sunnyvale, United States of America | 2026-11-18 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200695030/build-release-infrastructure-engineer) |
 | B | 77 | official | Amazon | Software Engineer I | San Francisco, California, USA | 2026-11-18 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10608848/software-engineer-i) |
 | B | 84 | official | Microsoft | Software Engineer II - XBOX | United States, Washington, Redmond | 2026-11-17 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557072549) |
 | B | 84 | official | Google | Software Engineer III, AI Agent Architecture | Sunnyvale, CA, USA; Irvine, CA, USA | 2026-11-17 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/81598080377332422-software-engineer-iii-ai-agent-architecture) |
@@ -32,7 +31,4 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 | B | 82 | official | Qualcomm | #Software Engineer - Automotive Platform | San Diego, California, United States of America | 2026-11-17 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446722119778) |
 | B | 84 | official | Roblox | Software Engineer, Communication Safety | San Mateo, CA, United States | 2026-11-17 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8386848?gh_jid=8386848) |
 | B | 75 | official | Qualcomm | GPU HW Research Engineer (San Diego/Boxborough) | Boxborough, Massachusetts, United States of America | 2026-11-17 | 1to3d | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446716191606) |
-| B | 77 | official | Apple | Software Engineer, Application Developer Experience | Seattle, United States of America | 2026-11-17 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200695237/software-engineer-application-developer-experience) |
-| B | 75 | official | Apple | Software Development Engineer, Vision Products Software | Seattle, United States of America | 2026-11-17 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200695462/software-development-engineer-vision-products-software) |
-| B | 72 | official | Apple | Quality Engineer - Health Software | San Diego, United States of America | 2026-11-17 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200695466/quality-engineer-health-software) |
 | B | 75 | official | TikTok | Data Scientist Graduate (TikTok Product) - 2027 Start | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7669654422861383941) |

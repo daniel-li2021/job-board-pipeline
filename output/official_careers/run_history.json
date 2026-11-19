@@ -2,6 +2,612 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-11-19T15:38:25.471527+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 20,
+      "cache_reused": 311,
+      "peer_reused": 0,
+      "same_content_reused": 7,
+      "non_material_change_reused": 0,
+      "new_or_changed": 26,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 24,
+        "material_jd_change": 2
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 3,
+      "rule_count": 2141,
+      "requests": 4,
+      "input_tokens": 27086,
+      "cached_input_tokens": 2724,
+      "output_tokens": 5012,
+      "reasoning_tokens": 3063,
+      "estimated_usd": 0.00497,
+      "latency_seconds": 69.246,
+      "latency_measured": true,
+      "effective_rpm": 3.47,
+      "effective_tpm": 27812.15,
+      "json_reliability": 0.9091,
+      "json_reliability_measured": true,
+      "batches_total": 4,
+      "primary_batches_total": 4,
+      "batches_attempted": 4,
+      "batches_succeeded": 3,
+      "batches_failed": 1,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 20,
+      "funnel": {
+        "after_dedup": 13528,
+        "after_company": 13528,
+        "after_hard_filter": 10439,
+        "after_prefilter": 2472,
+        "dropped": 11056
+      },
+      "output": {
+        "tier_a": 5,
+        "tier_b": 21,
+        "shown": 26,
+        "new_jobs": 107,
+        "new_jobs_added": 1
+      },
+      "enrichment": {
+        "discovered": 13528,
+        "needed": 571,
+        "source_jds_available": 12957,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 571
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/99978375740695238-flights-solutions-engineer-delta-google-cloud",
+              "company": "Google",
+              "title": "Flights Solutions Engineer, Delta, Google Cloud"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10607758/software-engineer-i-commerce",
+              "company": "Amazon",
+              "title": "Software Engineer I, Commerce"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10608536/software-development-engineer-test-amazon-fuse-and-mbd",
+              "company": "Amazon",
+              "title": "Software Development Engineer - Test, Amazon Fuse and MBD"
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446722197774",
+              "company": "Qualcomm",
+              "title": "#Embedded Audio Software Engineer"
+            },
+            {
+              "key": "url::https://jobs.lever.co/palantir/4a9e0649-a925-4b25-914d-1eea058a3e01",
+              "company": "Palantir",
+              "title": "Site Reliability Operations Analyst - Legal"
+            },
+            {
+              "key": "url::https://jobs.lever.co/palantir/773bb739-f011-4202-88d7-362a562df0d3",
+              "company": "Palantir",
+              "title": "Site Reliability Operations Analyst - Legal"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 18.566,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 6,
+            "input_tokens": 6433,
+            "cached_input_tokens": 0,
+            "output_tokens": 1261,
+            "reasoning_tokens": 656,
+            "estimated_usd": 0.001274
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/99978375740695238-flights-solutions-engineer-delta-google-cloud",
+              "match_score": 70.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "API and backend development",
+                "Cloud deployment experience"
+              ],
+              "main_gaps": [
+                "Three years coding experience",
+                "Customer issue troubleshooting"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10607758/software-engineer-i-commerce",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React and TypeScript",
+                "Production AWS services"
+              ],
+              "main_gaps": [
+                "One year non-internship experience",
+                "Consumer products at scale"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10608536/software-development-engineer-test-amazon-fuse-and-mbd",
+              "match_score": 38.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Automated testing experience",
+                "Software development background"
+              ],
+              "main_gaps": [
+                "Four years testing experience",
+                "Penetration testing and security hardening"
+              ]
+            },
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446722197774",
+              "match_score": 56.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming",
+                "Software testing and debugging"
+              ],
+              "main_gaps": [
+                "Embedded systems and RTOS",
+                "Audio signal processing"
+              ]
+            },
+            {
+              "key": "url::https://jobs.lever.co/palantir/4a9e0649-a925-4b25-914d-1eea058a3e01",
+              "match_score": 12.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Process improvement experience"
+              ],
+              "main_gaps": [
+                "Program management experience"
+              ]
+            },
+            {
+              "key": "url::https://jobs.lever.co/palantir/773bb739-f011-4202-88d7-362a562df0d3",
+              "match_score": 12.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Process improvement experience"
+              ],
+              "main_gaps": [
+                "Program management experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10609066/applied-scientist-ii-amz10564066",
+              "company": "Amazon",
+              "title": "Applied Scientist II - AMZ10564066"
+            },
+            {
+              "key": "url::https://joinbytedance.com/search/7709819079845021957",
+              "company": "ByteDance",
+              "title": "Applied AI Architect - Seedance / Seedream / Seed Audio"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "failed",
+          "latency_seconds": 0.958,
+          "error": {
+            "type": "HTTPError",
+            "status_code": 500,
+            "api_type": "server_error",
+            "api_code": "",
+            "message": "The server had an error while processing your request. Sorry about that!",
+            "request_id": "req_9d58b696ed7b4057867d258b8abb4ef5",
+            "remaining_requests": "4999",
+            "remaining_tokens": "1995701",
+            "reset_requests": "12ms",
+            "reset_tokens": "128ms",
+            "summary": "HTTP 500: server_error"
+          }
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10598937/software-development-engineer-aws-opensearch-opensearch-platform-team",
+              "company": "Amazon",
+              "title": "Software Development Engineer - AWS OpenSearch, OpenSearch Platform Team"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210809995",
+              "company": "JPMorgan Chase",
+              "title": "Data Scientist [Multiple Positions Available]"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210801089",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer III - Data Engineering"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/123094508203057862-embedded-software-engineer-quantum-control-quantum-ai",
+              "company": "Google",
+              "title": "Embedded Software Engineer, Quantum Control, Quantum AI"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/85710013347046086-software-engineer-automatic-prompt-optimization-ai-answers-quality",
+              "company": "Google",
+              "title": "Software Engineer, Automatic Prompt Optimization, AI Answers Quality"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/119259411645375174-foundry-integration-engineer-quantum-ai",
+              "company": "Google",
+              "title": "Foundry Integration Engineer, Quantum AI"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10607721/software-engineer-ii-fintech",
+              "company": "Amazon",
+              "title": "Software Engineer II, Fintech"
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210810481",
+              "company": "JPMorgan Chase",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8402288",
+              "company": "Pure Storage",
+              "title": "Backend Engineer, Secrets Management (C++/Java)"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8378714",
+              "company": "Pure Storage",
+              "title": "Java Software Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 27.53,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 12349,
+            "cached_input_tokens": 0,
+            "output_tokens": 2728,
+            "reasoning_tokens": 1696,
+            "estimated_usd": 0.002599
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10598937/software-development-engineer-aws-opensearch-opensearch-platform-team",
+              "match_score": 69.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Release automation and CI/CD",
+                "Distributed systems reliability"
+              ],
+              "main_gaps": [
+                "3+ years non-internship experience",
+                "Large-scale system design experience"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210809995",
+              "match_score": 15.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and data pipelines",
+                "Applied modeling experience"
+              ],
+              "main_gaps": [
+                "5 years data science experience",
+                "Financial analytics and BI tools"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210801089",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark and Databricks pipelines",
+                "AWS backend engineering"
+              ],
+              "main_gaps": [
+                "3+ years applied experience",
+                "Enterprise AI coding tools"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/123094508203057862-embedded-software-engineer-quantum-control-quantum-ai",
+              "match_score": 8.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "General software engineering"
+              ],
+              "main_gaps": [
+                "Linux kernel and device drivers",
+                "Hardware interfaces and schematics"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/85710013347046086-software-engineer-automatic-prompt-optimization-ai-answers-quality",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM evaluation and quality",
+                "Production retrieval and reranking"
+              ],
+              "main_gaps": [
+                "Production recommendation models"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/119259411645375174-foundry-integration-engineer-quantum-ai",
+              "match_score": 2.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [],
+              "main_gaps": [
+                "Foundry process development",
+                "Semiconductor integration"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10607721/software-engineer-ii-fintech",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Agentic AI and MCP",
+                "AWS production services"
+              ],
+              "main_gaps": [
+                "4+ years professional experience",
+                "AWS serverless and OAuth integrations"
+              ]
+            },
+            {
+              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210810481",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and Java engineering",
+                "AWS and full SDLC"
+              ],
+              "main_gaps": [
+                "Enterprise AI coding tools",
+                "2+ years applied experience"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8402288",
+              "match_score": 35.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "non_us",
+              "top_match_reasons": [
+                "Backend and distributed systems",
+                "C++ and Java skills"
+              ],
+              "main_gaps": [
+                "Systems software internals",
+                "Security engineering experience"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8378714",
+              "match_score": 42.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "non_us",
+              "top_match_reasons": [
+                "Cloud backend engineering",
+                "Distributed systems and CI/CD"
+              ],
+              "main_gaps": [
+                "Production Java experience"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::amd_official_careers::96921",
+              "company": "AMD",
+              "title": "HPC & AI Infrastructure Engineer"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/81681952498688710-forward-deployed-engineer-iii-generative-ai-google-cloud-healthcare",
+              "company": "Google",
+              "title": "Forward Deployed Engineer III, Generative AI, Google Cloud, Healthcare"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8393948",
+              "company": "Pure Storage",
+              "title": "Associate Systems Engineer"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10608900/research-scientist-ii-amz10564041",
+              "company": "Amazon",
+              "title": "Research Scientist II - AMZ10564041"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 22.192,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 8304,
+            "cached_input_tokens": 2724,
+            "output_tokens": 1023,
+            "reasoning_tokens": 711,
+            "estimated_usd": 0.001097
+          },
+          "decisions": [
+            {
+              "key": "id::amd_official_careers::96921",
+              "match_score": 63.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud infrastructure automation",
+                "AI platform deployment"
+              ],
+              "main_gaps": [
+                "HPC/GPU cluster administration",
+                "RDMA and high-speed networking"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/81681952498688710-forward-deployed-engineer-iii-generative-ai-google-cloud-healthcare",
+              "match_score": 62.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production agentic AI",
+                "RAG and evaluation"
+              ],
+              "main_gaps": [
+                "5 years software development",
+                "Customer technical discovery"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8393948",
+              "match_score": 58.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Technical systems background",
+                "Data-driven troubleshooting"
+              ],
+              "main_gaps": [
+                "Customer-facing technical presentations"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10608900/research-scientist-ii-amz10564041",
+              "match_score": 55.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "CS and mathematics education",
+                "Java/C++ programming"
+              ],
+              "main_gaps": [
+                "Discrete and continuous optimization",
+                "Quantitative simulation modeling"
+              ]
+            }
+          ]
+        }
+      ],
+      "scrape_failure_sources": [
+        "apple",
+        "nvidia",
+        "salesforce",
+        "adobe",
+        "meta",
+        "capitalone",
+        "walmart",
+        "cisco",
+        "hpe",
+        "ebay",
+        "zoom",
+        "expedia",
+        "intel",
+        "redhat",
+        "visa",
+        "workday",
+        "zillow",
+        "cvs",
+        "f5",
+        "wells-fargo",
+        "yahoo",
+        "flex",
+        "iqvia",
+        "johnson-johnson",
+        "nasdaq",
+        "stryker",
+        "transunion",
+        "travelers"
+      ],
+      "scrape_failure_causes": {
+        "apple": "timeout",
+        "nvidia": "429",
+        "salesforce": "429",
+        "adobe": "429",
+        "meta": "error",
+        "capitalone": "429",
+        "walmart": "429",
+        "cisco": "429",
+        "hpe": "429",
+        "ebay": "429",
+        "zoom": "429",
+        "expedia": "429",
+        "intel": "429",
+        "redhat": "429",
+        "visa": "429",
+        "workday": "429",
+        "zillow": "429",
+        "cvs": "429",
+        "f5": "429",
+        "wells-fargo": "429",
+        "yahoo": "429",
+        "flex": "429",
+        "iqvia": "429",
+        "johnson-johnson": "429",
+        "nasdaq": "429",
+        "stryker": "429",
+        "transunion": "429",
+        "travelers": "429"
+      }
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-11-19T00:38:39.753869+00:00",
       "mode": "pipeline",
       "health": "degraded",
@@ -18961,360 +19567,6 @@
       ],
       "scrape_failure_sources": [],
       "scrape_failure_causes": {}
-    },
-    {
-      "pipeline": "official",
-      "run_at": "2026-11-09T15:48:23.348666+00:00",
-      "mode": "pipeline",
-      "health": "limited",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 11,
-      "cache_reused": 340,
-      "peer_reused": 0,
-      "same_content_reused": 6,
-      "non_material_change_reused": 0,
-      "new_or_changed": 12,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 11,
-        "material_jd_change": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 2531,
-      "requests": 3,
-      "input_tokens": 18162,
-      "cached_input_tokens": 0,
-      "output_tokens": 2356,
-      "reasoning_tokens": 1319,
-      "estimated_usd": 0.002994,
-      "latency_seconds": 23.721,
-      "latency_measured": true,
-      "effective_rpm": 7.59,
-      "effective_tpm": 51898.32,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 3,
-      "primary_batches_total": 3,
-      "batches_attempted": 3,
-      "batches_succeeded": 3,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 11,
-      "funnel": {
-        "after_dedup": 17486,
-        "after_company": 17486,
-        "after_hard_filter": 14083,
-        "after_prefilter": 2882,
-        "dropped": 14604
-      },
-      "output": {
-        "tier_a": 5,
-        "tier_b": 19,
-        "shown": 24,
-        "new_jobs": 96,
-        "new_jobs_added": 1
-      },
-      "enrichment": {
-        "discovered": 17530,
-        "needed": 939,
-        "source_jds_available": 16590,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 940
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://redhat.wd5.myworkdayjobs.com/jobs/job/Lowell/Software-Engineer_R-057957-1",
-              "company": "Red Hat",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805300",
-              "company": "JPMorgan Chase",
-              "title": "Software Engineer [Multiple Positions Available]"
-            },
-            {
-              "key": "url::https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/IRL---Galway/Mgr-Software-Development-Engineering_R1097794",
-              "company": "CVS Health",
-              "title": "Mgr,Software Development Engineering"
-            },
-            {
-              "key": "url::https://paypal.eightfold.ai/careers/job/274923336364",
-              "company": "PayPal",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "url::https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-SC-Columbia/Application-Developer_WD232933",
-              "company": "Flex",
-              "title": "Application Developer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 8.841,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 5,
-            "input_tokens": 6920,
-            "cached_input_tokens": 0,
-            "output_tokens": 890,
-            "reasoning_tokens": 485,
-            "estimated_usd": 0.001137
-          },
-          "decisions": [
-            {
-              "key": "url::https://redhat.wd5.myworkdayjobs.com/jobs/job/Lowell/Software-Engineer_R-057957-1",
-              "match_score": 66.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Backend API development",
-                "Testing and reliability"
-              ],
-              "main_gaps": [
-                "PKI and cryptography",
-                "Linux development tools"
-              ]
-            },
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805300",
-              "match_score": 18.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production software development"
-              ],
-              "main_gaps": [
-                "Seven years' experience",
-                "Financial services applications"
-              ]
-            },
-            {
-              "key": "url::https://cvshealth.wd1.myworkdayjobs.com/CVS_Health_Careers/job/IRL---Galway/Mgr-Software-Development-Engineering_R1097794",
-              "match_score": 8.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "non_us",
-              "top_match_reasons": [
-                "Software development experience"
-              ],
-              "main_gaps": [
-                "Engineering team leadership"
-              ]
-            },
-            {
-              "key": "url::https://paypal.eightfold.ai/careers/job/274923336364",
-              "match_score": 64.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Backend APIs and microservices",
-                "Cloud deployment and CI/CD"
-              ],
-              "main_gaps": [
-                "Three years' experience",
-                "Spring Boot and Spring Security"
-              ]
-            },
-            {
-              "key": "url::https://flextronics.wd1.myworkdayjobs.com/Careers/job/USA-SC-Columbia/Application-Developer_WD232933",
-              "match_score": 16.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Application development",
-                "Production support"
-              ],
-              "main_gaps": [
-                "Seven years' Flex Flow experience",
-                "Manufacturing MES integrations"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5468930008",
-              "company": "Anthropic",
-              "title": "Research Scientist, Discovery (Engineering & Applied Sciences)"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 3.364,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 3683,
-            "cached_input_tokens": 0,
-            "output_tokens": 241,
-            "reasoning_tokens": 152,
-            "estimated_usd": 0.000489
-          },
-          "decisions": [
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5468930008",
-              "match_score": 48.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "LLM evaluation frameworks",
-                "Model fine-tuning experience"
-              ],
-              "main_gaps": [
-                "Frontier-scale RL training",
-                "Scientific simulation environments"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 3,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://jobs.apple.com/en-us/details/200692689/tools-automation-engineer-early-career",
-              "company": "Apple",
-              "title": "Tools & Automation Engineer — Early Career"
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10599409/software-development-engineer-ii-regression-infrastructure-trainium-manufacturing-infrastucture",
-              "company": "Amazon",
-              "title": "Software Development Engineer II — Regression Infrastructure, Trainium Manufacturing Infrastucture"
-            },
-            {
-              "key": "url::https://jobs.ashbyhq.com/openai/eb3b695e-6c60-4875-b8bc-8f4d5d8a9bbb",
-              "company": "OpenAI",
-              "title": "Solutions Engineer, Ads Solutions - NYC"
-            },
-            {
-              "key": "url::https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Prinicipal-Forward-Deployed-Engineer_JR-0111290",
-              "company": "Workday",
-              "title": "Prinicipal Forward Deployed Engineer"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/79694460677432006-research-scientist-neutral-atoms-quantum-ai",
-              "company": "Google",
-              "title": "Research Scientist, Neutral Atoms, Quantum AI"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 11.516,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 5,
-            "input_tokens": 7559,
-            "cached_input_tokens": 0,
-            "output_tokens": 1225,
-            "reasoning_tokens": 682,
-            "estimated_usd": 0.001368
-          },
-          "decisions": [
-            {
-              "key": "url::https://jobs.apple.com/en-us/details/200692689/tools-automation-engineer-early-career",
-              "match_score": 84.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "automation tooling",
-                "software quality testing"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10599409/software-development-engineer-ii-regression-infrastructure-trainium-manufacturing-infrastucture",
-              "match_score": 57.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python automation",
-                "AWS and CI/CD"
-              ],
-              "main_gaps": [
-                "server and network device management",
-                "multi-site infrastructure operations"
-              ]
-            },
-            {
-              "key": "url::https://jobs.ashbyhq.com/openai/eb3b695e-6c60-4875-b8bc-8f4d5d8a9bbb",
-              "match_score": 35.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "API integration",
-                "SQL and data workflows"
-              ],
-              "main_gaps": [
-                "advertiser measurement systems",
-                "client-facing solutions experience"
-              ]
-            },
-            {
-              "key": "url::https://workday.wd5.myworkdayjobs.com/Workday/job/USA-CA-Pleasanton/Prinicipal-Forward-Deployed-Engineer_JR-0111290",
-              "match_score": 42.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "AI agent implementation",
-                "REST API integration"
-              ],
-              "main_gaps": [
-                "7+ years experience",
-                "enterprise customer deployments"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/79694460677432006-research-scientist-neutral-atoms-quantum-ai",
-              "match_score": 12.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "CS foundation"
-              ],
-              "main_gaps": [
-                "PhD in physics or electrical engineering",
-                "neutral-atom quantum research"
-              ]
-            }
-          ]
-        }
-      ],
-      "scrape_failure_sources": [
-        "intel",
-        "netflix",
-        "yahoo"
-      ],
-      "scrape_failure_causes": {
-        "intel": "error",
-        "netflix": "429",
-        "yahoo": "403"
-      }
     }
   ]
 }
