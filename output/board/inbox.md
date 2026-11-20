@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-19 17:21 PST
-- Snapshot (UTC): 2026-11-20T01:21:40.561902+00:00
-- Jobs: 80 (Tier A/B only)
-- Last 24 hours: 42
-- Last 3 days: 80
+- Updated (PT): 2026-11-20 01:09 PST
+- Snapshot (UTC): 2026-11-20T09:09:48.973504+00:00
+- Jobs: 70 (Tier A/B only)
+- Last 24 hours: 41
+- Last 3 days: 70
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -29,9 +29,6 @@ The 7-day dump is `latest.md`.
 | A | 88 | indeed | Western Virginia Water Authority | IT Software Developer Trainee | Roanoke, VA, US | 2026-11-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2f0aef82b3974ce4) |
 | A | 87 | indeed | Quevera | Junior Software Engineer | Columbia, MD, US | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=3a8f602110781c15) |
 | A | 88 | indeed | UST | Software Engineer | Bellevue, WA, US | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=4424757536871363) |
-| A | 88 | linkedin | U.S. Bank | Associate Software Engineer (Back-end Distributed systems) | Atlanta, GA | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-software-engineer-back-end-distributed-systems-at-u-s-bank-4491103270) |
-| A | 88 | linkedin | EchoStar Corporation | Early Career - AI Engineer | Englewood, CO | 2026-11-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/early-career-ai-engineer-at-echostar-corporation-4490960048) |
-| A | 88 | linkedin | EchoStar Corporation | Early Career - Software Engineer | Englewood, CO | 2026-11-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/early-career-software-engineer-at-echostar-corporation-4490960068) |
 | B | 94 | indeed |  | Junior AI Engineer | Atlanta, GA, US | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2733573abd33eb7c) |
 | B | 86 | indeed | Skadden, Arps, Slate, Meagher & Flom LLP & Affiliates | Legal Technology Support and Site Reliability Engineer | New York, NY, US | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1f89fe664a58347d) |
 | B | 87 | indeed | Tesla | Software Engineer, SI, Customer Claims & Support | Fremont, CA, US | 2026-11-18 | 1to3d | Tesla | unreviewed | official_unsupported | [open](https://www.indeed.com/viewjob?jk=e3ea6fcf4882addb) |
@@ -44,8 +41,7 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | ROC Recruitment | Software Eng - SDK Infrastructure (Associate) | Denver, CO, US | 2026-11-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2af1b163c2e73779) |
 | B | 80 | indeed | alliantgroup | Forward Deployed Consultant, Associate | Houston, TX, US | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=aafbc839fa5591fb) |
 | B | 81 | indeed | Infosys | Python Full Stack Developer | Portland, OR, US | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=909a895ea83898cd) |
-| B | 84 | linkedin | Rippling | Software Engineer II, Backend - IT Product | Seattle, WA | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-it-product-at-rippling-4492235273) |
-| B | 80 | linkedin | Collins Aerospace | Software Engineer II | West Valley City, UT | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-at-collins-aerospace-4491105342) |
+| B | 80 | linkedin | Rippling | Software Engineer II, Backend - IT Product | Seattle, WA | 2026-11-19 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-ii-backend-it-product-at-rippling-4492235273) |
 | B | 84 | indeed | Honeywell Aerospace | AI Engineer II | Phoenix, AZ, US | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=466d9ed123353efb) |
 | B | 84 | indeed | State Farm | Software Engineer (Full Stack Development & Future Platform Strategy) | Bloomington, IL, US | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b27057431b414ff0) |
 | B | 84 | indeed | Hayes Company LLC | Software Engineer II | Dallas, TX, US | 2026-11-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=998b204bbe27230e) |
@@ -59,16 +55,10 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed |  | Software Developer Co-Founder | Remote, US | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=bfca261145870e29) |
 | B | 82 | indeed | CLERA | Founding AI / Backend Engineer | New York, NY, US | 2026-11-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5c5b67d38b9e5113) |
 | B | 82 | indeed | Limits Express Company | AI Developer | Oklahoma City, OK, US | 2026-11-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0d378bab3135b705) |
-| B | 75 | linkedin | TikTok USDS Joint Venture | Machine Learning Engineer, E-commerce Recommendation Foundation - USDS | Seattle, WA | 2026-11-16 | 1to3d | TikTok | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-e-commerce-recommendation-foundation-usds-at-tiktok-usds-joint-venture-4490114678) |
-| B | 75 | linkedin | TikTok USDS Joint Venture | Machine Learning Engineer, E-commerce Recommendation Foundation - USDS | San Jose, CA | 2026-11-16 | 1to3d | TikTok | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-e-commerce-recommendation-foundation-usds-at-tiktok-usds-joint-venture-4490117631) |
-| B | 75 | linkedin | T-Mobile | AI Engineer | Bellevue, WA | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-at-t-mobile-4491110337) |
 | B | 75 | linkedin | Evlo AI | Machine Learning Engineer | San Francisco, CA | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-evlo-ai-4491408375) |
 | B | 75 | linkedin | Murphy USA | AI/Machine Learning Engineer | El Dorado, AR | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-machine-learning-engineer-at-murphy-usa-4491176386) |
-| B | 75 | linkedin | Arup | AI/ML Engineer | New York, NY | 2026-11-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-arup-4489754221) |
 | B | 75 | linkedin | Column | Software Engineer | San Francisco, CA | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-column-4491752462) |
 | B | 75 | linkedin | Crypto.com | Software Engineer, Prediction Markets Platform | Chicago, IL | 2026-11-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-prediction-markets-platform-at-crypto-com-4481889667) |
-| B | 75 | linkedin | Commence | AI/ML Engineer | Washington, DC | 2026-11-16 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-at-commence-4490950170) |
-| B | 75 | linkedin | Imprint | Software Engineer, Backend | New York, NY | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-backend-at-imprint-4490944892) |
 | B | 75 | linkedin | Cognizant | AI/ML Engineer - Agentic AI (Remote) | Englewood, CO | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-agentic-ai-remote-at-cognizant-4491429718) |
 | B | 77 | indeed | Audible | Software Development Engineer | Cambridge, MA, US | 2026-11-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0677e8664a2767f5) |
 | B | 75 | indeed | KLA | Software Applications Engineer | Milpitas, CA, US | 2026-11-18 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e2161d0404480124) |
