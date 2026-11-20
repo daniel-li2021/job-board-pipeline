@@ -256,7 +256,8 @@
     "carried_count": 4276,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
-    "last_full_source_provenance": {}
+    "last_full_source_provenance": {},
+    "jd_recovery_at": "2026-11-20T09:19:21.046692+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -16885,7 +16886,7 @@
       "linkedin_detail_triage_hash": "8f1ad5df293b0fc88cf8",
       "linkedin_detail_deferred_at": "2026-11-18T08:56:37.422222+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "global_429_pause",
       "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
       "verified_this_run": false,
       "enrichment_failure_reason": "linkedin_rate_limited"
@@ -38376,7 +38377,7 @@
       "linkedin_detail_triage_hash": "c8b63d2ee28dc0d913d8",
       "linkedin_detail_deferred_at": "2026-11-18T08:56:37.422222+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "global_429_pause",
       "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
       "verified_this_run": false,
       "enrichment_failure_reason": "linkedin_rate_limited"
@@ -51528,7 +51529,7 @@
       "linkedin_detail_triage_hash": "581edb17f6ce789c4f5e",
       "linkedin_detail_deferred_at": "2026-11-18T08:56:37.422222+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "global_429_pause",
       "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
       "verified_this_run": false,
       "enrichment_failure_reason": "linkedin_rate_limited"
@@ -81956,7 +81957,7 @@
       "linkedin_detail_triage_hash": "bd2fd6fdf7e22756f22e",
       "linkedin_detail_deferred_at": "2026-11-18T08:56:37.422222+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "global_429_pause",
       "source_verified_at": "2026-11-18T08:56:37.422222+00:00",
       "verified_this_run": false,
       "enrichment_failure_reason": "linkedin_rate_limited"
