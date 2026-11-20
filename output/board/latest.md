@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-11-20_0909
+# ATS / LinkedIn board — 7-day view — 2026-11-20_0919
 
-- Updated (PT): 2026-11-20 01:14 PST
-- Snapshot (UTC): 2026-11-20T09:14:57.657392+00:00
+- Updated (PT): 2026-11-20 01:23 PST
+- Snapshot (UTC): 2026-11-20T09:23:16.203327+00:00
 - Last 24 hours: 41
 - Last 3 days: 70
 
@@ -9,15 +9,15 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 ## Run stats
 
-- Source raw: ATS 2954 / Linkedin 4612 / Indeed 935 / Glassdoor 381 (Big Company Official runs separately)
-- Funnel: after dedup 8817 -> after company filter 8236 -> after hard filter 7614 -> after role+seniority prefilter 2583 | dropped 6008
+- Source raw: ATS 2954 / Linkedin 4616 / Indeed 935 / Glassdoor 381 (Big Company Official runs separately)
+- Funnel: after dedup 8821 -> after company filter 8237 -> after hard filter 7615 -> after role+seniority prefilter 2583 | dropped 6009
 - LLM usage: jobs scored 0 / API requests 0 / cache reused 381 (cross-pipeline 1) / rule fallback+overflow 1805 (thin local cards 1170, recency-gated 0, overflow 0, new/changed 0)
 - LLM cache causes: new 0 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 4 / rescored <24h 0
 - LLM cost: model gpt-6-luna / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
-- New jobs discovered this run: 4
+- New jobs discovered this run: 0
 - Output sizing: Tier A 38 / Tier B 159 / A+B actionable 197 / Shown in latest.md 197 (no hard cap)
 - Recency (kept): <3h 0 / 3-24h 0 / 1-3d 87 / newly-disc 252 / 3-7d 46 / >7d 1801
-- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3897 of 3898 / Indeed unique 887 of 887
+- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3901 of 3902 / Indeed unique 887 of 887
 - Linkedin top exact-unique queries: software engineer=1468, ai engineer=1011, full-stack engineer=438
 - Indeed top exact-unique queries: software engineer=233, ai engineer=226, machine learning engineer=82, data engineer=81, ml engineer=79
 

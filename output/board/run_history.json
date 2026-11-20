@@ -2,6 +2,114 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-11-20T09:19:55.801755+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "",
+      "reasoning_effort": "",
+      "jobs_scored": 0,
+      "cache_reused": 381,
+      "peer_reused": 1,
+      "same_content_reused": 4,
+      "non_material_change_reused": 0,
+      "new_or_changed": 0,
+      "new_or_changed_reasons": {},
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1805,
+      "requests": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "estimated_usd": 0.0,
+      "latency_seconds": 0.0,
+      "latency_measured": true,
+      "effective_rpm": null,
+      "effective_tpm": null,
+      "json_reliability": null,
+      "json_reliability_measured": true,
+      "batches_total": 0,
+      "primary_batches_total": 0,
+      "batches_attempted": 0,
+      "batches_succeeded": 0,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 0,
+      "funnel": {
+        "after_dedup": 8821,
+        "after_company": 8237,
+        "after_hard_filter": 7615,
+        "after_prefilter": 2583,
+        "official_duplicates_suppressed": 397,
+        "retry_only_carried": 0,
+        "dropped": 6009
+      },
+      "output": {
+        "tier_a": 38,
+        "tier_b": 159,
+        "ab_before_cap": 197,
+        "shown": 197,
+        "new_jobs": 0,
+        "new_jobs_added": 0,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 0,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 0,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 3473,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 60,
+          "identity_needed": 59,
+          "http_requests": 53,
+          "identities_resolved": 41,
+          "scrapling_requests": 1,
+          "jds_resolved": 1,
+          "direct_http_resolved": 1,
+          "remaining_no_jd": 3473,
+          "failure_reasons": {
+            "scrapling_http_202": 1
+          }
+        },
+        "remaining_no_jd": 3426,
+        "failure_reasons": {
+          "no_enrichment_path": 2830,
+          "linkedin_rate_limited": 163,
+          "linkedin_http_429": 6,
+          "official_detail_deferred": 46,
+          "linkedin_http_network_error": 2,
+          "scrapling_http_202": 1,
+          "glassdoor_detail_http_403_static_card_only": 378
+        }
+      },
+      "comparison": {},
+      "batches": []
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-11-20T09:09:48.973504+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -29935,302 +30043,6 @@
               "main_gaps": [
                 "Process assurance and RCCA",
                 "Aerospace compliance standards"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-11-14T08:30:37.100315+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 8,
-      "cache_reused": 348,
-      "peer_reused": 2,
-      "same_content_reused": 12,
-      "non_material_change_reused": 0,
-      "new_or_changed": 9,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 9
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1747,
-      "requests": 2,
-      "input_tokens": 10932,
-      "cached_input_tokens": 0,
-      "output_tokens": 2017,
-      "reasoning_tokens": 1385,
-      "estimated_usd": 0.002101,
-      "latency_seconds": 20.043,
-      "latency_measured": true,
-      "effective_rpm": 5.99,
-      "effective_tpm": 38763.66,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "primary_batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 8,
-      "funnel": {
-        "after_dedup": 8637,
-        "after_company": 8129,
-        "after_hard_filter": 7517,
-        "after_prefilter": 2541,
-        "official_duplicates_suppressed": 438,
-        "retry_only_carried": 0,
-        "dropped": 5896
-      },
-      "output": {
-        "tier_a": 49,
-        "tier_b": 167,
-        "ab_before_cap": 216,
-        "shown": 216,
-        "new_jobs": 55,
-        "new_jobs_added": 14,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 4,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 51,
-            "added": 14
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 3361,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 50,
-          "identity_needed": 37,
-          "http_requests": 37,
-          "identities_resolved": 21,
-          "jds_resolved": 8,
-          "direct_http_resolved": 8,
-          "remaining_no_jd": 3361,
-          "failure_reasons": {
-            "no_direct_or_official_url": 13
-          }
-        },
-        "remaining_no_jd": 3324,
-        "failure_reasons": {
-          "no_enrichment_path": 2751,
-          "linkedin_rate_limited": 128,
-          "linkedin_http_429": 6,
-          "official_detail_deferred": 46,
-          "no_direct_or_official_url": 13,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 378
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4489582125",
-              "company": "Emonics LLC",
-              "title": "Generative AI Engineer – Entry Level"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 3.201,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 2284,
-            "cached_input_tokens": 0,
-            "output_tokens": 114,
-            "reasoning_tokens": 47,
-            "estimated_usd": 0.000285
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4489582125",
-              "match_score": 94.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production RAG systems",
-                "LLM evaluation and optimization"
-              ],
-              "main_gaps": []
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4474365608",
-              "company": "ElevenLabs",
-              "title": "Full-Stack Engineer"
-            },
-            {
-              "key": "id::linkedin::4489803480",
-              "company": "GE Vernova",
-              "title": "AI Engineer"
-            },
-            {
-              "key": "id::linkedin::4473995410",
-              "company": "Brain Co.",
-              "title": "Machine Learning Engineer, Platform"
-            },
-            {
-              "key": "id::linkedin::4489875048",
-              "company": "Clay",
-              "title": "Machine Learning Engineer"
-            },
-            {
-              "key": "id::linkedin::4455997191",
-              "company": "Deloitte",
-              "title": "Full Stack Software Engineer II"
-            },
-            {
-              "key": "id::linkedin::4489821355",
-              "company": "Evolution USA",
-              "title": "Applied AI Engineer - Build and Ship Next-Generation AI Products"
-            },
-            {
-              "key": "id::linkedin::4488957238",
-              "company": "Oscar",
-              "title": "AI Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 16.842,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 7,
-            "input_tokens": 8648,
-            "cached_input_tokens": 0,
-            "output_tokens": 1903,
-            "reasoning_tokens": 1338,
-            "estimated_usd": 0.001816
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4474365608",
-              "match_score": 96.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "End-to-end product engineering",
-                "Python and React"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "id::linkedin::4489803480",
-              "match_score": 97.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Entry-level AI engineering",
-                "Production AI systems"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "id::linkedin::4473995410",
-              "match_score": 68.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "LLM evaluation and retrieval",
-                "Production AI deployment"
-              ],
-              "main_gaps": [
-                "Deep ML model development",
-                "RL fine-tuning"
-              ]
-            },
-            {
-              "key": "id::linkedin::4489875048",
-              "match_score": 64.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production LLM systems",
-                "Evaluation and data pipelines"
-              ],
-              "main_gaps": [
-                "5+ years ML engineering"
-              ]
-            },
-            {
-              "key": "id::linkedin::4455997191",
-              "match_score": 75.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack delivery",
-                "Cloud and database experience"
-              ],
-              "main_gaps": [
-                "2+ years full-stack"
-              ]
-            },
-            {
-              "key": "id::linkedin::4489821355",
-              "match_score": 93.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Shipped production AI agent",
-                "RAG and tool calling"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "id::linkedin::4488957238",
-              "match_score": 74.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Agentic RAG systems",
-                "QLoRA model fine-tuning"
-              ],
-              "main_gaps": [
-                "3+ years applied AI",
-                "RLHF or DPO"
               ]
             }
           ]
