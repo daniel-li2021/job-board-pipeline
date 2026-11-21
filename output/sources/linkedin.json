@@ -195,7 +195,7 @@
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-11-21T09:14:04.746759+00:00"
+    "jd_recovery_at": "2026-11-21T23:55:29.229251+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -108823,12 +108823,12 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "aa2b3647d89b7372b6a2",
-          "attempted_at": "2026-11-21T09:13:17.261482+00:00",
+          "attempted_at": "2026-11-21T23:55:29.229251+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-11-21T09:14:04.746759+00:00",
+      "official_search_attempted_at": "2026-11-21T23:55:29.229251+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -108838,9 +108838,10 @@
       "linkedin_detail_triage_hash": "f783d921f6fecf887d67",
       "linkedin_detail_deferred_at": "2026-11-21T09:13:17.261482+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "recovery_detail_budget",
+      "enrichment_deferred_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
-      "verified_this_run": true
+      "verified_this_run": true,
+      "enrichment_failure_reason": "linkedin_rate_limited"
     },
     {
       "job_id": "4454120483",
