@@ -1,10 +1,10 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-11-20 16:38 PST
-- Snapshot (UTC): 2026-11-21T00:38:15.584585+00:00
-- Jobs: 18 (Tier A/B only)
-- Last 24 hours: 1
-- Last 3 days: 18
+- Updated (PT): 2026-11-21 07:37 PST
+- Snapshot (UTC): 2026-11-21T15:37:52.909786+00:00
+- Jobs: 20 (Tier A/B only)
+- Last 24 hours: 3
+- Last 3 days: 20
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
@@ -12,6 +12,8 @@ Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | A | 86 | official | Apple | Software Engineer, Data Quality Tools & Automation — AIML Data Operati | Cupertino, United States of America | 2026-11-19 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200695274/software-engineer-data-quality-tools-automation-aiml-data-operations) |
 | A | 89 | official | Notion | Software Engineer, Collections Infra | San Francisco, California; San Francisco, California, United States; Remote, United States | 2026-11-19 | 1to3d | - | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/notion/0fb1f7e2-ffe4-433c-a27d-62fa7f1d880f) |
+| B | 81 | official | Apple | Software Development Engineer - Test | Cupertino, United States of America | 2026-11-21 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200696408/software-development-engineer-test) |
+| B | 84 | official | Anthropic | Research Engineer, Finetuning | San Francisco, CA / New York City, NY / Seattle, WA; San Francisco, California, United States | 2026-11-21 | 3to24h | - | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/anthropic/jobs/5489567008) |
 | B | 81 | official | Apple | Software Engineer, Photos QA Tools | Cupertino, United States of America | 2026-11-20 | 1to3d | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200696365/software-engineer-photos-qa-tools) |
 | B | 80 | official | Google | Software Engineer III, Infrastructure, Search | Cambridge, MA, USA; Mountain View, CA, USA | 2026-11-20 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/96841881383510726-software-engineer-iii-infrastructure-search) |
 | B | 82 | official | MathWorks | Software Engineer in Test | US-MA-Natick | 2026-11-20 | 1to3d | - | unreviewed | official_canonical | [open](https://www.mathworks.com/company/jobs/opportunities/37914-software-engineer-in-test?keywords=ai+engineer) |
