@@ -1,49 +1,49 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 4286,
+  "count": 4291,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-11-19T08:09:41.622756+00:00",
+    "scraped_at": "2026-11-21T09:13:17.261482+00:00",
     "collector": {
-      "commit": "07d0074709575c9a6a949d6c89cb1ba2e20b709d",
+      "commit": "3be69cc8d7ce0b614c2de755718db4e018e7b1cd",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 18.612,
+    "elapsed_seconds": 33.69,
     "query_stats": [
       {
-        "query": "software engineer",
+        "query": "full-stack engineer",
         "group": "primary",
-        "page_budget": 5,
+        "page_budget": 2,
         "pages_fetched": 1,
-        "stop_reason": "blocked_http_429",
+        "stop_reason": "global_page_budget",
         "raw_jobs": 10,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
+        "unique_jobs": 10,
+        "unique_contribution": 10,
         "first_pass_survivors": 10,
         "original_postings_resolved": 0,
-        "jds_resolved": 3,
-        "elapsed_seconds": 11.279,
-        "new_to_ledger": 3,
-        "rediscovered": 7,
+        "jds_resolved": 2,
+        "elapsed_seconds": 0.745,
+        "new_to_ledger": 5,
+        "rediscovered": 5,
         "page_yields": [
           {
             "page": 0,
             "raw": 10,
-            "new_to_ledger": 3,
-            "known": 7
+            "new_to_ledger": 5,
+            "known": 5
           }
         ]
       },
       {
-        "query": "ai engineer",
+        "query": "software engineer",
         "group": "primary",
-        "page_budget": 3,
+        "page_budget": 5,
         "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
+        "stop_reason": "global_page_budget",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -53,11 +53,11 @@
         "elapsed_seconds": 0.0
       },
       {
-        "query": "full-stack engineer",
+        "query": "ai engineer",
         "group": "primary",
-        "page_budget": 2,
+        "page_budget": 3,
         "pages_fetched": 0,
-        "stop_reason": "source_unavailable",
+        "stop_reason": "global_page_budget",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
@@ -69,195 +69,133 @@
     ],
     "search_collection": {
       "cooldown_active": false,
-      "probe": false,
-      "query_cursor": 75,
-      "requests": 2,
-      "responses": 2,
+      "probe": true,
+      "query_cursor": 77,
+      "requests": 1,
+      "responses": 1,
       "pages_fetched": 1,
-      "http_status": 429,
-      "rate_limited": true,
-      "budget_exhausted": false,
-      "rate_limit_event": {
-        "at": "2026-11-19T08:09:52.938224+00:00",
-        "endpoint": "search",
-        "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
-        "query": "software engineer",
-        "page": 1,
-        "retry_after": "",
-        "retry_after_until": "2026-11-19T08:09:52.938224+00:00",
-        "request_ordinal": 2,
-        "endpoint_ordinal": 2,
-        "round_counts": {
-          "search": 2,
-          "detail": 0
-        },
-        "rolling_counts": {
-          "60": {
-            "search": 2,
-            "detail": 0
-          },
-          "3600": {
-            "search": 2,
-            "detail": 0
-          },
-          "86400": {
-            "search": 8,
-            "detail": 2
-          }
-        }
-      },
+      "http_status": 0,
+      "rate_limited": false,
+      "budget_exhausted": true,
+      "rate_limit_event": {},
       "transport_stop_reason": "",
-      "new_to_ledger": 3,
-      "rediscovered": 7,
-      "coverage_limited": false
+      "new_to_ledger": 5,
+      "rediscovered": 5,
+      "coverage_limited": true
     },
     "detail_enrichment": {
-      "eligible": 6,
+      "eligible": 3,
       "cache_reused": 0,
-      "requests": 0,
-      "responses": 0,
-      "successful_responses": 0,
-      "attempted_ids": [],
-      "http_status_counts": {},
+      "requests": 2,
+      "responses": 2,
+      "successful_responses": 2,
+      "attempted_ids": [
+        "4492857144",
+        "4418047803"
+      ],
+      "http_status_counts": {
+        "200": 2
+      },
       "request_limit": 12,
-      "budget_deferred": 0,
-      "budget_exhausted": false,
+      "budget_deferred": 1,
+      "budget_exhausted": true,
       "retry_deferred": 0,
       "retry_attempts": 0,
       "exact_official": 0,
       "official_deferred": 0,
       "rate_limited": false,
-      "jds_resolved": 0,
+      "jds_resolved": 2,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 0,
+      "detail_jds_fetched": 2,
       "intentional_skips": 0,
-      "blocked": "rate_limited_no_further_requests",
+      "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 6,
+      "remaining_no_jd": 1,
       "failure_reasons": {
-        "linkedin_rate_limited": 6
+        "no_description": 1
       },
+      "transport_stop_reason": "recovery_detail_budget",
       "protected_requests": 0,
       "protected_jds_resolved": 0,
-      "protected_deferred": 4,
+      "protected_deferred": 1,
       "queue": [
         {
-          "job_id": "4492235273",
-          "first_seen": "2026-11-19T08:09:41.622756+00:00",
+          "job_id": "4492818301",
+          "first_seen": "2026-11-21T09:13:17.261482+00:00",
           "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
+          "needs_jd": true,
+          "deferred_at": "2026-11-21T09:13:17.261482+00:00",
           "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
+          "deferred_reason": "recovery_detail_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4418047803",
+          "first_seen": "2026-11-21T09:13:17.261482+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": null,
+          "attempted_at": "2026-11-21T09:13:36.975489+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
           "deferred_reason": null,
           "past_fresh": false
         },
         {
-          "job_id": "4484233084",
-          "first_seen": "2026-11-18T20:23:56.659691+00:00",
-          "priority": "normal",
-          "needs_jd": null,
+          "job_id": "4492857144",
+          "first_seen": "2026-11-21T09:13:17.261482+00:00",
+          "priority": "high",
+          "needs_jd": true,
           "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
+          "attempted_at": "2026-11-21T09:13:36.975489+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
           "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4490808576",
-          "first_seen": "2026-11-18T08:56:37.422222+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-18T08:56:37.422222+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4491429718",
-          "first_seen": "2026-11-18T08:56:37.422222+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-18T08:56:37.422222+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4491408375",
-          "first_seen": "2026-11-18T08:56:37.422222+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-18T08:56:37.422222+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4491176386",
-          "first_seen": "2026-11-18T08:56:37.422222+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": "2026-11-18T08:56:37.422222+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_rate_limited",
           "past_fresh": false
         }
       ],
       "admission": {
-        "candidates": 9,
-        "rules_skipped": 3,
+        "candidates": 5,
+        "rules_skipped": 2,
         "rule_reasons": {
-          "prefilter:senior": 2,
-          "company_excluded": 1
+          "prefilter:senior": 2
         },
         "cache_reused": 0,
         "non_linkedin_resolved": 0,
-        "worth_detail": 4
+        "triage_evaluated": 3,
+        "triage_deferred": 0,
+        "worth_detail": 3
       },
       "cooldown_active": false,
       "probe": false,
       "round_request_limit": 12,
-      "round_requests": 0,
+      "round_requests": 2,
       "status": "active"
     },
     "official_enrichment": {
-      "exact_indeed_peer": 1,
-      "cache": 2,
       "search_provider_failures": 1,
-      "no_match": 6,
-      "search_requests": 6,
+      "no_match": 3,
+      "search_requests": 5,
       "search_provider": "bing",
-      "official_page_requests": 0,
-      "remaining_no_jd": 7
+      "official_page_requests": 2,
+      "remaining_no_jd": 10
     },
     "partial": true,
-    "blocked_reason": "blocked with HTTP 429",
+    "blocked_reason": "search page budget exhausted",
     "collected_count": 10,
-    "carried_count": 4276,
+    "carried_count": 4281,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-11-20T09:19:21.046692+00:00"
+    "jd_recovery_at": "2026-11-21T09:14:04.746759+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -4632,7 +4570,12 @@
     "linkedin|id|4490899748": "2026-11-18T20:23:56.659691+00:00",
     "linkedin|id|4492235273": "2026-11-19T08:09:41.622756+00:00",
     "linkedin|id|4492214939": "2026-11-19T08:09:41.622756+00:00",
-    "linkedin|id|4490895898": "2026-11-19T08:09:41.622756+00:00"
+    "linkedin|id|4490895898": "2026-11-19T08:09:41.622756+00:00",
+    "linkedin|id|4492818301": "2026-11-21T09:13:17.261482+00:00",
+    "linkedin|id|4484161767": "2026-11-21T09:13:17.261482+00:00",
+    "linkedin|id|4484159920": "2026-11-21T09:13:17.261482+00:00",
+    "linkedin|id|4418047803": "2026-11-21T09:13:17.261482+00:00",
+    "linkedin|id|4492857144": "2026-11-21T09:13:17.261482+00:00"
   },
   "jobs": [
     {
@@ -7510,7 +7453,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-19T08:09:41.622756+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4483666082",
@@ -7542,7 +7485,7 @@
       "official_search_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-19T08:09:41.622756+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4488652298",
@@ -10448,7 +10391,7 @@
       "title": "Senior Full-Stack Engineer - Alpaca Connect",
       "location": "New York, NY",
       "posted_date": "2026-10-25",
-      "aggregator_posted_date": "2026-11-10",
+      "aggregator_posted_date": "2026-11-20",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-engineer-alpaca-connect-at-alpaca-4483372897",
@@ -10459,14 +10402,13 @@
       "first_seen": "2026-10-25T20:28:17.788896+00:00",
       "discovery_queries": {
         "linkedin": [
-          "full-stack engineer",
-          "software engineer"
+          "full-stack engineer"
         ]
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-10T07:04:05.730197+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4471492428",
@@ -13720,7 +13662,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-19T08:09:41.622756+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4488467451",
@@ -37409,7 +37351,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-19T08:09:41.622756+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4484477255",
@@ -44388,12 +44330,12 @@
       "title": "Cyber Full-Stack Software Engineer",
       "location": "Las Vegas, NV",
       "posted_date": "2026-10-29",
-      "aggregator_posted_date": "2026-10-29",
+      "aggregator_posted_date": "2026-11-20",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/cyber-full-stack-software-engineer-at-deloitte-4418045895",
       "official_url": "",
-      "description": "Deloitte Cyber understands the unique challenges and opportunities businesses face in cybersecurity. Deloitte's Cyber team helps our clients navigate the ever-changing threat landscape. We simplify complexity, and enable businesses to operate with resilience, grow with confidence, and proactively manage their security posture. Recruiting for this role ends on 12/31/2026. The Team: Deloitte's Cyber Engineering is a new team that is spearheading the buildout of Cybersecurity technology that will underpin the next generation of our Cybersecurity services. Join us as we work with technologies shaping the future of Cybersecurity to build future capabilities today. Position Summary Join Deloitte's Cyber Engineering team to help build technology that supports the next generation of cybersecurity services. As a Full Stack Engineer, you will design, develop, and enhance applications across frontend and backend environments, working with modern engineering practices and cloud-based technologies. You will collaborate with cross-functional teams to deliver scalable, secure, and maintainable solutions that support client and business needs. Work you'll do As a Full Stack Engineer on the Cyber Engineering team, you will be responsible for... Collaborating with business stakeholders, engineers, and team leadership to translate business needs into technical solutions Designing, developing, testing, and enhancing full stack applications across frontend and backend technologies Building and integrating application programming interfaces, microservices, and cloud-based services to support product functionality Supporting product quality through code reviews, testing, debugging, and continuous integration and continuous deployment practices Contributing to technical analysis, solution design, and delivery activities that support client outcomes and product development A successful candidate would possess these skills: Ability to work independently and collaborate as part of a team Effective written and verbal communication skills Meticulous attention to detail and quality of work product Ability to build and sustain professional relationships Ability to lead projects or workstreams Ability to manage and prioritize multiple tasks in a fast-paced and dynamic environment Strong interpersonal skills and professional demeanor Ability to meet deadlines Ability to provide clear guidance to others Qualifications Required: Bachelor's degree in Computer Science, Engineering, Information Technology, Data Science, Applied Mathematics, Physics, Statistics, or a similar technical field 1-3+ years experience in the following areas: 1-3+ years of experience in full stack development across frontend and backend technologies, including experience with Angular, React, or Next.js and JavaScript, TypeScript, HTML5, and CSS3 1-3+ years of experience in backend development using Node.js, Python with Django or Flask, or Java with Spring Boot 1-3+ years of experience building and consuming Representational State Transfer application programming interfaces and working with microservices or serverless architectures in production environments 1-3+ years of experience working with relational databases and at least 1 NoSQL database, and using Git, Azure DevOps or similar tools, Docker, Agile or Scrum methods, automated testing, and continuous integration and continuous deployment pipelines 1-3+ years of experience developing, integrating, or deploying artificial intelligence, Generative AI, or agentic AI solutions within enterprise applications on Amazon Web Services, Microsoft Azure, or Google Cloud Platform Ability to travel 20%, on average, based on the work you do and the clients and industries/sectors you serve. Limited immigration sponsorship may be available. Preferred: Experience with object-oriented programming, design patterns, and clean coding practices Experience building secure, reusable, responsive, and maintainable applications Experience with secure development practices, DevOps, DevSecOps, web security, GitOps, or Kubernetes customization Experience with OpenSearch, Elasticsearch, Neo4j, Memgraph, Maven, or Gradle Experience with Bootstrap, jQuery, or JavaServer Pages in legacy or mixed-technology environments Cloud certification in Amazon Web Services, Microsoft Azure, or Google Cloud Platform The wage range for this role takes into account the wide range of factors that are considered in making compensation decisions including but not limited to skill sets; experience and training; licensure and certifications; and other business and organizational needs. The disclosed range estimate has not been adjusted for the applicable geographic differential associated with the location at which the position may be filled. At Deloitte, it is not typical for an individual to be hired at or near the top of the range for their role and compensation decisions are dependent on the facts and circumstances of each case. A reasonable estimate of the current range is $100,400 to $197,900. You may also be eligible to participate in a discretionary annual incentive program, subject to the rules governing the program, whereby an award, if any, depends on various factors, including, without limitation, individual and organizational performance. Information for applicants with a need for accommodation: https://www2.deloitte.com/us/en/pages/careers/articles/join-deloitte-assistance-for-disabled-applicants.html",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-10-29T19:14:50.044918+00:00",
@@ -44402,6 +44344,14 @@
           "full-stack engineer"
         ]
       },
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Full-stack role is relevant; experience and cyber or clearance requirements are unknown."
+      },
+      "linkedin_detail_triage_hash": "39cc358061a0a7f0cd84",
+      "linkedin_detail_deferred_at": "2026-10-29T19:14:50.044918+00:00",
+      "linkedin_detail_attempted_at": "2026-10-30T19:37:44.294257+00:00",
       "recovery_methods": {
         "generic_search": {
           "input_hash": "46303b117f77e2c39aac",
@@ -44419,23 +44369,64 @@
           "outcome": "no_match"
         }
       },
+      "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4418047803",
+      "source": "linkedin",
+      "company": "Deloitte",
+      "title": "Cyber Full-Stack Software Engineer",
+      "location": "Colorado Springs, CO",
+      "posted_date": "2026-11-20",
+      "aggregator_posted_date": "2026-11-20",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/cyber-full-stack-software-engineer-at-deloitte-4418047803",
+      "official_url": "",
+      "description": "Deloitte Cyber understands the unique challenges and opportunities businesses face in cybersecurity. Deloitte's Cyber team helps our clients navigate the ever-changing threat landscape. We simplify complexity, and enable businesses to operate with resilience, grow with confidence, and proactively manage their security posture. Recruiting for this role ends on 12/31/2026. The Team: Deloitte's Cyber Engineering is a new team that is spearheading the buildout of Cybersecurity technology that will underpin the next generation of our Cybersecurity services. Join us as we work with technologies shaping the future of Cybersecurity to build future capabilities today. Position Summary Join Deloitte's Cyber Engineering team to help build technology that supports the next generation of cybersecurity services. As a Full Stack Engineer, you will design, develop, and enhance applications across frontend and backend environments, working with modern engineering practices and cloud-based technologies. You will collaborate with cross-functional teams to deliver scalable, secure, and maintainable solutions that support client and business needs. Work you'll do As a Full Stack Engineer on the Cyber Engineering team, you will be responsible for... Collaborating with business stakeholders, engineers, and team leadership to translate business needs into technical solutions Designing, developing, testing, and enhancing full stack applications across frontend and backend technologies Building and integrating application programming interfaces, microservices, and cloud-based services to support product functionality Supporting product quality through code reviews, testing, debugging, and continuous integration and continuous deployment practices Contributing to technical analysis, solution design, and delivery activities that support client outcomes and product development A successful candidate would possess these skills: Ability to work independently and collaborate as part of a team Effective written and verbal communication skills Meticulous attention to detail and quality of work product Ability to build and sustain professional relationships Ability to lead projects or workstreams Ability to manage and prioritize multiple tasks in a fast-paced and dynamic environment Strong interpersonal skills and professional demeanor Ability to meet deadlines Ability to provide clear guidance to others Qualifications Required: Bachelor's degree in Computer Science, Engineering, Information Technology, Data Science, Applied Mathematics, Physics, Statistics, or a similar technical field 2-3+ years experience in the following areas: 2-3+ years of experience in full stack development across frontend and backend technologies, including experience with Angular, React, or Next.js and JavaScript, TypeScript, HTML5, and CSS3 2-3+ years of experience in backend development using Node.js, Python with Django or Flask, or Java with Spring Boot 2-3+ years of experience building and consuming Representational State Transfer application programming interfaces and working with microservices or serverless architectures in production environments 2-3+ years of experience working with relational databases and at least 1 NoSQL database, and using Git, Azure DevOps or similar tools, Docker, Agile or Scrum methods, automated testing, and continuous integration and continuous deployment pipelines 1-3+ years of experience developing, integrating, or deploying artificial intelligence, Generative AI, or agentic AI solutions within enterprise applications on Amazon Web Services, Microsoft Azure, or Google Cloud Platform Ability to travel 20%, on average, based on the work you do and the clients and industries/sectors you serve. Limited immigration sponsorship may be available. Preferred: Experience with object-oriented programming, design patterns, and clean coding practices Experience building secure, reusable, responsive, and maintainable applications Experience with secure development practices, DevOps, DevSecOps, web security, GitOps, or Kubernetes customization Experience with OpenSearch, Elasticsearch, Neo4j, Memgraph, Maven, or Gradle Experience with Bootstrap, jQuery, or JavaServer Pages in legacy or mixed-technology environments Cloud certification in Amazon Web Services, Microsoft Azure, or Google Cloud Platform The wage range for this role takes into account the wide range of factors that are considered in making compensation decisions including but not limited to skill sets; experience and training; licensure and certifications; and other business and organizational needs. The disclosed range estimate has not been adjusted for the applicable geographic differential associated with the location at which the position may be filled. At Deloitte, it is not typical for an individual to be hired at or near the top of the range for their role and compensation decisions are dependent on the facts and circumstances of each case. A reasonable estimate of the current range is $100,400 to $197,900. You may also be eligible to participate in a discretionary annual incentive program, subject to the rules governing the program, whereby an award, if any, depends on various factors, including, without limitation, individual and organizational performance. Information for applicants with a need for accommodation: https://www2.deloitte.com/us/en/pages/careers/articles/join-deloitte-assistance-for-disabled-applicants.html",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-21T09:13:17.261482+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "9d73506c8541b4c5fe59",
+          "attempted_at": "2026-11-21T09:13:17.261482+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "fdf745c672959b6ee3d8",
+          "attempted_at": "2026-11-21T09:13:17.261482+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "432b0be9467179f1806e",
+          "attempted_at": "2026-11-21T09:13:17.261482+00:00",
+          "outcome": "no_match"
+        }
+      },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-10-30T05:09:06.244547+00:00",
+      "official_search_attempted_at": "2026-11-21T09:13:17.261482+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "normal",
-        "reason": "Full-stack role is relevant; experience and cyber or clearance requirements are unknown."
+        "reason": "Relevant software role; cyber scope and possible clearance requirements could change fit."
       },
-      "linkedin_detail_triage_hash": "39cc358061a0a7f0cd84",
-      "linkedin_detail_deferred_at": "2026-10-29T19:14:50.044918+00:00",
-      "enrichment_status": "resolved",
-      "source_verified_at": "2026-10-29T19:14:50.044918+00:00",
-      "verified_this_run": false,
-      "linkedin_detail_attempted_at": "2026-10-30T19:37:44.294257+00:00",
-      "linkedin_detail_fetched_at": "2026-10-30T19:37:44.294257+00:00",
+      "linkedin_detail_triage_hash": "269296e8070027f5a7db",
+      "linkedin_detail_attempted_at": "2026-11-21T09:13:36.975489+00:00",
+      "linkedin_detail_fetched_at": "2026-11-21T09:13:36.975489+00:00",
       "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_http"
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4418057161",
@@ -65453,7 +65444,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-19T08:09:41.622756+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4482262128",
@@ -65479,7 +65470,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-19T08:09:41.622756+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4482262130",
@@ -76136,7 +76127,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-19T08:09:41.622756+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4490899748",
@@ -91787,6 +91778,58 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4484159920",
+      "source": "linkedin",
+      "company": "Pearson",
+      "title": "Senior Software Engineer, Full Stack",
+      "location": "Cheyenne, WY",
+      "posted_date": "2026-11-20",
+      "aggregator_posted_date": "2026-11-20",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-full-stack-at-pearson-4484159920",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-21T09:13:17.261482+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4484161767",
+      "source": "linkedin",
+      "company": "Pearson",
+      "title": "Senior Software Engineer, Full Stack",
+      "location": "Boise, ID",
+      "posted_date": "2026-11-20",
+      "aggregator_posted_date": "2026-11-20",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-full-stack-at-pearson-4484161767",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-21T09:13:17.261482+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4470757665",
       "source": "linkedin",
       "company": "Pearson",
@@ -100253,7 +100296,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-19T08:09:41.622756+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4466488195",
@@ -100748,7 +100791,7 @@
       "enrichment_status": "unresolved",
       "enrichment_failure_reason": "linkedin_rate_limited",
       "source_verified_at": "2026-11-19T08:09:41.622756+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4463786876",
@@ -104250,7 +104293,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-19T08:09:41.622756+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4483788805",
@@ -108757,6 +108800,49 @@
       "enrichment_method": "linkedin_http"
     },
     {
+      "job_id": "4492818301",
+      "source": "linkedin",
+      "company": "SonoSim, Inc.",
+      "title": "Full Stack Software Engineer",
+      "location": "Los Angeles, CA",
+      "posted_date": "2026-11-20",
+      "aggregator_posted_date": "2026-11-20",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-sonosim-inc-4492818301",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-21T09:13:17.261482+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "aa2b3647d89b7372b6a2",
+          "attempted_at": "2026-11-21T09:13:17.261482+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-21T09:14:04.746759+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Relevant full-stack role; seniority and required stack could change fit."
+      },
+      "linkedin_detail_triage_hash": "f783d921f6fecf887d67",
+      "linkedin_detail_deferred_at": "2026-11-21T09:13:17.261482+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "recovery_detail_budget",
+      "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4454120483",
       "source": "linkedin",
       "company": "Sony Interactive Entertainment",
@@ -108921,7 +109007,7 @@
       "title": "Full Stack Engineer (Application Software)",
       "location": "Palo Alto, CA",
       "posted_date": "2026-10-07",
-      "aggregator_posted_date": "2026-10-29",
+      "aggregator_posted_date": "2026-11-20",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-application-software-at-spacex-4448666881",
@@ -108950,8 +109036,8 @@
           "outcome": "no_match"
         }
       },
-      "source_verified_at": "2026-10-29T19:14:50.044918+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4449441343",
@@ -110465,7 +110551,7 @@
       "title": "Senior Full Stack Engineer",
       "location": "Colorado Springs, CO",
       "posted_date": "2026-10-08",
-      "aggregator_posted_date": "2026-10-29",
+      "aggregator_posted_date": "2026-11-20",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-engineer-at-sphinx-defense-2148454938",
@@ -110481,8 +110567,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-29T19:14:50.044918+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4456962962",
@@ -110491,7 +110577,7 @@
       "title": "Senior Full Stack Engineer",
       "location": "Chantilly, VA",
       "posted_date": "2026-10-08",
-      "aggregator_posted_date": "2026-10-29",
+      "aggregator_posted_date": "2026-11-20",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-full-stack-engineer-at-sphinx-defense-4456962962",
@@ -110507,8 +110593,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-10-29T19:14:50.044918+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4456976042",
@@ -123610,6 +123696,52 @@
       "linkedin_detail_fetched_at": "2026-11-15T08:05:56.936078+00:00",
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_http"
+    },
+    {
+      "job_id": "4492857144",
+      "source": "linkedin",
+      "company": "University of Utah",
+      "title": "Web Developers, Full Stack I",
+      "location": "Salt Lake City, UT",
+      "posted_date": "2026-11-20",
+      "aggregator_posted_date": "2026-11-20",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/web-developers-full-stack-i-at-university-of-utah-4492857144",
+      "official_url": "",
+      "description": "Job Summary Web Developers (Full Stack) The Web Developer I supports the design, development, testing, and maintenance of accessible, secure, and reliable web applications. Working under the guidance of senior developers and team leadership, this entry-level role contributes to front-end and back-end features, resolves defects, and develops technical skills through mentoring, code review, and hands-on project work. This role provides the opportunity to cultivate software development skills in a higher education environment. About UTS : University Technology Services (UTS) , the central IT service provider for the University of Utah, reports to the U's Chief Information Officer and is responsible for many of the U's shared IT services including the wired and wireless network; Campus Information Services (CIS) portal; UMail, telephone, and online collaboration; digital learning technologies; information security; software licensing; and a host of other IT systems and services. About the University of Utah : Located in Salt Lake City, the U is the flagship institution of the State of Utah's system of higher education, home to arts and museum venues and a member of the BIG-12 Conference . Skiing and snowboarding opportunities are a short distance from campus, and opportunities to pursue activities from biking to hiking to fishing abound . Salt Lake City is home to the Utah Symphony and Opera , Ballet West , professional sports teams , and a wide range of other cultural and recreational activities. Responsibilities Web Developers (Full Stack), I Utilize server-side (e.g., Node.js, Typescript, Python), client-side (e.g., HTML, CSS, JavaScript, React), and database (e.g., PostgreSQL, MongoDB) tools to create websites from concept to finished product (front-end and back-end). Collaborate with business stakeholders to understand needs and translate into technical requirements. Possess functional knowledge of all layers of computer software development. Proficiency in server, network, and hosting environments, relational and non-relational databases, how to interact with APIs, user interface/experience, quality assurance, version control systems, and security. Work closely with other engineers, designers, and leadership to build, test, and deploy new features and products, creating the most effective and efficient web applications with well-documented code. Create tools that enhance how users see and interact with the site, taking into consideration accessibility, usability, multi-browser compatibility and performance. Implement security and data protection and monitor and reduce cyber security risk. Requires basic skill set and proficiency. Conducts work assignments as directed. Job Code: P34851Grade: P16 Minimum Qualifications EQUIVALENCY STATEMENT: 1 year of higher education can be substituted for 1 year of directly related work experience (Example: bachelor's degree = 4 years of directly related work experience). Web Developers (Full Stack), I: Requires a bachelor's (or equivalency) + 2 years of directly related work experience or a master's (or equivalency) degree. Preferences Prior Knowledge Of Or Experience With AWS Preferred. Strong collaboration and communication skills. Preferred Degree In Computer Science Or IT. Special Instructions Requisition Number: PRN46808B Full Time or Part Time? Full Time Work Schedule Summary: Monday – Friday, 8 am – 5 pm (Hybrid option available after six-month probation period). Department: 00333 - UIT Digital Learning Tech Location: Campus Pay Rate Range: $60,000-70,000 Close Date: 01/31/2027 Open Until Filled To apply, visit https://utah.peopleadmin.com/postings/212143 Copyright ©2025 Jobelephant.com Inc. All rights reserved. Posted by the FREE value-added recruitment advertising agency je-ca2b02f91d164f6c819ae42cadd76d37",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-21T09:13:17.261482+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "52bd93f6c29924890194",
+          "attempted_at": "2026-11-21T09:13:17.261482+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-21T09:13:17.261482+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "Full Stack I appears early-career; responsibilities and qualifications could confirm fit."
+      },
+      "linkedin_detail_triage_hash": "81a7858ccdcb6338284f",
+      "linkedin_detail_attempted_at": "2026-11-21T09:13:36.975489+00:00",
+      "linkedin_detail_fetched_at": "2026-11-21T09:13:36.975489+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469496618",
