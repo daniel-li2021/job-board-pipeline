@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-21T00:43:05.811202+00:00",
-  "count": 6752,
+  "generated_at": "2026-11-21T00:54:34.463228+00:00",
+  "count": 6754,
   "companies": [
     {
       "name": "01.com",
@@ -492,6 +492,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "A+E Global Media",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "87e7dc5da7ae57eeb1411806"
+      ],
       "seen_count": 1
     },
     {
@@ -19078,6 +19091,19 @@
       "seen_count": 1
     },
     {
+      "name": "Cognite",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "8339be132496e536a568273e"
+      ],
+      "seen_count": 1
+    },
+    {
       "name": "Cognite - AI for Industry",
       "aliases": [],
       "size": "unknown",
@@ -20902,9 +20928,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "683a6134dd6da65d48850fa1",
         "6c3f290d2e7ada7d3349e6a5"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Copper State Bolt & Nut Co.",
@@ -21304,10 +21331,11 @@
         "38747eb6f36e326594c3af9c",
         "676a2cf9b2b974a0534f3c61",
         "877f84233802eda9a8fcaacc",
+        "ab817527d3822f4384ff1426",
         "bdfae397198a217e550a58e0",
         "d961161f3be5bba3964cb5f6"
       ],
-      "seen_count": 6
+      "seen_count": 7
     },
     {
       "name": "Cotality",
@@ -33424,11 +33452,12 @@
       "seen_job_keys": [
         "221637e0ca1dc499cdbfed27",
         "261eb464b234da0e0fa3993f",
+        "2b61543083f2fc8eac586f3d",
         "c09802bd9cc6e21c9e09bfd3",
         "d7707c3aa28054a39f00890b",
         "f7c5960d71e15cbf6d0bf3a5"
       ],
-      "seen_count": 5
+      "seen_count": 6
     },
     {
       "name": "Fruition Group US",
@@ -35806,6 +35835,7 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "03582a76424b98303d2c08b3",
         "036d472fdec8092e970b508b",
         "154eedc2a4f00ea3a1908a8a",
         "3db2ad54cf2f007ef97b9a6f",
@@ -35817,7 +35847,7 @@
         "fd3a4e7027c6ec31d295d7f4",
         "ff9e1c7bc346386c98c304ce"
       ],
-      "seen_count": 10
+      "seen_count": 11
     },
     {
       "name": "Gormat",
@@ -39636,6 +39666,7 @@
         "3968de1f158e6e7bfa58a544",
         "3d3babb5e0f38390e2817678",
         "4146bd92582723b3e0b99b38",
+        "5ee91db24a3150c1f6adf473",
         "6838b8ee35f8ec4e608fa9a0",
         "6b3a4e7775172ab77f3ca0b1",
         "6d397f4aab19d6bc8693ffa3",
@@ -39646,13 +39677,16 @@
         "8f5770465bfa140f28e9380a",
         "90cd0d7327c7d5ac762f9ff6",
         "92cee4d43366a27a5451884b",
+        "9f2d65111a8290d1a64cbece",
         "ad067dfc18f5f983d5e4f05f",
+        "c1ec55f2d02f1ffa6bbd893f",
         "cc0e456594c2a7abddbd34b8",
         "cc902e34d7299294719ada62",
         "e89a4c1791995afac76fce9f",
-        "ec6e53da368d3e147350d2c5"
+        "ec6e53da368d3e147350d2c5",
+        "f9b3d223d39ad3a83b6cbdf1"
       ],
-      "seen_count": 29
+      "seen_count": 33
     },
     {
       "name": "Hoar Construction",
@@ -40654,6 +40688,7 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "052436caae1dd5ff3bc388ac",
         "136e669c6530c0bd0a4479ea",
         "1f4de1d1e43343477ca923ec",
         "440fe4c1c0d62b69e7dcd853",
@@ -40663,7 +40698,7 @@
         "b6a5e144590caf36f9ac6233",
         "fa385c740a3d4358ecdac771"
       ],
-      "seen_count": 8
+      "seen_count": 9
     },
     {
       "name": "i3globaltech",
@@ -47235,13 +47270,14 @@
         "bfd5a8d3ded3a12cce3c8c60",
         "d0758edc4c57954cba6132b3",
         "da877fe0bb6718c470ee64a7",
+        "dbc9038f2333bd2cc911f4f1",
         "dc16c24d9a79101f0d9ce19b",
         "e4597e4e840bf0a3d3f70cbd",
         "e90161ccd18427d719594f23",
         "eabce9ffedae3ecc80250762",
         "f4e21e4ab06bdcf6fe0e8c9e"
       ],
-      "seen_count": 17
+      "seen_count": 18
     },
     {
       "name": "Koch Ag & Energy Solutions, LLC",
@@ -58004,10 +58040,11 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "86c4a3e9756fc9ad2d895359",
         "b7c2ab4cdd3515f4189d9f24",
         "c5b3c5f32a2ce8f7248a56d2"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "NOV",
@@ -72817,12 +72854,13 @@
       "tags": [],
       "seen_job_keys": [
         "054f1ff0db2e252b1285a08f",
+        "3a43c0da2b1d28baed3637fd",
         "53d2d4190e2ee1509eebce5e",
         "6f588868596a2dc064a76ed6",
         "ac889e2c4e05492ad8a413be",
         "b9a47431f003cf46df86ebfb"
       ],
-      "seen_count": 5
+      "seen_count": 6
     },
     {
       "name": "Skechers",
@@ -77969,10 +78007,11 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "1c50c42ffdc6569f19619ee3",
         "73086cb1f67a1377cfbc8fa6",
         "7f370d402c0bd8504a1a820f"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "T12 Technologies",
@@ -81364,6 +81403,7 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "01feda1fe376e90ae7774a51",
         "11f1d4067cad5cf8efaca782",
         "1b2390077318ec6212d36c6a",
         "3fc3d8db57a5a7d2c11ebdf6",
@@ -81393,7 +81433,7 @@
         "f4e630d4002d53e7465fc99b",
         "fb021ecc837df3b0bea88742"
       ],
-      "seen_count": 28
+      "seen_count": 29
     },
     {
       "name": "thyssenkrupp",
