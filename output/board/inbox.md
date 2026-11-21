@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-20 17:21 PST
-- Snapshot (UTC): 2026-11-21T01:21:51.684978+00:00
-- Jobs: 70 (Tier A/B only)
-- Last 24 hours: 49
-- Last 3 days: 70
+- Updated (PT): 2026-11-21 01:15 PST
+- Snapshot (UTC): 2026-11-21T09:15:20.379429+00:00
+- Jobs: 67 (Tier A/B only)
+- Last 24 hours: 51
+- Last 3 days: 67
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -14,12 +14,11 @@ The 7-day dump is `latest.md`.
 | A | 96 | indeed | Ventura Foods | Associate AI Engineer | Irvine, CA, US | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=85412eb5588fb90b) |
 | A | 91 | indeed | Micron Technology | New College Grad - AI Innovation Research Engineer | San Jose, CA, US | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=08e15fe829db643f) |
 | A | 92 | indeed | Ericsson | Software Development Engineer-1 | Boise, ID, US | 2026-11-10 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1758dd93fb74bd6e) |
+| A | 92 | linkedin | University of Utah | Web Developers, Full Stack I | Salt Lake City, UT | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/web-developers-full-stack-i-at-university-of-utah-4492857144) |
 | A | 91 | indeed | Kuehne+Nagel | Global Sea Logistics Agentic AI Engineer | Detroit, MI, US | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=efc1538b1b3d1aac) |
-| A | 91 | linkedin | KPMG US | Associate, AI Engineer | Atlanta, GA | 2026-11-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/associate-ai-engineer-at-kpmg-us-4491435680) |
 | A | 93 | indeed |  | Software Developer | Lakeland, FL, US | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=73f16859901047db) |
 | A | 93 | indeed | NRG Energy | Developer Analyst I | Houston, TX, US | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=749cb6a73d4c9b01) |
 | A | 92 | indeed | Monarch Investment and Management Group | Junior Applications Developer | Franktown, CO, US | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e902045796d49037) |
-| A | 92 | linkedin | Free Market Health | AI Engineer I | Pittsburgh, PA | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-engineer-i-at-free-market-health-4491547571) |
 | A | 91 | indeed | Brewer Science, Inc. | Software Engineer I | Remote, US | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e56e81cc5e074d56) |
 | A | 91 | indeed | Specialized Bicycle Components | Early Career Data Engineer | Morgan Hill, CA, US | 2026-11-19 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1e561664f9638b1c) |
 | A | 90 | indeed | SANY | Prodcut Software Developer | Peachtree City, GA, US | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6371b30fe8b87b28) |
@@ -59,11 +58,9 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | Intercom | Forward Deployed Engineer | New York, NY, US | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1d5fcb5762770959) |
 | B | 82 | indeed | CLERA | Founding AI / Backend Engineer | New York, NY, US | 2026-11-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5c5b67d38b9e5113) |
 | B | 78 | indeed | Cloudwell | Full Stack Developer | Arlington, VA, US | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=737184c05e68e4a9) |
-| B | 75 | linkedin | Evlo AI | Machine Learning Engineer | San Francisco, CA | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/machine-learning-engineer-at-evlo-ai-4491408375) |
-| B | 75 | linkedin | Murphy USA | AI/Machine Learning Engineer | El Dorado, AR | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-machine-learning-engineer-at-murphy-usa-4491176386) |
+| B | 75 | linkedin | SonoSim, Inc. | Full Stack Software Engineer | Los Angeles, CA | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-sonosim-inc-4492818301) |
 | B | 75 | linkedin | Column | Software Engineer | San Francisco, CA | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-column-4491752462) |
 | B | 75 | linkedin | Crypto.com | Software Engineer, Prediction Markets Platform | Chicago, IL | 2026-11-18 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-prediction-markets-platform-at-crypto-com-4481889667) |
-| B | 75 | linkedin | Cognizant | AI/ML Engineer - Agentic AI (Remote) | Englewood, CO | 2026-11-17 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/ai-ml-engineer-agentic-ai-remote-at-cognizant-4491429718) |
 | B | 77 | indeed | Fidelity Investments | Software Engineer | Durham, NC, US | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=3166a7dfd905ef73) |
 | B | 79 | indeed | Circadia Health | Forward Deployed AI Engineer | Salt Lake City, UT, US | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=606c6750c15490b3) |
 | B | 78 | indeed | Multiply Mortgage | Early Software Engineer (AI-Native) | San Francisco, CA, US | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=27fc86c9c109823b) |
