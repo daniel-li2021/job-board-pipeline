@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-22T00:41:21.982493+00:00",
-  "count": 6822,
+  "generated_at": "2026-11-22T00:54:39.949841+00:00",
+  "count": 6823,
   "companies": [
     {
       "name": "01.com",
@@ -3629,7 +3629,9 @@
     },
     {
       "name": "ALLETE",
-      "aliases": [],
+      "aliases": [
+        "Allete"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
@@ -3637,12 +3639,13 @@
       "tags": [],
       "seen_job_keys": [
         "0af42d6ceddf09d470a875f3",
+        "24bcd5a3af283f0d6a6a0029",
         "2d3e446ef0b983f64a146f0e",
         "924cb3713b3594f0a41c13e0",
         "930300cf6d8f9324e3934e53",
         "a63c44e70161639135ebba7b"
       ],
-      "seen_count": 5
+      "seen_count": 6
     },
     {
       "name": "Alliance Credit Union",
@@ -13019,9 +13022,10 @@
         "57dea7f77cfd1981a7c069cf",
         "69a54568156435988f6eea54",
         "784e873ff9267410c9594bfb",
+        "cdbdefda98d84e005b2aece0",
         "f2dbb0975450cb79cc7f23bf"
       ],
-      "seen_count": 4
+      "seen_count": 5
     },
     {
       "name": "Brightview",
@@ -14843,6 +14847,19 @@
       "tags": [],
       "seen_job_keys": [
         "7c0401b81433044e2553ea6b"
+      ],
+      "seen_count": 1
+    },
+    {
+      "name": "Cantina",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "ec43e8751f3d14f14cf60cee"
       ],
       "seen_count": 1
     },
@@ -19531,9 +19548,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "936f76eaf40f04b2acf3b0a7"
+        "936f76eaf40f04b2acf3b0a7",
+        "c62085d435584ca10c0a8631"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Collegis Education",
@@ -20753,16 +20771,19 @@
     },
     {
       "name": "Construction partners",
-      "aliases": [],
+      "aliases": [
+        "Construction Partners"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "7b37e895e034b432389b8295",
         "8812f1fe5c1462ec4b7e50da"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Constructive Partnerships Unlimited",
@@ -22007,9 +22028,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "2464b77027967d508496d050",
         "29ae28bf8ec8adaad01ab881"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Credit Management Services",
@@ -34676,6 +34698,8 @@
         "555f771b0b31d55c5234b265",
         "60900d3d622716271cd4b994",
         "63a03fb20fb1c2d68fdd600c",
+        "65395ed0bd33d034f05b13f8",
+        "74f0144ceb46ad3cad3ab91c",
         "8283b7876a4f1ad2a71636d9",
         "8646d82ff3cd2c3efbd72730",
         "88cac7aec68ac30bfe09e37e",
@@ -34693,7 +34717,7 @@
         "f62286bd98e5a11a5fd6cf33",
         "f9137f89309e15af09e2113f"
       ],
-      "seen_count": 24
+      "seen_count": 26
     },
     {
       "name": "GE",
@@ -37503,6 +37527,7 @@
       "tags": [],
       "seen_job_keys": [
         "2feda3de8c7e8b216081a3d5",
+        "477f7a6509354cc6a84ab90d",
         "82d3b127e833c7f8f9552dcd",
         "ac10eaa48b0a91c42896c84f",
         "ca82078da2d31e4d49e4b5c5",
@@ -37510,7 +37535,7 @@
         "f6cf83bf94f991114311d14a",
         "fa158699ea21ec8ccd398b8f"
       ],
-      "seen_count": 7
+      "seen_count": 8
     },
     {
       "name": "H-E-B",
@@ -43527,10 +43552,11 @@
         "09e837f2a1efaafc71818cce",
         "1d51c5da6b1eef3ce4e027e0",
         "4702513d8e16bebac2867ef0",
+        "82a8c6d66257d2076cbd4317",
         "a37e48a8e7d514b4e40dc1e7",
         "d7520ed2eac0e7db377a8a66"
       ],
-      "seen_count": 5
+      "seen_count": 6
     },
     {
       "name": "INTERCONNECT WIRING",
@@ -53830,9 +53856,10 @@
       "tags": [],
       "seen_job_keys": [
         "2b18e4f2402ddfd7c9537cba",
+        "4b9d51c908c8a1f3cb10901e",
         "676d5cc36d12349e62bb931a"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Michigan Association of School Boards",
@@ -59766,9 +59793,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "58295467d41fc685cf66424d"
+        "58295467d41fc685cf66424d",
+        "c686be092c654576a654d240"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Old Republic International",
@@ -68320,6 +68348,7 @@
       "seen_job_keys": [
         "175b4074e503728849e00857",
         "1df5e06ac5641e68e26499f8",
+        "4930d2553e06ed85eb7d01a5",
         "55e151147ec9534e52495cd2",
         "6f983636ce80fc5ac32b65d1",
         "8252308f971e77327d6f176b",
@@ -68332,7 +68361,7 @@
         "e9320e92bad95a7a2717c893",
         "fb683e5d6bfb7d0907660fc3"
       ],
-      "seen_count": 13
+      "seen_count": 14
     },
     {
       "name": "Remote Hive LLC",
