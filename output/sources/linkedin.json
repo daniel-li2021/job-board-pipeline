@@ -195,7 +195,7 @@
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-11-21T23:55:29.229251+00:00"
+    "jd_recovery_at": "2026-11-22T00:05:49.118541+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -108838,7 +108838,7 @@
       "linkedin_detail_triage_hash": "f783d921f6fecf887d67",
       "linkedin_detail_deferred_at": "2026-11-21T09:13:17.261482+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_rate_limited",
+      "enrichment_deferred_reason": "global_429_pause",
       "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
       "verified_this_run": true,
       "enrichment_failure_reason": "linkedin_rate_limited"
