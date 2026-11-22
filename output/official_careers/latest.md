@@ -1,7 +1,7 @@
-# Big Tech official careers — 7-day view — 2026-11-22_0038
+# Big Tech official careers — 7-day view — 2026-11-22_1539
 
-- Updated (PT): 2026-11-21 16:40 PST
-- Snapshot (UTC): 2026-11-22T00:40:32.756344+00:00
+- Updated (PT): 2026-11-22 07:41 PST
+- Snapshot (UTC): 2026-11-22T15:41:07.234213+00:00
 - Last 24 hours: 0
 - Last 3 days: 11
 
@@ -9,13 +9,13 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 
 ## Run stats
 
-- Scraped companies: {'Adobe': 2, 'Meta': 8, 'Johnson & Johnson': 1, 'Cisco': 8, 'Workday': 2, 'HPE': 2, 'CVS Health': 2, 'Travelers': 1, 'Expedia Group': 1, 'Capital One': 5, 'IQVIA': 1, 'Google': 250, 'Amazon': 753, 'Apple': 267, 'Microsoft': 221, 'TikTok': 701, 'Uber': 222, 'DoorDash': 407, 'Snap': 98, 'Pinterest': 129, 'Snowflake': 274, 'ServiceNow': 523, 'Bloomberg': 57, 'JPMorgan Chase': 619, 'Oracle': 527, 'Cloudflare': 502, 'Stripe': 413, 'Coinbase': 213, 'Robinhood': 153, 'Figma': 94, 'GitLab': 139, 'Discord': 29, 'Asana': 75, 'Brex': 243, 'Samsara': 256, 'Lyft': 77, 'Spotify': 69, 'Ramp': 175, 'Notion': 83, 'Linear': 24, 'Cohere': 101, 'SAP': 109, 'Disney': 112, 'Qualcomm': 123, 'AMD': 462, 'Pure Storage': 249, 'Databricks': 483, 'Roblox': 240, 'Airbnb': 103, 'Anthropic': 501, 'AppLovin': 31, 'ByteDance': 461, 'Chime': 80, 'Dell': 96, 'Dropbox': 32, 'HubSpot': 18, 'Instacart': 82, 'MathWorks': 39, 'MongoDB': 261, 'Morgan Stanley': 114, 'NetApp': 96, 'Netflix': 55, 'OpenAI': 676, 'Palantir': 243, 'PayPal': 72, 'Reddit': 130, 'Roku': 79, 'Block / Square': 166, 'Two Sigma': 39, 'Verkada': 280, 'WeRide': 10, 'Zscaler': 233, 'Chewy': 2, 'Duolingo': 46, 'Equinix': 82, 'IXL Learning': 99, 'Ansys': 17, 'PointClickCare': 82, 'Verizon': 24, 'Yext': 19}
-- Funnel: after dedup 13730 -> after company filter 13730 -> after hard filter 10545 -> after role+seniority prefilter 2282 | dropped 11448
-- LLM usage: scored 6 / API requests 2 / cache reused 384 (cross-pipeline 0) / rule fallback 1892
-- LLM cache causes: new 7 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 6 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 2 / jobs scored 6 / tokens input 9802 (cached 0) / output 1662 (reasoning 1019) / estimated cost $0.0018
-- New jobs discovered this run: 23
-- Output: Tier A 1 / Tier B 33 / shown 34
+- Scraped companies: {'Adobe': 2, 'Meta': 6, 'Cisco': 6, 'Workday': 2, 'HPE': 2, 'CVS Health': 2, 'Travelers': 1, 'Expedia Group': 1, 'Capital One': 2, 'Google': 250, 'Amazon': 753, 'Apple': 269, 'Microsoft': 221, 'TikTok': 701, 'Uber': 222, 'DoorDash': 407, 'Snap': 98, 'Pinterest': 129, 'Snowflake': 274, 'ServiceNow': 523, 'Bloomberg': 57, 'JPMorgan Chase': 619, 'Oracle': 532, 'Cloudflare': 502, 'Stripe': 412, 'Coinbase': 213, 'Robinhood': 153, 'Figma': 94, 'GitLab': 139, 'Discord': 29, 'Asana': 75, 'Brex': 243, 'Samsara': 257, 'Lyft': 74, 'Spotify': 69, 'Ramp': 175, 'Notion': 83, 'Linear': 24, 'Cohere': 101, 'SAP': 109, 'Disney': 112, 'Qualcomm': 121, 'AMD': 462, 'Zoom': 19, 'Pure Storage': 249, 'Databricks': 482, 'Roblox': 239, 'Airbnb': 103, 'Anthropic': 499, 'AppLovin': 31, 'ByteDance': 461, 'Chime': 80, 'Dell': 96, 'Dropbox': 32, 'HubSpot': 18, 'Instacart': 82, 'MathWorks': 39, 'MongoDB': 261, 'Morgan Stanley': 115, 'NetApp': 94, 'Netflix': 56, 'OpenAI': 676, 'Palantir': 243, 'PayPal': 72, 'Reddit': 130, 'Red Hat': 38, 'Roku': 79, 'Block / Square': 166, 'Two Sigma': 39, 'Verkada': 280, 'WeRide': 10, 'Zscaler': 233, 'Chewy': 2, 'Duolingo': 46, 'Equinix': 82, 'IXL Learning': 99, 'Ansys': 17, 'Johnson & Johnson': 169, 'PointClickCare': 82, 'Verizon': 23, 'Yext': 19}
+- Funnel: after dedup 13942 -> after company filter 13942 -> after hard filter 10743 -> after role+seniority prefilter 2285 | dropped 11657
+- LLM usage: scored 1 / API requests 1 / cache reused 356 (cross-pipeline 0) / rule fallback 1928
+- LLM cache causes: new 3 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 5 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 1 / jobs scored 1 / tokens input 3233 (cached 0) / output 216 (reasoning 117) / estimated cost $0.0004
+- New jobs discovered this run: 113
+- Output: Tier A 1 / Tier B 32 / shown 33
 
 ## Tier A - apply now / referral (1)
 
@@ -23,7 +23,7 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 91 | cached_llm | official | NetApp | NetApp Emerging Talent - Software Engineer (Cloud) | San Jose, California, United States; Morrisville, North Carolina, United States | 2026-11-18 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://careers.netapp.com/en/job/san-jose/netapp-emerging-talent-software-engineer-cloud/27600/103479747696) |
 
-## Tier B - worth applying (33)
+## Tier B - worth applying (32)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -53,7 +53,6 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 83 | cached_llm | official | Apple | Creative Intelligence & Aesthetics - Machine Learning Engineer | Cupertino, United States of America | 2026-11-19 | 3to7d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200696004/creative-intelligence-aesthetics-machine-learning-engineer) |
 | 83 | cached_llm | official | Apple | Software Engineer, Satellite Operations | San Diego, United States of America | 2026-11-18 | 3to7d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200695636/software-engineer-satellite-operations) |
 | 82 | cached_llm | official | Amazon | Software Development Engineer, ROBOTICS - 2027 | Austin, Texas, USA | 2026-11-18 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10607764/software-development-engineer-robotics-2027) |
-| 82 | cached_llm | official | Microsoft | Software Engineer II | United States, Washington, Redmond; United States, California, Mountain View; United States, New York, New York | 2026-11-17 | 3to7d | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557071172) |
 | 82 | cached_llm | official | Qualcomm | #Software Engineer - Automotive Platform | San Diego, California, United States of America | 2026-11-17 | 3to7d | high | swe | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446722119778) |
 | 84 | cached_llm | official | Roblox | Software Engineer, Communication Safety | San Mateo, CA, United States | 2026-11-17 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8386848?gh_jid=8386848) |
 | 82 | cached_llm | official | NetApp | NetApp Emerging Talent - Entry Level Software Engineer (Systems) | San Jose, California, United States; Morrisville, North Carolina, United States | 2026-11-18 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://careers.netapp.com/en/job/san-jose/netapp-emerging-talent-entry-level-software-engineer-systems/27600/103479747760) |

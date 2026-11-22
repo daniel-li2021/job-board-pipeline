@@ -2,6 +2,170 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-11-22T15:39:31.870357+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 1,
+      "cache_reused": 356,
+      "peer_reused": 0,
+      "same_content_reused": 5,
+      "non_material_change_reused": 0,
+      "new_or_changed": 3,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 3
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1928,
+      "requests": 1,
+      "input_tokens": 3233,
+      "cached_input_tokens": 0,
+      "output_tokens": 216,
+      "reasoning_tokens": 117,
+      "estimated_usd": 0.000431,
+      "latency_seconds": 3.825,
+      "latency_measured": true,
+      "effective_rpm": 15.69,
+      "effective_tpm": 54101.96,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 1,
+      "funnel": {
+        "after_dedup": 13942,
+        "after_company": 13942,
+        "after_hard_filter": 10743,
+        "after_prefilter": 2285,
+        "dropped": 11657
+      },
+      "output": {
+        "tier_a": 1,
+        "tier_b": 32,
+        "shown": 33,
+        "new_jobs": 113,
+        "new_jobs_added": 0
+      },
+      "enrichment": {
+        "discovered": 13987,
+        "needed": 288,
+        "source_jds_available": 13699,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 288
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://zoom.wd5.myworkdayjobs.com/Zoom/job/Remote--US/Solutions-Engineer_R19876",
+              "company": "Zoom",
+              "title": "Solutions Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.825,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3233,
+            "cached_input_tokens": 0,
+            "output_tokens": 216,
+            "reasoning_tokens": 117,
+            "estimated_usd": 0.000431
+          },
+          "decisions": [
+            {
+              "key": "url::https://zoom.wd5.myworkdayjobs.com/Zoom/job/Remote--US/Solutions-Engineer_R19876",
+              "match_score": 36.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "API and cloud experience",
+                "Customer-facing platform engineering"
+              ],
+              "main_gaps": [
+                "8+ years enterprise presales",
+                "UCaaS platform expertise"
+              ]
+            }
+          ]
+        }
+      ],
+      "scrape_failure_sources": [
+        "nvidia",
+        "salesforce",
+        "adobe",
+        "meta",
+        "capitalone",
+        "walmart",
+        "cisco",
+        "hpe",
+        "ebay",
+        "expedia",
+        "intel",
+        "visa",
+        "workday",
+        "zillow",
+        "cvs",
+        "f5",
+        "wells-fargo",
+        "yahoo",
+        "flex",
+        "iqvia",
+        "nasdaq",
+        "stryker",
+        "transunion",
+        "travelers"
+      ],
+      "scrape_failure_causes": {
+        "nvidia": "429",
+        "salesforce": "429",
+        "adobe": "429",
+        "meta": "error",
+        "capitalone": "429",
+        "walmart": "429",
+        "cisco": "429",
+        "hpe": "429",
+        "ebay": "429",
+        "expedia": "429",
+        "intel": "429",
+        "visa": "429",
+        "workday": "429",
+        "zillow": "429",
+        "cvs": "429",
+        "f5": "429",
+        "wells-fargo": "429",
+        "yahoo": "429",
+        "flex": "429",
+        "iqvia": "429",
+        "nasdaq": "429",
+        "stryker": "429",
+        "transunion": "429",
+        "travelers": "429"
+      }
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-11-22T00:38:21.261124+00:00",
       "mode": "pipeline",
       "health": "degraded",
@@ -16898,753 +17062,6 @@
       ],
       "scrape_failure_sources": [],
       "scrape_failure_causes": {}
-    },
-    {
-      "pipeline": "official",
-      "run_at": "2026-11-12T15:48:45.166963+00:00",
-      "mode": "pipeline",
-      "health": "limited",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 30,
-      "cache_reused": 427,
-      "peer_reused": 0,
-      "same_content_reused": 12,
-      "non_material_change_reused": 0,
-      "new_or_changed": 36,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 32,
-        "material_jd_change": 1,
-        "prior_rule_result_recency_gated": 3
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 2549,
-      "requests": 5,
-      "input_tokens": 39578,
-      "cached_input_tokens": 5448,
-      "output_tokens": 7227,
-      "reasoning_tokens": 4550,
-      "estimated_usd": 0.007081,
-      "latency_seconds": 80.807,
-      "latency_measured": true,
-      "effective_rpm": 3.71,
-      "effective_tpm": 34753.18,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 5,
-      "primary_batches_total": 5,
-      "batches_attempted": 5,
-      "batches_succeeded": 5,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 30,
-      "funnel": {
-        "after_dedup": 17579,
-        "after_company": 17579,
-        "after_hard_filter": 14151,
-        "after_prefilter": 3006,
-        "dropped": 14573
-      },
-      "output": {
-        "tier_a": 10,
-        "tier_b": 51,
-        "shown": 61,
-        "new_jobs": 163,
-        "new_jobs_added": 5
-      },
-      "enrichment": {
-        "discovered": 17638,
-        "needed": 1007,
-        "source_jds_available": 16631,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 1007
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10602941/tax-solution-architect-strategic-tax-planning",
-              "company": "Amazon",
-              "title": "Tax Solution Architect, Strategic Tax Planning"
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10603151/software-dev-engineer-ii-amz003914",
-              "company": "Amazon",
-              "title": "Software Dev Engineer II – AMZ003914"
-            },
-            {
-              "key": "url::https://www.metacareers.com/jobs/1618107042649941",
-              "company": "Meta",
-              "title": "Network Implementation Engineer - Fiber Delivery"
-            },
-            {
-              "key": "url::https://lifeattiktok.com/search/7706845403284801797",
-              "company": "TikTok",
-              "title": "Platform User Operations Specialist Project Intern (TikTok-Platform Responsibility-User Feedback Operations) - 2027 Start"
-            },
-            {
-              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Milpitas-California-United-States-of-America/HPE-Labs---Postdoc-Research-Scientist---Racks-Scale-Architectures_1217940",
-              "company": "HPE",
-              "title": "HPE Labs - Postdoc Research Scientist - Racks Scale Architectures"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 18.979,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 5,
-            "input_tokens": 6100,
-            "cached_input_tokens": 0,
-            "output_tokens": 1416,
-            "reasoning_tokens": 860,
-            "estimated_usd": 0.001318
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10602941/tax-solution-architect-strategic-tax-planning",
-              "match_score": 65.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Workflow automation",
-                "AWS solution deployment"
-              ],
-              "main_gaps": [
-                "Direct tax experience"
-              ]
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10603151/software-dev-engineer-ii-amz003914",
-              "match_score": 76.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Distributed software systems",
-                "Java and C++"
-              ],
-              "main_gaps": [
-                "Production Java/C++ development"
-              ]
-            },
-            {
-              "key": "url::https://www.metacareers.com/jobs/1618107042649941",
-              "match_score": 25.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Cross-functional delivery",
-                "Process modernization"
-              ],
-              "main_gaps": [
-                "Fiber delivery expertise",
-                "8+ years program management"
-              ]
-            },
-            {
-              "key": "url::https://lifeattiktok.com/search/7706845403284801797",
-              "match_score": 38.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Technical troubleshooting",
-                "SQL and web technologies"
-              ],
-              "main_gaps": [
-                "Chinese fluency",
-                "Current undergraduate enrollment"
-              ]
-            },
-            {
-              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Milpitas-California-United-States-of-America/HPE-Labs---Postdoc-Research-Scientist---Racks-Scale-Architectures_1217940",
-              "match_score": 27.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Systems software experience",
-                "Research software development"
-              ],
-              "main_gaps": [
-                "PhD and research publications",
-                "Computer architecture expertise"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Associate--Data-Scientist---US-Card_R1005289-1",
-              "company": "Capital One",
-              "title": "Associate, Data Scientist - US Card"
-            },
-            {
-              "key": "url::https://joinbytedance.com/search/7707090920923679029",
-              "company": "ByteDance",
-              "title": "Applied AI Architect - Seedance / Seedream / Seed Audio"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/107816231494394566-business-data-scientist-gup-analytics",
-              "company": "Google",
-              "title": "Business Data Scientist, gUP Analytics"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 10.786,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 3,
-            "input_tokens": 5120,
-            "cached_input_tokens": 0,
-            "output_tokens": 722,
-            "reasoning_tokens": 376,
-            "estimated_usd": 0.000873
-          },
-          "decisions": [
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Associate--Data-Scientist---US-Card_R1005289-1",
-              "match_score": 86.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Applied machine learning",
-                "Python, SQL, and Spark"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://joinbytedance.com/search/7707090920923679029",
-              "match_score": 55.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Hands-on AI prototyping",
-                "Production AI implementation"
-              ],
-              "main_gaps": [
-                "Customer-facing advisory experience",
-                "Generative media expertise"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/107816231494394566-business-data-scientist-gup-analytics",
-              "match_score": 58.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Applied data science",
-                "Python, SQL, and ML"
-              ],
-              "main_gaps": [
-                "Three years relevant experience",
-                "End-user experimentation design"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 3,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/130145388509176518-platform-application-engineer-cloud-ai-infrastructure",
-              "company": "Google",
-              "title": "Platform Application Engineer, Cloud AI Infrastructure"
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10601951/software-development-engineer-ii-ads-ai-core-infra",
-              "company": "Amazon",
-              "title": "Software Development Engineer II, Ads AI Core Infra"
-            },
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557056093",
-              "company": "Microsoft",
-              "title": "Data Engineer"
-            },
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Data-Engineer-4_R1005553-1",
-              "company": "Capital One",
-              "title": "Data Engineer 4"
-            },
-            {
-              "key": "url::https://www.mathworks.com/company/jobs/opportunities/37923-software-engineer?keywords=data+engineer",
-              "company": "MathWorks",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "url::https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/Full-Stack-Developer_R-585301",
-              "company": "Wells Fargo",
-              "title": "Full Stack Developer"
-            },
-            {
-              "key": "url::https://www.mongodb.com/careers/job?gh_jid=8366703",
-              "company": "MongoDB",
-              "title": "Software Engineer 3"
-            },
-            {
-              "key": "url::https://www.mongodb.com/careers/job?gh_jid=8348102",
-              "company": "MongoDB",
-              "title": "Software Engineer 3"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/99790896123257542-software-engineer-knowledge-catalog-for-ai",
-              "company": "Google",
-              "title": "Software Engineer, Knowledge Catalog For AI"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/122047485370606278-software-engineer-iii-xprof-soc-architect",
-              "company": "Google",
-              "title": "Software Engineer III, XProf SOC Architect"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 20.038,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 10,
-            "input_tokens": 13962,
-            "cached_input_tokens": 0,
-            "output_tokens": 2145,
-            "reasoning_tokens": 1343,
-            "estimated_usd": 0.002469
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/130145388509176518-platform-application-engineer-cloud-ai-infrastructure",
-              "match_score": 20.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Linux/cloud infrastructure",
-                "AI/ML systems exposure"
-              ],
-              "main_gaps": [
-                "Hardware and silicon debugging",
-                "CPU/GPU/TPU validation"
-              ]
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10601951/software-development-engineer-ii-ads-ai-core-infra",
-              "match_score": 68.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Distributed backend services",
-                "Production software delivery"
-              ],
-              "main_gaps": [
-                "3+ years professional development",
-                "High-availability AWS services"
-              ]
-            },
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557056093",
-              "match_score": 78.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Spark and Databricks pipelines",
-                "Production data validation"
-              ],
-              "main_gaps": [
-                "Fabric/Synapse experience"
-              ]
-            },
-            {
-              "key": "url::https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/McLean-VA/Data-Engineer-4_R1005553-1",
-              "match_score": 48.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Python and Spark",
-                "Data pipeline development"
-              ],
-              "main_gaps": [
-                "4+ years application development",
-                "Independent data platform architecture"
-              ]
-            },
-            {
-              "key": "url::https://www.mathworks.com/company/jobs/opportunities/37923-software-engineer?keywords=data+engineer",
-              "match_score": 46.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "C++ programming",
-                "Applied mathematics background"
-              ],
-              "main_gaps": [
-                "Compiler optimization",
-                "Embedded systems code generation"
-              ]
-            },
-            {
-              "key": "url::https://wf.wd1.myworkdayjobs.com/WellsFargoJobs/job/CHARLOTTE-NC/Full-Stack-Developer_R-585301",
-              "match_score": 56.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack application delivery",
-                "REST APIs and CI/CD"
-              ],
-              "main_gaps": [
-                "4+ years software engineering",
-                "Core Java and Spring Boot"
-              ]
-            },
-            {
-              "key": "url::https://www.mongodb.com/careers/job?gh_jid=8366703",
-              "match_score": 74.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Agent and RAG systems",
-                "Distributed backend services"
-              ],
-              "main_gaps": [
-                "3+ years distributed systems"
-              ]
-            },
-            {
-              "key": "url::https://www.mongodb.com/careers/job?gh_jid=8348102",
-              "match_score": 74.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "API contracts and validation",
-                "MCP and agent tooling"
-              ],
-              "main_gaps": [
-                "4+ years production services",
-                "Authentication and authorization"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/99790896123257542-software-engineer-knowledge-catalog-for-ai",
-              "match_score": 82.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production AI agents",
-                "Retrieval and distributed systems"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/122047485370606278-software-engineer-iii-xprof-soc-architect",
-              "match_score": 24.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "C++ and systems programming"
-              ],
-              "main_gaps": [
-                "Silicon development process",
-                "SoC architecture and digital design"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 4,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://jobs.apple.com/en-us/details/200693736/aiops-software-engineer-strategic-data-solutions",
-              "company": "Apple",
-              "title": "AIOps Software Engineer - Strategic Data Solutions"
-            },
-            {
-              "key": "url::https://jobs.apple.com/en-us/details/200694513/software-development-engineer-vision-products-software",
-              "company": "Apple",
-              "title": "Software Development Engineer, Vision Products Software"
-            },
-            {
-              "key": "url::https://www.mathworks.com/company/jobs/opportunities/37925-software-engineer?keywords=solutions+architect",
-              "company": "MathWorks",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "url::https://www.mathworks.com/company/jobs/opportunities/37924-software-engineer?keywords=solutions+architect",
-              "company": "MathWorks",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "url::https://www.mongodb.com/careers/job?gh_jid=8367902",
-              "company": "MongoDB",
-              "title": "Software Engineer 3"
-            },
-            {
-              "key": "url::https://www.mongodb.com/careers/job?gh_jid=8351199",
-              "company": "MongoDB",
-              "title": "Software Engineer 3"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/98668707068158662-data-engineer-gup-engineering",
-              "company": "Google",
-              "title": "Data Engineer, gUP Engineering"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/77331446980584134-forward-deployed-engineer-ii-generative-ai-google-cloud",
-              "company": "Google",
-              "title": "Forward Deployed Engineer II, Generative AI, Google Cloud"
-            },
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557027390",
-              "company": "Microsoft",
-              "title": "Data Scientist, CoreAI"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/101752149989302982-research-scientist-modeling-of-readout-and-reset-quantum",
-              "company": "Google",
-              "title": "Research Scientist, Modeling of Readout and Reset, Quantum"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 24.157,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 10,
-            "input_tokens": 10230,
-            "cached_input_tokens": 2724,
-            "output_tokens": 2350,
-            "reasoning_tokens": 1582,
-            "estimated_usd": 0.001953
-          },
-          "decisions": [
-            {
-              "key": "url::https://jobs.apple.com/en-us/details/200693736/aiops-software-engineer-strategic-data-solutions",
-              "match_score": 70.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "production data pipelines",
-                "reliability and observability"
-              ],
-              "main_gaps": [
-                "petabyte-scale platform operations"
-              ]
-            },
-            {
-              "key": "url::https://jobs.apple.com/en-us/details/200694513/software-development-engineer-vision-products-software",
-              "match_score": 71.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "AI software engineering",
-                "production systems"
-              ],
-              "main_gaps": [
-                "computer vision experience"
-              ]
-            },
-            {
-              "key": "url::https://www.mathworks.com/company/jobs/opportunities/37925-software-engineer?keywords=solutions+architect",
-              "match_score": 63.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "C++ programming",
-                "performance optimization"
-              ],
-              "main_gaps": [
-                "Simulink and MATLAB",
-                "code generation systems"
-              ]
-            },
-            {
-              "key": "url::https://www.mathworks.com/company/jobs/opportunities/37924-software-engineer?keywords=solutions+architect",
-              "match_score": 64.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "C++ programming",
-                "software testing and reliability"
-              ],
-              "main_gaps": [
-                "Simulink and MATLAB"
-              ]
-            },
-            {
-              "key": "url::https://www.mongodb.com/careers/job?gh_jid=8367902",
-              "match_score": 65.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "backend and cloud systems",
-                "production feature delivery"
-              ],
-              "main_gaps": [
-                "3+ years professional experience",
-                "compiled distributed systems"
-              ]
-            },
-            {
-              "key": "url::https://www.mongodb.com/careers/job?gh_jid=8351199",
-              "match_score": 65.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "backend and cloud systems",
-                "production feature delivery"
-              ],
-              "main_gaps": [
-                "3+ years professional experience",
-                "compiled distributed systems"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/98668707068158662-data-engineer-gup-engineering",
-              "match_score": 58.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "ETL and data pipelines",
-                "Python and SQL"
-              ],
-              "main_gaps": [
-                "3+ years data engineering",
-                "data warehousing and modeling"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/77331446980584134-forward-deployed-engineer-ii-generative-ai-google-cloud",
-              "match_score": 86.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "production agentic AI",
-                "RAG and evaluation pipelines"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557027390",
-              "match_score": 65.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "LLM evaluation and metrics",
-                "applied mathematics"
-              ],
-              "main_gaps": [
-                "A/B testing and experimentation"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/101752149989302982-research-scientist-modeling-of-readout-and-reset-quantum",
-              "match_score": 12.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python programming"
-              ],
-              "main_gaps": [
-                "PhD in physics or equivalent",
-                "quantum system modeling"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 5,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://jobs.apple.com/en-us/details/200694656/machine-learning-researcher-agentic-post-training-for-on-device-models",
-              "company": "Apple",
-              "title": "Machine Learning Researcher: Agentic Post-Training for On-Device Models"
-            },
-            {
-              "key": "url::https://lifeattiktok.com/search/7706481808216688901",
-              "company": "TikTok",
-              "title": "Network Engineer - IT Infrastructure - United States"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 6.847,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 2,
-            "input_tokens": 4166,
-            "cached_input_tokens": 2724,
-            "output_tokens": 594,
-            "reasoning_tokens": 389,
-            "estimated_usd": 0.000468
-          },
-          "decisions": [
-            {
-              "key": "url::https://jobs.apple.com/en-us/details/200694656/machine-learning-researcher-agentic-post-training-for-on-device-models",
-              "match_score": 68.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Agentic AI systems",
-                "Model fine-tuning"
-              ],
-              "main_gaps": [
-                "On-device model optimization",
-                "Agentic post-training research"
-              ]
-            },
-            {
-              "key": "url::https://lifeattiktok.com/search/7706481808216688901",
-              "match_score": 25.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python automation"
-              ],
-              "main_gaps": [
-                "Enterprise network operations",
-                "Routing and switching"
-              ]
-            }
-          ]
-        }
-      ],
-      "scrape_failure_sources": [
-        "workday"
-      ],
-      "scrape_failure_causes": {
-        "workday": "404"
-      }
     }
   ]
 }
