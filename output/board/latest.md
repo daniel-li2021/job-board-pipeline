@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-11-21_2356
+# ATS / LinkedIn board — 7-day view — 2026-11-22_0006
 
-- Updated (PT): 2026-11-21 15:59 PST
-- Snapshot (UTC): 2026-11-21T23:59:00.054584+00:00
+- Updated (PT): 2026-11-21 16:09 PST
+- Snapshot (UTC): 2026-11-22T00:09:01.770357+00:00
 - Last 24 hours: 51
 - Last 3 days: 70
 
@@ -9,15 +9,15 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 ## Run stats
 
-- Source raw: ATS 2943 / Linkedin 4617 / Indeed 879 / Glassdoor 381 (Big Company Official runs separately)
-- Funnel: after dedup 8755 -> after company filter 8208 -> after hard filter 7581 -> after role+seniority prefilter 2574 | dropped 5977
+- Source raw: ATS 2943 / Linkedin 4615 / Indeed 879 / Glassdoor 381 (Big Company Official runs separately)
+- Funnel: after dedup 8753 -> after company filter 8207 -> after hard filter 7580 -> after role+seniority prefilter 2574 | dropped 5976
 - LLM usage: jobs scored 0 / API requests 0 / cache reused 341 (cross-pipeline 1) / rule fallback+overflow 1831 (thin local cards 1171, recency-gated 0, overflow 0, new/changed 0)
 - LLM cache causes: new 0 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 4 / rescored <24h 0
 - LLM cost: model gpt-6-luna / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
-- New jobs discovered this run: 1
+- New jobs discovered this run: 0
 - Output sizing: Tier A 40 / Tier B 154 / A+B actionable 194 / Shown in latest.md 194 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 4 / 1-3d 59 / newly-disc 257 / 3-7d 32 / >7d 1820
-- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3903 of 3904 / Indeed unique 865 of 865
+- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 63 / newly-disc 257 / 3-7d 32 / >7d 1820
+- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3901 of 3902 / Indeed unique 865 of 865
 - Linkedin top exact-unique queries: software engineer=1467, ai engineer=1011, full-stack engineer=442
 - Indeed top exact-unique queries: ai engineer=233, software engineer=227, machine learning engineer=93, platform engineer=92, llm engineer=90
 
@@ -98,7 +98,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 82 | cached_llm | indeed | Intercom | Forward Deployed Engineer | New York, NY, US | 2026-11-20 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=1d5fcb5762770959) |
 | 84 | cached_llm | indeed |  | Full Stack Engineer | Fond du Lac, WI, US | 2026-11-21 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=aabf39feebe8ab05) |
 | 78 | cached_llm | indeed | Cloudwell | Full Stack Developer | Arlington, VA, US | 2026-11-20 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=737184c05e68e4a9) |
-| 79 | metadata_ai_fallback | linkedin | SonoSim, Inc. | Full Stack Software Engineer | Los Angeles, CA | 2026-11-20 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-sonosim-inc-4492818301) |
+| 75 | rule_fallback | linkedin | SonoSim, Inc. | Full Stack Software Engineer | Los Angeles, CA | 2026-11-20 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-sonosim-inc-4492818301) |
 | 79 | cached_llm | indeed | Circadia Health | Forward Deployed AI Engineer | Salt Lake City, UT, US | 2026-11-20 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=606c6750c15490b3) |
 | 78 | cached_llm | indeed | Multiply Mortgage | Early Software Engineer (AI-Native) | San Francisco, CA, US | 2026-11-20 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=27fc86c9c109823b) |
 | 78 | cached_llm | indeed |  | AI Engineer | Solon, OH, US | 2026-11-19 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=1af90cbd0b468c20) |
