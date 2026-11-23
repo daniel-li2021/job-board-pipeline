@@ -1,104 +1,116 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 4291,
+  "count": 4301,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-11-21T09:13:17.261482+00:00",
+    "scraped_at": "2026-11-23T00:23:30.213365+00:00",
     "collector": {
-      "commit": "3be69cc8d7ce0b614c2de755718db4e018e7b1cd",
+      "commit": "fa94abd943e417f597b8fcaab46b28594cb1444b",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 33.69,
+    "elapsed_seconds": 39.258,
     "query_stats": [
       {
-        "query": "full-stack engineer",
+        "query": "ai engineer",
         "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 1,
-        "stop_reason": "global_page_budget",
-        "raw_jobs": 10,
-        "unique_jobs": 10,
-        "unique_contribution": 10,
-        "first_pass_survivors": 10,
+        "page_budget": 3,
+        "pages_fetched": 2,
+        "stop_reason": "recovery_search_budget",
+        "raw_jobs": 20,
+        "unique_jobs": 20,
+        "unique_contribution": 19,
+        "first_pass_survivors": 19,
         "original_postings_resolved": 0,
-        "jds_resolved": 2,
-        "elapsed_seconds": 0.745,
-        "new_to_ledger": 5,
-        "rediscovered": 5,
+        "jds_resolved": 8,
+        "elapsed_seconds": 13.516,
+        "new_to_ledger": 11,
+        "rediscovered": 9,
         "page_yields": [
           {
             "page": 0,
             "raw": 10,
-            "new_to_ledger": 5,
-            "known": 5
+            "new_to_ledger": 3,
+            "known": 7
+          },
+          {
+            "page": 1,
+            "raw": 10,
+            "new_to_ledger": 8,
+            "known": 2
           }
         ]
+      },
+      {
+        "query": "full-stack engineer",
+        "group": "primary",
+        "page_budget": 2,
+        "pages_fetched": 0,
+        "stop_reason": "recovery_search_budget",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 0.0,
+        "new_to_ledger": 0,
+        "rediscovered": 0,
+        "page_yields": []
       },
       {
         "query": "software engineer",
         "group": "primary",
         "page_budget": 5,
         "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
+        "stop_reason": "recovery_search_budget",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.0
-      },
-      {
-        "query": "ai engineer",
-        "group": "primary",
-        "page_budget": 3,
-        "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
+        "elapsed_seconds": 0.0,
+        "new_to_ledger": 0,
+        "rediscovered": 0,
+        "page_yields": []
       }
     ],
     "search_collection": {
       "cooldown_active": false,
-      "probe": true,
-      "query_cursor": 77,
-      "requests": 1,
-      "responses": 1,
-      "pages_fetched": 1,
+      "probe": false,
+      "query_cursor": 79,
+      "requests": 2,
+      "responses": 2,
+      "pages_fetched": 2,
       "http_status": 0,
       "rate_limited": false,
-      "budget_exhausted": true,
+      "budget_exhausted": false,
       "rate_limit_event": {},
       "transport_stop_reason": "",
-      "new_to_ledger": 5,
-      "rediscovered": 5,
+      "new_to_ledger": 11,
+      "rediscovered": 9,
       "coverage_limited": true
     },
     "detail_enrichment": {
-      "eligible": 3,
+      "eligible": 2,
       "cache_reused": 0,
       "requests": 2,
       "responses": 2,
       "successful_responses": 2,
       "attempted_ids": [
-        "4492857144",
-        "4418047803"
+        "4493383776",
+        "4492818301"
       ],
       "http_status_counts": {
         "200": 2
       },
       "request_limit": 12,
-      "budget_deferred": 1,
-      "budget_exhausted": true,
+      "budget_deferred": 0,
+      "budget_exhausted": false,
       "retry_deferred": 0,
       "retry_attempts": 0,
       "exact_official": 0,
@@ -113,66 +125,51 @@
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 1,
-      "failure_reasons": {
-        "no_description": 1
-      },
-      "transport_stop_reason": "recovery_detail_budget",
-      "protected_requests": 0,
-      "protected_jds_resolved": 0,
-      "protected_deferred": 1,
+      "remaining_no_jd": 0,
+      "failure_reasons": {},
+      "protected_requests": 1,
+      "protected_jds_resolved": 1,
+      "protected_deferred": 0,
       "queue": [
+        {
+          "job_id": "4493383776",
+          "first_seen": "2026-11-23T00:23:30.213365+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": null,
+          "attempted_at": "2026-11-23T00:23:49.982282+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
         {
           "job_id": "4492818301",
           "first_seen": "2026-11-21T09:13:17.261482+00:00",
           "priority": "normal",
           "needs_jd": true,
           "deferred_at": "2026-11-21T09:13:17.261482+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "recovery_detail_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4418047803",
-          "first_seen": "2026-11-21T09:13:17.261482+00:00",
-          "priority": "normal",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": "2026-11-21T09:13:36.975489+00:00",
+          "attempted_at": "2026-11-23T00:23:49.982282+00:00",
           "attempted_this_phase": true,
           "resolved": true,
           "method": "linkedin_http",
           "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4492857144",
-          "first_seen": "2026-11-21T09:13:17.261482+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": "2026-11-21T09:13:36.975489+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
-          "past_fresh": false
+          "past_fresh": true
         }
       ],
       "admission": {
         "candidates": 5,
-        "rules_skipped": 2,
+        "rules_skipped": 3,
         "rule_reasons": {
-          "prefilter:senior": 2
+          "company_excluded": 2,
+          "prefilter:senior": 1
         },
         "cache_reused": 0,
         "non_linkedin_resolved": 0,
-        "triage_evaluated": 3,
+        "triage_evaluated": 2,
         "triage_deferred": 0,
-        "worth_detail": 3
+        "worth_detail": 2
       },
       "cooldown_active": false,
       "probe": false,
@@ -181,21 +178,24 @@
       "status": "active"
     },
     "official_enrichment": {
+      "cache": 6,
+      "remote_exact_peer": 1,
+      "dedicated_matches": 1,
       "search_provider_failures": 1,
-      "no_match": 3,
-      "search_requests": 5,
+      "no_match": 1,
+      "search_requests": 2,
       "search_provider": "bing",
-      "official_page_requests": 2,
-      "remaining_no_jd": 10
+      "official_page_requests": 0,
+      "remaining_no_jd": 12
     },
     "partial": true,
-    "blocked_reason": "search page budget exhausted",
-    "collected_count": 10,
-    "carried_count": 4281,
+    "blocked_reason": "focused query coverage",
+    "collected_count": 19,
+    "carried_count": 4282,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-11-22T00:05:49.118541+00:00"
+    "jd_recovery_at": "2026-11-23T00:24:10.810980+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -4575,7 +4575,17 @@
     "linkedin|id|4484161767": "2026-11-21T09:13:17.261482+00:00",
     "linkedin|id|4484159920": "2026-11-21T09:13:17.261482+00:00",
     "linkedin|id|4418047803": "2026-11-21T09:13:17.261482+00:00",
-    "linkedin|id|4492857144": "2026-11-21T09:13:17.261482+00:00"
+    "linkedin|id|4492857144": "2026-11-21T09:13:17.261482+00:00",
+    "linkedin|id|4469546094": "2026-09-19T18:04:19.520017+00:00",
+    "linkedin|id|4400662701": "2026-09-18T15:15:15.914241+00:00",
+    "linkedin|id|4439913104": "2026-09-18T15:15:15.914241+00:00",
+    "linkedin|id|4423927491": "2026-09-18T15:15:15.914241+00:00",
+    "linkedin|id|4492360398": "2026-11-23T00:23:30.213365+00:00",
+    "linkedin|id|3959597204": "2026-09-19T18:04:19.520017+00:00",
+    "linkedin|id|4493383776": "2026-11-23T00:23:30.213365+00:00",
+    "linkedin|id|4468009425": "2026-09-18T21:05:07.442044+00:00",
+    "linkedin|id|4477882966": "2026-11-23T00:23:30.213365+00:00",
+    "linkedin|id|4492362325": "2026-11-23T00:23:30.213365+00:00"
   },
   "jobs": [
     {
@@ -10408,7 +10418,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4471492428",
@@ -18376,7 +18386,7 @@
       "title": "Associate AI Software Engineer",
       "location": "Addison, TX",
       "posted_date": "2026-10-31",
-      "aggregator_posted_date": "2026-10-31",
+      "aggregator_posted_date": "2026-11-22",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/associate-ai-software-engineer-at-asure-software-4448913373",
@@ -18391,8 +18401,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-31T19:02:39.248330+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4490830997",
@@ -31085,12 +31095,12 @@
       "title": "AI Engineer 3 (AI Foundations)",
       "location": "McLean, VA",
       "posted_date": "2026-10-10",
-      "aggregator_posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-11-22",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-3-ai-foundations-at-capital-one-4469539350",
       "official_url": "",
-      "description": "",
+      "description": "AI Engineer 3 (AI Foundations) At Capital One, we are creating responsible and reliable AI systems, changing banking for good. For years, Capital One has been an industry leader in using machine learning to create real-time, personalized customer experiences. Our investments in technology infrastructure and world-class talent — along with our deep experience in machine learning — position us to be at the forefront of enterprises leveraging AI. From informing customers about unusual charges to answering their questions in real time, our applications of AI & ML are bringing humanity and simplicity to banking. We are committed to continuing to build world-class applied science and engineering teams to deliver our industry leading capabilities with breakthrough product experiences and scalable, high-performance AI infrastructure. At Capital One, you will help bring the transformative power of emerging AI capabilities to reimagine how we serve our customers and businesses who have come to love the products and services we build. Team Description: The Intelligent Foundations and Experiences (IFX) team is at the center of bringing our vision for AI at Capital One to life. We work hand-in-hand with our partners across the company to advance the state of the art in science and AI engineering, and we build and deploy proprietary solutions that are central to our business and deliver value to millions of customers. Our AI models and platforms empower teams across Capital One to enhance their products with the transformative power of AI, in responsible and scalable ways for the highest leverage impact. What You’ll Do: Partner with a cross-functional team of engineers, research scientists, technical program managers, and product managers to deliver AI-powered products that change how our associates work and how our customers interact with Capital One. Design, develop, test, deploy, and support AI software components including foundation model training, large language model inference, agents and multi-agent workflows, similarity search, guardrails, model evaluation, experimentation, governance, and observability, etc. Leverage a broad stack of Open Source and SaaS AI technologies such as AWS Ultraclusters, Huggingface, VectorDBs, PyTorch, and more. Invent and introduce state-of-the-art foundation model optimization techniques to improve the performance — scalability, cost, latency, throughput — of large scale production AI systems. Contribute to the technical vision and the long term roadmap of foundational AI systems at Capital One. Lead development and benchmarking of multi-turn conversational and tool-using agent workflows, ensuring measurable performance and safety metrics Implement scalable pipelines for training, fine-tuning and deploying foundation or domain-specific models across multiple environments Collaborate with research and data engineering teams to curate high-quality datasets and improve model evaluation methodologies Contribute to governance and security efforts for model traceability, lineage documentation, and version control of deployed AI assets Mentor junior AI engineers and advocate for engineering excellence, reproducibility, and responsible experimentation The Ideal Candidate: You love to build systems, take pride in the quality of your work, and also share our passion to do the right thing. You want to work on problems that will help change banking for good Passion for staying abreast of the latest research, and an ability to intuitively understand scientific publications and judiciously apply novel techniques in production You adapt quickly and thrive on bringing clarity to big, undefined problems. You love asking questions and digging deep to uncover the root of problems and can articulate your findings concisely with clarity. You have the courage to share new ideas even when they are unproven You are deeply Technical. You possess a strong foundation in engineering and mathematics, and your expertise in hardware, software, and AI enables you to see and exploit optimization opportunities that others miss You are a resilient trailblazer who can forge new paths to achieve business goals when the route is unknown This role is designated as a hybrid position. You are expected to adhere to Capital One's hybrid policy regarding required on-site presence at your designated office location. Basic Qualifications: Bachelor's Degree in Computer Science, AI, Electrical Engineering, Computer Engineering, or related fields plus at least 3 years of experience developing AI and ML algorithms or technologies, or a Master's degree in Computer Science, AI, Electrical Engineering, Computer Engineering, or related fields plus at least 1 year of experience developing AI and ML algorithms or technologies At least 3 years of experience programming with Python, Go, Scala, CUDA, or Java Preferred Qualifications: Experience contributing to development of components of AI systems with tradeoff decisions around cost, late using Python, C++, C#, Java, CUDA, or Golang Experience developing and applying state-of-the-art techniques for optimizing training and inference software to improve hardware utilization, latency, throughput, and cost Experience in building agentic AI systems and agentic workflows Demonstrated ability to evaluate and optimize LLM performance using quantitative metrics (accuracy, coherence, latency, cost) Hands-on experience implementing retrieval-augmented generation (RAG), vector database integrations, and fine-tuning workflows Experience applying prompt-engineering strategies, safety guardrails, and red-teaming methodologies to production AI systems Capital One will consider sponsoring a new qualified applicant for employment authorization for this position. R1005255 AI Engineer 3 (AI Foundations) The minimum and maximum full-time annual salaries for this role are listed below, by location. Please note that this salary information is solely for candidates hired to perform work within one of these locations, and refers to the amount Capital One is willing to pay at the time of this posting. Salaries for part-time roles will be prorated based upon the agreed upon number of hours to be regularly worked. McLean, VA: $161,800 - $184,600 for AI Engineer 3 New York, NY: $176,500 - $201,400 for AI Engineer 3 San Jose, CA: $176,500 - $201,400 for AI Engineer 3 Candidates hired to work in other locations will be subject to the pay range associated with that location, and the actual annualized salary amount offered to any candidate at the time of hire will be reflected solely in the candidate’s offer letter. This role is also eligible to earn performance based incentive compensation, which may include cash bonus(es) and/or long term incentives (LTI). Incentives could be discretionary or non discretionary depending on the plan. Capital One offers a comprehensive, competitive, and inclusive set of health, financial and other benefits that support your total well-being. Learn more at the Capital One Careers website . Eligibility varies based on full or part-time status, exempt or non-exempt status, and management level. This role is expected to accept applications for a minimum of 5 business days. No agencies please. Capital One is an equal opportunity employer (EOE, including disability/vet) committed to non-discrimination in compliance with applicable federal, state, and local laws. Capital One promotes a drug-free workplace. Capital One will consider for employment qualified applicants with a criminal history in a manner consistent with the requirements of applicable laws regarding criminal background inquiries, including, to the extent applicable, Article 23-A of the New York Correction Law; San Francisco, California Police Code Article 49, Sections 4901-4920; New York City’s Fair Chance Act; Philadelphia’s Fair Criminal Records Screening Act; and other applicable federal, state, and local laws and regulations regarding criminal background inquiries. If you have visited our website in search of information on employment opportunities or to apply for a position, and you require an accommodation, please contact Capital One Recruiting at 1-800-304-9102 or via email at RecruitingAccommodation@capitalone.com . All information you provide will be kept confidential and will be used only to the extent required to provide needed reasonable accommodations. For technical support or questions about Capital One's recruiting process, please send an email to Careers@capitalone.com Capital One does not provide, endorse nor guarantee and is not liable for third-party products, services, educational tools or other information available through this site. Capital One Financial is made up of several different entities. Please note that any position posted in Canada is for Capital One Canada, any position posted in the United Kingdom is for Capital One Europe and any position posted in the Philippines is for Capital One Philippines Service Corp. (COPSSC).",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-09-19T18:04:19.520017+00:00",
@@ -31100,8 +31110,51 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
-      "verified_this_run": false
+      "enrichment_method": "board_cache",
+      "enrichment_status": "resolved",
+      "jd_recovery_at": "2026-11-22T16:21:07.541999+00:00",
+      "official_search_status": "resolved",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-23T00:23:30.213365+00:00",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-22T16:21:07.541999+00:00",
+      "application_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/AI-Engineer-3--AI-Foundations-_R1005770-1",
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4469546094",
+      "source": "linkedin",
+      "company": "Capital One",
+      "title": "AI Engineer 3 (AI Foundations)",
+      "location": "San Jose, CA",
+      "posted_date": "2026-11-22",
+      "aggregator_posted_date": "2026-11-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-3-ai-foundations-at-capital-one-4469546094",
+      "official_url": "",
+      "description": "AI Engineer 3 (AI Foundations) At Capital One, we are creating responsible and reliable AI systems, changing banking for good. For years, Capital One has been an industry leader in using machine learning to create real-time, personalized customer experiences. Our investments in technology infrastructure and world-class talent — along with our deep experience in machine learning — position us to be at the forefront of enterprises leveraging AI. From informing customers about unusual charges to answering their questions in real time, our applications of AI & ML are bringing humanity and simplicity to banking. We are committed to continuing to build world-class applied science and engineering teams to deliver our industry leading capabilities with breakthrough product experiences and scalable, high-performance AI infrastructure. At Capital One, you will help bring the transformative power of emerging AI capabilities to reimagine how we serve our customers and businesses who have come to love the products and services we build. Team Description: The Intelligent Foundations and Experiences (IFX) team is at the center of bringing our vision for AI at Capital One to life. We work hand-in-hand with our partners across the company to advance the state of the art in science and AI engineering, and we build and deploy proprietary solutions that are central to our business and deliver value to millions of customers. Our AI models and platforms empower teams across Capital One to enhance their products with the transformative power of AI, in responsible and scalable ways for the highest leverage impact. What You’ll Do: Partner with a cross-functional team of engineers, research scientists, technical program managers, and product managers to deliver AI-powered products that change how our associates work and how our customers interact with Capital One. Design, develop, test, deploy, and support AI software components including foundation model training, large language model inference, agents and multi-agent workflows, similarity search, guardrails, model evaluation, experimentation, governance, and observability, etc. Leverage a broad stack of Open Source and SaaS AI technologies such as AWS Ultraclusters, Huggingface, VectorDBs, PyTorch, and more. Invent and introduce state-of-the-art foundation model optimization techniques to improve the performance — scalability, cost, latency, throughput — of large scale production AI systems. Contribute to the technical vision and the long term roadmap of foundational AI systems at Capital One. Lead development and benchmarking of multi-turn conversational and tool-using agent workflows, ensuring measurable performance and safety metrics Implement scalable pipelines for training, fine-tuning and deploying foundation or domain-specific models across multiple environments Collaborate with research and data engineering teams to curate high-quality datasets and improve model evaluation methodologies Contribute to governance and security efforts for model traceability, lineage documentation, and version control of deployed AI assets Mentor junior AI engineers and advocate for engineering excellence, reproducibility, and responsible experimentation The Ideal Candidate: You love to build systems, take pride in the quality of your work, and also share our passion to do the right thing. You want to work on problems that will help change banking for good Passion for staying abreast of the latest research, and an ability to intuitively understand scientific publications and judiciously apply novel techniques in production You adapt quickly and thrive on bringing clarity to big, undefined problems. You love asking questions and digging deep to uncover the root of problems and can articulate your findings concisely with clarity. You have the courage to share new ideas even when they are unproven You are deeply Technical. You possess a strong foundation in engineering and mathematics, and your expertise in hardware, software, and AI enables you to see and exploit optimization opportunities that others miss You are a resilient trailblazer who can forge new paths to achieve business goals when the route is unknown This role is designated as a hybrid position. You are expected to adhere to Capital One's hybrid policy regarding required on-site presence at your designated office location. Basic Qualifications: Bachelor's Degree in Computer Science, AI, Electrical Engineering, Computer Engineering, or related fields plus at least 3 years of experience developing AI and ML algorithms or technologies, or a Master's degree in Computer Science, AI, Electrical Engineering, Computer Engineering, or related fields plus at least 1 year of experience developing AI and ML algorithms or technologies At least 3 years of experience programming with Python, Go, Scala, CUDA, or Java Preferred Qualifications: Experience contributing to development of components of AI systems with tradeoff decisions around cost, late using Python, C++, C#, Java, CUDA, or Golang Experience developing and applying state-of-the-art techniques for optimizing training and inference software to improve hardware utilization, latency, throughput, and cost Experience in building agentic AI systems and agentic workflows Demonstrated ability to evaluate and optimize LLM performance using quantitative metrics (accuracy, coherence, latency, cost) Hands-on experience implementing retrieval-augmented generation (RAG), vector database integrations, and fine-tuning workflows Experience applying prompt-engineering strategies, safety guardrails, and red-teaming methodologies to production AI systems Capital One will consider sponsoring a new qualified applicant for employment authorization for this position. R1005255 AI Engineer 3 (AI Foundations) The minimum and maximum full-time annual salaries for this role are listed below, by location. Please note that this salary information is solely for candidates hired to perform work within one of these locations, and refers to the amount Capital One is willing to pay at the time of this posting. Salaries for part-time roles will be prorated based upon the agreed upon number of hours to be regularly worked. McLean, VA: $161,800 - $184,600 for AI Engineer 3 New York, NY: $176,500 - $201,400 for AI Engineer 3 San Jose, CA: $176,500 - $201,400 for AI Engineer 3 Candidates hired to work in other locations will be subject to the pay range associated with that location, and the actual annualized salary amount offered to any candidate at the time of hire will be reflected solely in the candidate’s offer letter. This role is also eligible to earn performance based incentive compensation, which may include cash bonus(es) and/or long term incentives (LTI). Incentives could be discretionary or non discretionary depending on the plan. Capital One offers a comprehensive, competitive, and inclusive set of health, financial and other benefits that support your total well-being. Learn more at the Capital One Careers website . Eligibility varies based on full or part-time status, exempt or non-exempt status, and management level. This role is expected to accept applications for a minimum of 5 business days. No agencies please. Capital One is an equal opportunity employer (EOE, including disability/vet) committed to non-discrimination in compliance with applicable federal, state, and local laws. Capital One promotes a drug-free workplace. Capital One will consider for employment qualified applicants with a criminal history in a manner consistent with the requirements of applicable laws regarding criminal background inquiries, including, to the extent applicable, Article 23-A of the New York Correction Law; San Francisco, California Police Code Article 49, Sections 4901-4920; New York City’s Fair Chance Act; Philadelphia’s Fair Criminal Records Screening Act; and other applicable federal, state, and local laws and regulations regarding criminal background inquiries. If you have visited our website in search of information on employment opportunities or to apply for a position, and you require an accommodation, please contact Capital One Recruiting at 1-800-304-9102 or via email at RecruitingAccommodation@capitalone.com . All information you provide will be kept confidential and will be used only to the extent required to provide needed reasonable accommodations. For technical support or questions about Capital One's recruiting process, please send an email to Careers@capitalone.com Capital One does not provide, endorse nor guarantee and is not liable for third-party products, services, educational tools or other information available through this site. Capital One Financial is made up of several different entities. Please note that any position posted in Canada is for Capital One Canada, any position posted in the United Kingdom is for Capital One Europe and any position posted in the Philippines is for Capital One Philippines Service Corp. (COPSSC).",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-19T18:04:19.520017+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://capitalone.wd12.myworkdayjobs.com/Capital_One/job/New-York-NY/AI-Engineer-3--AI-Foundations-_R1005770-1",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-23T00:23:30.213365+00:00",
+      "jd_recovery_at": "2026-11-23T00:23:30.213365+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-23T00:23:30.213365+00:00",
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4491048990",
@@ -44370,7 +44423,7 @@
         }
       },
       "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4418047803",
@@ -44426,7 +44479,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4418057161",
@@ -53600,6 +53653,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4439913104",
+      "source": "linkedin",
+      "company": "Fifth Third Bank",
+      "title": "AI Engineer - Automated Channels Transformation",
+      "location": "Cincinnati, OH",
+      "posted_date": "2026-11-22",
+      "aggregator_posted_date": "2026-11-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-automated-channels-transformation-at-fifth-third-bank-4439913104",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T15:15:15.914241+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4320236263",
       "source": "linkedin",
       "company": "Figma",
@@ -53738,7 +53816,7 @@
       "title": "Software Engineer - Machine Learning",
       "location": "New York, NY",
       "posted_date": "2026-10-09",
-      "aggregator_posted_date": "2026-10-31",
+      "aggregator_posted_date": "2026-11-22",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-machine-learning-at-figma-4239984019",
@@ -53759,8 +53837,8 @@
       "official_search_verified": true,
       "official_jd_fetched_at": "2026-10-09T19:00:12.563530+00:00",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-31T19:02:39.248330+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469966822",
@@ -75429,6 +75507,58 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4492360398",
+      "source": "linkedin",
+      "company": "Lockheed Martin",
+      "title": "A/AI Machine Learning Engineering Stf - E4",
+      "location": "Brandon, FL",
+      "posted_date": "2026-11-22",
+      "aggregator_posted_date": "2026-11-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/a-ai-machine-learning-engineering-stf-e4-at-lockheed-martin-4492360398",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-23T00:23:30.213365+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:company_excluded",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4492362325",
+      "source": "linkedin",
+      "company": "Lockheed Martin",
+      "title": "A/AI Machine Learning Engineering Stf - E4",
+      "location": "Three Lakes, FL",
+      "posted_date": "2026-11-22",
+      "aggregator_posted_date": "2026-11-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/a-ai-machine-learning-engineering-stf-e4-at-lockheed-martin-4492362325",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-23T00:23:30.213365+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:company_excluded",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4488969772",
       "source": "linkedin",
       "company": "Lockheed Martin",
@@ -82477,7 +82607,7 @@
       "title": "Senior Context Fusion AI Engineer - Autonomous Vehicles",
       "location": "Santa Clara, CA",
       "posted_date": "2026-10-10",
-      "aggregator_posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-11-22",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-context-fusion-ai-engineer-autonomous-vehicles-at-nvidia-4468029703",
@@ -82492,15 +82622,14 @@
         ]
       },
       "recovery_methods": {},
-      "application_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Context-Fusion-AI-Engineer---Autonomous-Vehicles_JR2025163",
-      "official_jd_fetched_at": "2026-10-10T19:41:32.116368+00:00",
-      "official_search_verified": true,
-      "enrichment_method": "official_cache",
+      "enrichment_method": "board_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-10T19:41:32.116368+00:00",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4468033704",
@@ -82509,7 +82638,7 @@
       "title": "Senior Context Fusion AI Engineer - Autonomous Vehicles",
       "location": "Seattle, WA",
       "posted_date": "2026-10-10",
-      "aggregator_posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-11-22",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-context-fusion-ai-engineer-autonomous-vehicles-at-nvidia-4468033704",
@@ -82524,15 +82653,14 @@
         ]
       },
       "recovery_methods": {},
-      "application_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Context-Fusion-AI-Engineer---Autonomous-Vehicles_JR2025163",
-      "official_jd_fetched_at": "2026-10-10T19:41:32.116368+00:00",
-      "official_search_verified": true,
-      "enrichment_method": "official_cache",
+      "enrichment_method": "board_cache",
       "enrichment_status": "resolved",
       "official_search_status": "resolved",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-10T19:41:32.116368+00:00",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4476875059",
@@ -87577,7 +87705,7 @@
       "title": "Principal Machine Learning Engineer",
       "location": "Nashville, TN",
       "posted_date": "2026-10-10",
-      "aggregator_posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-11-22",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/principal-machine-learning-engineer-at-oracle-4448467952",
@@ -87592,8 +87720,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4469788561",
@@ -90208,6 +90336,31 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4400662701",
+      "source": "linkedin",
+      "company": "Otter.ai",
+      "title": "Senior Software Engineer, Search & Recommendations",
+      "location": "Mountain View, CA",
+      "posted_date": "2026-11-22",
+      "aggregator_posted_date": "2026-11-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-search-recommendations-at-otter-ai-4400662701",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T15:15:15.914241+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4466563631",
       "source": "linkedin",
       "company": "Otter.ai",
@@ -91801,7 +91954,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4484161767",
@@ -91827,7 +91980,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470757665",
@@ -92680,6 +92833,52 @@
       "enrichment_status": "resolved"
     },
     {
+      "job_id": "4493383776",
+      "source": "linkedin",
+      "company": "Pereview Software",
+      "title": "AI Engineer",
+      "location": "Dallas, TX",
+      "posted_date": "2026-11-22",
+      "aggregator_posted_date": "2026-11-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-pereview-software-4493383776",
+      "official_url": "",
+      "description": "Ready to Apply? Pereview Software is seeking an AI Engineer to join our growing Product and Engineering team. This is a unique opportunity to help shape the future of AI-powered solutions within the commercial real estate industry. In this role, you will design, build, and enhance intelligent applications that leverage Large Language Models (LLMs), document processing pipelines, Retrieval-Augmented Generation (RAG) architectures, and Azure AI technologies. You will work closely with our engineering, product, and leadership teams to transform complex real estate and financial data into actionable insights and automation solutions. If you're passionate about applying AI to real-world business problems, enjoy building scalable solutions, and want to help drive the next generation of innovation at Pereview, we'd love to meet you. Please complete this brief survey: https://go.cultureindex.com/p/niy2xbmLp8t8rect6dx What You'll Be Doing Design, develop, and maintain AI-powered applications and services within the Pereview platform Take ownership of existing AI solutions and enhance their scalability, performance, and accuracy Build and optimize document ingestion, OCR, and data extraction workflows for financial and real estate documents Develop and maintain Retrieval-Augmented Generation (RAG) architectures using vector databases and semantic search technologies Create, test, and refine prompts, structured outputs, and evaluation frameworks for Large Language Models Integrate OpenAI and Azure OpenAI services into production applications Develop APIs, backend services, and data pipelines supporting AI initiatives Collaborate with product managers, engineers, and business stakeholders to identify opportunities for AI-driven innovation Monitor, troubleshoot, and continuously improve AI model performance and system reliability Participate in architectural planning and contribute to the long-term AI strategy of the organization Requirements 3+ years of software development experience with Python and modern application development Experience building AI/ML solutions using OpenAI APIs and/or Azure OpenAI Services Experience developing Retrieval-Augmented Generation (RAG) solutions, including embeddings, chunking, vector search, and document retrieval Experience building document processing and extraction pipelines, including PDF parsing, OCR, and structured data extraction Strong understanding of prompt engineering, prompt evaluation, and structured output validation Experience with LLM orchestration frameworks such as LangChain, Semantic Kernel, or similar technologies Experience working with JSON, structured outputs, and data validation Experience building data ingestion and transformation workflows Preferred Qualifications Experience working with document-heavy industries such as commercial real estate, financial services, lending, legal, or accounting Experience processing mortgage statements, financial reports, legal documents, or similar unstructured data sources Experience with Azure AI services and cloud-based AI deployments Experience extending, maintaining, or scaling production AI solutions WHO ARE WE? Pereview Software is the fastest growing provider of asset and portfolio management software to the global commercial real estate industry. To that end, multiple times since our inception, we have been recognized by Inc. 500, Dallas 100 as a fastest growing privately held business in the United States and have also been recognized by the Dallas Business Journal as one of the top places to work. Pereview Software is the only life of the asset solution to the commercial investment management industry supporting both debt and equity investments. We serve clients on a global basis from very small investment management managers to some of the largest global firms in the industry. Benefits WHAT'S IN IT FOR YOU? Health, Vision, and Dental benefits to fit your needs 401k – 4% Company match Discretionary Time Off – 3 weeks off annually LOCATION To be considered for this position, applicants must live in Dallas, TX. Ability to work in office Monday-Friday: 12400 Coit Rd. Ste 570 Dallas, TX 75251 *We are not sponsoring H1B or OPT candidates* Please complete this brief survey: https://go.cultureindex.com/p/niy2xbmLp8t8rect6dx",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-23T00:23:30.213365+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "b4bddae7ef3a1a421839",
+          "attempted_at": "2026-11-23T00:23:30.213365+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-23T00:23:30.213365+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "AI Engineer is a target role; responsibilities and seniority could materially change fit."
+      },
+      "linkedin_detail_triage_hash": "db21dd62e8d0e17c9f45",
+      "linkedin_detail_attempted_at": "2026-11-23T00:23:49.982282+00:00",
+      "linkedin_detail_fetched_at": "2026-11-23T00:23:49.982282+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4477870323",
       "source": "linkedin",
       "company": "PermitFlow",
@@ -92740,6 +92939,31 @@
       "verified_this_run": false,
       "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
       "official_search_status": "no_match"
+    },
+    {
+      "job_id": "4468009425",
+      "source": "linkedin",
+      "company": "Perplexity",
+      "title": "Member of Technical Staff (Software Engineer, Applied AI)",
+      "location": "New York, NY",
+      "posted_date": "2026-11-22",
+      "aggregator_posted_date": "2026-11-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/member-of-technical-staff-software-engineer-applied-ai-at-perplexity-4468009425",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T21:05:07.442044+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4486948069",
@@ -96379,6 +96603,31 @@
       "direct_original_fetched_at": "2026-11-13T06:56:15.245222+00:00",
       "source_verified_at": "2026-11-13T06:56:15.245222+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4423927491",
+      "source": "linkedin",
+      "company": "Qualcomm",
+      "title": "Entry level & Senior Software Engineer, Core AI Software (Onsite)",
+      "location": "San Diego, CA",
+      "posted_date": "2026-11-22",
+      "aggregator_posted_date": "2026-11-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/entry-level-senior-software-engineer-core-ai-software-onsite-at-qualcomm-4423927491",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-18T15:15:15.914241+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4489888737",
@@ -107557,6 +107806,32 @@
       "recovery_status": "filtered"
     },
     {
+      "job_id": "4477882966",
+      "source": "linkedin",
+      "company": "Snap Inc.",
+      "title": "Principal Machine Learning Engineer, Platform Integrity Engineering, Level 7",
+      "location": "New York, NY",
+      "posted_date": "2026-11-22",
+      "aggregator_posted_date": "2026-11-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/principal-machine-learning-engineer-platform-integrity-engineering-level-7-at-snap-inc-4477882966",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-23T00:23:30.213365+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4483182157",
       "source": "linkedin",
       "company": "Snap Inc.",
@@ -108811,7 +109086,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-sonosim-inc-4492818301",
       "official_url": "",
-      "description": "",
+      "description": "Compensation: $120,000 – $130,000 Base Salary + Benefits Location: Fully Remote (Option to work hybrid out of our Venice, CA office) About SonoSim & The Role At SonoSim, we create user-friendly digital experiences that transform medical education and improve healthcare outcomes. Our engineering team is a bright, motivated, and highly collaborative group. We partner closely across product and design stakeholders to deliver high-quality software that solves real-world needs for medical professionals and institutions. We are seeking a mid-level Full Stack Software Engineer (4+ years experience) to build, ship, and scale core features across the SonoSim LMS platform. Working alongside Lead, Senior, and Junior Engineers, you will navigate between projects and repositories with minimal oversight. You thrive in modern, AI-assisted development workflows and enjoy driving features from database schema design to polished user interfaces. Core Responsibilities End-to-End Feature Delivery: Own features across our primary stack—from database schema design and migrations in Prisma to backend logic (Express, tRPC) and modern UI delivery (Angular with Signals). Cross-Service Integration: Maintain cross-service awareness and navigate legacy services (Python, Django, GraphQL, REST APIs) as needed. AI-Assisted Engineering Velocity: Leverage AI tools (Kiro, Claude, Codex) for rapid prototyping and boilerplate generation, applying human oversight for code quality and architectural standards. Testing & Quality Assurance: Ensure end-to-end feature integrity by validating API-to-UI handshakes, covering edge cases, and delivering maintainable code adhering to DRY/SOLID principles. Agile Teamwork & Practices: Maintain shared documentation and actively participate in team ceremonies (stand-ups, sprint planning, retrospectives, code reviews) to foster continuous improvement. Qualifications & Requirements 4+ years of professional full-stack web development experience with demonstrated autonomy across multiple repositories. Frontend & Backend Expertise: Hands-on experience with Angular and Node.js backends (Express). APIs & ORMs: Proficiency with type-safe APIs (tRPC), ORMs (Prisma), and relational database management/migrations. Legacy Support: Familiarity with REST, Python, Django, and/or GraphQL for service maintenance. AI Tooling & Review: Comfort using AI-assisted coding tools paired with critical code review skills. Collaboration & Communication: Strong communication skills with a team-first, pragmatic mindset for collaborative development.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-21T09:13:17.261482+00:00",
@@ -108833,15 +109108,17 @@
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "normal",
-        "reason": "Relevant full-stack role; seniority and required stack could change fit."
+        "reason": "Full-stack engineering is a target role; missing requirements could change fit."
       },
-      "linkedin_detail_triage_hash": "f783d921f6fecf887d67",
+      "linkedin_detail_triage_hash": "1b2d175e9d209a573c01",
       "linkedin_detail_deferred_at": "2026-11-21T09:13:17.261482+00:00",
-      "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "global_429_pause",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
-      "verified_this_run": true,
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "verified_this_run": false,
+      "linkedin_detail_attempted_at": "2026-11-23T00:23:49.982282+00:00",
+      "linkedin_detail_fetched_at": "2026-11-23T00:23:49.982282+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4454120483",
@@ -109038,7 +109315,7 @@
         }
       },
       "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4449441343",
@@ -110569,7 +110846,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4456962962",
@@ -110595,7 +110872,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4456976042",
@@ -117712,7 +117989,7 @@
       "title": "Machine Learning Engineer Graduate (Conversational AI) - 2027 Start",
       "location": "Seattle, WA",
       "posted_date": "2026-10-10",
-      "aggregator_posted_date": "2026-10-31",
+      "aggregator_posted_date": "2026-11-22",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-graduate-conversational-ai-2027-start-at-tiktok-4476883598",
@@ -117727,15 +118004,14 @@
         ]
       },
       "recovery_methods": {},
-      "official_search_status": "resolved",
-      "application_url": "https://lifeattiktok.com/search/7670685495206857013",
-      "official_search_verified": true,
-      "official_jd_fetched_at": "2026-10-31T19:02:39.248330+00:00",
       "enrichment_method": "board_cache",
       "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-10-31T19:02:39.248330+00:00",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-10-31T19:02:39.248330+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4476896118",
@@ -117744,7 +118020,7 @@
       "title": "Machine Learning Engineer Graduate (Conversational AI) - 2027 Start",
       "location": "San Jose, CA",
       "posted_date": "2026-10-10",
-      "aggregator_posted_date": "2026-10-31",
+      "aggregator_posted_date": "2026-11-22",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-graduate-conversational-ai-2027-start-at-tiktok-4476896118",
@@ -117767,9 +118043,8 @@
       "official_jd_fetched_at": "2026-10-31T19:02:39.248330+00:00",
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-10-10T19:41:32.116368+00:00",
-      "application_url": "https://lifeattiktok.com/search/7670686314588801333",
-      "source_verified_at": "2026-10-31T19:02:39.248330+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4459474348",
@@ -119587,6 +119862,31 @@
       "recovery_methods": {},
       "source_verified_at": "2026-10-04T20:38:30.474792+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "3959597204",
+      "source": "linkedin",
+      "company": "Together AI",
+      "title": "Machine Learning Engineer - Inference",
+      "location": "San Francisco, CA",
+      "posted_date": "2026-11-22",
+      "aggregator_posted_date": "2026-11-22",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/machine-learning-engineer-inference-at-together-ai-3959597204",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-09-19T18:04:19.520017+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "ai engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4392131915",
@@ -123742,7 +124042,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-21T09:13:17.261482+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469496618",
@@ -126707,7 +127007,7 @@
       "title": "AI Engineer",
       "location": "Denver, CO",
       "posted_date": "2026-10-10",
-      "aggregator_posted_date": "2026-10-10",
+      "aggregator_posted_date": "2026-11-22",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/ai-engineer-at-vorto-4424286897",
@@ -126722,8 +127022,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-23T00:23:30.213365+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4424282886",
