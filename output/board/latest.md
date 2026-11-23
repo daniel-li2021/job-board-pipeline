@@ -1,24 +1,24 @@
-# ATS / LinkedIn board — 7-day view — 2026-11-22_1621
+# ATS / LinkedIn board — 7-day view — 2026-11-23_0024
 
-- Updated (PT): 2026-11-22 08:25 PST
-- Snapshot (UTC): 2026-11-22T16:25:09.614743+00:00
+- Updated (PT): 2026-11-22 16:27 PST
+- Snapshot (UTC): 2026-11-23T00:27:13.598047+00:00
 - Last 24 hours: 5
-- Last 3 days: 51
+- Last 3 days: 50
 
 If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) instead of this file.
 
 ## Run stats
 
-- Source raw: ATS 2936 / Linkedin 4615 / Indeed 471 / Glassdoor 381 (Big Company Official runs separately)
-- Funnel: after dedup 8338 -> after company filter 7818 -> after hard filter 7194 -> after role+seniority prefilter 2425 | dropped 5718
-- LLM usage: jobs scored 19 / API requests 3 / cache reused 167 (cross-pipeline 1) / rule fallback+overflow 1853 (thin local cards 1170, recency-gated 0, overflow 0, new/changed 20)
-- LLM cache causes: new 17 / material JD 3 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 5 / rescored <24h 3
-- LLM cost: model gpt-6-luna / API requests 3 / jobs scored 19 / tokens input 25838 (cached 0) / output 3056 (reasoning 1516) / estimated cost $0.0041
-- New jobs discovered this run: 73
-- Output sizing: Tier A 29 / Tier B 140 / A+B actionable 169 / Shown in latest.md 169 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 140 / newly-disc 38 / 3-7d 30 / >7d 1831
-- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3901 of 3902 / Indeed unique 458 of 458
-- Linkedin top exact-unique queries: software engineer=1467, ai engineer=1011, full-stack engineer=442
+- Source raw: ATS 2940 / Linkedin 4621 / Indeed 471 / Glassdoor 381 (Big Company Official runs separately)
+- Funnel: after dedup 8348 -> after company filter 7830 -> after hard filter 7206 -> after role+seniority prefilter 2429 | dropped 5728
+- LLM usage: jobs scored 3 / API requests 1 / cache reused 186 (cross-pipeline 1) / rule fallback+overflow 1854 (thin local cards 1171, recency-gated 0, overflow 0, new/changed 3)
+- LLM cache causes: new 2 / material JD 0 / matching context 0 / prior rule now eligible 1 / non-material reused 0 / same-content reused 4 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 1 / jobs scored 3 / tokens input 4326 (cached 0) / output 1029 (reasoning 810) / estimated cost $0.0009
+- New jobs discovered this run: 8
+- Output sizing: Tier A 29 / Tier B 139 / A+B actionable 168 / Shown in latest.md 168 (no hard cap)
+- Recency (kept): <3h 0 / 3-24h 0 / 1-3d 140 / newly-disc 40 / 3-7d 22 / >7d 1841
+- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3909 of 3910 / Indeed unique 458 of 458
+- Linkedin top exact-unique queries: software engineer=1467, ai engineer=1020, full-stack engineer=442
 - Indeed top exact-unique queries: software engineer=222, ai engineer=159, platform engineer=76, infrastructure engineer=62, software engineer ii=31
 
 ## Tier A - apply now / referral (29)
@@ -55,7 +55,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 93 | rule_fallback | linkedin | Kareer Basycs | Junior Python Developer | United States | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-python-developer-at-kareer-basycs-4468572925) |
 | 93 | rule_fallback | linkedin | IBM | Entry Level Software Developer-Tucson-AZ | Tucson, AZ | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/entry-level-software-developer-tucson-az-at-ibm-4468180871) |
 
-## Tier B - worth applying (140)
+## Tier B - worth applying (139)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -82,7 +82,6 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 84 | cached_llm | indeed |  | Full Stack Engineer | Fond du Lac, WI, US | 2026-11-21 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=aabf39feebe8ab05) |
 | 75 | rule | indeed | Cisco | AI Engineer - CX | San Jose, CA, US | 2026-11-20 | 1to3d | low | swe | - | unreviewed | official_identity_unmatched | - | [open](https://www.indeed.com/viewjob?jk=8a2bfc79cfbf9117) |
 | 78 | cached_llm | indeed | Cloudwell | Full Stack Developer | Arlington, VA, US | 2026-11-20 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=737184c05e68e4a9) |
-| 75 | rule_fallback | linkedin | SonoSim, Inc. | Full Stack Software Engineer | Los Angeles, CA | 2026-11-20 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-sonosim-inc-4492818301) |
 | 75 | cached_llm | indeed | Workday | Software Development Engineer – Authentication Security | Pleasanton, CA, US | 2026-11-20 | newly_discovered | low | swe | - | unreviewed | official_identity_unmatched | - | [open](https://www.indeed.com/viewjob?jk=b2682ab1624924d6) |
 | 79 | cached_llm | indeed | Circadia Health | Forward Deployed AI Engineer | Salt Lake City, UT, US | 2026-11-20 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=606c6750c15490b3) |
 | 78 | cached_llm | indeed | Multiply Mortgage | Early Software Engineer (AI-Native) | San Francisco, CA, US | 2026-11-20 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=27fc86c9c109823b) |

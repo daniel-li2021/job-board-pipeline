@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-22 08:21 PST
-- Snapshot (UTC): 2026-11-22T16:21:07.541999+00:00
-- Jobs: 51 (Tier A/B only)
+- Updated (PT): 2026-11-22 16:24 PST
+- Snapshot (UTC): 2026-11-23T00:24:56.395185+00:00
+- Jobs: 50 (Tier A/B only)
 - Last 24 hours: 5
-- Last 3 days: 51
+- Last 3 days: 50
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -49,7 +49,6 @@ The 7-day dump is `latest.md`.
 | B | 84 | indeed |  | Full Stack Engineer | Fond du Lac, WI, US | 2026-11-21 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=aabf39feebe8ab05) |
 | B | 75 | indeed | Cisco | AI Engineer - CX | San Jose, CA, US | 2026-11-20 | 1to3d | - | unreviewed | official_identity_unmatched | [open](https://www.indeed.com/viewjob?jk=8a2bfc79cfbf9117) |
 | B | 78 | indeed | Cloudwell | Full Stack Developer | Arlington, VA, US | 2026-11-20 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=737184c05e68e4a9) |
-| B | 75 | linkedin | SonoSim, Inc. | Full Stack Software Engineer | Los Angeles, CA | 2026-11-20 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/full-stack-software-engineer-at-sonosim-inc-4492818301) |
 | B | 75 | indeed | Workday | Software Development Engineer – Authentication Security | Pleasanton, CA, US | 2026-11-20 | newly_discovered | - | unreviewed | official_identity_unmatched | [open](https://www.indeed.com/viewjob?jk=b2682ab1624924d6) |
 | B | 79 | indeed | Circadia Health | Forward Deployed AI Engineer | Salt Lake City, UT, US | 2026-11-20 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=606c6750c15490b3) |
 | B | 78 | indeed | Multiply Mortgage | Early Software Engineer (AI-Native) | San Francisco, CA, US | 2026-11-20 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=27fc86c9c109823b) |

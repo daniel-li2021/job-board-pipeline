@@ -2,6 +2,193 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-11-23T00:24:56.395185+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 3,
+      "cache_reused": 186,
+      "peer_reused": 1,
+      "same_content_reused": 4,
+      "non_material_change_reused": 0,
+      "new_or_changed": 3,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 2,
+        "prior_rule_result_now_eligible_for_llm": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1854,
+      "requests": 1,
+      "input_tokens": 4326,
+      "cached_input_tokens": 0,
+      "output_tokens": 1029,
+      "reasoning_tokens": 810,
+      "estimated_usd": 0.000947,
+      "latency_seconds": 9.996,
+      "latency_measured": true,
+      "effective_rpm": 6.0,
+      "effective_tpm": 32142.86,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 3,
+      "funnel": {
+        "after_dedup": 8348,
+        "after_company": 7830,
+        "after_hard_filter": 7206,
+        "after_prefilter": 2429,
+        "official_duplicates_suppressed": 386,
+        "retry_only_carried": 0,
+        "dropped": 5728
+      },
+      "output": {
+        "tier_a": 29,
+        "tier_b": 139,
+        "ab_before_cap": 168,
+        "shown": 168,
+        "new_jobs": 8,
+        "new_jobs_added": 0,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 5,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 3,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 3487,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 23,
+          "identity_needed": 23,
+          "http_requests": 14,
+          "identities_resolved": 12,
+          "cache_reused": 1,
+          "remaining_no_jd": 3487,
+          "failure_reasons": {}
+        },
+        "remaining_no_jd": 3442,
+        "failure_reasons": {
+          "no_enrichment_path": 2844,
+          "linkedin_rate_limited": 164,
+          "linkedin_http_429": 6,
+          "official_detail_deferred": 48,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 378
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4492818301",
+              "company": "SonoSim, Inc.",
+              "title": "Full Stack Software Engineer"
+            },
+            {
+              "key": "id::linkedin::4493383776",
+              "company": "Pereview Software",
+              "title": "AI Engineer"
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155063BR",
+              "company": "Infosys",
+              "title": "Hadoop and PySpark Data Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 9.996,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 4326,
+            "cached_input_tokens": 0,
+            "output_tokens": 1029,
+            "reasoning_tokens": 810,
+            "estimated_usd": 0.000947
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4492818301",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "End-to-end full-stack delivery",
+                "Node.js and Angular"
+              ],
+              "main_gaps": [
+                "4+ years of experience",
+                "tRPC and Prisma"
+              ]
+            },
+            {
+              "key": "id::linkedin::4493383776",
+              "match_score": 77.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production RAG systems",
+                "Document ingestion and evaluation"
+              ],
+              "main_gaps": [
+                "3+ years of software experience",
+                "OCR and structured extraction"
+              ]
+            },
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155063BR",
+              "match_score": 66.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Spark data workflows",
+                "Databricks pipeline troubleshooting"
+              ],
+              "main_gaps": [
+                "Hadoop and PySpark experience"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-11-22T16:21:07.541999+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -31703,159 +31890,6 @@
               "main_gaps": [
                 "3–5+ years’ experience",
                 "Business process discovery"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-11-17T07:56:15.155491+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 1,
-      "cache_reused": 265,
-      "peer_reused": 0,
-      "same_content_reused": 2,
-      "non_material_change_reused": 0,
-      "new_or_changed": 1,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1769,
-      "requests": 1,
-      "input_tokens": 4440,
-      "cached_input_tokens": 0,
-      "output_tokens": 168,
-      "reasoning_tokens": 82,
-      "estimated_usd": 0.000528,
-      "latency_seconds": 2.77,
-      "latency_measured": true,
-      "effective_rpm": 21.66,
-      "effective_tpm": 99812.27,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 1,
-      "primary_batches_total": 1,
-      "batches_attempted": 1,
-      "batches_succeeded": 1,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 1,
-      "funnel": {
-        "after_dedup": 8485,
-        "after_company": 7973,
-        "after_hard_filter": 7354,
-        "after_prefilter": 2450,
-        "official_duplicates_suppressed": 415,
-        "retry_only_carried": 0,
-        "dropped": 5836
-      },
-      "output": {
-        "tier_a": 35,
-        "tier_b": 149,
-        "ab_before_cap": 184,
-        "shown": 184,
-        "new_jobs": 51,
-        "new_jobs_added": 10,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 7,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 44,
-            "added": 10
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 3457,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 54,
-          "http_requests": 36,
-          "scrapling_requests": 1,
-          "identity_needed": 39,
-          "identities_resolved": 24,
-          "remaining_no_jd": 3457,
-          "failure_reasons": {
-            "linkedin_rate_limited": 14,
-            "structured_jd_not_found": 1
-          }
-        },
-        "remaining_no_jd": 3414,
-        "failure_reasons": {
-          "no_enrichment_path": 2825,
-          "linkedin_rate_limited": 156,
-          "linkedin_http_429": 6,
-          "structured_jd_not_found": 1,
-          "official_detail_deferred": 46,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 378
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5484171008",
-              "company": "Anthropic",
-              "title": "Software Engineer, Datacenter Server Lifecycle"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 2.77,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 4440,
-            "cached_input_tokens": 0,
-            "output_tokens": 168,
-            "reasoning_tokens": 82,
-            "estimated_usd": 0.000528
-          },
-          "decisions": [
-            {
-              "key": "url::https://job-boards.greenhouse.io/anthropic/jobs/5484171008",
-              "match_score": 43.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python and cloud infrastructure",
-                "Production automation tooling"
-              ],
-              "main_gaps": [
-                "Hands-on server hardware",
-                "Hardware lifecycle management"
               ]
             }
           ]
