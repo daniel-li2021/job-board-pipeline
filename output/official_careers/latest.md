@@ -1,21 +1,21 @@
-# Big Tech official careers — 7-day view — 2026-11-23_0038
+# Big Tech official careers — 7-day view — 2026-11-23_1540
 
-- Updated (PT): 2026-11-22 16:40 PST
-- Snapshot (UTC): 2026-11-23T00:40:17.217579+00:00
-- Last 24 hours: 0
-- Last 3 days: 3
+- Updated (PT): 2026-11-23 07:42 PST
+- Snapshot (UTC): 2026-11-23T15:42:06.528904+00:00
+- Last 24 hours: 1
+- Last 3 days: 4
 
 Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scoring/ranking.
 
 ## Run stats
 
-- Scraped companies: {'Zoom': 1, 'Johnson & Johnson': 3, 'JPMorgan Chase': 575, 'Dell': 97, 'Adobe': 2, 'Oracle': 455, 'Google': 257, 'Amazon': 769, 'Apple': 310, 'Microsoft': 233, 'Disney': 113, 'Chewy': 3, 'AMD': 463, 'Meta': 2, 'NetApp': 94, 'Cisco': 6, 'Workday': 2, 'HPE': 2, 'CVS Health': 2, 'Travelers': 1, 'TikTok': 702, 'Uber': 190, 'DoorDash': 407, 'Snap': 98, 'Pinterest': 129, 'Snowflake': 274, 'ServiceNow': 521, 'Bloomberg': 23, 'Cloudflare': 502, 'Stripe': 412, 'Coinbase': 213, 'Robinhood': 153, 'Figma': 94, 'GitLab': 139, 'Discord': 29, 'Asana': 75, 'Brex': 243, 'Samsara': 257, 'Lyft': 74, 'Spotify': 69, 'Ramp': 175, 'Notion': 83, 'Linear': 24, 'Cohere': 101, 'SAP': 107, 'Qualcomm': 121, 'Pure Storage': 249, 'Databricks': 482, 'Roblox': 239, 'Airbnb': 104, 'Anthropic': 502, 'AppLovin': 31, 'ByteDance': 461, 'Chime': 80, 'Dropbox': 32, 'HubSpot': 18, 'Instacart': 82, 'MathWorks': 39, 'MongoDB': 261, 'Morgan Stanley': 114, 'Netflix': 56, 'OpenAI': 676, 'Palantir': 243, 'PayPal': 72, 'Reddit': 130, 'Roku': 79, 'Block / Square': 166, 'Two Sigma': 39, 'Verkada': 280, 'WeRide': 10, 'Zscaler': 233, 'Duolingo': 46, 'Equinix': 82, 'IXL Learning': 99, 'Ansys': 17, 'PointClickCare': 82, 'Verizon': 24, 'Yext': 19}
-- Funnel: after dedup 13607 -> after company filter 13607 -> after hard filter 10429 -> after role+seniority prefilter 2350 | dropped 11257
-- LLM usage: scored 6 / API requests 1 / cache reused 349 (cross-pipeline 0) / rule fallback 1995
-- LLM cache causes: new 6 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 5 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 1 / jobs scored 6 / tokens input 9289 (cached 0) / output 1437 (reasoning 700) / estimated cost $0.0016
-- New jobs discovered this run: 17
-- Output: Tier A 1 / Tier B 28 / shown 29
+- Scraped companies: {'Zoom': 1, 'Johnson & Johnson': 3, 'JPMorgan Chase': 559, 'Dell': 96, 'Adobe': 2, 'Oracle': 454, 'Google': 250, 'Amazon': 770, 'Apple': 286, 'Microsoft': 231, 'Disney': 113, 'Chewy': 3, 'AMD': 464, 'Meta': 1, 'NetApp': 92, 'Cisco': 5, 'Workday': 2, 'HPE': 2, 'CVS Health': 135, 'TikTok': 702, 'Uber': 189, 'DoorDash': 407, 'Snap': 98, 'Pinterest': 129, 'Snowflake': 273, 'ServiceNow': 519, 'Bloomberg': 24, 'Cloudflare': 503, 'Stripe': 412, 'Coinbase': 212, 'Robinhood': 152, 'Figma': 94, 'GitLab': 132, 'Discord': 29, 'Asana': 74, 'Brex': 242, 'Samsara': 252, 'Lyft': 74, 'Spotify': 69, 'Ramp': 175, 'Notion': 83, 'Linear': 24, 'Cohere': 100, 'SAP': 104, 'Qualcomm': 121, 'Pure Storage': 249, 'Databricks': 484, 'Roblox': 239, 'Airbnb': 103, 'Anthropic': 503, 'AppLovin': 31, 'ByteDance': 461, 'Chime': 80, 'Dropbox': 32, 'Expedia Group': 32, 'HubSpot': 16, 'Instacart': 82, 'MathWorks': 39, 'MongoDB': 259, 'Morgan Stanley': 115, 'Netflix': 55, 'OpenAI': 676, 'Palantir': 241, 'PayPal': 71, 'Reddit': 130, 'Roku': 79, 'Block / Square': 166, 'Two Sigma': 40, 'Verkada': 281, 'WeRide': 10, 'Zillow': 55, 'Zscaler': 233, 'Duolingo': 46, 'Equinix': 82, 'IXL Learning': 99, 'Yahoo': 45, 'Ansys': 17, 'PointClickCare': 81, 'Verizon': 24, 'Yext': 19}
+- Funnel: after dedup 13792 -> after company filter 13792 -> after hard filter 10600 -> after role+seniority prefilter 2335 | dropped 11457
+- LLM usage: scored 14 / API requests 3 / cache reused 347 (cross-pipeline 0) / rule fallback 1974
+- LLM cache causes: new 16 / material JD 1 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 5 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 3 / jobs scored 14 / tokens input 18734 (cached 0) / output 3680 (reasoning 2334) / estimated cost $0.0037
+- New jobs discovered this run: 115
+- Output: Tier A 1 / Tier B 29 / shown 30
 
 ## Tier A - apply now / referral (1)
 
@@ -23,10 +23,11 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 91 | cached_llm | official | NetApp | NetApp Emerging Talent - Software Engineer (Cloud) | San Jose, California, United States; Morrisville, North Carolina, United States | 2026-11-18 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://careers.netapp.com/en/job/san-jose/netapp-emerging-talent-software-engineer-cloud/27600/103479747696) |
 
-## Tier B - worth applying (28)
+## Tier B - worth applying (29)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 83 | llm | official | Google | Software Engineer, Health Frontier | Mountain View, CA, USA | 2026-11-23 | 3to24h | high | swe | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/77680133900509894-software-engineer-health-frontier) |
 | 81 | cached_llm | official | Apple | Software Development Engineer - Test | Cupertino, United States of America | 2026-11-21 | 1to3d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200696408/software-development-engineer-test) |
 | 84 | cached_llm | official | Anthropic | Research Engineer, Finetuning | San Francisco, CA / New York City, NY / Seattle, WA; San Francisco, California, United States | 2026-11-21 | 1to3d | high | ai | - | unreviewed | official_canonical | [open](https://job-boards.greenhouse.io/anthropic/jobs/5489567008) |
 | 77 | cached_llm | official | ByteDance | Self-Built CDN Platform Engineer | San Jose, California, United States of America | - | 1to3d | unknown | swe | ByteDance | unreviewed | official_canonical | [open](https://joinbytedance.com/search/7709707266300184885) |
