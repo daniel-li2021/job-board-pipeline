@@ -1,23 +1,23 @@
-# ATS / LinkedIn board — 7-day view — 2026-11-24_0555
+# ATS / LinkedIn board — 7-day view — 2026-11-24_0959
 
-- Updated (PT): 2026-11-23 21:59 PST
-- Snapshot (UTC): 2026-11-24T05:59:09.185388+00:00
+- Updated (PT): 2026-11-24 02:03 PST
+- Snapshot (UTC): 2026-11-24T10:03:07.843094+00:00
 - Last 24 hours: 32
-- Last 3 days: 34
+- Last 3 days: 33
 
 If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) instead of this file.
 
 ## Run stats
 
-- Source raw: ATS 2938 / Linkedin 4617 / Indeed 612 / Glassdoor 380 (Big Company Official runs separately)
-- Funnel: after dedup 8483 -> after company filter 7986 -> after hard filter 7365 -> after role+seniority prefilter 2451 | dropped 5842
+- Source raw: ATS 2938 / Linkedin 4615 / Indeed 612 / Glassdoor 381 (Big Company Official runs separately)
+- Funnel: after dedup 8483 -> after company filter 7987 -> after hard filter 7366 -> after role+seniority prefilter 2451 | dropped 5843
 - LLM usage: jobs scored 0 / API requests 0 / cache reused 207 (cross-pipeline 1) / rule fallback+overflow 1858 (thin local cards 1174, recency-gated 0, overflow 0, new/changed 0)
 - LLM cache causes: new 0 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 5 / rescored <24h 0
 - LLM cost: model gpt-6-luna / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
-- New jobs discovered this run: 5
+- New jobs discovered this run: 0
 - Output sizing: Tier A 21 / Tier B 131 / A+B actionable 152 / Shown in latest.md 152 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 1 / 1-3d 17 / newly-disc 183 / 3-7d 22 / >7d 1842
-- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3910 of 3911 / Indeed unique 591 of 591
+- Recency (kept): <3h 0 / 3-24h 1 / 1-3d 14 / newly-disc 183 / 3-7d 13 / >7d 1854
+- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3909 of 3910 / Indeed unique 591 of 591
 - Linkedin top exact-unique queries: software engineer=1467, ai engineer=1020, full-stack engineer=442
 - Indeed top exact-unique queries: software engineer=231, software engineer ii=88, llm engineer=81, platform engineer=80, associate software engineer=79
 
@@ -26,12 +26,12 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 94 | cached_llm | indeed | Visa | Software Engineer, Agentic Developer | Highlands Ranch, CO, US | 2026-11-23 | newly_discovered | low | swe | Visa | unreviewed | official_identity_unmatched | - | [open](https://www.indeed.com/viewjob?jk=928412754723ae1c) |
-| 92 | cached_llm | linkedin | University of Utah | Web Developers, Full Stack I | Salt Lake City, UT | 2026-11-20 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/web-developers-full-stack-i-at-university-of-utah-4492857144) |
 | 93 | cached_llm | indeed | OpenBots | Junior AI Engineer | Sunrise, FL, US | 2026-11-23 | newly_discovered | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=d3e5a2eebc7c10b3) |
 | 88 | cached_llm | indeed |  | Full Stack Developer | Remote, US | 2026-11-23 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=8533df8451890712) |
 | 87 | cached_llm | indeed | State of Idaho | GS IT SOFTWARE ENGINEER 1 21745 | Boise, ID, US | 2026-11-23 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=e54714d6bb25e6d8) |
 | 87 | cached_llm | indeed | QTR | Software Engineer I | Tulsa, OK, US | 2026-11-23 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=5a4e04c7362b20a4) |
 | 86 | cached_llm | indeed | PGN AGENCY | Front-End Web Developer-Part Time | Royal Oak, MI, US | 2026-11-22 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=540f56ae4f40cafc) |
+| 92 | cached_llm | linkedin | University of Utah | Web Developers, Full Stack I | Salt Lake City, UT | 2026-11-20 | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/web-developers-full-stack-i-at-university-of-utah-4492857144) |
 | 91 | cached_llm | linkedin | KPMG US | Associate, AI Engineer | Atlanta, GA | 2026-11-18 | 3to7d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/associate-ai-engineer-at-kpmg-us-4491435680) |
 | 92 | cached_llm | linkedin | Free Market Health | AI Engineer I | Pittsburgh, PA | 2026-11-17 | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-i-at-free-market-health-4491547571) |
 | 93 | rule_fallback | linkedin | Zappos | Data Engineer I, Zappos Analytics | New York, NY | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/data-engineer-i-zappos-analytics-at-zappos-4468526196) |
@@ -78,9 +78,6 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 75 | cached_llm | indeed | Enterprise Mobility | Engineer 1, Software - Revenue Management | St. Louis, MO, US | 2026-11-23 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=87aebda66cb70f4d) |
 | 74 | cached_llm | indeed | Landis+Gyr | Technical Implementation Engineer I | Alpharetta, GA, US | 2026-11-23 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=dc76f09ed00c6a10) |
 | 72 | cached_llm | indeed | Ultima Genomics | Product Engineer I | Fremont, CA, US | 2026-11-23 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=d6df2fff5b84d602) |
-| 83 | rule_fallback | linkedin | U.S. Bank | Associate Software Engineer (Back-end Distributed systems) | Atlanta, GA | 2026-11-17 | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/associate-software-engineer-back-end-distributed-systems-at-u-s-bank-4491103270) |
-| 83 | rule_fallback | linkedin | EchoStar Corporation | Early Career - AI Engineer | Englewood, CO | 2026-11-16 | 3to7d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/early-career-ai-engineer-at-echostar-corporation-4490960048) |
-| 83 | rule_fallback | linkedin | EchoStar Corporation | Early Career - Software Engineer | Englewood, CO | 2026-11-16 | 3to7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/early-career-software-engineer-at-echostar-corporation-4490960068) |
 | 93 | rule_fallback | linkedin | Jefferies | Associate, Software Developer - Fixed Income Technology (NY Repo) | New York, NY | 2026-09-23 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/associate-software-developer-fixed-income-technology-ny-repo-at-jefferies-4456899712) |
 | 88 | rule_fallback | glassdoor | Travelers | Data Engineer I (Databricks, AWS, Python) | Hartford, CT | - | gt7d | low | swe | - | unreviewed | official_gap | - | [open](https://www.glassdoor.com/job-listing/data-engineer-i-databricks-aws-python-travelers-JV_IC1148399_KO0,37_KE38,47.htm?jl=1010253881512) |
 | 88 | rule_fallback | glassdoor | Travelers | Data Engineer I (AWS, Databricks) | Hartford, CT | - | gt7d | low | swe | - | unreviewed | official_gap | - | [open](https://www.glassdoor.com/job-listing/data-engineer-i-aws-databricks-travelers-JV_IC1148399_KO0,30_KE31,40.htm?jl=1010259312694) |
@@ -103,6 +100,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 83 | rule_fallback | linkedin | Applied Systems | Associate Software Engineer / Software Engineer | Chicago, IL | 2026-09-29 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/associate-software-engineer-software-engineer-at-applied-systems-4436261665) |
 | 83 | rule_fallback | linkedin | Superhuman | Software Engineer, Early Career | Seattle, WA | 2026-10-06 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-early-career-at-superhuman-4465267200) |
 | 83 | rule_fallback | linkedin | Pylon | Software Engineer, New Grad | San Francisco, CA | 2026-10-04 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-new-grad-at-pylon-4438850428) |
+| 83 | rule_fallback | linkedin | U.S. Bank | Associate Software Engineer (Back-end Distributed systems) | Atlanta, GA | 2026-11-17 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/associate-software-engineer-back-end-distributed-systems-at-u-s-bank-4491103270) |
 | 83 | rule_fallback | linkedin | General Motors | Software Engineer AV HIL Platform and Services (Early Career)) | Sunnyvale, CA | 2026-09-23 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-av-hil-platform-and-services-early-career-at-general-motors-4471134243) |
 | 83 | rule_fallback | linkedin | American Express | Campus Graduate Masters Full-Time Engineer - 2027 AI Engineer I, Enter | Palo Alto, CA | 2026-09-23 | gt7d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/campus-graduate-masters-full-time-engineer-2027-ai-engineer-i-enterprise-technology-services-palo-alto-ca-at-american-express-4460630299) |
 | 83 | rule_fallback | linkedin | American Express | Campus Undergraduate Full-Time Engineer - 2027 AI Engineer I, Enterpri | Sunrise, FL | 2026-09-23 | gt7d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/campus-undergraduate-full-time-engineer-2027-ai-engineer-i-enterprise-technology-services-sunrise-fl-at-american-express-4460933944) |
@@ -131,6 +129,8 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 83 | rule_fallback | linkedin | FiscalNote | Associate Software Engineer | United States | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/associate-software-engineer-at-fiscalnote-4470207835) |
 | 83 | rule_fallback | linkedin | Lumion | Junior Full Stack Software Engineer | South Jordan, UT | 2026-09-23 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-full-stack-software-engineer-at-lumion-4470981128) |
 | 83 | rule_fallback | linkedin | Rocket | Software Engineer I | Detroit, MI | 2026-09-30 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-i-at-rocket-4442893738) |
+| 83 | rule_fallback | linkedin | EchoStar Corporation | Early Career - AI Engineer | Englewood, CO | 2026-11-16 | gt7d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/early-career-ai-engineer-at-echostar-corporation-4490960048) |
+| 83 | rule_fallback | linkedin | EchoStar Corporation | Early Career - Software Engineer | Englewood, CO | 2026-11-16 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/early-career-software-engineer-at-echostar-corporation-4490960068) |
 | 83 | rule_fallback | linkedin | Choice Hotels International | Software Engineer 1 - Guest & Loyalty Domain | Scottsdale, AZ | 2026-10-11 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-1-guest-loyalty-domain-at-choice-hotels-international-4460516927) |
 | 83 | rule_fallback | linkedin | Wolverine Trading | Entry Level C++ Software Engineer | Chicago, IL | 2026-10-10 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/entry-level-c%2B%2B-software-engineer-at-wolverine-trading-4467882411) |
 | 83 | rule_fallback | linkedin | Federal Express Corporation | AI Engineer I | Memphis, TN | 2026-11-05 | gt7d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/ai-engineer-i-at-federal-express-corporation-4488028628) |

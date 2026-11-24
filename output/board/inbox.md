@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-23 21:55 PST
-- Snapshot (UTC): 2026-11-24T05:55:24.568439+00:00
-- Jobs: 34 (Tier A/B only)
+- Updated (PT): 2026-11-24 01:59 PST
+- Snapshot (UTC): 2026-11-24T09:59:28.843069+00:00
+- Jobs: 33 (Tier A/B only)
 - Last 24 hours: 32
-- Last 3 days: 34
+- Last 3 days: 33
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -12,7 +12,6 @@ The 7-day dump is `latest.md`.
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | A | 94 | indeed | Visa | Software Engineer, Agentic Developer | Highlands Ranch, CO, US | 2026-11-23 | newly_discovered | Visa | unreviewed | official_identity_unmatched | [open](https://www.indeed.com/viewjob?jk=928412754723ae1c) |
-| A | 92 | linkedin | University of Utah | Web Developers, Full Stack I | Salt Lake City, UT | 2026-11-20 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/web-developers-full-stack-i-at-university-of-utah-4492857144) |
 | A | 93 | indeed | OpenBots | Junior AI Engineer | Sunrise, FL, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d3e5a2eebc7c10b3) |
 | A | 88 | indeed |  | Full Stack Developer | Remote, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8533df8451890712) |
 | A | 87 | indeed | State of Idaho | GS IT SOFTWARE ENGINEER 1 21745 | Boise, ID, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e54714d6bb25e6d8) |
