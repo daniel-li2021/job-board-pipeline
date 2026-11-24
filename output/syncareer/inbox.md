@@ -1,15 +1,18 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-11-23 16:52 PST
-- Snapshot (UTC): 2026-11-24T00:52:01.888636+00:00
-- Jobs: 23
-- Last 24 hours: 0
-- Last 3 days: 23
+- Updated (PT): 2026-11-24 07:53 PST
+- Snapshot (UTC): 2026-11-24T15:53:32.169931+00:00
+- Jobs: 16
+- Last 24 hours: 3
+- Last 3 days: 16
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| A | 90.0 | Syncareer | Merck | GenAI Specilist, Software Engineering | Rahway, New Jersey, United States | 2026-11-23 | No sponsor | - | unreviewed | not_dedicated | [open](https://msd.wd5.myworkdayjobs.com/en-US/SearchJobs/job/USA---New-Jersey---Rahway/GenAI-Specilist--Software-Engineering_R427080?jobFamilyGroup=7ecbbff47ce101df6f65dbe0e3219de0&jobFamilyGroup=7ecbbff47ce10178a2d2503be42160fa&jobFamilyGroup=7ecbbff47ce10184a273513be42162fa&jobFamilyGroup=3fe5b654c74d100106ba066ff85c0000&jobFamilyGroup=7ecbbff47ce101c66aa1723be421aefa&jobFamilyGroup=7ecbbff47ce1016d6fc8523be42166fa&jobFamilyGroup=735a3c2155191001bb00544ed1000000&jobFamilyGroup=7ecbbff47ce101076cb4533be42168fa&jobFamilyGroup=7ecbbff47ce1012c903b553be4216cfa&jobFamilyGroup=7ecbbff47ce101165dd7563be42170fa&jobFamilyGroup=7ecbbff47ce101528e2f613be42188fa&jobFamilyGroup=7ecbbff47ce101a66b2f673be42196fa&jobFamilyGroup=7ecbbff47ce10107308c703be421aafa&jobFamilyGroup=7ecbbff47ce101b5607d583be42174fa&jobFamilyGroup=32bea0b388d8100106d0b27bbbdf0000&jobFamilyGroup=7ecbbff47ce10103e956593be42176fa&jobFamilyGroup=7ed751e22e8b100106e61aef9a690000&jobFamilyGroup=7ecbbff47ce1014dfa1c5a3be42178fa&jobFamilyGroup=7ecbbff47ce1018efdac713be421acfa&jobFamilyGroup=7ecbbff47ce101b528e55a3be4217afa&jobFamilyGroup=7ecbbff47ce10144c394733be421b0fa&jobFamilyGroup=7ecbbff47ce101f68ab55c3be4217efa&jobFamilyGroup=7ecbbff47ce10137bb885d3be42180fa&jobFamilyGroup=7ecbbff47ce101521f725f3be42184fa&jobFamilyGroup=7ecbbff47ce1010a2b4a603be42186fa&jobFamilyGroup=87716f69ca740166328d168ea9016771&jobFamilyGroup=f336b212ea3d1001bb27760d44f20000&jobFamilyGroup=7ecbbff47ce101be8f62653be42192fa) |
+| A | 87.0 | Syncareer | QuikTrip | Software Engineer I | Tulsa, Oklahoma, United States | 2026-11-23 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.quiktrip.com/QuikTrip/job/Software-Engineer-I/57741-en_US) |
+| B | 83.0 | Syncareer | IBM | Software Developer | Poughkeepsie, New York, United States | 2026-11-23 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=137550&source=WEB_Search_NA) |
 | B | 86.0 | Syncareer | WTW | AI Solutions Engineer | New York, New York, United States | 2026-11-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.wtwco.com/jobs/ai-solutions-engineer-london-england-united-kingdom-new-york-united-states) |
 | B | 92.0 | Syncareer | Teradata | Agentic AI Intern | San Diego, California, United States | 2026-11-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.teradata.com/jobs/220847/agentic-ai-intern?j_idx=9) |
 | B | 83.0 | Syncareer | Garmin | Software Engineer 1 | Salem, Oregon, United States | 2026-11-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.garmin.com/jobs/21486?lang=en-us&previousLocale=en-US) |
@@ -23,13 +26,3 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 84.0 | Syncareer | Jabil | Software Engineering Intern | Austin, Texas, United States | 2026-11-20 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.jabil.com/jobs.html?jobitem=j2472697-il-united%20states%20of%20america-software%20engineering%20intern) |
 | B | 87.0 | Syncareer | Ericsson | Software Development Engineer-1 | Boise, Idaho, United States | 2026-11-20 | No sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ericsson.com/careers/job/563121777588433?domain=ericsson.com&triggerGoButton=false) |
 | B | 81.0 | Syncareer | Intercom | Forward Deployed Engineer | New York, New York, United States | 2026-11-20 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/intercom/jobs/8405770) |
-| A | 97.0 | Syncareer | IBM | SW Developer / AI Center of Excellence - Austin, TX - 2027 | Austin, Texas, United States | 2026-11-20 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=131165&source=WEB_Search_NA) |
-| B | 88.0 | Syncareer | Samsung Electronics | Software Developer Engineer | Plano, Texas, United States | 2026-11-20 | No sponsor | - | unreviewed | not_dedicated | [open](https://sec.wd3.myworkdayjobs.com/en-US/Samsung_Careers/job/6555-Excellence-Way-Plano-TX-USA/Software-Developer-Engineer_R122139?Location_Country=bc33aa3152ec42d4995f4791a106ed09&Location_Country=a30a87ed25634629aa6c3958aa2b91ea&Location_Country=80938777cac5440fab50d729f9634969&Location_Country=29247e57dbaf46fb855b224e03170bc7&Location_Country=d903bb3fedad45039383f6de334ad4db) |
-| A | 91.0 | Syncareer | IBM | Entry Level Supply Chain Software Developer | Durham, North Carolina, United States | 2026-11-20 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=145319&source=WEB_Search_NA) |
-| A | 96.0 | Syncareer | IBM | Entry Level Software Developer 2027 | San Jose, California, United States | 2026-11-20 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.ibm.com/en_US/careers/JobDetail?jobId=145974&source=WEB_Search_NA) |
-| A | 90.0 | Syncareer | ViaSat | Associate Software Engineer, Early Career | Carlsbad, California, United States | 2026-11-20 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.viasat.com/jobs/7077?lang=en-us) |
-| B | 79.0 | Syncareer | AECOM | Digital Solutions Software Developer II | New York, New York, United States | 2026-11-20 | Sponsor | - | unreviewed | not_dedicated | [open](https://aecom.jobs/new-york-ny/digital-solutions-software-developer-ii/B94EC328A39C409E86FBC46E058A276D/job/) |
-| A | 86.0 | Syncareer | Rocket | Software Engineer I | Detroit, Michigan, United States | 2026-11-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.rocket.com/us/en/job/R-083877/Software-Engineer-I) |
-| B | 87.0 | Syncareer | Infosys | Python Full Stack Developer | Arizona, United States | 2026-11-19 | No sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/156161BR) |
-| A | 89.0 | Syncareer | Frost Bankers | Engineer I - DevOps | San Antonio, Texas, United States | 2026-11-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.frostbank.com/us/en/job/R262343/Engineer-I-DevOps) |
-| B | 76.0 | Syncareer | Comcast | Entry Level C++ Software Engineer- Reston, VA- ONSITE 2X Week- FreeWhe | Reston, Virginia, United States | 2026-11-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.comcast.com/job/reston/entry-level-c-software-engineer-reston-va-onsite-2x-week-freewheel/45483/103530075200) |
