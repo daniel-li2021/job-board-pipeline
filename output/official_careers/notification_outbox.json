@@ -1,16 +1,6 @@
 {
   "receipts": [
     {
-      "id": "bd7e67e1480c61c97436652441421e1d8daf50efa63a10b10430b217edacb646",
-      "pipeline": "official",
-      "stamp": "2026-11-09_1548",
-      "title": "Official careers digest 2026-11-09_1548 (1 new/promoted A/B)",
-      "body": "Big Tech official careers digest - 2026-11-09_1548\n\nUpdated (PT): 2026-11-09 07:50 PST\nSnapshot (UTC): 2026-11-09T15:50:42.966616+00:00\n\n1 new or promoted (B→A) Tier A/B job(s).\n\nAt most one digest is sent per Pacific day. Score/JD-only changes are not re-alerted.\n\n| Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| B | 84 | official | Apple | Tools & Automation Engineer — Early Career | Sunnyvale, United States of America | 2026-11-09 | 3to24h | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200692689/tools-automation-engineer-early-career) |",
-      "status": "delivered",
-      "issue_url": "https://github.com/daniel-li2021/job-board-pipeline/issues/285",
-      "delivered_at": "2026-11-09T15:50:55.030121+00:00"
-    },
-    {
       "id": "c5d3ecffbf0f3d3da0506f16b9b1e28e0cf142d3fa8bb2cd265c295811a272e1",
       "pipeline": "official",
       "stamp": "2026-11-10_1548",
@@ -129,6 +119,14 @@
       "status": "delivered",
       "issue_url": "https://github.com/daniel-li2021/job-board-pipeline/issues/339",
       "delivered_at": "2026-11-23T15:42:21.250610+00:00"
+    },
+    {
+      "id": "538d332f71bce7cfcd2a9144da411c9a10b1bb31ae8d76ea30d2a5c15992dfb9",
+      "pipeline": "official",
+      "stamp": "2026-11-24_1538",
+      "title": "Official careers digest 2026-11-24_1538 (9 new/promoted A/B)",
+      "body": "Big Tech official careers digest - 2026-11-24_1538\n\nUpdated (PT): 2026-11-24 07:41 PST\nSnapshot (UTC): 2026-11-24T15:41:24.880772+00:00\n\n9 new or promoted (B→A) Tier A/B job(s).\n\nAt most one digest is sent per Pacific day. Score/JD-only changes are not re-alerted.\n\n| Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| A | 85 | official | Microsoft | Software Engineer-Securing AI | United States, Washington, Redmond | 2026-11-24 | 3to24h | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557073425) |\n| A | 89 | official | JPMorgan Chase | Software Engineer I | Seattle, WA, United States | 2026-11-24 | 3to24h | J.P. Morgan | unreviewed | official_canonical | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210800132) |\n| A | 92 | official | Roblox | Software Engineer, Data Tooling | San Mateo, CA, United States | 2026-11-23 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8395051?gh_jid=8395051) |\n| A | 88 | official | PayPal | Machine Learning Engineer | San Jose, California, United States of America | 2026-11-23 | 1to3d | PayPal | unreviewed | official_canonical | [open](https://paypal.eightfold.ai/careers/job/274923558924) |\n| B | 82 | official | Google | Software Engineer III, AI/ML, App Ads Quality | Mountain View, CA, USA | 2026-11-24 | 3to24h | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/124165355219100358-software-engineer-iii-ai-ml-app-ads-quality) |\n| B | 84 | official | Amazon | Systems Development Engineer , Operations Infrastructure Services | Nashville, Tennessee, USA | 2026-11-24 | 3to24h | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10612558/systems-development-engineer-operations-infrastructure-services) |\n| B | 77 | official | Amazon | Data Engineer I, Intelligent Talent Acquisition (ITA) - Data | Seattle, Washington, USA | 2026-11-23 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10608813/data-engineer-i-intelligent-talent-acquisition-ita-data) |\n| B | 76 | official | Amazon | Software Development Engineer - Data | Newark, New Jersey, USA | 2026-11-23 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10611635/software-development-engineer-data) |\n| B | 73 | official | Amazon | Software Dev Engineer II - AMZ10628341 | Detroit, Michigan, USA | 2026-11-23 | 1to3d | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10611628/software-dev-engineer-ii-amz10628341) |",
+      "status": "pending"
     }
   ]
 }

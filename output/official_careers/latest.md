@@ -1,41 +1,45 @@
-# Big Tech official careers — 7-day view — 2026-11-24_0038
+# Big Tech official careers — 7-day view — 2026-11-24_1538
 
-- Updated (PT): 2026-11-23 16:41 PST
-- Snapshot (UTC): 2026-11-24T00:41:37.837561+00:00
-- Last 24 hours: 1
-- Last 3 days: 7
+- Updated (PT): 2026-11-24 07:41 PST
+- Snapshot (UTC): 2026-11-24T15:41:24.865075+00:00
+- Last 24 hours: 5
+- Last 3 days: 12
 
 Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scoring/ranking.
 
 ## Run stats
 
-- Scraped companies: {'JPMorgan Chase': 561, 'Expedia Group': 1, 'CVS Health': 3, 'Zoom': 1, 'Johnson & Johnson': 3, 'Dell': 100, 'Apple': 287, 'Adobe': 2, 'AMD': 466, 'Oracle': 459, 'Amazon': 774, 'Google': 254, 'Microsoft': 225, 'Disney': 114, 'Chewy': 3, 'Meta': 1, 'NetApp': 95, 'Cisco': 2, 'TikTok': 701, 'Uber': 192, 'DoorDash': 405, 'Snap': 96, 'Pinterest': 130, 'Snowflake': 270, 'ServiceNow': 516, 'Bloomberg': 26, 'Cloudflare': 502, 'Stripe': 408, 'Coinbase': 212, 'Robinhood': 150, 'Figma': 95, 'GitLab': 135, 'Discord': 29, 'Asana': 73, 'Brex': 254, 'Samsara': 245, 'Lyft': 73, 'Spotify': 67, 'Ramp': 169, 'Notion': 84, 'Linear': 23, 'Cohere': 102, 'SAP': 105, 'Qualcomm': 124, 'Pure Storage': 248, 'Databricks': 482, 'Roblox': 237, 'Airbnb': 103, 'Anthropic': 500, 'AppLovin': 31, 'ByteDance': 454, 'Chime': 81, 'Dropbox': 38, 'HubSpot': 16, 'Instacart': 86, 'MathWorks': 40, 'MongoDB': 265, 'Morgan Stanley': 112, 'Netflix': 57, 'OpenAI': 672, 'Palantir': 241, 'PayPal': 72, 'Reddit': 128, 'Roku': 78, 'Block / Square': 166, 'Two Sigma': 40, 'Verkada': 279, 'WeRide': 10, 'Zscaler': 234, 'Duolingo': 45, 'Equinix': 81, 'IXL Learning': 99, 'Ansys': 19, 'Verizon': 25, 'Yext': 19}
-- Funnel: after dedup 13450 -> after company filter 13450 -> after hard filter 10306 -> after role+seniority prefilter 2312 | dropped 11138
-- LLM usage: scored 35 / API requests 5 / cache reused 337 (cross-pipeline 0) / rule fallback 1940
-- LLM cache causes: new 41 / material JD 3 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 5 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 5 / jobs scored 35 / tokens input 49898 (cached 4575) / output 7695 (reasoning 4625) / estimated cost $0.0084
-- New jobs discovered this run: 253
-- Output: Tier A 3 / Tier B 24 / shown 27
+- Scraped companies: {'JPMorgan Chase': 558, 'Expedia Group': 1, 'CVS Health': 3, 'Zoom': 1, 'Johnson & Johnson': 3, 'Apple': 286, 'Adobe': 2, 'Oracle': 459, 'AMD': 466, 'Amazon': 774, 'Microsoft': 222, 'Google': 259, 'Disney': 116, 'Chewy': 3, 'Meta': 1, 'NetApp': 93, 'Dell': 101, 'TikTok': 700, 'Uber': 193, 'DoorDash': 406, 'Snap': 96, 'Pinterest': 128, 'Snowflake': 269, 'ServiceNow': 516, 'Bloomberg': 23, 'Cloudflare': 501, 'Stripe': 405, 'Coinbase': 211, 'Robinhood': 149, 'Figma': 95, 'GitLab': 138, 'Discord': 29, 'Asana': 72, 'Brex': 257, 'Samsara': 249, 'Lyft': 73, 'Spotify': 67, 'Ramp': 168, 'Notion': 84, 'Linear': 22, 'Cohere': 101, 'SAP': 104, 'Qualcomm': 125, 'Pure Storage': 247, 'Databricks': 485, 'Roblox': 236, 'Airbnb': 104, 'Anthropic': 502, 'AppLovin': 30, 'ByteDance': 454, 'Chime': 80, 'Dropbox': 38, 'HubSpot': 16, 'Instacart': 86, 'MathWorks': 40, 'MongoDB': 264, 'Morgan Stanley': 112, 'Netflix': 57, 'OpenAI': 675, 'Palantir': 241, 'PayPal': 70, 'Reddit': 128, 'Roku': 78, 'Block / Square': 165, 'Two Sigma': 40, 'Verkada': 279, 'WeRide': 10, 'Zscaler': 233, 'Duolingo': 44, 'Equinix': 80, 'IXL Learning': 99, 'Ansys': 20, 'PointClickCare': 80, 'Verizon': 26, 'Yext': 19}
+- Funnel: after dedup 13521 -> after company filter 13521 -> after hard filter 10373 -> after role+seniority prefilter 2330 | dropped 11191
+- LLM usage: scored 27 / API requests 5 / cache reused 360 (cross-pipeline 0) / rule fallback 1943
+- LLM cache causes: new 28 / material JD 0 / matching context 0 / prior rule now eligible 1 / non-material reused 0 / same-content reused 6 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 5 / jobs scored 27 / tokens input 34100 (cached 4575) / output 5305 (reasoning 2732) / estimated cost $0.0057
+- New jobs discovered this run: 112
+- Output: Tier A 5 / Tier B 26 / shown 31
 
-## Tier A - apply now / referral (3)
+## Tier A - apply now / referral (5)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 85 | llm | official | Microsoft | Software Engineer-Securing AI | United States, Washington, Redmond | 2026-11-24 | lt3h | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557073425) |
-| 92 | llm | official | Roblox | Software Engineer, Data Tooling | San Mateo, CA, United States | 2026-11-23 | 1to3d | high | swe | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8395051?gh_jid=8395051) |
+| 85 | cached_llm | official | Microsoft | Software Engineer-Securing AI | United States, Washington, Redmond | 2026-11-24 | 3to24h | high | swe | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557073425) |
+| 89 | llm | official | JPMorgan Chase | Software Engineer I | Seattle, WA, United States | 2026-11-24 | 3to24h | high | swe | J.P. Morgan | unreviewed | official_canonical | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210800132) |
+| 92 | cached_llm | official | Roblox | Software Engineer, Data Tooling | San Mateo, CA, United States | 2026-11-23 | 1to3d | high | swe | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8395051?gh_jid=8395051) |
+| 88 | llm | official | PayPal | Machine Learning Engineer | San Jose, California, United States of America | 2026-11-23 | 1to3d | high | swe | PayPal | unreviewed | official_canonical | [open](https://paypal.eightfold.ai/careers/job/274923558924) |
 | 91 | cached_llm | official | NetApp | NetApp Emerging Talent - Software Engineer (Cloud) | San Jose, California, United States; Morrisville, North Carolina, United States | 2026-11-18 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://careers.netapp.com/en/job/san-jose/netapp-emerging-talent-software-engineer-cloud/27600/103479747696) |
 
-## Tier B - worth applying (24)
+## Tier B - worth applying (26)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 82 | llm | official | Google | Software Engineer III, AI/ML, App Ads Quality | Mountain View, CA, USA | 2026-11-24 | 3to24h | high | swe | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/124165355219100358-software-engineer-iii-ai-ml-app-ads-quality) |
+| 84 | llm | official | Amazon | Systems Development Engineer , Operations Infrastructure Services | Nashville, Tennessee, USA | 2026-11-24 | 3to24h | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10612558/systems-development-engineer-operations-infrastructure-services) |
+| 75 | rule | official | Qualcomm | Automation Developer Engineer | San Diego, California, United States of America; Boulder, Colorado, United States of America | 2026-11-24 | 3to24h | high | swe | Qualcomm | unreviewed | official_canonical | [open](https://careers.qualcomm.com/careers/job/446721803210) |
 | 83 | cached_llm | official | Google | Software Engineer, Health Frontier | Mountain View, CA, USA | 2026-11-23 | 1to3d | high | swe | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/77680133900509894-software-engineer-health-frontier) |
 | 75 | rule | official | JPMorgan Chase | Automation Testing Software Engineer III | New York, NY, United States | 2026-11-23 | 1to3d | high | swe | J.P. Morgan | unreviewed | official_canonical | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805587) |
-| 77 | llm | official | Amazon | Data Engineer I, Intelligent Talent Acquisition (ITA) - Data | Seattle, Washington, USA | 2026-11-23 | 1to3d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10608813/data-engineer-i-intelligent-talent-acquisition-ita-data) |
-| 76 | llm | official | Amazon | Software Development Engineer - Data | Newark, New Jersey, USA | 2026-11-23 | 1to3d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10611635/software-development-engineer-data) |
-| 73 | llm | official | Amazon | Software Dev Engineer II - AMZ10628341 | Detroit, Michigan, USA | 2026-11-23 | 1to3d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10611628/software-dev-engineer-ii-amz10628341) |
+| 77 | cached_llm | official | Amazon | Data Engineer I, Intelligent Talent Acquisition (ITA) - Data | Seattle, Washington, USA | 2026-11-23 | 1to3d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10608813/data-engineer-i-intelligent-talent-acquisition-ita-data) |
+| 76 | cached_llm | official | Amazon | Software Development Engineer - Data | Newark, New Jersey, USA | 2026-11-23 | 1to3d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10611635/software-development-engineer-data) |
+| 73 | cached_llm | official | Amazon | Software Dev Engineer II - AMZ10628341 | Detroit, Michigan, USA | 2026-11-23 | 1to3d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10611628/software-dev-engineer-ii-amz10628341) |
 | 90 | cached_llm | official | Amazon | Software Development Engineer, Specialist AI Tooling, Specialist Techn | New York, New York, USA | 2026-11-19 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10607438/software-development-engineer-specialist-ai-tooling-specialist-technology-team-aws-specialist-technology-team-stt) |
-| 88 | cached_llm | official | Google | Software Engineer III, AI/ML GenAI, Workspace Drive | New York, NY, USA | 2026-11-18 | 3to7d | high | swe | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/78569338159669958-software-engineer-iii-ai-ml-genai-workspace-drive) |
 | 86 | cached_llm | official | Apple | Software Engineer, Data Quality Tools & Automation — AIML Data Operati | Cupertino, United States of America | 2026-11-19 | 3to7d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200695274/software-engineer-data-quality-tools-automation-aiml-data-operations) |
 | 86 | cached_llm | official | Amazon | Software Dev Engineer II - AMZ10563956, AWS Field Experience | Dallas, Texas, USA | 2026-11-18 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10608035/software-dev-engineer-ii-amz10563956-aws-field-experience) |
 | 86 | cached_llm | official | Apple | Software Engineer, Full Stack and Cloud | Cupertino, United States of America | 2026-11-18 | 3to7d | high | swe | Apple | unreviewed | official_canonical | [open](https://jobs.apple.com/en-us/details/200695576/software-engineer-full-stack-and-cloud) |
