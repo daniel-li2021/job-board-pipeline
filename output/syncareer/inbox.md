@@ -1,25 +1,20 @@
 # Syncareer inbox (last 3 days)
 
-- Updated (PT): 2026-11-23 07:52 PST
-- Snapshot (UTC): 2026-11-23T15:52:24.779354+00:00
-- Jobs: 30
-- Last 24 hours: 6
-- Last 3 days: 30
+- Updated (PT): 2026-11-23 16:52 PST
+- Snapshot (UTC): 2026-11-24T00:52:01.888636+00:00
+- Jobs: 23
+- Last 24 hours: 0
+- Last 3 days: 23
 
 If you check every 1–2 days, **only open this file**. Dated run files are in `runs/`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| B | 76.0 | Syncareer | Kforce | Full Stack Engineer | Juno Beach, Florida, United States | 2026-11-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.kforce.com/find-work/search-jobs/#/detail/MTY5Nn5FUUd-MjE5NDk3NlQxfjk5/) |
 | B | 86.0 | Syncareer | WTW | AI Solutions Engineer | New York, New York, United States | 2026-11-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.wtwco.com/jobs/ai-solutions-engineer-london-england-united-kingdom-new-york-united-states) |
 | B | 92.0 | Syncareer | Teradata | Agentic AI Intern | San Diego, California, United States | 2026-11-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.teradata.com/jobs/220847/agentic-ai-intern?j_idx=9) |
 | B | 83.0 | Syncareer | Garmin | Software Engineer 1 | Salem, Oregon, United States | 2026-11-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.garmin.com/jobs/21486?lang=en-us&previousLocale=en-US) |
-| B | 76.0 | Syncareer | Kforce | Software Development Engineer | Seattle, Washington, United States | 2026-11-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.kforce.com/find-work/search-jobs/#/detail/MTY5Nn5UVlR-MjE5NDk0NVQxfjk5/) |
 | B | 83.0 | Syncareer | C&S Wholesale Grocers | AI Architect | Edison, New Jersey, United States | 2026-11-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.cswg.com/edison-nj/ai-architect/A7F100AD6218465CB12224312FBAC75D/job/) |
-| B | 78.0 | Syncareer | CapTech | Data Engineer, CapTech Sports (Fan, Consumer, Brand & Media Data) | Charlotte, North Carolina, United States | 2026-11-21 | No sponsor | - | unreviewed | not_dedicated | [open](https://jobs.smartrecruiters.com/CapTechConsulting/744000162826539-data-engineer-captech-sports-fan-consumer-brand-media-data-) |
-| B | 78.0 | Syncareer | TribalScale | AI Engineer - Agent Infrastructure & AI Workflow | United States | 2026-11-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/tribalscale/jobs/4731215006) |
 | A | 87.0 | Syncareer | Affirm | Software Engineer I, Backend (Streaming Infra) | United States | 2026-11-21 | Sponsor | - | unreviewed | not_dedicated | [open](https://job-boards.greenhouse.io/affirm/jobs/8201469003) |
-| B | 78.0 | Syncareer | CapTech | Data Engineer, CapTech Sports (Fan, Consumer, Brand & Media Data) | Atlanta, Georgia, United States | 2026-11-21 | No sponsor | - | unreviewed | not_dedicated | [open](https://jobs.smartrecruiters.com/CapTechConsulting/744000162826159-data-engineer-captech-sports-fan-consumer-brand-media-data-) |
 | B | 83.0 | Syncareer | Insperity | Associate Software Implementation Analyst | Kingwood, Texas, United States | 2026-11-20 | Sponsor | - | unreviewed | not_dedicated | [open](https://insperity.wd12.myworkdayjobs.com/en-US/NSP/job/Kingwood-TX/Associate-Software-Implementation-Analyst_JR103608?source=CareerSite) |
 | A | 92.0 | Syncareer | Allete | Data Platform Engineer I | Duluth, Minnesota, United States | 2026-11-20 | No sponsor | - | unreviewed | not_dedicated | [open](https://phg.tbe.taleo.net/phg04/ats/careers/v2/viewRequisition?org=ALLETE&cws=43&rid=6091) |
 | B | 72.0 | Syncareer | GCS | Junior Software Tester | Chattanooga, Tennessee, United States | 2026-11-20 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.gcstechtalent.com/job-search/3584/junior-software-tester/testing-qa/chattanooga/job) |
@@ -38,5 +33,3 @@ If you check every 1–2 days, **only open this file**. Dated run files are in `
 | B | 87.0 | Syncareer | Infosys | Python Full Stack Developer | Arizona, United States | 2026-11-19 | No sponsor | - | unreviewed | not_dedicated | [open](https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/156161BR) |
 | A | 89.0 | Syncareer | Frost Bankers | Engineer I - DevOps | San Antonio, Texas, United States | 2026-11-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.frostbank.com/us/en/job/R262343/Engineer-I-DevOps) |
 | B | 76.0 | Syncareer | Comcast | Entry Level C++ Software Engineer- Reston, VA- ONSITE 2X Week- FreeWhe | Reston, Virginia, United States | 2026-11-19 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.comcast.com/job/reston/entry-level-c-software-engineer-reston-va-onsite-2x-week-freewheel/45483/103530075200) |
-| B | 77.0 | Syncareer | Meta | Software Engineer | Bellevue, Washington, United States | 2026-11-21 | Sponsor | YES (Meta) | unreviewed | official_identity_unmatched | [open](https://www.metacareers.com/profile/job_details/1124937540046351) |
-| B | 75.0 | Syncareer | Meta | Software Engineer, Product | Menlo Park, California, United States | 2026-11-21 | Sponsor | YES (Meta) | unreviewed | official_identity_unmatched | [open](https://www.metacareers.com/profile/job_details/1613643980303295) |
