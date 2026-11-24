@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-11-24_0959
+# ATS / LinkedIn board — 7-day view — 2026-11-24_1009
 
-- Updated (PT): 2026-11-24 02:03 PST
-- Snapshot (UTC): 2026-11-24T10:03:07.843094+00:00
+- Updated (PT): 2026-11-24 02:12 PST
+- Snapshot (UTC): 2026-11-24T10:12:12.845251+00:00
 - Last 24 hours: 32
 - Last 3 days: 33
 
@@ -9,15 +9,15 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 ## Run stats
 
-- Source raw: ATS 2938 / Linkedin 4615 / Indeed 612 / Glassdoor 381 (Big Company Official runs separately)
-- Funnel: after dedup 8483 -> after company filter 7987 -> after hard filter 7366 -> after role+seniority prefilter 2451 | dropped 5843
+- Source raw: ATS 2938 / Linkedin 4616 / Indeed 612 / Glassdoor 380 (Big Company Official runs separately)
+- Funnel: after dedup 8483 -> after company filter 7986 -> after hard filter 7365 -> after role+seniority prefilter 2451 | dropped 5842
 - LLM usage: jobs scored 0 / API requests 0 / cache reused 207 (cross-pipeline 1) / rule fallback+overflow 1858 (thin local cards 1174, recency-gated 0, overflow 0, new/changed 0)
 - LLM cache causes: new 0 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 5 / rescored <24h 0
 - LLM cost: model gpt-6-luna / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
 - New jobs discovered this run: 0
 - Output sizing: Tier A 21 / Tier B 131 / A+B actionable 152 / Shown in latest.md 152 (no hard cap)
 - Recency (kept): <3h 0 / 3-24h 1 / 1-3d 14 / newly-disc 183 / 3-7d 13 / >7d 1854
-- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3909 of 3910 / Indeed unique 591 of 591
+- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3910 of 3911 / Indeed unique 591 of 591
 - Linkedin top exact-unique queries: software engineer=1467, ai engineer=1020, full-stack engineer=442
 - Indeed top exact-unique queries: software engineer=231, software engineer ii=88, llm engineer=81, platform engineer=80, associate software engineer=79
 
