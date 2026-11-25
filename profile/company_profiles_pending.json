@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-24T16:31:23.586115+00:00",
-  "count": 6925,
+  "generated_at": "2026-11-25T00:53:42.858242+00:00",
+  "count": 6927,
   "companies": [
     {
       "name": "01.com",
@@ -52421,17 +52421,20 @@
     },
     {
       "name": "MAREX",
-      "aliases": [],
+      "aliases": [
+        "Marex"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "1a65e0a3955318854b24f4c5",
         "5ff437109573432f90fc783c",
         "d725ef1c12012e5490c00d87"
       ],
-      "seen_count": 2
+      "seen_count": 3
     },
     {
       "name": "Mariner Finance",
@@ -52643,9 +52646,10 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
-        "a7c3095fb006c6dfc47acf31"
+        "a7c3095fb006c6dfc47acf31",
+        "b9bab6c9f5b79738d4ae3b0e"
       ],
-      "seen_count": 1
+      "seen_count": 2
     },
     {
       "name": "Marsh",
@@ -52825,6 +52829,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Massar Capital Management",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "ae0f2c72505506726a05e9b7"
+      ],
       "seen_count": 1
     },
     {
@@ -54024,6 +54041,19 @@
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [],
+      "seen_count": 1
+    },
+    {
+      "name": "Merck KGaA",
+      "aliases": [],
+      "size": "unknown",
+      "maturity": "unknown",
+      "sponsor": "unknown",
+      "type": "unknown",
+      "tags": [],
+      "seen_job_keys": [
+        "9d6434f0a48df99f34d81b8a"
+      ],
       "seen_count": 1
     },
     {
@@ -83647,16 +83677,20 @@
     },
     {
       "name": "thyssenkrupp",
-      "aliases": [],
+      "aliases": [
+        "Thyssenkrupp"
+      ],
       "size": "unknown",
       "maturity": "unknown",
       "sponsor": "unknown",
       "type": "unknown",
       "tags": [],
       "seen_job_keys": [
+        "63c2dd9ccfe3cca9ddb83758",
+        "8758afa141ced5cf6987dc54",
         "e83c856a44146161052e3ceb"
       ],
-      "seen_count": 1
+      "seen_count": 3
     },
     {
       "name": "thyssenkrupp Supply Chain Services",
@@ -91530,9 +91564,10 @@
         "07db732e376cd0953361c283",
         "0ca51bd13271bc15788ae7e5",
         "299f4bf58736551c3027c590",
+        "6d9f2ff934708a59d13718c7",
         "d32438cab9e4afb5fec4334a"
       ],
-      "seen_count": 4
+      "seen_count": 5
     },
     {
       "name": "Windstar Technologies, Inc.",
