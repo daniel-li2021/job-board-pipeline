@@ -1,19 +1,18 @@
 # Big Tech official careers inbox (last 3 days)
 
-- Updated (PT): 2026-11-24 16:38 PST
-- Snapshot (UTC): 2026-11-25T00:38:00.754118+00:00
-- Jobs: 21 (Tier A/B only)
-- Last 24 hours: 0
-- Last 3 days: 21
+- Updated (PT): 2026-11-25 07:37 PST
+- Snapshot (UTC): 2026-11-25T15:37:57.628905+00:00
+- Jobs: 20 (Tier A/B only)
+- Last 24 hours: 1
+- Last 3 days: 20
 
 Coverage gaps from ATS/Syncareer are reviewed in `../cross_pipeline/coverage.md`.
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 85 | official | Microsoft | Software Engineer-Securing AI | United States, Washington, Redmond | 2026-11-24 | 1to3d | Microsoft | unreviewed | official_canonical | [open](https://apply.careers.microsoft.com/careers/job/1970393557073425) |
 | A | 92 | official | Roblox | Software Engineer, Data Tooling | San Mateo, CA, United States | 2026-11-23 | 1to3d | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8395051?gh_jid=8395051) |
-| A | 93 | official | Visa | Software Engineer, Agentic Developer | US - Denver, CO | 2026-11-23 | 1to3d | Visa | unreviewed | official_canonical | [open](https://visa.wd5.myworkdayjobs.com/Visa/job/US---Denver-CO/Software-Engineer--Agentic-Developer_REF090196W) |
 | A | 88 | official | PayPal | Machine Learning Engineer | San Jose, California, United States of America | 2026-11-23 | 1to3d | PayPal | unreviewed | official_canonical | [open](https://paypal.eightfold.ai/careers/job/274923558924) |
+| A | 88 | official | TikTok | Backend Software Engineer - Data Lifecycle Management | San Jose, California, United States of America | - | newly_discovered | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7710030288165996805) |
 | B | 84 | official | OpenAI | Software Engineer, Full Stack — ChatGPT Voice | San Francisco; San Francisco, California, United States; Remote, United States | 2026-11-24 | 1to3d | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/0d06daee-298b-4594-a67b-8955d07adb22) |
 | B | 81 | official | OpenAI | Software Engineer, Space Foundations — Real-Time Systems | Seattle; Seattle, Washington, United States; Remote, United States | 2026-11-24 | 1to3d | OpenAI | unreviewed | official_canonical | [open](https://jobs.ashbyhq.com/openai/e1823ba3-a94c-410f-b064-217a1d71c866) |
 | B | 82 | official | Google | Software Engineer III, AI/ML, App Ads Quality | Mountain View, CA, USA | 2026-11-24 | 1to3d | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/124165355219100358-software-engineer-iii-ai-ml-app-ads-quality) |

@@ -2,6 +2,413 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-11-25T15:37:57.628905+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 11,
+      "cache_reused": 384,
+      "peer_reused": 0,
+      "same_content_reused": 2,
+      "non_material_change_reused": 0,
+      "new_or_changed": 12,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 11,
+        "material_jd_change": 1
+      },
+      "rescored_within_24h": 1,
+      "fallback_count": 0,
+      "rule_count": 1944,
+      "requests": 3,
+      "input_tokens": 16109,
+      "cached_input_tokens": 0,
+      "output_tokens": 2377,
+      "reasoning_tokens": 1340,
+      "estimated_usd": 0.0028,
+      "latency_seconds": 19.605,
+      "latency_measured": true,
+      "effective_rpm": 9.18,
+      "effective_tpm": 56575.36,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 3,
+      "primary_batches_total": 3,
+      "batches_attempted": 3,
+      "batches_succeeded": 3,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 11,
+      "funnel": {
+        "after_dedup": 13460,
+        "after_company": 13460,
+        "after_hard_filter": 10305,
+        "after_prefilter": 2339,
+        "dropped": 11121
+      },
+      "output": {
+        "tier_a": 3,
+        "tier_b": 30,
+        "shown": 33,
+        "new_jobs": 69,
+        "new_jobs_added": 1
+      },
+      "enrichment": {
+        "discovered": 13506,
+        "needed": 397,
+        "source_jds_available": 13109,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 397
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/138280387280282310-technical-solutions-engineer-i-infrastructure-compute-google-cloud",
+              "company": "Google",
+              "title": "Technical Solutions Engineer I, Infrastructure, Compute, Google Cloud"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/117552394073449158-network-implementation-engineer-network-delivery-implementation",
+              "company": "Google",
+              "title": "Network Implementation Engineer, Network Delivery Implementation"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10613638/software-development-engineer-iii",
+              "company": "Amazon",
+              "title": "Software Development Engineer III"
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/351303",
+              "company": "Oracle",
+              "title": "Account Cloud Engineer"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7710030288165996805",
+              "company": "TikTok",
+              "title": "Backend Software Engineer - Data Lifecycle Management"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/76577718874841798-research-scientist",
+              "company": "Google",
+              "title": "Research Scientist"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/121117835404419782-network-implementation-engineer",
+              "company": "Google",
+              "title": "Network Implementation Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 9.563,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 7,
+            "input_tokens": 7401,
+            "cached_input_tokens": 0,
+            "output_tokens": 1191,
+            "reasoning_tokens": 493,
+            "estimated_usd": 0.001336
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/138280387280282310-technical-solutions-engineer-i-infrastructure-compute-google-cloud",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud production deployments",
+                "Debugging and reliability"
+              ],
+              "main_gaps": [
+                "5 years coding experience",
+                "Linux/network troubleshooting"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/117552394073449158-network-implementation-engineer-network-delivery-implementation",
+              "match_score": 28.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Technical project coordination",
+                "Networking fundamentals"
+              ],
+              "main_gaps": [
+                "Telecom field operations",
+                "DWDM/TCP-IP experience"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10613638/software-development-engineer-iii",
+              "match_score": 30.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend systems experience",
+                "Production software delivery"
+              ],
+              "main_gaps": [
+                "Senior technical leadership",
+                "5 years design experience"
+              ]
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/351303",
+              "match_score": 8.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "non_us",
+              "top_match_reasons": [
+                "Cloud architecture exposure",
+                "Customer-facing implementation"
+              ],
+              "main_gaps": [
+                "10–12 years experience",
+                "Enterprise presales architecture"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7710030288165996805",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Backend service development",
+                "Distributed data systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/76577718874841798-research-scientist",
+              "match_score": 12.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and ML exposure",
+                "Evaluation platform experience"
+              ],
+              "main_gaps": [
+                "PhD and publications",
+                "Wearable health-data modeling"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/121117835404419782-network-implementation-engineer",
+              "match_score": 12.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Operational reliability experience",
+                "Automation and process improvement"
+              ],
+              "main_gaps": [
+                "Network team leadership",
+                "Large-scale network operations"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::amd_official_careers::102627",
+              "company": "AMD",
+              "title": "Research Scientist - Generative Modeling"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 2.197,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3019,
+            "cached_input_tokens": 0,
+            "output_tokens": 180,
+            "reasoning_tokens": 100,
+            "estimated_usd": 0.000392
+          },
+          "decisions": [
+            {
+              "key": "id::amd_official_careers::102627",
+              "match_score": 38.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production generative AI",
+                "ML model deployment"
+              ],
+              "main_gaps": [
+                "Diffusion model expertise",
+                "3D generative modeling"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10613799/software-dev-engineer-ii-genaiux",
+              "company": "Amazon",
+              "title": "Software Dev Engineer II, GenAIUX"
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557075113",
+              "company": "Microsoft",
+              "title": "Software Engineer II"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/139846916471956166-research-data-scientist-core-metrics",
+              "company": "Google",
+              "title": "Research Data Scientist, Core Metrics"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 7.845,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 5689,
+            "cached_input_tokens": 0,
+            "output_tokens": 1006,
+            "reasoning_tokens": 747,
+            "estimated_usd": 0.001072
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10613799/software-dev-engineer-ii-genaiux",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production GenAI systems",
+                "End-to-end full-stack services"
+              ],
+              "main_gaps": [
+                "3+ years non-internship experience",
+                "2+ years architecture experience"
+              ]
+            },
+            {
+              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557075113",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "RAG and AI evaluation",
+                "APIs, pipelines, observability"
+              ],
+              "main_gaps": [
+                "2+ years engineering experience"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/139846916471956166-research-data-scientist-core-metrics",
+              "match_score": 57.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Quantitative education",
+                "Python, SQL, and data workflows"
+              ],
+              "main_gaps": [
+                "3 years product analytics",
+                "Statistical modeling experience"
+              ]
+            }
+          ]
+        }
+      ],
+      "scrape_failure_sources": [
+        "nvidia",
+        "salesforce",
+        "adobe",
+        "meta",
+        "capitalone",
+        "walmart",
+        "cisco",
+        "hpe",
+        "ebay",
+        "zoom",
+        "dell",
+        "expedia",
+        "intel",
+        "redhat",
+        "visa",
+        "workday",
+        "zillow",
+        "cvs",
+        "f5",
+        "wells-fargo",
+        "yahoo",
+        "flex",
+        "iqvia",
+        "johnson-johnson",
+        "nasdaq",
+        "stryker",
+        "transunion",
+        "travelers"
+      ],
+      "scrape_failure_causes": {
+        "nvidia": "429",
+        "salesforce": "429",
+        "adobe": "429",
+        "meta": "error",
+        "capitalone": "429",
+        "walmart": "429",
+        "cisco": "429",
+        "hpe": "429",
+        "ebay": "429",
+        "zoom": "429",
+        "dell": "error",
+        "expedia": "429",
+        "intel": "429",
+        "redhat": "429",
+        "visa": "429",
+        "workday": "429",
+        "zillow": "429",
+        "cvs": "429",
+        "f5": "429",
+        "wells-fargo": "429",
+        "yahoo": "429",
+        "flex": "429",
+        "iqvia": "429",
+        "johnson-johnson": "429",
+        "nasdaq": "429",
+        "stryker": "429",
+        "transunion": "429",
+        "travelers": "429"
+      }
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-11-25T00:38:00.754118+00:00",
       "mode": "pipeline",
       "health": "degraded",
@@ -15053,205 +15460,6 @@
         "walmart": "429",
         "sap": "error",
         "expedia": "429"
-      }
-    },
-    {
-      "pipeline": "official",
-      "run_at": "2026-11-15T15:47:49.782104+00:00",
-      "mode": "pipeline",
-      "health": "limited",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 4,
-      "cache_reused": 406,
-      "peer_reused": 0,
-      "same_content_reused": 7,
-      "non_material_change_reused": 0,
-      "new_or_changed": 4,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 4
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 2516,
-      "requests": 2,
-      "input_tokens": 10061,
-      "cached_input_tokens": 0,
-      "output_tokens": 1592,
-      "reasoning_tokens": 1122,
-      "estimated_usd": 0.001802,
-      "latency_seconds": 15.421,
-      "latency_measured": true,
-      "effective_rpm": 7.78,
-      "effective_tpm": 45339.47,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "primary_batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 4,
-      "funnel": {
-        "after_dedup": 18173,
-        "after_company": 18173,
-        "after_hard_filter": 14660,
-        "after_prefilter": 2926,
-        "dropped": 15247
-      },
-      "output": {
-        "tier_a": 2,
-        "tier_b": 39,
-        "shown": 41,
-        "new_jobs": 13,
-        "new_jobs_added": 0
-      },
-      "enrichment": {
-        "discovered": 18230,
-        "needed": 841,
-        "source_jds_available": 17389,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 841
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10605448/software-development-engineer-live-and-linear-catalog",
-              "company": "Amazon",
-              "title": "Software Development Engineer, Live and Linear Catalog"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 3.515,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 2809,
-            "cached_input_tokens": 0,
-            "output_tokens": 251,
-            "reasoning_tokens": 160,
-            "estimated_usd": 0.000406
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10605448/software-development-engineer-live-and-linear-catalog",
-              "match_score": 65.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Backend service development",
-                "Reliability and scaling"
-              ],
-              "main_gaps": [
-                "3+ years professional SWE",
-                "2+ years system design"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Milpitas-California-US/Software-Engineer_2028744",
-              "company": "Cisco",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Milpitas-California-US/Software-Engineer_2028825",
-              "company": "Cisco",
-              "title": "Software Engineer"
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10605453/machine-learning-engineer-creativeflux-ai-studios",
-              "company": "Amazon",
-              "title": "Machine Learning Engineer, CreativeFlux, AI Studios"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 11.906,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 3,
-            "input_tokens": 7252,
-            "cached_input_tokens": 0,
-            "output_tokens": 1341,
-            "reasoning_tokens": 962,
-            "estimated_usd": 0.001396
-          },
-          "decisions": [
-            {
-              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Milpitas-California-US/Software-Engineer_2028744",
-              "match_score": 52.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "C++ and Python programming",
-                "Production software and testing"
-              ],
-              "main_gaps": [
-                "Routing protocol development",
-                "3+ years related experience"
-              ]
-            },
-            {
-              "key": "url::https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Milpitas-California-US/Software-Engineer_2028825",
-              "match_score": 47.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "C++ and Python programming",
-                "Production software and testing"
-              ],
-              "main_gaps": [
-                "Routing protocol development",
-                "4+ years related experience"
-              ]
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10605453/machine-learning-engineer-creativeflux-ai-studios",
-              "match_score": 57.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production generative AI systems",
-                "ML inference and evaluation"
-              ],
-              "main_gaps": [
-                "5+ years software development",
-                "EKS and GPU training infrastructure"
-              ]
-            }
-          ]
-        }
-      ],
-      "scrape_failure_sources": [
-        "sap"
-      ],
-      "scrape_failure_causes": {
-        "sap": "error"
       }
     }
   ]
