@@ -1,9 +1,9 @@
-ATS / LinkedIn alert - 2026-11-24_1621
+ATS / LinkedIn alert - 2026-11-25_1621
 
-Updated (PT): 2026-11-24 08:30 PST
-Snapshot (UTC): 2026-11-24T16:30:08.820360+00:00
+Updated (PT): 2026-11-25 08:27 PST
+Snapshot (UTC): 2026-11-25T16:27:45.440888+00:00
 
-45 new or promoted (B→A) Tier A/B job(s).
+44 new or promoted (B→A) Tier A/B job(s).
 
 At most one digest is sent per Pacific day. Score/JD-only changes are not re-alerted.
 
@@ -11,48 +11,47 @@ If you skipped a day, open `output/board/inbox.md` (last 3 days). Do not read ev
 
 | Tier | Score | Source | Company | Title | Location | Posted | Recency | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 94 | indeed | Visa | Software Engineer, Agentic Developer | Highlands Ranch, CO, US | 2026-11-23 | newly_discovered | Visa | unreviewed | official_identity_unmatched | [open](https://www.indeed.com/viewjob?jk=928412754723ae1c) |
-| A | 94 | indeed | Ryan, LLC | Full Stack AI Engineer - May 2027 Grads | Atlanta, GA, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=424459e4d77d49dc) |
-| A | 94 | indeed | Ryan, LLC | Full Stack AI Engineer - May 2027 Grads | Washington, DC, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a0c4b276701518d4) |
-| A | 94 | indeed | Ryan, LLC | Full Stack AI Engineer - May 2027 Grads | Houston, TX, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d0604658095ff96c) |
-| A | 93 | indeed | Serko Ltd | Software Engineer 1 | Washington, PA, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1df14d892d9d8916) |
-| A | 93 | indeed | Serko Ltd | Software Engineer 1 | California City, CA, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e3eca3e154e45b8b) |
-| A | 92 | indeed | PracticeABA | Full Stack Developer | Miami, FL, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=590666163ed8e1e6) |
-| A | 91 | indeed |  | Junior Software Engineer - Remote (Austin, TX) | Austin, TX, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8b6a1c396b2272a7) |
-| A | 91 | indeed | Panelmatic Inc. | AI & Automation Engineer | Houston, TX, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=3b4a3f0a180bd3d2) |
-| A | 88 | indeed | Eurofins | Applied AI Engineer | Stafford, TX, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=7d9c4965f43a0292) |
-| A | 88 | indeed |  | Full Stack Developer | Remote, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8533df8451890712) |
-| A | 87 | indeed | State of Idaho | GS IT SOFTWARE ENGINEER 1 21745 | Boise, ID, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e54714d6bb25e6d8) |
-| A | 86 | indeed | PGN AGENCY | Front-End Web Developer-Part Time | Royal Oak, MI, US | 2026-11-22 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=540f56ae4f40cafc) |
-| B | 87 | indeed | GardaWorld Security Services US | Data Engineer | St. Louis, MO, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=74bc8f96b8b080b4) |
-| B | 87 | indeed | Matanuska Valley Federal Credit Union | Enterprise Integration Developer | Wasilla, AK, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=65b5a72f4b62a86d) |
-| B | 87 | indeed | Brixmor | AI Automation Engineer | Conshohocken, PA, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=22458b5cf0ea6b9c) |
-| B | 87 | indeed | CACI Products Company | Software Engineer | Tampa, FL, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8615b13ff898876f) |
-| B | 82 | indeed | Walmart | Software Engineer III | Bentonville, AR, US | 2026-11-23 | newly_discovered | - | unreviewed | official_identity_unmatched | [open](https://walmart.wd504.myworkdayjobs.com/WalmartExternal/job/Bentonville-AR/Software-Engineer-III_R-2717747/apply?source=Job_Board_Indeed_Organic_Feed) |
-| B | 83 | indeed | Affirm | Software Engineer II, Fullstack (Capital Orchestration) | Remote, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=8000504a6d53535e) |
-| B | 84 | indeed | CNH Industrial | Software Engineer II | Sioux Falls, SD, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=7238398ddc13b7e5) |
-| B | 84 | indeed | Merck | GenAI Specilist, Software Engineering | Rahway, NJ, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=299e8d9c77dc3676) |
-| B | 83 | indeed | DIGICO | Software Developer | Remote, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f802bd89eef3b5f7) |
-| B | 83 | indeed | Halian | Software Engineer | Houston, TX, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=9464e6db5511cb2f) |
-| B | 83 | indeed | NextEra Energy | Programmer Analyst II | Miami, FL, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6eee5776a91337df) |
-| B | 83 | indeed | Specialty Print Communications | IT Developer/Data Programmer | Niles, IL, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=51ef27c7dbd869c1) |
-| B | 82 | indeed |  | Full Stack Developer | Remote, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=28db980a2383604e) |
-| B | 81 | indeed | PERFORMANCE AUTOMOTIVE NETWORK | Forward Deployed Engineer | West Chester, OH, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2ebb998b3a143f79) |
-| B | 82 | indeed | BigBear.ai | Junior Full Stack Developer – Mobile & Web Applications | Tysons Corner, VA, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5d7a346c3155ea55) |
-| B | 82 | indeed | Analog Devices | Associate Engineer, Quality Engineering | Wilmington, MA, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=3ea9ddd7544e4565) |
-| B | 84 | indeed | Northeastern University | Research Scientist | Boston, MA, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1549728f4ad773ee) |
-| B | 83 | indeed | State of South Carolina | Data Analytics and Systems Engineer - 61167724 | SC, US | 2026-11-20 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=00603b4cb7df3412) |
-| B | 84 | indeed | Magnakom | Artificial Intelligence Engineer | Van Nuys, CA, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=fbf30ab949041ecc) |
-| B | 76 | indeed | Tyler Technologies | Software Engineer | Renton, WA, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=3b6978148cc085fc) |
-| B | 78 | indeed | Spectrix Analytical Services, LLC | Entry Level AI/Automation Engineer | Spring House, PA, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=08be65a0af350de9) |
-| B | 78 | indeed | WinCo Foods | Software Developer | Boise, ID, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d8f4e700516d0ae9) |
-| B | 77 | indeed | Datalab USA | Production Programmer - Entry Level SQL Developer | Germantown, MD, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=4df7123f35277e2c) |
-| B | 77 | indeed | CLERA | Product Engineer | San Francisco, CA, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0d34f4afa4475cc3) |
-| B | 76 | indeed | Avivatech | Software Developer I | Alpharetta, GA, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e5fefb6a8264932b) |
-| B | 75 | indeed | Essence Global | AI\ML Engineer | Remote, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=40642ef0e8e9c8cc) |
-| B | 78 | indeed | Smartsheet | Software Engineer II, AI Experience (Remote Eligible) | Bellevue, WA, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=23fe56ab0d23c114) |
-| B | 75 | indeed | GlobalFoundries | Corporate Application Engineer, Physical AI (2027 New College Graduate | Austin, TX, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=866eee0fe5de6d0d) |
-| B | 77 | indeed | US Acute Care Solutions | AI Engineer | Remote, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a95cb820b646cb05) |
-| B | 74 | indeed | Ford Motor Company | AI Engineer | Dearborn, MI, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=90ab953eec6ad93f) |
-| B | 74 | indeed | Landis+Gyr | Technical Implementation Engineer I | Alpharetta, GA, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=dc76f09ed00c6a10) |
-| B | 72 | indeed | Ultima Genomics | Product Engineer I | Fremont, CA, US | 2026-11-23 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=d6df2fff5b84d602) |
+| A | 95 | indeed | Tetra Tech | Software Engineer I | South Kingstown, RI, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b08170ce1e67789b) |
+| A | 91 | indeed | Applied Materials | AI Engineer/Data Scientist NCG- Bachelor's (Santa Clara, CA) | Santa Clara, CA, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5d03400d18cbda81) |
+| A | 91 | indeed | Nationwide Mutual Insurance Company | Engineer, Software Engineer | Des Moines, IA, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=9691ddf262989937) |
+| A | 94 | indeed | Muki Technologies | AI Engineer | San Francisco, CA, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6c57a62b9b0b8a65) |
+| A | 92 | indeed | Mouser | Search Developer I | Mansfield, TX, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=970fd23f34223ff5) |
+| A | 91 | indeed | St. Luke's Health System | IHT Developer 1 | Boise, ID, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=988ba68641346497) |
+| A | 90 | indeed | Coca-Cola Bottling Company UNITED, Inc. | Developer - Software 1 | Birmingham, AL, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=57d4e21696182ca6) |
+| A | 92 | indeed | MaxIT Consulting - Max Corporate Group | Applied AI Software Engineer – LLM Features for Accounting Teams | San Francisco, CA, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a326e200672b7e10) |
+| A | 89 | indeed | Manifest OS | Product Engineer | New York, NY, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2d0771119c416a41) |
+| A | 87 | indeed | Brixmor | AI Automation Engineer | Conshohocken, PA, US | 2026-11-23 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=22458b5cf0ea6b9c) |
+| A | 86 | indeed |  | Junior Software Developer | Fayetteville, NC, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f5cd036bbe31c0c2) |
+| B | 87 | indeed | FIS | Data Engineer II | Jacksonville, FL, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=56d727585db17032) |
+| B | 86 | indeed |  | Software Engineer | Pontotoc, MS, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a8f69652f33f9b63) |
+| B | 86 | indeed | SelfPublishing.com | AI Automation Engineer (Westlake, TX - In Office) | West Lake Hills, TX, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=3a48767b5095caea) |
+| B | 85 | indeed |  | Software Engineer AI Evaluator | Remote, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=93aa3b3f8891db6e) |
+| B | 82 | indeed | Garmin | Software Engineer 1 | Chandler, AZ, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2fc7f1c9f491ad09) |
+| B | 82 | indeed | Tokyo Electron | Automation Engineer | Chaska, MN, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e8c1ad1fad28d4ee) |
+| B | 82 | indeed | Information Technology Senior Management Forum | Software Engineer | Bloomington, IL, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b56297d78f3bd7a3) |
+| B | 84 | indeed |  | Software Engineer | Austin, TX, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5d19e92139306385) |
+| B | 84 | indeed | University of North Carolina at Chapel Hill | STAR Program AI Engineer AWS | Chapel Hill, NC, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5819c9be89b75915) |
+| B | 83 | indeed | NetJets | Software Engineer (NJUS) | Columbus, OH, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=57755f5d954d525d) |
+| B | 84 | indeed | Rubrik | Software Engineer - Data Protection | Palo Alto, CA, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6af4edc05b425803) |
+| B | 82 | indeed | TP-LINK | 2026 Early Career Embedded Software Engineer | Irvine, CA, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=adc99b47d9a1e59e) |
+| B | 82 | indeed | Metropolitan Transportation Authority | Application Developer Analyst Levels 1 - 2 | Jamaica, NY, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c36ec663ec3a200d) |
+| B | 82 | indeed | Avery Dennison | AI Engineer - Scientific Intelligence and LLM Systems | Mentor, OH, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a895664c56df8de8) |
+| B | 78 | indeed | Infosys | Devops Developer | Richardson, TX, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=64134418060b834c) |
+| B | 77 | indeed | Oracle | Systems Engineer | Kansas City, MO, US | 2026-11-12 | newly_discovered | Oracle | unreviewed | official_identity_unmatched | [open](https://www.indeed.com/viewjob?jk=28cc57fb5ae98191) |
+| B | 78 | indeed | Esri | Product Engineer I – ArcGIS Online Feature Services | Redlands, CA, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f1274a35a2d4138d) |
+| B | 78 | indeed | Veeva Systems | Associate Software Engineer - 2027 Start Dates | Raleigh, NC, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=cf846a8e29c9dbc9) |
+| B | 77 | indeed | JPMorganChase | Software Engineer I-Java/Springboot/SQL | Newark, DE, US | 2026-11-24 | newly_discovered | J.P. Morgan | unreviewed | pending_official_refresh | [open](https://www.indeed.com/viewjob?jk=1c0dff35e12410ab) |
+| B | 79 | indeed | Wurl | Software Engineer I | Remote, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=84f3c35b4218b3f8) |
+| B | 78 | indeed |  | AI/ML Engineer | Addison, TX, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=60aeb83bd8ee5391) |
+| B | 78 | indeed | David AI | Forward Deployed Engineer, Evals | New York, NY, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=122072434a0eda4b) |
+| B | 78 | indeed | Howmet Aerospace | AI Engineer | Pittsburgh, PA, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=c8abc1e3b81d114b) |
+| B | 78 | indeed | Nitka Technologies | Forward Deployed Engineer | Remote, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1ee1ee93ff0671e0) |
+| B | 77 | indeed | CleanCapital LLC | Junior AI Engineer | New York, NY, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=33d03b5debf93362) |
+| B | 77 | indeed | U.S. Anti-Doping Agency (USADA) | Jr Data Systems Engineer | Colorado Springs, CO, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1286a5d97a338486) |
+| B | 75 | indeed | UT Health Science Center at San Antonio | Web Programmer/Analyst-Assoc | San Antonio, TX, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=3bc47458d2b59715) |
+| B | 77 | indeed | Amentum | Software Engineer 1 | Remote, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=cbc78470000090d0) |
+| B | 77 | indeed | Amentum | Software Engineer 1 | Hanover, MD, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=fda5df1d7780d430) |
+| B | 78 | indeed | State of Minnesota - Minnesota IT Services | Junior Java & .NET developer - ITS2 | Saint Paul, MN, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=31e929ccfaab41a0) |
+| B | 76 | indeed | Freudenberg Group | Agentic Engineer | Plymouth, MI, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=7448cfcbeb71d50e) |
+| B | 78 | indeed | CareerFlow | Software Engineer / SDET / Code Quality Specialist | Remote, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=4b87e8f2956b8373) |
+| B | 74 | indeed | Applied Materials | Software Engineer II New College Grad- Master's (Chandler, AZ) | Chandler, AZ, US | 2026-11-24 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=f9e90462aaa30cb1) |
