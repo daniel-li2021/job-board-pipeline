@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-25 17:21 PST
-- Snapshot (UTC): 2026-11-26T01:21:47.642792+00:00
-- Jobs: 50 (Tier A/B only)
-- Last 24 hours: 34
-- Last 3 days: 50
+- Updated (PT): 2026-11-25 21:31 PST
+- Snapshot (UTC): 2026-11-26T05:31:58.844157+00:00
+- Jobs: 52 (Tier A/B only)
+- Last 24 hours: 36
+- Last 3 days: 52
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -43,11 +43,13 @@ The 7-day dump is `latest.md`.
 | B | 82 | indeed | DIGICO | Junior Full Stack Developer - Java | VA, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b242fa2a1f2a143a) |
 | B | 82 | indeed |  | Full Stack Developer | Remote, US | 2026-11-24 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=28db980a2383604e) |
 | B | 84 | indeed | University of North Carolina at Chapel Hill | STAR Program AI Engineer AWS | Chapel Hill, NC, US | 2026-11-24 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5819c9be89b75915) |
+| B | 82 | syncareer | Wipro | AI Engineer | Louisville, Kentucky, United States | - | newly_discovered | - | unreviewed | not_dedicated | [open](https://careers.wipro.com/job/AI-Engineer/221655-en_US) |
 | B | 82 | indeed | TP-LINK | 2026 Early Career Embedded Software Engineer | Irvine, CA, US | 2026-11-24 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=adc99b47d9a1e59e) |
 | B | 82 | indeed | Avery Dennison | AI Engineer - Scientific Intelligence and LLM Systems | Mentor, OH, US | 2026-11-24 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a895664c56df8de8) |
 | B | 82 | indeed | State of Washington | IT APPLICATION DEVELOPER - ENTRY | WA, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2c16e397c6f70f60) |
 | B | 78 | indeed | Medtronic | Software Engineer II - Advanced Manufacturing Engineering | Fridley, MN, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=62cb29be9977b0d6) |
 | B | 78 | indeed | Infosys | Data Engineer with Spark, Scala, PySpark, Airflow, Python, SQL, Apache | Austin, TX, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=57124457521f6335) |
+| B | 75 | linkedin | Evlo AI | LLM / GenAI Engineer | Denver, CO | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/llm-genai-engineer-at-evlo-ai-4494947463) |
 | B | 77 | indeed | JPMorganChase | Software Engineer I-Java/Springboot/SQL | Newark, DE, US | 2026-11-24 | newly_discovered | J.P. Morgan | unreviewed | official_identity_unmatched | [open](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210803021?utm_medium=jobboard&utm_source=Indeed_Organic) |
 | B | 78 | indeed | Vestwell | Associate, Software Engineer | Austin, TX, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=1dec13e2d2259448) |
 | B | 78 | indeed | Vestwell | Associate, Software Engineer | New York, NY, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=ff13525acada819a) |
