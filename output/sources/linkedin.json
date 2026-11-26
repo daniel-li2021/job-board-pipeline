@@ -1,196 +1,140 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 4305,
+  "count": 4314,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-11-26T05:30:54.715303+00:00",
+    "scraped_at": "2026-11-26T20:00:21.925858+00:00",
     "collector": {
-      "commit": "08733a09d3bf73a0ad26efedc99d5ebc09200751",
+      "commit": "6aea675f6567013839afb9eb44f2038b32c31774",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 11.15,
+    "elapsed_seconds": 26.264,
     "query_stats": [
       {
-        "query": "ai engineer",
+        "query": "full-stack engineer",
         "group": "primary",
-        "page_budget": 3,
-        "pages_fetched": 1,
-        "stop_reason": "global_page_budget",
-        "raw_jobs": 10,
-        "unique_jobs": 10,
-        "unique_contribution": 10,
-        "first_pass_survivors": 10,
+        "page_budget": 2,
+        "pages_fetched": 2,
+        "stop_reason": "page_budget",
+        "raw_jobs": 20,
+        "unique_jobs": 20,
+        "unique_contribution": 18,
+        "first_pass_survivors": 18,
         "original_postings_resolved": 0,
         "jds_resolved": 4,
-        "elapsed_seconds": 0.548,
-        "new_to_ledger": 4,
-        "rediscovered": 6,
+        "elapsed_seconds": 12.499,
+        "new_to_ledger": 10,
+        "rediscovered": 10,
         "page_yields": [
           {
             "page": 0,
             "raw": 10,
-            "new_to_ledger": 4,
-            "known": 6
+            "new_to_ledger": 5,
+            "known": 5
+          },
+          {
+            "page": 1,
+            "raw": 10,
+            "new_to_ledger": 5,
+            "known": 5
           }
         ]
-      },
-      {
-        "query": "backend engineer",
-        "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0
       },
       {
         "query": "software engineer",
         "group": "primary",
         "page_budget": 5,
         "pages_fetched": 0,
-        "stop_reason": "global_page_budget",
+        "stop_reason": "recovery_search_budget",
         "raw_jobs": 0,
         "unique_jobs": 0,
         "unique_contribution": 0,
         "first_pass_survivors": 0,
         "original_postings_resolved": 0,
         "jds_resolved": 0,
-        "elapsed_seconds": 0.0
+        "elapsed_seconds": 0.0,
+        "new_to_ledger": 0,
+        "rediscovered": 0,
+        "page_yields": []
+      },
+      {
+        "query": "ai engineer",
+        "group": "primary",
+        "page_budget": 3,
+        "pages_fetched": 0,
+        "stop_reason": "recovery_search_budget",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 0.0,
+        "new_to_ledger": 0,
+        "rediscovered": 0,
+        "page_yields": []
       }
     ],
     "search_collection": {
       "cooldown_active": false,
-      "probe": true,
-      "query_cursor": 82,
-      "requests": 1,
-      "responses": 1,
-      "pages_fetched": 1,
+      "probe": false,
+      "query_cursor": 83,
+      "requests": 2,
+      "responses": 2,
+      "pages_fetched": 2,
       "http_status": 0,
       "rate_limited": false,
-      "budget_exhausted": true,
+      "budget_exhausted": false,
       "rate_limit_event": {},
       "transport_stop_reason": "",
-      "new_to_ledger": 4,
-      "rediscovered": 6,
+      "new_to_ledger": 10,
+      "rediscovered": 10,
       "coverage_limited": true
     },
     "detail_enrichment": {
-      "eligible": 1,
+      "eligible": 3,
       "cache_reused": 0,
       "requests": 1,
       "responses": 1,
-      "successful_responses": 0,
+      "successful_responses": 1,
       "attempted_ids": [
         "4494947463"
       ],
       "http_status_counts": {
-        "429": 1
+        "200": 1
       },
-      "request_limit": 12,
-      "budget_deferred": 0,
-      "budget_exhausted": false,
+      "request_limit": 1,
+      "budget_deferred": 2,
+      "budget_exhausted": true,
       "retry_deferred": 0,
-      "retry_attempts": 0,
+      "retry_attempts": 1,
       "exact_official": 0,
       "official_deferred": 0,
-      "rate_limited": true,
-      "jds_resolved": 0,
+      "rate_limited": false,
+      "jds_resolved": 1,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 0,
+      "detail_jds_fetched": 1,
       "intentional_skips": 0,
-      "blocked": "blocked with HTTP 429",
+      "blocked": "",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 1,
+      "remaining_no_jd": 2,
       "failure_reasons": {
-        "linkedin_http_429": 1
-      },
-      "rate_limit_event": {
-        "at": "2026-11-26T05:31:05.798627+00:00",
-        "endpoint": "detail",
-        "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494947463",
-        "query": "LLM / GenAI Engineer",
-        "page": null,
-        "retry_after": "",
-        "retry_after_until": "2026-11-26T05:31:05.798627+00:00",
-        "request_ordinal": 2,
-        "endpoint_ordinal": 1,
-        "round_counts": {
-          "search": 1,
-          "detail": 1
-        },
-        "rolling_counts": {
-          "60": {
-            "search": 1,
-            "detail": 1
-          },
-          "3600": {
-            "search": 1,
-            "detail": 1
-          },
-          "86400": {
-            "search": 1,
-            "detail": 1
-          }
-        }
+        "no_description": 2
       },
       "protected_requests": 0,
       "protected_jds_resolved": 0,
-      "protected_deferred": 0,
+      "protected_deferred": 2,
       "queue": [
         {
-          "job_id": "4494947463",
-          "first_seen": "2026-11-26T05:30:54.715303+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": "2026-11-26T05:31:01.181507+00:00",
-          "attempted_this_phase": true,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4494657524",
-          "first_seen": "2026-11-26T05:30:54.715303+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "remote_exact_peer",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4494660402",
-          "first_seen": "2026-11-26T05:30:54.715303+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "remote_exact_peer",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4494913453",
-          "first_seen": "2026-11-26T05:30:54.715303+00:00",
+          "job_id": "4494972622",
+          "first_seen": "2026-11-26T20:00:21.925858+00:00",
           "priority": "normal",
           "needs_jd": null,
           "deferred_at": null,
@@ -200,43 +144,110 @@
           "method": "exact_indeed_peer",
           "deferred_reason": null,
           "past_fresh": false
+        },
+        {
+          "job_id": "4493813393",
+          "first_seen": "2026-11-26T20:00:21.925858+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-26T20:00:21.925858+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4495035380",
+          "first_seen": "2026-11-26T20:00:21.925858+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-26T20:00:21.925858+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4495289316",
+          "first_seen": "2026-11-26T20:00:21.925858+00:00",
+          "priority": "normal",
+          "needs_jd": null,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": true,
+          "method": "dedicated_official",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4479842487",
+          "first_seen": "2026-11-26T20:00:21.925858+00:00",
+          "priority": "low",
+          "needs_jd": false,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_not_worthwhile",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4494947463",
+          "first_seen": "2026-11-26T05:30:54.715303+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": null,
+          "attempted_at": "2026-11-26T20:00:46.387303+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
+          "past_fresh": false
         }
       ],
       "admission": {
-        "candidates": 4,
-        "rules_skipped": 0,
-        "rule_reasons": {},
+        "candidates": 10,
+        "rules_skipped": 4,
+        "rule_reasons": {
+          "prefilter:senior": 4
+        },
         "cache_reused": 0,
-        "non_linkedin_resolved": 3,
-        "triage_evaluated": 1,
-        "triage_deferred": 0,
-        "worth_detail": 1
+        "non_linkedin_resolved": 2,
+        "triage_evaluated": 4,
+        "triage_deferred": 1,
+        "worth_detail": 3
       },
       "cooldown_active": false,
-      "probe": false,
-      "round_request_limit": 12,
+      "probe": true,
+      "round_request_limit": 1,
       "round_requests": 1,
-      "status": "cooldown"
+      "status": "probe"
     },
     "official_enrichment": {
-      "remote_exact_peer": 2,
-      "cache": 1,
-      "exact_indeed_peer": 1,
+      "exact_indeed_peer": 3,
+      "dedicated_matches": 1,
+      "dedicated_official": 1,
       "search_provider_failures": 1,
-      "no_match": 1,
-      "search_requests": 2,
+      "no_match": 4,
+      "search_requests": 6,
       "search_provider": "bing",
-      "official_page_requests": 0,
-      "remaining_no_jd": 6
+      "official_page_requests": 2,
+      "remaining_no_jd": 14
     },
     "partial": true,
-    "blocked_reason": "search page budget exhausted",
-    "collected_count": 10,
-    "carried_count": 4295,
+    "blocked_reason": "focused query coverage",
+    "collected_count": 18,
+    "carried_count": 4296,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-11-26T05:31:07.939519+00:00"
+    "jd_recovery_at": "2026-11-26T20:00:48.657679+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -4630,7 +4641,16 @@
     "linkedin|id|4494947463": "2026-11-26T05:30:54.715303+00:00",
     "linkedin|id|4494657524": "2026-11-26T05:30:54.715303+00:00",
     "linkedin|id|4494660402": "2026-11-26T05:30:54.715303+00:00",
-    "linkedin|id|4494913453": "2026-11-26T05:30:54.715303+00:00"
+    "linkedin|id|4494913453": "2026-11-26T05:30:54.715303+00:00",
+    "linkedin|id|4494972622": "2026-11-26T20:00:21.925858+00:00",
+    "linkedin|id|4493813393": "2026-11-26T20:00:21.925858+00:00",
+    "linkedin|id|4494975496": "2026-11-26T20:00:21.925858+00:00",
+    "linkedin|id|4495035380": "2026-11-26T20:00:21.925858+00:00",
+    "linkedin|id|4495289316": "2026-11-26T20:00:21.925858+00:00",
+    "linkedin|id|4495201808": "2026-11-26T20:00:21.925858+00:00",
+    "linkedin|id|4478159192": "2026-11-26T20:00:21.925858+00:00",
+    "linkedin|id|4479842487": "2026-11-26T20:00:21.925858+00:00",
+    "linkedin|id|4495249641": "2026-11-26T20:00:21.925858+00:00"
   },
   "jobs": [
     {
@@ -20426,7 +20446,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-26T05:30:54.715303+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470650098",
@@ -20458,7 +20478,7 @@
       "linkedin_detail_attempted_at": "2026-11-04T20:03:06.868899+00:00",
       "recovery_methods": {},
       "source_verified_at": "2026-11-26T05:30:54.715303+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4368396986",
@@ -28715,6 +28735,49 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4493813393",
+      "source": "linkedin",
+      "company": "CACI International Inc",
+      "title": "Full Stack Software Developer",
+      "location": "Washington, DC",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-developer-at-caci-international-inc-4493813393",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T20:00:21.925858+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "c10807a5f373c06defd1",
+          "attempted_at": "2026-11-26T20:00:21.925858+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-26T20:00:48.657679+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Full-stack role is relevant; level and required qualifications could change fit."
+      },
+      "linkedin_detail_triage_hash": "bfbb731a5a9014faf9ec",
+      "linkedin_detail_deferred_at": "2026-11-26T20:00:21.925858+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4465568519",
       "source": "linkedin",
       "company": "CACI International Inc",
@@ -31136,7 +31199,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-26T05:30:54.715303+00:00",
       "source_verified_at": "2026-11-26T05:30:54.715303+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4494660402",
@@ -31170,7 +31233,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-26T05:30:54.715303+00:00",
       "source_verified_at": "2026-11-26T05:30:54.715303+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4469528970",
@@ -32991,6 +33054,58 @@
       "direct_original_fetched_at": "2026-10-30T19:35:12.740588+00:00",
       "source_verified_at": "2026-10-30T19:35:12.740588+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4479842487",
+      "source": "linkedin",
+      "company": "Capital One",
+      "title": "Full- stack Engineer 5 - Capital One Shopping Tech (Categories Team) (Remote - Eligible)",
+      "location": "McLean, VA",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-5-capital-one-shopping-tech-categories-team-remote-eligible-at-capital-one-4479842487",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T20:00:21.925858+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "c66e55356b17f4fef5aa",
+          "attempted_at": "2026-11-26T20:00:21.925858+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "b2ede0e32f4d3526760e",
+          "attempted_at": "2026-11-26T20:00:21.925858+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "ccd1a32be6de3ef62f87",
+          "attempted_at": "2026-11-26T20:00:21.925858+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-26T20:00:48.657679+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": false,
+        "priority": "low",
+        "reason": "Engineer 5 title suggests seniority unlikely to fit early-career preference."
+      },
+      "linkedin_detail_triage_hash": "745f22b8bb229d95a37b",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470440663",
@@ -37028,6 +37143,65 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4494972622",
+      "source": "linkedin",
+      "company": "CivilGrid",
+      "title": "Full Stack Engineer",
+      "location": "Boston, MA",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-at-civilgrid-4494972622",
+      "official_url": "",
+      "description": "**ABOUT CIVILGRID** CivilGrid is the trusted civil design platform powering affordable infrastructure renewal and growth. We give utilities, civil engineers, and municipalities a single, collaborative source of truth for what's underground so teams can plan, design, and build faster, smarter, and safer. Our platform consolidates utility records, geotechnical and environmental data, paving moratoriums, and jurisdictional requirements directly from 3,000\\+ utilities, agencies, and municipalities with full chain\\-of\\-custody documentation. Teams at PG\\&E, Mark Thomas, and dozens of leading engineering firms use CivilGrid to cut research time by up to 88%, reduce project costs, prevent dig\\-ins, and accelerate delivery on the projects that keep communities running. We're a venture\\-backed Series A startup tackling a $4\\.7T US infrastructure market that has been underserved by software for decades. Founded by industry insiders, each with 10\\+ years in utilities and civil engineering, we move fast, ship work that matters, and stay close to the customers and field teams we build for. **WHY THIS ROLE** As a small team, we all wear many hats and enjoy tackling new challenges. When it comes to tech, we're seeking experienced individuals who can efficiently identify problems and devise solutions. As a Full Stack Engineer, you will be a foundational team member with the opportunity to work on all aspects of the application and shape the technical future of CivilGrid. Joining at this stage, you will build core systems that will help us scale quickly, and benefit from tremendous upside as we grow. This role will report to one of our Engineering Managers. It is a hybrid role with expectations that you are working from our downtown Boston office at least 3 days per week if hired. **WHAT YOU'LL DO** * Design and build end\\-to\\-end features, covering everything from database models to user\\-facing components using React * Tackle a variety of areas: web and mobile applications, mapping interfaces, data processing pipelines, algorithmic relevancy, and real\\-time collaboration tools * Profile and tune performance across the entire stack to ensure efficient and responsive systems * Implement and maintain analytics, health monitoring, alerts, and logging to maintain operational visibility and system reliability **WHAT YOU'LL BRING** * 5 years of experience working with JavaScript or TypeScript, particularly with React and Node.js (or equivalent frameworks) * Start Up Ready: Autonomous, moves fast, takes initiative without being asked, eagerness to learn and take ownership of hard problems * Strong foundational knowledge of PostgreSQL is a plus * Familiarity with geospatial frameworks (PostGIS, GeoJSON, map rendering libraries, etc.) is a plus * Conduct code reviews, mentor junior engineers, and offer constructive feedback to help grow the team’s technical capabilities * Strong verbal and written communication, able to articulate ideas clearly and collaborate effectively * A degree in Computer Science **HOW WE WORK** We're a small, but rapidly growing team that ships. Expect direct feedback, real ownership from day one, and proximity to customers — huge utilities, public agencies, and engineering firms whose work depends on what we build. We default to in\\-person collaboration where it matters and remote\\-friendly flexibility otherwise. We hire people who care deeply about their craft and the communities our customers serve. **COMPENSATION \\& BENEFITS** **The base salary range for this role is** *$132,039 \\- $201,101* Base salary is only one part of your total compensation package at CivilGrid, which also includes meaningful early\\-stage equity, comprehensive benefits, and the opportunity to shape a category\\-defining company. The base salary range listed above may encompass various levels and/or geographic locations; final offers are determined based on the candidate's experience, skills, level, and work location. In addition to base and equity, we offer: * Company\\-funded medical, dental, and vision insurance — including medical plans at no cost to the employee * FSA (health and dependent care) * Unlimited PTO and a culture that expects you to actually use it * 401(k) plan * A high\\-trust team, real ownership, and the chance to do the most meaningful work of your career **EQUAL EMPLOYMENT OPPORTUNITY** CivilGrid is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees and applicants. We do not discriminate on the basis of race, color, religion, sex, sexual orientation, gender identity or expression, national origin, age, disability, genetic information, marital status, veteran status, pregnancy, or any other characteristic protected by federal, state, or local law. Employment decisions at CivilGrid are based on business needs, job requirements, and individual qualifications. If you require a reasonable accommodation to participate in the application or interview process, please contact us — we're happy to help. Compensation Range: $132,039 \\- $201,101",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T20:00:21.925858+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "jd_recovery_at": "2026-11-26T20:00:21.925858+00:00",
+      "enrichment_method": "exact_indeed_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4494975496",
+      "source": "linkedin",
+      "company": "CivilGrid",
+      "title": "Senior Software Engineer",
+      "location": "Boston, MA",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-at-civilgrid-4494975496",
+      "official_url": "",
+      "description": "**ABOUT CIVILGRID** CivilGrid is the trusted civil design platform powering affordable infrastructure renewal and growth. We give utilities, civil engineers, and municipalities a single, collaborative source of truth for what's underground so teams can plan, design, and build faster, smarter, and safer. Our platform consolidates utility records, geotechnical and environmental data, paving moratoriums, and jurisdictional requirements directly from 3,000\\+ utilities, agencies, and municipalities with full chain\\-of\\-custody documentation. Teams at PG\\&E, Mark Thomas, and dozens of leading engineering firms use CivilGrid to cut research time by up to 88%, reduce project costs, prevent dig\\-ins, and accelerate delivery on the projects that keep communities running. We're a venture\\-backed Series A startup tackling a $4\\.7T US infrastructure market that has been underserved by software for decades. Founded by industry insiders, each with 10\\+ years in utilities and civil engineering, we move fast, ship work that matters, and stay close to the customers and field teams we build for. **WHY THIS ROLE** As a small, high\\-velocity engineering team, we solve complex spatial and data\\-ingestion problems in an industry that has been underserved by modern software for decades. We are looking for a Senior Full Stack Engineer who operates with high autonomy and technical depth—someone who can take ambiguous, high\\-stakes product problems and architect clean, scalable solutions from database to browser. Joining at Series A, you will own critical subsystems, shape our core technical architecture as we scale our data footprint, and help set the engineering bar for the team. You will partner closely with engineering leadership, as well as our product and data teams. This is a hybrid role based out of our downtown Boston office. You will be expected to work from the office at least 3 days per week if hired. The role reports to one of our Engineering Managers. **WHAT YOU'LL DO** * Design and build end\\-to\\-end features, covering everything from database models to user\\-facing components using React * Tackle a variety of areas: web and mobile applications, mapping interfaces, data processing pipelines, algorithmic relevancy, and real\\-time collaboration tools * Profile and tune performance across the entire stack to ensure efficient and responsive systems * Implement and maintain analytics, health monitoring, alerts, and logging to maintain operational visibility and system reliability * Raise the bar on technical quality across the team by guiding system designs, mentoring team members, and establishing practical development practices **WHAT YOU'LL BRING** * **7\\+ years of software engineering experience** building and operating production web applications, with deep expertise in TypeScript, React, and Node.js (or equivalent modern backend stacks). * **Strong data and backend fundamentals:** Proven experience designing schemas and optimizing query performance in PostgreSQL at scale. * **Startup pragmatism \\& high ownership:** You thrive in ambiguity, have a bias toward action, make sound trade\\-offs between speed and maintainability, and take end\\-to\\-end responsibility for what you ship. * **Technical leadership:** Demonstrated ability to scope multi\\-week or multi\\-quarter initiatives, communicate technical trade\\-offs clearly to both technical and non\\-technical stakeholders, and elevate the engineers around you. * **Bonus points for domain depth:** Hands\\-on experience with geospatial tooling and standards (PostGIS, GeoJSON, Mapbox GL, or vector tiles) or complex data\\-ingestion/ETL pipelines. * BS/MS in Computer Science or equivalent real\\-world engineering experience. **HOW WE WORK** We're a small, but rapidly growing team that ships. Expect direct feedback, real ownership from day one, and proximity to customers — huge utilities, public agencies, and engineering firms whose work depends on what we build. We default to in\\-person collaboration where it matters and remote\\-friendly flexibility otherwise. We hire people who care deeply about their craft and the communities our customers serve. **COMPENSATION \\& BENEFITS** **The base salary range for this role is** *$148,640 \\- $201,101* Base salary is only one part of your total compensation package at CivilGrid, which also includes meaningful early\\-stage equity, comprehensive benefits, and the opportunity to shape a category\\-defining company. The base salary range listed above may encompass various levels and/or geographic locations; final offers are determined based on the candidate's experience, skills, level, and work location. In addition to base and equity, we offer: * Company\\-funded medical, dental, and vision insurance — including medical plans at no cost to the employee * FSA (health and dependent care) * Unlimited PTO and a culture that expects you to actually use it * 401(k) plan * A high\\-trust team, real ownership, and the chance to do the most meaningful work of your career **EQUAL EMPLOYMENT OPPORTUNITY** CivilGrid is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees and applicants. We do not discriminate on the basis of race, color, religion, sex, sexual orientation, gender identity or expression, national origin, age, disability, genetic information, marital status, veteran status, pregnancy, or any other characteristic protected by federal, state, or local law. Employment decisions at CivilGrid are based on business needs, job requirements, and individual qualifications. If you require a reasonable accommodation to participate in the application or interview process, please contact us — we're happy to help. Compensation Range: $148,640 \\- $201,101",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T20:00:21.925858+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "jd_recovery_at": "2026-11-26T20:00:21.925858+00:00",
+      "enrichment_method": "exact_indeed_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4456956839",
       "source": "linkedin",
       "company": "ClassPass",
@@ -40751,7 +40925,7 @@
       "title": "Senior Fullstack Engineer, Ambient AI",
       "location": "San Francisco, CA",
       "posted_date": "2026-09-22",
-      "aggregator_posted_date": "2026-10-06",
+      "aggregator_posted_date": "2026-11-25",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-fullstack-engineer-ambient-ai-at-commure-4455439792",
@@ -40766,8 +40940,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-10-07T19:00:16.149681+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4465347355",
@@ -42229,6 +42403,49 @@
       "linkedin_detail_fetched_at": "2026-11-04T05:02:10.905094+00:00",
       "linkedin_detail_resolved": true,
       "enrichment_method": "linkedin_http"
+    },
+    {
+      "job_id": "4495035380",
+      "source": "linkedin",
+      "company": "Craftbridge Digital",
+      "title": "Software Engineer",
+      "location": "Austin, TX",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-craftbridge-digital-4495035380",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T20:00:21.925858+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "b4ed058e6f6117131821",
+          "attempted_at": "2026-11-26T20:00:21.925858+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-26T20:00:48.657679+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Software Engineer role is relevant; seniority and requirements are unknown."
+      },
+      "linkedin_detail_triage_hash": "c213c45c02cdca78bff0",
+      "linkedin_detail_deferred_at": "2026-11-26T20:00:21.925858+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470975760",
@@ -51366,7 +51583,7 @@
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/llm-genai-engineer-at-evlo-ai-4494947463",
       "official_url": "",
-      "description": "",
+      "description": "About The Role The role focuses on building production-grade LLM and generative AI systems — RAG pipelines, agentic workflows, fine-tuning pipelines, and evaluation frameworks — that ship to real users, not demos. This is a hands-on engineering position on a well-funded team where model quality, latency, and cost all matter. The work directly shapes how the company's core product leverages large language models at scale. Key Responsibilities Design and implement RAG architectures using LangChain, LlamaIndex, or custom retrieval stacks, tuning chunking strategies, hybrid search, and re-ranking for production quality Build and optimize vector database integrations (Pinecone, Weaviate, pgvector) supporting semantic search and retrieval across large-scale document corpora Develop agentic workflows with tool use, function calling, and multi-step orchestration using frameworks such as LangGraph or OpenAI/Anthropic tool APIs Build systematic LLM evaluation pipelines: golden datasets, LLM-as-judge scoring, regression testing, and offline/online experiment analysis Run parameter-efficient fine-tuning (LoRA, QLoRA) and instruction tuning on domain-specific data; manage GPU training jobs and experiment tracking (W&B, MLflow) Deploy and serve LLM applications with vLLM, Triton, or managed inference APIs, optimizing for latency, throughput, and cost (quantization, batching, caching) Instrument observability for GenAI systems — tracing, token/cost monitoring, hallucination and drift detection — using tools like LangSmith or OpenTelemetry What We Are Looking For 3–6 years of software engineering or ML engineering experience, including at least 2 years building LLM/GenAI systems in production Strong Python skills with comfort in async programming, API design, and cloud infrastructure (AWS, GCP, or Azure) Deep experience with at least one LLM orchestration framework (LangChain, LlamaIndex, LangGraph) and vector databases in production Hands-on knowledge of transformer architectures, embedding models, prompt engineering, and the practical failure modes of LLM-based systems Experience deploying and scaling inference — serving stacks, quantization, GPU utilization, or managed model APIs Bachelor's degree in CS, engineering, or a related technical field, or equivalent practical experience Bonus: Experience with distributed training or fine-tuning open-weight models (Llama, Mistral, Qwen), RLHF/DPO pipelines, Kubernetes-based ML infrastructure, or contributions to open-source LLM tooling",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-26T05:30:54.715303+00:00",
@@ -51378,24 +51595,26 @@
       "recovery_methods": {
         "generic_search": {
           "input_hash": "84a2d628817e809b32e1",
-          "attempted_at": "2026-11-26T05:30:54.715303+00:00",
+          "attempted_at": "2026-11-26T20:00:21.925858+00:00",
           "outcome": "no_match"
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-11-26T05:31:07.939519+00:00",
+      "official_search_attempted_at": "2026-11-26T20:00:21.925858+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "high",
-        "reason": "LLM/GenAI engineering aligns strongly; seniority and hands-on responsibilities could change fit."
+        "reason": "LLM/GenAI work strongly matches target; requirements and seniority could change fit."
       },
-      "linkedin_detail_triage_hash": "cd91968ab4a60b9a96f0",
-      "linkedin_detail_attempted_at": "2026-11-26T05:31:01.181507+00:00",
-      "enrichment_status": "deferred",
+      "linkedin_detail_triage_hash": "613c37e22c57b47052ed",
+      "linkedin_detail_attempted_at": "2026-11-26T20:00:46.387303+00:00",
+      "enrichment_status": "resolved",
       "source_verified_at": "2026-11-26T05:30:54.715303+00:00",
-      "verified_this_run": true,
-      "enrichment_deferred_reason": "linkedin_detail_cooldown"
+      "verified_this_run": false,
+      "linkedin_detail_fetched_at": "2026-11-26T20:00:46.387303+00:00",
+      "linkedin_detail_resolved": true,
+      "enrichment_method": "linkedin_http"
     },
     {
       "job_id": "4469486457",
@@ -55586,6 +55805,32 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4495201808",
+      "source": "linkedin",
+      "company": "Formulary Financial",
+      "title": "Senior Software Engineer, Full Stack",
+      "location": "New York, NY",
+      "posted_date": "2026-11-25",
+      "aggregator_posted_date": "2026-11-25",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-full-stack-at-formulary-financial-4495201808",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T20:00:21.925858+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4450336889",
       "source": "linkedin",
       "company": "Fortune",
@@ -58705,7 +58950,7 @@
       "title": "Software Engineer - Full Stack",
       "location": "Denver, CO",
       "posted_date": "2026-11-04",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-full-stack-at-global-payments-inc-4487548382",
@@ -58719,16 +58964,6 @@
           "full-stack engineer"
         ]
       },
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "7289c8aea813e922c249",
-          "attempted_at": "2026-11-05T20:00:19.859538+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-11-06T05:01:26.079461+00:00",
-      "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "normal",
@@ -58736,11 +58971,16 @@
       },
       "linkedin_detail_triage_hash": "960fe532eacd933eb8a3",
       "linkedin_detail_deferred_at": "2026-11-05T20:00:19.859538+00:00",
-      "enrichment_status": "deferred",
-      "source_verified_at": "2026-11-05T20:00:19.859538+00:00",
-      "verified_this_run": false,
       "enrichment_deferred_reason": "linkedin_rate_limited",
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "7289c8aea813e922c249",
+          "attempted_at": "2026-11-05T20:00:19.859538+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4443705909",
@@ -84084,6 +84324,40 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4495289316",
+      "source": "linkedin",
+      "company": "NetApp",
+      "title": "Full Stack Engineer - NetApp Digital Advisor",
+      "location": "Morrisville, NC",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/full-stack-engineer-netapp-digital-advisor-at-netapp-4495289316",
+      "official_url": "",
+      "description": "Job Summary We are seeking a talented and motivated Full Stack Engineer to join our NetApp Digital Advisor team . The ideal candidate brings strong full stack development skills, deep expertise in Python and/or Node.js, and solid understanding of data structures and algorithms. You will play a key role in building and scaling intelligent data management solutions that help customers optimize their NetApp environments. Key Responsibilities Design, develop, test, and deploy scalable full stack applications for the Active IQ platform. Build efficient backend services and APIs using Python and/or Node.js. Develop responsive and intuitive front-end interfaces using modern frameworks. Collaborate with product managers, UX designers, and engineers to deliver impactful features. Apply strong knowledge of data structures and algorithms to solve complex engineering challenges. Participate in code reviews, architecture discussions, and technical planning. Ensure code quality, performance, and maintainability across the stack. Troubleshoot and debug issues across the full stack in a timely manner. Job Requirements Strong proficiency in Python and/or Node.js for backend development. Experience with front-end technologies such as React, Angular, JavaScript, HTML/CSS. Expert-level understanding of data structures, algorithms, and software design concepts. Experience building and consuming RESTful APIs and working with microservices architecture. Familiarity with databases (SQL and/or NoSQL). Experience with CI/CD pipelines, version control (Git), and Agile practices. Utilize modern AI/ML and Generative AI tools where appropriate to enhance automation, system insights, and operational efficiency. Exposure to agent-ai development using MCP, A2A protocols Preferred Qualifications Experience with Active IQ or similar telemetry/analytics platforms. Familiarity with cloud platforms (AWS, Azure, or GCP). Knowledge of containerization tools like Docker and Kubernetes. Experience working in Agile/Scrum environments. Experience in LLM APIs and frameworks like LangChain , LangGraph , Google ADK, Phoenix, Guardrails, Mem0 etc. Familiarity with NetApp storage solutions is an added advantage. Education Typically requires a Bachelor's with 2+ years in full stack software development experience; or a Master's degree in Computer Science, Engineering, or a related field. Compensation: The target salary range for this position is 113,050 - 168,300 USD. The salary offered will be determined by the candidate's location, qualifications, experience, and education and may be outside of this range. Final compensation packages are competitive and in line with industry standards, reflecting a variety of factors, and include a comprehensive benefits package. This may cover Health Insurance, Life Insurance, Retirement or Pension Plans, Paid Time Off, various Leave options, Performance-Based Incentives, employee stock purchase plan, and/or restricted stocks (RSU’s), with all offerings subject to regional variations and governed by local laws, regulations, and company policies. Benefits may vary by country and region, and further details will be provided as part of the recruitment process. At NetApp, we embrace a hybrid working environment designed to strengthen connection, collaboration, and culture for all employees. This means that most roles will have some level of in-office and/or in-person expectations, which will be shared during the recruitment process. Equal Opportunity Employer: NetApp is firmly committed to Equal Employment Opportunity (EEO) and to compliance with all federal, state and local laws that prohibit employment discrimination based on age, race, color, gender, sexual orientation, gender identity, national origin, religion, disability or genetic information, pregnancy, protected veteran status, and any other protected classification. Why You'll Thrive at NetApp At NetApp, you won't wait for the perfect moment—you'll make it. The early planning, the extra thought, the bold idea that turns good into great: That's how our people operate and how we continue to push the boundaries of data infrastructure. NetApp is the trusted partner for organizations transforming data into opportunity. As the only enterprise-grade storage service natively embedded in Google Cloud, AWS, and Microsoft Azure, we empower customers to run everything from traditional workloads to enterprise AI with unmatched performance, resilience, and security. Our culture We celebrate mold breakers, bold thinkers, and problem solvers. We reward initiative, impact, and ownership. We provide flexibility so you can balance professional ambition with your personal life. Here, differences are not just welcomed—they drive everything we do. If you're ready to innovate, rise to the challenge, and own every moment - make your next move your best one. Apply now. Submitting an Application To ensure a streamlined and fair hiring process for all candidates, our team only reviews applications submitted through our company website. This practice allows us to track, assess, and respond to applicants efficiently. Emailing our employees, recruiters, or Human Resources personnel directly will not influence your application. AI Disclosure For select roles, some stages of our hiring process may use artificial intelligence tools to help evaluate applications and candidate selection. These tools support—rather than replace—human decision-making.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T20:00:21.925858+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://careers.netapp.com/en/job/morrisville/full-stack-engineer-netapp-digital-advisor/27600/103264301696",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-26T20:00:21.925858+00:00",
+      "jd_recovery_at": "2026-11-26T20:00:21.925858+00:00",
+      "enrichment_method": "dedicated_official",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-26T20:00:21.925858+00:00",
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4461136761",
       "source": "linkedin",
       "company": "NetApp",
@@ -85948,7 +86222,7 @@
       "linkedin_detail_attempted_at": "2026-09-23T00:02:11.568930+00:00",
       "recovery_methods": {},
       "source_verified_at": "2026-11-26T05:30:54.715303+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461285885",
@@ -86641,7 +86915,7 @@
       "official_jd_fetched_at": "2026-11-04T20:00:16.973103+00:00",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-26T05:30:54.715303+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4417158991",
@@ -99666,6 +99940,36 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4495249641",
+      "source": "linkedin",
+      "company": "Remitly",
+      "title": "Senior Software Engineer, Fullstack",
+      "location": "Seattle, WA",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-fullstack-at-remitly-4495249641",
+      "official_url": "",
+      "description": "**Category:** Engineering **Job ID:** R\\_107202 **Job Type:** Regular **Job Description:** At Remitly, we believe everyone deserves the freedom to access, move, and manage their money wherever life takes them. Since 2011, we’ve tirelessly delivered on our promise to customers sending money globally, providing secure, simple, and reliable ways to manage their money, ensuring true peace of mind. Whether it’s supporting loved ones back home, growing a business across continents, or pursuing new opportunities abroad, we’re not just here to move money— we’re here to move our global customers forward. We’re looking for builders, reimaginers, and global thinkers who want to work at the intersection of technology, trust, and transformation. If that’s you and you’re ready to do the most meaningful work of your career— we invite you to join over 3,000 passionate Remitlians worldwide who are united by our vision to lift lives, one cross\\-border story at a time. **About the Role** Remitly Business is building a two\\-sided platform that helps businesses and individuals in emerging markets move money across borders. On the send side, we let businesses pay vendors, suppliers, and contractors abroad. On the receive side, we let businesses and sellers get paid in USD, hold balances in stable currency, and withdraw across Remitly's 170\\+ country disbursement network. As a Senior Full Stack Software Engineer on Remitly Business, you will build product and platform across both sides of this marketplace — from customer\\-facing onboarding and payment experiences to the services, APIs, and money\\-movement flows beneath them. You will be a key technical voice on a senior, cross\\-functional team, owning features end to end and raising the quality bar for those around you. You will work in a hybrid capacity from our Seattle office. **You Will** * Design and ship full stack features end to end — from React frontends to backend services, APIs, and data — breaking complex work into parallel workstreams and driving it from design through launch. * Use modern AI\\-assisted and spec\\-driven development to move faster, while owning the architecture, correctness, and quality that tooling cannot guarantee on its own. * Set the technical standard with systems that are well\\-tested, resilient, extensible, and scalable, and that make it easy for others to contribute. * Build for money movement at scale, delivering idempotent, observable flows with correct ledgering, reconciliation, and compliance gating. * Uphold our Foundational Excellence standards for security, reliability, and observability, resolving risks before they become incidents. * Develop and deliver short\\- and long\\-term roadmaps, making tradeoffs across priorities, user experience, and a sustainable technical foundation. * Collaborate with partners across Product, Design, Analytics, Compliance, Infrastructure, and Operations to turn customer needs into scalable solutions. **You Have** * A degree in Computer Science, Engineering, or a related field, or equivalent practical experience. * 4\\+ years of engineering experience building backend services in a collaborative, cross\\-functional team environment. * Experience as a full stack engineer with React/TypeScript and Go. * Experience designing secure, scalable, performant software on cloud infrastructure (e.g., AWS). * Experience working on large features in partnership with Product Management and other stakeholders. * Comfort with, or strong enthusiasm for, AI\\-assisted development tools as a force multiplier. * Clear, objective written and in\\-person communication, including the ability to articulate technical trade\\-offs to technical and non\\-technical stakeholders. * Nice to have: experience in payments, fintech, or money movement. **Compensation Details.** The starting base salary range for this position is typically $180,000\\-$225,000 In the U.S., Remitly employees are shareholders in our Company and equity is part of our total compensation plan. Your recruiter can share more information about medical benefits offered, as well as other financial benefits and total compensation components offered with this role. **Our Benefits:** * Flexible paid time off * Health, dental, and vision \\+ 401k plan with company matching * Paid parental, medical, military and family care leave * Mental Health \\& Family Forming Benefits * Employee Stock Purchase Plan (ESPP) * Continuing education and travel benefits **Our Connected Work Culture: Driving Innovation, Together** At Remitly, we believe that true innovation sparks when we come together. Our Connected Work Culture fosters dynamic in\\-person collaboration, where ideas ignite and challenging problems find solutions faster. Under the Company's current hybrid\\-work expectations, employees in this position work onsite Tuesday through Thursday each week. Additional onsite attendance may be required based on business needs, and the Company may modify its hybrid\\-work expectations from time to time. These intentional in\\-office moments are vital for deepening relationships, fueling creativity, and ensuring your impact is felt where it matters most. **Remitly is an E\\-Verify Employer** At Remitly, we are dedicated to ensuring that our workplace offers equal employment opportunities to all employees and candidates, in full compliance with applicable laws and regulations. Remitly is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees. Remitly is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T20:00:21.925858+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "jd_recovery_at": "2026-11-26T20:00:21.925858+00:00",
+      "enrichment_method": "exact_indeed_peer",
+      "enrichment_status": "resolved",
+      "direct_original_fetched": true,
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4468794920",
       "source": "linkedin",
       "company": "RemoteHunter",
@@ -105872,7 +106176,7 @@
       "title": "Senior Software Engineer, Full Stack",
       "location": "Seattle, WA",
       "posted_date": "2026-11-04",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-full-stack-at-sentilink-4487539855",
@@ -105888,8 +106192,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-05T20:00:19.859538+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4487555108",
@@ -105924,7 +106228,7 @@
       "title": "Senior Software Engineer, Full Stack",
       "location": "Chicago, IL",
       "posted_date": "2026-11-04",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-full-stack-at-sentilink-4487557007",
@@ -105935,14 +106239,13 @@
       "first_seen": "2026-11-05T07:10:14.239898+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
           "full-stack engineer"
         ]
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-05T20:00:19.859538+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4459883616",
@@ -106949,7 +107252,7 @@
       "title": "Staff Full Stack Engineer, Product",
       "location": "Durham, NC",
       "posted_date": "2026-11-05",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/staff-full-stack-engineer-product-at-signify-technology-4486585918",
@@ -106965,8 +107268,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-06T00:58:44.848090+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4401362478",
@@ -115337,7 +115640,7 @@
       "title": "Senior Software Engineer - Full Stack",
       "location": "Durham, NC",
       "posted_date": "2026-11-04",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-full-stack-at-tanium-4478148655",
@@ -115353,8 +115656,34 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-04T20:00:16.973103+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4478159192",
+      "source": "linkedin",
+      "company": "Tanium",
+      "title": "Senior Software Engineer - Full Stack",
+      "location": "Addison, TX",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-full-stack-at-tanium-4478159192",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T20:00:21.925858+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "full-stack engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4475977018",
@@ -118989,7 +119318,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-26T05:30:54.715303+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4451651652",
@@ -125345,28 +125674,24 @@
       "title": "Senior Software Engineer - Fullstack with Rust",
       "location": "Columbus, OH",
       "posted_date": "2026-11-05",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-fullstack-with-rust-at-veeva-systems-4486593859",
       "official_url": "",
-      "description": "Veeva Systems is a mission\\-driven organization and pioneer in industry cloud, helping life sciences companies bring therapies to patients faster. As one of the fastest\\-growing SaaS companies in history, we surpassed $3B in revenue in our last fiscal year with extensive growth potential ahead. At the heart of Veeva are our values: Do the Right Thing, Customer Success, Employee Success, and Speed. We're not just any public company – we made history in 2021 by becoming a public benefit corporation (PBC), legally bound to balancing the interests of customers, employees, society, and investors. As a Work Anywhere company, we support your flexibility to work from home or in the office, so you can thrive in your ideal environment. Join us in transforming the life sciences industry, committed to making a positive impact on its customers, employees, and communities.### **The Role** We are looking for a Fullstack Sr. Software Engineer who is energized by building a new agent first CRM platform from 0 to 1\\. You will have a high degree of ownership over the entire stack: from crafting responsive, component\\-driven interfaces in React to architecting robust, scalable backend logic in Rust. We need a builder who enjoys the challenge of creating a clean, scalable application from the ground up. ### **What You'll Do** * You will be part of a small group of engineers building an AI\\-first CRM platform * End\\-to\\-End Development: Take full ownership of features by writing clean, maintainable code across the entire stack * Frontend Excellence: Translate UI/UX designs into high\\-performance user interfaces using React * Backend Logic: Build efficient and accurate server\\-side logic and APIs powered by Rust running in our platform environment * Platform Integrations: Build highly scalable integrations to common applications that integrate with CRM ### **Requirements** * We need good team players * 7\\+ years of fullstack development experience * Proficiency with Rust and server side languages * Experience with SQL * Applicants must have the unrestricted right to work in the United States. Veeva will not provide sponsorship at this time ### **Interviewing with Veeva** We value your time and believe in a transparent hiring process. Here is the process you can expect. * Follow the application process and submit your resume. * Within 3 days, you will receive a link to a personality assessment administered by a third party, unless you have already completed it with Veeva previously. * Once you complete the assessment, our team will review your full application package and follow up via email with our decision. * If moving to the interview stage, the process is as follows: + A conversation with the hiring manager + A technical/coding skills exercise + A final panel interview with team members and senior leaders * Once all interviews are complete, the manager will be in touch with a final decision. ### **Perks \\& Benefits** * Medical, dental, vision, and basic life insurance * Flexible PTO and company paid holidays * Retirement programs * 1% charitable giving program ### **Compensation** * Base pay: $110,000 \\- $270,000 * The salary range listed here has been provided to comply with local regulations and represents a potential base salary range for this role. Please note that actual salaries may vary within the range above or below, depending on experience and location. We look at compensation for each individual and base our offer on your unique qualifications, experience, and expected contributions. This position may also be eligible for other types of compensation in addition to base salary, such as variable bonus and/or stock bonus. ###### **\\#LI\\-Remote** ###### **\\#LI\\-MidSenior** Veeva’s headquarters is located in the San Francisco Bay Area with offices in more than 15 countries around the world. Veeva is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to race, color, sex, sexual orientation, gender identity or expression, religion, national origin or ancestry, age, disability, marital status, pregnancy, protected veteran status, protected genetic information, political affiliation, or any other characteristics protected by local laws, regulations, or ordinances. If you need assistance or accommodation due to a disability or special need when applying for a role or in our recruitment process, please contact us at talent\\_accommodations@veeva.com.",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-05T20:00:19.859538+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer"
+          "full-stack engineer"
         ]
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "jd_recovery_at": "2026-11-06T05:00:09.216480+00:00",
-      "enrichment_method": "exact_indeed_peer",
-      "enrichment_status": "resolved",
-      "direct_original_fetched": true,
-      "source_verified_at": "2026-11-06T05:00:09.216480+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4486702247",
@@ -125375,28 +125700,24 @@
       "title": "Senior Software Engineer - Fullstack with Rust",
       "location": "Boston, MA",
       "posted_date": "2026-11-05",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-fullstack-with-rust-at-veeva-systems-4486702247",
       "official_url": "",
-      "description": "Veeva Systems is a mission\\-driven organization and pioneer in industry cloud, helping life sciences companies bring therapies to patients faster. As one of the fastest\\-growing SaaS companies in history, we surpassed $3B in revenue in our last fiscal year with extensive growth potential ahead. At the heart of Veeva are our values: Do the Right Thing, Customer Success, Employee Success, and Speed. We're not just any public company – we made history in 2021 by becoming a public benefit corporation (PBC), legally bound to balancing the interests of customers, employees, society, and investors. As a Work Anywhere company, we support your flexibility to work from home or in the office, so you can thrive in your ideal environment. Join us in transforming the life sciences industry, committed to making a positive impact on its customers, employees, and communities.### **The Role** We are looking for a Fullstack Sr. Software Engineer who is energized by building a new agent first CRM platform from 0 to 1\\. You will have a high degree of ownership over the entire stack: from crafting responsive, component\\-driven interfaces in React to architecting robust, scalable backend logic in Rust. We need a builder who enjoys the challenge of creating a clean, scalable application from the ground up. ### **What You'll Do** * You will be part of a small group of engineers building an AI\\-first CRM platform * End\\-to\\-End Development: Take full ownership of features by writing clean, maintainable code across the entire stack * Frontend Excellence: Translate UI/UX designs into high\\-performance user interfaces using React * Backend Logic: Build efficient and accurate server\\-side logic and APIs powered by Rust running in our platform environment * Platform Integrations: Build highly scalable integrations to common applications that integrate with CRM ### **Requirements** * We need good team players * 7\\+ years of fullstack development experience * Proficiency with Rust and server side languages * Experience with SQL * Applicants must have the unrestricted right to work in the United States. Veeva will not provide sponsorship at this time ### **Interviewing with Veeva** We value your time and believe in a transparent hiring process. Here is the process you can expect. * Follow the application process and submit your resume. * Within 3 days, you will receive a link to a personality assessment administered by a third party, unless you have already completed it with Veeva previously. * Once you complete the assessment, our team will review your full application package and follow up via email with our decision. * If moving to the interview stage, the process is as follows: + A conversation with the hiring manager + A technical/coding skills exercise + A final panel interview with team members and senior leaders * Once all interviews are complete, the manager will be in touch with a final decision. ### **Perks \\& Benefits** * Medical, dental, vision, and basic life insurance * Flexible PTO and company paid holidays * Retirement programs * 1% charitable giving program ### **Compensation** * Base pay: $110,000 \\- $270,000 * The salary range listed here has been provided to comply with local regulations and represents a potential base salary range for this role. Please note that actual salaries may vary within the range above or below, depending on experience and location. We look at compensation for each individual and base our offer on your unique qualifications, experience, and expected contributions. This position may also be eligible for other types of compensation in addition to base salary, such as variable bonus and/or stock bonus. ###### **\\#LI\\-Remote** ###### **\\#LI\\-MidSenior** Veeva’s headquarters is located in the San Francisco Bay Area with offices in more than 15 countries around the world. Veeva is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to race, color, sex, sexual orientation, gender identity or expression, religion, national origin or ancestry, age, disability, marital status, pregnancy, protected veteran status, protected genetic information, political affiliation, or any other characteristics protected by local laws, regulations, or ordinances. If you need assistance or accommodation due to a disability or special need when applying for a role or in our recruitment process, please contact us at talent\\_accommodations@veeva.com.",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-05T20:00:19.859538+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer"
+          "full-stack engineer"
         ]
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "jd_recovery_at": "2026-11-06T05:00:09.216480+00:00",
-      "enrichment_method": "exact_indeed_peer",
-      "enrichment_status": "resolved",
-      "direct_original_fetched": true,
-      "source_verified_at": "2026-11-06T05:00:09.216480+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4462543006",
@@ -128873,7 +129194,7 @@
         }
       },
       "source_verified_at": "2026-11-26T05:30:54.715303+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4455385713",
@@ -131512,7 +131833,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-26T05:30:54.715303+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4314539014",
@@ -133330,7 +133651,7 @@
       "title": "Full Stack Software Engineer, Lab Platform (LIMS)",
       "location": "South San Francisco, CA",
       "posted_date": "2026-09-22",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/full-stack-software-engineer-lab-platform-lims-at-insitro-4468507766",
@@ -133345,8 +133666,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-11-04T20:00:16.973103+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4470408039",
