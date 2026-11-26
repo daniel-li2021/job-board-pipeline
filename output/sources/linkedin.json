@@ -1,65 +1,60 @@
 {
   "schema_version": 1,
   "source": "linkedin",
-  "count": 4314,
+  "count": 4325,
   "meta": {
     "snapshot_schema_version": 1,
-    "scraped_at": "2026-11-26T20:00:21.925858+00:00",
+    "scraped_at": "2026-11-26T23:07:10.093599+00:00",
     "collector": {
-      "commit": "6aea675f6567013839afb9eb44f2038b32c31774",
+      "commit": "7bfb00c4f3093f8eee557ee9a551b73cb2d74bcb",
       "dirty": false
     },
     "source_provenance": {
       "implementation": "sources.linkedin_local"
     },
-    "elapsed_seconds": 26.264,
+    "elapsed_seconds": 58.237,
     "query_stats": [
       {
-        "query": "full-stack engineer",
+        "query": "software engineer",
         "group": "primary",
-        "page_budget": 2,
-        "pages_fetched": 2,
-        "stop_reason": "page_budget",
-        "raw_jobs": 20,
-        "unique_jobs": 20,
-        "unique_contribution": 18,
-        "first_pass_survivors": 18,
+        "page_budget": 5,
+        "pages_fetched": 4,
+        "stop_reason": "recovery_search_budget",
+        "raw_jobs": 40,
+        "unique_jobs": 40,
+        "unique_contribution": 38,
+        "first_pass_survivors": 38,
         "original_postings_resolved": 0,
-        "jds_resolved": 4,
-        "elapsed_seconds": 12.499,
-        "new_to_ledger": 10,
-        "rediscovered": 10,
+        "jds_resolved": 9,
+        "elapsed_seconds": 37.673,
+        "new_to_ledger": 13,
+        "rediscovered": 27,
         "page_yields": [
           {
             "page": 0,
+            "raw": 10,
+            "new_to_ledger": 3,
+            "known": 7
+          },
+          {
+            "page": 1,
+            "raw": 10,
+            "new_to_ledger": 2,
+            "known": 8
+          },
+          {
+            "page": 2,
             "raw": 10,
             "new_to_ledger": 5,
             "known": 5
           },
           {
-            "page": 1,
+            "page": 3,
             "raw": 10,
-            "new_to_ledger": 5,
-            "known": 5
+            "new_to_ledger": 3,
+            "known": 7
           }
         ]
-      },
-      {
-        "query": "software engineer",
-        "group": "primary",
-        "page_budget": 5,
-        "pages_fetched": 0,
-        "stop_reason": "recovery_search_budget",
-        "raw_jobs": 0,
-        "unique_jobs": 0,
-        "unique_contribution": 0,
-        "first_pass_survivors": 0,
-        "original_postings_resolved": 0,
-        "jds_resolved": 0,
-        "elapsed_seconds": 0.0,
-        "new_to_ledger": 0,
-        "rediscovered": 0,
-        "page_yields": []
       },
       {
         "query": "ai engineer",
@@ -77,64 +72,176 @@
         "new_to_ledger": 0,
         "rediscovered": 0,
         "page_yields": []
+      },
+      {
+        "query": "backend engineer",
+        "group": "primary",
+        "page_budget": 2,
+        "pages_fetched": 0,
+        "stop_reason": "recovery_search_budget",
+        "raw_jobs": 0,
+        "unique_jobs": 0,
+        "unique_contribution": 0,
+        "first_pass_survivors": 0,
+        "original_postings_resolved": 0,
+        "jds_resolved": 0,
+        "elapsed_seconds": 0.0,
+        "new_to_ledger": 0,
+        "rediscovered": 0,
+        "page_yields": []
       }
     ],
     "search_collection": {
       "cooldown_active": false,
       "probe": false,
-      "query_cursor": 83,
-      "requests": 2,
-      "responses": 2,
-      "pages_fetched": 2,
+      "query_cursor": 84,
+      "requests": 4,
+      "responses": 4,
+      "pages_fetched": 4,
       "http_status": 0,
       "rate_limited": false,
       "budget_exhausted": false,
       "rate_limit_event": {},
       "transport_stop_reason": "",
-      "new_to_ledger": 10,
-      "rediscovered": 10,
+      "new_to_ledger": 13,
+      "rediscovered": 27,
       "coverage_limited": true
     },
     "detail_enrichment": {
-      "eligible": 3,
+      "eligible": 6,
       "cache_reused": 0,
       "requests": 1,
       "responses": 1,
-      "successful_responses": 1,
+      "successful_responses": 0,
       "attempted_ids": [
-        "4494947463"
+        "4495221912"
       ],
       "http_status_counts": {
-        "200": 1
+        "429": 1
       },
-      "request_limit": 1,
-      "budget_deferred": 2,
-      "budget_exhausted": true,
+      "request_limit": 12,
+      "budget_deferred": 0,
+      "budget_exhausted": false,
       "retry_deferred": 0,
-      "retry_attempts": 1,
+      "retry_attempts": 0,
       "exact_official": 0,
       "official_deferred": 0,
-      "rate_limited": false,
-      "jds_resolved": 1,
+      "rate_limited": true,
+      "jds_resolved": 0,
       "external_apply_urls": 0,
       "failed": 0,
-      "detail_jds_fetched": 1,
+      "detail_jds_fetched": 0,
       "intentional_skips": 0,
-      "blocked": "",
+      "blocked": "blocked with HTTP 429",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 2,
+      "remaining_no_jd": 6,
       "failure_reasons": {
-        "no_description": 2
+        "linkedin_http_429": 1,
+        "no_description": 5
+      },
+      "rate_limit_event": {
+        "at": "2026-11-26T23:24:31.012882+00:00",
+        "endpoint": "detail",
+        "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4495221912",
+        "query": "Software Dev Engineer II, AWS Elastic Compute Cloud (EC2)",
+        "page": null,
+        "retry_after": "",
+        "retry_after_until": "2026-11-26T23:24:31.012882+00:00",
+        "request_ordinal": 5,
+        "endpoint_ordinal": 1,
+        "round_counts": {
+          "search": 4,
+          "detail": 1
+        },
+        "rolling_counts": {
+          "60": {
+            "search": 0,
+            "detail": 1
+          },
+          "3600": {
+            "search": 4,
+            "detail": 1
+          },
+          "86400": {
+            "search": 7,
+            "detail": 3
+          }
+        }
       },
       "protected_requests": 0,
       "protected_jds_resolved": 0,
-      "protected_deferred": 2,
+      "protected_deferred": 5,
       "queue": [
         {
-          "job_id": "4494972622",
-          "first_seen": "2026-11-26T20:00:21.925858+00:00",
+          "job_id": "4495278676",
+          "first_seen": "2026-11-26T23:07:10.093599+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_rate_limited",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4493478003",
+          "first_seen": "2026-11-26T23:07:10.093599+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_rate_limited",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4494963339",
+          "first_seen": "2026-11-26T23:07:10.093599+00:00",
+          "priority": "normal",
+          "needs_jd": null,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": true,
+          "method": "remote_exact_peer",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4495221912",
+          "first_seen": "2026-11-26T23:07:10.093599+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": null,
+          "attempted_at": "2026-11-26T23:24:30.757636+00:00",
+          "attempted_this_phase": true,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4495501038",
+          "first_seen": "2026-11-26T23:07:10.093599+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_rate_limited",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4494961801",
+          "first_seen": "2026-11-26T23:07:10.093599+00:00",
           "priority": "normal",
           "needs_jd": null,
           "deferred_at": null,
@@ -142,6 +249,19 @@
           "attempted_this_phase": false,
           "resolved": true,
           "method": "exact_indeed_peer",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4493462807",
+          "first_seen": "2026-11-26T23:07:10.093599+00:00",
+          "priority": "normal",
+          "needs_jd": null,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": true,
+          "method": "remote_exact_peer",
           "deferred_reason": null,
           "past_fresh": false
         },
@@ -155,7 +275,7 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
+          "deferred_reason": "linkedin_rate_limited",
           "past_fresh": false
         },
         {
@@ -168,86 +288,49 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_round_budget",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4495289316",
-          "first_seen": "2026-11-26T20:00:21.925858+00:00",
-          "priority": "normal",
-          "needs_jd": null,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": true,
-          "method": "dedicated_official",
-          "deferred_reason": null,
-          "past_fresh": false
-        },
-        {
-          "job_id": "4479842487",
-          "first_seen": "2026-11-26T20:00:21.925858+00:00",
-          "priority": "low",
-          "needs_jd": false,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_not_worthwhile",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4494947463",
-          "first_seen": "2026-11-26T05:30:54.715303+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": "2026-11-26T20:00:46.387303+00:00",
-          "attempted_this_phase": true,
-          "resolved": true,
-          "method": "linkedin_http",
-          "deferred_reason": null,
+          "deferred_reason": "linkedin_rate_limited",
           "past_fresh": false
         }
       ],
       "admission": {
-        "candidates": 10,
+        "candidates": 13,
         "rules_skipped": 4,
         "rule_reasons": {
           "prefilter:senior": 4
         },
         "cache_reused": 0,
-        "non_linkedin_resolved": 2,
+        "non_linkedin_resolved": 3,
         "triage_evaluated": 4,
-        "triage_deferred": 1,
-        "worth_detail": 3
+        "triage_deferred": 0,
+        "worth_detail": 6
       },
       "cooldown_active": false,
-      "probe": true,
-      "round_request_limit": 1,
+      "probe": false,
+      "round_request_limit": 12,
       "round_requests": 1,
-      "status": "probe"
+      "status": "cooldown"
     },
     "official_enrichment": {
-      "exact_indeed_peer": 3,
-      "dedicated_matches": 1,
-      "dedicated_official": 1,
+      "remote_exact_peer": 7,
+      "cache": 1,
+      "dedicated_matches": 2,
+      "exact_indeed_peer": 1,
       "search_provider_failures": 1,
-      "no_match": 4,
-      "search_requests": 6,
+      "no_match": 5,
+      "deferred": 1,
+      "search_requests": 11,
       "search_provider": "bing",
-      "official_page_requests": 2,
-      "remaining_no_jd": 14
+      "official_page_requests": 7,
+      "remaining_no_jd": 29
     },
     "partial": true,
     "blocked_reason": "focused query coverage",
-    "collected_count": 18,
-    "carried_count": 4296,
+    "collected_count": 38,
+    "carried_count": 4287,
     "last_full_snapshot_at": "",
     "last_full_collector": {},
     "last_full_source_provenance": {},
-    "jd_recovery_at": "2026-11-26T20:00:48.657679+00:00"
+    "jd_recovery_at": "2026-11-26T23:24:31.601331+00:00"
   },
   "first_seen_ledger": {
     "linkedin|id|4468531880": "",
@@ -4650,7 +4733,18 @@
     "linkedin|id|4495201808": "2026-11-26T20:00:21.925858+00:00",
     "linkedin|id|4478159192": "2026-11-26T20:00:21.925858+00:00",
     "linkedin|id|4479842487": "2026-11-26T20:00:21.925858+00:00",
-    "linkedin|id|4495249641": "2026-11-26T20:00:21.925858+00:00"
+    "linkedin|id|4495249641": "2026-11-26T20:00:21.925858+00:00",
+    "linkedin|id|4495278676": "2026-11-26T23:07:10.093599+00:00",
+    "linkedin|id|4493478003": "2026-11-26T23:07:10.093599+00:00",
+    "linkedin|id|4494963339": "2026-11-26T23:07:10.093599+00:00",
+    "linkedin|id|4495221912": "2026-11-26T23:07:10.093599+00:00",
+    "linkedin|id|4494993572": "2026-11-26T23:07:10.093599+00:00",
+    "linkedin|id|4460952906": "2026-11-26T23:07:10.093599+00:00",
+    "linkedin|id|4495501038": "2026-11-26T23:07:10.093599+00:00",
+    "linkedin|id|4495017820": "2026-11-26T23:07:10.093599+00:00",
+    "linkedin|id|4493466595": "2026-11-26T23:07:10.093599+00:00",
+    "linkedin|id|4494961801": "2026-11-26T23:07:10.093599+00:00",
+    "linkedin|id|4493462807": "2026-11-26T23:07:10.093599+00:00"
   },
   "jobs": [
     {
@@ -8853,7 +8947,7 @@
       "title": "Staff Software Engineer, Backend (Order Platform)",
       "location": "Salt Lake City, UT",
       "posted_date": "2026-09-22",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/staff-software-engineer-backend-order-platform-at-affirm-4451423450",
@@ -8864,13 +8958,12 @@
       "first_seen": "2026-09-22T15:03:47.273126+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer",
-          "backend engineer"
+          "software engineer"
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-11-06T05:00:09.216480+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4451424332",
@@ -9034,7 +9127,7 @@
       "title": "Staff Software Engineer, Backend (Order Platform)",
       "location": "Boise, ID",
       "posted_date": "2026-09-22",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/staff-software-engineer-backend-order-platform-at-affirm-4451434200",
@@ -9049,8 +9142,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-11-05T07:10:14.239898+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4451436180",
@@ -10569,7 +10662,7 @@
       "title": "Senior Software Engineer – Agent Developer Platform",
       "location": "New York, NY",
       "posted_date": "2026-11-14",
-      "aggregator_posted_date": "2026-11-16",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-%E2%80%93-agent-developer-platform-at-alpaca-4486179921",
@@ -10585,8 +10678,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-17T07:53:12.094912+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4467650300",
@@ -12346,6 +12439,59 @@
       "enrichment_method": "linkedin_http"
     },
     {
+      "job_id": "4495501038",
+      "source": "linkedin",
+      "company": "Amazon",
+      "title": "Software Development Engineer, US ADC Security",
+      "location": "Herndon, VA",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-us-adc-security-at-amazon-4495501038",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T23:07:10.093599+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "3acd10bb6bb8d600ccb1",
+          "attempted_at": "2026-11-26T23:07:10.093599+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "cb8b6c686b920f7b35f3",
+          "attempted_at": "2026-11-26T23:07:10.093599+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "8d29a2ca1b4c3fda6d4a",
+          "attempted_at": "2026-11-26T23:07:10.093599+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-26T23:07:10.093599+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Software development is relevant; security scope and qualifications could change fit."
+      },
+      "linkedin_detail_triage_hash": "7fd5dccf0e30814a23c4",
+      "linkedin_detail_deferred_at": "2026-11-26T23:07:10.093599+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4469762253",
       "source": "linkedin",
       "company": "Amazon",
@@ -12933,6 +13079,64 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-05T07:10:14.239898+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4495221912",
+      "source": "linkedin",
+      "company": "Amazon Web Services (AWS)",
+      "title": "Software Dev Engineer II, AWS Elastic Compute Cloud (EC2)",
+      "location": "Arlington, VA",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-dev-engineer-ii-aws-elastic-compute-cloud-ec2-at-amazon-web-services-aws-4495221912",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T23:07:10.093599+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "candidate:a98a3b36c1": {
+          "input_hash": "9fb147b7a0db9e11b6c1",
+          "attempted_at": "2026-11-26T23:07:10.093599+00:00",
+          "outcome": "no_match"
+        },
+        "generic_search": {
+          "input_hash": "d12f4899400541439526",
+          "attempted_at": "2026-11-26T23:07:10.093599+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "70fba530e8724458add7",
+          "attempted_at": "2026-11-26T23:24:31.601331+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "4695de36f5c968d6438c",
+          "attempted_at": "2026-11-26T23:24:31.601331+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-26T23:24:31.601331+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "EC2 software engineering is relevant; requirements could determine early-career fit."
+      },
+      "linkedin_detail_triage_hash": "4c94f2eb31d2ce64574a",
+      "linkedin_detail_attempted_at": "2026-11-26T23:24:30.757636+00:00",
+      "enrichment_status": "deferred",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true,
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4476711517",
@@ -14374,7 +14578,7 @@
       "title": "Software Development Engineer, AWS Cognito, AWS Cognito",
       "location": "Seattle, WA",
       "posted_date": "2026-11-05",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-aws-cognito-aws-cognito-at-amazon-web-services-aws-4479572498",
@@ -14395,6 +14599,7 @@
       },
       "linkedin_detail_triage_hash": "0960391564e740520120",
       "linkedin_detail_deferred_at": "2026-11-05T20:00:19.859538+00:00",
+      "enrichment_deferred_reason": "linkedin_rate_limited",
       "recovery_methods": {
         "generic_search": {
           "input_hash": "e92bc557723a0ef3aafa",
@@ -14412,13 +14617,8 @@
           "outcome": "no_match"
         }
       },
-      "official_search_attempted_at": "2026-11-06T05:00:09.216480+00:00",
-      "official_search_status": "no_match",
-      "enrichment_status": "deferred",
-      "source_verified_at": "2026-11-06T05:00:09.216480+00:00",
-      "verified_this_run": false,
-      "enrichment_deferred_reason": "linkedin_rate_limited",
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4462723016",
@@ -19594,7 +19794,7 @@
       "title": "Senior Software Development Engineer, Consumer Domains",
       "location": "Newark, NJ",
       "posted_date": "2026-11-05",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-development-engineer-consumer-domains-at-audible-4471123618",
@@ -19610,8 +19810,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-06T05:00:09.216480+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4480587450",
@@ -19705,12 +19905,12 @@
       "title": "Software Development Engineer",
       "location": "Newark, NJ",
       "posted_date": "2026-11-05",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-at-audible-4471120690",
       "official_url": "",
-      "description": "",
+      "description": "Job Summary\nAt Audible, we believe stories have the power to transform lives. It’s why we work with some of the world’s leading creators to produce and share audio storytelling with our millions of global listeners. We are dreamers and inventors who come from a wide range of backgrounds and experiences to empower and inspire each other. Imagine your future with us.\nABOUT THIS ROLE\nAs a Software Development Engineer, it’s up to you to define, design and refine the tech that keeps us one step ahead of listeners. Anticipate. Innovate. Bring challenging ideas and we’ll support you with the latest tech, tools, and systems that you need to succeed. We pride ourselves on our ability to imagine and invent solutions to problems of the future. You’ll be essential in this forward-thinking approach to development. Together with the team, you’ll build and maintain our platform to bring thousands of stories to millions of listeners and unleash the power of the human voice.\nABOUT YOU\nIf you’re a dedicated problem solver, this is the role for you. Identifying and overcoming challenges is at the heart of everything you do; whether it’s looking ahead to our listeners problems, or analyzing every inefficiency, you thrive when you strive for perfection. We look for people who take responsibility, who feel the pride in a job well done and see every failure as an opportunity to learn. With a knowledgeable team around you, and opportunities to challenge yourself, it’s a perfect environment to develop and apply your new skills.\nAs a Software Development Engineer, you will...\nDevelop, test, and maintain software components and applications for the world's largest audiobook creator and provider\nIdentify and resolve software defects through code review, log analysis, metrics examination, debugging, and other troubleshooting methods\nWrite maintainable and scalable code for software components as part of an agile engineering team\nCollaborate with stakeholders to envision, design, develop, test, and launch customer-centric software that inspires and impacts users\nApply computer science, engineering, and analysis principles to solve moderate-scale problems\nContinuously enhance testability, operational excellence (OE), and documentation for owned software components\nHandle data classification, storage, and management in accordance with company policies\nParticipate in the interview process and provide mentorship to fellow engineers\nABOUT AUDIBLE\nAudible is the leading producer and provider of audio storytelling. We spark listeners’ imaginations, offering immersive, cinematic experiences full of inspiration and insight to enrich our customers daily lives. We are a global company with an entrepreneurial spirit. We are dreamers and inventors who are passionate about the positive impact Audible can make for our customers and our neighbors. This spirit courses throughout Audible, supporting a culture of creativity and inclusion built on our People Principles and our mission to build more equitable communities in the cities we call home.",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-05T20:00:19.859538+00:00",
@@ -19719,16 +19919,6 @@
           "software engineer"
         ]
       },
-      "recovery_methods": {
-        "generic_search": {
-          "input_hash": "d39b7829a3d94e07bc68",
-          "attempted_at": "2026-11-05T20:00:19.859538+00:00",
-          "outcome": "no_match"
-        }
-      },
-      "recovery_candidates": [],
-      "official_search_attempted_at": "2026-11-06T05:01:26.079461+00:00",
-      "official_search_status": "deferred",
       "linkedin_detail_triage": {
         "needs_jd": true,
         "priority": "normal",
@@ -19736,11 +19926,25 @@
       },
       "linkedin_detail_triage_hash": "f0bc22d27365a51f199b",
       "linkedin_detail_deferred_at": "2026-11-05T20:00:19.859538+00:00",
-      "enrichment_status": "deferred",
-      "source_verified_at": "2026-11-05T20:00:19.859538+00:00",
-      "verified_this_run": false,
       "enrichment_deferred_reason": "linkedin_rate_limited",
-      "enrichment_failure_reason": "linkedin_rate_limited"
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "d39b7829a3d94e07bc68",
+          "attempted_at": "2026-11-05T20:00:19.859538+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "application_url": "https://www.audiblecareers.com/job/newark/software-development-engineer/27552/103126128144",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "jd_recovery_at": "2026-11-26T23:07:10.093599+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4489624893",
@@ -20093,7 +20297,7 @@
       "title": "Senior Software Applications Engineer",
       "location": "Atlanta, GA",
       "posted_date": "2026-11-05",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-applications-engineer-at-autodesk-4478460660",
@@ -20109,8 +20313,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-06T05:00:09.216480+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4478476015",
@@ -20119,7 +20323,7 @@
       "title": "Senior Software Applications Engineer",
       "location": "Novi, MI",
       "posted_date": "2026-11-05",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-applications-engineer-at-autodesk-4478476015",
@@ -20135,8 +20339,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-05T20:00:19.859538+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4474624768",
@@ -23564,6 +23768,32 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-01T05:00:16.668133+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4493466595",
+      "source": "linkedin",
+      "company": "Bloomberg",
+      "title": "Senior Software Engineer - Vault",
+      "location": "New York, NY",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-vault-at-bloomberg-4493466595",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T23:07:10.093599+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4467285902",
@@ -28763,7 +28993,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-11-26T20:00:48.657679+00:00",
+      "official_search_attempted_at": "2026-11-26T23:24:31.601331+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -28773,9 +29003,9 @@
       "linkedin_detail_triage_hash": "bfbb731a5a9014faf9ec",
       "linkedin_detail_deferred_at": "2026-11-26T20:00:21.925858+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4465568519",
@@ -33094,7 +33324,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-11-26T20:00:48.657679+00:00",
+      "official_search_attempted_at": "2026-11-26T23:24:31.601331+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": false,
@@ -33103,9 +33333,9 @@
       },
       "linkedin_detail_triage_hash": "745f22b8bb229d95a37b",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470440663",
@@ -34223,6 +34453,40 @@
       "direct_original_fetched_at": "2026-11-06T05:00:09.216480+00:00",
       "source_verified_at": "2026-11-06T05:00:09.216480+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4493462807",
+      "source": "linkedin",
+      "company": "CarGurus",
+      "title": "Software Development Engineer II",
+      "location": "Boston, MA",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-development-engineer-ii-at-cargurus-4493462807",
+      "official_url": "",
+      "description": "Who we are\nAt CarGurus (NASDAQ: CARG), our mission is to give people the power to reach their destination. We started as a small team of developers determined to bring trust and transparency to car shopping. Since then, our history of innovation and go-to-market acceleration has driven industry-leading growth. In fact, we're the largest and fastest-growing automotive marketplace, and we've been profitable for over 15 years.\nWhat we do\nThe market is evolving, and we are too, moving the entire automotive journey online and guiding our customers through every step. That includes everything from the sale of an old car to the financing, purchase, and delivery of a new one. Today, tens of millions of consumers visit CarGurus.com each month, and ~30,000 dealerships use our products. But they're not the only ones who love CarGurus—our employees do, too. We have a people-first culture that fosters kindness, collaboration, and innovation, and empowers our Gurus with tools to fuel their career growth. Disrupting a trillion-dollar industry requires fresh and diverse perspectives. Come join us for the ride!\nRole overview\nCarGurus' Conversion team is looking for a Software Development Engineer II (Backend) to help dealers close more of the leads we send them. We turn shopper activity on our marketplace into a clear picture of who each buyer is and what they're looking for, then recommend the next move to the salesperson working that lead. Thousands of dealerships rely on it every day.\nYou'll work in the Java and Spring Boot services behind all of this: enriching each lead as it arrives, consuming high-volume event streams, and serving the APIs that power the dashboards dealers work in. It's a small team, so you'll take real ownership early. You'll partner closely with product, design, and other backend and frontend engineers to move projects from technical design through implementation and launch, and you'll see the result in dealer adoption and close rates.\nWhat you'll do\nDesign, build, and ship features in the Java and Spring Boot services that enrich every lead and power the insights dealers act on every day\nOwn your work from technical design through testing, code review, and production, with support from the team when you need it\nWork with high-volume event streams and the data behind them (Kafka, MongoDB, Redis) to keep shopper data fresh and APIs fast\nBuild intelligence features, including LLM-backed ones, that recommend a dealer's next move rather than just handing them data\nDiagnose and fix production issues across services, share in on-call, and improve the alerting and observability we rely on\nPartner with product and design to break ambiguous problems into scoped, shippable work, with a real say in what we build and how\nHelp raise the bar on how we test, deploy, and operate the services we own\nWhat you'll bring\n2-4 years of hands-on software development experience in a professional setting\nProficiency in Java, ideally with Spring Boot\nSolid working knowledge of MongoDB or another NoSQL datastore, and comfort with SQL\nPractical understanding of RESTful API design, microservices, and distributed systems, including event streams or message queues (Kafka, SQS, or similar) and caching trade-offs\nHands-on experience with AWS and cloud infrastructure\nA strong understanding of data structures, algorithms, and complexity analysis\nA habit of writing automated tests, and a sense for which tests a change actually needs\nExperience or interest in leveraging AI coding tools to accelerate development (e.g., Claude Code, Cursor)\nNice to have: Python, and hands-on experience with LLM or agent frameworks such as LangChain or LangGraph\nClear communication, curiosity, and a bias toward shipping, with genuine interest in learning the dealer domain\nThe displayed range represents the expected annual base salary / On-Target Earnings (OTE) for this position. On-Target Earnings (OTE) is inclusive of base salary and on-target commission earnings, which applies exclusively to sales roles.\nIndividual pay within this range is determined by work location and other factors such as job-related skills, experience, and relevant education or training.\nThis annual base salary forms part of a comprehensive Total Rewards Package. In addition to benefits, this role may qualify for discretionary bonuses/incentives and Restricted Stock Units (RSUs).\nPosition Pay Range\n$112,000—$141,000 USD\nWorking at CarGurus\nWe reward our Gurus' curiosity and passion with best-in-class benefits and compensation, including equity for all employees, both when they start and as they continue to grow with us. Our career development and corporate giving programs, as well as our employee resource groups (ERGs) and communities, help people build connections while making an impact in personally meaningful ways. A flexible hybrid model and robust time off policies encourage work-life balance and individual well-being. Thoughtful perks like daily free lunch, a new car discount, meditation and fitness apps, commuting cost coverage, and more help our people create space for what matters most in their personal and professional lives.\nCarGurus may require in-person interviews as part of our hiring process, particularly for positions based in our Boston and Dublin offices. Candidates selected for an in-person interview will be notified in advance. Please be aware that travel expenses are the responsibility of the candidate.\nWe welcome all\nCarGurus strives to be a place to which people can bring the ultimate expression of themselves and their potential—starting with our hiring process. We do not discriminate based on race, color, religion, national origin, age, sex, marital status, ancestry, physical or mental disability, veteran status, gender identity, or sexual orientation. We foster an inclusive environment that values people for their skills, experiences, and unique perspectives. That's why we hope you'll apply even if you don't check every box listed in the job description. We also encourage you to tell your recruiter if you require accommodations to participate in our hiring process due to a disability so we can provide the appropriate support. We want to know what only you can bring to CarGurus. #LI-Hybrid",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T23:07:10.093599+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://careers.cargurus.com/us/en/job/8243216/Software-Development-Engineer-II",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "jd_recovery_at": "2026-11-26T23:07:10.093599+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4402753231",
@@ -36108,6 +36372,59 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4495278676",
+      "source": "linkedin",
+      "company": "Cisco",
+      "title": "Software Engineer",
+      "location": "Durham, NC",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-cisco-4495278676",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T23:07:10.093599+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "89b1bf5f26855417b858",
+          "attempted_at": "2026-11-26T23:07:10.093599+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "812f5599940260af838e",
+          "attempted_at": "2026-11-26T23:07:10.093599+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "172f54fca6074155458d",
+          "attempted_at": "2026-11-26T23:07:10.093599+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-26T23:24:31.601331+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "high",
+        "reason": "Software Engineer is a plausible target; scope and level could change fit."
+      },
+      "linkedin_detail_triage_hash": "bbfbb4b789a0c0afc21e",
+      "linkedin_detail_deferred_at": "2026-11-26T23:07:10.093599+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4480856774",
       "source": "linkedin",
       "company": "Cisco",
@@ -37169,7 +37486,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4494975496",
@@ -37199,7 +37516,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4456956839",
@@ -40566,6 +40883,40 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4494963339",
+      "source": "linkedin",
+      "company": "Comcast",
+      "title": "Software Engineer 3 - FreeWheel",
+      "location": "Reston, VA",
+      "posted_date": "2026-11-25",
+      "aggregator_posted_date": "2026-11-25",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-3-freewheel-at-comcast-4494963339",
+      "official_url": "",
+      "description": "Job Summary\nThis job involves collaborative design and development of software solutions that meet business objectives. It includes system requirement analysis, application customization, and assisting with software updates. It also involves mentoring junior engineers, ensuring quality with Quality Assurance, and providing technical leadership on routine projects. The job is also responsible for conducting training for application users.\nResponsibilities\nCollaborating with cross-functional teams to design, develop, and integrate innovative software solutions that align with business needs\nConducting analysis of system",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T23:07:10.093599+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://jobs.comcast.com/job/reston/software-engineer-3-freewheel/45483/102768471136",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "jd_recovery_at": "2026-11-26T23:07:10.093599+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4481617993",
       "source": "linkedin",
       "company": "Commence",
@@ -40941,7 +41292,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4465347355",
@@ -42433,7 +42784,7 @@
         }
       },
       "recovery_candidates": [],
-      "official_search_attempted_at": "2026-11-26T20:00:48.657679+00:00",
+      "official_search_attempted_at": "2026-11-26T23:24:31.601331+00:00",
       "official_search_status": "no_match",
       "linkedin_detail_triage": {
         "needs_jd": true,
@@ -42443,9 +42794,9 @@
       "linkedin_detail_triage_hash": "c213c45c02cdca78bff0",
       "linkedin_detail_deferred_at": "2026-11-26T20:00:21.925858+00:00",
       "enrichment_status": "deferred",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false,
+      "enrichment_deferred_reason": "linkedin_detail_cooldown"
     },
     {
       "job_id": "4470975760",
@@ -47698,7 +48049,7 @@
       "title": "Senior Software Engineer",
       "location": "Boston, MA",
       "posted_date": "2026-11-04",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-at-draftkings-inc-4486532776",
@@ -47714,8 +48065,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-05T20:00:19.859538+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4434321883",
@@ -55828,7 +56179,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4450336889",
@@ -57072,7 +57423,7 @@
       "title": "Senior Software Engineer - Full Stack",
       "location": "Olathe, KS",
       "posted_date": "2026-11-05",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-full-stack-at-garmin-4479724995",
@@ -57088,8 +57439,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-06T05:00:09.216480+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4482791859",
@@ -58240,7 +58591,7 @@
       "title": "Sr Software Engineer",
       "location": "Sunnyvale, CA",
       "posted_date": "2026-11-05",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/sr-software-engineer-at-general-motors-4461286424",
@@ -58256,8 +58607,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-05T20:00:19.859538+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4490405135",
@@ -58980,7 +59331,7 @@
         }
       },
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4443705909",
@@ -60457,6 +60808,41 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4460952906",
+      "source": "linkedin",
+      "company": "Google",
+      "title": "Senior Software Engineer, Infrastructure, Google Cloud Platforms",
+      "location": "Kirkland, WA",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-infrastructure-google-cloud-platforms-at-google-4460952906",
+      "official_url": "",
+      "description": "Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products need to handle information at massive scale, and extend well beyond web search. We're looking for engineers who bring fresh ideas from all areas, including information retrieval, distributed computing, large-scale system design, networking and data storage, security, artificial intelligence, natural language processing, UI design and mobile; the list goes on and is growing every day. As a software engineer, you will work on a specific project critical to Google’s needs with opportunities to switch teams and projects as you and our fast-paced business grow and evolve. We need our engineers to be versatile, display leadership qualities and be enthusiastic to take on new problems across the full-stack as we continue to push technology forward. Behind everything our users see online is the architecture built by the Technical Infrastructure team to keep it running. From developing and maintaining our data centers to building the next generation of Google platforms, we make Google's product portfolio possible. We're proud to be our engineers' engineers and love voiding warranties by taking things apart so we can rebuild them. We keep our networks up and running, ensuring our users have the best and fastest experience possible. Google Cloud accelerates every organization’s ability to digitally transform its business and industry. We deliver enterprise-grade solutions that leverage Google’s cutting-edge technology, and tools that help developers build more sustainably. Customers in more than 200 countries and territories turn to Google Cloud as their trusted partner to enable growth and solve their most critical business problems. Individual pay is determined by factors including job-related skills, experience, and relevant education or training. US: $174000 - $252000 (USD) + 15% bonus target + equity + benefits Learn more about benefits at Google . Write and test product or system development code. Participate in, or lead design reviews with peers and stakeholders to decide amongst available technologies. Review code developed by other developers and provide feedback to ensure best practices (e.g., style guidelines, checking code in, accuracy, testability, and efficiency). Contribute to existing documentation or educational content and adapt content based on product/program updates and user feedback. Triage product or system issues and debug/track/resolve by analyzing the sources of issues and the impact on hardware, network, or service operations and quality. Minimum qualifications: Bachelor’s degree or equivalent practical experience. 5 years of experience programming in C++ or Go. 3 years of experience testing, maintaining, or launching software products, and 1 year of experience with software design and architecture. 3 years of experience developing large-scale infrastructure, distributed systems or networks, or experience with compute technologies, storage or hardware architecture. Preferred qualifications: Master's degree or PhD in Computer Science or related technical field. 5 years of experience with data structures/algorithms. 1 year of experience in a technical leadership role. Experience developing accessible technologies.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T23:07:10.093599+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "application_url": "https://www.google.com/about/careers/applications/jobs/results/111560884362322630-senior-software-engineer-infrastructure-google-cloud-platforms",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "jd_recovery_at": "2026-11-26T23:07:10.093599+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4464518361",
       "source": "linkedin",
       "company": "Google",
@@ -60487,6 +60873,32 @@
       "direct_original_fetched": true,
       "source_verified_at": "2026-10-11T05:04:13.978383+00:00",
       "verified_this_run": false
+    },
+    {
+      "job_id": "4495017820",
+      "source": "linkedin",
+      "company": "Google",
+      "title": "Senior Software Engineer, Infrastructure, Google Cloud Platforms",
+      "location": "Cambridge, MA",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-infrastructure-google-cloud-platforms-at-google-4495017820",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T23:07:10.093599+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4483814189",
@@ -65563,7 +65975,7 @@
       "title": "Software Engr II",
       "location": "Raleigh, NC",
       "posted_date": "2026-09-23",
-      "aggregator_posted_date": "2026-09-23",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engr-ii-at-honeywell-technologies-4434915093",
@@ -65571,16 +65983,15 @@
       "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
-      "first_seen": "",
+      "first_seen": "2026-09-23T18:03:18.724551+00:00",
       "discovery_queries": {
         "linkedin": [
-          "software engineer ii"
+          "software engineer"
         ]
       },
-      "official_search_attempted_at": "2026-09-26T11:05:33.819338+00:00",
-      "official_search_status": "no_match",
-      "source_verified_at": "2026-09-23T18:01:38.694486+00:00",
-      "verified_this_run": false
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4449094943",
@@ -72906,12 +73317,12 @@
       "title": "Software Engineer",
       "location": "Moline, IL",
       "posted_date": "2026-11-04",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-john-deere-4486502853",
       "official_url": "",
-      "description": "There are over 7 billion people on this planet. And by 2050, there will be 2 billion more... many moving into urban centers at an unprecedented rate. Making sure there is enough food, fiber and infrastructure for our rapidly growing world is what we're all about at John Deere. And it's why we're investing in our people and our technology like never before! Here the world's brightest minds are tackling the world's biggest challenges. If you believe one person can make the world a better place, we'll put you to work. RIGHT NOW. *John Deere is an equal opportunity employer, including disabled \\& veterans.* ***Primary Location:*** *United States (US) \\- Illinois \\- Moline* ***Function:*** *Technology (CA)* ***Title:*** *Software Engineer \\- 124166* ***Onsite/Remote:****Onsite Position* **Your Responsibilities** ------------------------- As a **Software Engineer** for Deere \\& Company Southwest Office Building located in **Moline**, **IL**, you will be: * Responsible for delivering solutions across Enterprise Supply Management. These solutions are used both internally by John Deere personnel, and externally by suppliers around the world. * Develop and implement technical solutions to deliver on User Stories. * Assist in resolution of IT technical issues in the product team. * Establish and implement CI/CD pipelines Develop automated test scripts. * Work on a product team and supports product design by planning its work, coordinatingwith others, and writing and testing code to deliver moderately complex functionality on a complete product or significant portion of a product it supports. **VISA Sponsorship is NOT Available for this position.** **What Skills You Need** ------------------------ * 3 or more years of experience with Java web development with Spring and Rest/SOAP based services. * 2 or more years of modern web development experience using React and Service Oriented Architecture. * 2 or more years of varied DB experience (e.g. DB2, Postgres). * 1 or more years of experience with DevOps principles and lean development such as Continuous Integration (GitHub) and Continuous Delivery (GitHub Actions). **What Makes You Standout** --------------------------- * Experience with financial applications and business processes. * Experience with cloud operational environments, preferably AWS. * Understanding of Supply Management processes. **Education** ------------- Ideally you will have a degree or equivalent related work experience in the following: * Bachelor's degree in Computer Science, Computer Engineering, or related field, or equivalent experience. **What You'll Get** At John Deere, you are empowered to create a career that will take you to where you want to go while working in an inclusive team environment. Here, you'll enjoy the freedom to explore new projects, the support to think outside the box and the advanced tools and technology that foster innovation and achievement. Additionally, we offer a comprehensive reward package to help you get started on your new career path, including: * Flexible work arrangements * Highly competitive base pay * Savings \\& Retirement benefits (401K and Defined Contribution) * Healthcare benefits with a generous company contribution in the Health Savings Account * Adoption assistance * Employee Assistance Programs * Tuition assistance * Fitness subsidies and on\\-site gyms at specific Deere locations * Charitable contribution match * Employee Purchase Plan \\& numerous discount programs for personal use * Vacation and Holiday Pay $86,892\\.00 \\- $130,332\\.00 \\+ Benefits Follow this link to learn more about our Total Rewards Package https://bit.ly/3XCd8fL Must be 18 years of age or older to apply The information contained herein is not intended to be an exhaustive list of all responsibilities and qualifications required of individuals performing the job. The qualifications detailed in this job description are not considered the minimum requirements necessary to perform the job, but rather as guidelines. The terms of the applicable benefit plans, and all company actions administering or interpreting these plans, continue to control. Deere \\& Company reserves the right to suspend, amend, modify, or terminate the Plan(s) in any manner at any time, including the right to modify or eliminate any cost\\-sharing between the company and participants. Changes, which can be made at any time, are made by action of the company's board of directors, or to the extent authorized by resolution of its board of directors, or by the Deere \\& Company Compensation Committee. In the event of a conflict between the language of the official Plan Documents and this document, the language of the official Plan Documents will control. ACA Section 1557 Nondiscrimination Notice *The John Deere Health Benefit Plans for Salaried Employees and The John Deere Benefit Plan for Wage Employees comply with applicable Federal civil rights laws and do not discriminate on the basis of race, religion, color, national origin, sex, age, sexual orientation, gender identity or expression, status as a protected veteran, or status as a qualified individual with disability.*",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-04T20:00:16.973103+00:00",
@@ -72935,12 +73346,37 @@
           "outcome": "no_match"
         }
       },
-      "jd_recovery_at": "2026-11-05T07:10:14.239898+00:00",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
+    },
+    {
+      "job_id": "4494961801",
+      "source": "linkedin",
+      "company": "John Deere",
+      "title": "Software Engineer",
+      "location": "Urbandale, IA",
+      "posted_date": "2026-11-25",
+      "aggregator_posted_date": "2026-11-25",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/software-engineer-at-john-deere-4494961801",
+      "official_url": "",
+      "description": "There are over 7 billion people on this planet. And by 2050, there will be 2 billion more... many moving into urban centers at an unprecedented rate. Making sure there is enough food, fiber and infrastructure for our rapidly growing world is what we're all about at John Deere. And it's why we're investing in our people and our technology like never before! Here the world's brightest minds are tackling the world's biggest challenges. If you believe one person can make the world a better place, we'll put you to work. RIGHT NOW. *John Deere is an equal opportunity employer, including disabled \\& veterans.* ***Primary Location:*** *United States (US) \\- Iowa \\- URBANDALE* ***Function:*** *Technology (CA)* ***Title:*** *Software Engineer \\- 126345* ***Onsite/Remote:****Onsite Position* **Your Responsibilities** ------------------------- As a **Software Engineer \\- Events** for **Intelligent Solutions Group** located in **Urbandale, IA,** you will: * Work on a team focused on effectively storing and aggregating event data within the Data Platform and delivering valuable insights to both internal and external customers. * Develop, test, and maintain a robust Java backend system on AWS infrastructure, adhering to industry\\-standard agile software design methodology while ensuring coherent documentation. * Collaborate with a diverse development team and stakeholders to ensure the alignment of features with business requirements. * Evaluate and implement enhancements to design solutions to improve cost, quality, and performance of software applications. **VISA Sponsorship is NOT available for this position** **What Skills You Need** ------------------------ * Experience in programming/software development (C\\#, Java, NodeJS) (2\\+ years) * Experience hosting services in AWS cloud technologies (1\\+ years) * Product design, test and/or analysis experience * Ability to manage many competing priorities/requests in a fast\\-paced environment * Excellence in verbal and written communication forms with tact and negotiation **What Makes You Stand Out** ---------------------------- * Experience with Precision Ag, Forestry or Roadbuilding technologies and their use * Experience with database management and support (SQL, DynamoDB, DocDB, Elastic Search) * Experience with AWS full stack development * Using appropriate methods and a flexible interpersonal style to collaborate in a cohesive team * An inquisitive mind and aptitude for continuous learning **Education** ------------- Ideally you will have a degree or equivalent related work experience in the following: * Bachelor's degree in either Computer Science, Computer Engineering, Software Engineering, MIS, or other IT related discipline or equivalent experience **What You'll Get** At John Deere, you are empowered to create a career that will take you to where you want to go while working in an inclusive team environment. Here, you'll enjoy the freedom to explore new projects, the support to think outside the box and the advanced tools and technology that foster innovation and achievement. Additionally, we offer a comprehensive reward package to help you get started on your new career path, including: * Flexible work arrangements * Highly competitive base pay * Savings \\& Retirement benefits (401K and Defined Contribution) * Healthcare benefits with a generous company contribution in the Health Savings Account * Adoption assistance * Employee Assistance Programs * Tuition assistance * Fitness subsidies and on\\-site gyms at specific Deere locations * Charitable contribution match * Employee Purchase Plan \\& numerous discount programs for personal use * Vacation and Holiday Pay $86,892\\.00 \\- $130,332\\.00 \\+ Benefits Follow this link to learn more about our Total Rewards Package https://bit.ly/3XCd8fL Must be 18 years of age or older to apply The information contained herein is not intended to be an exhaustive list of all responsibilities and qualifications required of individuals performing the job. The qualifications detailed in this job description are not considered the minimum requirements necessary to perform the job, but rather as guidelines. The terms of the applicable benefit plans, and all company actions administering or interpreting these plans, continue to control. Deere \\& Company reserves the right to suspend, amend, modify, or terminate the Plan(s) in any manner at any time, including the right to modify or eliminate any cost\\-sharing between the company and participants. Changes, which can be made at any time, are made by action of the company's board of directors, or to the extent authorized by resolution of its board of directors, or by the Deere \\& Company Compensation Committee. In the event of a conflict between the language of the official Plan Documents and this document, the language of the official Plan Documents will control. ACA Section 1557 Nondiscrimination Notice *The John Deere Health Benefit Plans for Salaried Employees and The John Deere Benefit Plan for Wage Employees comply with applicable Federal civil rights laws and do not discriminate on the basis of race, religion, color, national origin, sex, age, sexual orientation, gender identity or expression, status as a protected veteran, or status as a qualified individual with disability.*",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T23:07:10.093599+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "jd_recovery_at": "2026-11-26T23:07:10.093599+00:00",
       "enrichment_method": "exact_indeed_peer",
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-11-05T07:10:14.239898+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4351750873",
@@ -78536,7 +78972,7 @@
       "title": "Senior Software Engineer - Java",
       "location": "O'Fallon, MO",
       "posted_date": "2026-09-22",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-java-at-mastercard-4459256244",
@@ -78552,8 +78988,8 @@
       },
       "linkedin_detail_attempted_at": "2026-09-22T21:02:23.854066+00:00",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-05T07:10:14.239898+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4440197061",
@@ -78760,12 +79196,12 @@
       "title": "Software Engineer II",
       "location": "O'Fallon, MO",
       "posted_date": "2026-11-04",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-ii-at-mastercard-4476606049",
       "official_url": "",
-      "description": "**Our Purpose** *Mastercard powers economies and empowers people in 200\\+ countries and territories worldwide. Together with our customers, we’re helping build a sustainable economy where everyone can prosper. We support a wide range of digital payments choices, making transactions secure, simple, smart and accessible. Our technology and innovation, partnerships and networks combine to deliver a unique set of products and services that help people, businesses and governments realize their greatest potential.* **Title and Summary** Software Engineer II About the Role The Mastercard Remote Payment Presentment Service (RPPS) Program is engaged in developing innovative solutions to keep Mastercard positioned as a leader in delivering value\\-added services and seamless customer onboarding. We work collaboratively with our product partners and other technical teams to continuously improve and enhance our existing products and drive new products to the global marketplace. We are currently hiring a Software Engineer II, and the successful candidate will contribute to the design, development, testing, deployment, and support of enterprise applications while applying software engineering principles to deliver scalable, secure, resilient, and maintainable solutions. This role will collaborate closely with cross\\-functional teams and contribute to continuous improvement initiatives that enhance application quality, reliability, and operational excellence. Role * Participate in the gathering and analysis of business requirements and translate them into scalable, maintainable, and secure software solutions. * Participate in application design discussions and contribute to software architecture, design patterns, component interactions, and technology standards under the guidance of senior engineers and technical leads. * Develop solutions that align with Mastercard Enterprise Architecture standards while leveraging enterprise services, frameworks, and reusable platforms. * Contribute to ensuring product development meets Mastercard's business, scalability, performance, security, and reliability requirements. * Follow Mastercard development methodologies, engineering standards, and documentation practices when designing and building software solutions. * Participate in code reviews to improve code quality, maintainability, security, consistency, and adherence to software engineering best practices. * Collaborate with team members, share knowledge, and seek guidance from senior engineers when addressing highly complex technical challenges. * Design, develop, maintain, and support high\\-quality software solutions using modern software engineering principles and practices. * Design, develop, and maintain unit, functional, integration, and automated tests to validate application functionality, system interactions, quality, and reliability. * Support continuous integration and continuous testing practices to improve software quality and release confidence. * Develop and maintain software solutions that support high availability, resiliency, operational readiness, and reliability objectives. * Respond to operational and business concerns related to applications, projects, and platform enhancements to ensure consistent delivery of quality services. * Investigate and resolve production, application, integration, and infrastructure issues using structured troubleshooting, root cause analysis, and corrective actions, escalating highly complex issues when appropriate. * Support compliance with required certifications and regulatory requirements, including PCI, GLBA, Safe Harbor, and other applicable standards. * Apply secure coding practices, security\\-by\\-design principles, and vulnerability prevention techniques throughout the software development lifecycle. * Identify and remediate application security vulnerabilities while ensuring alignment with Mastercard security standards and industry best practices. * Contribute to application performance optimization through monitoring, analysis, tuning, and scalability improvements across applications, APIs, databases, and cloud environments. * Apply data structures, algorithms, and software engineering principles to develop efficient, scalable, and maintainable software solutions. * Develop, test, deploy, monitor, and support cloud\\-based applications and services using AWS and cloud\\-native technologies while following established architecture patterns and engineering standards. * Design and build solutions with operational readiness in mind, incorporating observability, logging, monitoring, alerting, supportability, reliability, and maintainability best practices. * Contribute to the continuous improvement and expansion of the platform by helping ensure that solutions remain resilient, secure, scalable, highly available, and operationally efficient. * Collaborate with product owners, business partners, and engineering teams to understand requirements and provide technical input supporti ices, application security principles, vulnerability remediation techniques, and OWASP\\-based security standards. * Proficient working with J2EE, Java 8 or higher, JSP, Servlets, Spring 5, Hibernate, and relational and non\\-relational database technologies including Oracle, SQL Server, MySQL, PostgreSQL, NoSQL, MongoDB, or comparable technologies. * Demonstrated troubleshooting and root cause analysis skills supporting business\\-critical applications in production environments. * Experience in the following is highly preferred: * Web Services (SOAP, RESTful APIs) * Servers (WebSphere, JBoss, Tomcat) * HTML, JavaScript, jQuery * UNIX (Shell, AWK scripting) * XML/XSLT * CSS * C\\# * React or Angular * IDEs (Microsoft Visual Studio, RAD, Eclipse) * Experience working within Agile and Waterfall delivery methodologies. * Experience developing and supporting cloud\\-native applications utilizing AWS cloud services. * Understanding observability, monitoring, operational readiness, and reliability engineering concepts. * Bachelor's degree in information systems, Information Technology, Computer Science, Engineering, or equivalent practical experience is preferred. Mastercard is a merit\\-based, inclusive, equal opportunity employer that considers applicants without regard to gender, gender identity, sexual orientation, race, ethnicity, disabled or veteran status, or any other characteristic protected by law. We hire the most qualified candidate for the role. In the US or Canada, if you require accommodations or assistance to complete the online application process or during the recruitment process, please contact reasonable\\_accommodation@mastercard.com and identify the type of accommodation or assistance you are requesting. Do not include any medical or health information in this email. The Reasonable Accommodations team will respond to your email promptly.**Corporate Security Responsibility** All activities involving access to Mastercard assets, information, and networks comes with an inherent risk to the organization and, therefore, it is expected that every person working for, or on behalf of, Mastercard is responsible for information security and must: * Abide by Mastercard’s security policies and practices; * Ensure the confidentiality and integrity of the information being accessed; * Report any suspected information security violation or breach, and * Complete all periodic mandatory security trainings in accordance with Mastercard’s guidelines. In line with Mastercard’s total compensation philosophy and assuming that the job will be performed in the US, the successful candidate will be offered a competitive base salary and may be eligible for an annual bonus or commissions depending on the role. The base salary offered may vary depending on multiple factors, including but not limited to location, job\\-related knowledge, skills, and experience. Mastercard benefits for full time (and certain part time) employees generally include: insurance (including medical, prescription drug, dental, vision, disability, life insurance); flexible spending account and health savings account; paid leaves (including 16 weeks of new parent leave and up to 20 days of bereavement leave); 80 hours of Paid Sick and Safe Time, 25 days of vacation time and 5 personal days, pro\\-rated based on date of hire; 10 annual paid U.S. observed holidays; 401k with a best\\-in\\-class company match; deferred compensation for eligible roles; fitness reimbursement or on\\-site fitness facilities; eligibility for tuition reimbursement; and many more. Mastercard benefits for interns generally include: 56 hours of Paid Sick and Safe Time; jury duty leave; and on\\-site fitness facilities in some locations. THIS POSTING RELECTS ONE OR MORE CURRENT VACANCIES ON OUR TEAM, AND MASTERCARD INTENDS TO FILL THIS POSITION BY 02/02/2027\\. If the fill date has passed, Mastercard intends to fill this position as soon as possible. **Pay Ranges** O'Fallon, Missouri: $92,000 \\- $147,000 USD",
+      "description": "",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-04T20:00:16.973103+00:00",
@@ -78781,6 +79217,7 @@
       },
       "linkedin_detail_triage_hash": "799d2302d98f71f2e435",
       "linkedin_detail_deferred_at": "2026-11-04T20:00:16.973103+00:00",
+      "enrichment_deferred_reason": "linkedin_detail_round_budget",
       "recovery_methods": {
         "generic_search": {
           "input_hash": "c1736f593066335dc19b",
@@ -78788,14 +79225,8 @@
           "outcome": "no_match"
         }
       },
-      "official_search_attempted_at": "2026-11-05T07:15:11.198258+00:00",
-      "official_search_status": "no_match",
-      "enrichment_status": "resolved",
-      "enrichment_deferred_reason": "linkedin_detail_round_budget",
-      "source_verified_at": "2026-11-05T07:10:14.239898+00:00",
-      "verified_this_run": false,
-      "jd_recovery_at": "2026-11-05T20:00:19.859538+00:00",
-      "enrichment_method": "exact_indeed_peer"
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4478648631",
@@ -83462,6 +83893,32 @@
       "verified_this_run": false
     },
     {
+      "job_id": "4494993572",
+      "source": "linkedin",
+      "company": "NVIDIA",
+      "title": "Senior Software Engineer, CUDA Python Core Libraries",
+      "location": "Santa Clara, CA",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-cuda-python-core-libraries-at-nvidia-4494993572",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T23:07:10.093599+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
+      "recovery_methods": {},
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4444059035",
       "source": "linkedin",
       "company": "NVIDIA",
@@ -84355,7 +84812,7 @@
       "direct_original_fetched": true,
       "direct_original_fetched_at": "2026-11-26T20:00:21.925858+00:00",
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4461136761",
@@ -88124,6 +88581,59 @@
       "enrichment_method": "board_cache"
     },
     {
+      "job_id": "4493478003",
+      "source": "linkedin",
+      "company": "Oracle",
+      "title": "Platform Software Engineer 2",
+      "location": "Kansas City, MO",
+      "posted_date": "2026-11-26",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/platform-software-engineer-2-at-oracle-4493478003",
+      "official_url": "",
+      "description": "",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-26T23:07:10.093599+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {
+        "generic_search": {
+          "input_hash": "cbca2135d4c51d4e1525",
+          "attempted_at": "2026-11-26T23:07:10.093599+00:00",
+          "outcome": "no_match"
+        },
+        "direct_careers": {
+          "input_hash": "65f32d38805ae0907804",
+          "attempted_at": "2026-11-26T23:07:10.093599+00:00",
+          "outcome": "no_match"
+        },
+        "site_exact": {
+          "input_hash": "577c359f5a3a3d8fd504",
+          "attempted_at": "2026-11-26T23:07:10.093599+00:00",
+          "outcome": "no_match"
+        }
+      },
+      "recovery_candidates": [],
+      "official_search_attempted_at": "2026-11-26T23:24:31.601331+00:00",
+      "official_search_status": "no_match",
+      "linkedin_detail_triage": {
+        "needs_jd": true,
+        "priority": "normal",
+        "reason": "Platform engineering is relevant; level and required skills remain unclear."
+      },
+      "linkedin_detail_triage_hash": "15c4d62783d63455960d",
+      "linkedin_detail_deferred_at": "2026-11-26T23:07:10.093599+00:00",
+      "enrichment_status": "deferred",
+      "enrichment_deferred_reason": "linkedin_detail_cooldown",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4448467952",
       "source": "linkedin",
       "company": "Oracle",
@@ -89567,7 +90077,7 @@
       "title": "Senior Software Engineer, Core Infrastructure (C++)",
       "location": "Seattle, WA",
       "posted_date": "2026-09-21",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-core-infrastructure-c%2B%2B-at-oracle-4468179285",
@@ -89588,8 +90098,8 @@
       "official_search_verified": true,
       "official_jd_fetched_at": "2026-09-26T19:15:15.514315+00:00",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-11-05T07:10:14.239898+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4472991081",
@@ -99967,7 +100477,7 @@
       "enrichment_status": "resolved",
       "direct_original_fetched": true,
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4468794920",
@@ -104779,6 +105289,40 @@
       "direct_original_fetched_at": "2026-09-26T19:15:15.514315+00:00"
     },
     {
+      "job_id": "4487540850",
+      "source": "linkedin",
+      "company": "Salesforce",
+      "title": "Lead Software Engineer, Backend – Enterprise Productivity",
+      "location": "New York, NY",
+      "posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
+      "updated_date": "",
+      "date_confidence": "low",
+      "source_url": "https://www.linkedin.com/jobs/view/lead-software-engineer-backend-%E2%80%93-enterprise-productivity-at-salesforce-4487540850",
+      "official_url": "",
+      "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Software Engineering Job Details About Salesforce Salesforce is the #1 AI CRM, where humans with agents drive customer success together. Here, ambition meets action. Tech meets trust. And innovation isn’t a buzzword — it’s a way of life. The world of work as we know it is changing and we're looking for Trailblazers who are passionate about bettering business and the world through AI, driving innovation, and keeping Salesforce's core values at the heart of it all. Ready to level-up your career at the company leading workforce transformation in the agentic era? You’re in the right place! Agentforce is the future of AI, and you are the future of Salesforce. ABOUT SLACK Slack is your Digital HQ – a place where work flows between your people, systems, partners, and customers. From Fortune 100 companies to corner markets, millions of people around the world use Slack to connect their teams, unify their systems, and drive their business forward. Slack breaks down communication silos inside and beyond your organization by bringing teams and tools together around common goals, projects and processes in channels and in Slack Connect. In this digital-first era, Slack's mission is to make people's work lives simpler, more pleasant, and more productive. A taste of our scale and reach: Slack delivers 300k+ messages per second 77% of the Fortune 100 use Slack 150+ countries have daily active users in Slack 200k+ paid customers The Experience The Enterprise Productivity team gets orgs authenticated and connected to their productivity suites (Google Workspace and Microsoft 365) and admin tools. Our mission is to close the productivity gap between Slack and Microsoft Teams and unlock deep interoperability with the Microsoft and Google suites, making Slack the clear choice for enterprise customers. You'll work with product managers, designers, frontend, mobile, and quality engineers, and with partner teams across Platform, Slackbot, and 3P Integrations. We build on PHP/Hack, Java, and MySQL. Expertise in these is a plus, but familiarity with other web languages (Python, Ruby, Go) and relational databases is a fine substitute. We value simplicity and reliability as properties of a system to be carefully calculated with every decision. Slack has a positive, diverse, and supportive culture. We look for people who are curious, inventive, and work to be a little better every day. We aim to be smart, humble, hardworking and, above all, collaborative. What you will actually being doing: Design and build backend services and API methods for admin and user authentication and connection flows with Google and Microsoft (OAuth, domain-wide delegation, token management, and permission policies). Own and evolve the Admin Productivity Suite backend, including bulk approve/install pipelines, install-state storage, failure handling, and admin analytics. Partner with Product, Design, and Frontend to ship features that raise connected-user and DWA adoption, using experiments and data to guide the roadmap. Work across team boundaries (Platform, Slackbot, Enterprise Search, 3P Integrations) on shared permission, auth, and connector frameworks, including the evolution from 2.0 connectors toward MCP. Contribute heavily to team projects with significant business impact, and own the long-term health of the systems you build. Write secure, well-documented designs and work with Security through scoped review. Help support and operations triage and resolve production issues. Mentor other engineers, review code in depth, and improve engineering standards, tooling, and processes. You are our person if You have: 6+ years of professional experience building web applications or backend services. Experience with PHP/Hack, Java, Python, Ruby, Go, or similar languages. Experience with OAuth 2.0/OIDC and authorization models, ideally with Google Workspace or Microsoft 365 / Entra ID integrations (admin consent, domain-wide delegation, Graph or Google APIs). Ability to contribute to technical architecture discussions and drive technical decisions within the team. Understandable, testable, maintainable code. Strong communication skills, including explaining complex concepts to designers, support, and other engineers, and collaborating across teams. Solid computer science fundamentals: data structures, algorithms, distributed systems, and information retrieval. A related technical degree. Even Better If You have: Experience with enterprise admin tooling, permission policies, or multi-tenant (Enterprise Grid) architectures. Experience with feature flags, experimentation, and data-driven product development. Experience with MCP or connector frameworks. Unleash Your Potential When you join Salesforce, you’ll be limitless in all areas of your life. Our benefits and resources support you to find balance and be your best , and our AI agents accelerate your impact so you can do your best . Together, we’ll bring the power of Agentforce to organizations of all sizes and deliver amazing experiences that customers love. Apply today to not only shape the future — but to redefine what’s possible — for yourself, for AI, and the world. Accommodations If you need a reasonable accommodation during the application or the recruiting process, please submit a request via this Accommodations Request Form . Please note that Salesforce uses artificial intelligence (AI) tools to help our recruiters assess and evaluate candidates’ resumes and qualifications throughout the recruiting process. Humans will always make any candidate selection and hiring decisions. Please see our Candidate Privacy Statement for more information about how we use your personal data and your rights, including with regard to use of AI tools and opt out options. Posting Statement Salesforce is an equal opportunity employer and maintains a policy of non-discrimination with all employees and applicants for employment. What does that mean exactly? It means that at Salesforce, we believe in equality for all. And we believe we can lead the path to equality in part by creating a workplace that’s inclusive, and free from discrimination. Know your rights: workplace discrimination is illegal. Any employee or potential employee will be assessed on the basis of merit, competence and qualifications – without regard to race, religion, color, national origin, sex, sexual orientation, gender expression or identity, transgender status, age, disability, veteran or marital status, political viewpoint, or other classifications protected by law. This policy applies to current and prospective employees, no matter where they are in their Salesforce employment journey. It also applies to recruiting, hiring, job assignment, compensation, promotion, benefits, training, assessment of job performance, discipline, termination, and everything in between. Recruiting, hiring, and promotion decisions at Salesforce are fair and based on merit. The same goes for compensation, benefits, promotions, transfers, reduction in workforce, recall, training, and education. In the United States, compensation offered will be determined by factors such as location, job level, job-related knowledge, skills, and experience. Certain roles may be eligible for incentive compensation, equity, and benefits. Salesforce offers a variety of benefits to help you live well including: time off programs, medical, dental, vision, mental health support, paid parental leave, life and disability insurance, 401(k), and an employee stock purchasing program. More details about company benefits can be found at the following link: https://www.salesforcebenefits.com.Pursuant to the San Francisco Fair Chance Ordinance and the Los Angeles Fair Chance Initiative for Hiring, Salesforce will consider for employment qualified applicants with arrest and conviction records. At Salesforce, we believe in equitable compensation practices that reflect the dynamic nature of labor markets across various regions.&#xa;&#xa;The typical base salary range for this position is $172,500 - $260,100 annually. In select cities within the San Francisco and New York City metropolitan area, the base salary range for this role is $207,800 - $285,800 annually.&#xa;&#xa;The range represents base salary only, and does not include company bonus, incentive for sales roles, equity or benefits, as applicable.",
+      "sponsorship": "Unknown",
+      "fetched_at": "",
+      "first_seen": "2026-11-05T07:10:14.239898+00:00",
+      "discovery_queries": {
+        "linkedin": [
+          "software engineer"
+        ]
+      },
+      "recovery_methods": {},
+      "application_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Senior-Software-Engineer--LMTS---Backend---Enterprise-Productivity_JR366844",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "jd_recovery_at": "2026-11-26T23:07:10.093599+00:00",
+      "enrichment_method": "remote_exact_peer",
+      "enrichment_status": "resolved",
+      "official_search_status": "resolved",
+      "direct_original_fetched": true,
+      "direct_original_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
+    },
+    {
       "job_id": "4469212849",
       "source": "linkedin",
       "company": "Salesforce",
@@ -104844,39 +105388,6 @@
       "direct_original_fetched_at": "2026-10-04T04:00:16.469096+00:00",
       "application_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/New-York---New-York/Senior-Software-Engineer_JR357399",
       "source_verified_at": "2026-10-24T19:00:36.401270+00:00",
-      "verified_this_run": false
-    },
-    {
-      "job_id": "4487540850",
-      "source": "linkedin",
-      "company": "Salesforce",
-      "title": "Senior Software Engineer (LMTS), Backend – Enterprise Productivity",
-      "location": "New York, NY",
-      "posted_date": "2026-11-04",
-      "aggregator_posted_date": "2026-11-04",
-      "updated_date": "",
-      "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-lmts-backend-%E2%80%93-enterprise-productivity-at-salesforce-4487540850",
-      "official_url": "",
-      "description": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. Job Category Software Engineering Job Details About Salesforce Salesforce is the #1 AI CRM, where humans with agents drive customer success together. Here, ambition meets action. Tech meets trust. And innovation isn’t a buzzword — it’s a way of life. The world of work as we know it is changing and we're looking for Trailblazers who are passionate about bettering business and the world through AI, driving innovation, and keeping Salesforce's core values at the heart of it all. Ready to level-up your career at the company leading workforce transformation in the agentic era? You’re in the right place! Agentforce is the future of AI, and you are the future of Salesforce. ABOUT SLACK Slack is your Digital HQ – a place where work flows between your people, systems, partners, and customers. From Fortune 100 companies to corner markets, millions of people around the world use Slack to connect their teams, unify their systems, and drive their business forward. Slack breaks down communication silos inside and beyond your organization by bringing teams and tools together around common goals, projects and processes in channels and in Slack Connect. In this digital-first era, Slack's mission is to make people's work lives simpler, more pleasant, and more productive. A taste of our scale and reach: Slack delivers 300k+ messages per second 77% of the Fortune 100 use Slack 150+ countries have daily active users in Slack 200k+ paid customers The Experience The Enterprise Productivity team gets orgs authenticated and connected to their productivity suites (Google Workspace and Microsoft 365) and admin tools. Our mission is to close the productivity gap between Slack and Microsoft Teams and unlock deep interoperability with the Microsoft and Google suites, making Slack the clear choice for enterprise customers. You'll work with product managers, designers, frontend, mobile, and quality engineers, and with partner teams across Platform, Slackbot, and 3P Integrations. We build on PHP/Hack, Java, and MySQL. Expertise in these is a plus, but familiarity with other web languages (Python, Ruby, Go) and relational databases is a fine substitute. We value simplicity and reliability as properties of a system to be carefully calculated with every decision. Slack has a positive, diverse, and supportive culture. We look for people who are curious, inventive, and work to be a little better every day. We aim to be smart, humble, hardworking and, above all, collaborative. What you will actually being doing: Design and build backend services and API methods for admin and user authentication and connection flows with Google and Microsoft (OAuth, domain-wide delegation, token management, and permission policies). Own and evolve the Admin Productivity Suite backend, including bulk approve/install pipelines, install-state storage, failure handling, and admin analytics. Partner with Product, Design, and Frontend to ship features that raise connected-user and DWA adoption, using experiments and data to guide the roadmap. Work across team boundaries (Platform, Slackbot, Enterprise Search, 3P Integrations) on shared permission, auth, and connector frameworks, including the evolution from 2.0 connectors toward MCP. Contribute heavily to team projects with significant business impact, and own the long-term health of the systems you build. Write secure, well-documented designs and work with Security through scoped review. Help support and operations triage and resolve production issues. Mentor other engineers, review code in depth, and improve engineering standards, tooling, and processes. You are our person if You have: 6+ years of professional experience building web applications or backend services. Experience with PHP/Hack, Java, Python, Ruby, Go, or similar languages. Experience with OAuth 2.0/OIDC and authorization models, ideally with Google Workspace or Microsoft 365 / Entra ID integrations (admin consent, domain-wide delegation, Graph or Google APIs). Ability to contribute to technical architecture discussions and drive technical decisions within the team. Understandable, testable, maintainable code. Strong communication skills, including explaining complex concepts to designers, support, and other engineers, and collaborating across teams. Solid computer science fundamentals: data structures, algorithms, distributed systems, and information retrieval. A related technical degree. Even Better If You have: Experience with enterprise admin tooling, permission policies, or multi-tenant (Enterprise Grid) architectures. Experience with feature flags, experimentation, and data-driven product development. Experience with MCP or connector frameworks. Unleash Your Potential When you join Salesforce, you’ll be limitless in all areas of your life. Our benefits and resources support you to find balance and be your best , and our AI agents accelerate your impact so you can do your best . Together, we’ll bring the power of Agentforce to organizations of all sizes and deliver amazing experiences that customers love. Apply today to not only shape the future — but to redefine what’s possible — for yourself, for AI, and the world. Accommodations If you need a reasonable accommodation during the application or the recruiting process, please submit a request via this Accommodations Request Form . Please note that Salesforce uses artificial intelligence (AI) tools to help our recruiters assess and evaluate candidates’ resumes and qualifications throughout the recruiting process. Humans will always make any candidate selection and hiring decisions. Please see our Candidate Privacy Statement for more information about how we use your personal data and your rights, including with regard to use of AI tools and opt out options. Posting Statement Salesforce is an equal opportunity employer and maintains a policy of non-discrimination with all employees and applicants for employment. What does that mean exactly? It means that at Salesforce, we believe in equality for all. And we believe we can lead the path to equality in part by creating a workplace that’s inclusive, and free from discrimination. Know your rights: workplace discrimination is illegal. Any employee or potential employee will be assessed on the basis of merit, competence and qualifications – without regard to race, religion, color, national origin, sex, sexual orientation, gender expression or identity, transgender status, age, disability, veteran or marital status, political viewpoint, or other classifications protected by law. This policy applies to current and prospective employees, no matter where they are in their Salesforce employment journey. It also applies to recruiting, hiring, job assignment, compensation, promotion, benefits, training, assessment of job performance, discipline, termination, and everything in between. Recruiting, hiring, and promotion decisions at Salesforce are fair and based on merit. The same goes for compensation, benefits, promotions, transfers, reduction in workforce, recall, training, and education. In the United States, compensation offered will be determined by factors such as location, job level, job-related knowledge, skills, and experience. Certain roles may be eligible for incentive compensation, equity, and benefits. Salesforce offers a variety of benefits to help you live well including: time off programs, medical, dental, vision, mental health support, paid parental leave, life and disability insurance, 401(k), and an employee stock purchasing program. More details about company benefits can be found at the following link: https://www.salesforcebenefits.com.Pursuant to the San Francisco Fair Chance Ordinance and the Los Angeles Fair Chance Initiative for Hiring, Salesforce will consider for employment qualified applicants with arrest and conviction records. At Salesforce, we believe in equitable compensation practices that reflect the dynamic nature of labor markets across various regions.&#xa;&#xa;The typical base salary range for this position is $172,500 - $260,100 annually. In select cities within the San Francisco and New York City metropolitan area, the base salary range for this role is $207,800 - $285,800 annually.&#xa;&#xa;The range represents base salary only, and does not include company bonus, incentive for sales roles, equity or benefits, as applicable.",
-      "sponsorship": "Unknown",
-      "fetched_at": "",
-      "first_seen": "2026-11-05T07:10:14.239898+00:00",
-      "discovery_queries": {
-        "linkedin": [
-          "software engineer"
-        ]
-      },
-      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
-      "recovery_methods": {},
-      "application_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Senior-Software-Engineer--LMTS---Backend---Enterprise-Productivity_JR366844",
-      "official_jd_fetched_at": "2026-11-05T07:10:14.239898+00:00",
-      "official_search_verified": true,
-      "enrichment_method": "official_cache",
-      "enrichment_status": "resolved",
-      "official_search_status": "resolved",
-      "direct_original_fetched": true,
-      "source_verified_at": "2026-11-05T20:00:19.859538+00:00",
       "verified_this_run": false
     },
     {
@@ -106193,7 +106704,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4487555108",
@@ -106202,7 +106713,7 @@
       "title": "Senior Software Engineer, Full Stack",
       "location": "Austin, TX",
       "posted_date": "2026-11-04",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-full-stack-at-sentilink-4487555108",
@@ -106218,8 +106729,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-05T20:00:19.859538+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4487557007",
@@ -106239,12 +106750,12 @@
       "first_seen": "2026-11-05T07:10:14.239898+00:00",
       "discovery_queries": {
         "linkedin": [
-          "full-stack engineer"
+          "software engineer"
         ]
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
       "verified_this_run": true
     },
     {
@@ -107269,7 +107780,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4401362478",
@@ -107818,13 +108329,13 @@
       "job_id": "4487572568",
       "source": "linkedin",
       "company": "Slack",
-      "title": "Senior Software Engineer (LMTS), Backend – Enterprise Productivity",
+      "title": "Lead Software Engineer, Backend – Enterprise Productivity",
       "location": "New York, NY",
       "posted_date": "2026-11-05",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
-      "source_url": "https://www.linkedin.com/jobs/view/senior-software-engineer-lmts-backend-%E2%80%93-enterprise-productivity-at-slack-4487572568",
+      "source_url": "https://www.linkedin.com/jobs/view/lead-software-engineer-backend-%E2%80%93-enterprise-productivity-at-slack-4487572568",
       "official_url": "",
       "description": "",
       "sponsorship": "Unknown",
@@ -107835,10 +108346,9 @@
           "software engineer"
         ]
       },
-      "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-05T20:00:19.859538+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4487576214",
@@ -115657,7 +116167,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4478159192",
@@ -115683,7 +116193,7 @@
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4475977018",
@@ -121512,12 +122022,12 @@
       "title": "Software Dev Engineer I - Security Platform",
       "location": "Seattle, WA",
       "posted_date": "2026-11-05",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-dev-engineer-i-security-platform-at-twitch-4486555733",
       "official_url": "",
-      "description": "About Us Twitch is the world’s biggest live streaming service, with global communities built around gaming, entertainment, music, sports, cooking, and more. It is where thousands of communities come together for whatever, every day. We’re about community, inside and out. You’ll find coworkers who are eager to team up, collaborate, and smash (or elegantly solve) problems together. We’re on a quest to empower live communities, so if this sounds good to you, see what we’re up to on LinkedIn and X, and discover the projects we’re solving on our Blog. Be sure to explore our Interviewing Guide to learn how to ace our interview process. About The Team We're a dynamic group of security engineers passionate about creating resilient, intelligent systems. Our team is committed to developing innovative technologies that protect and empower live streaming communities worldwide. We value collaboration, continuous learning, and making meaningful impact through sophisticated technical solutions. About The Role Twitch Security Platform builds and operates the foundational software, data, and automation that enable security at scale across Twitch. As a Software Development Engineer I (SDE I) on the Security Platform team, you will design, build, and operate critical services, pipelines, and tooling that power Twitch's security, privacy, and compliance programs. In this role, you will work at the intersection of software, security, privacy, and data engineering, contributing production systems that handle large-scale security telemetry, automate security workflows, and provide reliable data and services to internal teams. You will partner closely with engineers and product teams to solve real-world security problems through well-designed software.. This role is ideal for an engineer who learns quickly, values operational excellence, and wants to see their work directly improve Twitch's security posture. You Will: Work with technical program managers, technical leads, and other engineers to design, develop, launch, and operate security and privacy software Work backwards from security and privacy problems to drive business impact Maintain and improve our existing backend services. You Have: Bachelor's degree in Computer Science, Engineering, or equivalent practical experience. Experience developing software in a professional environment. Fluency in a modern language (Go or similar). Prior experience building internal tooling/products for other developers. Bonus Points Experience building software and services using AWS technologies such as ECS, DynamoDB, Lambda, SQS, and Step Functions Experience with infrastructure-as-code (e.g., AWS CDK) or CI/CD pipelines. Familiarity with Twitch, gaming, and/or streaming on Twitch Familiarity with security, data, and privacy systems, such as security or audit data lakes, cloud authentication and authorization flows, vulnerability scanning and remediation pipelines, and privacy or compliance-driven workflows (e.g., CCPA, GDPR-related controls). Experience working with large-scale event or log data, including event-driven architectures, asynchronous processing, or batch/streaming pipelines. Experience integrating AI-assisted development or analysis tools into engineering workflows, such as using LLM-powered tooling, automation, or MCP-style platforms to improve developer productivity or system insight. Perks Medical, Dental, Vision & Disability Insurance 401(k) Maternity & Parental Leave Flexible PTO Amazon Employee Discount Pursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records. Pursuant to the Los Angeles Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records. Job ID: TW9319 The base salary range for this position is listed below. Your Amazon package will include sign-on payments and restricted stock units (RSUs). Final compensation will be determined based on factors including experience, qualifications, and location. Amazon also offers comprehensive benefits including health insurance (medical, dental, vision, prescription, Basic Life & AD&D insurance and option for Supplemental life plans, EAP, Mental Health Support, Medical Advice Line, Flexible Spending Accounts, Adoption and Surrogacy Reimbursement coverage), 401(k) matching, paid time off, and parental leave. Learn more about our benefits at https://amazon.jobs/en/benefits. US, WA, Seattle - Annually $110,500—$160,000 USD US, CA, San Francisco - Annually $127,100—$185,000 USD US, CA, Irvine - Annually $122,600—$160,000 USD Twitch is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability, or other legally protected status. Twitch values your privacy. Please consult our Candidate Privacy Notice, for information about how we collect, use, and disclose personal information of our candidates.",
+      "description": "About Us\nTwitch is the world’s biggest live streaming service, with global communities built around gaming, entertainment, music, sports, cooking, and more. It is where thousands of communities come together for whatever, every day.\nWe’re about community, inside and out. You’ll find coworkers who are eager to team up, collaborate, and smash (or elegantly solve) problems together. We’re on a quest to empower live communities, so if this sounds good to you, see what we’re up to on LinkedIn and X, and discover the projects we’re solving on our Blog. Be sure to explore our Interviewing Guide to learn how to ace our interview process.\nAbout the Team\nWe're a dynamic group of security engineers passionate about creating resilient, intelligent systems. Our team is committed to developing innovative technologies that protect and empower live streaming communities worldwide. We value collaboration, continuous learning, and making meaningful impact through sophisticated technical solutions.\nAbout the Role\nTwitch Security Platform builds and operates the foundational software, data, and automation that enable security at scale across Twitch. As a Software Development Engineer I (SDE I) on the Security Platform team, you will design, build, and operate critical services, pipelines, and tooling that power Twitch's security, privacy, and compliance programs.\nIn this role, you will work at the intersection of software, security, privacy, and data engineering, contributing production systems that handle large-scale security telemetry, automate security workflows, and provide reliable data and services to internal teams. You will partner closely with engineers and product teams to solve real-world security problems through well-designed software.\nThis role is ideal for an engineer who learns quickly, values operational excellence, and wants to see their work directly improve Twitch's security posture.\nYou Will:\nWork with technical program managers, technical leads, and other engineers to design, develop, launch, and operate security and privacy software\nWork backwards from security and privacy problems to drive business impact\nMaintain and improve our existing backend services.\nYou Have:\nBachelor's degree in Computer Science, Engineering, or equivalent practical experience.\nExperience developing software in a professional environment.\nFluency in a modern language (Go or similar).\nPrior experience building internal tooling/products for other developers.\nBonus Points\nExperience building software and services using AWS technologies such as ECS, DynamoDB, Lambda, SQS, and Step Functions\nExperience with infrastructure-as-code (e.g., AWS CDK) or CI/CD pipelines.\nFamiliarity with Twitch, gaming, and/or streaming on Twitch\nFamiliarity with security, data, and privacy systems, such as security or audit data lakes, cloud authentication and authorization flows, vulnerability scanning and remediation pipelines, and privacy or compliance-driven workflows (e.g., CCPA, GDPR-related controls).\nExperience working with large-scale event or log data, including event-driven architectures, asynchronous processing, or batch/streaming pipelines.\nExperience integrating AI-assisted development or analysis tools into engineering workflows, such as using LLM-powered tooling, automation, or MCP-style platforms to improve developer productivity or system insight.\nPerks\nMedical, Dental, Vision & Disability Insurance\n401(k)\nMaternity & Parental Leave\nFlexible PTO\nAmazon Employee Discount",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-05T07:10:14.239898+00:00",
@@ -121533,13 +122043,18 @@
       },
       "linkedin_detail_triage_hash": "8a6256be13d70835545b",
       "linkedin_detail_attempted_at": "2026-11-05T07:12:51.575432+00:00",
-      "linkedin_detail_fetched_at": "2026-11-05T07:12:51.575432+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_cache",
+      "recovery_methods": {},
+      "application_url": "https://job-boards.greenhouse.io/twitch/jobs/8931343002",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "jd_recovery_at": "2026-11-26T23:07:10.093599+00:00",
+      "enrichment_method": "remote_exact_peer",
       "enrichment_status": "resolved",
+      "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-11-05T20:00:19.859538+00:00",
-      "verified_this_run": false
+      "direct_original_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4486560693",
@@ -121548,12 +122063,12 @@
       "title": "Software Dev Engineer I - Security Platform",
       "location": "San Francisco, CA",
       "posted_date": "2026-11-05",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-dev-engineer-i-security-platform-at-twitch-4486560693",
       "official_url": "",
-      "description": "About Us Twitch is the world’s biggest live streaming service, with global communities built around gaming, entertainment, music, sports, cooking, and more. It is where thousands of communities come together for whatever, every day. We’re about community, inside and out. You’ll find coworkers who are eager to team up, collaborate, and smash (or elegantly solve) problems together. We’re on a quest to empower live communities, so if this sounds good to you, see what we’re up to on LinkedIn and X, and discover the projects we’re solving on our Blog. Be sure to explore our Interviewing Guide to learn how to ace our interview process. About The Team We're a dynamic group of security engineers passionate about creating resilient, intelligent systems. Our team is committed to developing innovative technologies that protect and empower live streaming communities worldwide. We value collaboration, continuous learning, and making meaningful impact through sophisticated technical solutions. About The Role Twitch Security Platform builds and operates the foundational software, data, and automation that enable security at scale across Twitch. As a Software Development Engineer I (SDE I) on the Security Platform team, you will design, build, and operate critical services, pipelines, and tooling that power Twitch's security, privacy, and compliance programs. In this role, you will work at the intersection of software, security, privacy, and data engineering, contributing production systems that handle large-scale security telemetry, automate security workflows, and provide reliable data and services to internal teams. You will partner closely with engineers and product teams to solve real-world security problems through well-designed software.. This role is ideal for an engineer who learns quickly, values operational excellence, and wants to see their work directly improve Twitch's security posture. You Will: Work with technical program managers, technical leads, and other engineers to design, develop, launch, and operate security and privacy software Work backwards from security and privacy problems to drive business impact Maintain and improve our existing backend services. You Have: Bachelor's degree in Computer Science, Engineering, or equivalent practical experience. Experience developing software in a professional environment. Fluency in a modern language (Go or similar). Prior experience building internal tooling/products for other developers. Bonus Points Experience building software and services using AWS technologies such as ECS, DynamoDB, Lambda, SQS, and Step Functions Experience with infrastructure-as-code (e.g., AWS CDK) or CI/CD pipelines. Familiarity with Twitch, gaming, and/or streaming on Twitch Familiarity with security, data, and privacy systems, such as security or audit data lakes, cloud authentication and authorization flows, vulnerability scanning and remediation pipelines, and privacy or compliance-driven workflows (e.g., CCPA, GDPR-related controls). Experience working with large-scale event or log data, including event-driven architectures, asynchronous processing, or batch/streaming pipelines. Experience integrating AI-assisted development or analysis tools into engineering workflows, such as using LLM-powered tooling, automation, or MCP-style platforms to improve developer productivity or system insight. Perks Medical, Dental, Vision & Disability Insurance 401(k) Maternity & Parental Leave Flexible PTO Amazon Employee Discount Pursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records. Pursuant to the Los Angeles Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records. Job ID: TW9319 The base salary range for this position is listed below. Your Amazon package will include sign-on payments and restricted stock units (RSUs). Final compensation will be determined based on factors including experience, qualifications, and location. Amazon also offers comprehensive benefits including health insurance (medical, dental, vision, prescription, Basic Life & AD&D insurance and option for Supplemental life plans, EAP, Mental Health Support, Medical Advice Line, Flexible Spending Accounts, Adoption and Surrogacy Reimbursement coverage), 401(k) matching, paid time off, and parental leave. Learn more about our benefits at https://amazon.jobs/en/benefits. US, WA, Seattle - Annually $110,500—$160,000 USD US, CA, San Francisco - Annually $127,100—$185,000 USD US, CA, Irvine - Annually $122,600—$160,000 USD Twitch is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability, or other legally protected status. Twitch values your privacy. Please consult our Candidate Privacy Notice, for information about how we collect, use, and disclose personal information of our candidates.",
+      "description": "About Us\nTwitch is the world’s biggest live streaming service, with global communities built around gaming, entertainment, music, sports, cooking, and more. It is where thousands of communities come together for whatever, every day.\nWe’re about community, inside and out. You’ll find coworkers who are eager to team up, collaborate, and smash (or elegantly solve) problems together. We’re on a quest to empower live communities, so if this sounds good to you, see what we’re up to on LinkedIn and X, and discover the projects we’re solving on our Blog. Be sure to explore our Interviewing Guide to learn how to ace our interview process.\nAbout the Team\nWe're a dynamic group of security engineers passionate about creating resilient, intelligent systems. Our team is committed to developing innovative technologies that protect and empower live streaming communities worldwide. We value collaboration, continuous learning, and making meaningful impact through sophisticated technical solutions.\nAbout the Role\nTwitch Security Platform builds and operates the foundational software, data, and automation that enable security at scale across Twitch. As a Software Development Engineer I (SDE I) on the Security Platform team, you will design, build, and operate critical services, pipelines, and tooling that power Twitch's security, privacy, and compliance programs.\nIn this role, you will work at the intersection of software, security, privacy, and data engineering, contributing production systems that handle large-scale security telemetry, automate security workflows, and provide reliable data and services to internal teams. You will partner closely with engineers and product teams to solve real-world security problems through well-designed software.\nThis role is ideal for an engineer who learns quickly, values operational excellence, and wants to see their work directly improve Twitch's security posture.\nYou Will:\nWork with technical program managers, technical leads, and other engineers to design, develop, launch, and operate security and privacy software\nWork backwards from security and privacy problems to drive business impact\nMaintain and improve our existing backend services.\nYou Have:\nBachelor's degree in Computer Science, Engineering, or equivalent practical experience.\nExperience developing software in a professional environment.\nFluency in a modern language (Go or similar).\nPrior experience building internal tooling/products for other developers.\nBonus Points\nExperience building software and services using AWS technologies such as ECS, DynamoDB, Lambda, SQS, and Step Functions\nExperience with infrastructure-as-code (e.g., AWS CDK) or CI/CD pipelines.\nFamiliarity with Twitch, gaming, and/or streaming on Twitch\nFamiliarity with security, data, and privacy systems, such as security or audit data lakes, cloud authentication and authorization flows, vulnerability scanning and remediation pipelines, and privacy or compliance-driven workflows (e.g., CCPA, GDPR-related controls).\nExperience working with large-scale event or log data, including event-driven architectures, asynchronous processing, or batch/streaming pipelines.\nExperience integrating AI-assisted development or analysis tools into engineering workflows, such as using LLM-powered tooling, automation, or MCP-style platforms to improve developer productivity or system insight.\nPerks\nMedical, Dental, Vision & Disability Insurance\n401(k)\nMaternity & Parental Leave\nFlexible PTO\nAmazon Employee Discount\nPursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.\nPursuant to the Los Angeles Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.\nJob ID: TW9319\nThe base salary range for this position is listed below. Your Amazon package will include sign-on payments and restricted stock units (RSUs). Final compensation will be determined based on factors including experience,",
       "sponsorship": "Unknown",
       "fetched_at": "",
       "first_seen": "2026-11-05T07:10:14.239898+00:00",
@@ -121569,13 +122084,18 @@
       },
       "linkedin_detail_triage_hash": "bf56f7055c670b5bfef2",
       "linkedin_detail_attempted_at": "2026-11-05T07:12:51.575432+00:00",
-      "linkedin_detail_fetched_at": "2026-11-05T07:12:51.575432+00:00",
-      "linkedin_detail_resolved": true,
-      "enrichment_method": "linkedin_cache",
+      "recovery_methods": {},
+      "application_url": "https://job-boards.greenhouse.io/twitch/jobs/8929545002",
+      "official_search_verified": true,
+      "official_jd_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "jd_recovery_at": "2026-11-26T23:07:10.093599+00:00",
+      "enrichment_method": "remote_exact_peer",
       "enrichment_status": "resolved",
+      "official_search_status": "resolved",
       "direct_original_fetched": true,
-      "source_verified_at": "2026-11-05T20:00:19.859538+00:00",
-      "verified_this_run": false
+      "direct_original_fetched_at": "2026-11-26T23:07:10.093599+00:00",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4456606613",
@@ -125685,12 +126205,12 @@
       "first_seen": "2026-11-05T20:00:19.859538+00:00",
       "discovery_queries": {
         "linkedin": [
-          "full-stack engineer"
+          "software engineer"
         ]
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
       "verified_this_run": true
     },
     {
@@ -125711,12 +126231,12 @@
       "first_seen": "2026-11-05T20:00:19.859538+00:00",
       "discovery_queries": {
         "linkedin": [
-          "full-stack engineer"
+          "software engineer"
         ]
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
       "verified_this_run": true
     },
     {
@@ -128699,7 +129219,7 @@
       "title": "(USA) Senior, Software Engineer",
       "location": "Bentonville, AR",
       "posted_date": "2026-11-04",
-      "aggregator_posted_date": "2026-11-04",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/usa-senior-software-engineer-at-walmart-data-ventures-4476641978",
@@ -128715,8 +129235,8 @@
       },
       "enrichment_deferred_reason": "linkedin_detail_rules:prefilter:senior",
       "recovery_methods": {},
-      "source_verified_at": "2026-11-05T07:10:14.239898+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4450197392",
@@ -130227,7 +130747,7 @@
       "title": "Software Engineer, 2027 New Grad",
       "location": "Seattle, WA",
       "posted_date": "2026-09-22",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-2027-new-grad-at-whatnot-4460204620",
@@ -130242,8 +130762,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-11-06T05:00:09.216480+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4460205602",
@@ -130252,7 +130772,7 @@
       "title": "Software Engineer, 2027 New Grad",
       "location": "New York, NY",
       "posted_date": "2026-09-22",
-      "aggregator_posted_date": "2026-11-05",
+      "aggregator_posted_date": "2026-11-26",
       "updated_date": "",
       "date_confidence": "low",
       "source_url": "https://www.linkedin.com/jobs/view/software-engineer-2027-new-grad-at-whatnot-4460205602",
@@ -130267,8 +130787,8 @@
         ]
       },
       "recovery_methods": {},
-      "source_verified_at": "2026-11-06T05:00:09.216480+00:00",
-      "verified_this_run": false
+      "source_verified_at": "2026-11-26T23:07:10.093599+00:00",
+      "verified_this_run": true
     },
     {
       "job_id": "4437585731",
@@ -133667,7 +134187,7 @@
       },
       "recovery_methods": {},
       "source_verified_at": "2026-11-26T20:00:21.925858+00:00",
-      "verified_this_run": true
+      "verified_this_run": false
     },
     {
       "job_id": "4470408039",
