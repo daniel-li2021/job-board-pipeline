@@ -1,24 +1,24 @@
-# ATS / LinkedIn board — 7-day view — 2026-11-26_2001
+# ATS / LinkedIn board — 7-day view — 2026-11-26_2325
 
-- Updated (PT): 2026-11-26 12:04 PST
-- Snapshot (UTC): 2026-11-26T20:04:24.144651+00:00
-- Last 24 hours: 48
-- Last 3 days: 71
+- Updated (PT): 2026-11-26 15:27 PST
+- Snapshot (UTC): 2026-11-26T23:27:47.194865+00:00
+- Last 24 hours: 50
+- Last 3 days: 73
 
 If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) instead of this file.
 
 ## Run stats
 
-- Source raw: ATS 2966 / Linkedin 4630 / Indeed 811 / Glassdoor 381 (Big Company Official runs separately)
-- Funnel: after dedup 8723 -> after company filter 8205 -> after hard filter 7581 -> after role+seniority prefilter 2579 | dropped 5954
-- LLM usage: jobs scored 2 / API requests 1 / cache reused 311 (cross-pipeline 4) / rule fallback+overflow 1866 (thin local cards 1176, recency-gated 0, overflow 0, new/changed 2)
-- LLM cache causes: new 1 / material JD 0 / matching context 0 / prior rule now eligible 1 / non-material reused 0 / same-content reused 11 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 1 / jobs scored 2 / tokens input 3532 (cached 0) / output 667 (reasoning 512) / estimated cost $0.0007
-- New jobs discovered this run: 12
-- Output sizing: Tier A 40 / Tier B 148 / A+B actionable 188 / Shown in latest.md 188 (no hard cap)
-- Recency (kept): <3h 0 / 3-24h 2 / 1-3d 102 / newly-disc 201 / 3-7d 5 / >7d 1869
-- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3920 of 3921 / Indeed unique 778 of 778
-- Linkedin top exact-unique queries: software engineer=1464, ai engineer=1022, full-stack engineer=453
+- Source raw: ATS 2966 / Linkedin 4643 / Indeed 811 / Glassdoor 380 (Big Company Official runs separately)
+- Funnel: after dedup 8734 -> after company filter 8211 -> after hard filter 7587 -> after role+seniority prefilter 2583 | dropped 5957
+- LLM usage: jobs scored 1 / API requests 1 / cache reused 314 (cross-pipeline 4) / rule fallback+overflow 1868 (thin local cards 1179, recency-gated 0, overflow 0, new/changed 1)
+- LLM cache causes: new 1 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 10 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 1 / jobs scored 1 / tokens input 2031 (cached 0) / output 387 (reasoning 294) / estimated cost $0.0004
+- New jobs discovered this run: 10
+- Output sizing: Tier A 40 / Tier B 150 / A+B actionable 190 / Shown in latest.md 190 (no hard cap)
+- Recency (kept): <3h 0 / 3-24h 2 / 1-3d 102 / newly-disc 205 / 3-7d 5 / >7d 1869
+- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3929 of 3930 / Indeed unique 778 of 778
+- Linkedin top exact-unique queries: software engineer=1478, ai engineer=1022, backend engineer=523
 - Indeed top exact-unique queries: ai engineer=229, software engineer=223, llm engineer=86, software engineer ii=85, machine learning engineer=82
 
 ## Tier A - apply now / referral (40)
@@ -66,7 +66,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 93 | rule_fallback | linkedin | Kareer Basycs | Junior Python Developer | United States | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-python-developer-at-kareer-basycs-4468572925) |
 | 93 | rule_fallback | linkedin | IBM | Entry Level Software Developer-Tucson-AZ | Tucson, AZ | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/entry-level-software-developer-tucson-az-at-ibm-4468180871) |
 
-## Tier B - worth applying (148)
+## Tier B - worth applying (150)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -87,6 +87,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 83 | cached_llm | indeed | DC PUBLIC CHARTER SCHOOL BOARD | Junior Data Analytics Engineer | Remote, US | 2026-11-25 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=2f4258f31de4bb82) |
 | 82 | cached_llm | indeed | DIGICO | Junior Full Stack Developer - Java | VA, US | 2026-11-25 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=b242fa2a1f2a143a) |
 | 84 | cached_llm | indeed | University of North Carolina at Chapel Hill | STAR Program AI Engineer AWS | Chapel Hill, NC, US | 2026-11-24 | 1to3d | low | ai | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=5819c9be89b75915) |
+| 80 | rule_fallback | linkedin | Oracle | Platform Software Engineer 2 | Kansas City, MO | 2026-11-26 | newly_discovered | low | swe | Oracle | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/platform-software-engineer-2-at-oracle-4493478003) |
 | 82 | cached_llm | syncareer | Wipro | AI Engineer | Louisville, Kentucky, United States | - | newly_discovered |  | ai | - | unreviewed | not_dedicated | - | [open](https://careers.wipro.com/job/AI-Engineer/221487-en_US) |
 | 84 | cached_llm | indeed | Rubrik | Software Engineer - Data Protection | Palo Alto, CA, US | 2026-11-24 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=6af4edc05b425803) |
 | 82 | cached_llm | indeed | TP-LINK | 2026 Early Career Embedded Software Engineer | Irvine, CA, US | 2026-11-24 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=adc99b47d9a1e59e) |
@@ -96,6 +97,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 78 | cached_llm | indeed | Medtronic | Software Engineer II - Advanced Manufacturing Engineering | Fridley, MN, US | 2026-11-25 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=62cb29be9977b0d6) |
 | 75 | rule | indeed | Citi | Full Stack Developer | Irving, TX, US | 2026-11-25 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=aa1a602152b9195d) |
 | 78 | cached_llm | indeed | Infosys | Data Engineer with Spark, Scala, PySpark, Airflow, Python, SQL, Apache | Austin, TX, US | 2026-11-25 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=57124457521f6335) |
+| 75 | rule_fallback | linkedin | Cisco | Software Engineer | Durham, NC | 2026-11-26 | newly_discovered | low | swe | - | unreviewed | pending_official_refresh | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-cisco-4495278676) |
 | 75 | rule_fallback | linkedin | Craftbridge Digital | Software Engineer | Austin, TX | 2026-11-26 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/software-engineer-at-craftbridge-digital-4495035380) |
 | 78 | cached_llm | indeed | Veeva Systems | Associate Software Engineer - 2027 Start Dates | Raleigh, NC, US | 2026-11-24 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=cf846a8e29c9dbc9) |
 | 77 | cached_llm | indeed | JPMorganChase | Software Engineer I-Java/Springboot/SQL | Newark, DE, US | 2026-11-24 | 1to3d | low | swe | J.P. Morgan | unreviewed | official_gap | - | [open](https://www.indeed.com/viewjob?jk=1c0dff35e12410ab) |

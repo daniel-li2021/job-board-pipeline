@@ -1,10 +1,10 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-26 12:01 PST
-- Snapshot (UTC): 2026-11-26T20:01:48.965112+00:00
-- Jobs: 71 (Tier A/B only)
-- Last 24 hours: 48
-- Last 3 days: 71
+- Updated (PT): 2026-11-26 15:25 PST
+- Snapshot (UTC): 2026-11-26T23:25:10.499551+00:00
+- Jobs: 73 (Tier A/B only)
+- Last 24 hours: 50
+- Last 3 days: 73
 
 If you check every 1–2 days, **only open this file**. This-run snapshots are in `runs/`.
 The 7-day dump is `latest.md`.
@@ -55,6 +55,7 @@ The 7-day dump is `latest.md`.
 | B | 83 | indeed | DC PUBLIC CHARTER SCHOOL BOARD | Junior Data Analytics Engineer | Remote, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=2f4258f31de4bb82) |
 | B | 82 | indeed | DIGICO | Junior Full Stack Developer - Java | VA, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=b242fa2a1f2a143a) |
 | B | 84 | indeed | University of North Carolina at Chapel Hill | STAR Program AI Engineer AWS | Chapel Hill, NC, US | 2026-11-24 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=5819c9be89b75915) |
+| B | 80 | linkedin | Oracle | Platform Software Engineer 2 | Kansas City, MO | 2026-11-26 | newly_discovered | Oracle | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/platform-software-engineer-2-at-oracle-4493478003) |
 | B | 82 | syncareer | Wipro | AI Engineer | Louisville, Kentucky, United States | - | newly_discovered | - | unreviewed | not_dedicated | [open](https://careers.wipro.com/job/AI-Engineer/221487-en_US) |
 | B | 84 | indeed | Rubrik | Software Engineer - Data Protection | Palo Alto, CA, US | 2026-11-24 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=6af4edc05b425803) |
 | B | 82 | indeed | TP-LINK | 2026 Early Career Embedded Software Engineer | Irvine, CA, US | 2026-11-24 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=adc99b47d9a1e59e) |
@@ -64,6 +65,7 @@ The 7-day dump is `latest.md`.
 | B | 78 | indeed | Medtronic | Software Engineer II - Advanced Manufacturing Engineering | Fridley, MN, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=62cb29be9977b0d6) |
 | B | 75 | indeed | Citi | Full Stack Developer | Irving, TX, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=aa1a602152b9195d) |
 | B | 78 | indeed | Infosys | Data Engineer with Spark, Scala, PySpark, Airflow, Python, SQL, Apache | Austin, TX, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=57124457521f6335) |
+| B | 75 | linkedin | Cisco | Software Engineer | Durham, NC | 2026-11-26 | newly_discovered | - | unreviewed | pending_official_refresh | [open](https://www.linkedin.com/jobs/view/software-engineer-at-cisco-4495278676) |
 | B | 75 | linkedin | Craftbridge Digital | Software Engineer | Austin, TX | 2026-11-26 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.linkedin.com/jobs/view/software-engineer-at-craftbridge-digital-4495035380) |
 | B | 78 | indeed | Veeva Systems | Associate Software Engineer - 2027 Start Dates | Raleigh, NC, US | 2026-11-24 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=cf846a8e29c9dbc9) |
 | B | 77 | indeed | JPMorganChase | Software Engineer I-Java/Springboot/SQL | Newark, DE, US | 2026-11-24 | 1to3d | J.P. Morgan | unreviewed | official_gap | [open](https://www.indeed.com/viewjob?jk=1c0dff35e12410ab) |
