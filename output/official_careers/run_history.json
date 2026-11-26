@@ -2,6 +2,805 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-11-26T00:38:00.211502+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 30,
+      "cache_reused": 376,
+      "peer_reused": 0,
+      "same_content_reused": 3,
+      "non_material_change_reused": 2,
+      "new_or_changed": 32,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 29,
+        "material_jd_change": 1,
+        "prior_rule_result_now_eligible_for_llm": 2
+      },
+      "rescored_within_24h": 2,
+      "fallback_count": 0,
+      "rule_count": 1931,
+      "requests": 5,
+      "input_tokens": 46639,
+      "cached_input_tokens": 4575,
+      "output_tokens": 6550,
+      "reasoning_tokens": 3801,
+      "estimated_usd": 0.007528,
+      "latency_seconds": 47.885,
+      "latency_measured": true,
+      "effective_rpm": 6.27,
+      "effective_tpm": 66645.92,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 5,
+      "primary_batches_total": 5,
+      "batches_attempted": 5,
+      "batches_succeeded": 5,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 30,
+      "funnel": {
+        "after_dedup": 13677,
+        "after_company": 13677,
+        "after_hard_filter": 10506,
+        "after_prefilter": 2337,
+        "dropped": 11340
+      },
+      "output": {
+        "tier_a": 3,
+        "tier_b": 25,
+        "shown": 28,
+        "new_jobs": 175,
+        "new_jobs_added": 0
+      },
+      "enrichment": {
+        "discovered": 13723,
+        "needed": 366,
+        "source_jds_available": 13357,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 366
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614362/software-development-engineer-iii-optimization-data",
+              "company": "Amazon",
+              "title": "Software Development Engineer III, Optimization Data"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614445/software-engineer-iii-aws-cloudformation",
+              "company": "Amazon",
+              "title": "Software Engineer III, AWS CloudFormation"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614043/software-development-engineer-annapurna-labs-libnvme",
+              "company": "Amazon",
+              "title": "Software Development Engineer, Annapurna Labs - LibNVMe"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614356/software-dev-engineer-ii-aws-elastic-compute-cloud-ec2",
+              "company": "Amazon",
+              "title": "Software Dev Engineer II, AWS Elastic Compute Cloud (EC2)"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614461/software-development-engineer-aws-console",
+              "company": "Amazon",
+              "title": "Software Development Engineer, AWS Console"
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8355591?t=gh_src%3D&gh_jid=8355591",
+              "company": "Robinhood",
+              "title": "Software Engineer, Full Stack, Government Products"
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8355577?t=gh_src%3D&gh_jid=8355577",
+              "company": "Robinhood",
+              "title": "Software Engineer, Web, Government Products"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8415553",
+              "company": "Reddit",
+              "title": "Software Engineer, Ads"
+            },
+            {
+              "key": "url::https://www.ixl.com/company/jobs?gh_jid=8963047002",
+              "company": "IXL Learning",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://www.ixl.com/company/jobs?gh_jid=8963067002",
+              "company": "IXL Learning",
+              "title": "Software Engineer, Core Technology"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 12.464,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 14492,
+            "cached_input_tokens": 0,
+            "output_tokens": 1979,
+            "reasoning_tokens": 1008,
+            "estimated_usd": 0.002439
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614362/software-development-engineer-iii-optimization-data",
+              "match_score": 38.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "distributed systems",
+                "data ingestion"
+              ],
+              "main_gaps": [
+                "5+ years architecture leadership",
+                "engineering mentorship"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614445/software-engineer-iii-aws-cloudformation",
+              "match_score": 36.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS deployment",
+                "full software lifecycle"
+              ],
+              "main_gaps": [
+                "5+ years architecture leadership",
+                "engineering mentorship"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614043/software-development-engineer-annapurna-labs-libnvme",
+              "match_score": 43.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "systems reliability",
+                "performance optimization"
+              ],
+              "main_gaps": [
+                "C++ systems experience",
+                "NVMe and embedded systems"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614356/software-dev-engineer-ii-aws-elastic-compute-cloud-ec2",
+              "match_score": 65.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "distributed services",
+                "reliability and operations"
+              ],
+              "main_gaps": [
+                "3+ years non-internship experience",
+                "Java or C++ production experience"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614461/software-development-engineer-aws-console",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React and TypeScript",
+                "full-stack delivery"
+              ],
+              "main_gaps": [
+                "3+ years non-internship experience"
+              ]
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8355591?t=gh_src%3D&gh_jid=8355591",
+              "match_score": 53.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "citizen_or_clearance",
+              "top_match_reasons": [
+                "full-stack product delivery",
+                "React and APIs"
+              ],
+              "main_gaps": [
+                "4+ years backend and frontend",
+                "Go or Ruby experience"
+              ]
+            },
+            {
+              "key": "url::https://boards.greenhouse.io/robinhood/jobs/8355577?t=gh_src%3D&gh_jid=8355577",
+              "match_score": 67.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "citizen_or_clearance",
+              "top_match_reasons": [
+                "React web applications",
+                "API integration"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/reddit/jobs/8415553",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend APIs",
+                "distributed data systems"
+              ],
+              "main_gaps": [
+                "Go and Scala",
+                "Kafka and Thrift"
+              ]
+            },
+            {
+              "key": "url::https://www.ixl.com/company/jobs?gh_jid=8963047002",
+              "match_score": 75.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack product development",
+                "Java and object-oriented skills"
+              ],
+              "main_gaps": [
+                "3+ years software engineering"
+              ]
+            },
+            {
+              "key": "url::https://www.ixl.com/company/jobs?gh_jid=8963067002",
+              "match_score": 75.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack product development",
+                "Java and object-oriented skills"
+              ],
+              "main_gaps": [
+                "3+ years software engineering"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10613338/solutions-architect-ii-amz10628625",
+              "company": "Amazon",
+              "title": "Solutions Architect II - AMZ10628625"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614091/solutions-architect-amazon-web-services-state-and-local-government-and-higher-education",
+              "company": "Amazon",
+              "title": "Solutions Architect, Amazon Web Services, State and Local Government and Higher Education"
+            },
+            {
+              "key": "url::https://careers.roblox.com/jobs/8417328?gh_jid=8417328",
+              "company": "Roblox",
+              "title": "Developer Engagement Team (Contract)"
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7688332636746320133",
+              "company": "TikTok",
+              "title": "Technical Product Specialist (TPS) - Platform (Advertisement Team)"
+            },
+            {
+              "key": "url::https://www.samsara.com/company/careers/roles/8412267?gh_jid=8412267",
+              "company": "Samsara",
+              "title": "Solutions Integration Engineer II"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 10.714,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 5,
+            "input_tokens": 7602,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1487,
+            "reasoning_tokens": 1100,
+            "estimated_usd": 0.001337
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10613338/solutions-architect-ii-amz10628625",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS application deployment",
+                "Distributed systems and data"
+              ],
+              "main_gaps": [
+                "Customer-facing cloud consulting"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614091/solutions-architect-amazon-web-services-state-and-local-government-and-higher-education",
+              "match_score": 61.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "AWS development experience",
+                "Cloud architecture and APIs"
+              ],
+              "main_gaps": [
+                "4+ years IT experience",
+                "Customer cloud migration"
+              ]
+            },
+            {
+              "key": "url::https://careers.roblox.com/jobs/8417328?gh_jid=8417328",
+              "match_score": 24.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Technical issue troubleshooting"
+              ],
+              "main_gaps": [
+                "Roblox Studio development",
+                "Creator support experience"
+              ]
+            },
+            {
+              "key": "url::https://lifeattiktok.com/search/7688332636746320133",
+              "match_score": 46.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Technical troubleshooting",
+                "Cross-team product collaboration"
+              ],
+              "main_gaps": [
+                "2+ years technical support",
+                "Advertiser ticket workflows"
+              ]
+            },
+            {
+              "key": "url::https://www.samsara.com/company/careers/roles/8412267?gh_jid=8412267",
+              "match_score": 74.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "REST API implementation",
+                "Integration troubleshooting"
+              ],
+              "main_gaps": [
+                "B2B customer integrations",
+                "Customer-facing implementation guidance"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://explore.jobs.netflix.net/careers/job/790319742534",
+              "company": "Netflix",
+              "title": "Machine Learning Scientist 5 (L5) - Human Understanding & Applied AI, Content & Studio"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 2.173,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3025,
+            "cached_input_tokens": 0,
+            "output_tokens": 186,
+            "reasoning_tokens": 99,
+            "estimated_usd": 0.000396
+          },
+          "decisions": [
+            {
+              "key": "url::https://explore.jobs.netflix.net/careers/job/790319742534",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "LLM evaluation systems",
+                "Production AI tooling"
+              ],
+              "main_gaps": [
+                "Psychometric and Bayesian modeling",
+                "Survey sampling and weighting"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446722333580",
+              "company": "Qualcomm",
+              "title": "Camera Systems Engineer"
+            },
+            {
+              "key": "url::https://visa.wd5.myworkdayjobs.com/Visa/job/US---Denver-CO/Software-Engineer--Agentic-Developer_REF090196W",
+              "company": "Visa",
+              "title": "Software Engineer, Agentic Developer"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/136593599004320454-software-engineer-iii-infrastructure-google-workspace",
+              "company": "Google",
+              "title": "Software Engineer III, Infrastructure, Google Workspace"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614195/asic-ai-ml-engineer-annapurna-labs-mla-soc-methodology-infrastructure",
+              "company": "Amazon",
+              "title": "ASIC AI/ML Engineer, Annapurna Labs, MLA SOC, Methodology & Infrastructure"
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614341/software-development-engineer",
+              "company": "Amazon",
+              "title": "Software Development Engineer"
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/351599",
+              "company": "Oracle",
+              "title": "Software Engineer (Manufacturing)"
+            },
+            {
+              "key": "url::https://visa.wd5.myworkdayjobs.com/Visa/job/US---Austin-TX/Associate-Data-Engineer--AI-Studio_REF090692W",
+              "company": "Visa",
+              "title": "Associate Data Engineer, AI Studio"
+            },
+            {
+              "key": "id::amd_official_careers::97927",
+              "company": "AMD",
+              "title": "AI Solutions Architect - Design Verification"
+            },
+            {
+              "key": "url::https://www.brex.com/careers/8958834002?gh_jid=8958834002",
+              "company": "Brex",
+              "title": "Embedded Implementation Consultant"
+            },
+            {
+              "key": "url::https://www.brex.com/careers/8962363002?gh_jid=8962363002",
+              "company": "Brex",
+              "title": "Embedded Implementation Consultant"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 15.266,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 14193,
+            "cached_input_tokens": 0,
+            "output_tokens": 2001,
+            "reasoning_tokens": 1023,
+            "estimated_usd": 0.00242
+          },
+          "decisions": [
+            {
+              "key": "url::https://careers.qualcomm.com/careers/job/446722333580",
+              "match_score": 24.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and C++",
+                "AI/ML experience"
+              ],
+              "main_gaps": [
+                "Camera ISP and 3A algorithms",
+                "Embedded camera systems"
+              ]
+            },
+            {
+              "key": "url::https://visa.wd5.myworkdayjobs.com/Visa/job/US---Denver-CO/Software-Engineer--Agentic-Developer_REF090196W",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Agentic workflow development",
+                "Production LLM systems"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/136593599004320454-software-engineer-iii-infrastructure-google-workspace",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Distributed systems",
+                "Backend infrastructure"
+              ],
+              "main_gaps": [
+                "Two years large-scale infrastructure experience"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614195/asic-ai-ml-engineer-annapurna-labs-mla-soc-methodology-infrastructure",
+              "match_score": 32.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production AI applications",
+                "Python automation"
+              ],
+              "main_gaps": [
+                "Semiconductor design verification",
+                "ASIC/FPGA tools"
+              ]
+            },
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10614341/software-development-engineer",
+              "match_score": 65.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "Generative AI systems"
+              ],
+              "main_gaps": [
+                "Three years non-internship development experience"
+              ]
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/351599",
+              "match_score": 87.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "non_us",
+              "top_match_reasons": [
+                "Java and backend development",
+                "SQL and relational databases"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://visa.wd5.myworkdayjobs.com/Visa/job/US---Austin-TX/Associate-Data-Engineer--AI-Studio_REF090692W",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Cloud deployment experience",
+                "AI/ML production systems"
+              ],
+              "main_gaps": [
+                "AI platform architecture and technical leadership"
+              ]
+            },
+            {
+              "key": "id::amd_official_careers::97927",
+              "match_score": 39.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Hands-on AI agent development",
+                "Engineering workflow automation"
+              ],
+              "main_gaps": [
+                "Semiconductor design verification expertise"
+              ]
+            },
+            {
+              "key": "url::https://www.brex.com/careers/8958834002?gh_jid=8958834002",
+              "match_score": 27.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Technical integration experience",
+                "Cross-functional collaboration"
+              ],
+              "main_gaps": [
+                "Customer-facing SaaS implementation",
+                "Embedded finance integrations"
+              ]
+            },
+            {
+              "key": "url::https://www.brex.com/careers/8962363002?gh_jid=8962363002",
+              "match_score": 27.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Technical integration experience",
+                "Cross-functional collaboration"
+              ],
+              "main_gaps": [
+                "Customer-facing SaaS implementation",
+                "Embedded finance integrations"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 5,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.brex.com/careers/8962401002?gh_jid=8962401002",
+              "company": "Brex",
+              "title": "Embedded Implementation Consultant"
+            },
+            {
+              "key": "url::https://www.brex.com/careers/8962370002?gh_jid=8962370002",
+              "company": "Brex",
+              "title": "Embedded Implementation Consultant"
+            },
+            {
+              "key": "url::https://www.brex.com/careers/8962367002?gh_jid=8962367002",
+              "company": "Brex",
+              "title": "Embedded Implementation Consultant"
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/D10052",
+              "company": "Dell",
+              "title": "Quality Engineer 1"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 7.268,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 7327,
+            "cached_input_tokens": 2724,
+            "output_tokens": 897,
+            "reasoning_tokens": 571,
+            "estimated_usd": 0.000936
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.brex.com/careers/8962401002?gh_jid=8962401002",
+              "match_score": 54.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "non_us",
+              "top_match_reasons": [
+                "SaaS integration experience",
+                "Technical implementation background"
+              ],
+              "main_gaps": [
+                "Customer-facing SaaS delivery",
+                "Embedded finance familiarity"
+              ]
+            },
+            {
+              "key": "url::https://www.brex.com/careers/8962370002?gh_jid=8962370002",
+              "match_score": 59.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SaaS integration experience",
+                "Technical implementation background"
+              ],
+              "main_gaps": [
+                "Customer-facing SaaS delivery",
+                "Embedded finance familiarity"
+              ]
+            },
+            {
+              "key": "url::https://www.brex.com/careers/8962367002?gh_jid=8962367002",
+              "match_score": 59.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "SaaS integration experience",
+                "Technical implementation background"
+              ],
+              "main_gaps": [
+                "Customer-facing SaaS delivery",
+                "Embedded finance familiarity"
+              ]
+            },
+            {
+              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/D10052",
+              "match_score": 44.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Analytical problem solving",
+                "Process improvement experience"
+              ],
+              "main_gaps": [
+                "Industrial or systems engineering degree",
+                "Quality engineering experience"
+              ]
+            }
+          ]
+        }
+      ],
+      "scrape_failure_sources": [
+        "nvidia",
+        "salesforce",
+        "adobe",
+        "meta",
+        "capitalone",
+        "walmart",
+        "cisco",
+        "hpe",
+        "ebay",
+        "zoom",
+        "expedia",
+        "intel",
+        "redhat",
+        "workday",
+        "zillow",
+        "cvs",
+        "f5",
+        "wells-fargo",
+        "yahoo",
+        "flex",
+        "iqvia",
+        "johnson-johnson",
+        "nasdaq",
+        "stryker",
+        "transunion",
+        "travelers"
+      ],
+      "scrape_failure_causes": {
+        "nvidia": "429",
+        "salesforce": "429",
+        "adobe": "429",
+        "meta": "error",
+        "capitalone": "429",
+        "walmart": "429",
+        "cisco": "429",
+        "hpe": "429",
+        "ebay": "429",
+        "zoom": "429",
+        "expedia": "429",
+        "intel": "429",
+        "redhat": "429",
+        "workday": "429",
+        "zillow": "429",
+        "cvs": "429",
+        "f5": "429",
+        "wells-fargo": "429",
+        "yahoo": "429",
+        "flex": "429",
+        "iqvia": "429",
+        "johnson-johnson": "429",
+        "nasdaq": "429",
+        "stryker": "429",
+        "transunion": "429",
+        "travelers": "429"
+      }
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-11-25T15:37:57.628905+00:00",
       "mode": "pipeline",
       "health": "degraded",
@@ -15278,188 +16077,6 @@
         "stryker": "429",
         "transunion": "429",
         "travelers": "429"
-      }
-    },
-    {
-      "pipeline": "official",
-      "run_at": "2026-11-16T00:43:59.588981+00:00",
-      "mode": "pipeline",
-      "health": "degraded",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 4,
-      "cache_reused": 376,
-      "peer_reused": 0,
-      "same_content_reused": 7,
-      "non_material_change_reused": 0,
-      "new_or_changed": 4,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 4
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 2528,
-      "requests": 1,
-      "input_tokens": 7978,
-      "cached_input_tokens": 0,
-      "output_tokens": 995,
-      "reasoning_tokens": 561,
-      "estimated_usd": 0.001295,
-      "latency_seconds": 9.1,
-      "latency_measured": true,
-      "effective_rpm": 6.59,
-      "effective_tpm": 59162.64,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 1,
-      "primary_batches_total": 1,
-      "batches_attempted": 1,
-      "batches_succeeded": 1,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 4,
-      "funnel": {
-        "after_dedup": 16853,
-        "after_company": 16853,
-        "after_hard_filter": 13470,
-        "after_prefilter": 2908,
-        "dropped": 13945
-      },
-      "output": {
-        "tier_a": 0,
-        "tier_b": 25,
-        "shown": 25,
-        "new_jobs": 19,
-        "new_jobs_added": 0
-      },
-      "enrichment": {
-        "discovered": 16910,
-        "needed": 975,
-        "source_jds_available": 15935,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 975
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10604856/software-development-engineer-agentic-ai-velocity-labs",
-              "company": "Amazon",
-              "title": "Software Development Engineer, Agentic AI, Velocity Labs"
-            },
-            {
-              "key": "url::https://jobs.ashbyhq.com/openai/2320fe69-df26-4d1d-ada6-d1a46c0e68a1",
-              "company": "OpenAI",
-              "title": "Full Stack Software Engineer, Travel"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8383151",
-              "company": "Pure Storage",
-              "title": "Associate Systems Engineer, Excellence Center, (Prague)"
-            },
-            {
-              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raynham-Massachusetts-United-States-of-America/Associate-Engineer-R-D_R-110931",
-              "company": "Johnson & Johnson",
-              "title": "Associate Engineer R&D"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 9.1,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 4,
-            "input_tokens": 7978,
-            "cached_input_tokens": 0,
-            "output_tokens": 995,
-            "reasoning_tokens": 561,
-            "estimated_usd": 0.001295
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10604856/software-development-engineer-agentic-ai-velocity-labs",
-              "match_score": 72.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production AI services",
-                "Distributed backend systems"
-              ],
-              "main_gaps": [
-                "3+ years professional development",
-                "2+ years system design"
-              ]
-            },
-            {
-              "key": "url::https://jobs.ashbyhq.com/openai/2320fe69-df26-4d1d-ada6-d1a46c0e68a1",
-              "match_score": 48.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack product development",
-                "AI-powered applications"
-              ],
-              "main_gaps": [
-                "10+ years software engineering"
-              ]
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8383151",
-              "match_score": 30.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "non_us",
-              "top_match_reasons": [
-                "Technical solution support",
-                "Customer-facing implementation"
-              ],
-              "main_gaps": [
-                "German or French fluency",
-                "High-volume customer interaction"
-              ]
-            },
-            {
-              "key": "url::https://jj.wd5.myworkdayjobs.com/JJ/job/Raynham-Massachusetts-United-States-of-America/Associate-Engineer-R-D_R-110931",
-              "match_score": 22.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Technical problem-solving",
-                "Cross-functional research"
-              ],
-              "main_gaps": [
-                "Mechanical or biomedical engineering degree",
-                "Mechanical design and prototyping"
-              ]
-            }
-          ]
-        }
-      ],
-      "scrape_failure_sources": [
-        "salesforce",
-        "capitalone",
-        "walmart",
-        "sap",
-        "expedia"
-      ],
-      "scrape_failure_causes": {
-        "salesforce": "429",
-        "capitalone": "429",
-        "walmart": "429",
-        "sap": "error",
-        "expedia": "429"
       }
     }
   ]
