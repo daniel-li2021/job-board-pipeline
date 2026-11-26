@@ -2,6 +2,229 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-11-26T15:37:52.488991+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 4,
+      "cache_reused": 373,
+      "peer_reused": 1,
+      "same_content_reused": 2,
+      "non_material_change_reused": 0,
+      "new_or_changed": 5,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 4,
+        "prior_rule_result_recency_gated": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1944,
+      "requests": 1,
+      "input_tokens": 6373,
+      "cached_input_tokens": 0,
+      "output_tokens": 1128,
+      "reasoning_tokens": 805,
+      "estimated_usd": 0.001201,
+      "latency_seconds": 9.573,
+      "latency_measured": true,
+      "effective_rpm": 6.27,
+      "effective_tpm": 47013.48,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 4,
+      "funnel": {
+        "after_dedup": 13518,
+        "after_company": 13518,
+        "after_hard_filter": 10350,
+        "after_prefilter": 2321,
+        "dropped": 11197
+      },
+      "output": {
+        "tier_a": 2,
+        "tier_b": 24,
+        "shown": 26,
+        "new_jobs": 41,
+        "new_jobs_added": 0
+      },
+      "enrichment": {
+        "discovered": 13564,
+        "needed": 358,
+        "source_jds_available": 13206,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 358
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/100461791489729222-ai-tooling-technical-solutions-consultant-gsrs-security-systems-and-technology",
+              "company": "Google",
+              "title": "AI Tooling Technical Solutions Consultant, GSRS Security Systems and Technology"
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/106710590948287174-software-engineer-iii-infrastructure-google-cloud-security",
+              "company": "Google",
+              "title": "Software Engineer III, Infrastructure, Google Cloud Security"
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/351691",
+              "company": "Oracle",
+              "title": "Junior Software Engineer, AI Services"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8419019",
+              "company": "Pure Storage",
+              "title": "Software Engineer, Digital Commerce Acceleration"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 9.573,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 6373,
+            "cached_input_tokens": 0,
+            "output_tokens": 1128,
+            "reasoning_tokens": 805,
+            "estimated_usd": 0.001201
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/100461791489729222-ai-tooling-technical-solutions-consultant-gsrs-security-systems-and-technology",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack LLM applications",
+                "Enterprise agent deployment"
+              ],
+              "main_gaps": [
+                "5 years partner troubleshooting"
+              ]
+            },
+            {
+              "key": "url::https://www.google.com/about/careers/applications/jobs/results/106710590948287174-software-engineer-iii-infrastructure-google-cloud-security",
+              "match_score": 72.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Distributed systems",
+                "ML-enabled software"
+              ],
+              "main_gaps": [
+                "2 years infrastructure experience",
+                "2 years AI/ML"
+              ]
+            },
+            {
+              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/351691",
+              "match_score": 91.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "non_us",
+              "top_match_reasons": [
+                "Junior frontend development",
+                "AI chat interfaces"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8419019",
+              "match_score": 84.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "non_us",
+              "top_match_reasons": [
+                "Backend services and integrations",
+                "Agentic AI workflows"
+              ],
+              "main_gaps": [
+                "AI coding assistant use"
+              ]
+            }
+          ]
+        }
+      ],
+      "scrape_failure_sources": [
+        "nvidia",
+        "salesforce",
+        "adobe",
+        "meta",
+        "capitalone",
+        "walmart",
+        "cisco",
+        "hpe",
+        "ebay",
+        "zoom",
+        "expedia",
+        "intel",
+        "redhat",
+        "visa",
+        "workday",
+        "zillow",
+        "cvs",
+        "f5",
+        "wells-fargo",
+        "yahoo",
+        "flex",
+        "iqvia",
+        "johnson-johnson",
+        "nasdaq",
+        "stryker",
+        "transunion",
+        "travelers"
+      ],
+      "scrape_failure_causes": {
+        "nvidia": "429",
+        "salesforce": "429",
+        "adobe": "429",
+        "meta": "error",
+        "capitalone": "429",
+        "walmart": "429",
+        "cisco": "429",
+        "hpe": "429",
+        "ebay": "429",
+        "zoom": "429",
+        "expedia": "429",
+        "intel": "429",
+        "redhat": "429",
+        "visa": "429",
+        "workday": "429",
+        "zillow": "429",
+        "cvs": "429",
+        "f5": "429",
+        "wells-fargo": "429",
+        "yahoo": "429",
+        "flex": "429",
+        "iqvia": "429",
+        "johnson-johnson": "429",
+        "nasdaq": "429",
+        "stryker": "429",
+        "transunion": "429",
+        "travelers": "429"
+      }
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-11-26T00:38:00.211502+00:00",
       "mode": "pipeline",
       "health": "degraded",
@@ -15692,329 +15915,6 @@
               "main_gaps": [
                 "Enterprise change management",
                 "6+ years technology experience"
-              ]
-            }
-          ]
-        }
-      ],
-      "scrape_failure_sources": [
-        "nvidia",
-        "salesforce",
-        "adobe",
-        "capitalone",
-        "walmart",
-        "cisco",
-        "sap",
-        "hpe",
-        "ebay",
-        "zoom",
-        "expedia",
-        "intel",
-        "redhat",
-        "visa",
-        "workday",
-        "zillow",
-        "cvs",
-        "f5",
-        "wells-fargo",
-        "yahoo",
-        "flex",
-        "iqvia",
-        "johnson-johnson",
-        "nasdaq",
-        "stryker",
-        "transunion",
-        "travelers"
-      ],
-      "scrape_failure_causes": {
-        "nvidia": "429",
-        "salesforce": "429",
-        "adobe": "429",
-        "capitalone": "429",
-        "walmart": "429",
-        "cisco": "429",
-        "sap": "error",
-        "hpe": "429",
-        "ebay": "429",
-        "zoom": "429",
-        "expedia": "429",
-        "intel": "429",
-        "redhat": "429",
-        "visa": "429",
-        "workday": "429",
-        "zillow": "429",
-        "cvs": "429",
-        "f5": "429",
-        "wells-fargo": "429",
-        "yahoo": "429",
-        "flex": "429",
-        "iqvia": "429",
-        "johnson-johnson": "429",
-        "nasdaq": "429",
-        "stryker": "429",
-        "transunion": "429",
-        "travelers": "429"
-      }
-    },
-    {
-      "pipeline": "official",
-      "run_at": "2026-11-16T15:38:52.858635+00:00",
-      "mode": "pipeline",
-      "health": "degraded",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 8,
-      "cache_reused": 349,
-      "peer_reused": 0,
-      "same_content_reused": 7,
-      "non_material_change_reused": 0,
-      "new_or_changed": 10,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 9,
-        "prior_rule_result_recency_gated": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 2295,
-      "requests": 2,
-      "input_tokens": 11431,
-      "cached_input_tokens": 0,
-      "output_tokens": 2237,
-      "reasoning_tokens": 1594,
-      "estimated_usd": 0.002262,
-      "latency_seconds": 26.994,
-      "latency_measured": true,
-      "effective_rpm": 4.45,
-      "effective_tpm": 30380.08,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "primary_batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 8,
-      "funnel": {
-        "after_dedup": 14518,
-        "after_company": 14518,
-        "after_hard_filter": 11363,
-        "after_prefilter": 2652,
-        "dropped": 11866
-      },
-      "output": {
-        "tier_a": 1,
-        "tier_b": 24,
-        "shown": 25,
-        "new_jobs": 82,
-        "new_jobs_added": 2
-      },
-      "enrichment": {
-        "discovered": 14576,
-        "needed": 1021,
-        "source_jds_available": 13555,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 1021
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10603741/software-dev-engineer-iii-amz10564016",
-              "company": "Amazon",
-              "title": "Software Dev Engineer III - AMZ10564016"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 5.271,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 2709,
-            "cached_input_tokens": 0,
-            "output_tokens": 216,
-            "reasoning_tokens": 126,
-            "estimated_usd": 0.000379
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10603741/software-dev-engineer-iii-amz10564016",
-              "match_score": 43.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Distributed backend systems",
-                "Object-oriented programming"
-              ],
-              "main_gaps": [
-                "Technical leadership",
-                "Java/C++ distributed systems"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/114224284045320902-t-software-engineer-iii-ai-ml-genai-google-cloud",
-              "company": "Google",
-              "title": "[T] Software Engineer III, AI/ML GenAI, Google Cloud"
-            },
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557053269",
-              "company": "Microsoft",
-              "title": "Technical Architect, Health Life Sciences (HLS)"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/143282246063661766-software-engineer-home-and-health-infrastructure-special-projects",
-              "company": "Google",
-              "title": "Software Engineer, Home and Health Infrastructure, Special Projects"
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10599162/software-development-engineer-network-fabric-engineering",
-              "company": "Amazon",
-              "title": "Software Development Engineer, Network Fabric Engineering"
-            },
-            {
-              "key": "url::https://careers.netapp.com/en/job/united-states/software-engineer-systems-architecture/27600/103379198784",
-              "company": "NetApp",
-              "title": "Software Engineer- Systems Architecture"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/89793616712475334-ai-solution-security-engineer",
-              "company": "Google",
-              "title": "AI Solution Security Engineer"
-            },
-            {
-              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/302093",
-              "company": "Dell",
-              "title": "Applied Data Scientist, User Insights"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 21.723,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 7,
-            "input_tokens": 8722,
-            "cached_input_tokens": 0,
-            "output_tokens": 2021,
-            "reasoning_tokens": 1468,
-            "estimated_usd": 0.001883
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/114224284045320902-t-software-engineer-iii-ai-ml-genai-google-cloud",
-              "match_score": 86.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "LLM evaluation infrastructure",
-                "Production GenAI systems"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557053269",
-              "match_score": 22.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production AI implementation",
-                "Full-stack engineering"
-              ],
-              "main_gaps": [
-                "8+ years engineering experience",
-                "Senior customer technical leadership"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/143282246063661766-software-engineer-home-and-health-infrastructure-special-projects",
-              "match_score": 74.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Distributed backend systems",
-                "Production service reliability"
-              ],
-              "main_gaps": [
-                "Large-scale infrastructure experience"
-              ]
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10599162/software-development-engineer-network-fabric-engineering",
-              "match_score": 58.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Distributed systems development",
-                "Production software lifecycle"
-              ],
-              "main_gaps": [
-                "3+ years non-internship experience",
-                "Network infrastructure experience"
-              ]
-            },
-            {
-              "key": "url::https://careers.netapp.com/en/job/united-states/software-engineer-systems-architecture/27600/103379198784",
-              "match_score": 18.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "AI infrastructure exposure",
-                "Evaluation platform development"
-              ],
-              "main_gaps": [
-                "10+ years relevant experience",
-                "Technical competitive research"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/89793616712475334-ai-solution-security-engineer",
-              "match_score": 62.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Agentic AI systems",
-                "Production Python engineering"
-              ],
-              "main_gaps": [
-                "Security engineering experience",
-                "Threat modeling expertise"
-              ]
-            },
-            {
-              "key": "url::https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/job/302093",
-              "match_score": 64.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "UI software development",
-                "Testing and evaluation"
-              ],
-              "main_gaps": [
-                "UI usability standards"
               ]
             }
           ]

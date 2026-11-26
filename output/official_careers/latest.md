@@ -1,31 +1,30 @@
-# Big Tech official careers — 7-day view — 2026-11-26_0038
+# Big Tech official careers — 7-day view — 2026-11-26_1537
 
-- Updated (PT): 2026-11-25 16:40 PST
-- Snapshot (UTC): 2026-11-26T00:40:30.818234+00:00
-- Last 24 hours: 1
+- Updated (PT): 2026-11-26 07:39 PST
+- Snapshot (UTC): 2026-11-26T15:39:43.100213+00:00
+- Last 24 hours: 0
 - Last 3 days: 15
 
 Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scoring/ranking.
 
 ## Run stats
 
-- Scraped companies: {'Amazon': 786, 'JPMorgan Chase': 552, 'Qualcomm': 129, 'Microsoft': 218, 'Expedia Group': 1, 'CVS Health': 3, 'Zoom': 1, 'Johnson & Johnson': 2, 'Apple': 287, 'Adobe': 2, 'Oracle': 463, 'AMD': 470, 'Google': 264, 'Disney': 113, 'Chewy': 3, 'TikTok': 703, 'Uber': 191, 'DoorDash': 401, 'Snap': 95, 'Pinterest': 130, 'Snowflake': 272, 'ServiceNow': 513, 'Bloomberg': 18, 'Cloudflare': 521, 'Stripe': 409, 'Coinbase': 217, 'Robinhood': 151, 'Figma': 93, 'GitLab': 134, 'Discord': 28, 'Asana': 74, 'Brex': 260, 'Samsara': 252, 'Lyft': 74, 'Spotify': 75, 'Ramp': 171, 'Notion': 86, 'Linear': 22, 'Cohere': 99, 'SAP': 101, 'Pure Storage': 243, 'Databricks': 485, 'Roblox': 235, 'Airbnb': 102, 'Anthropic': 504, 'AppLovin': 27, 'ByteDance': 454, 'Chime': 77, 'Dell': 99, 'Dropbox': 36, 'HubSpot': 16, 'Instacart': 87, 'MathWorks': 40, 'MongoDB': 268, 'Morgan Stanley': 110, 'NetApp': 96, 'Netflix': 54, 'OpenAI': 685, 'Palantir': 241, 'PayPal': 68, 'Reddit': 132, 'Roku': 77, 'Block / Square': 164, 'Two Sigma': 42, 'Verkada': 278, 'Visa': 117, 'WeRide': 6, 'Zscaler': 231, 'Duolingo': 46, 'Equinix': 80, 'IXL Learning': 100, 'Ansys': 20, 'PointClickCare': 73, 'Verizon': 26, 'Yext': 20}
-- Funnel: after dedup 13677 -> after company filter 13677 -> after hard filter 10506 -> after role+seniority prefilter 2337 | dropped 11340
-- LLM usage: scored 30 / API requests 5 / cache reused 376 (cross-pipeline 0) / rule fallback 1931
-- LLM cache causes: new 29 / material JD 1 / matching context 0 / prior rule now eligible 2 / non-material reused 2 / same-content reused 3 / rescored <24h 2
-- LLM cost: model gpt-6-luna / API requests 5 / jobs scored 30 / tokens input 46639 (cached 4575) / output 6550 (reasoning 3801) / estimated cost $0.0075
-- New jobs discovered this run: 175
-- Output: Tier A 3 / Tier B 25 / shown 28
+- Scraped companies: {'Visa': 2, 'Amazon': 782, 'JPMorgan Chase': 545, 'Qualcomm': 129, 'Microsoft': 216, 'Google': 260, 'Expedia Group': 1, 'CVS Health': 3, 'Zoom': 1, 'Johnson & Johnson': 2, 'Apple': 287, 'Adobe': 2, 'Oracle': 454, 'AMD': 467, 'Disney': 113, 'Chewy': 3, 'TikTok': 703, 'Uber': 192, 'DoorDash': 401, 'Snap': 95, 'Pinterest': 130, 'Snowflake': 277, 'ServiceNow': 512, 'Bloomberg': 17, 'Cloudflare': 522, 'Stripe': 409, 'Coinbase': 217, 'Robinhood': 153, 'Figma': 93, 'GitLab': 134, 'Discord': 30, 'Asana': 74, 'Brex': 260, 'Samsara': 253, 'Lyft': 74, 'Spotify': 75, 'Ramp': 171, 'Notion': 86, 'Linear': 22, 'Cohere': 99, 'SAP': 79, 'Pure Storage': 244, 'Databricks': 485, 'Roblox': 235, 'Airbnb': 103, 'Anthropic': 503, 'AppLovin': 27, 'ByteDance': 454, 'Chime': 77, 'Dell': 97, 'Dropbox': 36, 'HubSpot': 15, 'Instacart': 87, 'MathWorks': 40, 'MongoDB': 267, 'Morgan Stanley': 110, 'NetApp': 96, 'Netflix': 54, 'OpenAI': 685, 'Palantir': 241, 'PayPal': 68, 'Reddit': 132, 'Roku': 77, 'Block / Square': 164, 'Two Sigma': 41, 'Verkada': 278, 'WeRide': 6, 'Zscaler': 233, 'Duolingo': 46, 'Equinix': 80, 'IXL Learning': 100, 'Ansys': 19, 'PointClickCare': 73, 'Verizon': 26, 'Yext': 20}
+- Funnel: after dedup 13518 -> after company filter 13518 -> after hard filter 10350 -> after role+seniority prefilter 2321 | dropped 11197
+- LLM usage: scored 4 / API requests 1 / cache reused 373 (cross-pipeline 1) / rule fallback 1944
+- LLM cache causes: new 4 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 2 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 1 / jobs scored 4 / tokens input 6373 (cached 0) / output 1128 (reasoning 805) / estimated cost $0.0012
+- New jobs discovered this run: 41
+- Output: Tier A 2 / Tier B 24 / shown 26
 
-## Tier A - apply now / referral (3)
+## Tier A - apply now / referral (2)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 88 | cached_llm | official | TikTok | Backend Software Engineer - Data Lifecycle Management | San Jose, California, United States of America | - | newly_discovered | unknown | swe | TikTok | unreviewed | official_canonical | [open](https://lifeattiktok.com/search/7710030288165996805) |
 | 92 | cached_llm | official | Roblox | Software Engineer, Data Tooling | San Mateo, CA, United States | 2026-11-23 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://careers.roblox.com/jobs/8395051?gh_jid=8395051) |
-| 94 | llm | official | Visa | Software Engineer, Agentic Developer | US - Denver, CO | 2026-11-23 | 3to7d | high | swe | Visa | unreviewed | official_canonical | [open](https://visa.wd5.myworkdayjobs.com/Visa/job/US---Denver-CO/Software-Engineer--Agentic-Developer_REF090196W) |
 
-## Tier B - worth applying (25)
+## Tier B - worth applying (24)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -48,7 +47,6 @@ Discovery: `official_careers.py scrape`. Matching: shared `board_pipeline` scori
 | 80 | cached_llm | official | Google | Software Engineer III, Infrastructure, Search | Cambridge, MA, USA; Mountain View, CA, USA | 2026-11-20 | 3to7d | high | swe | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/96841881383510726-software-engineer-iii-infrastructure-search) |
 | 82 | cached_llm | official | MathWorks | Software Engineer in Test | US-MA-Natick | 2026-11-20 | 3to7d | high | swe | - | unreviewed | official_canonical | [open](https://www.mathworks.com/company/jobs/opportunities/37914-software-engineer-in-test?keywords=ai+engineer) |
 | 83 | cached_llm | official | Google | Software Engineer, Health Frontier | Mountain View, CA, USA | 2026-11-23 | 3to7d | high | swe | Google | unreviewed | official_canonical | [open](https://www.google.com/about/careers/applications/jobs/results/77680133900509894-software-engineer-health-frontier) |
-| 77 | cached_llm | official | Amazon | Data Engineer I, Intelligent Talent Acquisition (ITA) - Data | Seattle, Washington, USA | 2026-11-23 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10608813/data-engineer-i-intelligent-talent-acquisition-ita-data) |
 | 77 | cached_llm | official | Amazon | Data Engineer I | Bellevue, Washington, USA | 2026-11-20 | 3to7d | high | swe | Amazon | unreviewed | official_canonical | [open](https://www.amazon.jobs/en/jobs/10610327/data-engineer-i) |
 | 91 | cached_llm | official | NetApp | NetApp Emerging Talent - Software Engineer (Cloud) | San Jose, California, United States; Morrisville, North Carolina, United States | 2026-11-18 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://careers.netapp.com/en/job/san-jose/netapp-emerging-talent-software-engineer-cloud/27600/103479747696) |
 | 82 | cached_llm | official | NetApp | NetApp Emerging Talent - Entry Level Software Engineer (Systems) | San Jose, California, United States; Morrisville, North Carolina, United States | 2026-11-18 | gt7d | high | swe | - | unreviewed | official_canonical | [open](https://careers.netapp.com/en/job/san-jose/netapp-emerging-talent-entry-level-software-engineer-systems/27600/103479747760) |
