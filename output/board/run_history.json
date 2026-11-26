@@ -2,6 +2,179 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-11-26T20:01:48.965112+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 2,
+      "cache_reused": 311,
+      "peer_reused": 4,
+      "same_content_reused": 11,
+      "non_material_change_reused": 0,
+      "new_or_changed": 2,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 1,
+        "prior_rule_result_now_eligible_for_llm": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1866,
+      "requests": 1,
+      "input_tokens": 3532,
+      "cached_input_tokens": 0,
+      "output_tokens": 667,
+      "reasoning_tokens": 512,
+      "estimated_usd": 0.000687,
+      "latency_seconds": 5.508,
+      "latency_measured": true,
+      "effective_rpm": 10.89,
+      "effective_tpm": 45740.74,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 2,
+      "funnel": {
+        "after_dedup": 8723,
+        "after_company": 8205,
+        "after_hard_filter": 7581,
+        "after_prefilter": 2579,
+        "official_duplicates_suppressed": 400,
+        "retry_only_carried": 0,
+        "dropped": 5954
+      },
+      "output": {
+        "tier_a": 40,
+        "tier_b": 148,
+        "ab_before_cap": 188,
+        "shown": 188,
+        "new_jobs": 12,
+        "new_jobs_added": 1,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 4,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 8,
+            "added": 1
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 3497,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 49,
+          "identity_needed": 47,
+          "identities_resolved": 33,
+          "cache_reused": 3,
+          "http_requests": 38,
+          "jds_resolved": 5,
+          "direct_http_resolved": 5,
+          "remaining_no_jd": 3497,
+          "failure_reasons": {
+            "no_direct_or_official_url": 2
+          }
+        },
+        "remaining_no_jd": 3456,
+        "failure_reasons": {
+          "no_enrichment_path": 2858,
+          "linkedin_rate_limited": 162,
+          "linkedin_http_429": 6,
+          "official_detail_deferred": 47,
+          "no_direct_or_official_url": 2,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 379
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155856BR",
+              "company": "Infosys",
+              "title": "AWS Java Full Stack Engineer"
+            },
+            {
+              "key": "id::linkedin::4494947463",
+              "company": "Evlo AI",
+              "title": "LLM / GenAI Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 5.508,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 3532,
+            "cached_input_tokens": 0,
+            "output_tokens": 667,
+            "reasoning_tokens": 512,
+            "estimated_usd": 0.000687
+          },
+          "decisions": [
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/155856BR",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Full-stack application development",
+                "AWS deployment experience"
+              ],
+              "main_gaps": [
+                "Java/Spring production experience",
+                "Full-stack role requirements unclear"
+              ]
+            },
+            {
+              "key": "id::linkedin::4494947463",
+              "match_score": 76.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production RAG and agents",
+                "LLM evaluation and fine-tuning"
+              ],
+              "main_gaps": [
+                "2+ years production LLM experience"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-11-26T16:21:22.960896+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -24128,175 +24301,6 @@
               "main_gaps": [
                 "Computer vision systems",
                 "Cobot/industrial robotics"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-11-21T09:15:20.379429+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 2,
-      "cache_reused": 341,
-      "peer_reused": 1,
-      "same_content_reused": 5,
-      "non_material_change_reused": 0,
-      "new_or_changed": 2,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 2
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1832,
-      "requests": 1,
-      "input_tokens": 3680,
-      "cached_input_tokens": 0,
-      "output_tokens": 473,
-      "reasoning_tokens": 336,
-      "estimated_usd": 0.000605,
-      "latency_seconds": 5.283,
-      "latency_measured": true,
-      "effective_rpm": 11.36,
-      "effective_tpm": 47166.38,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 1,
-      "primary_batches_total": 1,
-      "batches_attempted": 1,
-      "batches_succeeded": 1,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 2,
-      "funnel": {
-        "after_dedup": 8740,
-        "after_company": 8196,
-        "after_hard_filter": 7571,
-        "after_prefilter": 2573,
-        "official_duplicates_suppressed": 398,
-        "retry_only_carried": 0,
-        "dropped": 5958
-      },
-      "output": {
-        "tier_a": 40,
-        "tier_b": 151,
-        "ab_before_cap": 191,
-        "shown": 191,
-        "new_jobs": 5,
-        "new_jobs_added": 2,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 0,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 5,
-            "added": 2
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 3480,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 66,
-          "identity_needed": 65,
-          "http_requests": 61,
-          "identities_resolved": 41,
-          "jds_resolved": 12,
-          "direct_http_resolved": 12,
-          "remaining_no_jd": 3480,
-          "failure_reasons": {
-            "no_direct_or_official_url": 1
-          }
-        },
-        "remaining_no_jd": 3434,
-        "failure_reasons": {
-          "no_enrichment_path": 2837,
-          "linkedin_rate_limited": 164,
-          "linkedin_http_429": 6,
-          "official_detail_deferred": 46,
-          "linkedin_http_network_error": 2,
-          "no_direct_or_official_url": 1,
-          "glassdoor_detail_http_403_static_card_only": 378
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::linkedin::4492857144",
-              "company": "University of Utah",
-              "title": "Web Developers, Full Stack I"
-            },
-            {
-              "key": "id::linkedin::4418047803",
-              "company": "Deloitte",
-              "title": "Cyber Full-Stack Software Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 5.283,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 2,
-            "input_tokens": 3680,
-            "cached_input_tokens": 0,
-            "output_tokens": 473,
-            "reasoning_tokens": 336,
-            "estimated_usd": 0.000605
-          },
-          "decisions": [
-            {
-              "key": "id::linkedin::4492857144",
-              "match_score": 92.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack production development",
-                "React, Node.js, Python, AWS"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "id::linkedin::4418047803",
-              "match_score": 74.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack and cloud delivery",
-                "APIs, microservices, automated testing"
-              ],
-              "main_gaps": [
-                "2–3 years full-stack experience",
-                "Enterprise AI deployment experience"
               ]
             }
           ]
