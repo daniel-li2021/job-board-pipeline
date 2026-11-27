@@ -2,6 +2,562 @@
   "runs": [
     {
       "pipeline": "syncareer",
+      "run_at": "2026-11-27T15:53:32.115747+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 21,
+      "cache_reused": 102,
+      "peer_reused": 7,
+      "same_content_reused": 0,
+      "non_material_change_reused": 0,
+      "new_or_changed": 21,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 18,
+        "prior_rule_result_now_eligible_for_llm": 3
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1,
+      "requests": 4,
+      "input_tokens": 24600,
+      "cached_input_tokens": 6426,
+      "output_tokens": 5548,
+      "reasoning_tokens": 3584,
+      "estimated_usd": 0.004655,
+      "latency_seconds": 37.995,
+      "latency_measured": true,
+      "effective_rpm": 6.32,
+      "effective_tpm": 47608.37,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 4,
+      "primary_batches_total": 4,
+      "batches_attempted": 4,
+      "batches_succeeded": 4,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 21,
+      "funnel": {
+        "scoring_candidates": 116
+      },
+      "output": {
+        "tier_a": 4,
+        "tier_b": 17,
+        "tier_c": 95,
+        "shown": 21,
+        "new_jobs": 35,
+        "new_jobs_added": 1
+      },
+      "enrichment": {
+        "needed": 18,
+        "detail_api_resolved": 157,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 18
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/28872009425748529",
+              "company": "Meta",
+              "title": "Software Engineer, Systems"
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/2026090611401041",
+              "company": "Meta",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/2188713048675088",
+              "company": "Meta",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/1153878043863573",
+              "company": "Meta",
+              "title": "Software Engineer (Systems)"
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/2666686747134642",
+              "company": "Meta",
+              "title": "Software Engineer, Systems"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/jjsnackfoods/jobs/5492097008",
+              "company": "J&J Snack Foods",
+              "title": "Software Engineer"
+            },
+            {
+              "key": "url::https://telos.hua.hrsmart.com/hr/ats/Posting/view/3722",
+              "company": "Telos Corporation",
+              "title": "Journeyman Cryptography & Security Support Infrastructure Engineer"
+            },
+            {
+              "key": "url::https://careers.cargurus.com/us/en/job/8417873/Software-Development-Engineer-II",
+              "company": "CarGurus",
+              "title": "Software Development Engineer II"
+            },
+            {
+              "key": "url::https://careers.cargurus.com/us/en/job/8243216/Backend-Engineer-II-Product-Engineering",
+              "company": "CarGurus",
+              "title": "Backend Engineer II, Product Engineering"
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/1926983275422529",
+              "company": "Meta",
+              "title": "Data Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 12.639,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 10,
+            "input_tokens": 8998,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1984,
+            "reasoning_tokens": 1017,
+            "estimated_usd": 0.001725
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/28872009425748529",
+              "match_score": 48.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "distributed backend systems",
+                "scalability and reliability"
+              ],
+              "main_gaps": [
+                "36-month infrastructure experience",
+                "independent large-feature ownership"
+              ]
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/2026090611401041",
+              "match_score": 60.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend software engineering",
+                "cloud and distributed systems"
+              ],
+              "main_gaps": [
+                "24-month experience requirement",
+                "distributed consistency guarantees"
+              ]
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/2188713048675088",
+              "match_score": 25.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "full-stack development",
+                "web application experience"
+              ],
+              "main_gaps": [
+                "PhD requirement",
+                "three-year full-stack experience"
+              ]
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/1153878043863573",
+              "match_score": 40.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend systems",
+                "scalable services"
+              ],
+              "main_gaps": [
+                "four-year experience requirement",
+                "distributed systems depth"
+              ]
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/2666686747134642",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend infrastructure",
+                "performance optimization"
+              ],
+              "main_gaps": [
+                "four-year experience requirement",
+                "component ownership and mentoring"
+              ]
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/jjsnackfoods/jobs/5492097008",
+              "match_score": 62.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "web application development",
+                "REST APIs and databases"
+              ],
+              "main_gaps": [
+                "C# and Vue3",
+                "SQL Server SSIS/SSRS"
+              ]
+            },
+            {
+              "key": "url::https://telos.hua.hrsmart.com/hr/ats/Posting/view/3722",
+              "match_score": 38.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Linux infrastructure",
+                "automation and scripting"
+              ],
+              "main_gaps": [
+                "PKI and HSM administration",
+                "DoD security hardening"
+              ]
+            },
+            {
+              "key": "url::https://careers.cargurus.com/us/en/job/8417873/Software-Development-Engineer-II",
+              "match_score": 75.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend APIs and services",
+                "AWS and distributed systems"
+              ],
+              "main_gaps": [
+                "demonstrated Java/Spring experience",
+                "event-stream implementation"
+              ]
+            },
+            {
+              "key": "url::https://careers.cargurus.com/us/en/job/8243216/Backend-Engineer-II-Product-Engineering",
+              "match_score": 75.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "backend APIs and services",
+                "AWS and distributed systems"
+              ],
+              "main_gaps": [
+                "demonstrated Java/Spring experience",
+                "event-stream implementation"
+              ]
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/1926983275422529",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Python and Spark pipelines",
+                "production data workflows"
+              ],
+              "main_gaps": [
+                "three-year data engineering experience",
+                "data visualization tools"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/156216BR",
+              "company": "Infosys",
+              "title": "Data Engineer with Spark, Scala, PySpark, Airflow, Python, SQL, Apache Iceberg Experience"
+            },
+            {
+              "key": "url::https://telos.hua.hrsmart.com/hr/ats/Posting/view/3721",
+              "company": "Telos Corporation",
+              "title": "Journeyman Infrastructure Vulnerability Remediation Engineer"
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "Network Engineer - Cisco Wireless & Infrastructure"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 7.614,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 4162,
+            "cached_input_tokens": 1851,
+            "output_tokens": 1039,
+            "reasoning_tokens": 801,
+            "estimated_usd": 0.000769
+          },
+          "decisions": [
+            {
+              "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/156216BR",
+              "match_score": 64.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "other",
+              "top_match_reasons": [
+                "Python and SQL pipelines",
+                "Spark/Databricks workflows"
+              ],
+              "main_gaps": [
+                "Scala/Airflow/Iceberg",
+                "Tableau reporting and ETL leadership"
+              ]
+            },
+            {
+              "key": "url::https://telos.hua.hrsmart.com/hr/ats/Posting/view/3721",
+              "match_score": 38.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Linux and Kubernetes exposure",
+                "Infrastructure automation"
+              ],
+              "main_gaps": [
+                "RHEL/OpenShift administration",
+                "Ansible vulnerability remediation"
+              ]
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "match_score": 32.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Infrastructure troubleshooting",
+                "Production reliability"
+              ],
+              "main_gaps": [
+                "Cisco wireless networking",
+                "Palo Alto firewalls"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 3,
+          "route": "resume_ai",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "Applied AI Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 2.503,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3001,
+            "cached_input_tokens": 0,
+            "output_tokens": 308,
+            "reasoning_tokens": 237,
+            "estimated_usd": 0.000454
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "match_score": 94.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production document RAG",
+                "AI evaluation and deployment"
+              ],
+              "main_gaps": []
+            }
+          ]
+        },
+        {
+          "batch": 4,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://jobs.smartrecruiters.com/AristaNetworks/744000163713504-full-stack-application-developer",
+              "company": "Arista Networks",
+              "title": "Full Stack Application Developer"
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "company": "Kforce",
+              "title": "Software Engineer - AI-Assisted Development"
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/2542490782884946",
+              "company": "Meta",
+              "title": "Software Engineer, Machine Learning"
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/1061344469849575",
+              "company": "Meta",
+              "title": "Software Engineer (Machine Learning)"
+            },
+            {
+              "key": "url::https://telos.hua.hrsmart.com/hr/ats/Posting/view/3726",
+              "company": "Telos Corporation",
+              "title": "Journeyman Orchestration Analytics Software Engineer"
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/1510642494269521",
+              "company": "Meta",
+              "title": "Data Engineer, Analytics"
+            },
+            {
+              "key": "url::https://jobs.dfinsolutions.com/job/AI-Automation-Engineer/1453887600",
+              "company": "Donnelley Financial Solutions",
+              "title": "AI Automation Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 15.239,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 7,
+            "input_tokens": 8439,
+            "cached_input_tokens": 2724,
+            "output_tokens": 2217,
+            "reasoning_tokens": 1529,
+            "estimated_usd": 0.001707
+          },
+          "decisions": [
+            {
+              "key": "url::https://jobs.smartrecruiters.com/AristaNetworks/744000163713504-full-stack-application-developer",
+              "match_score": 88.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "React full-stack delivery",
+                "Cloud deployment experience"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://www.kforce.com/find-work/search-jobs",
+              "match_score": 68.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Node.js and Python APIs",
+                "Production software development"
+              ],
+              "main_gaps": [
+                "Azure application development",
+                "AI coding tools in practice"
+              ]
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/2542490782884946",
+              "match_score": 56.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Applied ML experience",
+                "Strong software engineering foundation"
+              ],
+              "main_gaps": [
+                "Large-scale recommendation ML",
+                "Distributed ML systems"
+              ]
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/1061344469849575",
+              "match_score": 49.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Applied ML and data pipeline work",
+                "Python, SQL, and Spark"
+              ],
+              "main_gaps": [
+                "Three years of ML experience",
+                "Recommendation systems at scale"
+              ]
+            },
+            {
+              "key": "url::https://telos.hua.hrsmart.com/hr/ats/Posting/view/3726",
+              "match_score": 44.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Data ingestion and automation",
+                "Cloud and systems experience"
+              ],
+              "main_gaps": [
+                "ELK and network telemetry",
+                "RHEL and DoD STIGs"
+              ]
+            },
+            {
+              "key": "url::https://www.metacareers.com/profile/job_details/1510642494269521",
+              "match_score": 68.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "ETL and data pipelines",
+                "SQL, Spark, and Databricks"
+              ],
+              "main_gaps": [
+                "Dimensional data modeling",
+                "Data warehouse ownership"
+              ]
+            },
+            {
+              "key": "url::https://jobs.dfinsolutions.com/job/AI-Automation-Engineer/1453887600",
+              "match_score": 50.0,
+              "seniority_fit": "stretch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Applied LLM and RAG experience",
+                "AI evaluation and workflow delivery"
+              ],
+              "main_gaps": [
+                "Program management ownership",
+                "AI governance execution"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "syncareer",
       "run_at": "2026-11-27T00:53:15.108256+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -15552,213 +16108,6 @@
               "main_gaps": [
                 "Hands-on infrastructure-as-code"
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "syncareer",
-      "run_at": "2026-11-17T00:52:19.387202+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 5,
-      "cache_reused": 40,
-      "peer_reused": 0,
-      "same_content_reused": 0,
-      "non_material_change_reused": 0,
-      "new_or_changed": 7,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 3,
-        "material_jd_change": 3,
-        "prior_rule_result_now_eligible_for_llm": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 2,
-      "requests": 2,
-      "input_tokens": 8466,
-      "cached_input_tokens": 0,
-      "output_tokens": 2296,
-      "reasoning_tokens": 1792,
-      "estimated_usd": 0.001995,
-      "latency_seconds": 22.564,
-      "latency_measured": true,
-      "effective_rpm": 5.32,
-      "effective_tpm": 28617.27,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "primary_batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 5,
-      "funnel": {
-        "scoring_candidates": 47
-      },
-      "output": {
-        "tier_a": 1,
-        "tier_b": 8,
-        "tier_c": 38,
-        "shown": 9,
-        "new_jobs": 6,
-        "new_jobs_added": 0
-      },
-      "enrichment": {
-        "needed": 4,
-        "detail_api_resolved": 76,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 4
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.kpmguscareers.com/jobdetail?jobId=139872",
-              "company": "KPMG",
-              "title": "Associate, R&D Tax Credits - Software Engineer"
-            },
-            {
-              "key": "url::https://careers.cargill.com/en/job/reserve/infrastructure-operations-engineer/23251/99985074832",
-              "company": "Cargill",
-              "title": "Infrastructure Operations Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 6.516,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 2,
-            "input_tokens": 2996,
-            "cached_input_tokens": 0,
-            "output_tokens": 532,
-            "reasoning_tokens": 361,
-            "estimated_usd": 0.000566
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.kpmguscareers.com/jobdetail?jobId=139872",
-              "match_score": 54.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Software development experience",
-                "Autonomous coding and testing"
-              ],
-              "main_gaps": [
-                "Visual Basic and SQL Server expertise",
-                "R&D tax-credit consulting experience"
-              ]
-            },
-            {
-              "key": "url::https://careers.cargill.com/en/job/reserve/infrastructure-operations-engineer/23251/99985074832",
-              "match_score": 52.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Cloud deployment and reliability",
-                "Infrastructure troubleshooting experience"
-              ],
-              "main_gaps": [
-                "Network operations and protocol analysis",
-                "Two years relevant infrastructure experience"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://careers.jackhenry.com/job/allen/data-engineer-ii/42859/103388183664",
-              "company": "Jack Henry & Associates",
-              "title": "Data Engineer II"
-            },
-            {
-              "key": "url::https://www.databricks.com/company/careers/professional-services-operations/associate-forward-deployed-engineer-8910846002",
-              "company": "Databricks",
-              "title": "Associate Forward Deployed Engineer"
-            },
-            {
-              "key": "url::https://www.kforce.com/find-work/search-jobs",
-              "company": "Kforce",
-              "title": "Junior Data Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 16.048,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 3,
-            "input_tokens": 5470,
-            "cached_input_tokens": 0,
-            "output_tokens": 1764,
-            "reasoning_tokens": 1431,
-            "estimated_usd": 0.001429
-          },
-          "decisions": [
-            {
-              "key": "url::https://careers.jackhenry.com/job/allen/data-engineer-ii/42859/103388183664",
-              "match_score": 73.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Data pipeline engineering",
-                "Cloud CI/CD and observability"
-              ],
-              "main_gaps": [
-                "3+ years experience",
-                "CDC/Kafka/SSIS"
-              ]
-            },
-            {
-              "key": "url::https://www.databricks.com/company/careers/professional-services-operations/associate-forward-deployed-engineer-8910846002",
-              "match_score": 85.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production data and AI systems",
-                "Full-stack cloud engineering"
-              ],
-              "main_gaps": [
-                "Customer-facing delivery"
-              ]
-            },
-            {
-              "key": "url::https://www.kforce.com/find-work/search-jobs",
-              "match_score": 89.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "SQL and data transformations",
-                "Pipeline quality and troubleshooting"
-              ],
-              "main_gaps": []
             }
           ]
         }
