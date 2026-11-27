@@ -1,7 +1,7 @@
 # ATS / LinkedIn inbox (last 3 days)
 
-- Updated (PT): 2026-11-26 17:21 PST
-- Snapshot (UTC): 2026-11-27T01:21:44.078481+00:00
+- Updated (PT): 2026-11-26 21:00 PST
+- Snapshot (UTC): 2026-11-27T05:00:58.204701+00:00
 - Jobs: 39 (Tier A/B only)
 - Last 24 hours: 24
 - Last 3 days: 39
@@ -32,7 +32,7 @@ The 7-day dump is `latest.md`.
 | B | 88 | indeed | CLERA | Research Engineer, AI Evals | Palo Alto, CA, US | 2026-11-25 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=0d790a3a60d3ba24) |
 | B | 84 | indeed | A&O Cabinets Inc. | Junior Web Developer | Austin, TX, US | 2026-11-25 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=e682d8a22283e21e) |
 | B | 83 | indeed | Synaptein Solutions INC | Software Engineer | Reston, VA, US | 2026-11-25 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=dcf563cb8cd5202e) |
-| B | 84 | linkedin | Oracle | Platform Software Engineer 2 | Kansas City, MO | 2026-11-26 | newly_discovered | Oracle | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/platform-software-engineer-2-at-oracle-4493478003) |
+| B | 80 | linkedin | Oracle | Platform Software Engineer 2 | Kansas City, MO | 2026-11-26 | newly_discovered | Oracle | unreviewed | official_gap | [open](https://www.linkedin.com/jobs/view/platform-software-engineer-2-at-oracle-4493478003) |
 | B | 82 | syncareer | Wipro | AI Engineer | Louisville, Kentucky, United States | - | 1to3d | - | unreviewed | not_dedicated | [open](https://careers.wipro.com/job/AI-Engineer/221487-en_US) |
 | B | 82 | indeed | Assignar | Forward Deployed Engineer (Denver) | Remote, US | 2026-11-01 | newly_discovered | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=a78c68ce8bb1a420) |
 | B | 78 | indeed | Medtronic | Software Engineer II - Advanced Manufacturing Engineering | Fridley, MN, US | 2026-11-25 | 1to3d | - | unreviewed | not_dedicated | [open](https://www.indeed.com/viewjob?jk=62cb29be9977b0d6) |

@@ -2,6 +2,175 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-11-27T05:00:58.204701+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 2,
+      "cache_reused": 183,
+      "peer_reused": 4,
+      "same_content_reused": 5,
+      "non_material_change_reused": 0,
+      "new_or_changed": 3,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 3
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1867,
+      "requests": 1,
+      "input_tokens": 3432,
+      "cached_input_tokens": 0,
+      "output_tokens": 312,
+      "reasoning_tokens": 173,
+      "estimated_usd": 0.000499,
+      "latency_seconds": 3.674,
+      "latency_measured": true,
+      "effective_rpm": 16.33,
+      "effective_tpm": 61143.17,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 2,
+      "funnel": {
+        "after_dedup": 8444,
+        "after_company": 7935,
+        "after_hard_filter": 7311,
+        "after_prefilter": 2444,
+        "official_duplicates_suppressed": 392,
+        "retry_only_carried": 0,
+        "dropped": 5807
+      },
+      "output": {
+        "tier_a": 26,
+        "tier_b": 132,
+        "ab_before_cap": 158,
+        "shown": 158,
+        "new_jobs": 0,
+        "new_jobs_added": 0,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 0,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 0,
+            "added": 0
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 3505,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 59,
+          "http_requests": 46,
+          "scrapling_requests": 1,
+          "identity_needed": 53,
+          "identities_resolved": 30,
+          "cache_reused": 4,
+          "jds_resolved": 6,
+          "direct_http_resolved": 6,
+          "remaining_no_jd": 3505,
+          "failure_reasons": {
+            "no_direct_or_official_url": 5,
+            "structured_jd_not_found": 1
+          }
+        },
+        "remaining_no_jd": 3464,
+        "failure_reasons": {
+          "no_enrichment_path": 2863,
+          "linkedin_rate_limited": 160,
+          "linkedin_http_429": 6,
+          "no_direct_or_official_url": 5,
+          "official_detail_deferred": 49,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 379
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/twitch/jobs/8931343002",
+              "company": "Twitch",
+              "title": "Software Dev Engineer I - Security Platform"
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/twitch/jobs/8929545002",
+              "company": "Twitch",
+              "title": "Software Dev Engineer I - Security Platform"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 3.674,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 2,
+            "input_tokens": 3432,
+            "cached_input_tokens": 0,
+            "output_tokens": 312,
+            "reasoning_tokens": 173,
+            "estimated_usd": 0.000499
+          },
+          "decisions": [
+            {
+              "key": "url::https://job-boards.greenhouse.io/twitch/jobs/8931343002",
+              "match_score": 85.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production backend services",
+                "AWS, CI/CD, internal tooling"
+              ],
+              "main_gaps": []
+            },
+            {
+              "key": "url::https://job-boards.greenhouse.io/twitch/jobs/8929545002",
+              "match_score": 85.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production backend services",
+                "AWS, CI/CD, internal tooling"
+              ],
+              "main_gaps": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-11-27T01:21:44.078481+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -22471,112 +22640,6 @@
           ]
         }
       ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-11-22T00:06:21.324165+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "",
-      "reasoning_effort": "",
-      "jobs_scored": 0,
-      "cache_reused": 341,
-      "peer_reused": 1,
-      "same_content_reused": 4,
-      "non_material_change_reused": 0,
-      "new_or_changed": 0,
-      "new_or_changed_reasons": {},
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1831,
-      "requests": 0,
-      "input_tokens": 0,
-      "cached_input_tokens": 0,
-      "output_tokens": 0,
-      "reasoning_tokens": 0,
-      "estimated_usd": 0.0,
-      "latency_seconds": 0.0,
-      "latency_measured": true,
-      "effective_rpm": null,
-      "effective_tpm": null,
-      "json_reliability": null,
-      "json_reliability_measured": true,
-      "batches_total": 0,
-      "primary_batches_total": 0,
-      "batches_attempted": 0,
-      "batches_succeeded": 0,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 0,
-      "funnel": {
-        "after_dedup": 8753,
-        "after_company": 8207,
-        "after_hard_filter": 7580,
-        "after_prefilter": 2574,
-        "official_duplicates_suppressed": 402,
-        "retry_only_carried": 0,
-        "dropped": 5976
-      },
-      "output": {
-        "tier_a": 40,
-        "tier_b": 154,
-        "ab_before_cap": 194,
-        "shown": 194,
-        "new_jobs": 0,
-        "new_jobs_added": 0,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 0,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 0,
-            "added": 0
-          },
-          "indeed": {
-            "found": 0,
-            "added": 0
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 3480,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 56,
-          "identity_needed": 55,
-          "http_requests": 50,
-          "identities_resolved": 34,
-          "jds_resolved": 13,
-          "direct_http_resolved": 13,
-          "remaining_no_jd": 3480,
-          "failure_reasons": {
-            "linkedin_rate_limited": 1
-          }
-        },
-        "remaining_no_jd": 3435,
-        "failure_reasons": {
-          "no_enrichment_path": 2837,
-          "linkedin_rate_limited": 165,
-          "linkedin_http_429": 6,
-          "official_detail_deferred": 47,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 378
-        }
-      },
-      "comparison": {},
-      "batches": []
     }
   ]
 }
