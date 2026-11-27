@@ -1,7 +1,7 @@
-# ATS / LinkedIn board — 7-day view — 2026-11-27_0500
+# ATS / LinkedIn board — 7-day view — 2026-11-27_0511
 
-- Updated (PT): 2026-11-26 21:04 PST
-- Snapshot (UTC): 2026-11-27T05:04:55.199282+00:00
+- Updated (PT): 2026-11-26 21:15 PST
+- Snapshot (UTC): 2026-11-27T05:15:05.390185+00:00
 - Last 24 hours: 24
 - Last 3 days: 39
 
@@ -9,15 +9,15 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 
 ## Run stats
 
-- Source raw: ATS 2966 / Linkedin 4647 / Indeed 518 / Glassdoor 381 (Big Company Official runs separately)
-- Funnel: after dedup 8444 -> after company filter 7935 -> after hard filter 7311 -> after role+seniority prefilter 2444 | dropped 5807
-- LLM usage: jobs scored 2 / API requests 1 / cache reused 183 (cross-pipeline 4) / rule fallback+overflow 1867 (thin local cards 1178, recency-gated 1, overflow 0, new/changed 3)
-- LLM cache causes: new 3 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 5 / rescored <24h 0
-- LLM cost: model gpt-6-luna / API requests 1 / jobs scored 2 / tokens input 3432 (cached 0) / output 312 (reasoning 173) / estimated cost $0.0005
+- Source raw: ATS 2966 / Linkedin 4648 / Indeed 518 / Glassdoor 380 (Big Company Official runs separately)
+- Funnel: after dedup 8444 -> after company filter 7934 -> after hard filter 7310 -> after role+seniority prefilter 2444 | dropped 5806
+- LLM usage: jobs scored 0 / API requests 0 / cache reused 183 (cross-pipeline 4) / rule fallback+overflow 1869 (thin local cards 1178, recency-gated 0, overflow 0, new/changed 0)
+- LLM cache causes: new 0 / material JD 0 / matching context 0 / prior rule now eligible 0 / non-material reused 0 / same-content reused 5 / rescored <24h 0
+- LLM cost: model gpt-6-luna / API requests 0 / jobs scored 0 / tokens input 0 (cached 0) / output 0 (reasoning 0) / estimated cost $0.0000
 - New jobs discovered this run: 0
-- Output sizing: Tier A 26 / Tier B 132 / A+B actionable 158 / Shown in latest.md 158 (no hard cap)
+- Output sizing: Tier A 26 / Tier B 130 / A+B actionable 156 / Shown in latest.md 156 (no hard cap)
 - Recency (kept): <3h 0 / 3-24h 0 / 1-3d 70 / newly-disc 109 / 3-7d 5 / >7d 1868
-- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3927 of 3928 / Indeed unique 505 of 505
+- LinkedIn vs Indeed exact coverage: overlap 1 / LinkedIn unique 3928 of 3929 / Indeed unique 505 of 505
 - Linkedin top exact-unique queries: software engineer=1478, ai engineer=1022, backend engineer=523
 - Indeed top exact-unique queries: software engineer=177, ai engineer=170, infrastructure engineer=79, associate software engineer=76, applied ai engineer=67
 
@@ -52,7 +52,7 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 93 | rule_fallback | linkedin | Kareer Basycs | Junior Python Developer | United States | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-python-developer-at-kareer-basycs-4468572925) |
 | 93 | rule_fallback | linkedin | IBM | Entry Level Software Developer-Tucson-AZ | Tucson, AZ | 2026-09-22 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/entry-level-software-developer-tucson-az-at-ibm-4468180871) |
 
-## Tier B - worth applying (132)
+## Tier B - worth applying (130)
 
 | Score | Src | Source | Company | Title | Location | Posted | Recency | Conf | Resume | Referral | Review | Coverage | Verified | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -83,8 +83,6 @@ If you check every 1–2 days, open **`output/board/inbox.md`** (last 3 days) in
 | 75 | cached_llm | indeed | Xnurta | Full-Stack Software Engineer (Level I / Level II) | Campbell, CA, US | 2026-11-25 | 1to3d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=80657f252411068a) |
 | 75 | cached_llm | indeed | Capgemini | UI Full stack | New York, NY, US | 2026-11-26 | newly_discovered | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.indeed.com/viewjob?jk=c468d1aad0254749) |
 | 93 | rule_fallback | linkedin | Jefferies | Associate, Software Developer - Fixed Income Technology (NY Repo) | New York, NY | 2026-09-23 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/associate-software-developer-fixed-income-technology-ny-repo-at-jefferies-4456899712) |
-| 85 | llm | linkedin | Twitch | Software Dev Engineer I - Security Platform | Seattle, WA | - | gt7d |  | swe | - | unreviewed | not_dedicated | yes | [open](https://job-boards.greenhouse.io/twitch/jobs/8931343002) |
-| 85 | llm | linkedin | Twitch | Software Dev Engineer I - Security Platform | San Francisco, CA | - | gt7d |  | swe | - | unreviewed | not_dedicated | yes | [open](https://job-boards.greenhouse.io/twitch/jobs/8929545002) |
 | 88 | rule_fallback | glassdoor | Travelers | Data Engineer I (Databricks, AWS, Python) | Hartford, CT | - | gt7d | low | swe | - | unreviewed | official_gap | - | [open](https://www.glassdoor.com/job-listing/data-engineer-i-databricks-aws-python-travelers-JV_IC1148399_KO0,37_KE38,47.htm?jl=1010253881512) |
 | 88 | rule_fallback | glassdoor | Travelers | Data Engineer I (AWS, Databricks) | Hartford, CT | - | gt7d | low | swe | - | unreviewed | official_gap | - | [open](https://www.glassdoor.com/job-listing/data-engineer-i-aws-databricks-travelers-JV_IC1148399_KO0,30_KE31,40.htm?jl=1010259312694) |
 | 88 | metadata_ai_fallback | linkedin | Lumion | Junior Full Stack Software Engineer | South Jordan, UT | 2026-09-28 | gt7d | low | swe | - | unreviewed | not_dedicated | - | [open](https://www.linkedin.com/jobs/view/junior-full-stack-software-engineer-at-lumion-4473028463) |
