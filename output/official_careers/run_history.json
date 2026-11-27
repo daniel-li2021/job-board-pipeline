@@ -2,6 +2,310 @@
   "runs": [
     {
       "pipeline": "official",
+      "run_at": "2026-11-27T15:38:40.835558+00:00",
+      "mode": "pipeline",
+      "health": "degraded",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 7,
+      "cache_reused": 288,
+      "peer_reused": 0,
+      "same_content_reused": 4,
+      "non_material_change_reused": 0,
+      "new_or_changed": 16,
+      "new_or_changed_reasons": {
+        "genuinely_new_job": 15,
+        "prior_rule_result_recency_gated": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 2078,
+      "requests": 2,
+      "input_tokens": 13873,
+      "cached_input_tokens": 0,
+      "output_tokens": 1514,
+      "reasoning_tokens": 820,
+      "estimated_usd": 0.002144,
+      "latency_seconds": 11.23,
+      "latency_measured": true,
+      "effective_rpm": 10.69,
+      "effective_tpm": 82210.15,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 2,
+      "primary_batches_total": 2,
+      "batches_attempted": 2,
+      "batches_succeeded": 2,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 7,
+      "funnel": {
+        "after_dedup": 13864,
+        "after_company": 13864,
+        "after_hard_filter": 10644,
+        "after_prefilter": 2373,
+        "dropped": 11491
+      },
+      "output": {
+        "tier_a": 2,
+        "tier_b": 10,
+        "shown": 12,
+        "new_jobs": 62,
+        "new_jobs_added": 1
+      },
+      "enrichment": {
+        "discovered": 13909,
+        "needed": 332,
+        "source_jds_available": 13577,
+        "exact_peer_resolved": 0,
+        "remaining_no_jd": 332
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Sunnyvale-California-United-States-of-America/Systems-Software-Engineer-3_1219694-2",
+              "company": "HPE",
+              "title": "Systems Software Engineer 3"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Ft-Collins-Colorado-United-States-of-America/Systems-Software-Engineer---Network-Virtualization---Multitenancy_1218609-2",
+              "company": "HPE",
+              "title": "Systems Software Engineer – Network Virtualization & Multitenancy"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Ft-Collins-Colorado-United-States-of-America/Systems-Software-Engineer---Libfabric---CXI-Provider--Slingshot-Host-Software-_1218614-1",
+              "company": "HPE",
+              "title": "Systems Software Engineer – Libfabric / CXI Provider (Slingshot Host Software)"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Sunnyvale-California-United-States-of-America/Systems---Software-Engineer-I-Graduate_1214972-1",
+              "company": "HPE",
+              "title": "Systems / Software Engineer I Graduate"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 6.226,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 4,
+            "input_tokens": 7341,
+            "cached_input_tokens": 0,
+            "output_tokens": 850,
+            "reasoning_tokens": 425,
+            "estimated_usd": 0.001159
+          },
+          "decisions": [
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Sunnyvale-California-United-States-of-America/Systems-Software-Engineer-3_1219694-2",
+              "match_score": 35.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ programming",
+                "Software testing experience"
+              ],
+              "main_gaps": [
+                "Embedded Linux drivers",
+                "Router hardware bring-up"
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Ft-Collins-Colorado-United-States-of-America/Systems-Software-Engineer---Network-Virtualization---Multitenancy_1218609-2",
+              "match_score": 25.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Software systems design",
+                "Cross-platform development"
+              ],
+              "main_gaps": [
+                "10+ years architecture leadership",
+                "Executive-level technical influence"
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Ft-Collins-Colorado-United-States-of-America/Systems-Software-Engineer---Libfabric---CXI-Provider--Slingshot-Host-Software-_1218614-1",
+              "match_score": 28.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Systems software experience",
+                "Testing and integration"
+              ],
+              "main_gaps": [
+                "Libfabric/CXI expertise",
+                "Senior technical leadership"
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Sunnyvale-California-United-States-of-America/Systems---Software-Engineer-I-Graduate_1214972-1",
+              "match_score": 67.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Graduate-level software role",
+                "C++/Python coding"
+              ],
+              "main_gaps": [
+                "Kernel and security engineering",
+                "TPM/code provenance"
+              ]
+            }
+          ]
+        },
+        {
+          "batch": 2,
+          "route": "both",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10615936/software-development-engineer-aws-security-aws-field-security-aws-security-aws-field-security",
+              "company": "Amazon",
+              "title": "Software Development Engineer, AWS Security: AWS Field Security, AWS Security: AWS Field Security"
+            },
+            {
+              "key": "id::amd_official_careers::103853",
+              "company": "AMD",
+              "title": "Firmware Engineer"
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/AI-Automation-Engineer-Graduate_1213068-1",
+              "company": "HPE",
+              "title": "AI Automation Engineer Graduate"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 5.004,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 3,
+            "input_tokens": 6532,
+            "cached_input_tokens": 0,
+            "output_tokens": 664,
+            "reasoning_tokens": 395,
+            "estimated_usd": 0.000985
+          },
+          "decisions": [
+            {
+              "key": "url::https://www.amazon.jobs/en/jobs/10615936/software-development-engineer-aws-security-aws-field-security-aws-security-aws-field-security",
+              "match_score": 67.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production LLM and RAG systems",
+                "Cloud deployment and CI/CD"
+              ],
+              "main_gaps": [
+                "3+ years non-internship experience",
+                "AWS security service operations"
+              ]
+            },
+            {
+              "key": "id::amd_official_careers::103853",
+              "match_score": 20.0,
+              "seniority_fit": "mismatch",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "C++ and systems programming"
+              ],
+              "main_gaps": [
+                "Embedded firmware development",
+                "Hardware bring-up and interfaces"
+              ]
+            },
+            {
+              "key": "url::https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Spring-Texas-United-States-of-America/AI-Automation-Engineer-Graduate_1213068-1",
+              "match_score": 76.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Agentic AI and RAG workflows",
+                "Evaluation and automation integrations"
+              ],
+              "main_gaps": [
+                "HPC and server troubleshooting",
+                "BMC/IPMI diagnostics"
+              ]
+            }
+          ]
+        }
+      ],
+      "scrape_failure_sources": [
+        "nvidia",
+        "salesforce",
+        "adobe",
+        "meta",
+        "capitalone",
+        "walmart",
+        "cisco",
+        "ebay",
+        "zoom",
+        "expedia",
+        "intel",
+        "redhat",
+        "visa",
+        "workday",
+        "zillow",
+        "cvs",
+        "f5",
+        "wells-fargo",
+        "yahoo",
+        "iqvia",
+        "johnson-johnson",
+        "nasdaq",
+        "stryker",
+        "transunion",
+        "travelers"
+      ],
+      "scrape_failure_causes": {
+        "nvidia": "429",
+        "salesforce": "429",
+        "adobe": "429",
+        "meta": "error",
+        "capitalone": "429",
+        "walmart": "429",
+        "cisco": "429",
+        "ebay": "429",
+        "zoom": "429",
+        "expedia": "429",
+        "intel": "429",
+        "redhat": "429",
+        "visa": "429",
+        "workday": "429",
+        "zillow": "429",
+        "cvs": "429",
+        "f5": "429",
+        "wells-fargo": "429",
+        "yahoo": "429",
+        "iqvia": "429",
+        "johnson-johnson": "429",
+        "nasdaq": "429",
+        "stryker": "429",
+        "transunion": "429",
+        "travelers": "429"
+      }
+    },
+    {
+      "pipeline": "official",
       "run_at": "2026-11-27T00:37:50.394450+00:00",
       "mode": "pipeline",
       "health": "degraded",
@@ -14593,485 +14897,6 @@
         "salesforce": "429",
         "adobe": "429",
         "meta": "error",
-        "capitalone": "429",
-        "walmart": "429",
-        "cisco": "429",
-        "sap": "timeout",
-        "hpe": "429",
-        "ebay": "429",
-        "zoom": "429",
-        "expedia": "429",
-        "intel": "429",
-        "redhat": "429",
-        "visa": "429",
-        "workday": "429",
-        "zillow": "429",
-        "cvs": "429",
-        "f5": "429",
-        "wells-fargo": "429",
-        "yahoo": "429",
-        "flex": "429",
-        "iqvia": "429",
-        "johnson-johnson": "429",
-        "nasdaq": "429",
-        "stryker": "429",
-        "transunion": "429",
-        "travelers": "429"
-      }
-    },
-    {
-      "pipeline": "official",
-      "run_at": "2026-11-17T15:38:59.605223+00:00",
-      "mode": "pipeline",
-      "health": "degraded",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 15,
-      "cache_reused": 319,
-      "peer_reused": 2,
-      "same_content_reused": 9,
-      "non_material_change_reused": 0,
-      "new_or_changed": 18,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 16,
-        "material_jd_change": 1,
-        "prior_rule_result_recency_gated": 1
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 2311,
-      "requests": 3,
-      "input_tokens": 22550,
-      "cached_input_tokens": 0,
-      "output_tokens": 2677,
-      "reasoning_tokens": 1295,
-      "estimated_usd": 0.003594,
-      "latency_seconds": 32.274,
-      "latency_measured": true,
-      "effective_rpm": 5.58,
-      "effective_tpm": 46899.05,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 3,
-      "primary_batches_total": 3,
-      "batches_attempted": 3,
-      "batches_succeeded": 3,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 15,
-      "funnel": {
-        "after_dedup": 14301,
-        "after_company": 14301,
-        "after_hard_filter": 11166,
-        "after_prefilter": 2645,
-        "dropped": 11656
-      },
-      "output": {
-        "tier_a": 2,
-        "tier_b": 12,
-        "shown": 14,
-        "new_jobs": 125,
-        "new_jobs_added": 3
-      },
-      "enrichment": {
-        "discovered": 14301,
-        "needed": 1141,
-        "source_jds_available": 13160,
-        "exact_peer_resolved": 0,
-        "remaining_no_jd": 1141
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/125949716562092742-software-engineer-iii-engineering-productivity-google-cloud-business-platform",
-              "company": "Google",
-              "title": "Software Engineer III, Engineering Productivity, Google Cloud Business Platform"
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10606989/software-dev-engineer-test-amazon-customer-service",
-              "company": "Amazon",
-              "title": "Software Dev Engineer - Test, Amazon Customer Service"
-            },
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557071172",
-              "company": "Microsoft",
-              "title": "Software Engineer II"
-            },
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210808529",
-              "company": "JPMorgan Chase",
-              "title": "Infrastructure Engineer III - Compute Hardware Engineering"
-            },
-            {
-              "key": "url::http://block.xyz/careers/jobs/5456605008?gh_jid=5456605008",
-              "company": "Block / Square",
-              "title": "Solutions Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 13.335,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 5,
-            "input_tokens": 7397,
-            "cached_input_tokens": 0,
-            "output_tokens": 1114,
-            "reasoning_tokens": 716,
-            "estimated_usd": 0.001297
-          },
-          "decisions": [
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/125949716562092742-software-engineer-iii-engineering-productivity-google-cloud-business-platform",
-              "match_score": 68.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "CI/CD deployment experience",
-                "Automated testing and reliability"
-              ],
-              "main_gaps": [
-                "Developer tools experience",
-                "Test infrastructure frameworks"
-              ]
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10606989/software-dev-engineer-test-amazon-customer-service",
-              "match_score": 43.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Automated testing experience",
-                "Backend service development"
-              ],
-              "main_gaps": [
-                "Penetration testing",
-                "3+ years SDE-T experience"
-              ]
-            },
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557071172",
-              "match_score": 82.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Cloud service development",
-                "Automation and reliability"
-              ],
-              "main_gaps": [
-                "Security remediation experience"
-              ]
-            },
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210808529",
-              "match_score": 10.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "other",
-              "top_match_reasons": [
-                "Python scripting"
-              ],
-              "main_gaps": [
-                "Hardware product engineering",
-                "OEM/ODM supplier ownership"
-              ]
-            },
-            {
-              "key": "url::http://block.xyz/careers/jobs/5456605008?gh_jid=5456605008",
-              "match_score": 34.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "API integration work",
-                "Full-stack development"
-              ],
-              "main_gaps": [
-                "7+ years customer-facing",
-                "Payments platform experience"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "resume_ai",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://lifeattiktok.com/search/7574962733457443125",
-              "company": "TikTok",
-              "title": "Applied Research Scientist (Vision Language Models/LLM) - TikTok Trust and Safety"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 4.639,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 1,
-            "input_tokens": 2599,
-            "cached_input_tokens": 0,
-            "output_tokens": 242,
-            "reasoning_tokens": 153,
-            "estimated_usd": 0.000381
-          },
-          "decisions": [
-            {
-              "key": "url::https://lifeattiktok.com/search/7574962733457443125",
-              "match_score": 35.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "LLM systems implementation",
-                "VLM document processing"
-              ],
-              "main_gaps": [
-                "Ph.D. in related field",
-                "Multimodal model research"
-              ]
-            }
-          ]
-        },
-        {
-          "batch": 3,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210807772",
-              "company": "JPMorgan Chase",
-              "title": "Mainframe developer/Software Engineer III"
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10601001/applied-scientist-aws-identity-threat",
-              "company": "Amazon",
-              "title": "Applied Scientist, AWS Identity Threat"
-            },
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557074643",
-              "company": "Microsoft",
-              "title": "Software Engineer Agentic Security"
-            },
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210790526",
-              "company": "JPMorgan Chase",
-              "title": "AWS Software Engineer II - Full Stack/Java/React"
-            },
-            {
-              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/350645",
-              "company": "Oracle",
-              "title": "Junior Android Software Engineer"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8384113",
-              "company": "Pure Storage",
-              "title": "Cloud Native Architect, Portworx -New England"
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8368413",
-              "company": "Pure Storage",
-              "title": "Cloud Native Architect, Portworx- NYC/NJ"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/141343429106770630-research-scientist-error-correction-experiments-quantum-ai",
-              "company": "Google",
-              "title": "Research Scientist, Error Correction Experiments, Quantum AI"
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/86277138008679110-ux-researcher-enterprise-platform-google-ads",
-              "company": "Google",
-              "title": "UX Researcher, Enterprise Platform, Google Ads"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 14.3,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 9,
-            "input_tokens": 12554,
-            "cached_input_tokens": 0,
-            "output_tokens": 1321,
-            "reasoning_tokens": 426,
-            "estimated_usd": 0.001916
-          },
-          "decisions": [
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210807772",
-              "match_score": 25.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production software development",
-                "Agile delivery"
-              ],
-              "main_gaps": [
-                "COBOL/DB2/JCL experience",
-                "Mainframe debugging tools"
-              ]
-            },
-            {
-              "key": "url::https://www.amazon.jobs/en/jobs/10601001/applied-scientist-aws-identity-threat",
-              "match_score": 62.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Production ML models",
-                "Python and distributed systems"
-              ],
-              "main_gaps": [
-                "Three years building business models",
-                "Research publications or patents"
-              ]
-            },
-            {
-              "key": "url::https://apply.careers.microsoft.com/careers/job/1970393557074643",
-              "match_score": 88.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Data pipelines and ingestion",
-                "Cloud-native distributed systems"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "url::https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210790526",
-              "match_score": 76.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack production development",
-                "AWS, Java, and React"
-              ],
-              "main_gaps": [
-                "Enterprise AI-tool validation"
-              ]
-            },
-            {
-              "key": "url::https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/350645",
-              "match_score": 20.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "non_us",
-              "top_match_reasons": [
-                "Early-career software role"
-              ],
-              "main_gaps": [
-                "Android development experience",
-                "Kotlin or Android concepts"
-              ]
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8384113",
-              "match_score": 28.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "AWS and container tooling",
-                "Terraform and cloud experience"
-              ],
-              "main_gaps": [
-                "Senior customer-facing architect experience",
-                "Kubernetes administration certifications"
-              ]
-            },
-            {
-              "key": "url::https://job-boards.greenhouse.io/purestorage/jobs/8368413",
-              "match_score": 28.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "AWS and container tooling",
-                "Terraform and cloud experience"
-              ],
-              "main_gaps": [
-                "Senior customer-facing architect experience",
-                "Kubernetes administration certifications"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/141343429106770630-research-scientist-error-correction-experiments-quantum-ai",
-              "match_score": 8.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python scientific computing"
-              ],
-              "main_gaps": [
-                "PhD in quantum-related field",
-                "Quantum systems research experience"
-              ]
-            },
-            {
-              "key": "url::https://www.google.com/about/careers/applications/jobs/results/86277138008679110-ux-researcher-enterprise-platform-google-ads",
-              "match_score": 15.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Human-subjects study exposure"
-              ],
-              "main_gaps": [
-                "UX research methods experience",
-                "Mixed-methods research leadership"
-              ]
-            }
-          ]
-        }
-      ],
-      "scrape_failure_sources": [
-        "apple",
-        "nvidia",
-        "salesforce",
-        "adobe",
-        "capitalone",
-        "walmart",
-        "cisco",
-        "sap",
-        "hpe",
-        "ebay",
-        "zoom",
-        "expedia",
-        "intel",
-        "redhat",
-        "visa",
-        "workday",
-        "zillow",
-        "cvs",
-        "f5",
-        "wells-fargo",
-        "yahoo",
-        "flex",
-        "iqvia",
-        "johnson-johnson",
-        "nasdaq",
-        "stryker",
-        "transunion",
-        "travelers"
-      ],
-      "scrape_failure_causes": {
-        "apple": "timeout",
-        "nvidia": "429",
-        "salesforce": "429",
-        "adobe": "429",
         "capitalone": "429",
         "walmart": "429",
         "cisco": "429",
