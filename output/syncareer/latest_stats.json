@@ -1,44 +1,44 @@
 {
-  "run_at": "2026-11-27T15:53:32.115747+00:00",
-  "elapsed_seconds": 140.733,
-  "remote_elapsed_seconds": 91.996,
+  "run_at": "2026-11-28T00:52:44.923073+00:00",
+  "elapsed_seconds": 87.614,
+  "remote_elapsed_seconds": 52.355,
   "funnel": {
-    "scoring_candidates": 116
+    "scoring_candidates": 114
   },
   "llm": {
-    "reused": 102,
-    "llm": 21,
-    "new_or_changed": 21,
-    "rule": 1,
-    "sent": 21,
-    "api_requests": 4,
-    "recency_skipped": 0,
+    "reused": 97,
+    "llm": 15,
+    "new_or_changed": 18,
+    "rule": 5,
+    "sent": 16,
+    "api_requests": 3,
+    "recency_skipped": 2,
     "overflow": 0,
-    "peer_reused": 7,
-    "thin_source_rule": 1,
-    "retryable_fallbacks": 0,
+    "peer_reused": 1,
+    "thin_source_rule": 2,
+    "retryable_fallbacks": 1,
     "historical_seen_skipped": 0,
     "historical_llm_retained": 0,
     "non_material_change_reused": 0,
     "same_content_reused": 0,
     "rescored_within_24h": 0,
     "new_or_changed_reasons": {
-      "genuinely_new_job": 18,
+      "genuinely_new_job": 15,
       "prior_rule_result_now_eligible_for_llm": 3
     },
     "batch_size": 10,
-    "primary_batches_total": 4,
-    "batches_total": 4,
-    "batches_succeeded": 4,
-    "batches_attempted": 4,
+    "primary_batches_total": 3,
+    "batches_total": 3,
+    "batches_succeeded": 3,
+    "batches_attempted": 3,
     "batches_failed": 0,
     "batches_skipped": 0,
     "retry_splits": 0,
     "retry_batches": 0,
     "retry_batches_succeeded": 0,
     "retry_batches_failed": 0,
-    "latency_seconds": 37.995,
-    "json_results": 21,
+    "latency_seconds": 25.405,
+    "json_results": 16,
     "batches": [
       {
         "batch": 1,
@@ -46,507 +46,372 @@
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://www.metacareers.com/profile/job_details/28872009425748529",
-            "company": "Meta",
-            "title": "Software Engineer, Systems"
-          },
-          {
-            "key": "url::https://www.metacareers.com/profile/job_details/2026090611401041",
-            "company": "Meta",
+            "key": "url::https://careers.cisco.com/global/en/job/2030715/Software-Engineer",
+            "company": "Cisco",
             "title": "Software Engineer"
           },
           {
-            "key": "url::https://www.metacareers.com/profile/job_details/2188713048675088",
-            "company": "Meta",
+            "key": "url::https://koch.avature.net/en_US/careers/JobDetail/Lincoln-Nebraska-United-States-Data-Platform-Engineering-Specialist/198293",
+            "company": "Koch",
+            "title": "Data Platform & Engineering Specialist"
+          },
+          {
+            "key": "url::https://careers.cisco.com/global/en/job/2030720/Software-Engineer",
+            "company": "Cisco",
             "title": "Software Engineer"
           },
           {
-            "key": "url::https://www.metacareers.com/profile/job_details/1153878043863573",
-            "company": "Meta",
-            "title": "Software Engineer (Systems)"
+            "key": "url::https://aecom.jobs/fort-worth-tx/campus-fiber-infrastructure-construction-monitor-data-centers/4234EB0BB5E747FD9731E7E0B2EC17C6/job",
+            "company": "AECOM",
+            "title": "Campus Fiber Infrastructure Construction Monitor, Data Centers"
           },
           {
-            "key": "url::https://www.metacareers.com/profile/job_details/2666686747134642",
-            "company": "Meta",
-            "title": "Software Engineer, Systems"
+            "key": "url::https://aecom.jobs/el-paso-tx/campus-fiber-infrastructure-construction-monitor-data-centers/D5448D5F810846B083D7C2B7342B73EF/job",
+            "company": "AECOM",
+            "title": "Campus Fiber Infrastructure Construction Monitor, Data Centers"
           },
           {
-            "key": "url::https://job-boards.greenhouse.io/jjsnackfoods/jobs/5492097008",
-            "company": "J&J Snack Foods",
-            "title": "Software Engineer"
+            "key": "url::https://aecom.jobs/austin-tx/campus-fiber-infrastructure-construction-monitor-data-centers/ED54443F839C47B9AEE2227FD75812D1/job",
+            "company": "AECOM",
+            "title": "Campus Fiber Infrastructure Construction Monitor, Data Centers"
           },
           {
-            "key": "url::https://telos.hua.hrsmart.com/hr/ats/Posting/view/3722",
-            "company": "Telos Corporation",
-            "title": "Journeyman Cryptography & Security Support Infrastructure Engineer"
+            "key": "url::https://jobs.autodesk.com/careers/job/1443154615447",
+            "company": "Autodesk",
+            "title": "Network DevOps Engineer"
           },
           {
-            "key": "url::https://careers.cargurus.com/us/en/job/8417873/Software-Development-Engineer-II",
-            "company": "CarGurus",
-            "title": "Software Development Engineer II"
+            "key": "url::https://job-boards.greenhouse.io/honeycombinsurance/jobs/4757677005",
+            "company": "Honeycomb Insurance",
+            "title": "DevOps Engineer"
           },
           {
-            "key": "url::https://careers.cargurus.com/us/en/job/8243216/Backend-Engineer-II-Product-Engineering",
-            "company": "CarGurus",
-            "title": "Backend Engineer II, Product Engineering"
-          },
-          {
-            "key": "url::https://www.metacareers.com/profile/job_details/1926983275422529",
-            "company": "Meta",
-            "title": "Data Engineer"
+            "key": "url::https://sysco.wd5.myworkdayjobs.com/en-US/syscocareers/job/Sysco-Corporate/LOA-Analyst---Policy--Program-and-Platform-Administration_R276681?jobFamilyGroup=ff9b973fe5191022b20f1e7c801a0000&jobFamilyGroup=b014cc62fe6601e773d7027cc9289027&jobFamilyGroup=b014cc62fe66019a776de67bc9288a27&jobFamilyGroup=ff9b973fe5191022b20f1fb21b210000&jobFamilyGroup=b014cc62fe66014bee64397cc9289c27&jobFamilyGroup=ff9b973fe5191022b20f1add172d0000&jobFamilyGroup=b014cc62fe66014c40e2507cc928a027&jobFamilyGroup=ff9b973fe5191022b20f20e783bb0000&jobFamilyGroup=b014cc62fe660159730c9e7cc928b627&jobFamilyGroup=b014cc62fe6601ae29f9967cc928b427&jobFamilyGroup=b014cc62fe66017574ad8f7cc928b227&jobFamilyGroup=b014cc62fe66019f8dbb7b7cc928ac27&jobFamilyGroup=ff9b973fe5191022b20f2182197d0000&jobFamilyGroup=ff9b973fe5191022b20f1de1b0de0000&jobFamilyGroup=ff9b973fe5191022b20f1d47038f0000&jobFamilyGroup=ff9b973fe5191022b20f1cac58a60000&jobFamilyGroup=b014cc62fe6601f56e45857cc928ae27&jobFamilyGroup=b014cc62fe66015d04d5227cc9289a27&jobFamilyGroup=b014cc62fe66017bab291d7cc9289827&jobFamilyGroup=b014cc62fe660144aa0ce17cc928c227&jobFamilyGroup=ff9b973fe5191022b20f1b76d1af0001",
+            "company": "Sysco",
+            "title": "LOA Analyst - Policy, Program and Platform Administration"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 12.639,
+        "latency_seconds": 14.562,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 10,
-          "input_tokens": 8998,
-          "cached_input_tokens": 1851,
-          "output_tokens": 1984,
-          "reasoning_tokens": 1017,
-          "estimated_usd": 0.001725
+          "jobs_scored": 9,
+          "input_tokens": 12538,
+          "cached_input_tokens": 0,
+          "output_tokens": 2611,
+          "reasoning_tokens": 1213,
+          "estimated_usd": 0.002559
         },
         "decisions": [
           {
-            "key": "url::https://www.metacareers.com/profile/job_details/28872009425748529",
+            "key": "url::https://careers.cisco.com/global/en/job/2030715/Software-Engineer",
+            "match_score": 92.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Production software delivery",
+              "CI/CD testing and reliability"
+            ],
+            "main_gaps": []
+          },
+          {
+            "key": "url::https://koch.avature.net/en_US/careers/JobDetail/Lincoln-Nebraska-United-States-Data-Platform-Engineering-Specialist/198293",
+            "match_score": 67.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Data pipeline development",
+              "Cloud and Spark experience"
+            ],
+            "main_gaps": [
+              "Streaming technologies",
+              "Pipeline orchestration"
+            ]
+          },
+          {
+            "key": "url::https://careers.cisco.com/global/en/job/2030720/Software-Engineer",
+            "match_score": 34.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Software testing and delivery"
+            ],
+            "main_gaps": [
+              "Cryptography implementation",
+              "PKI and key management"
+            ]
+          },
+          {
+            "key": "url::https://aecom.jobs/fort-worth-tx/campus-fiber-infrastructure-construction-monitor-data-centers/4234EB0BB5E747FD9731E7E0B2EC17C6/job",
+            "match_score": 7.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [],
+            "main_gaps": [
+              "Construction monitoring",
+              "Civil and fiber infrastructure"
+            ]
+          },
+          {
+            "key": "url::https://aecom.jobs/el-paso-tx/campus-fiber-infrastructure-construction-monitor-data-centers/D5448D5F810846B083D7C2B7342B73EF/job",
+            "match_score": 7.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [],
+            "main_gaps": [
+              "Construction monitoring",
+              "Civil and fiber infrastructure"
+            ]
+          },
+          {
+            "key": "url::https://aecom.jobs/austin-tx/campus-fiber-infrastructure-construction-monitor-data-centers/ED54443F839C47B9AEE2227FD75812D1/job",
+            "match_score": 7.0,
+            "seniority_fit": "mismatch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [],
+            "main_gaps": [
+              "Construction monitoring",
+              "Civil and fiber infrastructure"
+            ]
+          },
+          {
+            "key": "url::https://jobs.autodesk.com/careers/job/1443154615447",
+            "match_score": 58.0,
+            "seniority_fit": "stretch",
+            "hard_constraint_status": "ok",
+            "top_match_reasons": [
+              "Python and infrastructure automation",
+              "Terraform and cloud experience"
+            ],
+            "main_gaps": [
+              "Cloud networking",
+              "Network automation"
+            ]
+          },
+          {
+            "key": "url::https://job-boards.greenhouse.io/honeycombinsurance/jobs/4757677005",
             "match_score": 48.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "distributed backend systems",
-              "scalability and reliability"
+              "Docker and infrastructure experience",
+              "Terraform familiarity"
             ],
             "main_gaps": [
-              "36-month infrastructure experience",
-              "independent large-feature ownership"
+              "Production Kubernetes operations",
+              "Helm and GitOps"
             ]
           },
           {
-            "key": "url::https://www.metacareers.com/profile/job_details/2026090611401041",
-            "match_score": 60.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "backend software engineering",
-              "cloud and distributed systems"
-            ],
-            "main_gaps": [
-              "24-month experience requirement",
-              "distributed consistency guarantees"
-            ]
-          },
-          {
-            "key": "url::https://www.metacareers.com/profile/job_details/2188713048675088",
-            "match_score": 25.0,
+            "key": "url::https://sysco.wd5.myworkdayjobs.com/en-US/syscocareers/job/Sysco-Corporate/LOA-Analyst---Policy--Program-and-Platform-Administration_R276681?jobFamilyGroup=ff9b973fe5191022b20f1e7c801a0000&jobFamilyGroup=b014cc62fe6601e773d7027cc9289027&jobFamilyGroup=b014cc62fe66019a776de67bc9288a27&jobFamilyGroup=ff9b973fe5191022b20f1fb21b210000&jobFamilyGroup=b014cc62fe66014bee64397cc9289c27&jobFamilyGroup=b014cc62fe66014c40e2507cc928a027&jobFamilyGroup=ff9b973fe5191022b20f20e783bb0000&jobFamilyGroup=b014cc62fe660159730c9e7cc928b627&jobFamilyGroup=b014cc62fe6601ae29f9967cc928b427&jobFamilyGroup=b014cc62fe66017574ad8f7cc928b227&jobFamilyGroup=b014cc62fe66019f8dbb7b7cc928ac27&jobFamilyGroup=ff9b973fe5191022b20f2182197d0000&jobFamilyGroup=ff9b973fe5191022b20f1de1b0de0000&jobFamilyGroup=ff9b973fe5191022b20f1d47038f0000&jobFamilyGroup=ff9b973fe5191022b20f1cac58a60000&jobFamilyGroup=b014cc62fe6601f56e45857cc928ae27&jobFamilyGroup=b014cc62fe66015d04d5227cc9289a27&jobFamilyGroup=b014cc62fe66017bab291d7cc9289827&jobFamilyGroup=b014cc62fe660144aa0ce17cc928c227&jobFamilyGroup=ff9b973fe5191022b20f1b76d1af0001",
+            "match_score": 4.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "full-stack development",
-              "web application experience"
-            ],
+            "top_match_reasons": [],
             "main_gaps": [
-              "PhD requirement",
-              "three-year full-stack experience"
-            ]
-          },
-          {
-            "key": "url::https://www.metacareers.com/profile/job_details/1153878043863573",
-            "match_score": 40.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "backend systems",
-              "scalable services"
-            ],
-            "main_gaps": [
-              "four-year experience requirement",
-              "distributed systems depth"
-            ]
-          },
-          {
-            "key": "url::https://www.metacareers.com/profile/job_details/2666686747134642",
-            "match_score": 35.0,
-            "seniority_fit": "mismatch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "backend infrastructure",
-              "performance optimization"
-            ],
-            "main_gaps": [
-              "four-year experience requirement",
-              "component ownership and mentoring"
-            ]
-          },
-          {
-            "key": "url::https://job-boards.greenhouse.io/jjsnackfoods/jobs/5492097008",
-            "match_score": 62.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "web application development",
-              "REST APIs and databases"
-            ],
-            "main_gaps": [
-              "C# and Vue3",
-              "SQL Server SSIS/SSRS"
-            ]
-          },
-          {
-            "key": "url::https://telos.hua.hrsmart.com/hr/ats/Posting/view/3722",
-            "match_score": 38.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Linux infrastructure",
-              "automation and scripting"
-            ],
-            "main_gaps": [
-              "PKI and HSM administration",
-              "DoD security hardening"
-            ]
-          },
-          {
-            "key": "url::https://careers.cargurus.com/us/en/job/8417873/Software-Development-Engineer-II",
-            "match_score": 75.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "backend APIs and services",
-              "AWS and distributed systems"
-            ],
-            "main_gaps": [
-              "demonstrated Java/Spring experience",
-              "event-stream implementation"
-            ]
-          },
-          {
-            "key": "url::https://careers.cargurus.com/us/en/job/8243216/Backend-Engineer-II-Product-Engineering",
-            "match_score": 75.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "backend APIs and services",
-              "AWS and distributed systems"
-            ],
-            "main_gaps": [
-              "demonstrated Java/Spring experience",
-              "event-stream implementation"
-            ]
-          },
-          {
-            "key": "url::https://www.metacareers.com/profile/job_details/1926983275422529",
-            "match_score": 64.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Python and Spark pipelines",
-              "production data workflows"
-            ],
-            "main_gaps": [
-              "three-year data engineering experience",
-              "data visualization tools"
+              "Leave administration",
+              "HR compliance"
             ]
           }
         ]
       },
       {
         "batch": 2,
-        "route": "resume_swe",
+        "route": "resume_ai",
         "attempt": "initial",
         "jobs": [
           {
-            "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/156216BR",
-            "company": "Infosys",
-            "title": "Data Engineer with Spark, Scala, PySpark, Airflow, Python, SQL, Apache Iceberg Experience"
+            "key": "url::https://www.google.com/about/careers/applications/jobs/results/83811612032410310-frontier-ai-safety-and-alignment-research-scientist-deepmind",
+            "company": "Google",
+            "title": "Frontier AI Safety and Alignment Research Scientist, DeepMind"
           },
           {
-            "key": "url::https://telos.hua.hrsmart.com/hr/ats/Posting/view/3721",
-            "company": "Telos Corporation",
-            "title": "Journeyman Infrastructure Vulnerability Remediation Engineer"
+            "key": "url::https://jobs.ashbyhq.com/mistral.ai/5be6a9c6-f7d7-45d4-8951-0dbf58be222f",
+            "company": "Mistral AI",
+            "title": "Applied Scientist - Cybersecurity"
           },
           {
-            "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "company": "Kforce",
-            "title": "Network Engineer - Cisco Wireless & Infrastructure"
+            "key": "url::https://www.kpmguscareers.com/jobdetail?jobId=139230",
+            "company": "KPMG",
+            "title": "Tax Associate, International Tax - JD/LLM | New York Summer/Fall 2027"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 7.614,
+        "latency_seconds": 4.967,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
           "jobs_scored": 3,
-          "input_tokens": 4162,
-          "cached_input_tokens": 1851,
-          "output_tokens": 1039,
-          "reasoning_tokens": 801,
-          "estimated_usd": 0.000769
+          "input_tokens": 5187,
+          "cached_input_tokens": 0,
+          "output_tokens": 610,
+          "reasoning_tokens": 350,
+          "estimated_usd": 0.000824
         },
         "decisions": [
           {
-            "key": "url::https://digitalcareers.infosys.com/global-careers/company-job/description/reqid/156216BR",
-            "match_score": 64.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "other",
-            "top_match_reasons": [
-              "Python and SQL pipelines",
-              "Spark/Databricks workflows"
-            ],
-            "main_gaps": [
-              "Scala/Airflow/Iceberg",
-              "Tableau reporting and ETL leadership"
-            ]
-          },
-          {
-            "key": "url::https://telos.hua.hrsmart.com/hr/ats/Posting/view/3721",
-            "match_score": 38.0,
+            "key": "url::https://www.google.com/about/careers/applications/jobs/results/83811612032410310-frontier-ai-safety-and-alignment-research-scientist-deepmind",
+            "match_score": 42.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Linux and Kubernetes exposure",
-              "Infrastructure automation"
+              "LLM systems experience",
+              "LLM evaluation platform"
             ],
             "main_gaps": [
-              "RHEL/OpenShift administration",
-              "Ansible vulnerability remediation"
+              "published ML research",
+              "AI safety interpretability"
             ]
           },
           {
-            "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 32.0,
+            "key": "url::https://jobs.ashbyhq.com/mistral.ai/5be6a9c6-f7d7-45d4-8951-0dbf58be222f",
+            "match_score": 61.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Infrastructure troubleshooting",
-              "Production reliability"
+              "Python AI systems",
+              "LLM evaluation and tooling"
             ],
             "main_gaps": [
-              "Cisco wireless networking",
-              "Palo Alto firewalls"
+              "hands-on cybersecurity background",
+              "RL environments and verifiers"
+            ]
+          },
+          {
+            "key": "url::https://www.kpmguscareers.com/jobdetail?jobId=139230",
+            "match_score": 4.0,
+            "seniority_fit": "good",
+            "hard_constraint_status": "other",
+            "top_match_reasons": [],
+            "main_gaps": [
+              "JD or LLM in taxation",
+              "international tax experience"
             ]
           }
         ]
       },
       {
         "batch": 3,
-        "route": "resume_ai",
-        "attempt": "initial",
-        "jobs": [
-          {
-            "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "company": "Kforce",
-            "title": "Applied AI Engineer"
-          }
-        ],
-        "model": "gpt-6-luna",
-        "scoring_version": "v7-compact-early-career",
-        "reasoning_effort": "medium",
-        "status": "success",
-        "latency_seconds": 2.503,
-        "usage": {
-          "model": "gpt-6-luna",
-          "api_requests": 1,
-          "jobs_scored": 1,
-          "input_tokens": 3001,
-          "cached_input_tokens": 0,
-          "output_tokens": 308,
-          "reasoning_tokens": 237,
-          "estimated_usd": 0.000454
-        },
-        "decisions": [
-          {
-            "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 94.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Production document RAG",
-              "AI evaluation and deployment"
-            ],
-            "main_gaps": []
-          }
-        ]
-      },
-      {
-        "batch": 4,
         "route": "both",
         "attempt": "initial",
         "jobs": [
-          {
-            "key": "url::https://jobs.smartrecruiters.com/AristaNetworks/744000163713504-full-stack-application-developer",
-            "company": "Arista Networks",
-            "title": "Full Stack Application Developer"
-          },
           {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
             "company": "Kforce",
             "title": "Software Engineer - AI-Assisted Development"
           },
           {
-            "key": "url::https://www.metacareers.com/profile/job_details/2542490782884946",
-            "company": "Meta",
-            "title": "Software Engineer, Machine Learning"
+            "key": "url::https://jobs.gem.com/auger/am9icG9zdDqpBBzLL-AX01GMwHqnfbbc",
+            "company": "Auger",
+            "title": "Applied Scientist, Agentic AI and Supply Chain Intelligence"
           },
           {
-            "key": "url::https://www.metacareers.com/profile/job_details/1061344469849575",
-            "company": "Meta",
-            "title": "Software Engineer (Machine Learning)"
+            "key": "url::https://jobs.ashbyhq.com/ThinkingMachines/c09f086c-b34b-4d34-b1fb-e5672c666dd8",
+            "company": "Thinking Machine Lab",
+            "title": "Research Engineer, Infrastructure, RL Infra / Systems"
           },
           {
-            "key": "url::https://telos.hua.hrsmart.com/hr/ats/Posting/view/3726",
-            "company": "Telos Corporation",
-            "title": "Journeyman Orchestration Analytics Software Engineer"
-          },
-          {
-            "key": "url::https://www.metacareers.com/profile/job_details/1510642494269521",
-            "company": "Meta",
-            "title": "Data Engineer, Analytics"
-          },
-          {
-            "key": "url::https://jobs.dfinsolutions.com/job/AI-Automation-Engineer/1453887600",
-            "company": "Donnelley Financial Solutions",
-            "title": "AI Automation Engineer"
+            "key": "url::https://www.google.com/about/careers/applications/jobs/results/95334081574642374-associate-product-counsel-networking-and-infrastructure",
+            "company": "Google",
+            "title": "Associate Product Counsel, Networking and Infrastructure"
           }
         ],
         "model": "gpt-6-luna",
         "scoring_version": "v7-compact-early-career",
         "reasoning_effort": "medium",
         "status": "success",
-        "latency_seconds": 15.239,
+        "latency_seconds": 5.876,
         "usage": {
           "model": "gpt-6-luna",
           "api_requests": 1,
-          "jobs_scored": 7,
-          "input_tokens": 8439,
-          "cached_input_tokens": 2724,
-          "output_tokens": 2217,
-          "reasoning_tokens": 1529,
-          "estimated_usd": 0.001707
+          "jobs_scored": 4,
+          "input_tokens": 6715,
+          "cached_input_tokens": 0,
+          "output_tokens": 832,
+          "reasoning_tokens": 501,
+          "estimated_usd": 0.001087
         },
         "decisions": [
           {
-            "key": "url::https://jobs.smartrecruiters.com/AristaNetworks/744000163713504-full-stack-application-developer",
-            "match_score": 88.0,
-            "seniority_fit": "good",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "React full-stack delivery",
-              "Cloud deployment experience"
-            ],
-            "main_gaps": []
-          },
-          {
             "key": "url::https://www.kforce.com/find-work/search-jobs",
-            "match_score": 68.0,
+            "match_score": 75.0,
             "seniority_fit": "good",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Node.js and Python APIs",
-              "Production software development"
+              "Python/Node.js application development",
+              "REST APIs and CI/CD"
             ],
             "main_gaps": [
-              "Azure application development",
+              "Microsoft Azure experience",
               "AI coding tools in practice"
             ]
           },
           {
-            "key": "url::https://www.metacareers.com/profile/job_details/2542490782884946",
+            "key": "url::https://jobs.gem.com/auger/am9icG9zdDqpBBzLL-AX01GMwHqnfbbc",
             "match_score": 56.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Applied ML experience",
-              "Strong software engineering foundation"
-            ],
-            "main_gaps": [
-              "Large-scale recommendation ML",
-              "Distributed ML systems"
-            ]
-          },
-          {
-            "key": "url::https://www.metacareers.com/profile/job_details/1061344469849575",
-            "match_score": 49.0,
-            "seniority_fit": "stretch",
-            "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Applied ML and data pipeline work",
-              "Python, SQL, and Spark"
-            ],
-            "main_gaps": [
-              "Three years of ML experience",
-              "Recommendation systems at scale"
-            ]
-          },
-          {
-            "key": "url::https://telos.hua.hrsmart.com/hr/ats/Posting/view/3726",
-            "match_score": 44.0,
             "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "Data ingestion and automation",
-              "Cloud and systems experience"
+              "Agentic AI and RAG",
+              "Production pipelines and evaluation"
             ],
             "main_gaps": [
-              "ELK and network telemetry",
-              "RHEL and DoD STIGs"
+              "Four years production experience",
+              "ML/statistical foundations"
             ]
           },
           {
-            "key": "url::https://www.metacareers.com/profile/job_details/1510642494269521",
-            "match_score": 68.0,
+            "key": "url::https://jobs.ashbyhq.com/ThinkingMachines/c09f086c-b34b-4d34-b1fb-e5672c666dd8",
+            "match_score": 58.0,
             "seniority_fit": "stretch",
             "hard_constraint_status": "ok",
             "top_match_reasons": [
-              "ETL and data pipelines",
-              "SQL, Spark, and Databricks"
+              "AI infrastructure and observability",
+              "PyTorch and production systems"
             ],
             "main_gaps": [
-              "Dimensional data modeling",
-              "Data warehouse ownership"
+              "RL training systems",
+              "Distributed model training at scale"
             ]
           },
           {
-            "key": "url::https://jobs.dfinsolutions.com/job/AI-Automation-Engineer/1453887600",
-            "match_score": 50.0,
-            "seniority_fit": "stretch",
+            "key": "url::https://www.google.com/about/careers/applications/jobs/results/95334081574642374-associate-product-counsel-networking-and-infrastructure",
+            "match_score": 2.0,
+            "seniority_fit": "mismatch",
             "hard_constraint_status": "ok",
-            "top_match_reasons": [
-              "Applied LLM and RAG experience",
-              "AI evaluation and workflow delivery"
-            ],
+            "top_match_reasons": [],
             "main_gaps": [
-              "Program management ownership",
-              "AI governance execution"
+              "JD and bar admission",
+              "Attorney-level experience"
             ]
           }
         ]
       }
     ],
     "model": "gpt-6-luna",
-    "jobs_scored": 21,
-    "input_tokens": 24600,
-    "cached_input_tokens": 6426,
-    "output_tokens": 5548,
-    "reasoning_tokens": 3584,
-    "estimated_usd": 0.004655,
+    "jobs_scored": 15,
+    "input_tokens": 24440,
+    "cached_input_tokens": 0,
+    "output_tokens": 4053,
+    "reasoning_tokens": 2064,
+    "estimated_usd": 0.00447,
     "scoring_version": "v7-compact-early-career",
     "reasoning_effort": "medium",
-    "scored": 21
+    "scored": 15
   },
   "output": {
-    "tier_a": 4,
-    "tier_b": 17,
-    "tier_c": 95,
-    "shown": 21,
-    "new_jobs": 35,
+    "tier_a": 3,
+    "tier_b": 4,
+    "tier_c": 107,
+    "shown": 7,
+    "new_jobs": 28,
     "new_jobs_added": 1
   },
   "screen_method": "cache+llm",
@@ -563,10 +428,10 @@
       "raw_jobs": 90,
       "unique_jobs": 90,
       "unique_contribution": 90,
-      "first_pass_survivors": 68,
-      "original_postings_resolved": 10,
-      "jds_resolved": 8,
-      "elapsed_seconds": 9.743
+      "first_pass_survivors": 71,
+      "original_postings_resolved": 16,
+      "jds_resolved": 13,
+      "elapsed_seconds": 3.684
     },
     {
       "query": "Full Stack",
@@ -580,21 +445,21 @@
       "first_pass_survivors": 12,
       "original_postings_resolved": 2,
       "jds_resolved": 2,
-      "elapsed_seconds": 3.651
+      "elapsed_seconds": 0.633
     },
     {
       "query": "AI",
       "group": "syncareer",
       "page_budget": 6,
       "pages_fetched": 6,
-      "stop_reason": "page_budget",
-      "raw_jobs": 77,
-      "unique_jobs": 77,
-      "unique_contribution": 72,
-      "first_pass_survivors": 32,
-      "original_postings_resolved": 9,
-      "jds_resolved": 6,
-      "elapsed_seconds": 8.716
+      "stop_reason": "empty_page",
+      "raw_jobs": 71,
+      "unique_jobs": 71,
+      "unique_contribution": 64,
+      "first_pass_survivors": 29,
+      "original_postings_resolved": 6,
+      "jds_resolved": 4,
+      "elapsed_seconds": 2.6
     },
     {
       "query": "Machine Learning",
@@ -602,13 +467,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 7,
-      "unique_jobs": 7,
-      "unique_contribution": 5,
-      "first_pass_survivors": 6,
+      "raw_jobs": 6,
+      "unique_jobs": 6,
+      "unique_contribution": 4,
+      "first_pass_survivors": 5,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 1.907
+      "elapsed_seconds": 0.588
     },
     {
       "query": "Infrastructure",
@@ -616,27 +481,27 @@
       "page_budget": 6,
       "pages_fetched": 3,
       "stop_reason": "empty_page",
-      "raw_jobs": 28,
-      "unique_jobs": 28,
-      "unique_contribution": 23,
-      "first_pass_survivors": 20,
-      "original_postings_resolved": 10,
-      "jds_resolved": 3,
-      "elapsed_seconds": 3.313
+      "raw_jobs": 27,
+      "unique_jobs": 27,
+      "unique_contribution": 21,
+      "first_pass_survivors": 19,
+      "original_postings_resolved": 6,
+      "jds_resolved": 2,
+      "elapsed_seconds": 1.074
     },
     {
       "query": "Forward Deployed",
       "group": "syncareer",
       "page_budget": 6,
-      "pages_fetched": 2,
+      "pages_fetched": 1,
       "stop_reason": "empty_page",
-      "raw_jobs": 5,
-      "unique_jobs": 5,
-      "unique_contribution": 2,
-      "first_pass_survivors": 4,
+      "raw_jobs": 0,
+      "unique_jobs": 0,
+      "unique_contribution": 0,
+      "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 2.526
+      "elapsed_seconds": 0.176
     },
     {
       "query": "DevOps",
@@ -647,10 +512,10 @@
       "raw_jobs": 7,
       "unique_jobs": 7,
       "unique_contribution": 7,
-      "first_pass_survivors": 5,
+      "first_pass_survivors": 6,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 2.254
+      "elapsed_seconds": 0.586
     },
     {
       "query": "Backend",
@@ -664,7 +529,7 @@
       "first_pass_survivors": 3,
       "original_postings_resolved": 1,
       "jds_resolved": 1,
-      "elapsed_seconds": 2.225
+      "elapsed_seconds": 0.597
     },
     {
       "query": "Platform",
@@ -672,13 +537,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 10,
-      "unique_jobs": 10,
+      "raw_jobs": 11,
+      "unique_jobs": 11,
       "unique_contribution": 8,
-      "first_pass_survivors": 8,
+      "first_pass_survivors": 9,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 2.225
+      "elapsed_seconds": 0.568
     },
     {
       "query": "New Grad",
@@ -692,7 +557,7 @@
       "first_pass_survivors": 0,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 2.227
+      "elapsed_seconds": 0.582
     },
     {
       "query": "LLM",
@@ -702,11 +567,11 @@
       "stop_reason": "empty_page",
       "raw_jobs": 1,
       "unique_jobs": 1,
-      "unique_contribution": 0,
-      "first_pass_survivors": 0,
+      "unique_contribution": 1,
+      "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 2.267
+      "elapsed_seconds": 0.653
     },
     {
       "query": "Data Engineer",
@@ -714,13 +579,13 @@
       "page_budget": 6,
       "pages_fetched": 2,
       "stop_reason": "empty_page",
-      "raw_jobs": 10,
-      "unique_jobs": 10,
-      "unique_contribution": 7,
+      "raw_jobs": 9,
+      "unique_jobs": 9,
+      "unique_contribution": 6,
       "first_pass_survivors": 8,
-      "original_postings_resolved": 1,
-      "jds_resolved": 1,
-      "elapsed_seconds": 3.396
+      "original_postings_resolved": 2,
+      "jds_resolved": 2,
+      "elapsed_seconds": 0.617
     },
     {
       "query": "Site Reliability",
@@ -734,14 +599,14 @@
       "first_pass_survivors": 1,
       "original_postings_resolved": 0,
       "jds_resolved": 0,
-      "elapsed_seconds": 2.435
+      "elapsed_seconds": 0.586
     }
   ],
   "enrichment": {
-    "needed": 18,
-    "detail_api_resolved": 157,
+    "needed": 16,
+    "detail_api_resolved": 149,
     "official_exact_resolved": 0,
     "exact_peer_resolved": 0,
-    "remaining_no_jd": 18
+    "remaining_no_jd": 16
   }
 }

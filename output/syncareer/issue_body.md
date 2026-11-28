@@ -1,34 +1,20 @@
-Syncareer alert — 2026-11-27_1551
+Syncareer alert — 2026-11-28_0051
 
-Updated (PT): 2026-11-27 07:53 PST
-Snapshot (UTC): 2026-11-27T15:53:33.293389+00:00
+Updated (PT): 2026-11-27 16:52 PST
+Snapshot (UTC): 2026-11-28T00:52:46.860153+00:00
 
-21 new matching job(s) this run (hard-filtered).
+7 new matching job(s) this run (hard-filtered).
 
 If you skipped a day, **do not read every Issue**. Open `output/syncareer/inbox.md` in the repo (last 3 days, one file).
 
 | Tier | Score | Source | Company | Title | Location | Posted | Sponsorship | Referral | Review | Coverage | Link |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| A | 94.0 | Syncareer | Deloitte | Internal Services - Associate - Software Engineering - Summer/Fall 202 | Hermitage, Tennessee, United States | 2026-11-24 | No sponsor | - | unreviewed | not_dedicated | [open](https://apply.deloitte.com/en_US/careers/JobDetail/Internal-Services-Associate-Software-Engineering-Summer-Fall-2027/376512) |
-| A | 92.0 | Syncareer | KPMG | Associate, Forward Deployed Engineer | Chicago, Illinois, United States | 2026-11-24 | No sponsor | - | unreviewed | not_dedicated | [open](https://www.kpmguscareers.com/jobdetail/?jobId=139560) |
+| A | 92.0 | Syncareer | Cisco | Software Engineer | Research Triangle Park, North Carolina, United States | 2026-11-26 | Sponsor | - | unreviewed | official_identity_unmatched | [open](https://careers.cisco.com/global/en/job/2030715/Software-Engineer) |
 | A | 91.0 | Syncareer | ElevenLabs | Full-Stack Engineer - Creative Agents | New York, New York, United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://elevenlabs.io/careers/35813150-a851-4821-b732-a037b4e6c4fe/full-stack-engineer-creative-agents) |
 | A | 88.0 | Syncareer | Arista Networks | Full Stack Application Developer | Cary, North Carolina, United States | 2026-11-26 | No sponsor | - | unreviewed | not_dedicated | [open](https://jobs.smartrecruiters.com/AristaNetworks/744000163713504-full-stack-application-developer) |
-| B | 88.0 | Syncareer | Procore Technologies | Forward Deployed AI Engineer | Austin, Texas, United States | 2026-11-24 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.procore.com/jobs/forward-deployed-ai-engineer-austin-texas-united-states) |
 | B | 87.0 | Syncareer | Gentherm | IT Software Engineer, Digital Information | United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.gentherm.com/job/Novi-IT-Software-Engineer%2C-Digital-Information-MI-48377/608380517/) |
 | B | 86.0 | Syncareer | Rubrik | Software Engineer - Data Protection | Palo Alto, California, United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://www.rubrik.com/company/careers/departments/job.8314058.1929?reqId=11627) |
-| B | 85.0 | Syncareer | Deloitte | Internal Services - Associate - Infrastructure Engineering - Summer/Fa | Birmingham, Alabama, United States | 2026-11-24 | No sponsor | - | unreviewed | not_dedicated | [open](https://apply.deloitte.com/en_US/careers/JobDetail/Internal-Services-Associate-Infrastructure-Engineering-Summer-Fall-2027/376511) |
 | B | 84.0 | Syncareer | CrowdStrike | DevOps Engineer (Remote) | California, United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/USA---Remote-CA/DevOps-Engineer--Remote-_R30874?locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a30a87ed25634629aa6c3958aa2b91ea&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09) |
 | B | 83.0 | Syncareer | Nationwide | Engineer, Software Engineer | Des Moines, Iowa, United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://nationwide.wd1.myworkdayjobs.com/en-US/Nationwide_Career/job/Iowa---Des-Moines-1100-Locust-Street/Engineer--Software-Engineer_101372-1) |
-| B | 81.0 | Syncareer | CNH Industrial | Software Engineer II | Sioux Falls, South Dakota, United States | 2026-11-24 | Sponsor | - | unreviewed | not_dedicated | [open](https://join.cnh.com/job/Software-Engineer-II/6562-en_US) |
-| B | 81.0 | Syncareer | Garmin | Software Engineer 1 | Chandler, Arizona, United States | 2026-11-24 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.garmin.com/jobs/19953?lang=en-us&previousLocale=en-US) |
-| B | 77.0 | Syncareer | Teradata | AI Engineer | San Diego, California, United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.teradata.com/jobs/220941/ai-engineer?j_idx=3) |
-| B | 77.0 | Syncareer | Teradata | AI Engineer - 220940 | San Diego, California, United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.teradata.com/jobs/220940/ai-engineer?j_idx=4) |
-| B | 77.0 | Syncareer | Teradata | AI Engineer | San Diego, California, United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.teradata.com/jobs/220942/ai-engineer?j_idx=5) |
-| B | 77.0 | Syncareer | Teradata | AI Engineer | San Diego, California, United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.teradata.com/jobs/220941/ai-engineer?j_idx=6) |
-| B | 77.0 | Syncareer | Teradata | AI Engineer - 220940 | San Diego, California, United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.teradata.com/jobs/220940/ai-engineer?j_idx=7) |
-| B | 77.0 | Syncareer | Teradata | AI Engineer | San Diego, California, United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://careers.teradata.com/jobs/220942/ai-engineer?j_idx=8) |
-| B | 76.0 | Syncareer | Shield AI | Engineer II, Software - Internal Tools | Seattle, Washington, United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://jobs.ashbyhq.com/shield/390c6f23-ad81-4969-80ce-6d5a193fd3b3) |
-| B | 75.0 | Syncareer | Delta Air Lines | Associate AI Engineer | Atlanta, Georgia, United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://delta.avature.net/en_US/careers/JobDetail/Associate-AI-Engineer/35162?jobId=35162) |
-| B | 73.0 | Syncareer | Medtronic | Software Engineer II - Advanced Manufacturing Engineering | Fridley, Minnesota, United States | 2026-11-25 | Sponsor | - | unreviewed | not_dedicated | [open](https://medtronic.wd1.myworkdayjobs.com/en-US/MedtronicCareers/job/Fridley-Minnesota-United-States-of-America/Software-Engineer-II---Advanced-Manufacturing-Engineering_R81860-1?locationCountry=55273a1b49934d97ae15342ef51f6b95&locationCountry=d4afdeb461d446e4babd204bd102dba8&locationCountry=29247e57dbaf46fb855b224e03170bc7&locationCountry=a4e08b475d6a4176853c9d1cb9854e02&locationCountry=80938777cac5440fab50d729f9634969&locationCountry=6cb77610a8a543aea2d6bc10457e35d4&locationCountry=d903bb3fedad45039383f6de334ad4db&locationCountry=bc33aa3152ec42d4995f4791a106ed09&locationCountry=a30a87ed25634629aa6c3958aa2b91ea) |
 
-Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-11-27_1551.csv`.
+Inbox CSV: `output/syncareer/inbox.csv`. This-run snapshot: `output/syncareer/runs/2026-11-28_0051.csv`.
