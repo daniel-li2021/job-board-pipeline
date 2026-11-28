@@ -2,6 +2,154 @@
   "runs": [
     {
       "pipeline": "board",
+      "run_at": "2026-11-28T07:19:12.030472+00:00",
+      "mode": "pipeline",
+      "health": "success",
+      "model": "gpt-6-luna",
+      "scoring_version": "v7-compact-early-career",
+      "reasoning_effort": "medium",
+      "jobs_scored": 1,
+      "cache_reused": 138,
+      "peer_reused": 4,
+      "same_content_reused": 6,
+      "non_material_change_reused": 0,
+      "new_or_changed": 1,
+      "new_or_changed_reasons": {
+        "prior_rule_result_now_eligible_for_llm": 1
+      },
+      "rescored_within_24h": 0,
+      "fallback_count": 0,
+      "rule_count": 1878,
+      "requests": 1,
+      "input_tokens": 3322,
+      "cached_input_tokens": 0,
+      "output_tokens": 142,
+      "reasoning_tokens": 75,
+      "estimated_usd": 0.000403,
+      "latency_seconds": 2.246,
+      "latency_measured": true,
+      "effective_rpm": 26.71,
+      "effective_tpm": 92537.85,
+      "json_reliability": 1.0,
+      "json_reliability_measured": true,
+      "batches_total": 1,
+      "primary_batches_total": 1,
+      "batches_attempted": 1,
+      "batches_succeeded": 1,
+      "batches_failed": 0,
+      "batches_skipped": 0,
+      "retry_splits": 0,
+      "retry_batches": 0,
+      "retry_batches_succeeded": 0,
+      "retry_batches_failed": 0,
+      "batch_outcomes_measured": true,
+      "json_results": 1,
+      "funnel": {
+        "after_dedup": 8248,
+        "after_company": 7757,
+        "after_hard_filter": 7133,
+        "after_prefilter": 2409,
+        "official_duplicates_suppressed": 392,
+        "retry_only_carried": 0,
+        "dropped": 5657
+      },
+      "output": {
+        "tier_a": 24,
+        "tier_b": 122,
+        "ab_before_cap": 146,
+        "shown": 146,
+        "new_jobs": 8,
+        "new_jobs_added": 4,
+        "new_jobs_by_source": {
+          "ats": {
+            "found": 0,
+            "added": 0
+          },
+          "linkedin": {
+            "found": 8,
+            "added": 4
+          },
+          "indeed": {
+            "found": 0,
+            "added": 0
+          },
+          "glassdoor": {
+            "found": 0,
+            "added": 0
+          }
+        }
+      },
+      "enrichment": {
+        "needed": 3512,
+        "official_exact_resolved": 0,
+        "exact_peer_resolved": 0,
+        "direct": {
+          "needed": 14,
+          "identity_needed": 10,
+          "http_requests": 10,
+          "identities_resolved": 7,
+          "remaining_no_jd": 3512,
+          "failure_reasons": {
+            "no_direct_or_official_url": 4
+          }
+        },
+        "remaining_no_jd": 3472,
+        "failure_reasons": {
+          "no_enrichment_path": 2872,
+          "linkedin_rate_limited": 160,
+          "linkedin_http_429": 6,
+          "official_detail_deferred": 49,
+          "no_direct_or_official_url": 4,
+          "linkedin_http_network_error": 2,
+          "glassdoor_detail_http_403_static_card_only": 379
+        }
+      },
+      "comparison": {},
+      "batches": [
+        {
+          "batch": 1,
+          "route": "resume_swe",
+          "attempt": "initial",
+          "jobs": [
+            {
+              "key": "id::linkedin::4495278676",
+              "company": "Cisco",
+              "title": "Software Engineer"
+            }
+          ],
+          "model": "gpt-6-luna",
+          "scoring_version": "v7-compact-early-career",
+          "reasoning_effort": "medium",
+          "status": "success",
+          "latency_seconds": 2.246,
+          "usage": {
+            "model": "gpt-6-luna",
+            "api_requests": 1,
+            "jobs_scored": 1,
+            "input_tokens": 3322,
+            "cached_input_tokens": 0,
+            "output_tokens": 142,
+            "reasoning_tokens": 75,
+            "estimated_usd": 0.000403
+          },
+          "decisions": [
+            {
+              "key": "id::linkedin::4495278676",
+              "match_score": 92.0,
+              "seniority_fit": "good",
+              "hard_constraint_status": "ok",
+              "top_match_reasons": [
+                "Production full-stack development",
+                "Testing and CI/CD reliability"
+              ],
+              "main_gaps": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pipeline": "board",
       "run_at": "2026-11-28T01:21:40.279254+00:00",
       "mode": "pipeline",
       "health": "success",
@@ -22600,375 +22748,6 @@
               "main_gaps": [
                 "PhD or equivalent research record",
                 "Vision transformers and self-supervised learning"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "pipeline": "board",
-      "run_at": "2026-11-23T01:21:25.614101+00:00",
-      "mode": "pipeline",
-      "health": "success",
-      "model": "gpt-6-luna",
-      "scoring_version": "v7-compact-early-career",
-      "reasoning_effort": "medium",
-      "jobs_scored": 12,
-      "cache_reused": 111,
-      "peer_reused": 1,
-      "same_content_reused": 7,
-      "non_material_change_reused": 0,
-      "new_or_changed": 13,
-      "new_or_changed_reasons": {
-        "genuinely_new_job": 13
-      },
-      "rescored_within_24h": 0,
-      "fallback_count": 0,
-      "rule_count": 1856,
-      "requests": 2,
-      "input_tokens": 13707,
-      "cached_input_tokens": 0,
-      "output_tokens": 2742,
-      "reasoning_tokens": 1602,
-      "estimated_usd": 0.002741,
-      "latency_seconds": 24.167,
-      "latency_measured": true,
-      "effective_rpm": 4.97,
-      "effective_tpm": 40838.33,
-      "json_reliability": 1.0,
-      "json_reliability_measured": true,
-      "batches_total": 2,
-      "primary_batches_total": 2,
-      "batches_attempted": 2,
-      "batches_succeeded": 2,
-      "batches_failed": 0,
-      "batches_skipped": 0,
-      "retry_splits": 0,
-      "retry_batches": 0,
-      "retry_batches_succeeded": 0,
-      "retry_batches_failed": 0,
-      "batch_outcomes_measured": true,
-      "json_results": 12,
-      "funnel": {
-        "after_dedup": 8201,
-        "after_company": 7683,
-        "after_hard_filter": 7059,
-        "after_prefilter": 2366,
-        "official_duplicates_suppressed": 387,
-        "retry_only_carried": 0,
-        "dropped": 5643
-      },
-      "output": {
-        "tier_a": 19,
-        "tier_b": 121,
-        "ab_before_cap": 140,
-        "shown": 140,
-        "new_jobs": 60,
-        "new_jobs_added": 2,
-        "new_jobs_by_source": {
-          "ats": {
-            "found": 0,
-            "added": 0
-          },
-          "linkedin": {
-            "found": 0,
-            "added": 0
-          },
-          "indeed": {
-            "found": 60,
-            "added": 2
-          },
-          "glassdoor": {
-            "found": 0,
-            "added": 0
-          }
-        }
-      },
-      "enrichment": {
-        "needed": 3487,
-        "official_exact_resolved": 0,
-        "exact_peer_resolved": 0,
-        "direct": {
-          "needed": 11,
-          "identity_needed": 11,
-          "http_requests": 11,
-          "identities_resolved": 10,
-          "remaining_no_jd": 3487,
-          "failure_reasons": {}
-        },
-        "remaining_no_jd": 3443,
-        "failure_reasons": {
-          "no_enrichment_path": 2845,
-          "linkedin_rate_limited": 164,
-          "linkedin_http_429": 6,
-          "official_detail_deferred": 48,
-          "linkedin_http_network_error": 2,
-          "glassdoor_detail_http_403_static_card_only": 378
-        }
-      },
-      "comparison": {},
-      "batches": [
-        {
-          "batch": 1,
-          "route": "resume_swe",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::indeed::in-e28cc045b7b44bc7",
-              "company": "Atlantis IT Group",
-              "title": "SDET / QA Automation Engineer"
-            },
-            {
-              "key": "id::indeed::in-efc93da8fafc2448",
-              "company": "Calyx Containers",
-              "title": "Junior Software Developer – Print & Packaging"
-            },
-            {
-              "key": "id::indeed::in-c6ef06b27efe0810",
-              "company": "Eventhogs",
-              "title": "Mobile App Developer (Cross-Platform)"
-            },
-            {
-              "key": "id::indeed::in-e4e4eec3a4291058",
-              "company": "RecoveryTrek",
-              "title": "Software Developer"
-            },
-            {
-              "key": "id::indeed::in-be2c22aac0604fda",
-              "company": "Diesel Pro Power",
-              "title": "Full-Stack Software Engineer"
-            },
-            {
-              "key": "id::indeed::in-1631b645efbd77f2",
-              "company": "",
-              "title": "Flutter Developer"
-            },
-            {
-              "key": "id::indeed::in-540f56ae4f40cafc",
-              "company": "PGN AGENCY",
-              "title": "Front-End Web Developer-Part Time"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 16.605,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 7,
-            "input_tokens": 7074,
-            "cached_input_tokens": 0,
-            "output_tokens": 1890,
-            "reasoning_tokens": 1214,
-            "estimated_usd": 0.001652
-          },
-          "decisions": [
-            {
-              "key": "id::indeed::in-e28cc045b7b44bc7",
-              "match_score": 40.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "citizen_or_clearance",
-              "top_match_reasons": [
-                "REST API testing",
-                "Automated regression testing"
-              ],
-              "main_gaps": [
-                "Java API automation",
-                "Mobile/Pega testing"
-              ]
-            },
-            {
-              "key": "id::indeed::in-efc93da8fafc2448",
-              "match_score": 67.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Full-stack development",
-                "APIs and databases"
-              ],
-              "main_gaps": [
-                "Print/packaging experience"
-              ]
-            },
-            {
-              "key": "id::indeed::in-c6ef06b27efe0810",
-              "match_score": 57.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "API integration",
-                "React experience"
-              ],
-              "main_gaps": [
-                "Cross-platform app release",
-                "Maps/location services"
-              ]
-            },
-            {
-              "key": "id::indeed::in-e4e4eec3a4291058",
-              "match_score": 75.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "citizen_or_clearance",
-              "top_match_reasons": [
-                "Production software development",
-                "APIs and testing"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "id::indeed::in-be2c22aac0604fda",
-              "match_score": 59.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "React/TypeScript/Node.js",
-                "Production deployments"
-              ],
-              "main_gaps": [
-                "Five years' experience",
-                "Independent production ownership"
-              ]
-            },
-            {
-              "key": "id::indeed::in-1631b645efbd77f2",
-              "match_score": 62.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Cross-platform development",
-                "REST API integration"
-              ],
-              "main_gaps": [
-                "Flutter expertise"
-              ]
-            },
-            {
-              "key": "id::indeed::in-540f56ae4f40cafc",
-              "match_score": 86.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "React and TypeScript",
-                "Production web apps"
-              ],
-              "main_gaps": []
-            }
-          ]
-        },
-        {
-          "batch": 2,
-          "route": "both",
-          "attempt": "initial",
-          "jobs": [
-            {
-              "key": "id::indeed::in-f9d67b30d61eebba",
-              "company": "CLERA",
-              "title": "Founding Product Engineer"
-            },
-            {
-              "key": "id::indeed::in-c4c6b5c2a02ec931",
-              "company": "SlickDevs.com",
-              "title": "Junior Software Developer"
-            },
-            {
-              "key": "id::indeed::in-8b946b777cc31dac",
-              "company": "Agency Temp",
-              "title": "Entry Level Planning Engineer"
-            },
-            {
-              "key": "id::indeed::in-ed437768f8250c26",
-              "company": "Varonis Systems",
-              "title": "Software Escalation Engineer (Python)"
-            },
-            {
-              "key": "id::indeed::in-6ece1e4155bba05a",
-              "company": "oneZero Financial Systems",
-              "title": "Infrastructure Automation Engineer"
-            }
-          ],
-          "model": "gpt-6-luna",
-          "scoring_version": "v7-compact-early-career",
-          "reasoning_effort": "medium",
-          "status": "success",
-          "latency_seconds": 7.562,
-          "usage": {
-            "model": "gpt-6-luna",
-            "api_requests": 1,
-            "jobs_scored": 5,
-            "input_tokens": 6633,
-            "cached_input_tokens": 0,
-            "output_tokens": 852,
-            "reasoning_tokens": 388,
-            "estimated_usd": 0.001089
-          },
-          "decisions": [
-            {
-              "key": "id::indeed::in-f9d67b30d61eebba",
-              "match_score": 56.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Agent tool use and memory",
-                "LLM evaluation infrastructure"
-              ],
-              "main_gaps": [
-                "4+ years AI product experience",
-                "Consumer integrations and team leadership"
-              ]
-            },
-            {
-              "key": "id::indeed::in-c4c6b5c2a02ec931",
-              "match_score": 89.0,
-              "seniority_fit": "good",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Recent CS graduate",
-                "Shipped tested software features"
-              ],
-              "main_gaps": []
-            },
-            {
-              "key": "id::indeed::in-8b946b777cc31dac",
-              "match_score": 8.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python data analysis"
-              ],
-              "main_gaps": [
-                "Civil/environmental engineering degree",
-                "EIT and water systems modeling"
-              ]
-            },
-            {
-              "key": "id::indeed::in-ed437768f8250c26",
-              "match_score": 66.0,
-              "seniority_fit": "stretch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Python services and APIs",
-                "Cloud and distributed systems"
-              ],
-              "main_gaps": [
-                "3+ years enterprise Python",
-                "Networking, security, and storage fundamentals"
-              ]
-            },
-            {
-              "key": "id::indeed::in-6ece1e4155bba05a",
-              "match_score": 34.0,
-              "seniority_fit": "mismatch",
-              "hard_constraint_status": "ok",
-              "top_match_reasons": [
-                "Terraform and AWS",
-                "Python and CI/CD"
-              ],
-              "main_gaps": [
-                "5+ years infrastructure engineering",
-                "Bare-metal and Windows automation"
               ]
             }
           ]
