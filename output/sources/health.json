@@ -1,24 +1,24 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-28T01:21:39.904021+00:00",
+  "generated_at": "2026-11-28T07:18:28.549812+00:00",
   "collector": {
-    "commit": "d53ac43262a61cec440cb833ae53ff117ba11df1",
+    "commit": "26dbeb81562350682322270150e486afc416dbc3",
     "dirty": false
   },
   "sources": {
     "linkedin": {
       "required": true,
       "healthy": false,
-      "status": "cooldown",
-      "reason": "global_429_pause",
-      "last_attempt_at": "2026-11-27T05:10:27.167641+00:00",
+      "status": "partial",
+      "reason": "focused query coverage",
+      "last_attempt_at": "2026-11-28T07:18:03.428095+00:00",
       "last_success_at": "2026-09-22T18:01:45.946101+00:00",
-      "last_partial_at": "2026-11-26T23:07:10.093599+00:00",
-      "partial_collected_count": 38,
-      "partial_fresh_kept": 38,
-      "partial_carried_count": 4287,
+      "last_partial_at": "2026-11-28T07:18:03.428095+00:00",
+      "partial_collected_count": 19,
+      "partial_fresh_kept": 19,
+      "partial_carried_count": 4314,
       "last_attempt_collector": {
-        "commit": "18449b7c154ff98f3e2a3c8412bce2b51b02ad27",
+        "commit": "26dbeb81562350682322270150e486afc416dbc3",
         "dirty": false
       },
       "last_success_collector": {
@@ -31,52 +31,311 @@
       "last_success_source_provenance": {
         "implementation": "sources.linkedin_local"
       },
-      "last_attempt_count": 0,
+      "last_attempt_count": 19,
       "consecutive_failures": 0,
-      "query_stats": [],
-      "detail_enrichment": {},
-      "last_good_count": 4325,
-      "detail_last_attempt_at": "2026-11-26T23:07:10.093599+00:00",
-      "detail_429_streak": 1,
-      "detail_cooldown_until": "2026-11-27T11:07:10.093599+00:00",
-      "official_enrichment": {},
+      "query_stats": [
+        {
+          "query": "backend engineer",
+          "group": "primary",
+          "page_budget": 2,
+          "pages_fetched": 2,
+          "stop_reason": "page_budget",
+          "raw_jobs": 20,
+          "unique_jobs": 20,
+          "unique_contribution": 19,
+          "first_pass_survivors": 19,
+          "original_postings_resolved": 0,
+          "jds_resolved": 4,
+          "elapsed_seconds": 13.421,
+          "new_to_ledger": 9,
+          "rediscovered": 11,
+          "page_yields": [
+            {
+              "page": 0,
+              "raw": 10,
+              "new_to_ledger": 4,
+              "known": 6
+            },
+            {
+              "page": 1,
+              "raw": 10,
+              "new_to_ledger": 5,
+              "known": 5
+            }
+          ]
+        },
+        {
+          "query": "software engineer",
+          "group": "primary",
+          "page_budget": 5,
+          "pages_fetched": 0,
+          "stop_reason": "recovery_search_budget",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
+          "original_postings_resolved": 0,
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0,
+          "new_to_ledger": 0,
+          "rediscovered": 0,
+          "page_yields": []
+        },
+        {
+          "query": "ai engineer",
+          "group": "primary",
+          "page_budget": 3,
+          "pages_fetched": 0,
+          "stop_reason": "recovery_search_budget",
+          "raw_jobs": 0,
+          "unique_jobs": 0,
+          "unique_contribution": 0,
+          "first_pass_survivors": 0,
+          "original_postings_resolved": 0,
+          "jds_resolved": 0,
+          "elapsed_seconds": 0.0,
+          "new_to_ledger": 0,
+          "rediscovered": 0,
+          "page_yields": []
+        }
+      ],
+      "detail_enrichment": {
+        "eligible": 9,
+        "cache_reused": 0,
+        "requests": 1,
+        "responses": 1,
+        "successful_responses": 1,
+        "attempted_ids": [
+          "4495278676"
+        ],
+        "http_status_counts": {
+          "200": 1
+        },
+        "request_limit": 1,
+        "budget_deferred": 8,
+        "budget_exhausted": true,
+        "retry_deferred": 0,
+        "retry_attempts": 0,
+        "exact_official": 0,
+        "official_deferred": 0,
+        "rate_limited": false,
+        "jds_resolved": 1,
+        "external_apply_urls": 0,
+        "failed": 0,
+        "detail_jds_fetched": 1,
+        "intentional_skips": 0,
+        "blocked": "",
+        "scrapling_requests": 0,
+        "scrapling_jds_resolved": 0,
+        "scrapling_error": "",
+        "remaining_no_jd": 8,
+        "failure_reasons": {
+          "no_description": 8
+        },
+        "protected_requests": 1,
+        "protected_jds_resolved": 1,
+        "protected_deferred": 8,
+        "queue": [
+          {
+            "job_id": "4495880982",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "normal",
+            "needs_jd": null,
+            "deferred_at": null,
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": true,
+            "method": "exact_indeed_peer",
+            "deferred_reason": null,
+            "past_fresh": false
+          },
+          {
+            "job_id": "4495881952",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": false
+          },
+          {
+            "job_id": "4495085178",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "high",
+            "needs_jd": true,
+            "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": false
+          },
+          {
+            "job_id": "4495892309",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": false
+          },
+          {
+            "job_id": "4495335088",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "high",
+            "needs_jd": true,
+            "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": false
+          },
+          {
+            "job_id": "4495501038",
+            "first_seen": "2026-11-26T23:07:10.093599+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": true
+          },
+          {
+            "job_id": "4493813393",
+            "first_seen": "2026-11-26T20:00:21.925858+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T20:00:21.925858+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": true
+          },
+          {
+            "job_id": "4495278676",
+            "first_seen": "2026-11-26T23:07:10.093599+00:00",
+            "priority": "high",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+            "attempted_at": "2026-11-28T07:18:26.669557+00:00",
+            "attempted_this_phase": true,
+            "resolved": true,
+            "method": "linkedin_http",
+            "deferred_reason": null,
+            "past_fresh": true
+          },
+          {
+            "job_id": "4495035380",
+            "first_seen": "2026-11-26T20:00:21.925858+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T20:00:21.925858+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": true
+          },
+          {
+            "job_id": "4493478003",
+            "first_seen": "2026-11-26T23:07:10.093599+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": true
+          }
+        ],
+        "admission": {
+          "candidates": 13,
+          "rules_skipped": 3,
+          "rule_reasons": {
+            "prefilter:senior": 3
+          },
+          "cache_reused": 0,
+          "non_linkedin_resolved": 1,
+          "triage_evaluated": 4,
+          "triage_deferred": 0,
+          "worth_detail": 9
+        },
+        "cooldown_active": false,
+        "probe": true,
+        "round_request_limit": 1,
+        "round_requests": 1,
+        "status": "probe"
+      },
+      "last_good_count": 4333,
+      "detail_last_attempt_at": "2026-11-28T07:18:03.428095+00:00",
+      "detail_429_streak": 0,
+      "detail_cooldown_until": "",
+      "official_enrichment": {
+        "exact_indeed_peer": 1,
+        "cache": 3,
+        "search_provider_failures": 1,
+        "no_match": 4,
+        "search_requests": 5,
+        "search_provider": "bing",
+        "official_page_requests": 0,
+        "remaining_no_jd": 15
+      },
       "search_collection": {
-        "cooldown_active": true,
+        "cooldown_active": false,
         "probe": false,
         "query_cursor": 86,
-        "requests": 0,
-        "responses": 0,
-        "pages_fetched": 0,
+        "requests": 2,
+        "responses": 2,
+        "pages_fetched": 2,
         "http_status": 0,
         "rate_limited": false,
         "budget_exhausted": false,
         "rate_limit_event": {},
-        "transport_stop_reason": "global_429_pause",
-        "new_to_ledger": 0,
-        "rediscovered": 0,
-        "coverage_limited": false
+        "transport_stop_reason": "",
+        "new_to_ledger": 9,
+        "rediscovered": 11,
+        "coverage_limited": true
       },
       "search_last_attempt_at": "2026-09-26T00:21:43.068211+00:00",
       "search_query_cursor": 8,
       "search_429_streak": 0,
       "search_cooldown_until": "",
-      "detail_cooldown_reason": "HTTP 429",
-      "detail_status": "cooldown",
+      "detail_cooldown_reason": "",
+      "detail_status": "active",
       "runner_states": {
         "mac": {
-          "search_last_attempt_at": "2026-11-27T05:00:11.517921+00:00",
-          "search_429_streak": 1,
-          "search_cooldown_until": "2026-11-27T05:00:11.887395+00:00",
-          "detail_status": "cooldown",
-          "detail_last_attempt_at": "2026-11-26T23:07:10.093599+00:00",
-          "detail_429_streak": 1,
-          "detail_cooldown_until": "2026-11-27T11:07:10.093599+00:00",
-          "detail_cooldown_reason": "HTTP 429",
-          "search_query_cursor": 86,
-          "detail_retry_after_until": "2026-11-26T23:24:31.012882+00:00"
+          "search_last_attempt_at": "2026-11-28T07:18:03.428095+00:00",
+          "search_429_streak": 0,
+          "search_cooldown_until": "",
+          "detail_status": "active",
+          "detail_last_attempt_at": "2026-11-28T07:18:03.428095+00:00",
+          "detail_429_streak": 0,
+          "detail_cooldown_until": "",
+          "detail_cooldown_reason": "",
+          "search_query_cursor": 87,
+          "detail_retry_after_until": ""
         }
       },
-      "last_attempt_elapsed_seconds": 0.147,
+      "last_attempt_elapsed_seconds": 24.022,
       "failure_cause": "",
       "previous_failure": {
         "cause": "429",
@@ -86,7 +345,7 @@
       "queries_succeeded": 0,
       "queries_failed": 0,
       "queries_not_run": 0,
-      "detail_retry_after_until": "2026-11-26T23:24:31.012882+00:00"
+      "detail_retry_after_until": ""
     },
     "indeed": {
       "required": true,
@@ -391,14 +650,14 @@
       "healthy": false,
       "status": "skipped_unavailable",
       "reason": "GlassdoorException: homepage HTTP 403",
-      "last_attempt_at": "2026-11-26T05:31:06.430780+00:00",
+      "last_attempt_at": "2026-11-28T07:18:27.708544+00:00",
       "last_success_at": "2026-09-15T07:02:44.646497+00:00",
       "last_partial_at": "",
       "partial_collected_count": 0,
       "partial_fresh_kept": 0,
       "partial_carried_count": 0,
       "last_attempt_collector": {
-        "commit": "08733a09d3bf73a0ad26efedc99d5ebc09200751",
+        "commit": "26dbeb81562350682322270150e486afc416dbc3",
         "dirty": false
       },
       "last_success_collector": {
@@ -418,7 +677,7 @@
         "reliability": "best_effort_optional"
       },
       "last_attempt_count": 0,
-      "consecutive_failures": 80,
+      "consecutive_failures": 81,
       "query_stats": [
         {
           "query": "software engineer",
@@ -432,7 +691,7 @@
           "first_pass_survivors": 0,
           "original_postings_resolved": 0,
           "jds_resolved": 0,
-          "elapsed_seconds": 0.112,
+          "elapsed_seconds": 0.111,
           "hours_old": 24,
           "http_status": 403
         }
@@ -441,7 +700,7 @@
       "last_good_count": 380,
       "official_enrichment": {},
       "search_collection": {},
-      "last_attempt_elapsed_seconds": 1.278,
+      "last_attempt_elapsed_seconds": 0.771,
       "failure_cause": "403",
       "previous_failure": {},
       "queries_total": 0,
@@ -451,6 +710,40 @@
     }
   },
   "run_history": [
+    {
+      "source": "glassdoor",
+      "run_at": "2026-11-28T07:18:27.708544+00:00",
+      "status": "skipped_unavailable",
+      "new": 0,
+      "pass": null,
+      "new_ab": null,
+      "failure": true,
+      "reason": "GlassdoorException: homepage HTTP 403",
+      "search_429": false,
+      "detail_429": false,
+      "elapsed_seconds": 0.771,
+      "search_requests": null,
+      "initial_detail_requests": null,
+      "new_to_ledger": null,
+      "rediscovered": null
+    },
+    {
+      "source": "linkedin",
+      "run_at": "2026-11-28T07:18:03.428095+00:00",
+      "status": "partial",
+      "new": 8,
+      "pass": null,
+      "new_ab": null,
+      "failure": false,
+      "reason": "",
+      "search_429": false,
+      "detail_429": false,
+      "elapsed_seconds": 24.022,
+      "search_requests": 2,
+      "initial_detail_requests": 1,
+      "new_to_ledger": 9,
+      "rediscovered": 11
+    },
     {
       "source": "indeed",
       "run_at": "2026-11-28T01:21:25.463568+00:00",
@@ -2456,57 +2749,23 @@
       "initial_detail_requests": 12,
       "new_to_ledger": 43,
       "rediscovered": 57
-    },
-    {
-      "source": "indeed",
-      "run_at": "2026-10-30T15:20:51.807806+00:00",
-      "status": "ok",
-      "new": 417,
-      "pass": null,
-      "new_ab": null,
-      "failure": false,
-      "reason": "",
-      "search_429": false,
-      "detail_429": false,
-      "elapsed_seconds": 24.751,
-      "search_requests": null,
-      "initial_detail_requests": null,
-      "new_to_ledger": null,
-      "rediscovered": null
-    },
-    {
-      "source": "linkedin",
-      "run_at": "2026-10-30T05:09:06.244547+00:00",
-      "status": "partial",
-      "new": 31,
-      "pass": null,
-      "new_ab": null,
-      "failure": false,
-      "reason": "",
-      "search_429": false,
-      "detail_429": false,
-      "elapsed_seconds": 284.509,
-      "search_requests": 10,
-      "initial_detail_requests": 12,
-      "new_to_ledger": 37,
-      "rediscovered": 62
     }
   ],
   "local_recovery": {
-    "run_at": "2026-11-27T05:10:27.449509+00:00",
-    "elapsed_seconds": 2.215,
+    "run_at": "2026-11-28T07:18:28.597735+00:00",
+    "elapsed_seconds": 8.011,
     "official_jds_recovered": 0,
     "linkedin_detail_recoveries": 0,
     "post_429_jds_recovered": null,
     "targeted_linkedin_search_requests": 0,
     "targeted_linkedin_detail_jds": 0,
     "targeted_linkedin_rate_limited": false,
-    "generic_jobs_processed": 0,
-    "search_requests": 0,
-    "official_page_requests": 0,
+    "generic_jobs_processed": 6,
+    "search_requests": 3,
+    "official_page_requests": 3,
     "linkedin_rate_limited": false,
     "linkedin_detail": {
-      "eligible": 7,
+      "eligible": 0,
       "cache_reused": 0,
       "requests": 0,
       "responses": 0,
@@ -2514,8 +2773,8 @@
       "attempted_ids": [],
       "http_status_counts": {},
       "request_limit": 0,
-      "budget_deferred": 0,
-      "budget_exhausted": false,
+      "budget_deferred": 8,
+      "budget_exhausted": true,
       "retry_deferred": 0,
       "retry_attempts": 0,
       "exact_official": 0,
@@ -2525,16 +2784,17 @@
       "external_apply_urls": 0,
       "failed": 0,
       "detail_jds_fetched": 0,
-      "intentional_skips": 7,
-      "blocked": "",
+      "intentional_skips": 0,
+      "blocked": "rate_limited_no_further_requests",
       "scrapling_requests": 0,
       "scrapling_jds_resolved": 0,
       "scrapling_error": "",
-      "remaining_no_jd": 7,
+      "remaining_no_jd": 0,
       "failure_reasons": {},
+      "transport_stop_reason": "linkedin_detail_round_budget",
       "protected_requests": 0,
       "protected_jds_resolved": 0,
-      "protected_deferred": 5,
+      "protected_deferred": 8,
       "queue": [
         {
           "job_id": "4495501038",
@@ -2546,20 +2806,20 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
-          "past_fresh": false
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": true
         },
         {
-          "job_id": "4495221912",
-          "first_seen": "2026-11-26T23:07:10.093599+00:00",
+          "job_id": "4495085178",
+          "first_seen": "2026-11-28T07:18:03.428095+00:00",
           "priority": "high",
           "needs_jd": true,
-          "deferred_at": null,
-          "attempted_at": "2026-11-26T23:24:30.757636+00:00",
+          "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+          "attempted_at": null,
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
+          "deferred_reason": "linkedin_detail_round_budget",
           "past_fresh": false
         },
         {
@@ -2572,34 +2832,8 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4479842487",
-          "first_seen": "2026-11-26T20:00:21.925858+00:00",
-          "priority": "low",
-          "needs_jd": false,
-          "deferred_at": null,
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
-          "past_fresh": false
-        },
-        {
-          "job_id": "4495278676",
-          "first_seen": "2026-11-26T23:07:10.093599+00:00",
-          "priority": "high",
-          "needs_jd": true,
-          "deferred_at": "2026-11-26T23:07:10.093599+00:00",
-          "attempted_at": null,
-          "attempted_this_phase": false,
-          "resolved": false,
-          "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
-          "past_fresh": false
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": true
         },
         {
           "job_id": "4495035380",
@@ -2611,7 +2845,20 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": true
+        },
+        {
+          "job_id": "4495335088",
+          "first_seen": "2026-11-28T07:18:03.428095+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
           "past_fresh": false
         },
         {
@@ -2624,39 +2871,64 @@
           "attempted_this_phase": false,
           "resolved": false,
           "method": null,
-          "deferred_reason": "linkedin_detail_cooldown",
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": true
+        },
+        {
+          "job_id": "4495892309",
+          "first_seen": "2026-11-28T07:18:03.428095+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4495881952",
+          "first_seen": "2026-11-28T07:18:03.428095+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
           "past_fresh": false
         }
       ],
       "admission": {
-        "candidates": 12,
-        "rules_skipped": 5,
+        "candidates": 11,
+        "rules_skipped": 3,
         "rule_reasons": {
-          "prefilter:senior": 5
+          "prefilter:senior": 3
         },
         "cache_reused": 0,
         "non_linkedin_resolved": 0,
-        "worth_detail": 6
+        "worth_detail": 8
       },
-      "cooldown_active": true,
+      "cooldown_active": false,
       "probe": false,
-      "round_request_limit": 0,
-      "round_requests": 0,
-      "status": "cooldown",
-      "cooldown_until": "2026-11-27T11:07:10.093599+00:00"
+      "round_request_limit": 1,
+      "round_requests": 1,
+      "status": "active"
     },
     "linkedin_transport": {
-      "requests": 0,
+      "requests": 3,
       "endpoint_counts": {
-        "search": 0,
-        "detail": 0
+        "search": 2,
+        "detail": 1
       },
       "spacing_seconds_min": 10.0,
       "spacing_seconds_max": 15.0,
       "recovery": {
         "triggered_at": "2026-11-27T05:00:11.887395+00:00",
-        "updated_at": "2026-11-27T05:00:11.887395+00:00",
-        "clean_rounds": 0
+        "updated_at": "2026-11-28T07:18:36.555231+00:00",
+        "clean_rounds": 1
       },
       "recovery_limits": {
         "search": 2,
@@ -2670,19 +2942,19 @@
       "day_detail_limit": 36,
       "rolling_counts": {
         "60": {
-          "search": 0,
-          "detail": 0
+          "search": 2,
+          "detail": 1
         },
         "3600": {
-          "search": 1,
-          "detail": 0
+          "search": 2,
+          "detail": 1
         },
         "86400": {
-          "search": 8,
-          "detail": 3
+          "search": 2,
+          "detail": 1
         }
       },
-      "stop_reason": "global_429_pause",
+      "stop_reason": "",
       "blocked_until": "2026-11-27T06:00:11.887395+00:00",
       "rate_limits": [
         {
@@ -3267,7 +3539,192 @@
         }
       ]
     },
-    "initial_detail": {},
+    "initial_detail": {
+      "eligible": 9,
+      "cache_reused": 0,
+      "requests": 1,
+      "responses": 1,
+      "successful_responses": 1,
+      "attempted_ids": [
+        "4495278676"
+      ],
+      "http_status_counts": {
+        "200": 1
+      },
+      "request_limit": 1,
+      "budget_deferred": 8,
+      "budget_exhausted": true,
+      "retry_deferred": 0,
+      "retry_attempts": 0,
+      "exact_official": 0,
+      "official_deferred": 0,
+      "rate_limited": false,
+      "jds_resolved": 1,
+      "external_apply_urls": 0,
+      "failed": 0,
+      "detail_jds_fetched": 1,
+      "intentional_skips": 0,
+      "blocked": "",
+      "scrapling_requests": 0,
+      "scrapling_jds_resolved": 0,
+      "scrapling_error": "",
+      "remaining_no_jd": 8,
+      "failure_reasons": {
+        "no_description": 8
+      },
+      "protected_requests": 1,
+      "protected_jds_resolved": 1,
+      "protected_deferred": 8,
+      "queue": [
+        {
+          "job_id": "4495880982",
+          "first_seen": "2026-11-28T07:18:03.428095+00:00",
+          "priority": "normal",
+          "needs_jd": null,
+          "deferred_at": null,
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": true,
+          "method": "exact_indeed_peer",
+          "deferred_reason": null,
+          "past_fresh": false
+        },
+        {
+          "job_id": "4495881952",
+          "first_seen": "2026-11-28T07:18:03.428095+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4495085178",
+          "first_seen": "2026-11-28T07:18:03.428095+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4495892309",
+          "first_seen": "2026-11-28T07:18:03.428095+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4495335088",
+          "first_seen": "2026-11-28T07:18:03.428095+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": false
+        },
+        {
+          "job_id": "4495501038",
+          "first_seen": "2026-11-26T23:07:10.093599+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": true
+        },
+        {
+          "job_id": "4493813393",
+          "first_seen": "2026-11-26T20:00:21.925858+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-26T20:00:21.925858+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": true
+        },
+        {
+          "job_id": "4495278676",
+          "first_seen": "2026-11-26T23:07:10.093599+00:00",
+          "priority": "high",
+          "needs_jd": true,
+          "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+          "attempted_at": "2026-11-28T07:18:26.669557+00:00",
+          "attempted_this_phase": true,
+          "resolved": true,
+          "method": "linkedin_http",
+          "deferred_reason": null,
+          "past_fresh": true
+        },
+        {
+          "job_id": "4495035380",
+          "first_seen": "2026-11-26T20:00:21.925858+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-26T20:00:21.925858+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": true
+        },
+        {
+          "job_id": "4493478003",
+          "first_seen": "2026-11-26T23:07:10.093599+00:00",
+          "priority": "normal",
+          "needs_jd": true,
+          "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+          "attempted_at": null,
+          "attempted_this_phase": false,
+          "resolved": false,
+          "method": null,
+          "deferred_reason": "linkedin_detail_round_budget",
+          "past_fresh": true
+        }
+      ],
+      "admission": {
+        "candidates": 13,
+        "rules_skipped": 3,
+        "rule_reasons": {
+          "prefilter:senior": 3
+        },
+        "cache_reused": 0,
+        "non_linkedin_resolved": 1,
+        "triage_evaluated": 4,
+        "triage_deferred": 0,
+        "worth_detail": 9
+      },
+      "cooldown_active": false,
+      "probe": true,
+      "round_request_limit": 1,
+      "round_requests": 1,
+      "status": "probe"
+    },
     "queue_expired_without_attempt": [
       "4461665785",
       "4476882191",
@@ -3375,25 +3832,27 @@
       "4476854489"
     ],
     "methods": {
-      "dedicated_matches": 15
+      "dedicated_matches": 2,
+      "search_provider_failures": 1,
+      "no_match": 5
     },
     "cheap_matches": {},
     "generic_jobs_deferred": 0,
-    "search_provider": "duckduckgo"
+    "search_provider": "bing"
   },
-  "mac_last_completed_at": "2026-11-27T05:10:29.794986+00:00",
+  "mac_last_completed_at": "2026-11-28T07:18:36.734530+00:00",
   "linkedin_transport": {
-    "requests": 1,
+    "requests": 3,
     "endpoint_counts": {
-      "search": 1,
-      "detail": 0
+      "search": 2,
+      "detail": 1
     },
     "spacing_seconds_min": 10.0,
     "spacing_seconds_max": 15.0,
     "recovery": {
       "triggered_at": "2026-11-27T05:00:11.887395+00:00",
-      "updated_at": "2026-11-27T05:00:11.887395+00:00",
-      "clean_rounds": 0
+      "updated_at": "2026-11-28T07:18:36.555231+00:00",
+      "clean_rounds": 1
     },
     "recovery_limits": {
       "search": 2,
@@ -3407,16 +3866,16 @@
     "day_detail_limit": 36,
     "rolling_counts": {
       "60": {
-        "search": 1,
-        "detail": 0
+        "search": 2,
+        "detail": 1
       },
       "3600": {
-        "search": 1,
-        "detail": 0
+        "search": 2,
+        "detail": 1
       },
       "86400": {
-        "search": 8,
-        "detail": 3
+        "search": 2,
+        "detail": 1
       }
     },
     "stop_reason": "",
@@ -4005,48 +4464,16 @@
     ],
     "events": [
       {
-        "at": "2026-11-26T05:30:54.810852+00:00",
+        "at": "2026-11-28T07:18:03.508769+00:00",
         "endpoint": "search"
       },
       {
-        "at": "2026-11-26T05:31:05.504623+00:00",
+        "at": "2026-11-28T07:18:16.481526+00:00",
+        "endpoint": "search"
+      },
+      {
+        "at": "2026-11-28T07:18:27.085380+00:00",
         "endpoint": "detail"
-      },
-      {
-        "at": "2026-11-26T20:00:22.014906+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-11-26T20:00:34.088497+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-11-26T20:00:47.816077+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-11-26T23:07:10.183197+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-11-26T23:07:20.810062+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-11-26T23:07:32.525048+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-11-26T23:07:47.412354+00:00",
-        "endpoint": "search"
-      },
-      {
-        "at": "2026-11-26T23:24:30.774579+00:00",
-        "endpoint": "detail"
-      },
-      {
-        "at": "2026-11-27T05:00:11.642949+00:00",
-        "endpoint": "search"
       }
     ]
   },
@@ -96365,6 +96792,1095 @@
       "cheap_matches": {},
       "generic_jobs_deferred": 0,
       "search_provider": "duckduckgo"
+    },
+    {
+      "run_at": "2026-11-28T07:18:28.597735+00:00",
+      "elapsed_seconds": 8.011,
+      "official_jds_recovered": 0,
+      "linkedin_detail_recoveries": 0,
+      "post_429_jds_recovered": null,
+      "targeted_linkedin_search_requests": 0,
+      "targeted_linkedin_detail_jds": 0,
+      "targeted_linkedin_rate_limited": false,
+      "generic_jobs_processed": 6,
+      "search_requests": 3,
+      "official_page_requests": 3,
+      "linkedin_rate_limited": false,
+      "linkedin_detail": {
+        "eligible": 0,
+        "cache_reused": 0,
+        "requests": 0,
+        "responses": 0,
+        "successful_responses": 0,
+        "attempted_ids": [],
+        "http_status_counts": {},
+        "request_limit": 0,
+        "budget_deferred": 8,
+        "budget_exhausted": true,
+        "retry_deferred": 0,
+        "retry_attempts": 0,
+        "exact_official": 0,
+        "official_deferred": 0,
+        "rate_limited": false,
+        "jds_resolved": 0,
+        "external_apply_urls": 0,
+        "failed": 0,
+        "detail_jds_fetched": 0,
+        "intentional_skips": 0,
+        "blocked": "rate_limited_no_further_requests",
+        "scrapling_requests": 0,
+        "scrapling_jds_resolved": 0,
+        "scrapling_error": "",
+        "remaining_no_jd": 0,
+        "failure_reasons": {},
+        "transport_stop_reason": "linkedin_detail_round_budget",
+        "protected_requests": 0,
+        "protected_jds_resolved": 0,
+        "protected_deferred": 8,
+        "queue": [
+          {
+            "job_id": "4495501038",
+            "first_seen": "2026-11-26T23:07:10.093599+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": true
+          },
+          {
+            "job_id": "4495085178",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "high",
+            "needs_jd": true,
+            "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": false
+          },
+          {
+            "job_id": "4493813393",
+            "first_seen": "2026-11-26T20:00:21.925858+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T20:00:21.925858+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": true
+          },
+          {
+            "job_id": "4495035380",
+            "first_seen": "2026-11-26T20:00:21.925858+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T20:00:21.925858+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": true
+          },
+          {
+            "job_id": "4495335088",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "high",
+            "needs_jd": true,
+            "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": false
+          },
+          {
+            "job_id": "4493478003",
+            "first_seen": "2026-11-26T23:07:10.093599+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": true
+          },
+          {
+            "job_id": "4495892309",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": false
+          },
+          {
+            "job_id": "4495881952",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": false
+          }
+        ],
+        "admission": {
+          "candidates": 11,
+          "rules_skipped": 3,
+          "rule_reasons": {
+            "prefilter:senior": 3
+          },
+          "cache_reused": 0,
+          "non_linkedin_resolved": 0,
+          "worth_detail": 8
+        },
+        "cooldown_active": false,
+        "probe": false,
+        "round_request_limit": 1,
+        "round_requests": 1,
+        "status": "active"
+      },
+      "linkedin_transport": {
+        "requests": 3,
+        "endpoint_counts": {
+          "search": 2,
+          "detail": 1
+        },
+        "spacing_seconds_min": 10.0,
+        "spacing_seconds_max": 15.0,
+        "recovery": {
+          "triggered_at": "2026-11-27T05:00:11.887395+00:00",
+          "updated_at": "2026-11-28T07:18:36.555231+00:00",
+          "clean_rounds": 1
+        },
+        "recovery_limits": {
+          "search": 2,
+          "detail": 2
+        },
+        "round_limit": 22,
+        "detail_limit": 12,
+        "day_limit": 72,
+        "hour_limit": 22,
+        "hour_detail_limit": 12,
+        "day_detail_limit": 36,
+        "rolling_counts": {
+          "60": {
+            "search": 2,
+            "detail": 1
+          },
+          "3600": {
+            "search": 2,
+            "detail": 1
+          },
+          "86400": {
+            "search": 2,
+            "detail": 1
+          }
+        },
+        "stop_reason": "",
+        "blocked_until": "2026-11-27T06:00:11.887395+00:00",
+        "rate_limits": [
+          {
+            "at": "2026-10-18T22:00:50.032212+00:00",
+            "endpoint": "detail",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4480870115",
+            "query": "AI/ML Engineer",
+            "page": null,
+            "retry_after": "",
+            "retry_after_until": "2026-10-18T22:00:50.032212+00:00",
+            "request_ordinal": 13,
+            "endpoint_ordinal": 6,
+            "round_counts": {
+              "search": 7,
+              "detail": 6
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 7,
+                "detail": 6
+              },
+              "3600": {
+                "search": 7,
+                "detail": 6
+              },
+              "86400": {
+                "search": 32,
+                "detail": 14
+              }
+            }
+          },
+          {
+            "at": "2026-10-19T04:00:26.945264+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "software engineer",
+            "page": 0,
+            "retry_after": "",
+            "retry_after_until": "2026-10-19T04:00:26.945264+00:00",
+            "request_ordinal": 3,
+            "endpoint_ordinal": 3,
+            "round_counts": {
+              "search": 3,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 3,
+                "detail": 0
+              },
+              "3600": {
+                "search": 3,
+                "detail": 0
+              },
+              "86400": {
+                "search": 22,
+                "detail": 7
+              }
+            }
+          },
+          {
+            "at": "2026-10-20T07:02:19.982656+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "ai engineer",
+            "page": 0,
+            "retry_after": "",
+            "retry_after_until": "2026-10-20T07:02:19.982656+00:00",
+            "request_ordinal": 6,
+            "endpoint_ordinal": 6,
+            "round_counts": {
+              "search": 6,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 6,
+                "detail": 0
+              },
+              "3600": {
+                "search": 6,
+                "detail": 0
+              },
+              "86400": {
+                "search": 6,
+                "detail": 0
+              }
+            }
+          },
+          {
+            "at": "2026-10-21T04:00:11.887473+00:00",
+            "endpoint": "detail",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4481269690",
+            "query": "Software Engineer I - Aircraft Interiors (ONSITE)",
+            "page": null,
+            "retry_after": "",
+            "retry_after_until": "2026-10-21T04:00:11.887473+00:00",
+            "request_ordinal": 1,
+            "endpoint_ordinal": 1,
+            "round_counts": {
+              "search": 0,
+              "detail": 1
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 0,
+                "detail": 1
+              },
+              "3600": {
+                "search": 0,
+                "detail": 2
+              },
+              "86400": {
+                "search": 6,
+                "detail": 2
+              }
+            }
+          },
+          {
+            "at": "2026-10-24T07:22:05.022519+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "ai engineer",
+            "page": 2,
+            "retry_after": "",
+            "retry_after_until": "2026-10-24T07:22:05.022519+00:00",
+            "request_ordinal": 8,
+            "endpoint_ordinal": 8,
+            "round_counts": {
+              "search": 8,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 5,
+                "detail": 0
+              },
+              "3600": {
+                "search": 8,
+                "detail": 0
+              },
+              "86400": {
+                "search": 8,
+                "detail": 0
+              }
+            }
+          },
+          {
+            "at": "2026-10-31T19:03:16.920935+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "full-stack engineer",
+            "page": 0,
+            "retry_after": "",
+            "retry_after_until": "2026-10-31T19:03:16.920935+00:00",
+            "request_ordinal": 4,
+            "endpoint_ordinal": 4,
+            "round_counts": {
+              "search": 4,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 4,
+                "detail": 0
+              },
+              "3600": {
+                "search": 4,
+                "detail": 0
+              },
+              "86400": {
+                "search": 24,
+                "detail": 24
+              }
+            }
+          },
+          {
+            "at": "2026-11-01T20:01:26.968073+00:00",
+            "endpoint": "detail",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4485647835",
+            "query": "Software Engineer II- Full-stack Developer",
+            "page": null,
+            "retry_after": "",
+            "retry_after_until": "2026-11-01T20:01:26.968073+00:00",
+            "request_ordinal": 4,
+            "endpoint_ordinal": 2,
+            "round_counts": {
+              "search": 2,
+              "detail": 2
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 2,
+                "detail": 2
+              },
+              "3600": {
+                "search": 2,
+                "detail": 2
+              },
+              "86400": {
+                "search": 2,
+                "detail": 2
+              }
+            }
+          },
+          {
+            "at": "2026-11-06T22:14:36.232966+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "software engineer",
+            "page": 2,
+            "retry_after": "",
+            "retry_after_until": "2026-11-06T22:14:36.232966+00:00",
+            "request_ordinal": 8,
+            "endpoint_ordinal": 8,
+            "round_counts": {
+              "search": 8,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 5,
+                "detail": 0
+              },
+              "3600": {
+                "search": 8,
+                "detail": 0
+              },
+              "86400": {
+                "search": 21,
+                "detail": 12
+              }
+            }
+          },
+          {
+            "at": "2026-11-07T20:00:24.890826+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "software engineer",
+            "page": 1,
+            "retry_after": "",
+            "retry_after_until": "2026-11-07T20:00:24.890826+00:00",
+            "request_ordinal": 2,
+            "endpoint_ordinal": 2,
+            "round_counts": {
+              "search": 2,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 2,
+                "detail": 0
+              },
+              "3600": {
+                "search": 2,
+                "detail": 0
+              },
+              "86400": {
+                "search": 12,
+                "detail": 2
+              }
+            }
+          },
+          {
+            "at": "2026-11-10T07:05:22.674315+00:00",
+            "endpoint": "detail",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4487912319",
+            "query": "Fullstack Software Engineer (Remote)",
+            "page": null,
+            "retry_after": "",
+            "retry_after_until": "2026-11-10T07:05:22.674315+00:00",
+            "request_ordinal": 6,
+            "endpoint_ordinal": 2,
+            "round_counts": {
+              "search": 4,
+              "detail": 2
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 2,
+                "detail": 2
+              },
+              "3600": {
+                "search": 4,
+                "detail": 2
+              },
+              "86400": {
+                "search": 4,
+                "detail": 2
+              }
+            }
+          },
+          {
+            "at": "2026-11-17T07:55:04.938575+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "backend engineer",
+            "page": 1,
+            "retry_after": "",
+            "retry_after_until": "2026-11-17T07:55:04.938575+00:00",
+            "request_ordinal": 10,
+            "endpoint_ordinal": 10,
+            "round_counts": {
+              "search": 10,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 5,
+                "detail": 0
+              },
+              "3600": {
+                "search": 10,
+                "detail": 0
+              },
+              "86400": {
+                "search": 10,
+                "detail": 0
+              }
+            }
+          },
+          {
+            "at": "2026-11-18T20:24:34.928345+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "software engineer",
+            "page": 1,
+            "retry_after": "",
+            "retry_after_until": "2026-11-18T20:24:34.928345+00:00",
+            "request_ordinal": 4,
+            "endpoint_ordinal": 4,
+            "round_counts": {
+              "search": 4,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 4,
+                "detail": 0
+              },
+              "3600": {
+                "search": 4,
+                "detail": 0
+              },
+              "86400": {
+                "search": 6,
+                "detail": 2
+              }
+            }
+          },
+          {
+            "at": "2026-11-19T08:09:52.938224+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "software engineer",
+            "page": 1,
+            "retry_after": "",
+            "retry_after_until": "2026-11-19T08:09:52.938224+00:00",
+            "request_ordinal": 2,
+            "endpoint_ordinal": 2,
+            "round_counts": {
+              "search": 2,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 2,
+                "detail": 0
+              },
+              "3600": {
+                "search": 2,
+                "detail": 0
+              },
+              "86400": {
+                "search": 8,
+                "detail": 2
+              }
+            }
+          },
+          {
+            "at": "2026-11-20T09:09:06.953657+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "ai engineer",
+            "page": 0,
+            "retry_after": "",
+            "retry_after_until": "2026-11-20T09:09:06.953657+00:00",
+            "request_ordinal": 1,
+            "endpoint_ordinal": 1,
+            "round_counts": {
+              "search": 1,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 1,
+                "detail": 0
+              },
+              "3600": {
+                "search": 1,
+                "detail": 0
+              },
+              "86400": {
+                "search": 1,
+                "detail": 0
+              }
+            }
+          },
+          {
+            "at": "2026-11-21T23:55:28.941581+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "software engineer",
+            "page": 0,
+            "retry_after": "",
+            "retry_after_until": "2026-11-21T23:55:28.941581+00:00",
+            "request_ordinal": 1,
+            "endpoint_ordinal": 1,
+            "round_counts": {
+              "search": 1,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 1,
+                "detail": 0
+              },
+              "3600": {
+                "search": 1,
+                "detail": 0
+              },
+              "86400": {
+                "search": 2,
+                "detail": 2
+              }
+            }
+          },
+          {
+            "at": "2026-11-24T05:54:35.875059+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "backend engineer",
+            "page": 0,
+            "retry_after": "",
+            "retry_after_until": "2026-11-24T05:54:35.875059+00:00",
+            "request_ordinal": 1,
+            "endpoint_ordinal": 1,
+            "round_counts": {
+              "search": 1,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 1,
+                "detail": 0
+              },
+              "3600": {
+                "search": 1,
+                "detail": 0
+              },
+              "86400": {
+                "search": 1,
+                "detail": 0
+              }
+            }
+          },
+          {
+            "at": "2026-11-24T09:58:51.836403+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "software engineer",
+            "page": 0,
+            "retry_after": "",
+            "retry_after_until": "2026-11-24T09:58:51.836403+00:00",
+            "request_ordinal": 1,
+            "endpoint_ordinal": 1,
+            "round_counts": {
+              "search": 1,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 1,
+                "detail": 0
+              },
+              "3600": {
+                "search": 1,
+                "detail": 0
+              },
+              "86400": {
+                "search": 2,
+                "detail": 0
+              }
+            }
+          },
+          {
+            "at": "2026-11-26T05:31:05.798627+00:00",
+            "endpoint": "detail",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4494947463",
+            "query": "LLM / GenAI Engineer",
+            "page": null,
+            "retry_after": "",
+            "retry_after_until": "2026-11-26T05:31:05.798627+00:00",
+            "request_ordinal": 2,
+            "endpoint_ordinal": 1,
+            "round_counts": {
+              "search": 1,
+              "detail": 1
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 1,
+                "detail": 1
+              },
+              "3600": {
+                "search": 1,
+                "detail": 1
+              },
+              "86400": {
+                "search": 1,
+                "detail": 1
+              }
+            }
+          },
+          {
+            "at": "2026-11-26T23:24:31.012882+00:00",
+            "endpoint": "detail",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/4495221912",
+            "query": "Software Dev Engineer II, AWS Elastic Compute Cloud (EC2)",
+            "page": null,
+            "retry_after": "",
+            "retry_after_until": "2026-11-26T23:24:31.012882+00:00",
+            "request_ordinal": 5,
+            "endpoint_ordinal": 1,
+            "round_counts": {
+              "search": 4,
+              "detail": 1
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 0,
+                "detail": 1
+              },
+              "3600": {
+                "search": 4,
+                "detail": 1
+              },
+              "86400": {
+                "search": 7,
+                "detail": 3
+              }
+            }
+          },
+          {
+            "at": "2026-11-27T05:00:11.887395+00:00",
+            "endpoint": "search",
+            "url": "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search",
+            "query": "ai engineer",
+            "page": 0,
+            "retry_after": "",
+            "retry_after_until": "2026-11-27T05:00:11.887395+00:00",
+            "request_ordinal": 1,
+            "endpoint_ordinal": 1,
+            "round_counts": {
+              "search": 1,
+              "detail": 0
+            },
+            "rolling_counts": {
+              "60": {
+                "search": 1,
+                "detail": 0
+              },
+              "3600": {
+                "search": 1,
+                "detail": 0
+              },
+              "86400": {
+                "search": 8,
+                "detail": 3
+              }
+            }
+          }
+        ]
+      },
+      "initial_detail": {
+        "eligible": 9,
+        "cache_reused": 0,
+        "requests": 1,
+        "responses": 1,
+        "successful_responses": 1,
+        "attempted_ids": [
+          "4495278676"
+        ],
+        "http_status_counts": {
+          "200": 1
+        },
+        "request_limit": 1,
+        "budget_deferred": 8,
+        "budget_exhausted": true,
+        "retry_deferred": 0,
+        "retry_attempts": 0,
+        "exact_official": 0,
+        "official_deferred": 0,
+        "rate_limited": false,
+        "jds_resolved": 1,
+        "external_apply_urls": 0,
+        "failed": 0,
+        "detail_jds_fetched": 1,
+        "intentional_skips": 0,
+        "blocked": "",
+        "scrapling_requests": 0,
+        "scrapling_jds_resolved": 0,
+        "scrapling_error": "",
+        "remaining_no_jd": 8,
+        "failure_reasons": {
+          "no_description": 8
+        },
+        "protected_requests": 1,
+        "protected_jds_resolved": 1,
+        "protected_deferred": 8,
+        "queue": [
+          {
+            "job_id": "4495880982",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "normal",
+            "needs_jd": null,
+            "deferred_at": null,
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": true,
+            "method": "exact_indeed_peer",
+            "deferred_reason": null,
+            "past_fresh": false
+          },
+          {
+            "job_id": "4495881952",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": false
+          },
+          {
+            "job_id": "4495085178",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "high",
+            "needs_jd": true,
+            "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": false
+          },
+          {
+            "job_id": "4495892309",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": false
+          },
+          {
+            "job_id": "4495335088",
+            "first_seen": "2026-11-28T07:18:03.428095+00:00",
+            "priority": "high",
+            "needs_jd": true,
+            "deferred_at": "2026-11-28T07:18:03.428095+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": false
+          },
+          {
+            "job_id": "4495501038",
+            "first_seen": "2026-11-26T23:07:10.093599+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": true
+          },
+          {
+            "job_id": "4493813393",
+            "first_seen": "2026-11-26T20:00:21.925858+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T20:00:21.925858+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": true
+          },
+          {
+            "job_id": "4495278676",
+            "first_seen": "2026-11-26T23:07:10.093599+00:00",
+            "priority": "high",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+            "attempted_at": "2026-11-28T07:18:26.669557+00:00",
+            "attempted_this_phase": true,
+            "resolved": true,
+            "method": "linkedin_http",
+            "deferred_reason": null,
+            "past_fresh": true
+          },
+          {
+            "job_id": "4495035380",
+            "first_seen": "2026-11-26T20:00:21.925858+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T20:00:21.925858+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": true
+          },
+          {
+            "job_id": "4493478003",
+            "first_seen": "2026-11-26T23:07:10.093599+00:00",
+            "priority": "normal",
+            "needs_jd": true,
+            "deferred_at": "2026-11-26T23:07:10.093599+00:00",
+            "attempted_at": null,
+            "attempted_this_phase": false,
+            "resolved": false,
+            "method": null,
+            "deferred_reason": "linkedin_detail_round_budget",
+            "past_fresh": true
+          }
+        ],
+        "admission": {
+          "candidates": 13,
+          "rules_skipped": 3,
+          "rule_reasons": {
+            "prefilter:senior": 3
+          },
+          "cache_reused": 0,
+          "non_linkedin_resolved": 1,
+          "triage_evaluated": 4,
+          "triage_deferred": 0,
+          "worth_detail": 9
+        },
+        "cooldown_active": false,
+        "probe": true,
+        "round_request_limit": 1,
+        "round_requests": 1,
+        "status": "probe"
+      },
+      "queue_expired_without_attempt": [
+        "4461665785",
+        "4476882191",
+        "4476889058",
+        "4485658082",
+        "4487751501",
+        "4479716886",
+        "4481234836",
+        "4479572498",
+        "4485397503",
+        "4481192629",
+        "4490808576",
+        "4482672622",
+        "4471012607",
+        "4471019245",
+        "4484868228",
+        "4473159456",
+        "4449436493",
+        "4487775578",
+        "4485255242",
+        "4489382522",
+        "4478576870",
+        "4482615100",
+        "4485815431",
+        "4491030182",
+        "4487562409",
+        "4475260915",
+        "4481055232",
+        "4480856774",
+        "4481603392",
+        "4491429718",
+        "4489597016",
+        "4478229554",
+        "4481300867",
+        "4418057161",
+        "4435104557",
+        "4474599498",
+        "4474706198",
+        "4474709089",
+        "4484864133",
+        "4489595513",
+        "4486756418",
+        "4491246905",
+        "4491408375",
+        "4490246260",
+        "4486687460",
+        "4479885494",
+        "4482791859",
+        "4487590667",
+        "4477507021",
+        "4487542608",
+        "4487548382",
+        "4486597702",
+        "4478545786",
+        "4488486882",
+        "4473197371",
+        "4473183815",
+        "4487100444",
+        "4488955203",
+        "4473401171",
+        "4480174295",
+        "4477587830",
+        "4483922008",
+        "4471173820",
+        "4490220933",
+        "4480277814",
+        "4486502853",
+        "4434055995",
+        "4434079004",
+        "4476005404",
+        "4488922800",
+        "4476606049",
+        "4473760956",
+        "4491176386",
+        "4476026071",
+        "4486768944",
+        "4484487870",
+        "4470646327",
+        "4460741206",
+        "4483163180",
+        "4463057377",
+        "4463054409",
+        "4488142498",
+        "4487749143",
+        "4487744537",
+        "4472847721",
+        "4472855479",
+        "4485591612",
+        "4483182157",
+        "4452632459",
+        "4454389173",
+        "4491211678",
+        "4473364054",
+        "4480406560",
+        "4478573082",
+        "4480859864",
+        "4480873365",
+        "4477850675",
+        "4485289348",
+        "4485289350",
+        "4485546249",
+        "4481007074",
+        "4473970583",
+        "4485365737",
+        "4476854489"
+      ],
+      "methods": {
+        "dedicated_matches": 2,
+        "search_provider_failures": 1,
+        "no_match": 5
+      },
+      "cheap_matches": {},
+      "generic_jobs_deferred": 0,
+      "search_provider": "bing"
     }
   ]
 }
